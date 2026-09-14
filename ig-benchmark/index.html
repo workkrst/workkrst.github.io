@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>인스타 벤치마킹 리포트 — 3개 계정 심층 분석</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Pretendard Variable',Pretendard,sans-serif;background:#f4f5f7;color:#1a1d21;line-height:1.65}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px 80px}
+header{background:linear-gradient(135deg,#5b21b6,#db2777 70%,#f43f5e);color:#fff;padding:44px 16px 38px;text-align:center}
+header h1{font-size:26px;font-weight:800} header p{opacity:.85;margin-top:8px;font-size:14px}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid #e5e7eb;padding:10px 8px;text-align:center}
+nav a{display:inline-block;margin:3px 6px;padding:6px 14px;border-radius:20px;background:#f1f2f4;color:#374151;font-size:13px;font-weight:600;text-decoration:none}
+nav a:hover{background:#ede9fe;color:#5b21b6}
+h2{font-size:22px;font-weight:800;margin:0 0 4px}
+section{margin-top:44px}
+.overview{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.ocard{background:#fff;border-radius:14px;padding:18px;border:1px solid #e5e7eb}
+.ocard h3{font-size:16px} .ocard .fo{font-size:24px;font-weight:800;color:#5b21b6;margin:4px 0}
+.ocard p{font-size:13px;color:#4b5563}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;font-size:13px;margin-top:14px}
+th,td{padding:10px 12px;border-bottom:1px solid #f0f0f2;text-align:left;white-space:nowrap}
+th{background:#111827;color:#fff;font-weight:600} tr:last-child td{border-bottom:0}
+td b{color:#5b21b6}
+.acc{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:26px 22px;margin-top:18px}
+.vname{font-size:13px;color:#6b7280;font-weight:500}
+.accpos{color:#6b7280;font-size:14px}
+.accstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:16px 0}
+.as{background:#faf5ff;border:1px solid #ede9fe;border-radius:10px;padding:10px 12px;font-size:12px;color:#6b7280}
+.as em{display:block;font-style:normal;font-size:17px;font-weight:800;color:#5b21b6;margin-bottom:2px}
+.accbox{background:#f9fafb;border-radius:12px;padding:14px 16px;margin:10px 0;font-size:14px}
+.accbox h3{font-size:14px;margin-bottom:6px}
+.accbox ul{padding-left:18px} .accbox li{margin:5px 0}
+.accbox.warn{background:#fef2f2} .accbox.warn h3{color:#b91c1c}
+.top10title{margin:24px 0 12px;font-size:17px;font-weight:800}
+.pcard{border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;margin-bottom:16px;background:#fff}
+.rankbar{padding:9px 14px;font-size:13px;display:flex;justify-content:space-between;align-items:center;color:#fff}
+.r1{background:#d97706} .r2{background:#6b7280} .r3{background:#b45309} .r4,.r5{background:#5b21b6} .r6,.r7,.r8,.r9,.r10{background:#374151}
+.rank{font-weight:800;font-size:15px}
+.ptags{display:flex;gap:6px} .b{background:rgba(255,255,255,.2);padding:2px 9px;border-radius:12px;font-size:11px}
+.pbody{display:grid;grid-template-columns:340px 1fr;gap:16px;padding:16px}
+@media(max-width:760px){.pbody{grid-template-columns:1fr}}
+.embedwrap{display:flex;justify-content:center}
+.embedwrap iframe{width:100%;max-width:340px;height:560px;border:0;border-radius:10px;background:#fafafa}
+.stats{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.st{background:#f3f4f6;border-radius:8px;padding:3px 10px;font-size:12px;font-weight:700;color:#374151}
+.cap{margin:8px 0;font-size:13px}
+.cap summary{cursor:pointer;color:#5b21b6;font-weight:600}
+.captxt{background:#fafafa;border-radius:8px;padding:10px;margin-top:6px;white-space:pre-wrap;font-size:12.5px;color:#374151;max-height:180px;overflow:auto}
+.analysis{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:12px 14px;margin:10px 0}
+.analysis h4{font-size:13px;color:#15803d;margin-bottom:4px}
+.analysis p{font-size:13px}
+.techs{margin-top:8px;display:flex;flex-wrap:wrap;gap:5px}
+.tech{background:#dcfce7;color:#166534;border-radius:12px;padding:2px 10px;font-size:11.5px;font-weight:700}
+.orig{font-size:12.5px;color:#5b21b6;font-weight:600;text-decoration:none}
+.prin{background:#fff;border:1px solid #e5e7eb;border-left:4px solid #db2777;border-radius:12px;padding:16px 18px;margin-bottom:14px}
+.prin h3{font-size:16px;margin-bottom:6px} .prin p{font-size:13.5px;color:#374151}
+.prinact{margin-top:10px;font-size:12.5px;background:#fdf2f8;border-radius:8px;padding:9px 12px;color:#9d174d}
+.prinact span{background:#fce7f3;border-radius:6px;padding:2px 8px;margin:2px 3px;display:inline-block}
+.phase{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:15px 17px;margin-bottom:12px}
+.phead{margin-bottom:7px} .badge{background:#5b21b6;color:#fff;border-radius:14px;padding:2px 12px;font-size:12px;font-weight:700;margin-right:8px}
+.phase ul{padding-left:18px;font-size:13.5px} .phase li{margin:4px 0}
+.foot{margin-top:40px;font-size:12px;color:#9ca3af;text-align:center}
+.note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 14px;font-size:13px;margin-top:14px}
+</style></head><body>
+<header><h1>📊 인스타 벤치마킹 심층 리포트</h1>
+<p>@home.it_insta · @tem_salon · @remio.pick &nbsp;|&nbsp; 최근 1개월 게시물 데이터 기반 (수집: 2026-09-14, 총 180개 게시물 + 프로필 3건)</p></header>
+<nav>
+<a href="#overview">종합 비교</a><a href="#acc-home.it_insta">홈잇 22.8만</a><a href="#acc-tem_salon">템살롱 6.1만</a><a href="#acc-remio.pick">레미오 12.5만</a><a href="#principles">터지는 7가지 원리</a><a href="#actions">벤치마킹 액션플랜</a>
+</nav>
+<div class="wrap">
+<section id="overview">
+  <h2>🏆 3개 계정 종합 비교</h2>
+  <div class="overview">
+    <div class="ocard"><h3>@home.it_insta (홈잇)</h3><div class="fo">228,478</div><p><b>릴스형 대형 계정.</b> 요리·살림 꿀팁 릴스로 도달을 넓히고, 댓글 키워드→DM으로 전환. 도달력 최강, ER 0.56%.</p></div>
+    <div class="ocard"><h3>@tem_salon (템살롱)</h3><div class="fo">60,606</div><p><b>효율형 소형 계정.</b> 가장 작지만 ER 1.75%. "권위+미스터리+뭐야 CTA" 템플릿을 카드뉴스로 표준화. 협업 광고 수익 모델.</p></div>
+    <div class="ocard"><h3>@remio.pick (레미오)</h3><div class="fo">124,896 ✓</div><p><b>퍼널 최강 계정.</b> ER 2.81%, 평균 댓글 4천~1.4만. 셀럽+수치+미스터리 공식의 완성도가 가장 높음.</p></div>
+  </div>
+  <table><tr><th>계정</th><th>이름</th><th>팔로워</th><th>30일 게시물</th><th>ER</th><th>평균 eng</th><th>주 포맷</th><th>업로드 피크</th></tr><tr><td>@home.it_insta</td><td>홈잇</td><td>228,478</td><td>37</td><td>0.56%</td><td>1,291</td><td>릴스 중심</td><td>아침8-9·밤20-21시</td></tr><tr><td>@tem_salon</td><td>템살롱</td><td>60,606</td><td>27</td><td>1.75%</td><td>1,061</td><td>카드뉴스 중심</td><td>오후16-18·밤20-21시</td></tr><tr><td>@remio.pick</td><td>레미오(최정석)</td><td>124,896</td><td>25</td><td>2.81%</td><td>3,513</td><td>카드뉴스 중심</td><td>밤19-21시</td></tr></table>
+  <div class="note">📌 <b>공통 결론:</b> 3개 계정은 같은 수익 공식을 씁니다 — <b>① 만인 고민 소재 ② 셀럽/전문가 권위 ③ "이것" 미스터리 ④ 키워드 댓글 CTA ⑤ DM 자동발송으로 제품 링크 전달</b>. 좋아요보다 댓글을 10배로 뽑아내는 것이 알고리즘 도달과 수익 전환을 동시에 잡는 핵심입니다.</div>
+</section>
+
+<section class="acc" id="acc-home.it_insta">
+  <div class="acc-head">
+    <div>
+      <h2>@home.it_insta <span class="vname">홈잇</span></h2>
+      <p class="accpos">집꾸미기·인테리어·살림템 · 팔로워 <b>228,478</b></p>
+    </div>
+  </div>
+  <div class="accstats">
+    <div class="as"><em>37</em>30일 게시물</div>
+    <div class="as"><em>0.56%</em>참여율(ER)</div>
+    <div class="as"><em>릴스 28 · 카드 9</em>포맷 분포</div>
+    <div class="as"><em>8~9시·20~21시</em>업로드 피크</div>
+  </div>
+  <div class="accbox"><h3>📍 포지셔닝</h3><p>요리·살림 꿀팁 + 생활템 추천. '홈잇추천 제품 구매링크'를 프로필에 두고 쿠팡파트너스류 제휴 수익 구조. 릴스로 도달을 넓히고 댓글 키워드→DM으로 전환시키는 이원화가 가장 뚜렷한 계정.</p></div>
+  <div class="accbox"><h3>💪 이 계정이 강한 이유</h3><ul><li><b>릴스 도달 엔진</b> — 30일간 릴스 28편, 릴스당 조회수 4만~12.5만. 팔로워 22.8만 대비 도달을 계속 넓히는 중</li><li><b>댓글:좋아요 비율 최대 10배</b> — 조개 해감(546♥/5,429💬)처럼 DM 키워드 설계가 완벽하게 작동</li><li><b>경력자 스토리텔링</b> — 20년 국숫집 이모님, 20년 세탁소 시아버지 등 &#x27;주변의 고수&#x27; 프레임으로 친근한 권위 구축</li><li><b>이중 업로드 피크</b> — 아침 8-9시(주부 타깃) + 밤 20-21시(전연령) 시간대 운영</li></ul></div>
+  <div class="accbox warn"><h3>⚠️ 약점·주의점</h3><p>ER 0.56%로 팔로워 대비 참여율은 낮음. 좋아요는 100~700대인데 댓글만 큰 구조 — 도달이 잘 되지만 팬 밀도는 상대적으로 약함. 릴스 의존도가 높아 릴스 정책 변화 리스크 존재.</p></div>
+  <h3 class="top10title">🔥 최근 한 달 가장 잘 터진 게시물 TOP 10</h3>
+  
+<div class="pcard" id="Dcvnr6NzgDn">
+  <div class="rankbar r1"><span class="rank">#1</span>
+    <span class="ptags"><span class="b type">릴스</span><span class="b">📅 2026-09-01 (12일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/Dcvnr6NzgDn/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 546</span><span class="st">💬 5,429</span>
+        <span class="st">👁 125,311</span><span class="st">⚡ eng 5,975</span>
+        
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">조개 해감할 때 소금만 넣으셨다면
+이제 이렇게 한번 해보세요🐚✨
+
+소금물에 이것까지 같이 넣어 해감해주면
+조개가 품고 있던 모래나 찌꺼기를 뱉어내는 걸
+눈으로 확인할 수 있더라고요😳
+
+해감 후에는 깨끗한 물로 여러 번 헹궈주면 끝!
+
+깔끔하게 조개 해감하는 방법 궁금하시면 댓글 남겨주세요❤️
+
+💌 댓글에 &#x27; 조개 &#x27; 남겨주시면 DM 바로 보내드릴게요
+💌 또는 프로필 링크에서 &lt; 962 &gt; 검색하시면 됩니다
+💌 팔로우 해주셔야 DM 오류없이 가요🙏
+👉@home.it_insta
+
+#조개해감 #살림꿀팁 #요리꿀팁 #집밥레시피 #조개</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>기존 상식을 정정하는 훅("소금만 넣으셨다면")이 스크롤을 멈추게 합니다. 여름 제철 조개라는 시의성 + 해감 과정이 눈으로 보이는 시각적 증거(모래 배출)가 신뢰를 만듭니다. 결정타는 댓글에 '조개' 한 마디만 치면 DM으로 보내준다는 설계 — 좋아요 546개 대비 댓글 5,429개(10배)는 이 DM 자동화 퍼널이 만든 숫자입니다.</p>
+        <div class="techs"><span class="tech">상식 정정형 훅</span><span class="tech">제철 소재 시의성</span><span class="tech">비포애프터 시각 증거</span><span class="tech">키워드 댓글→DM 자동화</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/reel/Dcvnr6NzgDn/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcD2ROGz-ge">
+  <div class="rankbar r2"><span class="rank">#2</span>
+    <span class="ptags"><span class="b type">릴스</span><span class="b">📅 2026-08-15 (29일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcD2ROGz-ge/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 723</span><span class="st">💬 3,632</span>
+        <span class="st">👁 104,640</span><span class="st">⚡ eng 4,355</span>
+        
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">국숫집만 20년 하신 이모님한테 배운
+비법 양념이에요 🍜
+
+첫맛은 알싸하게 매콤하다가
+뒤에서 고소함이 훅 올라오는데
+이게 자꾸 손이 가더라고요
+
+집에 있는 재료에 딱 이거 하나만
+더 넣으면 끝이라 진짜 간단하고,
+한 번 만들어두면 소면이든 채소든
+뭐든 비벼 먹어도 맛있어요 🍜
+
+💌 댓글에 &#x27; 국수 &#x27; 남겨주시면 DM 바로 보내드릴게요
+💌 또는 프로필 링크에서 &lt; 873 &gt; 검색하시면 됩니다
+💌 팔로우 해주셔야 DM 오류없이 가요🙏
+👉@home.it_insta
+
+#비빔국수 #비빔국수레시피 #집밥레시피 #국수레시피 #집들이음식</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"국숫집만 20년 하신 이모님"이라는 경력자 권위가 시작부터 신뢰를 세웁니다. 맛 묘사를 감각적으로 풀어("첫맛은 알싸, 뒤에서 고소함") 먹어본 느낌을 상상하게 하고, "집에 있는 재료 + 딱 이거 하나"로 진입장벽을 최소화했습니다. '국수' 키워드 댓글 CTA로 댓글 3,632개를 만들었습니다.</p>
+        <div class="techs"><span class="tech">경력자 스토리텔링(20년 이모님)</span><span class="tech">감각적 맛 묘사</span><span class="tech">초간단 레시피 포지션</span><span class="tech">키워드→DM</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/reel/DcD2ROGz-ge/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcpT-aOk2kN">
+  <div class="rankbar r3"><span class="rank">#3</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-30 (15일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcpT-aOk2kN/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 559</span><span class="st">💬 3,431</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 3,990</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">와.. 이 레시피 진짜 미친 거 같아요✨
+
+양파에 치즈 올려 바삭하게 구운 다음
+특제소스에 슥슥 버무려주면 끝이라
+만들기도 진짜 간단해요🤤
+
+맛있어서 자꾸 퍼먹게 되는데
+막 퍼먹어도 살찔 걱정 덜해서 너무좋고
+남은 소스는 다른 야채 찍어 먹어도 존맛!
+
+레시피는 [나도] 남겨주세요❤️</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"와.. 이 레시피 진짜 미친 거 같아요"라는 감탄사 훅으로 본인의 흥분 상태를 그대로 전달합니다. 양파+치즈라는 냉장고 속 재료 조합이라 누구나 오늘 따라할 수 있고, "살찔 걸정 덜함"으로 죄책감까지 제거. 레시피를 숨기고 [나도] 댓글을 유도해 댓글 3,431개 달성 — 카드뉴스임에도 릴스급 반응을 만든 사례입니다.</p>
+        <div class="techs"><span class="tech">감탄사 훅</span><span class="tech">냉장고 재료 공감대</span><span class="tech">다이어트 죄책감 제거</span><span class="tech">[나도] 키워드 CTA</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcpT-aOk2kN/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcFQlA1TkyH">
+  <div class="rankbar r4"><span class="rank">#4</span>
+    <span class="ptags"><span class="b type">릴스</span><span class="b">📅 2026-08-16 (29일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcFQlA1TkyH/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 442</span><span class="st">💬 2,512</span>
+        <span class="st">👁 64,104</span><span class="st">⚡ eng 2,954</span>
+        
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">요즘 주말마다 만드는 폭신쫄깃 건강 도넛이에요🍩
+
+밀가루, 계란, 버터 없이 만들었는데도
+은은하게 달콤하고 식감까지 좋아서
+아이들이 정말 잘 먹더라고요🤎
+
+폭신하면서도 쫄깃해서 먹는 재미도 있고
+소화도 잘되니까 간식으로 챙겨주기에도 좋아요✨
+
+한 번 만들 때 넉넉하게 만들어 냉동해두면
+먹고 싶을 때 하나씩 꺼내주기만 하면 되니까
+평일 간식 걱정도 끝!🙌
+
+폭신쫄깃 건강 도넛 레시피는 댓글 남겨주세요🍩
+
+💌 댓글에 &#x27; 나도 &#x27; 남겨주시면 DM 바로 보내드릴게요
+💌 또는 프로필 링크에서 &lt; 942 &gt; 검색하시면 됩니다
+💌 팔로우 해주셔야 DM 오류없이 가요🙏
+👉@home.it_insta
+
+#건강간식 #아이간식 #홈베이킹 #밀가루없는간식 #건강간식레시피</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"밀가루, 계란, 버터 없이 도넛"이라는 역발상이 궁금증을 유발합니다. 도넛=건강에 나쁜 것이라는 통념을 뒤집으면서, 아이 간식 고민하는 부모 타깃("아이들이 정말 잘 먹더라고요")을 정조준했습니다. 냉동 보관 팁까지 더해 실용성을 완성했습니다.</p>
+        <div class="techs"><span class="tech">역발상 훅(없이 만든 도넛)</span><span class="tech">부모 타깃팅</span><span class="tech">보관·활용 팁 부가가치</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/reel/DcFQlA1TkyH/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="Dcr1WbxE1Og">
+  <div class="rankbar r5"><span class="rank">#5</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-31 (14일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/Dcr1WbxE1Og/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 470</span><span class="st">💬 1,817</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 2,287</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">와.. 무인양품 드디어 재고 풀렸네요!🤍
+
+요즘 자주 보이길래 궁금했는데
+써보니까 생각보다 훨씬 편하더라고요✨
+
+가벼운데 스트랩까지 달려 있고
+뒤집어도 안 새는 데다
+얼음도 오래가서 요즘 매일 들고 다니는 중🧊
+
+식세기 사용도 가능해서
+세척까지 간편한 게 진짜 마음에 들어요!
+
+국내 판매처 어렵게 찾았으니까
+궁금하시면 댓글에 [나도] 남겨주세요❤️</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>제품 추천형 중 가장 잘 터진 케이스. "무인양품 재고 풀렸네요"라는 희소성 훅 + "국내 판매처 어렵게 찾았으니까"라는 수고의 가치를 부각해, 댓글 [나도]를 치지 않으면 손해라는 심리를 만듭니다. 뒤집어도 안 새고, 얼음 오래가고, 식세기 가능 — 장점을 생활 시나리오로 나열한 리뷰 신뢰도가 높습니다.</p>
+        <div class="techs"><span class="tech">희소성 훅(재고 풀림)</span><span class="tech">판매처 탐색 수고의 가치</span><span class="tech">생활 시나리오형 장점 나열</span><span class="tech">구매 전환형 카드뉴스</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/Dcr1WbxE1Og/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DccWloPE2kV">
+  <div class="rankbar r6"><span class="rank">#6</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-25 (20일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DccWloPE2kV/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 241</span><span class="st">💬 1,856</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 2,097</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">맵짠 음식 먹고 나면 다음 날 붓기부터 걱정되잖아요🥹
+
+저도 얼굴부터 몸까지 퉁퉁 붓는 게 싫어서
+요즘은 과식한 다음 날 이 조합 꼭 챙겨요
+
+새콤달콤해서 디톡스 주스라고
+믿기 힘들 정도로 맛있고 효과까지 대박이라
+한 번 마셔보니 자꾸 챙기게 되더라고요🍋
+
+간단하게 챙기는 붓기 관리 주스
+레시피 궁금하시면 &#x27;나도&#x27; 남겨주세요❤️</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"맵짠 음식 먹고 나면 다음 날 붓기"라는 초구체적 페인포인트로 시작 — 어제 과식한 사람이 바로 멈춥니다. 본인도 같은 고민이라는 동경 프레임("저도 퉁퉁 붓는 게 싫어서")으로 거리감을 없애고, 맛+효과 동시 보증으로 따라할 이유를 완성했습니다.</p>
+        <div class="techs"><span class="tech">구체적 페인포인트 훅</span><span class="tech">동경 동질감 프레임</span><span class="tech">맛·효과 이중 보증</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DccWloPE2kV/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DdAQdcrzKsa">
+  <div class="rankbar r7"><span class="rank">#7</span>
+    <span class="ptags"><span class="b type">릴스</span><span class="b">📅 2026-09-08 (6일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DdAQdcrzKsa/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 236</span><span class="st">💬 1,750</span>
+        <span class="st">👁 40,608</span><span class="st">⚡ eng 1,986</span>
+        
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">건강 챙기려고 매일 풀만 먹을 순 없잖아요🥹
+
+그래서 요즘은 밥 먹을 때마다
+아삭아삭 새콤달콤한 적양파 절임을
+꼭 곁들이고 있어요🧅✨
+
+적양파에는 퀘르세틴과 안토시아닌 같은
+항산화 성분도 들어 있어서
+맛있게 먹으면서 혈관 건강까지
+챙기기 좋더라고요💕
+
+특히 고기랑 먹으면 느끼함도 잡아주고
+샌드위치나 샐러드에 넣어도 잘 어울려서
+한번 만들어두면 여기저기 계속 손이 가요🙌
+
+💌 댓글에 &#x27; 양파 &#x27; 남겨주시면 DM 바로 보내드릴게요
+💌 또는 프로필 링크에서 &lt; 970 &gt; 검색하시면 됩니다
+💌 팔로우 해주셔야 DM 오류없이 가요🙏
+👉@home.it_insta
+
+#레시피 #적양파피클 #다이어트식단 #요리꿀팁 #건강레시피</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"건강 챙기려고 풀만 먹을 순 없잖아요"라는 자기연민형 공감 훅이 강력합니다. 퀘르세틴·안토시아닌 등 성분 근거를 언급해 정보성을 높이고, 고기·샌드위치·샐러드 활용법으로 보편성을 확보했습니다. 밥상 옆 상시 반찬이라는 위치 선정도 지속 소비(=재구매)를 노린 설계입니다.</p>
+        <div class="techs"><span class="tech">공감형 자기연민 훅</span><span class="tech">성분 근거 제시(퀘르세틴)</span><span class="tech">다용도 활용법</span><span class="tech">상시 소비 아이템</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/reel/DdAQdcrzKsa/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcVFT5etH9G">
+  <div class="rankbar r8"><span class="rank">#8</span>
+    <span class="ptags"><span class="b type">릴스</span><span class="b">📅 2026-08-22 (22일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcVFT5etH9G/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 316</span><span class="st">💬 1,223</span>
+        <span class="st">👁 113,741</span><span class="st">⚡ eng 1,539</span>
+        
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">아이랑 주말에 뭐 하고 놀지 고민이라면
+이거 한번 만들어보세요🤍
+
+라면이나 과자, 비즈부터 심지어 얼음까지
+원하는 재료를 골라 넣어주기만 하면 말랑이 완성✨
+
+재료마다 만졌을 때 촉감도 다르고
+바삭바삭, 오독오독 소리까지 달라서
+하나 만들어주면 계속 다른 재료로 만들어달라고 하더라고요😆
+
+직접 만드는 과정까지 재미있어서
+주말 집콕놀이로도 딱이에요🙌
+
+만들기 키트 궁금하신 분들은
+댓글에 ‘말랑’ 남겨주세요💛
+
+💌 댓글에 &#x27; 말랑 &#x27; 남겨주시면 DM 바로 보내드릴게요
+💌 또는 프로필 링크에서 &lt; 948 &gt; 검색하시면 됩니다
+💌 팔로우 해주셔야 DM 오류없이 가요🙏
+👉@home.it_insta
+
+#말랑이만들기 #DIY #촉감놀이 #집콜놀이 #말랑이키트</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>이 계정 릴스 중 조회수 1위(11.4만). "주말에 아이랑 뭐하고 놀지 고민"이라는 육아 페인포인트 + 라면·과자·얼음까지 넣어본다는 호기심 자극 소재가 확산을 일으켰습니다. 다만 댓글은 1,223개로 상대적으로 낮은데, 정보를 숨길 게 없는 놀이 콘텐츠라 DM 퍼널이 없기 때문입니다. 도달형 콘텐츠와 전환형 콘텐츠의 차이를 보여주는 표본입니다.</p>
+        <div class="techs"><span class="tech">육아 페인포인트</span><span class="tech">호기심 자극(얼음도 가능?)</span><span class="tech">도달형 vs 전환형 구분 운영</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/reel/DcVFT5etH9G/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="Dc2MvP4TRwJ">
+  <div class="rankbar r9"><span class="rank">#9</span>
+    <span class="ptags"><span class="b type">릴스</span><span class="b">📅 2026-09-04 (10일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/Dc2MvP4TRwJ/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 209</span><span class="st">💬 1,297</span>
+        <span class="st">👁 72,547</span><span class="st">⚡ eng 1,506</span>
+        
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">세탁해도 안 빠지는 기름얼룩, 이렇게 해보세요✨
+
+얼룩 위에 칙칙 뿌리고
+잠깐 기다려주기만 하면
+액체가 하얀 가루로 변하면서 기름을 흡수해줘요🙌
+
+마지막에 가루만 툭툭 털어내면 끝!
+힘들게 문지를 필요도 없어서
+기름 튀었을 때 간편하게 쓰기 좋더라고요🤍
+
+💌 댓글에 &#x27; 나도 &#x27; 남겨주시면 DM 바로 보내드릴게요
+💌 또는 프로필 링크에서 &lt; 967 &gt; 검색하시면 됩니다
+💌 팔로우 해주셔야 DM 오류없이 가요🙏
+👉@home.it_insta
+
+#기름얼룩제거 #옷얼룩제거 #세탁꿀팁 #살림꿀팁 #생활꿀팁</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"세탁해도 안 빠지는 기름얼룩"은 실패 경험이 있는 모두의 스트레스입니다. 해결 과정이 "뿌리고 → 기다리고 → 털어내기" 3단계라는 극도의 간편함이 핵심 판매 포인트고, 제품명을 숨긴 채 <967>라는 코드로 검색하게 하는 프로필 링크 퍼널을 함께 운영합니다.</p>
+        <div class="techs"><span class="tech">만인 페인포인트</span><span class="tech">3단계 초간단 해결</span><span class="tech">제품명 비공개 + 코드 검색 퍼널</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/reel/Dc2MvP4TRwJ/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcBQImIzISB">
+  <div class="rankbar r10"><span class="rank">#10</span>
+    <span class="ptags"><span class="b type">릴스</span><span class="b">📅 2026-08-14 (30일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcBQImIzISB/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 136</span><span class="st">💬 1,331</span>
+        <span class="st">👁 46,867</span><span class="st">⚡ eng 1,467</span>
+        
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">세상에, 저 그동안
+빨래를 완전히 잘못하고 있었어요😳
+
+향 좋은 섬유유연제만 믿고
+매번 넣었었거든요
+
+근데 세탁소만 20년 하신 시아버지가
+섬유유연제는 향으로 냄새를 덮을 뿐
+코팅막 때문에 세균이 번식해서
+냄새가 다시 올라온다면서
+이걸 알려주셨는데
+
+섬유유연제 대신
+헹굴 때 이거 한 컵만 넣었더니
+빨래가 삶은 것처럼 뽀송해지고
+꿉꿉했던 냄새는 완전히 사라졌어요
+
+심지어 세탁조 살균까지 같이 되니까
+관리까지 편해져서 너무 좋더라고요
+
+💌 댓글에 &#x27; 나도 &#x27; 남겨주시면 DM 바로 보내드릴게요
+💌 또는 프로필 링크에서 &lt; 941 &gt; 검색하시면 됩니다
+💌 팔로우 해주셔야 DM 오류없이 가요🙏
+👉@home.it_insta
+
+#살림꿀팁 #세탁꿀팁 #수건세탁 #청소꿀템 #세탁꿀템</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"세상에, 저 그동안 빨래를 완전히 잘못하고 있었어요"라는 자기고백형 정정 훅. 섬유유연제의 세균 번식 코팅막 이야기는 몰랐던 정보라 저장·공유가 일어나고, "세탁소 20년 시아버지"라는 권위가 근거가 됩니다. 향만 좋으면 된다는 통념을 뒤집는 역발상 정보형 릴스의 정석입니다.</p>
+        <div class="techs"><span class="tech">자기고백형 정정 훅</span><span class="tech">통념 반박(유연제 코팅막)</span><span class="tech">경력자 권위(20년 세탁소)</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/reel/DcBQImIzISB/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+</section>
+<section class="acc" id="acc-tem_salon">
+  <div class="acc-head">
+    <div>
+      <h2>@tem_salon <span class="vname">템살롱</span></h2>
+      <p class="accpos">생활 속 꿀템·핫템 리뷰 · 팔로워 <b>60,606</b></p>
+    </div>
+  </div>
+  <div class="accstats">
+    <div class="as"><em>27</em>30일 게시물</div>
+    <div class="as"><em>1.75%</em>참여율(ER)</div>
+    <div class="as"><em>카드 20 · 릴스 7</em>포맷 분포</div>
+    <div class="as"><em>16~18시·20~21시</em>업로드 피크</div>
+  </div>
+  <div class="accbox"><h3>📍 포지셔닝</h3><p>생활 속 꿀템·핫템 리뷰 큐레이션. 협업문의 이메일 공개 → 광고·체험단 수익 모델. 팔로워 6.1만으로 가장 작지만 ER 1.75%로 효율이 좋음.</p></div>
+  <div class="accbox"><h3>💪 이 계정이 강한 이유</h3><ul><li><b>팔로워 대비 참여 효율</b> — 작은 계정으로 ER 1.75% — 알고리즘이 참여율을 보므로 소액 인플루언서로서 협상력이 있음</li><li><b>카드뉴스 표준화</b> — &quot;셀럽/전문가 소개 → 이것 미스터리 → &#x27;뭐야&#x27; 댓글 CTA&quot; 템플릿이 20편 중 대부분에 반복 적용</li><li><b>가격 충격 훅</b> — 2천원도 안 하는, 가성비 역전 등 &#x27;싸다&#x27; 프레임을 자주 사용해 전환율 확보</li><li><b>검증 소재 재활용</b> — 이지현 소재를 remio.pick 1위와 다른 각도로 재생산해 또 터뜨림</li></ul></div>
+  <div class="accbox warn"><h3>⚠️ 약점·주의점</h3><p>릴스가 7편뿐이라 도달 확장 엔진이 약함. 좋아요 절대치가 낮아(85~676) '터진 척' 화제성은 제한적. 캡션 없는 게시물 운영 등 일관성 떨어지는 부분 존재.</p></div>
+  <h3 class="top10title">🔥 최근 한 달 가장 잘 터진 게시물 TOP 10</h3>
+  
+<div class="pcard" id="DcGVZK9lAVv">
+  <div class="rankbar r1"><span class="rank">#1</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-16 (28일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcGVZK9lAVv/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 676</span><span class="st">💬 10,428</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 11,104</span>
+        <span class="st">🎞 3장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">30년 암 전문의 김진목 원장님이
+소개한 식품이라는데요👀
+
+브로콜리나 양배추처럼 특별한 채소가 아니라
+평소 쉽게 접할 수 있는 **‘이것’**이라고 해요✨
+
+식이섬유와 비타민, 미네랄 등
+다양한 영양소를 함께 챙길 수 있어
+균형 잡힌 식단에 활용하기 좋다고 합니다🙌🏻
+
+👉 궁금하시면 댓글에 “뭐야” 남겨주세요💌</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>이 계정 1위(댓글 10,428개). "30년 암 전문의"라는 최상급 의료 권위 + "브로콜리 같은 특별한 채소가 아니라 쉽게 접하는 '이것'"이라는 미스터리의 조합. 암 전문의라는 단어 하나로 콘텐츠의 무게가 달라지고, 정작 이름은 "뭐야" 댓글로만 공개됩니다. 권위×미스터리 조합의 교과서입니다.</p>
+        <div class="techs"><span class="tech">최상급 전문가 권위</span><span class="tech">이것 미스터리</span><span class="tech">뭐야 키워드 CTA</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcGVZK9lAVv/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcKg0qwiW_9">
+  <div class="rankbar r2"><span class="rank">#2</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-18 (27일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcKg0qwiW_9/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 195</span><span class="st">💬 1,928</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 2,123</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">매일 쓰는 치약, 아무거나 고르고 계신가요?🦷
+
+치약을 고를 땐 가격보다
+불소 함량도 한번 확인해보세요🔎
+
+▪️ 성분표의 불소 함량 체크
+▪️ 성인용은 1,450ppm 전후도 선택지
+▪️ 적당량 사용하고 삼키지 않기
+▪️ 치실·치간칫솔 함께 사용하기
+
+연령이나 구강 상태에 따라
+적합한 제품과 사용법은 달라질 수 있어요🌿
+필요하다면 치과 전문가와 상담해 선택하세요.
+
+댓글에 &quot;치약&quot; 남겨주세요</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"매일 쓰는 치약, 아무거나 고르세요?" — 매일 쓰지만 생각 안 하던 물건을 던지는 일상 소재의 힘. 1,450ppm 같은 구체 기준이 전문성을 만들고, 리스트형 정리(▪️)가 저장 버튼을 누르게 합니다. 다만 제품을 숨기지 않은 정보형이라 댓글은 1,928개로 1위 대비 1/5 — 미스터리 없이는 퍼널 효과가 확 줄어든다는 반증입니다.</p>
+        <div class="techs"><span class="tech">일상 소재 발굴</span><span class="tech">구체 기준(1,450ppm)</span><span class="tech">리스트형 저장 유도</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcKg0qwiW_9/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcD0PzPlLPK">
+  <div class="rankbar r3"><span class="rank">#3</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-15 (29일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcD0PzPlLPK/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 145</span><span class="st">💬 1,810</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 1,955</span>
+        <span class="st">🎞 2장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">대식가로 알려진 임지연님도
+평소 즐겨 챙겨 먹는다는 이 식단!🫶🏻
+
+전현무님도 식단 관리할 때
+꾸준히 챙겨 먹었다고 해서
+더 궁금해지더라고요😋✨
+
+무작정 굶으면서 관리하기보다는
+맛있고 든든하게 챙겨 먹으면서
+꾸준히 이어가는 게 포인트!🙌🏻
+
+식단은 &quot;뭔데&quot; 남겨주세요👍</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>임지연+전현무 셀럽 2인 결합으로 두 팬층을 동시 공략. "대식가로 알려진 임지연도"라는 반전 프레임과 "굶지 말고 먹으면서 관리"라는 다이어트 인간적 조언이 공감을 얻었습니다. "뭔데" 키워드로 마무리하는 이 계정 표준 CTA도 정착돼 있습니다.</p>
+        <div class="techs"><span class="tech">셀럽 2인 결합</span><span class="tech">반전 프레임(대식가)</span><span class="tech">굶지 않는 다이어트 포지션</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcD0PzPlLPK/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcPwcPPCfh_">
+  <div class="rankbar r4"><span class="rank">#4</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-20 (25일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcPwcPPCfh_/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 97</span><span class="st">💬 1,676</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 1,773</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">이게 하나에 2천 원도 안 한다니…😳
+두피 때문에 고민하는 분들에게
+피부과 전문의가 소개한 방법이라는데요👨🏻‍⚕️🫧
+
+머리 감을 때 활용하면
+두피와 모발을 깔끔하게 관리하는 데 도움을 줄 수 있고,
+가격도 저렴해서 꾸준히 쓰기 부담 없다고 해요🌿
+
+비슷해 보이는 종류가 정말 많은데
+아무거나 고르는 게 아니라
+딱 한 가지를 확인해서 써야 한다는 게 포인트! 👀
+
+어떤 제품인지 궁금하시면
+댓글에 ‘뭐야’ 남겨주세요💌</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"하나에 2천 원도 안 한다"는 가격 충격 + "피부과 전문의 소개" 권위의 조합. 두피 고민이라는 페인포인트가 명확하고, "딱 한 가지만 확인해서 써야 한다"는 정보 격차를 만들어 마지막까지 보게 합니다.</p>
+        <div class="techs"><span class="tech">가격 충격 훅</span><span class="tech">의료 권위</span><span class="tech">정보 격차(한 가지 확인)</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcPwcPPCfh_/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcN-2xWlL-n">
+  <div class="rankbar r5"><span class="rank">#5</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-19 (25일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcN-2xWlL-n/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 185</span><span class="st">💬 954</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 1,139</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">문숙 님이 아침마다 챙긴다는 물 한 잔🌿
+
+뜨거운 물과 미온수를 반반 섞은 뒤
+여기에 핵심재료 2가지를 넣어 마신다고 해요🍵
+
+복잡한 준비 없이 간단하게 챙길 수 있어
+아침 루틴으로 따라 하기에도 부담 없겠더라고요🙌
+
+도대체 뭘 넣는지 궁금해서
+저도 바로 찾아봤어요👀
+
+문숙 님의 ‘건강한 물’ 조합이 궁금하다면
+댓글에 ‘뭐야’ 남겨주세요🧡📩</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"아침마다 물 한 잔"이라는 초저진입 루틴 소재. 뜨거운 물+미온수 반반, 핵심재료 2가지라는 디테일이 궁금증을 쌓고, "저도 바로 찾아봤어요"라는 자기고백으로 정보의 신뢰를 만듭니다. 아침 루틴은 매일 반복되는 습관 시장이라 재방문율이 높습니다.</p>
+        <div class="techs"><span class="tech">초저진입 루틴</span><span class="tech">디테일로 궁금증 누적</span><span class="tech">찾아봤어요 신뢰 프레임</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcN-2xWlL-n/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcYkzc4FNkm">
+  <div class="rankbar r6"><span class="rank">#6</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-23 (21일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcYkzc4FNkm/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 103</span><span class="st">💬 1,035</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 1,138</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">74세에도 윤기 있는 피부로 눈길을 끄는 윤미라 배우님🌷
+
+비싼 화장품도 많이 써봤지만
+결국 자주 찾는 건 의외로 저렴한 ‘이 세럼’이라고 해요🫢
+
+건조할 때 가볍게 덧바르기 좋고
+촉촉해서 메이크업 전에도 챙겨 쓴다고 하더라구요🧴
+
+※ 사용감은 피부 타입에 따라 다를 수 있습니다.
+�댓글에 &quot;동안&quot; 남겨주세요🩷</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"74세 윤미라 배우"라는 동안의 대명사 + "비싼 화장품 말고 저렴한 세럼"이라는 가성비 반전. 셀럽 화장품 후기는 광고 의심을 받지만, 오히려 싼 것을 쓴다는 역전 구조가 진정성으로 읽힙니다. "동안" 키워드 CTA도 타깃과 정확히 맞습니다.</p>
+        <div class="techs"><span class="tech">동안 셀럽</span><span class="tech">가성비 역전 구조</span><span class="tech">동안 키워드 매칭</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcYkzc4FNkm/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DdEOccciRQa">
+  <div class="rankbar r7"><span class="rank">#7</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-09-09 (4일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DdEOccciRQa/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 135</span><span class="st">💬 979</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 1,114</span>
+        <span class="st">🎞 2장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">(캡션 없음 — 표지 텍스트로 승부)</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>캡션 없이 이미지/영상 자체로 승부한 게시물. 카드뉴스 표지의 메시지가 곧 훅이 되는 케이스로, 첫 장의 텍스트 설계가 캡션 역할까지 대신할 수 있음을 보여줍니다.</p>
+        <div class="techs"><span class="tech">무캡션 운영</span><span class="tech">표지 텍스트 = 훅</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DdEOccciRQa/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcQbOI9kdeJ">
+  <div class="rankbar r8"><span class="rank">#8</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-20 (24일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcQbOI9kdeJ/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 132</span><span class="st">💬 982</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 1,114</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">최근 한층 더 슬림해진 모습으로 화제가 된 전지현 님✨
+
+평소 자기관리를 꾸준히 하는 것으로 유명한데,
+특히 식사 루틴이 꽤 독특하더라구요👀
+
+아침에는 따로 챙겨 먹지 않고
+오후 2시쯤 되면 꼭 먹는다는 ‘이것’🥄
+오랫동안 챙겨온 식습관 중 하나라고 해요.
+
+도대체 2시에 뭘 먹는 건지 궁금해서
+저도 바로 찾아봤어요
+
+댓글에 ‘뭔데’ 남겨주세요💌</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>전지현이라는 최정상 셀럽 + "오후 2시에만 먹는 '이것'"이라는 시간 미스터리. 시간(2시)이라는 구체적 디테일이 오히려 궁금증을 증폭시킵니다. "도대체 뭔지 궁금해서 저도 찾아봤어요" 공식을 또 한 번 사용한 표준형입니다.</p>
+        <div class="techs"><span class="tech">최정상 셀럽</span><span class="tech">시간 디테일 미스터리</span><span class="tech">표준 CTA 반복</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcQbOI9kdeJ/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcdFbGyEZMh">
+  <div class="rankbar r9"><span class="rank">#9</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-25 (19일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcdFbGyEZMh/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 99</span><span class="st">💬 814</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 913</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">신체 나이가 20대로 나와 눈길을 끈 이지현 님✨
+염증 관련 검사에서도 0.09라는 수치가 알려지며
+평소 관리법까지 관심을 모았는데요👀
+
+꾸준한 운동과 식단은 물론,
+평소 항산화 영양 관리에 참고할 수 있는 이걸
+함께 챙겼다고 해요🌿
+
+어떤 건지 궁금하시면
+댓글에 ‘뭐야’ 남겨주세요💌</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>remio.pick 1위와 같은 소재(이지현 신체나이 20대, 염증수치)를 다른 각도(0.09 수치)로 재활용. 검증된 소재는 한 번 쓰고 버리지 않는다 — 같은 이슈도 훅·수치·각도를 바꿔 재생산하면 또 터진다는 것을 보여주는 표본입니다.</p>
+        <div class="techs"><span class="tech">검증 소재 재활용</span><span class="tech">각도 전환(수치 변경)</span><span class="tech">이슈 파밍</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcdFbGyEZMh/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcLZibZFHXJ">
+  <div class="rankbar r10"><span class="rank">#10</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-18 (26일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcLZibZFHXJ/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 85</span><span class="st">💬 617</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 702</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">장윤주님 관리해도 유독 변화가 더뎠던 이유?! 
+
+장윤주 메이크업 쌤이
+직접 큰돈 들여 관리하며 알게 됐다는 이것✨
+요즘 꾸준히 챙기고 있다고 해요👀
+
+✨ 댓글에 ‘뭐야’ 남겨주세요!</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"장윤주님 관리해도 유독 변화가 더뎠던 이유"라는 반전 훅 — 잘 관리하는 사람도 안 됐다는 역설이 궁금증을 만듭니다. 메이크업 쌤이 "큰돈 들여 관리하며 알게 됐다"는 1인칭 검증 프레임으로 신뢰를 얹었습니다.</p>
+        <div class="techs"><span class="tech">역설 훅(관리해도 안됨)</span><span class="tech">전문가 1인칭 검증</span><span class="tech">큰돈 들였다 소비 증거</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcLZibZFHXJ/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+</section>
+<section class="acc" id="acc-remio.pick">
+  <div class="acc-head">
+    <div>
+      <h2>@remio.pick <span class="vname">레미오(최정석)</span></h2>
+      <p class="accpos">생활템·패션템·홈·차량 꿀템 · 팔로워 <b>124,896</b></p>
+    </div>
+  </div>
+  <div class="accstats">
+    <div class="as"><em>25</em>30일 게시물</div>
+    <div class="as"><em>2.81%</em>참여율(ER)</div>
+    <div class="as"><em>카드 21 · 릴스 4</em>포맷 분포</div>
+    <div class="as"><em>19~21시</em>업로드 피크</div>
+  </div>
+  <div class="accbox"><h3>📍 포지셔닝</h3><p>"6년 동안 소비생활만 연구"라는 퍼스널 브랜딩 + 생활템/패션템/건강템 추천. 인증 배지 보유. 3개 중 압도적 ER 2.81%와 댓글 4,000~14,000개의 퍼널 효율.</p></div>
+  <div class="accbox"><h3>💪 이 계정이 강한 이유</h3><ul><li><b>3개 중 최강 퍼널</b> — 평균 댓글 4,000+, 최고 14,398개 — 키워드→DM 자동화가 가장 잘 정착된 계정</li><li><b>셀럽 소재 마스터</b> — Top 10 전부 셀럽(이지현·박진영·현빈손예진·김강우·서인영·엄태웅부부·정혜영션·이시형박사) 기반</li><li><b>수치화의 달인</b> — 신체나이 20대, 염증수치 0.9, 46kg, 178cm, 20년 — 모든 훅에 검증 가능한 숫자가 들어감</li><li><b>밤 피크 집중</b> — 19-21시 업로드 19/25편 — 퇴근 후 피크타임에 리소스 집중</li></ul></div>
+  <div class="accbox warn"><h3>⚠️ 약점·주의점</h3><p>카드뉴스 의존(21/25)이라 릴스 확장 여지가 큼. 셀럽 발언 왜곡·과장 소재(특히 건강/식품)는 표시광고·식품효능 규제 리스크 상시 존재 — 소재 검증이 필요.</p></div>
+  <h3 class="top10title">🔥 최근 한 달 가장 잘 터진 게시물 TOP 10</h3>
+  
+<div class="pcard" id="DcfVORGj0bP">
+  <div class="rankbar r1"><span class="rank">#1</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-26 (18일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcfVORGj0bP/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 937</span><span class="st">💬 14,398</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 15,335</span>
+        <span class="st">🎞 2장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">올해 43살인데도 신체나이는 20대 염증수치도 0.9나왔다는 쥬얼리 이지현님
+
+평소 어떻게 관리하는지 듣던 서인영님도 깜짝 놀랐는데요
+
+의외로 거창한 방법이 아니라 매일 물에 ‘이것’을 넣어 꾸준히 마신다고 해요‼️
+
+이것에는 우리 몸의 산화 스트레스로부터 세포를 보호하는 데 관여하는 항산화 성분이 들어 있고, 정상적인 면역 기능을 유지하는 데 필요한 영양소도 함께 챙길 수 있어요🙊
+
+특히 항산화 영양소는 체내에서 발생하는 활성산소로부터 세포를 보호하는 데 필요하고, 콜라겐 형성과 철분 흡수에도 관여해 피부와 혈관,뼈 등 정상적인 신체 기능을 유지하는 데 중요한 역할을 해요👀
+
+식물에서 얻을 수 있는 플라보노이드와 여러 폴리페놀 계열 성분도 함유되어 있어 평소 항산화 성분을 챙기려는 분들이 가볍게 활용하기 좋구요
+
+💬댓글에 하트 남겨주세요!</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>이번 조사 전체에서 가장 잘 터진 게시물(댓글 14,398개). 공식의 압축입니다: ① 셀럽(이지현) ② 충격 수치(43살에 신체나이 20대, 염증수치 0.9) ③ 제3자 검증("서인영님도 깜짝 놀랐는데요") ④ "물에 '이것'만 넣어"라는 초간단 방법 ⑤ 정작 이름은 비공개. 궁금증 해소의 유일한 길이 댓글→DM이라는 것을 완벽히 이해한 설계입니다.</p>
+        <div class="techs"><span class="tech">셀럽 권위</span><span class="tech">충격 수치(0.9)</span><span class="tech">제3자 반응 검증</span><span class="tech">이것 미스터리</span><span class="tech">DM 퍼널 최적화</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcfVORGj0bP/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcIfryojyAl">
+  <div class="rankbar r2"><span class="rank">#2</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-17 (27일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcIfryojyAl/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 1,051</span><span class="st">💬 8,956</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 10,007</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">박진영님이 말하는 지구상 가장 완벽한 음식!
+
+평소 철저한 식단과 자기관리로 유명한 박진영님이 극찬한 음식이 있는데요🫠
+
+단백질은 물론 비타민 A·D·B12, 콜린, 셀레늄 등 다양한 영양소를 한 번에 챙길 수 있어 영양 밀도가 높은 식품으로 손꼽혀요‼️
+
+특히 포만감이 좋아 아침 식사나 운동 후 식단으로도 활용하기 좋고, 간단하게 조리해서 꾸준히 챙겨 먹기 편하다는 것도 큰 장점
+
+💬댓글에 나도 남겨주세요!</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"박진영이 말하는 지구상 가장 완벽한 음식" — 자기관리의 대명사인 박진영 + 극단적 수식어(지구상 가장 완벽) 조합. 계란이라는 소재가 밝혀져도 "비타민 A·D·B12, 콜레늄" 같은 영양 정보가 정리돼 있어 저장 가치가 있습니다. 셀럽 검색 트래픽을 정보성 콘텐츠로 흡수하는 구조입니다.</p>
+        <div class="techs"><span class="tech">셀럽+극단 수식어</span><span class="tech">과학적 근거 나열</span><span class="tech">검색 트래픽 흡수</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcIfryojyAl/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DdBqNs3j1qk">
+  <div class="rankbar r3"><span class="rank">#3</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-09-08 (5일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DdBqNs3j1qk/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 920</span><span class="st">💬 5,828</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 6,748</span>
+        <span class="st">🎞 5장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">현빈 손예진 부부가 평소 아침 식단💕
+요즘 아침에 단백질을 조금 더 든든하게 챙겨 먹으려고 하는 분들도 많더라구요👀
+
+매번 계란이나 닭가슴살만 먹기 지겹다면 이렇게 소고기를 듬뿍 넣어서 만들어 먹는 것도 괜찮아요🥩
+
+소고기를 듬뿍 넣어서 단백질을 챙길 수 있고 철분, 아연, 비타민 B12 같은 영양소도 함께 들어있어서 한 끼로 먹기에도 꽤 든든!
+
+특히 겉은 바삭하고 안에는 소고기가 꽉 차 있어서 식단 느낌이 별로 안 나는데, 생각보다 만드는 방법도 간단하고 아이들도 정말 잘 먹어요‼️
+
+궁금하신분들 ❤️ 남겨주세요!!</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>현빈·손예진이라는 국내 최고 워너비 부부 + "아침 식단"이라는 일상 루틴 소재의 조합. 셀럽의 거대화된 삶도 '아침밥'이라는 접점에서 따라할 수 있는 것으로 변합니다. 단백질 트렌드라는 시의성까지 얹어 5,828개 댓글을 만들었습니다.</p>
+        <div class="techs"><span class="tech">최고 화제성 부부</span><span class="tech">거대 셀럽의 일상 접점</span><span class="tech">단백질 트렌드 편승</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DdBqNs3j1qk/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="Dc-4awuj5be">
+  <div class="rankbar r4"><span class="rank">#4</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-09-07 (6일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/Dc-4awuj5be/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 1,108</span><span class="st">💬 4,343</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 5,451</span>
+        <span class="st">🎞 5장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">발렌시아가맛이라고 난리난 아디다스 신상 운동화🖤
+
+처음 봤을 때 아디다스 맞나 싶을 정도로 투박하면서 볼륨감 있는 청키한 디자인이 진짜 예쁜데‼️
+
+특히 올블랙이라 생각보다 코디하기 어렵지 않고 와이드 팬츠나 데님, 조거팬츠에 툭 신어도 포인트🙊
+밑창 자체가 도톰하고 볼륨감이 있어서 신었을 때 자연스럽게 키높이 효과도 있고 전체적인 비율이 좋아 보이는 것도 장점인데 신어보면 착용감까지 좋아서 장시간 신어도 발이 편함👀
+
+커플템으로도 진짜 예쁨!
+
+댓글에 ❤️ 남겨주세요!</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"발렌시아가 맛이라고 난리난 아디다스" — 명품 디자인을 합리적 가격에라는 패션 욕구의 정석. 올블랙 코디 용이성, 키높이 효과 등 구매 결정 요소를 미리 답해주는 구성이라 구매 링크로 이어지는 전환형 카드뉴스입니다. 좋아요 1,108개로 이 계정 좋아요 1위인 것도 시각적 만족(신발 이미지)이 결부된 덕분입니다.</p>
+        <div class="techs"><span class="tech">프라이비트 라벨 비교</span><span class="tech">구매 장벽 사전 제거</span><span class="tech">시각 만족 + 욕구 자극</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/Dc-4awuj5be/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DdEGavgAXiT">
+  <div class="rankbar r5"><span class="rank">#5</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-09-09 (4일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DdEGavgAXiT/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 989</span><span class="st">💬 4,371</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 5,360</span>
+        <span class="st">🎞 4장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">48세 김강우님이 무려 10년 넘게 아침마다 챙겨 마신다고 알려진 건강주스인데요!
+
+한 잔만 마셔도 꽤 든든하고 포만감이 오래가는 편이라 바쁜 아침 식사 대용으로 챙기기 좋고, 단백질과 식이섬유, 좋은 지방까지 한 번에 챙길 수 있다는 게 장점👀
+
+특히 검은깨와 귀리까지 함께 갈아 먹는 조합이라 모발 건강에 필요한 영양까지 챙길 수 있는데‼️
+꾸준히 마신 분들 사이에서는 흰머리 뿌리 쪽이 까맣게 올라오고 새치가 줄었다는 후기까지나와서 직접 마셔봤더니 흰머리가 뿌리부터 진짜 까맣게 올라와서 깜짝놀랐는데🙊
+
+궁금하신 분들은 ❤️ 남겨주세요!!</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"48세 김강우가 10년 넘게 아침마다" — 나이(동안 궁금증) + 지속 기간(10년 = 검증됨) + 시간대(아침 = 따라하기 쉬움)의 3중 구체성. 흰머리 예방이라는 부가 혜택까지 얹어 중년 남성 타깃을 정확히 겨냥했습니다.</p>
+        <div class="techs"><span class="tech">3중 구체성(나이·기간·시간대)</span><span class="tech">중년 타깃 정조준</span><span class="tech">부가 혜택(모발 건강)</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DdEGavgAXiT/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="Dc433bKj7iU">
+  <div class="rankbar r6"><span class="rank">#6</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-09-05 (9일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/Dc433bKj7iU/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 638</span><span class="st">💬 4,545</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 5,183</span>
+        <span class="st">🎞 4장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">과자나 야식 생각날 때마다 부담 없이 하나씩 꺼내 먹기 좋은 초간단 간식
+
+우유를 베이스로 만들어 고소하면서 탱글탱글한 식감이 좋고 우유에 들어 있는 단백질과 칼슘까지 함께 챙길 수 있어요!
+
+여기에 비법재료를 조금 넣어주면 복잡한 과정 없이 동글동글 예쁘게 굳어서 만들어두고 냉장고에 넣어두기에도 좋은데
+
+특히 달달한 과자나 디저트가 당길 때 하나씩 집어먹기 좋고, 설탕 대신 원하는 감미료로 단맛을 조절할 수 있다는 것도 장점!
+
+재료도 간단하고 만드는 과정도 쉬워서 아이들 간식으로도 베스트!
+
+궁금하신분 댓글에 ❤️ 남겨주세요!</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"과자나 야식 생각날 때"라는 만인의 순간을 훅으로 씁니다. 우유 기반이라 고소하고 단백질·칼슘까지 챙긴다는 건강 포장으로 야식 죄책감을 해소하고, "비법재료"를 숨겨 댓글 행동을 유도합니다. 간식 대체제라는 포지션은 무한 반복 수요가 있는 시장입니다.</p>
+        <div class="techs"><span class="tech">만인 순간 훅</span><span class="tech">죄책감 해소 건강 포장</span><span class="tech">비법재료 미스터리</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/Dc433bKj7iU/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="Dc3Wu3Lj7j4">
+  <div class="rankbar r7"><span class="rank">#7</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-09-04 (9일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/Dc3Wu3Lj7j4/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 479</span><span class="st">💬 4,592</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 5,071</span>
+        <span class="st">🎞 2장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">93세에도 건강을 유지하고 있는 이시형 박사님이 강조한 식습관이 있는데요!
+
+박사님은 특히 나이가 들수록 몸속에 쌓이는 만성염증을 관리하는 것이 중요하다고 강조하시는데요!!
+
+그 비결로 이야기한 것이 식물에 자연적으로 존재하는 특별한 성분이에요!
+
+특히 식물이 스스로를 보호하기 위해 만들어내는 다양한 성분들은 과일과 채소, 콩류, 통곡물 등에 풍부하게 들어 있고, 항산화 작용과 우리 몸의 염증 반응을 조절하는 데 관여하는 것으로 연구되고 있어요‼️
+
+대표적으로 우리가 흔히 들어본 폴리페놀, 플라보노이드, 카로티노이드 같은 성분들도 여기에 포함되는데, 한 가지 음식만 고집하기보다 색깔이 다양한 식물성 식품을 골고루 섭취하는 것이 여러 종류의 성분을 챙기는 방법인데🙊
+
+댓글에 ❤️ 남겨주세요!</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"93세에도 건강한 이시형 박사" — 장수라는 궁극의 권위를 앞세웁니다. "만성염증 관리"라는 요즘 가장 핫한 건강 키워드와 연결하고, 정작 성분은 "식물이 스스로를 보호하기 위해 만드는 특별한 성분"이라고만 풀어 셀럽이 아닌 전문가 버전 미스터리 훅으로 운용합니다.</p>
+        <div class="techs"><span class="tech">장수 권위</span><span class="tech">트렌드 키워드(만성염증)</span><span class="tech">전문가 버전 미스터리</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/Dc3Wu3Lj7j4/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DdObxm2Dz0D">
+  <div class="rankbar r8"><span class="rank">#8</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-09-13 (0일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DdObxm2Dz0D/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 458</span><span class="st">💬 4,236</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 4,694</span>
+        <span class="st">🎞 2장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">엄태웅,윤혜진 부부 딸 지온이가 13살인데 벌써 178cm라니...
+
+윤혜진님이 평소 딸 식사에 자주 챙겨준다는 음식이 있는데
+그냥 먹는 것뿐만 아니라 김치볶음밥 할 때도 넣어서 먹는다고 해요🍙
+
+성장기에는 단백질을 충분히 챙기는 게 중요한데👀
+이 음식은 식물성 단백질을 챙길 수 있고 칼슘, 철, 마그네슘 같은 영양소도 들어 있어서 아이들 식단에 필수적으로 들어갈만큼 좋아요‼️
+
+무엇보다 맛이 강하지 않아서 이것저것 활용하기 편하고
+볶음밥이나 반찬에 자연스럽게 섞어주기도 좋아서 아이들 먹이기도 편한 편🙊
+
+궁금하신분들 ❤️ 남겨주세요!!</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"13살에 벌써 178cm"라는 충격 수치로 아이 키 고민 있는 부모를 즉시 멈춰 세웁니다. 김치볶음밥에 넣는다는 디테일이 "우리 집에서도 가능"하게 만들고, 식물성 단백질+칼슘 정보로 근거를 보강. 셀럽 자녀 소재는 부모 공동 타깃이라 확산 속도가 빠릅니다.</p>
+        <div class="techs"><span class="tech">충격 수치(178cm)</span><span class="tech">부모 타깃</span><span class="tech">따라하기 쉬운 디테일</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DdObxm2Dz0D/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcYOcUVDzdD">
+  <div class="rankbar r9"><span class="rank">#9</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-23 (21일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcYOcUVDzdD/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 487</span><span class="st">💬 3,621</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 4,108</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">43살에도 리즈 갱신한 서인영님
+
+최근 46kg까지 감량한 모습으로 워터밤에서 화제가 됬는데요‼️
+
+성시경님도 다이어트할 때 챙겨 먹는다는 이것은 아침 식단으로 특히 활용하기 좋은 고단백 식품이에요🙊
+
+✔️ 단백질이 풍부해 든든한 포만감 유지에 도움
+✔️ 탄수화물 위주의 아침보다 식후 혈당 변동을 줄이는 식단 구성에 유리
+✔️ 포만감이 오래가 군것질이나 다음 끼니 과식을 줄이는 데 도움
+✔️ 필수아미노산을 골고루 함유한 양질의 단백질 공급원
+✔️ 콜린을 비롯한 여러 영양소까지 간편하게 섭취
+
+특히 아침 공복에 빵이나 달달한 음식부터 먹는 것보다 단백질이 포함된 식사를 구성하면 포만감과 식후 혈당 관리 측면에서 유리할 수 있어용
+
+💬댓글에 나도 남겨주세요!!</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>서인영(46kg 감량) + 성시경이라는 셀럽 2인 결합. 워터밤 화제라는 시의성을 얹고, 체크리스트 형식(✔️ 포만감 ✔️ 혈당 ✔️ 군것질)으로 정보의 저장 가치를 높였습니다. 다이어트라는 영구 수요 시장의 정석형 구성입니다.</p>
+        <div class="techs"><span class="tech">셀럽 2인 결합</span><span class="tech">시의성(워터밤)</span><span class="tech">체크리스트형 정보</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcYOcUVDzdD/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+<div class="pcard" id="DcQuyFMD707">
+  <div class="rankbar r10"><span class="rank">#10</span>
+    <span class="ptags"><span class="b type">카드뉴스</span><span class="b">📅 2026-08-20 (24일 전)</span></span>
+  </div>
+  <div class="pbody">
+    <div class="embedwrap"><iframe loading="lazy" src="https://www.instagram.com/p/DcQuyFMD707/embed/captioned/" scrolling="no" allowtransparency="true" frameborder="0"></iframe></div>
+    <div class="pinfo">
+      <div class="stats">
+        <span class="st">♥ 329</span><span class="st">💬 3,137</span>
+        <span class="st">👁 —</span><span class="st">⚡ eng 3,466</span>
+        <span class="st">🎞 1장</span>
+      </div>
+      <details class="cap"><summary>원본 캡션 보기</summary><div class="captxt">정혜영♥션 부부가 무려 20년 동안 꾸준히 챙겨 먹었다고 알려진 건강식단
+
+평소 밥을 먹을 때 이 슈퍼푸드를 함께 넣어 먹는 것이 두 사람의 오랜 식습관 중 하나인데‼️
+
+✔️ 식이섬유가 풍부해 포만감 유지에 도움
+✔️ 베타글루칸을 함유해 콜레스테롤 개선에 도움을 줄 수 있어요
+✔️ 백미보다 단백질과 식이섬유를 함께 챙기기 좋아요
+✔️ 마그네슘·철분 등 다양한 영양소도 함유
+✔️ 평소 밥에 섞어 먹기만 하면 돼 간편하게 챙기기 좋아요
+
+특별한 보양식보다 매일 먹는 밥에 자연스럽게 더해 꾸준히 챙길 수 있다는 점이 핵심🫠
+
+💬댓글에 나도 남겨주세요</div></details>
+      <div class="analysis">
+        <h4>💡 왜 터졌나</h4><p>"정혜영·션 부부가 20년 동안" — 부부가 함께 20년이라는 기간의 힘으로 극적 신뢰를 만듭니다. 베타글루칸 등 성분 정보를 체크리스트로 정리해 저장을 유도하고, 밥에 넣어 먹는다는 초간단 루틴으로 진입장벽을 없앴습니다.</p>
+        <div class="techs"><span class="tech">기간의 신뢰(20년)</span><span class="tech">부부 공동 습관</span><span class="tech">체크리스트 정보성</span></div>
+      </div>
+      <a class="orig" href="https://www.instagram.com/p/DcQuyFMD707/" target="_blank">인스타에서 원본 열기 ↗</a>
+    </div>
+  </div>
+</div>
+</section>
+<section id="principles">
+  <h2>🧬 이들이 터지는 7가지 원리 (공통 공식)</h2>
+  
+<div class="prin">
+  <h3>1. 댓글 키워드 → DM 자동발송 퍼널</h3><p>3개 계정 모두의 수익 심장. &quot;댓글에 &#x27;조개&#x27;/&#x27;나도&#x27;/&#x27;뭐야&#x27; 남겨주세요&quot; → 자동화 툴(ManyChat 류)이 DM에 제품 링크 발송. 증거: 홈잇 1위는 좋아요 546 vs 댓글 5,429(10배), 레미오는 평균 댓글 4,000+. 강력한 이유: ① 댓글은 알고리즘 가중치 최상급 → 노출 확대 ② 댓글 친 사람에게 DM 도달률 80%+ ③ 제품명을 피드에 노출 안 하고도 수익화 ④ &#x27;정보 받기&#x27;라는 실익이 있어 유저도 거부감 없음.</p>
+  <div class="prinact"><b>→ 실행법:</b> <span>많챗(ManyChat)류 자동화 도입 or 초기엔 수동 DM</span> · <span>키워드는 1~2글자(조개/나도/뭐야)로 짧게</span> · <span>CTA는 캡션 마지막 줄 + 카드뉴스 마지막 장에 배치</span></div>
+</div>
+<div class="prin">
+  <h3>2. &quot;이것&quot; 미스터리 (정보 격차 설계)</h3><p>제품·재료 이름을 캡션과 카드뉴스에서 절대 밝히지 않음. &quot;물에 &#x27;이것&#x27;을 넣어&quot;, &quot;아침에 &#x27;이것&#x27;을 먹는다&quot;. 궁금증을 해소할 방법이 ①끝까지 보기 ②댓글 달기 ③DM 받기 세 가지뿐 — 하나의 훅으로 3개의 행동을 뽑아내는 설계. &quot;도대체 뭔지 궁금해서 저도 바로 찾아봤어요&quot;라는 자기고백 문구가 궁금증의 정당성까지 부여합니다.</p>
+  <div class="prinact"><b>→ 실행법:</b> <span>소재는 밝히되 &#x27;정체&#x27;만 숨기기</span> · <span>자기고백 문구(찾아봤어요) 추가해 신뢰 부여</span> · <span>정보의 80%만 주고 20%는 DM으로</span></div>
+</div>
+<div class="prin">
+  <h3>3. 권위 전이 (Authority Transfer)</h3><p>자기 말보다 남의 말이 강합니다. 3계정의 권위원 3종: ① 전문가(30년 암 전문의, 피부과 전문의, 93세 박사) ② 셀럽(전지현, 박진영, 현빈손예진…) ③ 경력자(국숫집 20년 이모님, 세탁소 20년 시아버지). 특히 홈잇의 &#x27;주변 고수&#x27; 프레임은 라이센스 걱정 없이 쓸 수 있는 자체 권위라 주목할 만합니다.</p>
+  <div class="prinact"><b>→ 실행법:</b> <span>니치별로 &#x27;내 권위원 10명&#x27; 리스트업</span> · <span>경력자 스토리는 지인/상황 설정으로 자체 제작 가능</span> · <span>건강 소재는 전문가 인용 형식으로 리스크 낮추기</span></div>
+</div>
+<div class="prin">
+  <h3>4. 구체적 수치의 마법</h3><p>&quot;43살에 신체나이 20대&quot;, &quot;염증수치 0.9&quot;, &quot;13살에 178cm&quot;, &quot;2천 원도 안&quot;, &quot;10년 넘게&quot;, &quot;20년 동안&quot;. Top 30 중 27개가 숫자 훅을 씁니다. 수치는 뇌가 &#x27;증거&#x27;로 처리하고, 공유할 때 인용하기 좋으며, 훅에서 스코롤을 멈추게 하는 가장 저렴한 장치입니다.</p>
+  <div class="prinact"><b>→ 실행법:</b> <span>나이·기간·가격·수치 4종 중 하나는 반드시 훅에</span> · <span>너무 깔끔한 수치보다 0.9, 1,450ppm 같은 딱 떨어지는 수치가 더 신뢰감</span> · <span>수치 근거 출처(전문의, 검사)를 한 줄 붙이기</span></div>
+</div>
+<div class="prin">
+  <h3>5. 보편 욕구 소재 + 저장 가치</h3><p>소재는 건강(염증/다이어트/키), 살림(빨래/해감/얼룩), 육아(주말놀이), 외모(동안/패션) — 검색 없이도 풀고 싶은 만인 고민만 다룹니다. 리스트·체크리스트 형식(✔️ 포만감 ✔️ 혈당…)을 써서 &#x27;나중에 다시 볼 것&#x27;을 만들고, 저장이 일어나면 알고리즘이 도달을 늘립니다.</p>
+  <div class="prinact"><b>→ 실행법:</b> <span>니치 안에서 &#x27;만인 고민 20종&#x27; 리스트 먼저 만들기</span> · <span>정보는 3~5개 불릿으로 청크화</span> · <span>체크박스 이모지로 저장 유도</span></div>
+</div>
+<div class="prin">
+  <h3>6. 포맷 이원화: 릴스=도달, 카드뉴스=전환</h3><p>홈잇은 릴스 28/37로 도달을 넓히고(조회수 4만~12.5만), 레미오·템살롱은 카드뉴스 80%로 댓글 퍼널을 굴립니다(댓글 4천~1.4만). 릴스는 볼거리(과정·비포애프터), 카드뉴스는 미스터리+CTA에 최적. 같은 소재를 릴스(확산)와 카드뉴스(전환)로 2회 생산하는 것도 정론입니다.</p>
+  <div class="prinact"><b>→ 실행법:</b> <span>주 3~4 카드뉴스 + 주 1~2 릴스 배분</span> · <span>릴스는 15~40초, 첫 2초 훅 필수</span> · <span>카드뉴스는 마지막 장에 CTA 고정</span></div>
+</div>
+<div class="prin">
+  <h3>7. 업로드 타이밍: 밤 19~21시 피크</h3><p>레미오는 25편 중 19편을 19-21시에, 템살롱도 16-21시 집중. 홈잇만 아침 8-9시 이중 피크(주부 타깃). 퇴근·저녁 후 휴대폰 타임에 게시물이 올라와야 첫 1시간 반응(알고리즘 신호)을 최대로 뽑습니다.</p>
+  <div class="prinact"><b>→ 실행법:</b> <span>본인 타깃의 휴대폰 피크타임에 맞춰 예약 업로드</span> · <span>첫 1시간 반응이 다음 날 도달을 결정</span> · <span>빈도 유지가 단발성 터짐보다 중요(월 25~37편)</span></div>
+</div>
+</section>
+<section id="actions">
+  <h2>🚀 벤치마킹 액션 플랜</h2>
+  <div class="note">⚠️ <b>반드시 지킬 것:</b> 셀럽 발언을 왜곡하거나 식품 효능을 과장하면 식약처·공정위 이슈로 계정 리스크가 됩니다. 공식은 배우되, 소재 검증과 광고 표시(유료 협업 시)는 필수입니다. 표지·문구 절대 표절 금지.</div>
+  
+<div class="phase"><div class="phead"><span class="badge">1주차</span><b>무기 확보</b></div><ul><li>벤치마킹 훅 라이브러리 만들기: 위 30개 훅을 &#x27;정정형/수치형/권위형/역설형&#x27; 4유형으로 분류해 니치 소재에 대입</li><li>내 니치 &#x27;만인 고민 20종&#x27; 리스트 작성</li><li>권위원 10명 리스트(전문가/셀럽/경력자) + 인용 가능한 수치 정리</li></ul></div>
+<div class="phase"><div class="phead"><span class="badge">2주차</span><b>포맷 테스트</b></div><ul><li>카드뉴스 3편 + 릴스 2편 업로드 (전부 위 템플릿)</li><li>모든 게시물 끝에 키워드 댓글 CTA 삽입 (초기엔 수동 DM으로도 충분)</li><li>업로드 시간 밤 20-21시 고정, 첫 1시간 반응 기록</li></ul></div>
+<div class="phase"><div class="phead"><span class="badge">3~4주차</span><b>퍼널 자동화</b></div><ul><li>DM 자동화 도입(ManyChat/국산 대안) — 키워드별 답변 메시지 + 링크 세팅</li><li>A/B 테스트: 셀럽 소재 vs 전문가 소재, 미스터리형 vs 정보공개형</li><li>터진 소재는 2주 내 다른 각도로 재생산(템살롱의 이지현 재활용 사례처럼)</li></ul></div>
+<div class="phase"><div class="phead"><span class="badge">지속</span><b>운영 원칙</b></div><ul><li>월 25편+ 유지 — 꾸준함이 알고리즘 신뢰의 기반</li><li>지표 모니터링: ER 1% 목표, 댓글:좋아요 비율 2배+ 확인</li><li>리스크 관리: 셀럽 발언 왜곡 금지, 식품 효능 과장 금지(식약처), 유료 협업은 광고 표시(공정위)</li><li>절대 표절 금지 — &#x27;공식&#x27;은 벤치마킹하되 소재·문구는 자체 제작</li></ul></div>
+</section>
+<div class="foot">데이터: Apify Instagram Scraper (게시물 180개·프로필 3건, 2026-09-14 수집) · ER = (좋아요+댓글)/팔로워×100 · 게시물 임베드는 Instagram 공식 embed 사용 — 로딩이 안 보이면 새로고침해 주세요</div>
+</div></body></html>

@@ -18,10 +18,8 @@ for r in sorted(reports, key=lambda x: x['date'], reverse=True):
   <p class="desc">{esc(r['desc'])}</p>
   <div class="actions">
     <a class="btn open" href="{esc(r['url'])}" target="_blank">리포트 열기 ↗</a>
-    <a class="btn ghost" href="https://github.com/{esc(r['repo'])}" target="_blank">저장소</a>
-    <a class="btn ghost" href="https://github.com/{esc(r['repo'])}/settings#danger-zone" target="_blank">직접 삭제</a>
   </div>
-  <div class="manage">🔧 수정·삭제는 텔레그램으로 요청 (확인 후 처리) · 주소: <code>{esc(r['url'])}</code></div>
+  <div class="manage">🔧 수정·삭제는 텔레그램으로 요청 (폴더 단위로 바로 처리) · 주소: <code>{esc(r['url'])}</code></div>
 </div>'''
 
 empty = '''<div class="empty">등록된 리포트가 없습니다.</div>''' if not reports else ''
