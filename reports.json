@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14",
+  "updated": "2026-09-16",
   "repo": "workkrst/workkrst.github.io",
   "reports": [
     {
@@ -9,6 +9,14 @@
       "path": "ig-benchmark/",
       "url": "https://workkrst.github.io/ig-benchmark/",
       "desc": "@home.it_insta(22.8만)·@tem_salon(6.1만)·@remio.pick(12.5만) — 최근 1개월 인기 게시물 Top 10 씩 + 터진 원리 7가지 + 벤치마킹 액션플랜"
+    },
+    {
+      "id": "ph-daily",
+      "title": "Product Hunt 데일리",
+      "date": "2026-09-16",
+      "path": "ph-daily/",
+      "url": "https://workkrst.github.io/ph-daily/",
+      "desc": "매일 12:30 PH 오늘의 Top 5 + 댓글 번역 브리핑 (자동 수집·날짜별 누적, 관리모드에서 삭제 요청)"
     }
   ]
 }

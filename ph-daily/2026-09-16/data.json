@@ -1,0 +1,516 @@
+{
+ "date": "2026-09-16",
+ "collected_at": "2026-09-16 10:02 KST",
+ "summary": "오늘 Top 5는 전부 AI 관련이면서도 'AI를 쓰는 사람을 위한 도구'로 쏠렸다 — AI 빌더용 결제·인증 통합 백엔드(1위 tiun), 모바일 코딩 에이전트 제어(2위 Kilo Code), 상황 인식 AI 음성입력(3위 Voiskey), 창업 지식 정리 AI(4위 siift), AI 소비자 리서치(5위 Anthropologic). 댓글 전체(60개 수집)에서도 공통 논점은 'AI 결과물을 어떻게 신뢰하고 통제할 것인가'였다.",
+ "notable": [
+  {
+   "slug": "tiun-2",
+   "why": "인증·DB를 사용자 수 제한 없이 무료로 풀고 결제 수수료로 수익을 보조하는 파격 요금 구조가 눈에 띈다. Stripe+Clerk+별도 DB를 하나로 합치는 '바이브코딩 시대의 올인원 백엔드' 포지셔닝이 1인 개발자 수요를 정확히 겨냥했다."
+  },
+  {
+   "slug": "anthropologic",
+   "why": "런치 방식 자체가 제품 시연이다. 댓글로 들어온 어려운 시장 질문에 메이커가 직접 포사이트·인류학 파이프라인을 돌려 결과 링크로 즉답했고, 이게 239개 시장 온톨로지를 내세우는 리서치 플랫폼의 신뢰를 정량 증명했다."
+  }
+ ],
+ "products": [
+  {
+   "name": "tiun.",
+   "tagline_en": "Auth, billing, and payments for AI builders",
+   "tagline_kr": "AI 빌더를 위한 인증, 빌링, 결제",
+   "image": "https://ph-files.imgix.net/86831409-94db-4f42-a2a6-651c9c669161.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Payments",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 452,
+   "comments_count": 99,
+   "maker": "Aleksandar Blazhev, Nikolaos Christoforakos, Sandro Zweig",
+   "price_model": "무료",
+   "price_detail": "PH 페이지에 'Free' 표기. 메이커 코멘트 확인: 인증·DB는 별도 과금 없음(사용자 수·DB 용량 제한 없음), 좌석(seat) 과금 없음 — 인프라 비용은 결제 수수료로 보조. 결제 처리 수수료는 Stripe와 '대체로 비슷한 수준'(문의 글에서 2.9%+ 언급), 물량 할인 가능. 요금 비교: tiun.io/pricing, tiun.io/why-tiun",
+   "desc_kr": "tiun은 AI·SaaS 개발자를 위한 올인원 백엔드로, 인증·고객 데이터·결제·빌링·분석을 하나의 시스템에 통합한 제품이다. 기존에는 Stripe(결제)+Clerk(인증)+별도 DB+인보이스 툴+분석 툴을 따로 붙여야 했지만, tiun은 구독·일회성·사용량 기반 빌링과 Merchant of Record(MoR, 부가세/인보이스/분쟁 처리)를 기본 제공해 설치 명령 한 줄로 개발 시작 당일 유료 출시가 가능하다. 결제는 갱신됐는데 웹훅 실패로 DB가 그대로라 유료 고객이 접근을 잃는 문제를 '하나의 고객 컨텍스트'로 해소한다. 인증·DB는 사용자 수·용량 제한 없이 무료이고(좌석 과금 없음), 수익은 Stripe와 비슷한 수준의 결제 수수료로 보조한다. 스위스의 PSP 파트너십을 기반으로 하며 유럽 호스팅으로의 전환을 진행 중이다.",
+   "launch_url_used": "https://www.producthunt.com/products/tiun-2",
+   "comments": [
+    {
+     "author": "Nikolaos Christoforakos",
+     "is_maker": true,
+     "text": "Hi Product Hunt! 👋 I'm Nikolaos, one of the founders of tiun.\n\nAI tools now let one builder ship what once required an entire product team. The obvious gain is speed, but turning that product into a business still requires several systems that were never designed to work together.\n\nWe saw this across 150+ founder conversations: You build the core product in days, then spend weeks connecting auth, payments, billing, and analytics.\n\nThe Problem with \"Best-in-Class\" Tool Stacks:\n• Sync Chaos: Every tool brings its own customer ID, billing state, event model, and retry logic. Your code ends up stuck keeping them in sync.\n• Broken Logic: A subscription renews in your payment provider, but a failed webhook leaves your database unchanged—so a paying customer suddenly loses access.\n\ntiun removes that coordination layer.\n\nAuthentication, payments, billing, customer data, and analytics run in one system, connected from the very first transaction:\n• All-in-One Infrastructure: Subscriptions, one-time payments, usage-based billing & Merchant of Record (MoR) services out of the box.\n• One Customer Context: Account and commercial state stay connected across the product, without another sync layer to maintain.\n• Go Live in Minutes: Connect tiun and delete weeks of redundant backend work from your roadmap.\n\ntiun isn't another isolated auth tool or payment dashboard. It is one unified system for shipping and monetizing your product.\n\nWe'd love your feedback! Give tiun a spin and tell us: Which part of turning a product into revenue still feels harder than it should? 👇",
+     "kr": "안녕하세요 Product Hunt! 👋 저는 tiun의 공동창업자 Nikolaos입니다.\n\nAI 도구 덕분에 이제 한 명의 빌더가 예전에는 제품 팀 전체가 필요했던 것을 만들어낼 수 있습니다. 눈에 띄는 이점은 속도지만, 그 제품을 사업으로 만드는 일에는 여전히 원래 함께 쓰이도록 설계되지 않은 여러 시스템이 필요합니다.\n\n150건이 넘는 창업자 대화에서 이걸 봤습니다: 핵심 제품은 며칠 만에 만들지만, 인증·결제·빌링·분석을 연결하는 데는 몇 주를 씁니다.\n\n'최고 수준' 툴 스택의 문제:\n• 동기화 혼돈: 툴마다 자체 고객 ID, 빌링 상태, 이벤트 모델, 재시도 로직이 있어 코드가 이걸 맞추는 데 발이 묶입니다.\n• 깨진 로직: 결제 제공사에서는 구독이 갱신됐는데 웹훅이 실패하면 DB는 그대로라 — 결제 중인 고객이 갑자기 접근권을 잃습니다.\n\ntiun은 그 조정 계층을 없앱니다.\n\n인증, 결제, 빌링, 고객 데이터, 분석이 하나의 시스템에서 첫 거래부터 연결되어 돌아갑니다:\n• 올인원 인프라: 구독, 일회성 결제, 사용량 기반 빌링, Merchant of Record(MoR) 서비스를 기본 제공.\n• 하나의 고객 컨텍스트: 계정과 상업 상태가 제품 전반에 연결된 채 유지되어 또 다른 동기화 계층을 관리할 필요가 없습니다.\n• 몇 분 만에 라이브: tiun을 연결하고 로드맵에서 몇 주 치의 중복 백엔드 작업을 지우세요.\n\ntiun은 또 하나의 고립된 인증 툴이나 결제 대시보드가 아닙니다. 제품을 출시하고 수익화하기 위한 하나의 통합 시스템입니다.\n\n피드백 부탁드립니다! tiun을 써보시고 알려주세요: 제품을 수익으로 바꾸는 과정에서 아직도 어렵게 느껴지는 부분은 어디인가요? 👇"
+    },
+    {
+     "author": "Scarlett.",
+     "is_maker": false,
+     "text": "Excited to hunt tiun today. @tiun is the all-in-one backend for AI and SaaS builders who want to launch and monetize their products without stitching together multiple tools for authentication, payments, billing, customer data, and analytics. Instead of combining Stripe, Clerk, a separate database, invoicing software, and multiple analytics tools, tiun brings the entire customer and revenue infrastructure into one platform. What stands out here: • Auth & User Management: Drop-in authentication without building from scratch. • Flexible Billing: Manage subscriptions, one-time payments, or usage-based billing. • Handles invoices, global taxes, and Merchant of Record (MoR) operations. • Single Dashboard: Track customers, transactions, and product activity in one place.",
+     "kr": "오늘 tiun을 헌트하게 되어 기쁩니다. @tiun은 인증, 결제, 빌링, 고객 데이터, 분석을 위해 여러 툴을 이어 붙이지 않고 제품을 출시하고 수익화하려는 AI·SaaS 빌더를 위한 올인원 백엔드입니다. Stripe, Clerk, 별도 데이터베이스, 인보이스 소프트웨어, 여러 분석 툴을 조합하는 대신 tiun은 고객·수익 인프라 전체를 한 플랫폼에 담습니다. 눈에 띄는 점: • 인증·사용자 관리: 처음부터 만들 필요 없는 바로 쓰는 인증. • 유연한 빌링: 구독, 일회성 결제, 사용량 기반 빌링 관리. • 인보이스, 글로벌 세금, Merchant of Record(MoR) 운영 처리. • 단일 대시보드: 고객, 거래, 제품 활동을 한곳에서 추적."
+    },
+    {
+     "author": "darkkraft",
+     "is_maker": false,
+     "text": "Interesting solution! Congrats for the launch!\n\nCan you give some details on the auth and the db limits/cost and also scalability? Is there a limit after which there are different costs compared to a simple db and x nr of users?\n\nAlso on the payment - how can you manage to offer such good rates compared to the alternatives? Can you give some details on how the payments are sent and if you use a PSP in the backend?\n\nI see hosted in Europe - any details you can provide on this?\n\nAgain - awesome and ambitious product! congrats for the launch.",
+     "kr": "흥미로운 솔루션이네요! 출시 축하드립니다!\n\n인증과 DB의 한도/비용, 그리고 확장성에 대해 좀 알려주실 수 있나요? 단순 DB와 사용자 수 기준으로 다른 요금이 적용되는 한계가 있나요?\n\n결제 쪽도요 — 경쟁사 대비 어떻게 이렇게 좋은 요금을 제공할 수 있죠? 결제가 어떻게 전송되는지, 백엔드에 PSP를 쓰는지 세부사항을 주실 수 있나요?\n\n유럽 호스팅으로 보이는데 — 이에 대해 알려주실 수 있는 정보가 있을까요?\n\n다시 한번 — 훌륭하고 야심 찬 제품이에요! 출시 축하합니다."
+    },
+    {
+     "author": "Sandro Zweig",
+     "is_maker": true,
+     "text": "Thanks for your support and kind words! And great questions :)\n\nOn auth + DB: right now we don't charge separately for either, and there's no user count or database size limit where a different pricing tier kicks in. We subsidize that infrastructure through our payment fee. That may evolve as we scale, but for now we want to keep the model as simple as possible. Scalability-wise it's the same stack whether you have 10 users or 100k, no migration as you grow.\n\nOn payments: yes, we do work with PSPs in the backend. I shared a bit more detail on how we're able to offer these rates in another comment here, but the short version is that we've built strong payment partnerships here in Switzerland. We're also moving off Stripe as a processor over the coming months.\n\nOn hosting: we're not 100% Europe yet, but almost! Just want to be transparent about that. You can see the full list of subprocessors on our website. Getting to a fully European setup is clearly where we we are heading.",
+     "kr": "지원과 좋은 말씀 감사합니다! 그리고 좋은 질문들이네요 :)\n\n인증+DB 관련: 현재 둘 다 별도로 청구하지 않고, 다른 요금제가 적용되는 사용자 수나 DB 용량 제한도 없습니다. 그 인프라는 결제 수수료로 보조하고 있습니다. 규모가 커지면 달라질 수 있지만, 지금은 모델을 최대한 단순하게 유지하려 합니다. 확장성 측면에서는 10명이든 10만 명이든 같은 스택이라 성장해도 마이그레이션이 필요 없습니다.\n\n결제 관련: 네, 백엔드에서 PSP와 함께 일하고 있습니다. 이 요금을 제공할 수 있는 이유는 다른 댓글에서 좀 더 설명했는데, 짧게 말하면 스위스에서 강한 결제 파트너십을 만들었다는 것입니다. 앞으로 몇 달 안에 Stripe 프로세서에서도 벗어날 예정입니다.\n\n호스팅 관련: 아직 100% 유럽은 아니지만 거의 그렇습니다! 투명하게 말씀드립니다. 전체 하위처리업체 목록은 웹사이트에서 보실 수 있습니다. 완전한 유럽 셋업이 우리가 확실히 향하는 방향입니다."
+    },
+    {
+     "author": "Daniel Zaitzow",
+     "is_maker": false,
+     "text": "Really interesting - seems like a huge undertaking from a product perspective. I'd assume folks will be a little more hesitant to pivot on the payment side of things if they're already in the Stripe ecosystem (unless fees here are significantly lower than that like 2.9%+ or whatever it is they're charging these days.\n\nSo beyond having it all baked into one system - is the pricing better or comparable than stripe for transactions?\n\nAlso - an idea that would make me think about pivoting - Clerk now only allows X amount of (I think 3 or 5) \"Impersonations\" per month on their more Jr plans.\n\nFor us as a small scale startup - that feature is super important for me as a no-code person as I can go into their account - and see if its something they're doing wrong OR if its a system issue / bug unique to their account / create things for them etc etc.\n\nBefore they allowed unlimited and its a great rev level for them but for me and what I use clerk for - its a huge headache as I don't want to scale up any of the other feature sets.\n\nNot sure if that would be a lever for anyone else to evaluate pivoting but for me that would be a great nice to have - unlimited impersonations.",
+     "kr": "정말 흥미롭네요 - 제품 관점에서 엄청난 작업일 것 같습니다. 이미 Stripe 생태계에 있는 사람들은 결제 쪽 전환을 좀 더 망설일 것 같습니다 (요금이 2.9%+ 같은 요즘 요금보다 훨씬 낮은 게 아니라면요).\n\n모든 게 한 시스템에 들어있다는 것 외에 - 거래 요금이 Stripe보다 나은가요, 아니면 비슷한 수준인가요?\n\n또 - 전환을 고려하게 만들 아이디어 하나 - Clerk은 이제 하위 플랜에서 월 X건(3~5건이었던 것 같습니다)의 '사용자 사칭(Impersonation)'만 허용합니다.\n\n저희 같은 소규모 스타트업에서 노코드 담당자인 저에게 이 기능은 정말 중요합니다. 고객 계정에 직접 들어가 그들이 잘못하고 있는 건지, 아니면 그 계정에만 있는 시스템 문제/버그인지 판단하고 대신 만들어주는 등의 작업을 할 수 있거든요.\n\n예전엔 무제한이었고 그게 Clerk에겐 좋은 매출 레벨이겠지만, 저처럼 Clerk을 이 용도로 쓰는 사람에겐 다른 기능 세트를 업그레이드하고 싶지 않아서 큰 골칫거리입니다.\n\n다른 사람들이 전환을 검토하는 계기가 될지는 모르겠지만, 저에겐 '무제한 사칭'이 훌륭한 갖고 싶은 기능이겠네요."
+    },
+    {
+     "author": "Sandro Zweig",
+     "is_maker": true,
+     "text": "Thanks Daniel! And yes — definitely a big undertaking 😃\n\nOn pricing: we're not interested in entering a pricing war with Stripe. If you compare tiun's payment processing fees with Stripe's, we're roughly on par.\n\nWe try to win by creating value outside of the Stripe ecosystem. The comparison gets more interesting once you add everything else you normally need around payments like tax compliance, billing, authentication, customer database and analytics.\n\nWe bundle that into one system and keep the overall economics very competitive. We also have more flexibility on fees and volume discounts as businesses on our platform grow.\n\nOn the impersonation point: not sure if I understood your use case 100% correctly, but here's my take:\n\nAs an admin, you can go into the tiun dashboard, inspect what happened with a customer and make changes where needed.\n\nToday our roles are still pretty simple like Admin and View Only. We want to build this out further over time, but haven't gotten to it yet ...tbh\n\nOne thing that might be relevant though: the number of people you can invite to your tiun dashboard is unlimited. We don't do seat-based pricing, so you can give your whole team access without paying more per user.",
+     "kr": "감사합니다 Daniel! 네 — 확실히 큰 작업이죠 😃\n\n요금 관련: Stripe와 요금 전쟁을 하려는 건 아닙니다. tiun의 결제 처리 수수료를 Stripe와 비교하면 대체로 비슷한 수준입니다.\n\n저희는 Stripe 생태계 밖의 가치로 승부하려 합니다. 세금 준수, 빌링, 인증, 고객 DB, 분석처럼 결제 주변에 평소 필요한 모든 것을 더하면 비교가 더 흥미로워집니다.\n\n그걸 하나의 시스템으로 묶어 전체 경제성을 경쟁력 있게 유지합니다. 플랫폼 위 사업이 성장하면 수수료와 물량 할인에서도 더 유연하게 대응할 수 있습니다.\n\n사칭(impersonation) 관련: use case를 100% 이해했는지는 모르겠지만 제 생각은 이렇습니다:\n\n관리자로서 tiun 대시보드에 들어가 고객에게 무슨 일이 있었는지 확인하고 필요한 조치를 할 수 있습니다.\n\n현재 역할은 Admin과 보기 전용처럼 아직 상당히 단순합니다. 시간이 지나면 더 확장하고 싶지만 아직 못 했습니다...솔직히요.\n\n관련 있을 만한 한 가지: tiun 대시보드에 초대할 수 있는 인원은 무제한입니다. 좌석 기반 과금이 아니라서 팀 전체에게 사용자당 추가 비용 없이 접근 권한을 줄 수 있습니다."
+    },
+    {
+     "author": "Dan Mindru",
+     "is_maker": false,
+     "text": "Super interesting idea to combine MoR with auth and analytics.\n\nI think this is going to be huge.\n\nDo you have any plans to go into storage/db so tiun would be the only platform you need to build an entire startup? 👀",
+     "kr": "MoR을 인증·분석과 결합하는 아이디어가 정말 흥미롭네요.\n\n이건 엄청나게 커질 것 같습니다.\n\n스타트업 전체를 tiun 하나로만 만들 수 있도록 스토리지/DB까지 들어갈 계획이 있나요? 👀"
+    },
+    {
+     "author": "Sandro Zweig",
+     "is_maker": true,
+     "text": "Thanks Dan, appreciate it!\n\nRight now we're deliberately focused on the commercial layer: auth, customer database, payments, MoR, tax and analytics as one system. That's where the fragmentation actually hurts.\n\nFor your app's own data, Supabase and Neon are great products and we'd rather plug into them at this point. That said, we already store a lot of the data a startup cares about :) user data, payment data, product data. So the line between \"our database\" and \"your app's database\" gets blurry fast. A broader data layer is never off the table, we just want to nail our current offering before we branch out.\n\nIf you have a specific use case in mind, I'd love to hear it. That's exactly the kind of signal that shapes what we build next.",
+     "kr": "감사합니다 Dan, 고맙습니다!\n\n지금은 의도적으로 상업 계층, 즉 인증·고객 DB·결제·MoR·세금·분석을 하나의 시스템으로 만드는 데 집중하고 있습니다. 파편화가 실제로 아픈 곳이 바로 거기니까요.\n\n앱 자체의 데이터에는 Supabase와 Neon 같은 훌륭한 제품이 있고, 지금 단계에서는 그것들과 연동하는 쪽을 선호합니다. 다만 이미 스타트업이 신경 쓰는 많은 데이터(사용자, 결제, 제품 데이터)를 저장하고 있어서 '우리 DB'와 '앱의 DB' 경계는 빠르게 흐려집니다. 더 넓은 데이터 계층이 후보에서 빠지는 일은 없지만, 먼저 현재 제공하는 것을 완벽히 하고 싶습니다.\n\n구체적인 use case가 있다면 꼭 듣고 싶네요. 그게 다음에 만들 것을 결정하는 신호이니까요."
+    },
+    {
+     "author": "Diana Robin",
+     "is_maker": false,
+     "text": "The idea of one customer context makes sense. I have been burned by that exact bug where payment renews but access gets revoked. How do you prevent that race condition?",
+     "kr": "하나의 고객 컨텍스트라는 아이디어가 타당해 보입니다. 결제는 갱신됐는데 접근권이 끊기는 바로 그 버그로 곤란을 겪은 적이 있습니다. 그 레이스 컨디션은 어떻게 막나요?"
+    },
+    {
+     "author": "Ansh Deb",
+     "is_maker": false,
+     "text": "Ooh interesting. I already have a SaaS running on Stripe. Is tiun mainly for new products. Or is migrating an existing subscription business available too?",
+     "kr": "오, 흥미롭네요. 저는 이미 Stripe로 돌아가는 SaaS가 있습니다. tiun은 주로 신규 제품용인가요? 아니면 기존 구독 사업의 이전(마이그레이션)도 지원되나요?"
+    },
+    {
+     "author": "Nikita Savchenko",
+     "is_maker": false,
+     "text": "Sounds like \"build in minutes not hours\" 😃 Payment-wise, how is it different from integrating with MoRs, and what's your fee?",
+     "kr": "'몇 시간이 아니라 몇 분 만에 구축' 같네요 😃 결제 측면에서 MoR 연동과 어떻게 다르고, 수수료는 얼마인가요?"
+    },
+    {
+     "author": "Sandro Zweig",
+     "is_maker": true,
+     "text": "Thanks Nikita! Payment-wise, we're a MoR, so we handle the usual stuff like VAT/sales tax, invoicing and disputes.\n\nThe main difference is everything around the payment. With most MoRs you still need separate tools for auth, your customer database and analytics. tiun combines all of that with payments in one backend and one data model.\n\nSo instead of integrating 4–5 different tools (and paying a subscription for all of them:) and connecting the data yourself, you can basically start with tiun and build from there.\n\nYou can integrate manually or install our skills and connect your agent to our MCP, so getting started is pretty quick.\n\nOn pricing you can go to our website tiun.io/pricing and see how we compare to other players here: tiun.io/why-tiun",
+     "kr": "감사합니다 Nikita! 결제 측면에서 저희는 MoR이라 VAT/판매세, 인보이싱, 분쟁 같은 평범한 일들을 처리합니다.\n\n주된 차이는 결제 '주변'의 모든 것입니다. 대부분의 MoR에서도 인증, 고객 DB, 분석은 별도 툴이 필요합니다. tiun은 그 모든 것을 결제와 함께 하나의 백엔드, 하나의 데이터 모델로 결합합니다.\n\n4~5개의 다른 툴을 연동하고(전부 구독료를 내면서 :) 데이터를 직접 연결하는 대신, tiun으로 시작해 거기서 확장하면 됩니다.\n\n수동으로 통합하거나 저희 스킬을 설치해 에이전트를 저희 MCP에 연결할 수 있어 시작이 꽤 빠릅니다.\n\n요금은 웹사이트 tiun.io/pricing에서 확인하시고, 다른 업체들과의 비교는 tiun.io/why-tiun에서 보실 수 있습니다."
+    }
+   ],
+   "warnings": [
+    "og:image 미확인: 페이지 메타데이터(og/jsonLd)에서 이미지 URL을 추출할 수 없어 태스크 제공 폴백 썸네일 사용",
+    "런치 전용 /launches 페이지 없음(첫 런치, Launches 탭 부재) — 런치 토론이 제품 오버뷰 페이지(https://www.producthunt.com/products/tiun-2)에 임베드되어 있어 댓글 11건을 여기서 수집, 1건(Diana Robin)은 포럼 스레드 https://www.producthunt.com/p/tiun-2/tiun-is-live 에서 수집",
+    "Launch Team이 'Show more'로 잘려 3명(Aleksandar Blazhev, Nikolaos Christoforakos, Sandro Zweig)만 확인 — 추가 멤버 있을 수 있음",
+    "업보트 452·댓글 99는 태스크 제공값이며 페이지 카운터에서 직접 확인 불가 (런치 당일 실시간이라 수시 변동)"
+   ],
+   "comment_summary": "올인원 백엔드 콘셉트에 전반적 호평. 인증·DB 무료 정책의 지속가능성, 경쟁사 대비 결제 수수료 수준, 유럽 호스팅 범위가 핵심 질문이었고 메이커는 '결제 수수료로 인프라 보조 + 스위스 PSP 파트너십, 수개월 내 Stripe 프로세서 대체'라고 답했다.",
+   "slug": "tiun-2"
+  },
+  {
+   "name": "Kilo Code",
+   "tagline_en": "Start coding agents, control sessions, review PRs. Anywhere.",
+   "tagline_kr": "코딩 에이전트를 시작하고, 세션을 제어하고, PR을 검토하세요. 어디서든.",
+   "image": "https://ph-files.imgix.net/96f3101a-40e9-430c-9e1b-5a2b9ab9b510.gif?auto=compress&codec=mozjpeg&cs=strip&dpr=2&fit=max&fm=webp&frame=1&h=48&w=48",
+   "categories": [
+    "Android",
+    "iOS",
+    "Developer Tools"
+   ],
+   "upvotes": 389,
+   "comments_count": 56,
+   "maker": "fmerian, Arkadiy Kondrashov, Scott Breitenother",
+   "price_model": "확인불가",
+   "price_detail": "이번 출시 관련 페이지에 가격·과금 안내 없음. 앱은 오픈소스로 공개(GitHub Kilo-Org/cloud, 메이커 코멘트로 확인). 과거 Kilo 포럼 글에서 '무료 옵션 포함 500+ 모델' 선택 가능 언급이 있으나 모바일 앱 자체의 과금 체계는 이번 페이지에서 미확인",
+   "desc_kr": "Kilo Code for iOS/Android는 오픈소스 AI 코딩 에이전트 플랫폼 'Kilo Code'의 모바일 앱이다. 클라우드 에이전트를 구동하고, 자신의 컴퓨터에서 돌아가는 VS Code·CLI 세션을 원격 제어하며, GitHub PR을 검토해 책상 없이도 에이전트 작업 전체를 이어갈 수 있다. 앱 자체는 코드를 실행하지 않는 클라이언트이며, 라이브 에이전트 목록·위젯·iOS 라이브 액티비티로 실행 상태를 한눈에 보여준다. 기기 음성 인식이나 Kilo Gateway 모델을 통한 다국어 음성 입력으로 에이전트에 응답할 수 있다. 앱은 오픈소스(GitHub Kilo-Org/cloud)로 공개돼 있으며 2026-09-15 출시에서 당일 2위를 기록했다.",
+   "launch_url_used": "https://www.producthunt.com/p/kilocode/kilo-code-for-ios-and-android",
+   "comments": [
+    {
+     "author": "fmerian",
+     "is_maker": true,
+     "text": "From day one, the mission has been to build an all-in-one, agentic engineering platform that supports you wherever you are.\n\nIt started with a VS Code extension, launched 18 months ago, then a JetBrains plugin, 6 months later. Both ranked among the Top Products on Product Hunt.\n\nKilo Code is now available on your phone. Download now:\n• Kilo Code for iOS\n• Kilo Code for Android\n\nS/O to @iscekic for the stellar job here - view source code\n\nLooking forward to seeing what you'll be building with Kilo Code.",
+     "kr": "첫날부터 저희 미션은 어디에 있든 여러분을 지원하는 올인원 에이전틱 엔지니어링 플랫폼을 만드는 것이었습니다.\n\n18개월 전 VS Code 익스텐션으로 시작해 6개월 뒤 JetBrains 플러그인이 나왔고, 둘 다 Product Hunt 톱 제품에 올랐습니다.\n\n이제 Kilo Code를 휴대폰에서 만나실 수 있습니다. 지금 다운로드하세요:\n• iOS용 Kilo Code\n• Android용 Kilo Code\n\n이 훌륭한 작업을 해낸 @iscekic에게 박수 - 소스 코드 보기\n\n여러분이 Kilo Code로 만들어갈 것들을 기대하겠습니다."
+    },
+    {
+     "author": "Igor Šćekić",
+     "is_maker": true,
+     "text": "As agentic engineering has evolved, I've found myself spending more and more time in the same loop:\n\n1. Give an agent a task and wait for it to create a PR.\n2. Review the PR and merge it.\n3. Repeat.\n\nEventually, I realized I didn't need to be at my desk for any of this. I could keep work moving while getting on with the rest of my day. That realization led to the Kilo mobile app.\n\nThe goal is simple: everything you can do at your desk, I want you to be able to do from your phone too (or a tablet, if you want to get fancy).\n\nIt has completely changed how I work. I use the app to build the app. I can take a walk in the park in the middle of the day while my agents keep working. A trip to the bank? No problem. A vet appointment? I can review a PR from the waiting room.\n\nI care deeply about making Kilo the best way to work from your phone, but I know your workflow may look different from mine. If you try the app and find something missing, please open an issue in our GitHub repo. The app is open source, and I'll gladly consider your request.",
+     "kr": "에이전틱 엔지니어링이 발전하면서 저는 점점 같은 루프에 더 많은 시간을 쓰게 됐습니다:\n\n1. 에이전트에게 작업을 주고 PR이 만들어지길 기다린다.\n2. PR을 검토하고 머지한다.\n3. 반복한다.\n\n결국 깨달았습니다. 이 모든 걸 위해 책상에 있을 필요는 없다는 것을. 하루의 나머지 일정을 소화하면서도 일은 계속 굴러가게 할 수 있습니다. 그 깨달음이 Kilo 모바일 앱으로 이어졌습니다.\n\n목표는 단순합니다: 책상에서 할 수 있는 모든 것을 휴대폰에서도 (더 그럴듯하게 하고 싶다면 태블릿에서도) 할 수 있게 하는 것.\n\n제 작업 방식이 완전히 바뀌었습니다. 저는 이 앱으로 앱을 만듭니다. 한낮에 공원을 산책해도 에이전트들은 계속 일하고, 은행 업무? 문제없습니다. 동물병원 예약? 대기실에서 PR을 검토하면 됩니다.\n\nKilo를 휴대폰으로 일하는 최고의 방법으로 만드는 데 진심입니다만, 여러분의 워크플로는 저와 다를 수 있다는 걸 압니다. 앱을 써보고 빠진 게 있다면 GitHub 저장소에 이슈를 열어주세요. 앱은 오픈소스이고 기꺼이 검토하겠습니다."
+    },
+    {
+     "author": "Hamza Afzal Butt",
+     "is_maker": false,
+     "text": "Whats the main use case you see for mobile users? Are people building features from their phones, or mostly reviewing PRs and managing agent sessions?\n\nCongrats @arkadiy_kilo & team.",
+     "kr": "모바일 사용자의 주요 사용 사례를 어떻게 보고 계신가요? 사람들이 휴대폰에서 기능을 만들고 있나요, 아니면 대부분 PR 검토와 에이전트 세션 관리를 하고 있나요?\n\n축하합니다 @arkadiy_kilo & 팀."
+    },
+    {
+     "author": "Arkadiy Kondrashov",
+     "is_maker": true,
+     "text": "hey! Thanks for the question!\nIt's both. The idea was to build an app that can cover the whole workflow. As for my personal use case, I usually use it for the new landing pages/landing pages updates, including research and implementation. And I also review PRs of my colleagues.",
+     "kr": "안녕하세요! 질문 감사합니다!\n둘 다입니다. 전체 워크플로를 커버하는 앱을 만들자는 것이 취지였습니다. 제 개인적인 사용 사례로는 보통 새 랜딩 페이지/랜딩 페이지 업데이트(리서치와 구현 포함)에 사용하고, 동료들의 PR도 검토합니다."
+    },
+    {
+     "author": "Noah Anderson",
+     "is_maker": false,
+     "text": "The ability to control CLI sessions remotely stands out. Is there a way to quickly see which sessions are still running and which ones need attention?",
+     "kr": "CLI 세션을 원격으로 제어할 수 있다는 점이 눈에 띕니다. 아직 실행 중인 세션과 주의가 필요한 세션을 빠르게 확인할 방법이 있나요?"
+    },
+    {
+     "author": "Igor Šćekić",
+     "is_maker": true,
+     "text": "The live agents list shows status of everything running, at a glance. There are also widgets and iOS live activity integrations which do the same thing.",
+     "kr": "라이브 에이전트 목록에서 실행 중인 모든 것의 상태를 한눈에 볼 수 있습니다. 같은 기능을 하는 위젯과 iOS 라이브 액티비티 연동도 있습니다."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "Is there voice recognition for replies to coding bots from mobile or is it still text only?\nBtw, Congratulations @fmerian @arkadiy_kilo @brian_turcotte & team Kilo Code 🚀",
+     "kr": "모바일에서 코딩 봇에게 답장할 때 음성 인식이 되나요, 아니면 아직 텍스트만 되나요?\n참고로 축하합니다 @fmerian @arkadiy_kilo @brian_turcotte & Kilo Code 팀 🚀"
+    },
+    {
+     "author": "Arkadiy Kondrashov",
+     "is_maker": true,
+     "text": "the app support voice recognition in different languages. You can use native device voice input or use Kilo Gateway model.",
+     "kr": "앱은 다양한 언어의 음성 인식을 지원합니다. 기기 기본 음성 입력을 사용하거나 Kilo Gateway 모델을 쓸 수 있습니다."
+    },
+    {
+     "author": "Julian Constantine",
+     "is_maker": false,
+     "text": "This looks useful. Can it host an entire app for mobile ? For example, if I want to vibe code a specific type of usecase on my phone directly, can it do that and run it?\n\nGood luck with the launch!",
+     "kr": "유용해 보이네요. 모바일에서 앱 전체를 호스팅할 수 있나요? 예를 들어 휴대폰에서 바로 특정 유스케이스를 바이브코딩해서 실행할 수도 있나요?\n\n출시 잘 되길 바랍니다!"
+    },
+    {
+     "author": "Igor Šćekić",
+     "is_maker": true,
+     "text": "The mobile app doesn't run any code itself, it acts as a client for cloud agents or cli sessions running on your own computer.\n\nThank you!",
+     "kr": "모바일 앱은 자체적으로 코드를 실행하지 않고, 자신의 컴퓨터에서 돌아가는 클라우드 에이전트나 CLI 세션의 클라이언트로 동작합니다.\n\n감사합니다!"
+    },
+    {
+     "author": "Aleh Barysevich",
+     "is_maker": false,
+     "text": "Congrats on launching! Looks really good, will definitely check it out",
+     "kr": "출시 축하합니다! 정말 좋아 보이네요, 꼭 써볼게요"
+    },
+    {
+     "author": "Arkadiy Kondrashov",
+     "is_maker": true,
+     "text": "thank you!\nNo, it doesn't host the entire app. For my work related tasks, I use Vercel and have all credentials ready on my local machine to deploy the apps.",
+     "kr": "감사합니다!\n아니요, 앱 전체를 호스팅하지는 않습니다. 업무 관련 작업에는 Vercel을 사용하고, 앱 배포에 필요한 모든 자격 증명을 로컬 머신에 준비해둡니다."
+    }
+   ],
+   "warnings": [
+    "og:image 미확인: 페이지 메타데이터(og/jsonLd)에서 이미지 URL을 추출할 수 없어 태스크 제공 폴백 썸네일 사용",
+    "Launch Team이 'Show more'로 잘려 3명(fmerian, Arkadiy Kondrashov, Scott Breitenother)만 확인 — 댓글에서는 Igor Šćekić(앱 개발 주도)와 Job Rietbergen도 Maker 배지로 활동",
+    "가격·과금 정보가 이번 출시 관련 페이지에 없어 price_model을 '확인불가'로 기록 (앱의 오픈소스 공개 여부는 확인됨)",
+    "페이지 카운터 '56/388→389'의 순서 해석 차이로 수집 초안에서 업보트·댓글이 뒤바뀌었음 — 홈페이지 순위 정렬(1위452 > 2위 > 3위352)과 홈·스레드 양쪽 동일 표기를 근거로 389=업보트, 56=댓글로 확정"
+   ],
+   "comment_summary": "모바일에서 코딩 에이전트 세션을 제어하고 PR을 리뷰한다는 발상에 반응이 좋다. 주 사용 사례, 음성 입력 지원, 모바일에서의 실행 범위 질문에 메이커가 '앱은 클라우드/CLI 세션의 클라이언트'라며 제품 경계를 명확히 답했다.",
+   "slug": "kilocode"
+  },
+  {
+   "name": "Voiskey",
+   "tagline_en": "AI voice typing that sounds right in every app",
+   "tagline_kr": "어떤 앱에서든 상황에 맞게 말이 정리되는 AI 음성 타이핑",
+   "image": "https://ph-files.imgix.net/fa69e222-a6f8-4001-931c-0bbd32849eb4.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Productivity",
+    "Artificial Intelligence",
+    "Audio"
+   ],
+   "upvotes": 352,
+   "comments_count": 114,
+   "maker": "Jenny Liu, Sherry Zhang, Chloe D, lilycoco, Zac Zuo, Raymond Wang",
+   "price_model": "프리미엄",
+   "price_detail": "무료로 시작 가능(페이지 배지 'Free Options', 소개글 'It's free to start'). Pro 유료 플랜 존재하며 런치 기간 한정 프로 1개월 무료 제공. 구체 금액은 페이지에 없음",
+   "desc_kr": "Voiskey는 음성으로 말하면 말 그대로 받아쓰는 수준을 넘어, '말한 의도'와 '누가 읽을지'를 판단해 받아쓰기 결과를 그 상황에 맞게 다듬어주는 AI 음성 입력 도구다. 친구에게 보내는 메시지는 편한 말투로, 동료에게 보내는 메모는 정중한 문체로 바꿔주고, 사용자의 말버릇·속어·고유명사를 학습해서 한 번 교정한 용어는 다음부터 알아서 맞춰준다. 발화 중 언어를 자동으로 인식해 코드스위칭(한 문장에 여러 언어 섞기)도 처리하고, 자기 언어로 말하면 다른 언어로 번역해 주며, 원하는 내용을 말해주면 입력창에 바로 넣어주는 Ask AI 기능도 있다. iOS, macOS, Android, Windows에서 쓸 수 있고 100개 이상 언어를 지원한다.",
+   "launch_url_used": "https://www.producthunt.com/products/voiskey",
+   "comments": [
+    {
+     "author": "Jenny Liu",
+     "is_maker": true,
+     "text": "Hi Product Hunt, I'm Jenny, from the Voiskey team. We started this because of the same wall we kept hitting - AI dictation still isn't truly edit-free. The text comes out polished, and a lot of the time sanded flat: a message to a friend comes back like a memo, or a note to a colleague comes back like a template. None of it sounds like you, so you have to go back in and manually re-edit it before you send it. That's what Voiskey is built around. We called it \"expression intelligence\". Voiskey doesn't just catching your words. It works out what you meant, who's going to read it, and how you'd have put it yourself. The polish moves. Your voice stays. Why Voiskey: * Fits the moment. Reads the situation you're writing into and adjusts how the text comes out. * Keeps your voice. Your slang, your shorthand, and your way of putting things stay. * Learns your words. Remembers the names and terms you correct, so you fix them once. * Translates as you speak. Say it in your language, send it in theirs. It reads native, not translated. * Ask AI. Say what you want written and it lands in the field. Ask a question and the answer opens in a window. It's free to try, and there's a free month of Pro during launch. We'd love to hear what you think!",
+     "kr": "안녕하세요, Voiskey 팀의 Jenny입니다. 우리가 계속 부딪히던 벽에서 출발했습니다. AI 받아쓰기는 아직 진짜 '수정 불필요' 수준이 아니라는 점이죠. 결과물은 매끈하지만 대부분 평평하게 다듬어져서, 친구에게 보내는 메시지는 회보처럼, 동료에게 보내는 메모는 템플릿처럼 나옵니다. 어느 것도 내 목소리가 아니라서 보내기 전에 수동으로 다시 고쳐야 하죠. Voiskey는 바로 그 지점을 위해 만들었습니다. 우리는 이것을 '표현 지능(expression intelligence)'이라 불렀습니다. Voiskey는 단어를 받아쓰기만 하지 않습니다. 당신이 무엇을 의도했는지, 누가 읽을지, 그리고 본인이라면 어떻게 썼을지를 스스로 파악합니다. 다듬음은 움직이되, 목소리는 그대로입니다. * 상황에 맞춥니다 — 쓰고 있는 곳의 상황을 읽고 결과물의 톤을 조정합니다. * 목소리를 지킵니다 — 당신의 은어, 단축 표현, 표현 습관이 그대로 남습니다. * 단어를 배웁니다 — 교정한 이름과 용어를 기억해 한 번만 고치면 됩니다. * 말하면서 번역합니다 — 내 언어로 말하고 상대 언어로 보내세요. 번역투가 아니라 원어민처럼 읽힙니다. * Ask AI — 원하는 글을 말하면 입력창에 들어가고, 질문하면 답이 창으로 열립니다. 무료로 써볼 수 있고, 런치 기간에는 프로 1개월이 무료입니다."
+    },
+    {
+     "author": "Vikram",
+     "is_maker": false,
+     "text": "Handling the code-switching automatically without digging into settings every time is exactly what multilingual folks have been waiting for such a nice launch... congrats team👋",
+     "kr": "설정을 일일이 뒤지지 않고도 코드스위칭을 자동으로 처리해주는 건 다국어 사용자들이 정말 기다려온 기능이에요. 멋진 런치네요... 팀 축하드려요👋"
+    },
+    {
+     "author": "Atul",
+     "is_maker": false,
+     "text": "Nice launch ! keeping your own writing styles while decreeing is a really useful idea, and also the context aware editing sounds interesting. how well does this work with uncommon name or the technical terms????",
+     "kr": "런치 축하합니다! 받아쓰면서도 본인 글 스타일을 유지한다는 건 정말 유용한 아이디어고, 문맥 인식 편집도 흥미롭네요. 흔치 않은 이름이나 전문 용어는 얼마나 잘 처리하나요????"
+    },
+    {
+     "author": "Sherry Zhang",
+     "is_maker": true,
+     "text": "Good question! It handles uncommon names and technical terms reasonably well, and especially if you add it to the dictionary or if correct it once. It remembers and prioritize terms you use often.",
+     "kr": "좋은 질문이에요! 생소한 이름과 전문 용어도 꽤 잘 처리하고, 특히 사전에 추가하거나 한 번만 고치면 됩니다. 자주 쓰는 용어는 기억해서 우선 반영해요."
+    },
+    {
+     "author": "Peggy",
+     "is_maker": false,
+     "text": "Remembering a name after one correction sounds like a small feature I'd appreciate every day.",
+     "kr": "한 번만 고치면 이름을 기억해준다는 것, 매일 고마워하게 될 소소한 기능이네요."
+    },
+    {
+     "author": "Chloe D",
+     "is_maker": true,
+     "text": "Those tiny repeats add up. Voiskey learns names, jargon, and spelling preferences so you shouldn't have to fix the same term over and over.",
+     "kr": "그런 사소한 반복이 쌓이면 꽤 큰 일이죠. Voiskey는 이름, 전문 용어, 표기 선호를 학습해서 같은 용어를 계속 고치게 하지 않습니다."
+    },
+    {
+     "author": "Adana Marukhyan",
+     "is_maker": false,
+     "text": "Congrats, guys! Really cool stuff. And the question I always ask - what about the Armenian language? =)",
+     "kr": "축하해요! 정말 멋진 제품이네요. 그리고 제가 늘 하는 질문 — 아르메니아어는 어떤가요? =)"
+    },
+    {
+     "author": "Jenny Liu",
+     "is_maker": true,
+     "text": "Thanks Adana! Great news — Armenian is already supported for both voice input and translation. Give it a try and let us know what you think 🙌",
+     "kr": "감사합니다 Adana! 좋은 소식이에요 — 아르메니아어는 음성 입력과 번역 모두 이미 지원됩니다. 써보시고 어떤지 알려주세요 🙌"
+    },
+    {
+     "author": "Mi Lee",
+     "is_maker": false,
+     "text": "this looks pretty solid tbh, switching languages at work is such a hassle so curious if this actually helps",
+     "kr": "솔직히 꽤 탄탄해 보여요. 업무 중 언어를 바꾸는 게 정말 번거로워서, 실제로 도움이 되는지 궁금하네요."
+    },
+    {
+     "author": "Jack ruirui",
+     "is_maker": false,
+     "text": "For research notes, I'd want to dictate a rough explanation while keeping the technical terms intact.",
+     "kr": "연구 노트용이라면, 대충 설명을 말로 받아적으면서도 전문 용어는 그대로 유지되길 원해요."
+    },
+    {
+     "author": "Evan Chen",
+     "is_maker": false,
+     "text": "How do you decide how much to clean up? I'd want the rough edges fixed without losing what I meant.",
+     "kr": "얼마나까지 다듬을지는 어떻게 정하나요? 거친 부분은 고치되 내 의도는 잃고 싶지 않아서요."
+    },
+    {
+     "author": "Nancy Brown",
+     "is_maker": false,
+     "text": "Voickey is a great product, its help me a lot. quick question is it also in Urdu language?",
+     "kr": "Voiskey는 정말 좋은 제품이에요, 많은 도움이 됐어요. 간단히 질문드려요 — 우르두어도 지원되나요?"
+    }
+   ],
+   "warnings": [
+    "페이지에 별도 런치 페이지(/products/voiskey/launches/...) 또는 포럼(/p/voiskey) 링크가 없음 — 제품 페이지가 'Launching today' 상태로 런치 댓글을 직접 표시하므로 해당 페이지에서 댓글 수집 (1페이지 기준, 전체 114개 중 일부)",
+    "og:image 메타데이터가 페이지에 노출되지 않음 — 페이지에서 확인된 로고 이미지 URL(64x64) 사용, 폴백 썸네일과 동일 파일",
+    "메이커는 'Launch Team' 섹션(Zac Zuo, Jenny Liu, Raymond Wang)과 댓글 Maker 라벨(Jenny Liu, Sherry Zhang, Chloe D, lilycoco, Raymond Wang)에서 확인"
+   ],
+   "comment_summary": "코드스위칭 자동 처리와 '내 말투 유지'가 호평 포인트. 생소한 고유명사·전문용어 처리에는 '한 번 교정하면 학습한다'고 답했고, 아르메니아어·우르두어 등 개별 언어 지원 문의도 이어졌다.",
+   "slug": "voiskey"
+  },
+  {
+   "name": "siift",
+   "tagline_en": "Turn AI noise into better business decisions",
+   "tagline_kr": "AI 노이즈를 더 나은 비즈니스 의사결정으로",
+   "image": "https://ph-files.imgix.net/d68d045c-dd7f-4b4a-904c-8ef8df4785d9.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Productivity",
+    "Artificial Intelligence",
+    "Business"
+   ],
+   "upvotes": 221,
+   "comments_count": 17,
+   "maker": "Samim Safaei (창업자), Siva Palakurthi, Ben Lang, Tristan Pollock",
+   "price_model": "프리미엄",
+   "price_detail": "무료 플랜 있음(페이지 배지 'Free Options'). 유료 플랜 존재하며 런치 기간 한정 평생 30% 할인(배지 '30% off any paid plan', 메이커 소개 '30% off lifetime with our launch deal'). 구체 금액은 페이지에 없음",
+   "desc_kr": "siift는 창업자가 AI 챗봇에 흩어놓은 대화·아이디어·조언을 하나로 모아 비즈니스 전체의 '살아있는 지도'로 만들어주는 AI 의사결정 도구다. 검증, 빌드 전략, GTM, 성장 단계에서 사용자의 비즈니스 맥락과 Lean Canvas 같은 검증된 프레임워크를 근거로 가정을 검증하고 리스크를 짚어준다. 모든 아이디어에는 고객 인터뷰나 웹 소스 같은 근거가 축적되어야 신뢰 점수를 받고, 근거는 별도 AI가 독립 평가해 AI의 일방적 조언를 방지한다. 팀이 공유하는 비주얼 캔버스에 전략·근거·결정·결과가 연결되어 지금 뭘 해야 하는지 우선순위를 보여준다.",
+   "launch_url_used": "https://www.producthunt.com/products/siift",
+   "comments": [
+    {
+     "author": "Samim Safaei",
+     "is_maker": true,
+     "text": "Hey Product Hunt! I'm Samim, founder of siift 👋 📖 Why we built siift — Two years ago I ran my last startup on a general-purpose AI. It felt like a superpower: research, plans, content, decisions, all accelerated. As the business grew, our thinking got buried across chats, and no one really understood the details anymore. AI did everything we asked, without any second thought or filtering. It helped us make rushed decisions, not informed ones. The work it produced wasn't documented, reliable or built to scale, so we followed its advice until we were lost in the noise. Lacking a clear direction, we had to shut down the company. AI didn't kill the business. It let us go further than we should have, which cost us a year and tens of thousands of dollars. So we built the tool we wished we'd had, to prevent others from falling into the same rabbit hole. 💡 What siift does — siift helps you decide. It's for anyone building a business or working on a project who has to make risky decisions and figure out what deserves their time. Instead of another chat window, you get to: See the big picture. Ideas, actions and results on one visual canvas your team can share. Trust data-driven guidance. Follow evidence and metrics instead of black-box, yes-man AI advice. Build on everything. Your context, strategy and decisions all compound scalabley. Know what's next. See where you are, what you've learned, and what is actually a priority. siift balances the convenience of AI automation with human judgement and control. 🎁 Product Hunt Launch Offer — This week only, sign up to get 30% off lifetime with our launch deal. 🔗 Try siift today (https://app.siift.ai/) We'd genuinely love your feedback. What works? What doesn't? And what else should a Human-first AI for serious business builders offer?",
+     "kr": "안녕하세요 PH! siift 창업자 Samim입니다 👋 📖 siift를 만든 이유 — 2년 전 저는 지난 스타트업을 범용 AI에 의존해 운영했습니다. 리서치, 계획, 콘텐츠, 의사결정이 모두 빨라져 초능력 같았죠. 하지만 회사가 커질수록 사고가 채팅 속에 묻혔고, 아무도 세부 내용을 제대로 파악하지 못했습니다. AI는 묻는 뭐든 필터 없이 해줬고, 우리는 신중한 판단이 아닌 성급한 결정을 내리게 됐습니다. 결과물도 문서화되지 않고 신뢰할 수 없어 확장 불가능했고, 조언을 따라가다 소음 속에 길을 잃었습니다. 결국 회사를 접어야 했어요. AI가 회사를 죽인 게 아니라, 가도 되지 않을 곳까지 더 멀리 가게 만들어 1년과 수만 달러의 대가를 치르게 한 겁니다. 그래서 같은 함정에 빠지는 사람이 없도록, 우리가 있었으면 했던 도구를 만들었습니다. 💡 siift가 하는 일 — siift는 의사결정을 돕습니다. 리스크 있는 결정을 내려야 하는 비즈니스 빌더와 프로젝트 수행자를 위한 도구예요. 또 다른 채팅창 대신: 큰 그림을 보고(아이디어·실행·결과를 팀이 공유하는 하나의 캔버스에), 데이터 기반 가이던스를 신뢰하고(블랙박스 예스맨 AI 조언 대신 근거와 지표를 따르고), 모든 것을 축적하며(맥락·전략·결정이 누적 성장), 다음을 알게 됩니다(현재 위치, 배운 것, 진짜 우선순위). siift는 AI 자동화의 편의성과 인간의 판단·통제 사이의 균형을 잡습니다. 🎁 PH 런치 혜택 — 이번 주 가입 시 평생 30% 할인. 오늘 siift를 써보세요. 피드백을 정말로 기다립니다!"
+    },
+    {
+     "author": "Vikram",
+     "is_maker": false,
+     "text": "Love the focus on human judgment, AI is great for speed but having a central source of truth for strategy is so necessary. congrats for launch🙌",
+     "kr": "인간 판단에 초점을 맞춘 점이 좋아요. AI는 속도 면에서 훌륭하지만 전략의 중앙 신뢰 소스(single source of truth)가 있는 건 정말 필수죠. 런치 축하합니다🙌"
+    },
+    {
+     "author": "Julian Constantine",
+     "is_maker": false,
+     "text": "Congrats on the launch!! What models are you using in the back? And how do you deal with LLM hallucinations?",
+     "kr": "런치 축하합니다!! 뒤에서 어떤 모델을 쓰고 있나요? 그리고 LLM 할루시네이션은 어떻게 다루시나요?"
+    },
+    {
+     "author": "Samim Safaei",
+     "is_maker": true,
+     "text": "thank you 🫡 We found that you don't need to use the latest or biggest models to get top-tier performance. It's all about the harness you build around it! We have reduced hallucinations a lot just by being very strict on our system grounding and memory layer.",
+     "kr": "감사합니다 🫡 최신·최대 모델을 안 써도 최상위 성능을 낼 수 있다는 걸 발견했어요. 핵심은 모델 주위에 만드는 하네스(파이프라인)입니다! 시스템 그라운딩과 메모리 레이어를 매우 엄격하게 구성하는 것만으로 할루시네이션을 많이 줄였습니다."
+    },
+    {
+     "author": "CHRISTIAN ONOCHIE",
+     "is_maker": false,
+     "text": "How does siift decide when an assumption is risky or needs to challenged?",
+     "kr": "siift는 어떤 가정이 위험하거나 검증이 필요한지를 어떻게 판단하나요?"
+    },
+    {
+     "author": "Siva Palakurthi",
+     "is_maker": true,
+     "text": "Great question. Siift actually starts from a fairly conservative position: an assumption is considered risky until there's enough evidence to support it. We use a scoring system that looks at how important the assumption is to the business, how strong the supporting evidence is, and whether there are conflicting signals. The evidence itself is also evaluated independently by a separate AI service, rather than just relying on the AI that generated the assumption in the first place. So the goal isn't to declare an assumption right or wrong - it's to surface the ones where being wrong would matter most, but the evidence is still weak, so founders know what to validate first.",
+     "kr": "좋은 질문이에요. siift는 꽤 보수적인 출발점을 갖습니다: 충분한 근거가 뒷받침될 때까지 모든 가정은 위험한 것으로 간주됩니다. 가정이 비즈니스에 얼마나 중요한지, 뒷받침 근거가 얼마나 강한지, 상충하는 신호가 있는지를 보는 스코어링 시스템을 사용하죠. 근거 자체도 가정을 만들어낸 AI가 아닌 별도 AI 서비스가 독립적으로 평가합니다. 목표는 가정의 옳고 그름을 선언하는 게 아니라, '틀렸을 때 타격이 가장 큰데 근거는 아직 약한' 가정을 표면화해 창업자가 무엇부터 검증할지 알게 하는 것입니다."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "Where 'proven processes' are concerned, what frameworks do they follow - the well-tested methodologies, or something self-developed? Btw, Congratulations @samims @sivapoba & team @siift 🚀✌️",
+     "kr": "'검증된 프로세스'와 관련해서 어떤 프레임워크를 따르나요 — 검증된 기존 방법론인가요, 자체 개발한 건가요? 참으로 @samims @sivapoba & @siift 팀 런치 축하합니다 🚀✌️"
+    },
+    {
+     "author": "Samim Safaei",
+     "is_maker": true,
+     "text": "great question! We leverage the top standard frameworks taught in business school or entrepreneurship programs - like Lean Canvas, MBM, etc. Thanks for your support 🙏 🙌",
+     "kr": "좋은 질문이에요! 비즈니스 스쿨이나 창업 프로그램에서 가르치는 표준 프레임워크를 활용합니다 — Lean Canvas, MBM 등이요. 응원 감사합니다 🙏 🙌"
+    },
+    {
+     "author": "Santosh Kumar",
+     "is_maker": false,
+     "text": "How does the artificial intelligence verify evidence from real customer interviews rather than just relying on generic startup frameworks?",
+     "kr": "AI가 일반적인 스타트업 프레임워크에만 의존하지 않고 실제 고객 인터뷰에서 나온 근거를 어떻게 검증하나요?"
+    },
+    {
+     "author": "Samim Safaei",
+     "is_maker": true,
+     "text": "important distinction for sure! One of the unique things about siift is, every idea must have evidence to be trust-worthy. That could be customer interviews, web sources, or other things - this evidence is cumulative too, so its not a one-shot yes/no check on say one customer interview. Our system scores all this evidence (with multiple AIs) to minimize bias in the process!",
+     "kr": "정말 중요한 구분이에요! siift의 독특한 점 중 하나는 모든 아이디어가 신뢰받으려면 반드시 근거가 있어야 한다는 겁니다. 고객 인터뷰, 웹 소스 등이 그 근거가 될 수 있고, 이 근거는 누적되므로 인터뷰 한 건으로 예/아니오를 판정하는 일회성 체크가 아닙니다. 편향을 최소화하기 위해 여러 AI로 이 모든 근거에 점수를 매깁니다!"
+    },
+    {
+     "author": "Favour Y",
+     "is_maker": false,
+     "text": "seeing a tool turn that noise into clear execution steps is refreshing because i have been through the nightmare of conflicting advisor chats.",
+     "kr": "그 노이즈를 명확한 실행 단계로 바꿔주는 도구를 보니 새롭네요. 상충하는 조언 채팅의 악몽을 직접 겪어봐서요."
+    },
+    {
+     "author": "Tristan Pollock",
+     "is_maker": true,
+     "text": "congrats! Excited to bring this product to the people ✨",
+     "kr": "축하합니다! 이 제품을 사람들에게 선보이게 되어 기대돼요 ✨"
+    }
+   ],
+   "warnings": [
+    "페이지에 별도 런치 페이지(/products/siift/launches/...) 또는 포럼(/p/siift) 링크가 없음 — 제품 페이지가 'Launching today' 상태로 런치 댓글을 직접 표시하므로 해당 페이지에서 댓글 수집 (1페이지 기준, 전체 17개 중 12개 선별)",
+    "og:image 메타데이터가 페이지에 노출되지 않음 — 페이지에서 확인된 로고 이미지 URL(64x64) 사용, 폴백 썸네일과 동일 파일",
+    "메이커는 'Launch Team' 섹션(Ben Lang, Siva Palakurthi, Tristan Pollock)과 댓글 Maker 라벨·창업자 서술(Samim Safaei)에서 확인. Tristan Pollock의 댓글에는 본인 제품 Incredible의 Maker 배지가 붙어 있으나, siift Launch Team 섹션에 이름이 있어 is_maker: true로 표기",
+    "댓글 원문의 마크다운 강조 기호(**)는 제거하고 문구는 그대로 유지함"
+   ],
+   "comment_summary": "AI 조언 홍수 속 '전략의 신뢰 소스' 필요성에 공감하는 댓글이 많다. 사용 모델·할루시네이션 대응, 위험 가정 판정 기준('근거 없으면 일단 위험'), 프레임워크 근거(Lean Canvas 등) 질문에 메이커가 상세히 답했다.",
+   "slug": "siift"
+  },
+  {
+   "name": "Anthropologic",
+   "tagline_en": "The zero distance consumer research platform.",
+   "tagline_kr": "소비자와의 거리를 0으로 만드는 소비자 리서치 플랫폼.",
+   "image": "https://ph-files.imgix.net/20690900-14c6-4878-81fa-c7a57e140c10.png",
+   "categories": [
+    "Marketing",
+    "Artificial Intelligence",
+    "Data & Analytics"
+   ],
+   "upvotes": 151,
+   "comments_count": 45,
+   "maker": "Angad Chowdhry",
+   "price_model": "무료체험",
+   "price_detail": "런치 기간 $500 상당 무료 크레딧 제공. 제품 페이지에 PH 'Free Options' 배지 표시. 메이커 코멘트에서도 'free credits' 언급. 유료 플랜 구조·금액은 페이지에 미기재",
+   "desc_kr": "Anthropologic는 시장조사 플랫폼을 8년 만들어온 Quilt.ai 팀의 최신 소비자 조사 플랫폼으로, '깊지만 느린' 전통 조사, '빠르지만 얕은' 소셜리스닝, '유창하지만 문화적으로 맹각인' LLM의 한계를 동시에 메우는 것이 포지션이다. 자체 '휴먼 컨텍스트 프로토콜(HCP)'로 인터넷 전체를 읽고, 시장마다 가치·상징·긴장·역사를 담은 온톨로지를 기반으로 소비자·카테고리·문화에 대한 해석을 제공한다. 239개 시장, 100개 이상 언어를 커버하며, 담론(discourse) 분석, 트렌드, 합성 설문(VOX), 세그멘테이션, 광고 크리에이티브 테스트, 미래(포사이트) 시뮬레이터, '인류학자에게 질문' 등 9가지 워크플로를 몇 분 만에 실행할 수 있다.",
+   "launch_url_used": "https://www.producthunt.com/p/anthropologic/anthropologic",
+   "comments": [
+    {
+     "author": "Angad Chowdhry",
+     "is_maker": true,
+     "text": "Hi Product Hunt 👋\n\nWe've been building market research platforms for eight years, and we are excited to share our latest product evolution: Anthropologic.\n\nThe best brands in the world have contributed to our whole thesis behind Anthropologic: a repeatable, scalable system for closing the distance to consumer, category and culture so brands can make better decisions for the people they serve.\n\nMy challenge to the community: what's a question about a market, community or culture you've never been able to get a good answer to? Post it below and I'll run it live today.",
+     "kr": "Product Hunt 여러분 👋\n\n저희는 8년 동안 시장조사 플랫폼을 만들어왔고, 그 최신 진화형인 Anthropologic를 공개하게 되어 기쁩니다.\n\n세계 최고의 브랜드들이 Anthropologic의 테제 전체에 기여했습니다. 소비자, 카테고리, 문화와의 거리를 좁혀 브랜드가 고객을 위해 더 나은 결정을 내릴 수 있게 하는, 반복 가능하고 확장 가능한 시스템이라는 것입니다.\n\n커뮤니티에 던지는 질문입니다. 시장, 커뮤니티, 문화에 대해 지금까지 만족스러운 답을 얻지 못했던 질문이 무엇인가요? 아래에 남겨주시면 오늘 라이브로 직접 돌려보겠습니다."
+    },
+    {
+     "author": "Bhaskara Kempaiah",
+     "is_maker": false,
+     "text": "Curious to know the future of Quick Commerce in India, I personally don't think it's sustainable to be buying household items several times in a day (happening now), we moved from a planned grocery visit that was once a month (or twice) to every day / weekly ordering in Amazon / Flipkart to now.. ordering 4 or 5 times in a day :(\n\nI would like to know the long term impact of this on mindset, thought process, thinking... and relationships. We are headed towards the world of instant gratification!",
+     "kr": "인도 퀵커머스의 미래가 궁금합니다. 하루에 여러 번 생필품을 사는 것(지금 실제로 일어나는 일)은 지속 가능하지 않다고 personally 생각합니다. 한 달에 한두 번 계획적으로 장을 보던 때에서, 아마존/플립카트로 매일·매주 주문하던 시기를 거쳐 이제는 하루에 4~5번 주문하고 있네요 :(\n\n이것이 사고방식, 사유 과정, 관계에 미칠 장기적 영향을 알고 싶습니다. 우리는 즉각적 만족의 세계로 향하고 있습니다!"
+    },
+    {
+     "author": "Angad Chowdhry",
+     "is_maker": true,
+     "text": "@bhaskara_kempaiah1 Great question. I ran two pipelines for you.\n\nA future / foresight simulator of future of QSR: https://anthropologic.quilt.ai/pipelines/6aa8f3f5d1f2b84245184090\n\nAn \"ask an anthropologist\" to get a \"why\" behind your question: https://anthropologic.quilt.ai/pipelines/6aa8f1d708670f253fd727d0\n\nThe first one will have a lot more data and hedge a lot more, the second one will get to the heart of the matter :D",
+     "kr": "@bhaskara_kempaiah1 좋은 질문이네요. 두 개의 파이프라인을 돌려봤습니다.\n\n퀵커머스(QSR)의 미래에 대한 퓨처/포사이트 시뮬레이터: https://anthropologic.quilt.ai/pipelines/6aa8f3f5d1f2b84245184090\n\n질문 뒤의 '왜'를 짚어주는 '인류학자에게 질문': https://anthropologic.quilt.ai/pipelines/6aa8f1d708670f253fd727d0\n\n첫 번째는 데이터가 훨씬 많고 조건을 달며 신중하게 답하고, 두 번째는 문제의 핵심에 직행합니다 :D"
+    },
+    {
+     "author": "lovejeet singh",
+     "is_maker": false,
+     "text": "Hey Angad! The product looks awesome! How do we build human context protocol?",
+     "kr": "안녕하세요 Angad! 제품이 정말 멋져 보입니다! 휴먼 컨텍스트 프로토콜은 어떻게 만드는 건가요?"
+    },
+    {
+     "author": "Angad Chowdhry",
+     "is_maker": true,
+     "text": "@lovejeet_singh6 HCP Is our name for the interpretation layer.\n\nThousands of connected nodes per market capturing values, symbols, tensions and history, which every incoming signal gets read through. It's the thing that turns \"this is what people said\" into \"this is what it means here.\" (expert views)\nIts built on a grounded research (from social to academia) analysis of 239 markets that is then interpreted via our frameworks and becomes the bedrock for any job that is run on the platform.\nA good demo of this is on the \"ask an anthropologist\" app on the platform, but it layers through all the apps.",
+     "kr": "@lovejeet_singh6 HCP는 저희가 해석 레이어를 부르는 이름입니다.\n\n시장마다 수천 개의 연결된 노드가 가치, 상징, 긴장, 역사를 담고 있고, 모든 신호가 이를 통과하며 해석됩니다. '사람들이 뭐라고 말했는가'를 '여기서 그것이 무엇을 의미하는가'로 바꿔주는 장치죠 (전문가 견해).\n소셜부터 학계까지의 근거 기반 리서치로 239개 시장을 분석하고, 이를 저희 프레임워크로 해석해 만든 것이 플랫폼에서 돌아가는 모든 작업의 기반이 됩니다.\n플랫폼의 '인류학자에게 질문' 앱에서 좋은 데모를 볼 수 있고, 모든 앱에 레이어처럼 적용됩니다."
+    },
+    {
+     "author": "Hannah A",
+     "is_maker": false,
+     "text": "Congrats! Very interesting product! I got married 6 months ago, yet my TikTok feed is still so full of wedding content. Would love to know why Filipinos are so invested in other people's weddings online? 👀😁",
+     "kr": "축하합니다! 정말 흥미로운 제품이네요! 저는 6개월 전에 결혼했는데도 틱톡 피드는 여전히 웨딩 콘텐츠로 가득해요. 필리핀 사람들은 왜 온라인에서 남의 결혼식에 그렇게 푹 빠져 있는 걸까요? 👀😁"
+    },
+    {
+     "author": "Aniket Devarkar",
+     "is_maker": false,
+     "text": "Really like what you're trying to do here. The whole idea of getting beyond what people say and understanding why they actually behave a certain way is pretty interesting.\n\nI've worked around lending and pricing, and one thing I've always wondered is what borrowers really mean when they say they want the \"best\" loan. Is it the lowest rate? Lower EMI? Fewer fees? Faster approval? Less paperwork? Or just going with a lender they trust?\n\nWould be cool to see what Anthropologic comes up with here. @angad_chowdhry would love to see you run this one live :)",
+     "kr": "여기서 하려는 일이 정말 마음에 듭니다. 사람들이 '말하는 것' 너머에서 왜 실제로 그렇게 행동하는지를 이해한다는 발상이 참 흥미롭습니다.\n\n저는 대출·가격 쪽에서 일해왔는데, 늘 궁금했던 건 차용자들이 '최고의' 대출을 원한다고 말할 때 실제로 무슨 뜻인지입니다. 최저 금리? 낮은 원리금(EMI)? 수수료 절감? 빠른 승인? 서류 최소화? 아니면 그냥 믿을 수 있는 대출기관을 고르는 걸까요?\n\nAnthropologic가 여기서 무엇을 내놓을지 보고 싶네요. @angad_chowdhry 이거 라이브로 돌려주면 좋겠습니다 :)"
+    },
+    {
+     "author": "Angad Chowdhry",
+     "is_maker": true,
+     "text": "@aniket_devarkar Ah thats a big big question.\nBorrower Segments: https://anthropologic.quilt.ai/pipelines/6aa8fc5408670f253fd72889 to give you insight into \"who\". Rest you can avail of your free credits!",
+     "kr": "@aniket_devarkar 아, 그야말로 아주 큰 질문이네요.\n차용자 세그먼트: https://anthropologic.quilt.ai/pipelines/6aa8fc5408670f253fd72889 에서 '누구'에 대한 인사이트를 얻을 수 있습니다. 나머지는 무료 크레딧으로 이용하시면 돼요!"
+    },
+    {
+     "author": "Venugopal Ganganna",
+     "is_maker": false,
+     "text": "I just used the product and ran discourse, trend, survey and anthropology question and the results are quite insightful and awesome. Ability to get insights so fast addresses the core gap in the current marketing value chain. Will try other features around creative testing, discourse, segmentation etc",
+     "kr": "방금 제품을 직접 써서 담론(discourse), 트렌드, 설문, 인류학 질문을 돌려봤는데 결과가 꽤 인사이트 있고 훌륭합니다. 이렇게 빠르게 인사이트를 얻을 수 있다는 게 현재 마케팅 밸류체인의 핵심 공백을 메워줍니다. 크리에이티브 테스팅, 담론 분석, 세그멘테이션 등 다른 기능도 써볼 예정입니다"
+    },
+    {
+     "author": "Michelle Gay",
+     "is_maker": false,
+     "text": "Bros just dropped the trick to writing research reports in an hour 😮‍💨",
+     "kr": "형님들이 방금 리서치 보고서를 한 시간 만에 쓰는 비법을 그냥 공개해버렸네요 😮‍💨"
+    },
+    {
+     "author": "Saurabh Indoria",
+     "is_maker": false,
+     "text": "@angad_chowdhry Congratulations on the launch!\n\nI always wonder how we can close the loop on various aspects of understanding and actioning upon market insights. I run a few D2C brands myself, and I often like to understand consumer behaviour and get some actionable points which can be deployed in my ads and then close the loop by understanding how the new ads moved the needle.\n\nCurrently I am trying to scale a D2C brand for mosquito zappers in India, especially for travellers and car owners. I wonder what kinda insights I can gain with Anthropologic that can be used for improving our advertisements and brand positioning in the Indian market. Cheers!",
+     "kr": "@angad_chowdhry 런치 축하합니다!\n\n시장 인사이트를 이해하고 실행으로 옮기는 여러 단계를 어떻게 선순환으로 연결할지 늘 고민입니다. 저도 D2C 브랜드 몇 개를 운영하는데, 소비자 행동을 이해해 광고에 바로 쓸 실행 포인트를 뽑고, 새 광고가 성과를 얼마나 움직였는지 확인하며 루프를 닫는 방식을 좋아합니다.\n\n지금은 인도에서 여행자·차량 소유주 대상 모기 퇴치기 D2C 브랜드를 스케일링 중입니다. Anthropologic로 인도 시장의 광고 개선과 브랜드 포지셔닝에 쓸 수 있는 인사이트를 어떻게 얻을 수 있을까요? 감사합니다!"
+    },
+    {
+     "author": "Sebin Joseph",
+     "is_maker": false,
+     "text": "Hey, Angad! The product looks awesome, congrats on the launch.\nHow does Anthropologic evaluate ad creatives for cultural relevance and brand impact?\nWould love to know how these insights translate into stronger product positioning and branding.",
+     "kr": "안녕하세요 Angad! 제품 정말 멋지네요, 런치 축하드립니다.\nAnthropologic는 광고 크리에이티브의 문화적 적합성과 브랜드 임팩트를 어떻게 평가하나요?\n이런 인사이트가 더 강한 제품 포지셔닝과 브랜딩으로 어떻게 이어지는지 알고 싶습니다."
+    }
+   ],
+   "warnings": [
+    "제품 페이지에서 og:image 메타태그가 노출되지 않아, 페이지 본문에서 확인된 로고 원본 파일 URL(ph-files.imgix.net/20690900-14c6-4878-81fa-c7a57e140c10.png, 리사이즈 파라미터 제거)을 image로 사용",
+    "제품 페이지 링크에 /launches 형태 런치 페이지가 없어, /p/anthropologic 포럼 인덱스에서 확인된 런치 스레드(https://www.producthunt.com/p/anthropologic/anthropologic)에서 댓글 수집 (45개 중 상위 노출분 위주, 1페이지 기준)",
+    "Launch Team은 Angad Chowdhry, Anurag Banerjee, Thomas Lau 3명까지만 표시되고 'Show more'로 잘려 있어 전체 메이커 명단은 미확인. 런치 스레드 게시자이자 메이커는 Angad Chowdhry (X: @angadc)",
+    "가격 관련 확인 가능한 것은 'Free Options' 배지와 '$500 worth of credits' 런치 특전뿐 — 유료 플랜 세부 금액은 페이지에 미기재"
+   ],
+   "comment_summary": "메이커가 '답을 못 얻던 시장 질문을 던져라'며 댓글 질문에 라이브 파이프라인을 돌려 링크로 즉답하는 참여형 런치가 인상적. 퀵커머스 미래, 차용자 심리 등에 실제 결과물로 화답하며 239개 시장 커버리지를 직접 시연했다.",
+   "slug": "anthropologic"
+  }
+ ]
+}
