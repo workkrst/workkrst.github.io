@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-09-17</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-09-17 · Top 5 · 수집 댓글 50개 · 수집 2026-09-17 16:23 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-09-17",
+ "collected_at": "2026-09-17 16:23 KST",
+ "summary": "AI 관련 제품이 5개 전부를 차지한 하루다. 개발자 인프라(Weave Router, Appwrite)가 상위 2위를 나눴고, 구글의 실시간 음성 모델(Gemini 3.8 Live)과 AI 회의 비서(Toki)가 뒤를 이었으며 5위에는 소비자형 놀이 앱(CAT ME)이 올랐다. 댓글에서는 비용·지연시간 같은 실사용 조건 확인과 함께, AI가 대신 움직일 때의 투명성(원본 사진 즉시 삭제, AI 비서임을 밝히는 표시)을 챙기려는 반응이 공통으로 눈에 띄었다.",
+ "notable": [
+  {
+   "slug": "weave",
+   "why": "코딩 에이전트 요청을 난이도별로 가장 저렴한 모델에 분배하는 라우터로 1위. 벤치마크 수치를 근거로 제시했고, 싼 모델의 긴 궤적 문제 지적에 프로덕션 트레이스 데이터로 맞받아답하는 등 5개 제품 중 기술 논쟁이 가장 활발했다."
+  },
+  {
+   "slug": "cat-me-app",
+   "why": "사진을 닮은 고양이로 바꿔주는 가벼운 소비자 앱이 개발자 도구가 강세인 날에 5위까지 올랐다. 친구 사진 업로드 시 개인정보 처리 문제를 댓글로 묻자 메이커가 즉시 삭제·무저장이라고 답하며 신뢰를 확보한, 댓글 응대가 제품 성격과 맞물린 사례."
+  }
+ ],
+ "products": [
+  {
+   "name": "Weave Router 2.0",
+   "tagline_en": "Subscription aware coding agent router",
+   "tagline_kr": "구독 상황을 인지하는 코딩 에이전트 라우터",
+   "image": "https://ph-files.imgix.net/7f1b28a8-15a3-4049-8c23-c27f7ab11645.png",
+   "categories": [
+    "Open Source",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 307,
+   "comments_count": 44,
+   "maker": "Adam Cohen (공동창업자). 런치 팀: Ben Lang, Adam Cohen, Andrew Churchill / 메이커 답글: Adam Cohen, Brennan Lupyrypa, Steven",
+   "price_model": "freemium",
+   "price_detail": "PH에 'Free Options' 배지 표시. npx @workweave/router 한 줄로 설치해 사용, Elastic License 2.0 소스 공개(source-available). 50인 이상 엔지니어 팀은 FDE 상담 제공. 페이지에 유료 플랜 금액은 미표기.",
+   "desc_kr": "Weave Router 2.0은 Claude Code·Codex·Cursor 같은 코딩 에이전트 앞에 드롭인 엔드포인트로 붙는 모델 라우터다. 에이전트가 보내는 요청마다 난이도를 채점해서 그 작업을 해낼 수 있는 가장 저렴한 모델로 보내며, 쉬운 턴은 DeepSeek·GLM·Kimi가, 어려운 작업은 프론티어 모델이 맡는다. 기존 구독 플랜으로 Codex 안에서 Claude 모델을, Claude Code 안에서 GPT 모델을 쓰는 멀티 구독 라우팅이 핵심 기능이고, 복잡도·비용·남은 쿼터 중 골라 라우팅 기준을 정할 수 있다. 캐시 상태를 추적해 예상 절감액이 캐시 재구축 비용보다 클 때만 모델을 바꾸는 캐시 인식 전환으로 비용 절감의 대부분을 만든다. 발표 기준으로 GPT-6 Astra 대비 약 절반 비용, 2배 이상 속도로 동급 성능을 냈다고 주장한다.",
+   "launch_url_used": "https://www.producthunt.com/products/weave",
+   "comments": [
+    {
+     "author": "Adam Cohen",
+     "is_maker": true,
+     "text": "Hey Product Hunt, I'm Adam, Co-founder of Weave!\n\nThe Problem\nCoding agents send every request to one model. A one-line config change and a cross-service migration both go to the same frontier model at the same price. Teams are paying frontier rates for routine work, and the bill grows with every agent they add.\n\nMost tools in this space follow one of two flawed approaches:\n- Gateways – They give you one endpoint and a menu of models. You still pick the model yourself, so nothing actually gets cheaper.\n- Manual model switching – Flipping /model mid-session breaks your prompt cache, and on long sessions the re-billed context eats the savings.\n\nAfter running into this on our own agent traffic, we built Weave Router (weaveos.com/router) to solve it.\n\nHow Weave Router 2.0 is Different\nWeave Router plugs into Claude Code, Codex, and Cursor as a drop-in endpoint. It reads every request your agent makes, scores how hard it is, and sends it to the cheapest model that will get it right.\n\nThe benchmarks: We ran 2.0 head to head against GPT-6 Astra, each task run twice (pass@2).\n- Terminal-Bench 4.0 – Tied pass rate within the confidence interval. 52% of Astra's cost. 2.2x faster.\n- SWE-Atlas Codebase QnA – Tied pass rate within the confidence interval. 46% of Astra's cost. 2.5x faster.\nFull results at weaveos.com/router.\n\n- Complexity-scored routing – A new classifier trained on 10x more real agentic coding sessions routes on task difficulty, not task type. DeepSeek, GLM, and Kimi handle the simple turns. Astra and Fable handle the hard ones.\n- Cache-aware switching – 2.0 tracks cache state per provider and per session. It only switches models when the expected savings beat the cost of rebuilding the cache. This is where most of the cost win comes from.\n- Multi-subscription routing – Use Claude models inside Codex and GPT models inside Claude Code. Route by complexity, by cost, or by whichever plan still has quota this month.\n\nWho is this for?\nIf you or your team run coding agents daily, Weave Router gets you Astra-level results at about half the cost and more than twice the speed, without changing your tools.\n\nGet started today: Try it at weaveos.com/router. Install with one command: npx @workweave/router. Source-available under Elastic License 2.0. Teams of 50+ engineers can book time with our FDEs.",
+     "kr": "안녕하세요 Product Hunt, Weave 공동창업자 Adam입니다!\n\n문제: 코딩 에이전트는 모든 요청을 한 모델에 보냅니다. 한 줄 설정 변경이나 서비스 간 마이그레이션이나 같은 프론티어 모델에 같은 가격으로 가죠. 팀들은 루틴 작업에 프론티어 요금을 내고 있고, 에이전트가 늘어날수록 청구서도 커집니다.\n\n이 분야 도구들은 대부분 두 가지 잘못된 접근 중 하나예요:\n- 게이트웨이 – 엔드포인트 하나에 모델 메뉴를 주지만, 모델은 결국 내가 고르니까 아무것도 싸지지 않음\n- 수동 모델 전환 – 세션 중간에 /model을 바꾸면 프롬프트 캐시가 깨지고, 긴 세션에선 다시 청구되는 컨텍스트가 절감액을 잠식\n\n저희 에이전트 트래픽에서 같은 문제를 겪고 Weave Router(weaveos.com/router)를 만들었습니다.\n\nWeave Router 2.0이 다른 점: Claude Code, Codex, Cursor에 드롭인 엔드포인트로 붙어서, 에이전트가 보내는 모든 요청을 읽고 난이도를 채점한 뒤 제대로 해낼 수 있는 가장 싼 모델로 보냅니다.\n\n벤치마크(GPT-6 Astra와 정면 대결, 각 작업 2회 실행 pass@2):\n- Terminal-Bench 4.0 – 신뢰구간 내 동률, Astra 비용의 52%, 2.2배 빠름\n- SWE-Atlas Codebase QnA – 신뢰구간 내 동률, Astra 비용의 46%, 2.5배 빠름\n전체 결과는 weaveos.com/router에서.\n\n- 복잡도 채점 라우팅 – 실제 에이전틱 코딩 세션 10배 분량으로 학습한 새 분류기가 작업 유형이 아니라 난이도로 라우팅. 쉬운 턴은 DeepSeek·GLM·Kimi가, 어려운 건 Astra와 Fable이 처리\n- 캐시 인식 전환 – 2.0은 프로바이더·세션별 캐시 상태를 추적해서, 예상 절감액이 캐시 재구축 비용을 넘길 때만 모델을 바꿈. 비용 절감의 대부분은 여기서 나옴\n- 멀티 구독 라우팅 – Codex 안에서 Claude 모델, Claude Code 안에서 GPT 모델 사용. 복잡도·비용·이번 달 쿼터 남은 플랜 중 골라서 라우팅\n\n누구를 위한 것인가: 코딩 에이전트를 매일 돌리는 개인이나 팀. 도구를 바꾸지 않고 Astra급 결과를 절반 비용, 2배 이상 속도로 얻을 수 있습니다.\n\n오늘 시작하기: weaveos.com/router에서 이용, npx @workweave/router 한 줄로 설치. Elastic License 2.0으로 소스 공개. 50인 이상 엔지니어 팀은 FDE 상담 예약 가능."
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "nice launch ! the routing base on the task difficult instead of just the task type of makes a lot of the sense. \nthis is a really interesting approach.",
+     "kr": "런치 축하한다! 작업 유형이 아니라 난이도 기준으로 라우팅한다는 게 진짜 말이 된다. 정말 흥미로운 접근이야."
+    },
+    {
+     "author": "Jacob Hernandez",
+     "is_maker": false,
+     "text": "congrats on the launch,its a great product. my question to Weave Router team is, what is the most unique feature of your product have that make it different from others products.",
+     "kr": "런치 축하한다, 진짜 좋은 제품이네. Weave Router 팀에 질문 하나 할게. 다른 제품들과 차별화되는 가장 유니크한 기능이 뭔가?"
+    },
+    {
+     "author": "Brennan Lupyrypa",
+     "is_maker": true,
+     "text": "@jacob_hernandez4 We built an analysis model to evaluate to evaluate the path of the entire trace. Also we used a couple of optimizations to significantly shrink the RL search space letting us converge much more quickly and efficiently!",
+     "kr": "@jacob_hernandez4 전체 트레이스의 경로를 평가하는 분석 모델을 만들었어. 그리고 최적화를 몇 가지 적용해서 RL 탐색 공간을 크게 줄여서 훨씬 빠르고 효율적으로 수렴하게 만들었지!"
+    },
+    {
+     "author": "Joseph Duke",
+     "is_maker": false,
+     "text": "weave is a very great product, they way it reduced the token cost. quick question does weave select all the models for coding or its depend on there models?",
+     "kr": "weave 진짜 좋은 제품이다, 토큰 비용 줄여주는 방식이 훌륭해. 질문 하나 할게. 코딩에 쓸 모델을 weave가 전부 골라주는 거야, 아니면 모델 종류에 따라 달라지는 거야?"
+    },
+    {
+     "author": "Brennan Lupyrypa",
+     "is_maker": true,
+     "text": "@joseph_duke1 You can select the pool to pick from",
+     "kr": "@joseph_duke1 고를 모델 풀은 직접 선택할 수 있어"
+    },
+    {
+     "author": "Chandrshekhar rawan",
+     "is_maker": false,
+     "text": "how does weave handle token routing when multiple AI models are running together?",
+     "kr": "여러 AI 모델을 같이 돌릴 때 weave는 토큰 라우팅을 어떻게 처리해?"
+    },
+    {
+     "author": "Brennan Lupyrypa",
+     "is_maker": true,
+     "text": "@chandrshekhar_rawen We will select the best one for the given prompt and then for any subagents it calls also have the ability to use different more cost effective agents for any sub task!",
+     "kr": "@chandrshekhar_rawen 주어진 프롬프트에 제일 맞는 모델을 골라주고, 거기서 호출되는 서브에이전트들에도 서브태스크마다 더 비용 효율적인 모델을 쓸 수 있는 옵션이 있어!"
+    },
+    {
+     "author": "Dmytrii Shchadei",
+     "is_maker": false,
+     "text": "Dumper cheaper models are known to produce longer trajectories when solving the same task. What are your thoughts on it in the context of smart routing and cost optimisation?",
+     "kr": "저성능 싼 모델들은 같은 작업을 풀 때 처리 궤적이 더 길어지는 걸로 알려져 있는데. 스마트 라우팅이랑 비용 최적화 관점에서 이 부분 어떻게 생각해?"
+    },
+    {
+     "author": "Steven",
+     "is_maker": true,
+     "text": "@dmytriis Totally agree! We've run a lot of rollouts on production agent traces to measure how efficient each model actually is. On many tasks (usually complex ones, though not only those) dumber models spin their wheels and burn a ton of tokens, so we try to limit the scenarios where that happens. Artificial Analysis publishes a pretty great tokens-per-task score for every model. We try to go a bit deeper by delineating between task complexity and type as well.",
+     "kr": "@dmytriis 완전 동의해! 실제 프로덕션 에이전트 트레이스로 롤아웃을 엄청 돌려서 모델별 실제 효율을 측정했어. 많은 작업(보통은 복잡한 작업, 하지만 그것만은 아님)에서 저성능 모델은 제자리 맴돌면서 토큰을 어마어마하게 태우니까, 그런 상황이 안 생기게 제한하려고 해. Artificial Analysis가 모델별 tokens-per-task 점수를 꽤 잘 공개하는데, 우리는 거기서 한 발 더 나아가 작업 복잡도와 유형까지 구분해서 봐."
+    },
+    {
+     "author": "Lucy Jane",
+     "is_maker": false,
+     "text": "Can users set their own preferences for cost versus speed or does Weave handle that automatically?",
+     "kr": "비용이냐 속도냐 같은 선호를 사용자가 직접 설정할 수 있어, 아니면 Weave가 알아서 처리해?"
+    },
+    {
+     "author": "Adam Cohen",
+     "is_maker": true,
+     "text": "@lucyjane both options are available! Default is auto but you can set your own prefrences.",
+     "kr": "@lucyjane 둘 다 가능해! 기본값은 자동인데, 직접 설정할 수도 있어."
+    }
+   ],
+   "warnings": [
+    "런치 페이지(/launches/...) 링크가 페이지에 노출되지 않아, 제품 페이지에 임베드된 Weave Router 2.0 런치 토론 1페이지에서 댓글 12개 수집 (전체 44개 중, 4페이지 존재)",
+    "metadata.openGraph(og:image)가 응답에 없어 런치 갤러리 대표 PNG의 원본 URL(리사이즈 파라미터 제거)을 사용 — HTTP 200 이미지 응답 확인함",
+    "유료 플랜 가격·과금 구조는 페이지에 미표기 (무료 옵션 배지, Elastic License 2.0 소스 공개, 50인 이상 팀 FDE 상담만 확인됨)"
+   ],
+   "slug": "weave",
+   "comment_summary": "메이커가 벤치마크(GPT-6 Astra 대비 비용 46~52%, 2.2~2.5배 속도)와 라우팅 원리를 상세히 공개했고, 난이도 기반 라우팅에 공감하는 반응이 많았다. '싼 모델은 처리 궤적이 길어진다'는 지적에는 프로덕션 트레이스 롤아웃 데이터로 답했고, 모델 풀 직접 선택·비용 대비 속도 선호 설정 가능 여부 등 실무 질문에도 메이커진이 직접 답변했다."
+  },
+  {
+   "name": "Appwrite 2.0",
+   "tagline_en": "The open-source cloud for agents and developers",
+   "tagline_kr": "에이전트와 개발자를 위한 오픈소스 클라우드",
+   "image": "https://ph-files.imgix.net/5b00dbe3-773c-44f6-ae0b-b9f3dc4c30af.png",
+   "categories": [
+    "Open Source",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 226,
+   "comments_count": 25,
+   "maker": "Eldad Fux (창업자, 2019년 개발 시작). 런치 팀: Aditya Oberai, Eldad Fux, Torsten Dittmann / 메이커 답글: Eldad Fux, Levi van Noort, Matej Bačo, Aditya Oberai",
+   "price_model": "freemium",
+   "price_detail": "PH에 'Free Options' 배지 표시. Appwrite Cloud 무료 플랜 제공, 오픈소스 커뮤니티 에디션으로 셀프호스팅 가능(2.0 전체 기능 포함). 페이지에 유료 요금제 세부 금액은 미표기.",
+   "desc_kr": "Appwrite 2.0은 오픈소스 백엔드 플랫폼 Appwrite의 두 번째 메이저 세대다. 내부 엔진을 새 코루틴 엔진 Hyperloop B(I/O 바운드 워크로드에서 처리량 7배·메모리 6배 절감 주장)로 갈아끼우고 콘솔을 TanStack으로 다시 만들었으며, 프로젝트 하나가 담을 수 있는 범위도 넓어졌다. Appwrite 레이어 없이 자체 호스트명·자격증명·TLS로 직접 붙는 네이티브 PostgreSQL 18과 MySQL 8.4, 임베딩·유사도 검색용 VectorsDB, 스키마리스 DocumentsDB, S3 호환 스토리지 API, OAuth 2.1·OIDC 아이덴티티 서버, 도메인·DNS 관리와 방화벽이 새로 들어갔다. 코딩 에이전트가 이미 아는 표준 프로토콜(Postgres, S3, OAuth)로 붙도록 방향을 잡은 것이 이번 버전의 특징이고, 기존 프로젝트는 마이그레이션 없이 그대로 동작한다.",
+   "launch_url_used": "https://www.producthunt.com/products/appwrite",
+   "comments": [
+    {
+     "author": "Eldad Fux",
+     "is_maker": true,
+     "text": "App development is complex and, more often than not, repetitive. I started working on Appwrite back in 2019 to abstract that complexity away, so developers could focus on creating value and, more importantly, on having fun writing code.\nOver the past few years, we have seen countless developers build their projects with Appwrite, first self-hosted and then on Appwrite Cloud. Along the way, two things became clear. First, convenience came with a tax. You adopted our APIs, our SDKs, and our data model, and the day your project needed something we did not abstract, you were either building plumbing around us or moving off the platform. Second, the way software gets built changed. A large share of code is now written with coding agents, and agents work best with standard protocols they already know, not proprietary abstractions. At the same time, projects on Appwrite grew. Teams running real production workloads needed backups, high availability, traffic control, and their own domains, not just a fast start. Making every builder's life easier now meant meeting them where they already are and being mature enough to stay with them as they scale.\nAppwrite 2.0 is our answer. It is the second major generation of the platform. It replaces the engine underneath, rebuilds the Console on top, and expands what a single project can hold. Three principles drove it: speak the protocols developers and agents already use, give them the raw engine when the abstraction is wrong, and own the layer in front of the app, not just the backend.\n\nHere is what ships with Appwrite 2.0:\n- Native PostgreSQL, the headline of this release: a real PostgreSQL 18 engine provisioned in your project's region with its own hostname, credentials, and TLS, and no Appwrite layer in between. Connect with psql or any driver, bring your own ORM and migrations, and use extensions like PostGIS and pgvector.\n- Native MySQL on the same terms: MySQL 8.4 by default, reachable from the mysql client or anything that speaks the protocol.\n- VectorsDB for embeddings and similarity search, with HNSW indexes, cosine, dot product, and Euclidean distance, and built-in embedding models so you do not need a separate vector service.\n- DocumentsDB for schemaless collections, where two documents in one collection can have different fields and adding a field is a write, not a migration.\n- An S3-compatible API for Appwrite Storage, so the AWS CLI, the AWS SDKs, rclone, and every S3-aware pipeline work against the buckets you already have.\n- An OAuth 2.1 and OpenID Connect server, so your project becomes the identity provider and other apps can offer Sign in with your product.\n- Partner marketplaces through the Apps API and OAuth connect, the path for vibe coding platforms and AI agents that manage a user's Appwrite resources.\n- Appwrite Domains: register or transfer domains, manage DNS, and get automatic TLS from the Console.\n- Appwrite Firewall: deny, challenge, rate limit, or redirect traffic before it reaches your API, Functions, or Sites, with a preview of how many requests a rule would match before you save it.\n- Console IV, rebuilt with TanStack, with the docs, Appwrite Terminal, and Appwrite Explorer living in the same app as your projects.\n- Hyperloop B, the new coroutine engine underneath everything, delivering 7x the throughput at 6x less memory on I/O bound workloads.\n\nExisting projects keep working. Nothing in this release requires a migration.\nAll in all, we are very proud of what we have accomplished with the community, and we are excited to bring you Appwrite 2.0. Every feature is live on Appwrite Cloud, and the Community Edition ships the complete 2.0 release for self-hosting. We continue to look to the Product Hunt community for support and feedback in order to improve.\nYou can create your account and get started on appwrite.io. Our Free plan is a great place to explore and start your projects.\nWe will be available all day for support and questions, and we are excited to hear your feedback so we can keep using it, together with the power of the open-source community, to constantly improve and get better.",
+     "kr": "앱 개발은 복잡하고, 십중팔구 반복적이다. 나는 2019년에 그 복잡함을 추상화해서 개발자들이 가치 만들기에, 그리고 더 중요하게는 코딩을 즐기는 데 집중할 수 있게 하려고 Appwrite 작업을 시작했다.\n지난 몇 년간 수많은 개발자가 Appwrite로 프로젝트를 만드는 걸 봤다. 처음엔 셀프호스팅으로, 그다음엔 Appwrite Cloud로. 그 과정에서 두 가지가 분명해졌다. 첫째, 편리함에는 세금이 붙는다는 것. 우리 API, SDK, 데이터 모델을 채택한 순간, 프로젝트가 우리가 추상화하지 않은 게 필요해지면 우리 주변에 배관을 하거나 플랫폼을 떠나야 했다. 둘째, 소프트웨어가 만들어지는 방식이 바뀌었다는 것. 이제 코드의 상당 부분이 코딩 에이전트가 작성하고, 에이전트는 독자적 추상화보다 이미 알고 있는 표준 프로토콜에서 가장 잘 동작한다. 동시에 Appwrite 위의 프로젝트들도 커졌다. 실제 프로덕션 워크로드를 돌리는 팀은 빠른 시작만이 아니라 백업, 고가용성, 트래픽 제어, 자체 도메인을 필요로 했다.\nAppwrite 2.0이 그 답이다. 플랫폼의 두 번째 메이저 세대로, 밑의 엔진을 갈아끼우고 위의 콘솔을 다시 지었으며, 프로젝트 하나가 담을 수 있는 범위를 넓혔다. 세 가지 원칙이 이끌었다: 개발자와 에이전트가 이미 쓰는 프로토콜로 말할 것, 추상화가 맞지 않을 땐 날 엔진을 줄 것, 백엔드만이 아니라 앞단의 레이어를 소유할 것.\n\nAppwrite 2.0에 들어가는 것들:\n- 네이티브 PostgreSQL, 이번 릴리스의 헤드라인: 프로젝트 리전에 실제 PostgreSQL 18 엔진을 프로비저닝하고 자체 호스트명·자격증명·TLS를 주며, 그 사이에 Appwrite 레이어가 없다. psql이나 아무 드라이버로 연결하고, ORM과 마이그레이션은 가져다 쓰고, PostGIS·pgvector 같은 확장도 사용 가능.\n- 같은 조건의 네이티브 MySQL: 기본 MySQL 8.4, mysql 클라이언트나 프로토콜을 아는 무엇으로든 접속 가능.\n- VectorsDB: 임베딩·유사도 검색용. HNSW 인덱스, 코사인·내적·유클리드 거리, 내장 임베딩 모델까지 갖춰 별도 벡터 서비스가 필요 없다.\n- DocumentsDB: 스키마리스 컬렉션용. 같은 컬렉션의 두 문서가 서로 다른 필드를 가질 수 있고, 필드 추가가 마이그레이션이 아니라 그냥 쓰기다.\n- Appwrite Storage의 S3 호환 API: AWS CLI, AWS SDK, rclone 등 S3를 아는 모든 파이프라인이 기존 버킷에 그대로 동작.\n- OAuth 2.1·OpenID Connect 서버: 내 프로젝트가 아이덴티티 프로바이더가 되고, 다른 앱이 내 제품으로 로그인을 제공할 수 있다.\n- Apps API·OAuth 연결을 통한 파트너 마켓플레이스: 사용자의 Appwrite 리소스를 관리하는 바이브 코딩 플랫폼과 AI 에이전트의 진입로.\n- Appwrite Domains: 콘솔에서 도메인 등록·이전, DNS 관리, 자동 TLS.\n- Appwrite Firewall: API·Functions·Sites에 닿기 전에 트래픽을 거부·챌린지·레이트리밋·리디렉트, 저장 전에 규칙이 몇 개 요청에 매칭될지 미리보기 제공.\n- Console IV: TanStack으로 다시 만든 콘솔. 문서, Appwrite Terminal, Appwrite Explorer가 프로젝트와 같은 앱 안에 들어감.\n- Hyperloop B: 모든 것의 밑에 깔린 새 코루틴 엔진. I/O 바운드 워크로드에서 처리량 7배, 메모리 6배 절감.\n\n기존 프로젝트는 그대로 동작한다. 이번 릴리스에 마이그레이션은 필요 없다.\n커뮤니티와 함께 이뤄낸 것에 매우 자부심을 느끼며, Appwrite 2.0을 선보일 수 있어 기쁘다. 모든 기능이 Appwrite Cloud에서 살아 있고, 커뮤니티 에디션은 2.0 전체를 셀프호스팅용으로 담고 있다. Product Hunt 커뮤니티의 성원과 피드백에 계속 기대며 개선해 나가겠다.\nappwrite.io에서 계정을 만들고 바로 시작할 수 있다. 무료 플랜이 탐색하고 프로젝트를 시작하기 좋은 출발점이다.\n하루 종일 지원과 질문에 대기하고 있으니, 피드백을 주면 오픈소스 커뮤니티의 힘과 함께 계속 나아지겠다."
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "oss ftw!",
+     "kr": "오픈소스가 답이지!"
+    },
+    {
+     "author": "Aditya Oberai",
+     "is_maker": true,
+     "text": "@fmerian yes!",
+     "kr": "@fmerian 그래!"
+    },
+    {
+     "author": "Eldad Fux",
+     "is_maker": true,
+     "text": "@fmerian Indeed! 🩷",
+     "kr": "@fmerian 그렇지! 🩷"
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@eldad_fux the native postgreSQL without an extra Appwrite the layer is a really nice upgrade, this is really interesting, \ncongrats on the launch, team! 👏",
+     "kr": "@eldad_fux Appwrite 레이어 추가 없이 네이티브 PostgreSQL을 쓸 수 있는 게 정말 좋은 업그레이드다. 너무 흥미로움. 런치 축하한다, 팀! 👏"
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "Given that it's open source, how difficult would it be to self-host in bulk versus using the hosted solution? \nBtw, Congratulations @eldad_fux @aditya_oberai @aishwari_pahwa1 & team @Appwrite 🚀",
+     "kr": "오픈소스인 만큼, 호스팅 솔루션 대신 대규모로 셀프호스팅하려면 얼마나 어려울까? 그나저나 @eldad_fux @aditya_oberai @aishwari_pahwa1, @Appwrite 팀 런치 축하한다 🚀"
+    },
+    {
+     "author": "Atharva Deosthale",
+     "is_maker": false,
+     "text": "@eldad_fux @aditya_oberai @aishwari_pahwa1 @aymi_malik \nHey Muhammad 👋\nFirst of all thanks for being a part of our launch, really means a lot to us.\nAbout your question, Appwrite Cloud (the managed solution) is scalable and scales based on your usage. The self-hosted version however, would burn out if using one machine with a lot of usage. You would need a lot of DevOps experience to make it work in a more scalable way through Kubernetes, or rely on scaling the infrastructure Appwrite is hosted on.\nAppwrite Cloud takes all of the complexity away so you can build the apps you want while the Appwrite platform and the team deals with the (self) scalability of the platform.",
+     "kr": "@eldad_fux @aditya_oberai @aishwari_pahwa1 @aymi_malik\n안녕 Muhammad 👋\n먼저 저희 런치에 함께해 줘서 정말 고마워. 우리에게 큰 힘이 된다.\n질문에 대해서 말하면, Appwrite Cloud(매니지드 솔루션)는 사용량에 따라 알아서 확장된다. 반면 셀프호스팅 버전은 한 대 머신에 사용량이 몰리면 버티지 못해. Kubernetes로 더 확장 가능하게 구성하려면 DevOps 경험이 많이 필요하거나, Appwrite가 돌아가는 인프라 자체의 스케일링에 의존해야 한다.\nAppwrite Cloud는 그 복잡함을 전부 대신 처리해 주니까, Appwrite 플랫폼과 팀이 확장성을 알아서 처리하는 동안 너는 원하는 앱을 만드는 데만 집중하면 된다."
+    },
+    {
+     "author": "Levi van Noort",
+     "is_maker": true,
+     "text": "Appwrite 2.0 is out and I got to work on part of it. Most of the release sits deep in the stack, but the bit I keep coming back to is the new Console. Better views of your resources, notifications, and a live feed of what your project is doing while it does it. Add the analytics on top and you get something I think gets undervalued in a backend platform: you can see what is going on under the hood instead of guessing. Happy with how it turned out and excited for what is coming.",
+     "kr": "Appwrite 2.0이 나왔고, 나도 그 일부를 개발했다. 대부분은 스택 깊은 곳에 있지만, 내가 계속 돌아보게 되는 건 새 콘솔이다. 리소스 뷰 개선, 알림, 그리고 프로젝트가 돌아가는 걸 실시간으로 보여주는 라이브 피드. 거기에 애널리틱스까지 더하면 백엔드 플랫폼에서 과소평가되는 것을 얻게 된다. 추측 대신 후드 아래에서 무슨 일이 벌어지는지 직접 볼 수 있다는 것. 결과에 만족하고, 앞으로도 기대된다."
+    },
+    {
+     "author": "Matej Bačo",
+     "is_maker": true,
+     "text": "I am happy to be part of Appwrite 2.0, especially the OAuth server capabilities! It was an incredible journey to bring this support, and I am excited to see what developers build with it, without spending weeks perfecting their understanding of all RFCs. I already built a few products with this, and alongside improved customisation through apps, this also makes MCP support trivial. Thrilled to see this in developers' hands, allowing all Appwrite projects to remain modern with support for all the AI agents out there.",
+     "kr": "Appwrite 2.0의 일원이 된 게 기쁘다. 특히 OAuth 서버 기능! 이 지원을 만들기까지 정말 대단한 여정이었고, 모든 RFC를 완벽히 이해하느라 몇 주를 쓰지 않고도 개발자들이 이걸로 뭘 만들지 기대된다. 나도 이미 이걸로 몇 개의 제품을 만들었는데, 앱을 통한 커스터마이징 개선과 함께 MCP 지원도 아주 쉬워졌다. 개발자들 손에 들어가는 걸 보니 설렌다. 모든 AI 에이전트를 지원해서 모든 Appwrite 프로젝트가 계속 모던하게 유지될 수 있으니까."
+    },
+    {
+     "author": "Atharva Deosthale",
+     "is_maker": false,
+     "text": "Appwrite 2.0 is a really massive update, and with a massive Init event that happened recently. I can finally say that Appwrite speaks PostgreSQL!\nMy favourite feature of all is VectorsDB. Appwrite has made it easy with the embeddings API that I can simply make powerful apps with similarity search using VectorsDB. Unlocks a lot of possibilities!",
+     "kr": "Appwrite 2.0은 정말 대규모 업데이트다. 최근에 있었던 대형 Init 이벤트와 함께, 드디어 Appwrite가 PostgreSQL을 말한다고 할 수 있게 됐다!\n내 최애 기능은 단연 VectorsDB다. 임베딩 API 덕분에 VectorsDB로 유사도 검색이 들어간 강력한 앱을 간단히 만들 수 있어. 가능성이 엄청 열리는 부분!"
+    },
+    {
+     "author": "Aditya Oberai",
+     "is_maker": true,
+     "text": "I'm really glad that we've been able to make Appwrite 2.0 happen! We've been able to finally ship our community's highest-demanded features over the last few years: which is native Postgres. I have also been experimenting with a number of new releases, including S3 support for Storage and DocumentsDB, and I've already been able to leverage the latter in a new project I've been working on (essentially an open-source Typeform alternative that benefits from flexible schemas). I can't wait for more developers to build with Appwrite 2.0 and let us know what they think of the same.",
+     "kr": "Appwrite 2.0을 완성할 수 있어서 정말 기쁘다! 지난 몇 년간 커뮤니티가 가장 많이 요청했던 기능, 네이티브 Postgres를 드디어 출시했다. 나도 Storage의 S3 지원과 DocumentsDB를 포함한 새 기능들을 실험 중인데, 후자는 내가 진행 중인 새 프로젝트(유연한 스키마가 장점인 오픈소스 Typeform 대안)에 이미 활용하고 있다. 더 많은 개발자들이 Appwrite 2.0으로 빌드하고 소감을 알려주는 날이 빨리 왔으면 좋겠다."
+    }
+   ],
+   "warnings": [
+    "런치 페이지(/launches/...) 링크가 페이지에 노출되지 않아, 제품 페이지에 임베드된 Appwrite 2.0 런치 토론 1페이지에서 댓글 11개 수집 (전체 25개 중, 3페이지 존재)",
+    "metadata.openGraph(og:image)가 응답에 없어 런치 갤러리 대표 PNG의 원본 URL(리사이즈 파라미터 제거)을 사용 — HTTP 200 이미지 응답 확인함",
+    "유료 요금제 세부 금액은 페이지에 미표기 (무료 플랜·셀프호스팅용 커뮤니티 에디션만 확인됨)",
+    "댓글 작성자 Atharva Deosthale은 PH에서 'Maker'(Imagine 제품) 배지가 붙지만 Appwrite 메이커가 아니어서 is_maker=false 처리"
+   ],
+   "slug": "appwrite",
+   "comment_summary": "네이티브 PostgreSQL 18 지원이 가장 반가운 소식으로 꼽혔고, VectorsDB를 최애 기능으로 드는 개발자 반응이 눈에 띄었다. 셀프호스팅 확장성 질문에는 Cloud는 사용량 기반 자동 확장, 셀프호스트는 Kubernetes·DevOps 경험이 필요하다는 솔직한 답변이 돌아왔다. 팀 멤버들이 각자 맡은 기능(콘솔·OAuth·Postgres)을 소개하는 댓글도 이어졌다."
+  },
+  {
+   "name": "Gemini 3.8 & 3.8 Live Extended Thinking",
+   "tagline_en": "Our most advanced Gemini Audio models yet",
+   "tagline_kr": "지금까지 나온 Gemini 오디오 모델 중 가장 진보된 모델",
+   "image": "https://ph-files.imgix.net/13b64edd-4f6e-4a50-bb20-0bc6fce1905f.png?auto=format&fit=crop&frame=1&h=512&w=1024",
+   "categories": [
+    "Bots",
+    "Audio"
+   ],
+   "upvotes": 189,
+   "comments_count": 4,
+   "maker": "Ankit Sharma(@saaswarrior), Sundar Pichai(@sundar_pichai)",
+   "price_model": "무료(Free Options)",
+   "price_detail": "PH 페이지에 'Free Options' 표기, 구조화 데이터(offers) 가격 0(USD). 다만 모델 접근 경로·유료 API 요금 구조는 PH 페이지에서 확인 불가 — 상세 안내는 blog.google 공지 글로 연결됨.",
+   "desc_kr": "구글이 공개한 최신 실시간 음성 대화 모델 2종(Gemini 3.8 Live, Gemini 3.8 Live Extended Thinking)의 Product Hunt 런치. 두 모델 모두 자연스러운 대화를 위해 만들어진 라이브 음성 대화 모델이다. PH 페이지 자체는 소개와 데모 갤러리만 담고 있고 실제 안내는 구글 공식 블로그 글로 연결된다. 데모에서는 발표자가 제미나이를 이름으로 불러 스스로 업데이트 내용을 설명하게 하는 시연이 화제가 됐고, 댓글에서는 실시간 지연 시간과 비용 구조(학생별 라이브 AI 튜터 활용 등)가 논의됐다. Extended Thinking 변형의 정확한 기능 차이는 PH 페이지에서는 확인되지 않는다.",
+   "launch_url_used": "https://www.producthunt.com/products/gemini-3-8-3-8-live-extended-thinking/launches/gemini-3-8-3-8-live-extended-thinking",
+   "comments": [
+    {
+     "author": "André J",
+     "is_maker": false,
+     "text": "Really good. Also a bit over expressive? I feel like the AI is trying to sell me something 😸",
+     "kr": "정말 좋네요. 다만 표현이 좀 과한 면이 있나요? AI가 뭔가를 팔아넘기려는 느낌이 들어요 😸"
+    },
+    {
+     "author": "Kevin Minott",
+     "is_maker": false,
+     "text": "At this cost structure you could have a live AI tutor for each student that helps them in real time. Imagine Gemini teaching a class using the socratic method of question and answer.",
+     "kr": "이 비용 구조라면 학생 한 명 한 명에게 실시간으로 도와주는 라이브 AI 튜터를 둘 수 있겠네요. 제미나이가 소크라테스식 문답법으로 수업을 진행하는 상상을 해보세요."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "What is the real latency time for live interaction in comparison with the standard one? Btw, Congratulations @sundar_pichai & @saaswarrior 🚀✌️",
+     "kr": "라이브 인터랙션의 실제 지연 시간은 표준 모델 대비 어느 정도 되나요? 그리고 @sundar_pichai, @saaswarrior 축하드려요 🚀✌️"
+    },
+    {
+     "author": "Murray McLaughlin",
+     "is_maker": false,
+     "text": "Really interesting demo. I particularly liked the way the presenter could call Gemini by name and then let Gemini explain its own updates and new features. Having the AI participate in demonstrating the product itself made the interaction feel surprisingly natural. The line between presenting AI and actually conversing with it is getting thinner very quickly!",
+     "kr": "정말 흥미로운 데모였어요. 발표자가 제미나이를 이름으로 부르면 제미나이가 스스로 업데이트와 새 기능을 설명하게 한 부분이 특히 좋았습니다. AI가 제품 시연에 직접 참여하니 상호작용이 놀랍도록 자연스럽게 느껴졌어요. AI를 소개하는 것과 실제로 대화하는 것의 경계가 정말 빠르게 흐려지고 있네요!"
+    }
+   ],
+   "warnings": [
+    "메이커 목록은 2명(Ankit Sharma, Sundar Pichai)만 표시되고 'Show more'로 잘려 전체 런치 팀 인원은 확인 불가",
+    "PH 페이지는 모델 발표 성격이라 가격·기능 세부는 blog.google 공지 링크로만 제공됨 — Extended Thinking의 구체적 차이는 PH에서 확인 불가",
+    "댓글 4개는 제품 페이지에서 전부 수집(런치 페이지 표기 4개와 일치), 메이커 작성 댓글 없음"
+   ],
+   "slug": "gemini-3-8-3-8-live-extended-thinking",
+   "comment_summary": "실시간 상호작용의 실제 지연시간과 비용 구조가 핵심 질문이었고, 이 비용이라면 학생마다 라이브 AI 튜터를 둘 수 있다는 비전도 나왔다. 발표자가 제미나이를 이름으로 불러 스스로 업데이트를 설명하게 한 데모가 자연스럽다는 호평이 많았고, 표현이 다소 과하다는 지적도 있었다."
+  },
+  {
+   "name": "Toki Coordination",
+   "tagline_en": "Your personal assistant to schedule + follow up on meetings",
+   "tagline_kr": "회의 일정 잡기부터 뒤따르는 조치까지 맡기는 개인 비서",
+   "image": "https://ph-files.imgix.net/1c14cc5c-68e4-48a1-8963-6dc662853bfa.png?auto=format&fit=crop&frame=1&h=512&w=1024",
+   "categories": [
+    "Productivity",
+    "Calendar",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 180,
+   "comments_count": 23,
+   "maker": "Zac Zuo(@zaczuo), Jamie G(@jamieg)",
+   "price_model": "Freemium",
+   "price_detail": "무료 사용 명시('free AI Executive Assistant', 'instead of paying tens of thousands, it's now free'), 리뷰 장점 태그에 'free tier' 존재. 메이커 댓글에서 유료 상위 플랜 'Toki Super' 확인(런치 기간 초대 코드로 1개월 제공). 정확한 가격 금액은 페이지에서 확인 불가.",
+   "desc_kr": "회의 조율을 대행해주는 AI 비서다. 사용자가 누구와 회의하고 싶은지만 말하면 토키가 참석자들에게 직접 이메일을 보내고, 서로 가능한 시간을 주고받으며 조율한 뒤 확정되면 초대장까지 발송한다. 참석자가 취소하면 일정을 다시 잡는 후속 조치도 맡을 수 있고, 하루 일정 설계·시간 보호·업무 우선순위 정리 같은 비서 역할도 한다. 캘린더를 연결한 뒤에는 자연어는 물론 음성 메모나 스크린샷으로도 지시할 수 있으며, 이메일 수신자에게는 주최자를 대신한 AI 비서가 보냈다는 사실이 표시된다. 기본 무료로 쓸 수 있고 별도 유료 플랜 'Toki Super'가 존재한다.",
+   "launch_url_used": "https://www.producthunt.com/products/toki-ai/launches/toki-coordination",
+   "comments": [
+    {
+     "author": "Jamie G",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 We're back with a new Toki — now built around a bigger idea: What if scheduling a meeting felt like delegating it to a real executive assistant? Most calendar tools can show availability or suggest time slots. But the real friction comes after that — reaching out, comparing schedules, going back and forth, and getting everyone aligned. So Toki now handles the coordination itself. Just tell Toki who you want to meet. It can: 📧 Reach out to attendees via email 🤝 Coordinate availability across multiple people 📅 Find a time that works and send the invite once it's confirmed. We've also made Toki much more personal. You can choose its name, personality, and voice tone, while Toki learns your scheduling preferences, routines, and communication habits over time. The idea is simple: An assistant that can act on your behalf and gradually become yours. We'd love for you to try the new Toki and tell us what you'd trust an AI Executive Assistant to handle next. We'll be here reading and replying to your feedback ❤️",
+     "kr": "📌 안녕하세요 Product Hunt 👋 더 큰 아이디어를 담아 새로운 Toki로 돌아왔습니다. 회의 일정 잡는 일이 실제 임원 비서에게 맡기는 것처럼 느껴진다면 어떨까요? 대부분의 캘린더 도구는 가능 시간을 보여주거나 시간대를 추천해주지만, 진짜 번거로움은 그 다음에 시작됩니다. 연락하고, 일정을 비교하고, 수차례 주고받으면서 모두를 맞춰야 하죠. 그래서 이제 Toki가 조율 자체를 대신 처리합니다. Toki에게 누구를 만나고 싶은지만 말하세요. 📧 참석자들에게 이메일로 연락하고 🤝 여러 사람의 가능 시간을 조율하며 📅 모두에게 맞는 시간을 찾아 확정되면 초대장까지 보냅니다. Toki를 훨씬 개인적으로도 만들었습니다. 이름, 성격, 말투를 직접 고를 수 있고, Toki는 시간이 지나며 사용자의 일정 취향·루틴·소통 습관을 학습합니다. 생각은 단순합니다. 사용자를 대신해 움직이고 점점 사용자의 것이 되어가는 비서. 새로운 Toki를 써보시고 AI 임원 비서에게 다음엔 뭘 맡기고 싶으신지 알려주세요. 피드백을 읽고 답장하는 저희가 여기 있겠습니다 ❤️"
+    },
+    {
+     "author": "Jamie G",
+     "is_maker": true,
+     "text": "We'll be sharing invite codes throughout the day 🎟️ Each code unlocks 1 month of Toki Super with limited redemptions. If you've been curious to try Toki as your AI Executive Assistant and let it handle the meeting coordination for you, now's a great time 👀 /get-super FDMROKUQ More codes dropping soon ⬇️",
+     "kr": "오늘 하루 동안 초대 코드를 나눠드릴 예정입니다 🎟️ 각 코드는 Toki Super 1개월을 열어주며 선착순 소진됩니다. AI 임원 비서로서 Toki에게 회의 조율을 맡겨보고 싶으셨다면 지금이 딱 좋은 타이밍입니다 👀 /get-super FDMROKUQ 코드는 곧 더 투입됩니다 ⬇️"
+    },
+    {
+     "author": "Evgeny Medvednikov",
+     "is_maker": false,
+     "text": "will it communicate with the meeting scheduling tools like 42min.us, cal.com or calendly? i think that makes sense to simplify and accelerate the process",
+     "kr": "42min.us, cal.com, calendly 같은 회의 일정 도구들과 연동되나요? 과정을 단순하고 빠르게 만드는 데 도움이 될 것 같은데요."
+    },
+    {
+     "author": "Jamie G",
+     "is_maker": true,
+     "text": "@medik That definitely makes sense. We don't currently have direct integrations with tools like Calendly, Cal.com, or 42min.us, but it's a direction we're interested in exploring. Thanks for calling this out, it could make coordination much faster in a lot of cases.",
+     "kr": "@medik 정말 타당한 지적입니다. 현재는 Calendly, Cal.com, 42min.us 같은 도구와 직접 연동되지는 않지만, 충분히 검토해보고 싶은 방향이에요. 짚어주셔서 감사합니다. 많은 경우 조율이 훨씬 빨라질 수 있을 것 같네요."
+    },
+    {
+     "author": "Lambert de beru",
+     "is_maker": false,
+     "text": "Nice, will try it and see ! I just created an account but I didn't get any onboarding. Is that expected, or is it an issue, or did I miss something ?",
+     "kr": "좋네요, 써보고 볼게요! 방금 계정을 만들었는데 온보딩이 없었어요. 원래 그런 건가요, 문제가 있는 건가요, 아니면 제가 뭘 놓친 걸까요?"
+    },
+    {
+     "author": "Jamie G",
+     "is_maker": true,
+     "text": "@lambertlcdb Hi! Thanks so much for trying Toki 🙌 Are you using Toki on the web? We currently don't have onboarding on the web version yet, while the app does include onboarding. If you run into anything else while using Toki, feel free to send us feedback directly in the product — we'll be happy to help and will get back to you as quickly as we can.",
+     "kr": "@lambertlcdb 안녕하세요! Toki를 써주셔서 정말 감사합니다 🙌 혹시 웹 버전을 쓰고 계신가요? 현재 웹 버전에는 온보딩이 아직 없고, 앱에는 온보딩이 포함되어 있습니다. 사용 중에 다른 문제가 생기면 제품 내에서 바로 피드백 보내주세요. 기꺼이 도와드리고 최대한 빨리 답변드리겠습니다."
+    },
+    {
+     "author": "Joy Gu",
+     "is_maker": false,
+     "text": "How does this feel for the people receiving the emails? Do the recipients know they are talking to an AI assistant?",
+     "kr": "이메일을 받는 사람들 입장에서는 어떤 느낌인가요? 받는 사람이 AI 비서와 대화 중이라는 걸 알 수 있나요?"
+    },
+    {
+     "author": "Jamie G",
+     "is_maker": true,
+     "text": "@joy_gu Yes! Transparency is important to us. Recipients can see that the message is coming from Toki on the organizer's behalf, so it's clear they're interacting with an AI assistant rather than the person directly. We want the experience to feel helpful and professional without creating ambiguity about who is actually coordinating the meeting.",
+     "kr": "@joy_gu 네! 투명성이 저희에게 중요합니다. 받는 사람은 메시지가 주최자를 대신해 Toki가 보냈다는 걸 볼 수 있어서, 사람이 아니라 AI 비서와 대화 중이라는 게 분명합니다. 실제로 조율하는 주체가 누구인지 모호해지지 않으면서 도움이 되고 전문적인 경험이 되길 원합니다."
+    },
+    {
+     "author": "Denis Prodan",
+     "is_maker": false,
+     "text": "How out-of-the-box the setup and later usage?",
+     "kr": "초기 설정이나 이후 사용이 별도 세팅 없이 바로 가능한 수준인가요?"
+    },
+    {
+     "author": "Jamie G",
+     "is_maker": true,
+     "text": "@denis_prodan Pretty lightweight. The goal is to make Toki useful with minimal setup. Once your calendar is connected, you can start delegating coordination in natural language right away. Over time, Toki learns your preferences and communication habits, so the experience should require less manual setup rather than more.",
+     "kr": "@denis_prodan 꽤 가볍습니다. 최소한의 설정으로 바로 유용하게 쓰는 게 목표라, 캘린더만 연결하면 자연어로 바로 조율을 맡길 수 있어요. 시간이 지나면 Toki가 사용자의 취향과 소통 습관을 학습해서, 세팅이 점점 더 필요해지기보다 덜 필요해지도록 설계했습니다."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "If you were negotiating about time between several participants, would it be optimized to get the majority opinion or notify about the lack of consensus? Congratulations @jamieg & @zaczuo 🎊✌️",
+     "kr": "여러 참여자 사이에서 시간을 조율할 때 다수 의견에 맞추도록 최적화되어 있나요, 아니면 합의가 안 된다는 사실을 알려주나요? @jamieg, @zaczuo 축하드립니다 🎊✌️"
+    },
+    {
+     "author": "Jamie G",
+     "is_maker": true,
+     "text": "Great question. Toki doesn't simply optimize for the majority vote — it tries to find a time that works across the group while also respecting the organizer's preferences and constraints. If there isn't a workable consensus, Toki will surface that rather than forcing a time through, so the organizer can decide how to move forward.",
+     "kr": "좋은 질문이에요. Toki는 단순히 다수결에 맞추도록 최적화하지 않습니다. 그룹 전체가 쓸 수 있는 시간을 찾으면서도 주최자의 선호와 제약을 함께 존중합니다. 합의 가능한 시간이 없으면 억지로 시간을 밀어넣지 않고 그 사실을 알려서, 주최자가 어떻게 진행할지 결정할 수 있게 합니다."
+    }
+   ],
+   "warnings": [
+    "전체 댓글 23개 중 12개 수집(코멘트 첫 페이지 기준, 메이커 답변 포함) — 나머지는 2페이지에 존재",
+    "메이커 목록은 2명(Zac Zuo, Jamie G)만 표시되고 'Show more'로 잘려 전체 팀 인원 확인 불가",
+    "정확한 가격 금액은 페이지에서 확인 불가 (무료 + 유료 플랜 'Toki Super' 존재 사실만 확인)"
+   ],
+   "slug": "toki-ai",
+   "comment_summary": "Calendly·Cal.com 등 기존 일정 도구 연동 여부, 수신자가 AI 비서임을 인지하는지 묻는 질문에 메이커가 투명하게 답했다. 웹 버전 온보딩 부재 지적에는 앱에만 있다는 답변이 돌아왔고, 다수 의견 vs 합의 불가 통보 방식도 정리해줬다. 런치 기간 Toki Super 1개월 초대 코드를 배포 중이다."
+  },
+  {
+   "name": "CAT ME app",
+   "tagline_en": "See yourself or your friends as cats",
+   "tagline_kr": "나와 친구를 고양이로 바꿔보는 앱",
+   "image": "https://ph-files.imgix.net/b53b7f80-b963-4cc8-920d-09488e670274.jpeg?auto=format&fit=crop&frame=1&h=512&w=1024",
+   "categories": [
+    "Cats",
+    "Photography",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 144,
+   "comments_count": 11,
+   "maker": "Damjanski, Steve Snygin, Vasco Barbosa",
+   "price_model": "free + in-app purchases",
+   "price_detail": "앱 자체는 무료(App Store, iPhone 전용). 고양이 변환은 인앱 결제로 크레딧 구매: 1 Cat $0.99 / 5 Cats $4.99 / 10 Cats $6.99. 판매사 Do Something Good LLC. PH 페이지 표기는 'Payment Required'",
+   "desc_kr": "사진 한 장을 넣으면 AI가 그 사람을 닮은 고양이(Purrtrait)를 만들어주는 iPhone 앱이다. 얼굴 특징, 표정, 헤어스타일, 액세서리까지 반영해 각자만의 고양이 버전을 생성하고, 결과를 친구들에게 공유할 수 있다. 앱은 무료로 배포되지만 고양이 변환 횟수는 인앱 결제로 구매해야 한다(1장 $0.99·5장 $4.99·10장 $6.99). 원본 사진은 저장하지 않고 처리 즉시 삭제한다는 게 메이커의 댓글 답변이며, App Store 정보상으로도 데이터를 수집하지 않는다고 명시돼 있다.",
+   "launch_url_used": "https://www.producthunt.com/products/cat-me-app",
+   "comments": [
+    {
+     "author": "Damjanski",
+     "is_maker": true,
+     "text": "What would you look like as a cat?",
+     "kr": "고양이라면 어떤 모습일까요?"
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "This one is original :D I actually had an idea for the app how your kid would look like if you had it with your crush :D",
+     "kr": "이건 진짜 독특하네요 :D 저도 예전에 짝사랑하는 사람과 사이가 된다면 아이가 어떤 모습일지 보여주는 앱 아이디어를 생각한 적이 있어요 :D"
+    },
+    {
+     "author": "Damjanski",
+     "is_maker": true,
+     "text": "@busmark_w_nika =^..^=",
+     "kr": "@busmark_w_nika =^..^="
+    },
+    {
+     "author": "Steve Snygin",
+     "is_maker": true,
+     "text": "meow",
+     "kr": "냐옹"
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "cute idea and the results look genuinely fun, not just a filter. the thing I'd want clarity on before uploading a photo of a friend (not just myself) is how long the source photo sticks around after the cat version is generated - is it deleted right after processing, or kept for anything else like improving the model?",
+     "kr": "귀여운 아이디어고 결과물도 단순 필터 수준이 아니라 진짜 재미있네요. 다만 제 사진이 아니라 친구 사진을 올리기 전에 확인하고 싶은 게 있는데, 고양이 버전이 생성되고 나면 원본 사진은 얼마나 남아 있나요? 처리 직후 삭제되는 건가요, 아니면 모델 개선 같은 다른 용도로 보관되나요?"
+    },
+    {
+     "author": "Damjanski",
+     "is_maker": true,
+     "text": "@galdayan its deleted right away – we don't save any data 龴ↀ◡ↀ龴",
+     "kr": "@galdayan 바로 삭제돼요 – 데이터는 아무것도 저장하지 않습니다 龴ↀ◡ↀ龴"
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "@damjanski good to hear, that's the answer that would make me comfortable actually uploading a friend's photo instead of just my own. good luck with the launch",
+     "kr": "@damjanski 다행이네요, 그 답변이어야 제 사진만 올리는 게 아니라 친구 사진도 마음 놓고 올릴 수 있겠어요. 런치 잘 되길 바랍니다."
+    },
+    {
+     "author": "CHRISTIAN ONOCHIE",
+     "is_maker": false,
+     "text": "The idea of creating a personalized Purrtrait is pretty cute. I can see people having fun making cat versions of their whole friend group.",
+     "kr": "개인 맞춤형 고양이 초상화를 만든다는 발상이 꽤 귀엽네요. 친구 그룹 전원을 고양이로 만들어서 즐기는 사람들이 많을 것 같아요."
+    },
+    {
+     "author": "Damjanski",
+     "is_maker": true,
+     "text": "@christian_onochie 龴ↀ◡ↀ龴",
+     "kr": "@christian_onochie 龴ↀ◡ↀ龴"
+    },
+    {
+     "author": "Oren Reuveni",
+     "is_maker": false,
+     "text": "This is the kind of product people actually send to friends. Fun, clear, and sticky. Congrats on the launch.",
+     "kr": "사람들이 실제로 친구에게 공유해서 보낼 만한 제품이네요. 재미있고, 명확하고, 중독성 있어요. 런치 축하합니다."
+    },
+    {
+     "author": "Damjanski",
+     "is_maker": true,
+     "text": "@orenr =^..^=",
+     "kr": "@orenr =^..^="
+    }
+   ],
+   "warnings": [
+    "제품 페이지에 별도 런치(/p/) 또는 launches 링크가 없어 제품 페이지 자체(https://www.producthunt.com/products/cat-me-app)에서 댓글 11개를 수집함 — 주어진 comments_count 11과 정확히 일치",
+    "PH 페이지에는 'Payment Required' 표기만 있어 정확한 가격은 App Store 페이지(apps.apple.com/app/cat-me-ai/id6803704105)에서 별도 확인함 (무료 + 인앱결제 3종)",
+    "메이커 댓글 3건(Damjanski의 @busmark_w_nika/@christian_onochie/@orenr 답글)에는 고양이 이미지가 첨부돼 있었으나 text 필드에는 댓글 텍스트만 원문 그대로 기록함"
+   ],
+   "slug": "cat-me-app",
+   "comment_summary": "결과물이 단순 필터 수준을 넘어 진짜 재미있다는 평가와 함께 '친구에게 공유할 수 있는 제품'이라는 반응이 많았다. 친구 사진 업로드 시 원본 보관 우려에 메이커가 '처리 즉시 삭제, 데이터 무저장'이라고 즉답했고, 그 답변이 사용 심리를 높였다."
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div></div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
