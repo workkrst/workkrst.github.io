@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IG 셀럽 키워드 퍼널 — 실행 계획서 &amp; 진행 대장</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--ok:#1a7f37;--warn:#b35900;--badge:#fdeee8}
+@media (prefers-color-scheme:dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--ok:#3fb950;--warn:#d29922;--badge:#3a2a22}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;padding-bottom:80px}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px}
+header h1{font-size:26px;font-weight:800;letter-spacing:-.4px}
+header .meta{color:var(--sub);font-size:14px;margin-top:6px}
+.status{background:var(--card);border:2px solid var(--acc);border-radius:14px;padding:18px 20px;margin:20px 0}
+.status h2{font-size:16px;color:var(--acc);margin-bottom:10px}
+.status ul{padding-left:18px;font-size:14.5px}
+.status .next{background:var(--badge);border-radius:10px;padding:10px 14px;margin-top:12px;font-size:14.5px;font-weight:700}
+h3.sec{font-size:19px;font-weight:800;margin:34px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+.card h4{font-size:15.5px;font-weight:800;margin-bottom:8px}
+.card p,.card li{font-size:14px;color:var(--sub)}
+.card ul,.card ol{padding-left:18px;margin:6px 0}
+.card li{margin:4px 0}
+.card b{color:var(--ink)}
+.chk{list-style:none;padding-left:0}
+.chk li{padding-left:26px;position:relative;margin:7px 0}
+.chk li::before{content:"☐";position:absolute;left:0;color:var(--acc);font-size:15px}
+.chk li.done::before{content:"☑";color:var(--ok)}
+.chk li.done{color:var(--sub);text-decoration:line-through}
+.chk li.doing::before{content:"🔄"}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+th{background:var(--chip);font-weight:700}
+td{color:var(--sub)}
+code{background:var(--chip);border-radius:6px;padding:1px 7px;font-size:12.5px;color:var(--ink)}
+.tag{display:inline-block;background:var(--chip);border-radius:6px;padding:2px 9px;font-size:12px;font-weight:700;margin:2px 4px 2px 0}
+.tag.acc{background:var(--badge);color:var(--acc)}
+.pend{color:var(--warn);font-weight:700}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
+.agnote{background:var(--chip);border-radius:12px;padding:14px 16px;font-size:13px;color:var(--sub);margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>🎬 IG 셀럽 키워드 퍼널 자동화</h1>
+<div class="meta">실행 계획서 &amp; 진행 대장 · 최종 갱신 <b>2026-09-17 21:30 KST</b> · 목표: <b>14일 내 전 과정 자동화</b></div>
+</header>
+
+<div class="status">
+<h2>📍 현재 상태</h2>
+<ul>
+<li>✅ 프로젝트 폴더 구성 완료 — <code>~/.openclaw/workspace/ig-funnel/</code> (scripts / clips / output / assets / venv)</li>
+<li>✅ 라이브러리 설치 완료 — faster-whisper 1.2.1 · Pillow 12.3.0 (전용 venv) · rclone 1.60.1 (apt)</li>
+<li>✅ 실행 계획서 확정 (사용자 승인) — 이 문서가 진행 대장</li>
+<li>✅ 계획서 사이트 오픈 — 이 페이지</li>
+</ul>
+<div class="next">⏭️ 다음 작업 (Day 1): 구글시트 대장 4탭 생성 + 쿠파스 API 키 등록·테스트("강황가루" 검색링크 발급) — <span class="pend">사용자 제공 항목 대기 중</span></div>
+</div>
+
+<h3 class="sec">🎯 프로젝트 요약</h3>
+<div class="card">
+<p><b>비즈니스 모델:</b> 인스타 캐러셀 2장 구성 — 1장은 셀럽 사진+후킹문구, 2장은 셀럽이 제품을 언급한 유튜브 클립(제품 부분 모자이크). 댓글로 궁금증을 모으고, 댓글러에게 DM으로 <b>쿠파스 검색링크</b>(키워드 검색창 직행)를 보내 제휴 수익화.</p>
+<p style="margin-top:8px"><b>핵심 원칙:</b> 리스크 판단은 사용자 몫 — 실행 자동화에 집중. 단, <span class="tag acc">[광고] 고지</span><span class="tag acc">쿠파스 고지문구</span>는 매 포스트 자동 삽입(파트너스 정지 방지), 효능과장 금지어 필터는 유지.</p>
+<p style="margin-top:8px"><b>보유 자산:</b> 쿠팡파트너스 계정 · 쿠파스 OpenAPI · 인스타 계정 · VPS 인프라(Apify, yt-dlp, ffmpeg, gspread+서비스계정, cron 체계)</p>
+</div>
+
+<h3 class="sec">⚙️ 기술 환경 (에이전트 재개용)</h3>
+<div class="card">
+<ul>
+<li>프로젝트 루트: <code>/home/admin/.openclaw/workspace/ig-funnel/</code></li>
+<li>venv: <code>~/.openclaw/workspace/ig-funnel/venv</code> — faster-whisper 1.2.1, Pillow 12.3.0 (STT 모델 파일은 첫 실행 시 자동 다운로드, base~small 권장)</li>
+<li>rclone 1.60.1 설치됨(config 미설정) — 구글드라이브 백업은 <b>기존 서비스계정</b>(<code>/home/admin/threads-auto-publisher/service-account-key.json</code>, drive 스코프 포함) + 폴더 공유 방식 권장</li>
+<li>쿠파스 API 키: 미등록 → 받는 즉시 <code>~/.openclaw/secrets/</code> 하위 파일로 관리 (하드코딩 금지)</li>
+<li>배포 위치: 이 페이지 — 리포 <code>workkrst.github.io</code>(<code>/home/admin/report-hub</code>, master) 의 <code>ig-funnel/</code> 폴더, noindex 처리</li>
+<li>계획 원본: <code>~/.openclaw/workspace/ig-funnel/PLAN.md</code> — 계획 변경 시 PLAN.md + 이 HTML 동시 갱신 후 push</li>
+</ul>
+</div>
+
+<h3 class="sec">📋 Phase 0 — 기반 세팅 (Day 1)</h3>
+<div class="card">
+<ul class="chk">
+<li class="done">프로젝트 폴더 구성</li>
+<li class="done">faster-whisper · Pillow · rclone 설치</li>
+<li class="done">실행 계획서 확정 + 사이트 오픈</li>
+<li>구글시트 대장 생성 — 탭 4개: <b>소재TB</b>(날짜/셀럽/출처URL/발언원문/발췌/타임스탬프/조회수/상태) · <b>제품TB</b>(키워드/쿠파스검색링크/커미션율) · <b>콘텐츠TB</b>(발행대장: 번호/발행일/상태/셀럽/훅문구/키워드/파일경로/드라이브링크/인스타URL/지표) · <b>성과TB</b>(일간 지표)</li>
+<li>쿠파스 OpenAPI 키 등록(<code>~/.openclaw/secrets/</code>) + "강황가루" 검색링크 발급 테스트 → 키워드→검색링크 자동 생성 함수</li>
+<li>인포크링크 페이지 (VPS 자체 호스팅: 키워드 버튼 나열 + 클릭 카운트 → 쿠파스 링크 이동)</li>
+</ul>
+</div>
+
+<h3 class="sec">📥 1단 — 수집 자동화 (Day 2~3)</h3>
+<div class="card">
+<h4>1-1. 벤치마킹 스캔 크론 (주 2회)</h4>
+<ul>
+<li>입력: 벤치마킹 계정 20개 (사용자 제공 예정)</li>
+<li>Apify instagram-scraper로 계정별 최근 30개 포스트 수집 → <b>좋아요 대비 댓글 비율</b> 상위 = 터진 퍼널 포스트</li>
+<li>출력: "어떤 셀럽×제품 조합이 도는지" 시트+텔레그램 리포트 → 훅 템플릿 라이브러리 축적</li>
+</ul>
+<h4 style="margin-top:14px">1-2. 셀럽 발언 소재 크론 (daily, isolated)</h4>
+<ul>
+<li>유튜브 검색: 셀럽 후보명 × 식품키워드(다이어트/식단/먹는) → Apify youtube-scraper, 최근 클립 위주</li>
+<li>yt-dlp 다운로드(후보만, <code>clips/{날짜}_{셀럽}/</code>) → faster-whisper STT → LLM이 "제품 연결 가능한 발언" 발췌 (예: "맨날 그것만 먹어요")</li>
+<li>제품TB 키워드와 자동 매칭 → 소재TB 기록</li>
+<li><b>후보 3개 텔레그램 승인 요청</b>(셀럽/발언/클립 구간/매칭키워드) → 번호 선택 → 제작 트리거</li>
+</ul>
+</div>
+
+<h3 class="sec">🎨 2단 — 작성 자동화 (Day 4~6)</h3>
+<div class="card">
+<h4>2-1. 슬라이드 1 (훅 카드)</h4>
+<ul>
+<li>셀럽 프레임 캡처(유튜브) + 훅 문구 오버레이 — Pillow 템플릿 렌더러, 1080×1440</li>
+<li>훅 문구는 LLM이 포맷 기반 생성: "역대급 ○○된 ○○" / "○○가 매일 먹는 ○○" 등 (벤치마킹으로 지속 보강)</li>
+</ul>
+<h4 style="margin-top:14px">2-2. 슬라이드 2 (영상)</h4>
+<ul>
+<li>yt-dlp 구간 다운로드(<code>--download-sections</code>) → ffmpeg 9:16 크롭</li>
+<li><b>모자이크 처리</b>: 제품명·제품컷 노출 구간 boxblur/delogo — 초기엔 시간대 수동 지정, 추후 자동화</li>
+<li>자막: whisper 원문 → LLM 후기체 재작성 → ASS 오버레이 → 1080×1920, 15~25초</li>
+<li>검증 스크립트: 길이/용량/금지어(효능과장) 체크</li>
+</ul>
+<h4 style="margin-top:14px">2-3. 캡션 + 검수</h4>
+<ul>
+<li>LLM 후기체 캡션 + [광고]·쿠파스 고지문구 자동 삽입 + "댓글로 '나도' 남겨주세요" CTA</li>
+<li>완성본 텔레그램 미리보기 → 승인 → 발행. 완성본은 구글드라이브 자동 백업 + 시트에 링크 기록</li>
+</ul>
+</div>
+
+<h3 class="sec">🚀 3단 — 배포 + 퍼널 자동화 (Day 7~14)</h3>
+<div class="card">
+<h4>3-1. 업로드</h4>
+<ul>
+<li><b>1~2주차(수동)</b>: 미리보기 승인 후 사용자가 직접 업로드 (안정 우선)</li>
+<li><b>자동화 전환</b>: 인스타 프로페셔널 계정 전환 → Meta Graph API 캐러셀 게시(공식 경로)</li>
+<li>발행 후 콘텐츠TB 자동 갱신</li>
+</ul>
+<h4 style="margin-top:14px">3-2. 댓글→DM 퍼널</h4>
+<ul>
+<li><b>1단계(수동)</b>: 댓글 수집 크론(Apify, 2시간 주기) → "나도/키워드" 댓글러 시트화 → 사용자가 DM 발송</li>
+<li><b>2단계(자동)</b>: ManyChat(인스타 공식 파트너) 키워드 자동 DM — DM에 해당 제품 쿠파스 검색링크 발송, 발송량 상한 설정(밴 방지)</li>
+</ul>
+<h4 style="margin-top:14px">3-3. 성과 루프</h4>
+<ul>
+<li>일간 크론: 포스트별 좋아요/댓글/저장/DM수 → 성과TB + 텔레그램 요약</li>
+<li>주간: 터진 훅 패턴 분석 → 훅 템플릿 갱신</li>
+</ul>
+</div>
+
+<h3 class="sec">🗓️ 14일 타임라인</h3>
+<div class="card">
+<table>
+<tr><th>Day</th><th>작업</th><th>상태</th></tr>
+<tr><td>1</td><td>시트 대장 생성 · 쿠파스 API 테스트 · 리스트 확보</td><td class="pend">대기 (자료 필요)</td></tr>
+<tr><td>2-3</td><td>벤치마킹 스캔 크론 + 유튜브 수집→STT→발언발췌 + 승인 플로우</td><td>—</td></tr>
+<tr><td>4-6</td><td>제작 파이프라인(훅카드·영상 모자이크·캡션) + <b>첫 콘텐츠 발행</b>(수동 업로드)</td><td>—</td></tr>
+<tr><td>7-8</td><td>댓글 수집 크론 + 수동 DM 운영 + 인포크링크 오픈</td><td>—</td></tr>
+<tr><td>9-10</td><td>드라이브 백업 + 성과 일간 리포트 크론</td><td>—</td></tr>
+<tr><td>11-14</td><td>업로드 자동화(Graph API) · ManyChat 도입 · 전체 자동화 마무리</td><td>—</td></tr>
+</table>
+</div>
+
+<h3 class="sec">📦 사용자 제공 필요 항목 (진행 잠금 요소)</h3>
+<div class="card">
+<ul class="chk">
+<li><b>벤치마킹 계정 20개</b> — 인스타 @계정명 리스트 <span class="pend">대기</span></li>
+<li><b>제품 키워드 10~20개</b> — 강황가루 등 쿠파스 판매 가능 키워드 <span class="pend">대기</span></li>
+<li><b>셀럽 후보 10명</b> — 슬라이드 1장 얼굴용 <span class="pend">대기</span></li>
+<li><b>쿠파스 API 키</b> — secrets 등록용 <span class="pend">대기</span></li>
+<li>하루 발행 목표 (1개? 2개?) <span class="pend">대기</span></li>
+<li>톤 가이드 (미제공 시 벤치마킹 기준으로 자동 설정)</li>
+</ul>
+</div>
+
+<h3 class="sec">📜 작업 로그</h3>
+<div class="card">
+<ul>
+<li><b>2026-09-17</b> — 프로젝트 착수. 폴더 구성, faster-whisper 1.2.1 · Pillow 12.3.0 · rclone 1.60.1 설치 완료. 실행 계획서 확정 및 본 사이트 오픈. 다음: 사용자 자료 수령 후 Day 1 작업(시트 대장 + 쿠파스 API 테스트)</li>
+</ul>
+<div class="agnote">🤖 <b>에이전트 지침:</b> 이 프로젝트를 재개할 때는 이 페이지 + <code>~/.openclaw/workspace/ig-funnel/PLAN.md</code>를 읽고 현재 상태 박스의 "다음 작업"부터 이어서 진행. 작업 완료 시 체크리스트와 로그를 갱신 후 <code>cd /home/admin/report-hub &amp;&amp; git add -A &amp;&amp; git commit -m "ig-funnel: 진행 갱신" &amp;&amp; git push</code>로 이 문서를 업데이트할 것.</div>
+</div>
+
+<footer>IG 셀럽 키워드 퍼널 · noindex · 갱신 2026-09-17</footer>
+</div>
+</body>
+</html>
