@@ -54,10 +54,11 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <ul>
 <li>✅ 프로젝트 폴더 구성 완료 — <code>~/.openclaw/workspace/ig-funnel/</code> (scripts / clips / output / assets / venv)</li>
 <li>✅ 라이브러리 설치 완료 — faster-whisper 1.2.1 · Pillow 12.3.0 (전용 venv) · rclone 1.60.1 (apt)</li>
+<li>✅ 구글시트 대장 생성 완료 — <b>IG퍼널 대장</b> (소유: uccskgd 업무용 계정, 서비스계정 공유) · 탭: 소재TB/제품TB/콘텐츠TB/성과TB · 읽기·쓰기 테스트 통과</li>
 <li>✅ 실행 계획서 확정 (사용자 승인) — 이 문서가 진행 대장</li>
 <li>✅ 계획서 사이트 오픈 — 이 페이지</li>
 </ul>
-<div class="next">⏭️ 다음 작업 (Day 1): 구글시트 대장 4탭 생성 + 쿠파스 API 키 등록·테스트("강황가루" 검색링크 발급) — <span class="pend">사용자 제공 항목 대기 중</span></div>
+<div class="next">⏭️ 다음 작업: ① 쿠파스 API 키 수령 → 등록·테스트 ② 사용자 자료 수령 (벤치마킹 20계정 · 제품 키워드 10~20개 · 셀럽 10명 · 발행 목표) — <span class="pend">모두 대기 중</span></div>
 </div>
 
 <h3 class="sec">🎯 프로젝트 요약</h3>
@@ -85,7 +86,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <li class="done">프로젝트 폴더 구성</li>
 <li class="done">faster-whisper · Pillow · rclone 설치</li>
 <li class="done">실행 계획서 확정 + 사이트 오픈</li>
-<li>구글시트 대장 생성 — <b>사용자 업무용 계정</b>에서 생성 후 서비스계정 공유 방식 (개인계정 sskygood 미사용, 2026-09-17 사용자 결정). 탭 4개: <b>소재TB</b>(날짜/셀럽/출처URL/발언원문/발췌/타임스탬프/조회수/상태) · <b>제품TB</b>(키워드/쿠파스검색링크/커미션율) · <b>콘텐츠TB</b>(발행대장: 번호/발행일/상태/셀럽/훅문구/키워드/파일경로/드라이브링크/인스타URL/지표) · <b>성과TB</b>(일간 지표) <span class="pend">대기 — 시트 링크 수령 필요</span></li>
+<li class="done">구글시트 대장 생성 — <b>IG퍼널 대장</b> (소유: uccskgd 업무용 계정, 서비스계정 공유) · 탭 4개 완성 · 읽기/쓰기 테스트 통과</li>
 <li>쿠파스 OpenAPI 키 등록(<code>~/.openclaw/secrets/</code>) + "강황가루" 검색링크 발급 테스트 → 키워드→검색링크 자동 생성 함수</li>
 <li>인포크링크 페이지 (VPS 자체 호스팅: 키워드 버튼 나열 + 클릭 카운트 → 쿠파스 링크 이동)</li>
 </ul>
@@ -177,7 +178,8 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <h3 class="sec">📜 작업 로그</h3>
 <div class="card">
 <ul>
-<li><b>2026-09-17</b> — 프로젝트 착수. 폴더 구성, faster-whisper 1.2.1 · Pillow 12.3.0 · rclone 1.60.1 설치 완료. 실행 계획서 확정 및 본 사이트 오픈. 다음: 사용자 자료 수령 후 Day 1 작업(시트 대장 + 쿠파스 API 테스트)</li>
+<li><b>2026-09-17</b> — 프로젝트 착수. 폴더 구성, faster-whisper 1.2.1 · Pillow 12.3.0 · rclone 1.60.1 설치 완료. 실행 계획서 확정 및 본 사이트 오픈.</li>
+<li><b>2026-09-17 (밤)</b> — 구글시트 계정 결정 변경(업무용 uccskgd) → 시트 'IG퍼널 대장' 생성·공유 완료, 탭 4개 구성, 읽기/쓰기 테스트 통과. <b>남은 것: 쿠파스 API 키 등록·테스트, 사용자 자료(벤치마킹·키워드·셀럽 리스트)</b></li>
 </ul>
 <div class="agnote">🤖 <b>에이전트 지침:</b> 이 프로젝트를 재개할 때는 이 페이지 + <code>~/.openclaw/workspace/ig-funnel/PLAN.md</code>를 읽고 현재 상태 박스의 "다음 작업"부터 이어서 진행. 작업 완료 시 체크리스트와 로그를 갱신 후 <code>cd /home/admin/report-hub &amp;&amp; git add -A &amp;&amp; git commit -m "ig-funnel: 진행 갱신" &amp;&amp; git push</code>로 이 문서를 업데이트할 것.</div>
 </div>
