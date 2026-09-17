@@ -98,8 +98,8 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 
 <h3 class="sec">📥 1단 — 수집 자동화 (Day 2~3)</h3>
 <div class="card">
-<div class="formula">⛔ 비용 강제 규칙: 유튜브 수집 Apify 금지 — yt-dlp + YouTube Data API v3(무료 10,000 유닛/일)만 허용. 인스타만 Apify(주 1~2회)</div>
-<h4>1-1. 벤치마킹 스캔 크론 (주 2회)</h4>
+<div class="formula">⛔ 비용 강제 규칙: 유튜브 수집 Apify 금지 — yt-dlp + YouTube Data API v3(무료 10,000 유닛/일)만 허용. 인스타만 Apify(빈도는 사용자 지정) · 모든 수집 빈도·횟수는 사용자 지정 사항</div>
+<h4>1-1. 벤치마킹 스캔 크론 (빈도: 사용자 지정)</h4>
 <ul>
 <li>입력: 벤치마킹 계정 20개 (사용자 제공 예정)</li>
 <li>Apify instagram-scraper로 계정별 최근 30개 포스트 수집 → <b>좋아요 대비 댓글 비율</b> 상위 = 터진 퍼널 포스트</li>
@@ -145,7 +145,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 </ul>
 <h4 style="margin-top:14px">3-2. 댓글→DM 퍼널</h4>
 <ul>
-<li><b>1단계(수동)</b>: 댓글 수집 크론(Apify, 2시간 주기) → "나도/키워드" 댓글러 시트화 → 사용자가 DM 발송</li>
+<li><b>1단계(수동)</b>: 댓글 수집 크론(Apify, 주기는 사용자 지정) → "나도/키워드" 댓글러 시트화 → 사용자가 DM 발송</li>
 <li><b>2단계(자동)</b>: ManyChat(인스타 공식 파트너) 키워드 자동 DM — DM에 해당 제품 쿠파스 검색링크 발송, 발송량 상한 설정(밴 방지)</li>
 </ul>
 <h4 style="margin-top:14px">3-3. 성과 루프</h4>
