@@ -48,7 +48,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <div class="wrap">
 <header>
 <h1>🎬 IG 셀럽 키워드 퍼널 자동화</h1>
-<div class="meta">실행 계획서 &amp; 진행 대장 · 최종 갱신 <b>2026-09-17 21:30 KST</b> · 목표: <b>14일 내 전 과정 자동화</b></div>
+<div class="meta">실행 계획서 &amp; 진행 대장 · 최종 갱신 <b>2026-09-18 01:15 KST</b> · 목표: <b>14일 내 전 과정 자동화</b></div>
 </header>
 
 <div class="status">
@@ -58,10 +58,12 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <li>✅ 라이브러리 설치 완료 — faster-whisper 1.2.1 · Pillow 12.3.0 (전용 venv) · rclone 1.60.1 (apt)</li>
 <li>✅ 벤치마킹 계정 8곳 분석 완료 (2026-09-18) — 포스트 240건. 전원 "셀럽 훅→댓글 트리거→DM" 공식 확인. 상세는 별도 분석 사이트 참조</li>
 <li>✅ 구글시트 대장 생성 완료 — <b>IG퍼널 대장</b> (소유: uccskgd 업무용 계정, 서비스계정 공유) · 탭: 소재TB/제품TB/콘텐츠TB/성과TB · 읽기·쓰기 테스트 통과</li>
+<li>✅ 쿠파스 API 연동 완료 + <b>과호출 방어장치</b>(간격 2초·일일 500회·캐시 24h·429 잠금) — 실호출·캐시·잠금 테스트 통과</li>
+<li>✅ <b>유튜브 수집 무료 강제 규칙</b> 확정 — Apify 금지, yt-dlp + YouTube Data API v3(무료 10,000 유닛/일)만 허용. 키 등록·검색 테스트 완료. 벤치마킹 원본 클립 역검색 검증(하지원 90만뷰 등 발견)</li>
 <li>✅ 실행 계획서 확정 (사용자 승인) — 이 문서가 진행 대장</li>
 <li>✅ 계획서 사이트 오픈 — 이 페이지</li>
 </ul>
-<div class="next">⏭️ 다음 작업 (Day 2~3 수집 파이프라인 착수): 셀럽·키워드 후보는 벤치마킹 8곳 분석으로 확보 완료 — 아래 버튼으로 분석 리포트 열람. 남은 사용자 결정: 후보 승인 · 발행 목표</div>
+<div class="next">⏭️ 다음 작업 (Day 2~3 수집 파이프라인 착수): 셀럽·키워드 후보는 벤치마킹 8곳 분석으로 확보 완료 — 아래 버튼으로 분석 리포트 열람. 카론님 결정 대기: 셀럽·키워드 후보 승인 · 발행 목표 / 제 작업: 수집 파이프라인 구축(준비 완료, 착수 가능)</div>
 </div>
 <p style="text-align:center;margin-top:14px"><a class="bigbtn" href="https://workkrst.github.io/ig-funnel-analysis/">📊 벤치마킹 분석 리포트 보기 →</a></p>
 
@@ -69,7 +71,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <div class="card">
 <p><b>비즈니스 모델:</b> 인스타 캐러셀 2장 구성 — 1장은 셀럽 사진+후킹문구, 2장은 셀럽이 제품을 언급한 유튜브 클립(제품 부분 모자이크). 댓글로 궁금증을 모으고, 댓글러에게 DM으로 <b>쿠파스 검색링크</b>(키워드 검색창 직행)를 보내 제휴 수익화.</p>
 <p style="margin-top:8px"><b>핵심 원칙:</b> 리스크 판단은 사용자 몫 — 실행 자동화에 집중. 단, <span class="tag acc">[광고] 고지</span><span class="tag acc">쿠파스 고지문구</span>는 매 포스트 자동 삽입(파트너스 정지 방지), 효능과장 금지어 필터는 유지.</p>
-<p style="margin-top:8px"><b>보유 자산:</b> 쿠팡파트너스 계정 · 쿠파스 OpenAPI · 인스타 계정 · VPS 인프라(Apify, yt-dlp, ffmpeg, gspread+서비스계정, cron 체계)</p>
+<p style="margin-top:8px"><b>보유 자산:</b> 쿠팡파트너스 계정 · 쿠파스 OpenAPI · YouTube Data API v3 · 인스타 계정 · VPS 인프라(Apify, yt-dlp, ffmpeg, gspread+서비스계정, cron 체계)</p>
 </div>
 
 <h3 class="sec">⚙️ 기술 환경 (에이전트 재개용)</h3>
@@ -78,7 +80,8 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <li>프로젝트 루트: <code>/home/admin/.openclaw/workspace/ig-funnel/</code></li>
 <li>venv: <code>~/.openclaw/workspace/ig-funnel/venv</code> — faster-whisper 1.2.1, Pillow 12.3.0 (STT 모델 파일은 첫 실행 시 자동 다운로드, base~small 권장)</li>
 <li>rclone 1.60.1 설치됨(config 미설정) — 구글드라이브 백업은 <b>기존 서비스계정</b>(<code>/home/admin/threads-auto-publisher/service-account-key.json</code>, drive 스코프 포함) + 폴더 공유 방식 권장</li>
-<li>쿠파스 API 키: 미등록 → 받는 즉시 <code>~/.openclaw/secrets/</code> 하위 파일로 관리 (하드코딩 금지)</li>
+<li>쿠파스 API 키: 등록 완료(<code>secrets/coupang-partners.json</code>) — 방어장치 상태파일: <code>ig-funnel/api_state.json</code>·<code>link_cache.json</code>·<code>api_lock.json</code>
+<li>YouTube Data API v3 키: 등록 완료(<code>secrets/youtube-api.json</code>, YouTube API로 제한됨) — 일일 10,000 유닛(검색 100회)</li></li>
 <li>배포 위치: 이 페이지 — 리포 <code>workkrst.github.io</code>(<code>/home/admin/report-hub</code>, master) 의 <code>ig-funnel/</code> 폴더, noindex 처리</li>
 <li>계획 원본: <code>~/.openclaw/workspace/ig-funnel/PLAN.md</code> — 계획 변경 시 PLAN.md + 이 HTML 동시 갱신 후 push</li>
 </ul>
@@ -92,7 +95,8 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <li class="done">실행 계획서 확정 + 사이트 오픈</li>
 <li class="done">구글시트 대장 생성 — <b>IG퍼널 대장</b> (소유: uccskgd 업무용 계정, 서비스계정 공유) · 탭 4개 완성 · 읽기/쓰기 테스트 통과</li>
 <li class="done">쿠파스 OpenAPI 연동 완료 — 키 등록(secrets) + <code>coupang_search.py</code> 검증. 키워드 → 검색창 제휴링크(landingUrl) 발급 성공, 상품별 트래킹링크 동시 제공. 제품TB에 강황가루 테스트행 기록</li>
-<li>인포크링크 페이지 (VPS 자체 호스팅: 키워드 버튼 나열 + 클릭 카운트 → 쿠파스 링크 이동)</li>
+<li class="done">YouTube Data API v3 키 발급·등록·검색 테스트 완료 (하지원 소재 검색으로 원본 소스 도달 확인)</li>
+<li>인포크링크 페이지 (VPS 자체 호스팅: 키워드 버튼 나열 + 클릭 카운트 → 쿠파스 링크 이동) — Day 7~8 예정</li>
 </ul>
 </div>
 
@@ -101,13 +105,13 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <div class="formula">⛔ 비용 강제 규칙: 유튜브 수집 Apify 금지 — yt-dlp + YouTube Data API v3(무료 10,000 유닛/일)만 허용. 인스타만 Apify(빈도는 사용자 지정) · 모든 수집 빈도·횟수는 사용자 지정 사항</div>
 <h4>1-1. 벤치마킹 스캔 크론 (빈도: 사용자 지정)</h4>
 <ul>
-<li>입력: 벤치마킹 계정 20개 (사용자 제공 예정)</li>
+<li>입력: 벤치마킹 계정 8곳 (1차 스캔 완료, 2026-09-18) — 추기 계정은 카론님 제공 시 추가</li>
 <li>Apify instagram-scraper로 계정별 최근 30개 포스트 수집 → <b>좋아요 대비 댓글 비율</b> 상위 = 터진 퍼널 포스트</li>
 <li>출력: "어떤 셀럽×제품 조합이 도는지" 시트+텔레그램 리포트 → 훅 템플릿 라이브러리 축적</li>
 </ul>
 <h4 style="margin-top:14px">1-2. 셀럽 발언 소재 크론 (daily, isolated)</h4>
 <ul>
-<li>유튜브 검색: 셀럽 후보명 × 식품키워드(다이어트/식단/먹는) → Apify youtube-scraper, 최근 클립 위주</li>
+<li>유튜브 검색: 셀럽 후보명 × 식품키워드(다이어트/식단/먹는) → <b>YouTube Data API v3 검색</b>(100 유닛/회) + yt-dlp로 원본 확인 — Apify 불필요</li>
 <li>yt-dlp 다운로드(후보만, <code>clips/{날짜}_{셀럽}/</code>) → faster-whisper STT → LLM이 "제품 연결 가능한 발언" 발췌 (예: "맨날 그것만 먹어요")</li>
 <li>제품TB 키워드와 자동 매칭 → 소재TB 기록</li>
 <li><b>후보 3개 텔레그램 승인 요청</b>(셀럽/발언/클립 구간/매칭키워드) → 번호 선택 → 제작 트리거</li>
@@ -168,14 +172,15 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 </table>
 </div>
 
-<h3 class="sec">📦 사용자 제공 필요 항목 (진행 잠금 요소)</h3>
+<h3 class="sec">📦 항목별 진행 현황</h3>
 <div class="card">
 <ul class="chk">
-<li><b>벤치마킹 계정 20개</b> — 인스타 @계정명 리스트 <span class="pend">대기</span></li>
-<li><b>제품 키워드 10~20개</b> — 강황가루 등 쿠파스 판매 가능 키워드 <span class="pend">대기</span></li>
-<li><b>셀럽 후보 10명</b> — 슬라이드 1장 얼굴용 <span class="pend">대기</span></li>
-<li><b>쿠파스 API 키</b> — secrets 등록용 <span class="pend">대기</span></li>
-<li>하루 발행 목표 (1개? 2개?) <span class="pend">대기</span></li>
+<li class="done">벤치마킹 계정 — 8곳 제공·분석 완료 (추가 계정은 카론님 제공 시 언제든 확장)</li>
+<li class="done">제품 키워드 — 벤치마킹 분석으로 후보 추출 완료 (건강식품·다이어트·살림템 등) — <b>카론님 승인 대기</b></li>
+<li class="done">셀럽 후보 — 16명+ 추출 완료 (하지원·최수종·하희라·추안도탄·오은영·손예진·화사 등) — <b>카론님 승인 대기</b></li>
+<li class="done">쿠파스 API 키 — 등록·테스트 완료</li>
+<li class="done">YouTube Data API 키 — 등록·테스트 완료</li>
+<li>하루 발행 목표 (1개? 2개?) <span class="pend">대기 — 카론님 결정</span></li>
 <li>톤 가이드 (미제공 시 벤치마킹 기준으로 자동 설정)</li>
 </ul>
 </div>
