@@ -58,7 +58,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <li>✅ 실행 계획서 확정 (사용자 승인) — 이 문서가 진행 대장</li>
 <li>✅ 계획서 사이트 오픈 — 이 페이지</li>
 </ul>
-<div class="next">⏭️ 다음 작업: ① 쿠파스 API 키 수령 → 등록·테스트 ② 사용자 자료 수령 (벤치마킹 20계정 · 제품 키워드 10~20개 · 셀럽 10명 · 발행 목표) — <span class="pend">모두 대기 중</span></div>
+<div class="next">⏭️ 다음 작업 (Day 2~3 수집 파이프라인 착수): <span class="pend">사용자 자료 대기</span> — 벤치마킹 계정 20개 · 제품 키워드 10~20개 · 셀럽 후보 10명 · 발행 목표</div>
 </div>
 
 <h3 class="sec">🎯 프로젝트 요약</h3>
@@ -87,7 +87,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <li class="done">faster-whisper · Pillow · rclone 설치</li>
 <li class="done">실행 계획서 확정 + 사이트 오픈</li>
 <li class="done">구글시트 대장 생성 — <b>IG퍼널 대장</b> (소유: uccskgd 업무용 계정, 서비스계정 공유) · 탭 4개 완성 · 읽기/쓰기 테스트 통과</li>
-<li>쿠파스 OpenAPI 키 등록(<code>~/.openclaw/secrets/</code>) + "강황가루" 검색링크 발급 테스트 → 키워드→검색링크 자동 생성 함수</li>
+<li class="done">쿠파스 OpenAPI 연동 완료 — 키 등록(secrets) + <code>coupang_search.py</code> 검증. 키워드 → 검색창 제휴링크(landingUrl) 발급 성공, 상품별 트래킹링크 동시 제공. 제품TB에 강황가루 테스트행 기록</li>
 <li>인포크링크 페이지 (VPS 자체 호스팅: 키워드 버튼 나열 + 클릭 카운트 → 쿠파스 링크 이동)</li>
 </ul>
 </div>
@@ -179,7 +179,8 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <div class="card">
 <ul>
 <li><b>2026-09-17</b> — 프로젝트 착수. 폴더 구성, faster-whisper 1.2.1 · Pillow 12.3.0 · rclone 1.60.1 설치 완료. 실행 계획서 확정 및 본 사이트 오픈.</li>
-<li><b>2026-09-17 (밤)</b> — 구글시트 계정 결정 변경(업무용 uccskgd) → 시트 'IG퍼널 대장' 생성·공유 완료, 탭 4개 구성, 읽기/쓰기 테스트 통과. <b>남은 것: 쿠파스 API 키 등록·테스트, 사용자 자료(벤치마킹·키워드·셀럽 리스트)</b></li>
+<li><b>2026-09-17 (밤)</b> — 구글시트 계정 결정 변경(업무용 uccskgd) → 시트 'IG퍼널 대장' 생성·공유 완료, 탭 4개 구성, 읽기/쓰기 테스트 통과.</li>
+<li><b>2026-09-17 (심야)</b> — 쿠파스 API 연동 완료, Day 1 끝. 🔧 교훈: 쿠파 HMAC 서명 메시지는 <code>signedDate+method+PATH+queryString</code> — 경로와 쿼리를 <b>'?' 없이</b> 이어붙임(URL에는 ? 포함해 전송). BASE URL은 <code>api-gateway.coupang.com</code>(api.coupang.com은 DNS 없음), 날짜 포맷은 YYMMDDTHHMMSSZ. 첫 성공 후 401이 반복되면 서명 메시지 재조립 순서부터 의심할 것</li>
 </ul>
 <div class="agnote">🤖 <b>에이전트 지침:</b> 이 프로젝트를 재개할 때는 이 페이지 + <code>~/.openclaw/workspace/ig-funnel/PLAN.md</code>를 읽고 현재 상태 박스의 "다음 작업"부터 이어서 진행. 작업 완료 시 체크리스트와 로그를 갱신 후 <code>cd /home/admin/report-hub &amp;&amp; git add -A &amp;&amp; git commit -m "ig-funnel: 진행 갱신" &amp;&amp; git push</code>로 이 문서를 업데이트할 것.</div>
 </div>
