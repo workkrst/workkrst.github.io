@@ -64,7 +64,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <li>✅ 계획서 사이트 오픈 — 이 페이지</li>
 <li>✅ <b>구글드라이브 백업 연동 완료</b> (2026-09-18) — OAuth drive.file 스코프로 카론님 계정 명의로 업로드 · <a href="https://drive.google.com/drive/folders/1uR46DwMxN85gvFnt5FonIqzRsB2FcGah">OpenClaw 폴더</a>만 접근 가능(격리 검증 완료). 서비스계정은 구글 쿼터 정책으로 업로드 불가 → OAuth 전환</li>
 </ul>
-<div class="next">⏭️ 다음 작업 (Day 2~3 수집 파이프라인 착수): 셀럽·키워드 후보는 벤치마킹 8곳 분석으로 확보 완료 — 아래 버튼으로 분석 리포트 열람. 카론님 결정 대기: 셀럽·키워드 후보 승인 · 발행 목표 / 제 작업: 수집 파이프라인 구축(준비 완료, 착수 가능)</div>
+<div class="next">🎬 진행 중: 하지원 01~05 영상 재제작 (샘플 1번 세로크롭 확정 포맷 · 롱폼 고화질 원본 강제 · 모자이크 완전 가림 · 고비트레이트) → 완료 후 Drive 01~05·원본소재 교체 업로드</div>
 </div>
 <p style="text-align:center;margin-top:14px"><a class="bigbtn" href="https://workkrst.github.io/ig-funnel-analysis/">📊 벤치마킹 분석 리포트 보기 →</a></p>
 
@@ -195,6 +195,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;margin-top:44px}
 <li><b>2026-09-17 (심야 2)</b> — 과호출 방지 장치 추가 (agy 작업, 사용자 요청). 근거: 공식 한도 초당 5회(2026-03 하향), 429 적발 시 24h 정지·3회 영구정지. 구현: ① 호출 간격 최소 2초 ② 일일 예산 500회 ③ 키워드 캐시 24h(같은 키워드 재호출 차단, --no-cache로 강제 갱신) ④ 429 감지 시 재시도 금지+24h 잠금파일. 실호출 1회·캐시 히트·잠금 시뮬레이션 테스트 통과</li>
 <li><b>2026-09-18 (새벽)</b> — 벤치마킹 8계정 분석 리포트 독립 사이트 분리(ig-funnel-analysis) + 상호 이동 버튼. 유튜브 수집 무료 강제 규칙 확정(Apify 금지, yt-dlp+공식 Data API만). yt-dlp 검색 테스트로 벤치마킹 계정들이 쓰던 원본 클립(하지원 90만뷰·박진영 47만뷰·한고은 248만뷰) 직접 발견 확인 — 역검색 전략 검증 완료. <b>YouTube Data API v3 키 발급·등록·테스트 완료</b>(secrets/youtube-api.json, 검색 정상) — 수집 파이프라인 구축 준비 끝</li>
 <li><b>2026-09-18 (저녁)</b> — 🪙 토큰 강제 규칙 확정(사용자 지시): 수집·추출·분석 등 토큰 다량 소비 작업은 agy CLI로 수행, 특히 분석 무조건 agy. GLM은 지휘·승인 플로우·텔레그램 보고만 담당. 전역 규칙으로도 등록(TOOLS.md agy 섹션)</li>
+<li><b>2026-09-19 (오전)</b> — 🎬 <b>샘플 1번(세로크롭) 최종 확정</b> (PiP 기각) + 재제작 지시 반영: ① 원본영상은 <b>롱폼 고화질 무조건</b> 찾아 다운로드 ② 방송 모자이크가 풀리는 구간 — 우리 오버레이로 <b>클립 전체 완전 가림</b>(프레임 단위 검증) ③ 저화질 개선(고비트레이트). PLAN.md 반영·레포 push 완료 → 01~05 재제작 착수</li>
 <li><b>2026-09-19 (새벽)</b> — ✅ <b>하지원 5세트 완성·승인</b>: 표지 사진 웹서치 수집본으로 교체(클립 캡처 금지 규칙), 영상 세로크롭+삐소리 제거+리뵐컷 삭제+자막 모자이크 보강+워터마크 블러, 샘플2종(세로크롭/PiP) 제작. Drive <code>인스타캐러셀/1. 하지원 올리브유/01~05+원본소재</code> 구조 확정. 🎬 영상 소재 규칙 확정: <b>16:9 롱폼 원본(공식채널) 우선</b> — 숏폼 재업로드는 최후(JTBC 공식 1080p 풀에피소드 존재 확인). 🧰 작업대장 시트탭·job_ledger.py·resume_job.py·docs/SYSTEM_DESIGN.md(재개 프로토콜+PC 설치가이드) 구축 완료 — 깃허브 push는 레포 생성 후</li>
 </ul>
 <div class="agnote">🤖 <b>에이전트 지침:</b> 이 프로젝트를 재개할 때는 이 페이지 + <code>~/.openclaw/workspace/ig-funnel/PLAN.md</code>를 읽고 현재 상태 박스의 "다음 작업"부터 이어서 진행. 작업 완료 시 체크리스트와 로그를 갱신 후 <code>cd /home/admin/report-hub &amp;&amp; git add -A &amp;&amp; git commit -m "ig-funnel: 진행 갱신" &amp;&amp; git push</code>로 이 문서를 업데이트할 것.</div>
