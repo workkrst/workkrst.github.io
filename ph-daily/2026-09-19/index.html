@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-09-19</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-09-19 · Top 5 · 수집 댓글 60개 · 수집 2026-09-19 12:33 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-09-19",
+ "collected_at": "2026-09-19 12:33 KST",
+ "summary": "오늘은 '실행하는 AI 에이전트'가 판을 지배했다. 세일즈 아웃리치(Ami AI), 커리어 코칭(AINA), 고객지원·피드백(ProductBridge), 화면 조작(Sider Omni), 음성 작업(MosMos)까지 5개 중 4개가 AI 카테고리에 올라 있고, 전원이 GPT-6 Astra를 기반으로 삼아 이번 OpenAI 챌린지 시즌의 흐름이 그대로 드러난다. 댓글의 공통 논점은 데이터 프라이버시(연락처·화면·음성의 클라우드 전송 범위)와 'AI가 무조건 동의만 하는 게 아니라 문제를 먼저 잡아주는가'였다.",
+ "notable": [
+  {
+   "slug": "ami-ai",
+   "why": "창업자가 아웃바운드 대행사에 3만 달러를 쓰고 미팅 0건을 얻은 실패담으로 도입부를 열고, 17,707개 실제 캠페인 데이터를 판단 근거로 내세우는 스토리텔링이 인상적이다. 댓글에서 'AI는 뭐든 긍정한다'는 반응이 나오자 'AI가 무조건 동의하지 않도록 훈련했다'고 받아치며, 글쓰기 AI가 아닌 '판단하는 AI'로 차별점을 명확히 세웠다."
+  },
+  {
+   "slug": "mosmos",
+   "why": "댓글 104개로 오늘 수집분 중 압도적 참여를 기록했다. 받아쓰기는 온디바이스 로컬 ASR로 처리하고 회의 기능만 클라우드로 올린다는 데이터 흐름을 메이커가 투명하게 공개해, 프라이버시 질문에 대한 모범 답변 사례로 꼽힌다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Ami AI",
+   "tagline_en": "Lovable for getting customers",
+   "tagline_kr": "고객 확보를 위한 'Lovable'",
+   "image": "https://ph-files.imgix.net/75f0625c-cbfa-4751-b269-42252ecb1f75.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Sales",
+    "Marketing",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 461,
+   "comments_count": 12,
+   "maker": "Yuriy Zaremba (AiSDR 공동창업자·CEO, YC 2회 수료)",
+   "price_model": "Freemium",
+   "price_detail": "웹사이트만 연결하면 무료로 첫 캠페인 플랜 수신 가능(신용카드·데모 불필요). 유료 Solo 플랜은 프로덕트헌트 코드 AMIHUNT50으로 3개월 50% 할인",
+   "desc_kr": "Ami AI는 AiSDR이 만든 AI GTM(고객 확보) 에이전트로, '고객 확보를 위한 Lovable'을 표방한다. 웹사이트만 주면 근거 시그널이 붙은 캠페인 아이디어 3가지를 제안하고, 목표 수치에서 역산해 리드·발송량·주 단위 플랜을 세운다. 요청한 리스트가 결과를 내지 못할 리스트라면 만들기 전에 미리 경고하는 것이 특징이다. 계획을 승인하면 이메일과 링크드인에서 아웃리치를 실행하고, 캠페인이 꺾이면 오디언스·메시지·타이밍 중 무엇이 문제인지 짚어 직접 수정한다. GPT-6 Astra 기반이며 27개 업종 17,707개 캠페인·19,854건의 예약 미팅 데이터를 추론 근거로 활용하고, 베타 3개월간 6억 9,700만 달러의 파이프라인에 영향을 줬다고 주장한다.",
+   "launch_url_used": "https://www.producthunt.com/products/ami-ai",
+   "comment_summary": "창업자 Yuriy가 아웃바운드 대행사에 3만 달러를 쓰고 미팅 0건을 얻은 실패담과 17,707개 캠페인 데이터를 내세운 롱폼 출시글을 올리고 GPT-6 Astra 활용 방식을 상세히 설명했다. 사용자 댓글은 캠페인 진행 중 실시간 수정 제안, 연락처 데이터 출처와 GDPR 준수, 문제 감지 속도(2주차 첫 점검·3주차 최종 판단), 리스트 웜업 등 실무 질문이 중심이었다. 메이커가 모든 질문에 신속히 답하며 'AI가 무조건 동의하지 않도록 훈련했다'는 차별점을 강조했다.",
+   "warnings": "페이지 자체에는 업보트 수가 표기되지 않아 상위 수집치(+461)를 사용. 댓글 전체 수도 미표기(3페이지 이상 존재)라 comments_count는 수집분 12건 기준. 제작사는 AiSDR이며 'Ami'는 동사의 AI GTM 에이전트 제품명임.",
+   "comments": [
+    {
+     "author": "Yuriy Zaremba",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt. Yuriy here, co-founder and CEO of AiSDR, 2x YC alumni. I once paid an outbound agency $30,000 and got zero meetings in 6 months. Then I built an AI SDR, sold it to 1,153 companies, and watched 80% of them get the same result, but faster and cheaper. The emails were fine. Nobody, including our software, solved the core problems - who should get them and why should they care to respond. AI SDR industry overpromised and underdelivered and people hated it. Ami is the thing I wish I could hand to every customer who trusted us in 2023 and got a fast way to fail. Here's what it looks like. You give it your website. It comes back with three campaign ideas, each with a signal behind it and a reason it thinks this one is likely to deliver results. That answer is not yet another AI slop. It's rooted in 17,707 campaigns we've run across 27 industries that booked 19,854 qualified meetings. You say \"actually, I want every salesperson in Europe.\" It tells you that the audience has booked zero meetings across all campaigns we've run, and hands you the version that will. You say \"I need 100 demos by October.\" It gives you the leads, the infrastructure, and the week the plan breaks if one of them slips. You approve. It builds campaigns and runs them across email and LinkedIn. When a campaign starts dying it tells you which of three things broke (audience, message, or timing), proposes a fix, fixes it for you and remembers what you chose. It also suggests new ideas as it learns more about you and your business. It takes care of all the boring stuff - email infrastructure, deliverability, protecting your main domain and LinkedIn account from being blocked, reply classification and handling and dutifully reports all of it's activity into your CRM. Why this exists now and not two years ago: GPT-6 Astra. Models could write outreach for a while. What they couldn't do was hold a multi-step plan, check it against tens of thousands of real outcomes, and change course mid-flight without losing the thread. Astra, with it's 96.3% on million-token recall benchmark can. That's the reasoning layer; our three years of campaign data is what it reasons against. Numbers from three months of beta: $697M in pipeline influenced. And this one, a Solo user's first campaign: 18% of contacts replied, 47% of those replies were positive. I asked to see the dashboard before I'd say it out loud. Who it's for: first-time founders, first sales hires, teams that need to get started with outbound to grow pipeline, but where nobody has done outbound before. If you already have a great SDR team, you probably don't need us. Try it now. Point Ami at your website and you'll have your first campaign plan in about 15 minutes. No credit card, no demo. Product Hunt code AMIHUNT50 takes 50% off Solo for 3 months. app.aisdr.com/signup Then come back and tell me what it got wrong. I want this to be the AI sales agent you've been waiting for, so if the targeting is off or messaging reads like AI slop or UX is bad - I want to hear from you and see screenshots and I promise - we will improve.",
+     "kr": "📌 안녕하세요 프로덕트헌트. AiSDR 공동창업자이자 CEO, YC 2회 수료 기업 출신인 Yuriy입니다. 저는 한때 아웃바운드 대행사에 3만 달러를 지불하고 6개월 동안 미팅 0건을 얻은 적이 있습니다. 그 후 AI SDR을 만들어 1,153개사에 판매했고, 그중 80%가 같은 결과를 더 빠르고 저렴하게 얻는 것을 지켜봤습니다. 이메일 자체는 괜찮았습니다. 문제는 우리 소프트웨어를 포함해 아무도 풀지 못한 핵심 질문, 즉 '누구에게 보낼 것인가', '왜 답장할 이유가 있는가'였죠. AI SDR 업계는 과대약속하고 과소달성해서 사람들에게 미움받았습니다. Ami는 2023년 우리를 믿고 빠르게 실패만 경험한 고객 모두에게 건네주고 싶었던 제품입니다. 실제 모습은 이렇습니다. 웹사이트를 주면 근거 시그널과 '이게 결과를 낼 가능성이 높다'는 이유가 붙은 캠페인 아이디어 3가지를 돌려줍니다. 그 답은 또 다른 AI 스롭이 아닙니다. 27개 업종에서 실행한 17,707개 캠페인, 19,854건의 적격 미팅 데이터에 뿌리를 둔 것입니다. '아니, 유럽의 모든 세일즈담당자에게 보내고 싶어'라고 하면, 우리가 실행한 모든 캠페인에서 그 오디언스는 미팅 0건이었다고 알려주고 실제로 통하는 버전을 건네줍니다. '10월까지 데모 100개가 필요해'라고 하면 리드, 인프라, 그리고 계획 요소 하나가 밀리면 무너지는 주까지 알려줍니다. 승인하면 캠페인을 만들어 이메일과 링크드인에서 실행합니다. 캠페인이 꺾이기 시작하면 세 가지(오디언스, 메시지, 타이밍) 중 무엇이 깨졌는지 알려주고, 수정안을 제안하고, 직접 수정한 뒤 여러분의 선택을 기억합니다. 여러분의 비즈니스를 더 배우면서 새 아이디어도 제안합니다. 이메일 인프라, 전달성, 메인 도메인과 링크드인 계정 차단 방지, 답장 분류·응대 같은 지루한 일을 전부 맡고 모든 활동을 CRM에 성실히 보고합니다. 왜 2년 전이 아니라 지금 존재하냐면: GPT-6 Astra 때문입니다. 모델들은 한동안 아웃리치 문안을 쓸 수 있었습니다. 하지만 멀티스텝 플랜을 유지하고, 수만 건의 실제 결과와 대조해 검증하고, 흐름을 잃지 않으면서 중간에 방향을 바꾸는 건 못 했습니다. 백만 토큰 리콜 벤치마크 96.3%를 기록한 Astra는 가능합니다. 그게 추론 레이어고, 3년치 캠페인 데이터는 Astra가 추론하는 대상입니다. 베타 3개월 숫자: 6억 9,700만 달러 파이프라인에 영향. 그리고 솔로 유저의 첫 캠페인 사례: 연락처의 18%가 답장했고 그중 47%가 긍정적이었습니다. 소리 내어 말하기 전에 대시보드를 확인했습니다. 누구를 위한 제품인가: 첫 창업자, 첫 세일즈 채용자, 파이프라인을 키우려 아웃바운드를 시작해야 하지만 해본 사람이 없는 팀. 이미 훌륭한 SDR 팀이 있다면 아마 필요 없을 겁니다. 지금 써보세요. Ami에게 웹사이트를 가리키면 약 15분 만에 첫 캠페인 플랜이 나옵니다. 신용카드도, 데모도 필요 없습니다. 프로덕트헌트 코드 AMIHUNT50은 Solo를 3개월 50% 할인합니다. app.aisdr.com/signup 그리고 돌아와서 뭐가 틀렸는지 알려주세요. 타게팅이 빗나갔거나 메시지가 AI 스롭처럼 읽히거나 UX가 나쁘면 스크린샷과 함께 알려주시면 반드시 개선하겠습니다."
+    },
+    {
+     "author": "Yuriy Zaremba",
+     "is_maker": true,
+     "text": "Ami uses GPT-6 Astra to plan, launch, and improve outbound sales campaigns. For example, it turns LinkedIn engagement into outreach: identifies relevant buyers, researches their businesses, recommends an offer, and prepares personalized messages. After customer approval, Ami executes via email and LinkedIn, handles replies, and books meetings. A user request typically involves 4–5 tool calls that are all routed and executed by Astra. We supply 27 industry playbooks built from 2.5 million emails, backed by experience from 17,707 historical campaigns. On every turn, we add relevant customer context, past decisions, and live campaign results. As replies arrive, Astra helps decide what to change: audience, offer, messaging, or whether to stop. Ami executes within the customer's approved scope.",
+     "kr": "Ami는 GPT-6 Astra를 사용해 아웃바운드 세일즈 캠페인을 기획·실행·개선합니다. 예를 들어 링크드인 참여를 아웃리치로 전환합니다. 관련 바이어를 식별하고, 그들의 비즈니스를 조사하고, 오퍼를 추천하고, 개인화된 메시지를 준비합니다. 고객 승인 후에는 Ami가 이메일과 링크드인으로 실행하고, 답장을 처리하며, 미팅을 예약합니다. 하나의 사용자 요청에는 보통 4~5개의 툴 호출이 필요하며 모두 Astra가 라우팅하고 실행합니다. 우리는 250만 통의 이메일로 만든 27개 업종 플레이북을 제공하고, 17,707개 과거 캠페인 경험이 이를 뒷받침합니다. 매 턴마다 관련 고객 컨텍스트, 과거 결정, 실시간 캠페인 결과를 추가합니다. 답장이 오면 Astra가 무엇을 바꿀지(오디언스, 오퍼, 메시징, 중단 여부) 판단을 돕습니다. Ami는 고객이 승인한 범위 안에서만 실행합니다."
+    },
+    {
+     "author": "Vikram",
+     "is_maker": false,
+     "text": "I love that it suggests fixes while the campaign is running instead of waiting for a depressing post-mortem, such a nice way to so solving congrats for launch team🙌",
+     "kr": "캠페인이 돌아가는 동안 쓸쓸한 사후 검토를 기다리게 하지 않고 수정 제안을 해주는 점이 좋습니다. 정말 멋진 문제 해결 방식이네요. 출시 팀 축하드립니다 🙌"
+    },
+    {
+     "author": "Tehreem Fatima",
+     "is_maker": false,
+     "text": "Pivot from pure writing to reasoning based on 17k+ campaigns is huge. Excited to see how Ami changes the outbound game.",
+     "kr": "순수 글쓰기에서 1만 7천 개 이상 캠페인 데이터에 기반한 추론으로의 전환은 엄청난 변화네요. Ami가 아웃바운드 게임을 어떻게 바꿀지 기대됩니다."
+    },
+    {
+     "author": "Dim Neocleous",
+     "is_maker": false,
+     "text": "Congrats on the launch! The positioning is sweet! Also, I like the adaptive behaviour of Ami, using Astra makes sense!",
+     "kr": "출시 축하합니다! 포지셔닝이 아주 좋네요! 그리고 Astra를 활용한 Ami의 적응형 동작도 타당한 선택이라고 생각합니다!"
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "nice launch... the idea of the testing campaign ideas against the real promotion data is the interesting, and also the audience targeting part caught my attentions. how quickly does it the usually detect that somethings is wrong???",
+     "kr": "좋은 출시네요... 실제 프로모션 데이터로 캠페인 아이디어를 검증한다는 발상이 흥미롭고, 오디언스 타게팅 부분도 눈에 띄었습니다. 문제가 생겼다는 것을 보통 얼마나 빨리 감지하나요???"
+    },
+    {
+     "author": "Lidiia Bondarenko",
+     "is_maker": false,
+     "text": "Looks promising! Congrats on launch! What tools do you offer to control the quality of leads brought with your outreach? I see stats as Total response rate and Positive response rate, can you elaborate?",
+     "kr": "유망해 보이네요! 출시 축하합니다! 아웃리치로 확보한 리드의 품질을 관리하기 위해 어떤 도구를 제공하나요? 총 응답률과 긍정 응답률 같은 통계가 보이는데, 좀 더 설명해 주실 수 있을까요?"
+    },
+    {
+     "author": "Alina Stanislavska",
+     "is_maker": true,
+     "text": "thanks Jakub! The data is coming from a waterfall of over a dozen data vendors we work with including public web data scraping for live signals. We also triple-verify every contact for potential bounces, which is how we achieve a system-wide bounce rate <1%",
+     "kr": "고마워요 Jakub! 데이터는 협업하는 십여 개 이상의 데이터 벤더 워터폴과, 라이브 시그널을 위한 공개 웹 스크래핑에서 나옵니다. 또 모든 연락처를 바운스 가능성 기준으로 3중 검증하는데, 이 덕분에 시스템 전체 바운스율 1% 미만을 달성합니다."
+    },
+    {
+     "author": "Jakub Stonavsky",
+     "is_maker": false,
+     "text": "Hi guys! the product looks very interesting (and to be covering the biggest gap almost every \"I am building Xxx\" product has)! I am not sure I understand where the contact data are coming from and if from my side, how do you handle any data from my side? If it is from the model seed, how do you handle quality of the contacts?",
+     "kr": "안녕하세요 여러분! 제품이 정말 흥미로워 보입니다 ('저 Xxx 만들고 있어요'류 제품이 거의 다 갖고 있는 가장 큰 공백을 채워주는 것 같네요)! 연락처 데이터가 어디서 오는지, 제 쪽 데이터라면 어떻게 처리하는지 잘 모르겠습니다. 모델 시드에서 나온 것이라면 연락처 품질은 어떻게 관리하나요?"
+    },
+    {
+     "author": "maryna synychenko",
+     "is_maker": false,
+     "text": "How does Ami know that the list I asked for won't work. Where is her judgment coming from?",
+     "kr": "Ami는 어떻게 제가 요청한 리스트가 통하지 않는다는 걸 알 수 있나요? 그 판단력은 어디서 오는 건가요?"
+    },
+    {
+     "author": "Yuliia Riazantseva",
+     "is_maker": false,
+     "text": "Hey team! One thing that drives me crazy with AI is how agreeable it is. I can give it a pretty questionable idea and it'll still find a way to tell me it's great 😂 Can Ami actually tell me when I'm onto something bad?",
+     "kr": "팀 여러분! AI를 쓰면서 저를 미치게 하는 건 너무 동의해준다는 점이에요. 애매한 아이디어를 줘도 결국 훌륭하다고 말하는 방법을 찾아내거든요 😂 Ami는 제가 별로인 걸 하고 있을 때 실제로 말해줄 수 있나요?"
+    },
+    {
+     "author": "Emma Pugsley",
+     "is_maker": false,
+     "text": "Congrats on the launch. I'm very interested to try it out because I've trialed a few outreach platforms lately and haven't had much success. I put that down to the fact that I know very little about it, so I really like the built-in fix/recommendation feature. If it sends emails, how does it warm up the list? One thing I've learnt is about low réponses rates from cold outreach.",
+     "kr": "출시 축하합니다. 최근 아웃리치 플랫폼 몇 곳을 써봤지만 성과가 별로 없어서 꼭 써보고 싶네요. 제가 이 분야를 잘 몰라서 그렇다고 생각하는데, 내장된 수정/추천 기능이 정말 마음에 듭니다. 이메일을 보낸다면 리스트 웜업은 어떻게 하나요? 콜드 아웃리치의 낮은 응답률에 대해 배운 게 하나 있다면 그거죠."
+    }
+   ],
+   "slug": "ami-ai"
+  },
+  {
+   "name": "AINA",
+   "tagline_en": "Find your job search blind spots with an AI coach",
+   "tagline_kr": "AI 코치와 함께 잡서치의 맹점을 찾아보세요",
+   "image": "https://ph-files.imgix.net/863751ef-7a8b-4ecd-8cfd-2ed270599073.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Productivity",
+    "Artificial Intelligence",
+    "Career"
+   ],
+   "upvotes": 418,
+   "comments_count": 12,
+   "maker": "Natallia Mikhnovets (창업자), 팀: Kristina Grits·Tatsiana Tsybukova·Kseniia Ponomareva",
+   "price_model": "Free",
+   "price_detail": "구직자(후보자)에게 지속 무료 — 출시일 한정이 아님(메이커 답변으로 확인). 링크드인 또는 CV로 프로필 생성 후 Career Coach 무료 세션 시작 가능",
+   "desc_kr": "AINA는 비디오 아바타와의 대화를 통해 잡서치의 맹점을 찾아주는 AI 커리어 코치다. 커리어 상황과 목표를 이야기하면 약한 이력서, 불명확한 포지셔닝, 포지션 선택 문제 등 실제로 구직을 가로막는 것이 무엇인지 진단하고 개인화된 액션 플랜을 제공한다. 역할·연차·경험에 맞춰 행동(STAR)·상황·기술 질문을 조합한 모의 면접 연습이 가능하고, 세션 후에는 '이력서 핵심 3개 섹션 업데이트' 같은 구체적인 개선 로드맵을 받는다. 프로필 작성, 맞춤 일자리 탐색, 지원, 인터뷰 준비 등 구직 전 과정을 한곳에서 관리할 수 있다. 후보자에게는 출시일 한정이 아닌 지속 무료이며, OpenAI GPT-6 Astra 챌린지에 참여해 코칭 세션 후 개인화 개발 플랜 생성에 Astra를 활용한다.",
+   "launch_url_used": "https://www.producthunt.com/products/aina",
+   "comment_summary": "창업자 Natallia와 마케팅 담당 Kristina가 출시 소식을 올리고, OpenAI GPT-6 Astra 챌린지 참여 사례(세션 후 개인화 개발 플랜 생성)를 소개했다. 댓글에서는 '프로필이 약한 것 vs 지원 포지션이 잘못된 것' 구분, 일반적이지 않은 피드백 보장 방법, 행동·기술 면접 연습 커버 범위, 미구직 상태에서의 활용 가능성 등 실사용 질문이 이어졌다. 메이커 측이 라이브 코딩 미지원 같은 한계까지 솔직하게 답변하며 기술 스택별 테스트 의견을 수렴했다.",
+   "warnings": "페이지 자체에는 업보트 수가 표기되지 않아 상위 수집치(+418)를 사용. 댓글 전체 수도 미표기(3페이지 이상 존재)라 comments_count는 수집분 12건 기준. 리뷰는 1건(5.0)으로 극초기 단계 제품임.",
+   "comments": [
+    {
+     "author": "⚡️Natallia Mikhnovets",
+     "is_maker": true,
+     "text": "📌 👋 Hey Product Hunt! I'm Natallia, founder of AINA! After 10+ years around hiring, HR tech, and operations, I kept seeing the same problem from the candidate side: people can be great at what they do and still have very little clarity on why their job search isn't moving, how recruiters actually perceive their profile, or what they should change before the next interview. That's what we built AINA for🫶 **AINA is an AI career companion that you can actually talk to.** Tell it where you are in your career, what you're trying to achieve, what isn't working - or ask it to run an interview with you. It uses your experience and goals to help you understand what may be holding you back and gives you concrete recommendations on what to do next. And the coach is only one part of AINA. You can build your professional profile, discover relevant jobs, apply, prepare for interviews, and manage your job search in one place. It's free for candidates today, and this launch is a big moment for our team. We're taking part in the GPT-6 Astra Challenge with OpenAI, and it came at the perfect time for us. We use GPT-6 Astra to strengthen the personalized development plans candidates get after each coaching session. Just create a profile with your LinkedIn or CV, then select Career Coach in the header to start your first session - or explore everything else while you're there. If you try it, I'd genuinely love to know one thing: Did AINA tell you something about your career or job search that you hadn't thought about before?",
+     "kr": "📌 👋 안녕하세요 프로덕트헌트! 저는 AINA 창업자 Natallia입니다. 10년 넘게 채용·HR테크·운영 일을 하며 후보자 쪽에서 늘 같은 문제를 봤습니다. 일을 잘하는 사람도 자기 잡서치가 왜 안 풀리는지, 리크루터가 자기 프로필을 실제로 어떻게 보는지, 다음 인터뷰 전에 뭘 바꿔야 하는지 명확하게 모르는 경우가 많다는 거죠. 그래서 AINA를 만들었습니다 🫶 AINA는 실제로 대화할 수 있는 AI 커리어 컴패니언입니다. 지금 커리어가 어디쯤인지, 뭘 이루려 하는지, 뭐가 안 되는지 말하거나 모의 인터뷰를 부탁할 수 있습니다. 경력과 목표를 바탕으로 뭐가 발목을 잡는지 이해를 돕고, 다음에 구체적으로 뭘 해야 하는지 권고를 줍니다. 코치는 AINA의 한 부분일 뿐입니다. 전문 프로필을 만들고, 맞는 일자리를 찾고, 지원하고, 인터뷰를 준비하고, 잡서치를 한곳에서 관리할 수 있습니다. 오늘 후보자에게는 무료이고, 이번 출시는 팀에게 큰 순간입니다. OpenAI와 함께하는 GPT-6 Astra 챌린지에 참여 중인데 저희에게 딱 맞는 타이밍이었습니다. GPT-6 Astra로 각 코칭 세션 후 받는 개인화 개발 플랜을 강화하고 있습니다. 링크드인이나 CV로 프로필을 만든 뒤 헤더에서 Career Coach를 선택해 첫 세션을 시작하세요. 써보신다면 딱 하나만 정말 알고 싶습니다. AINA가 여러분의 커리어나 잡서치에 대해 미처 생각지 못했던 것을 알려준 적이 있나요?"
+    },
+    {
+     "author": "Kristina Grits",
+     "is_maker": true,
+     "text": "Hey Product Hunt! I'm Kristina, working on marketing, back with another product after some time away. I know from experience how hard it can be to get back into job hunting and interviews after a long time in one role. It's like learning a new skill.",
+     "kr": "안녕하세요 프로덕트헌트! 마케팅을 담당하는 Kristina입니다. 잠시 쉬었다가 다른 제품으로 다시 인사드립니다. 한 직장에서 오래 일한 뒤 구직과 면접에 다시 들어가는 게 얼마나 어려운지 경험으로 압니다. 새로운 스킬을 배우는 것 같거든요."
+    },
+    {
+     "author": "Kristina Grits",
+     "is_maker": true,
+     "text": "We integrated GPT 6 Astra to build personalized candidate development plans following sessions with our AI coach. Previous-generation models (including GPT-5.6 Sol) struggled with a task of this scale: they either lost track of details, resulting in generic advice, or failed to meet our target response time. The transition to Astra solved two key challenges. First, we reduced generation time, ensuring a seamless experience for the candidate. Second, we radically improved the depth of analytics: the model is capable of retaining the entire context of the session and building a complex, multi-level plan. Now, the user receives more than just a summary of the conversation; they get a highly specific roadmap – ranging from revamping their market positioning to targeted actions (e.g., updating 3 key CV sections) – that will yield measurable results in their very next interviews.",
+     "kr": "GPT 6 Astra를 통합해 AI 코치 세션 이후 개인화된 후보자 개발 플랜을 만듭니다. 이전 세대 모델(GPT-5.6 Sol 포함)은 이런 규모의 작업에 고전했습니다. 디테일을 놓쳐 일반적인 조언을 하거나, 목표 응답 시간을 맞추지 못했죠. Astra로 전환하면서 두 가지 핵심 과제를 해결했습니다. 첫째, 생성 시간을 줄여 후보자에게 매끄러운 경험을 제공했습니다. 둘째, 분석 깊이를 획기적으로 개선했습니다. 모델이 세션 전체 컨텍스트를 유지하며 복잡한 다단계 플랜을 만들 수 있게 됐습니다. 이제 사용자는 대화 요약 이상을 받습니다. 시장 포지셔닝 재정비부터 타깃 액션(예: 이력서 핵심 3개 섹션 업데이트)까지 아우르는 매우 구체적인 로드맵으로, 바로 다음 면접에서 측정 가능한 결과를 얻게 됩니다."
+    },
+    {
+     "author": "Olia Nemirovski",
+     "is_maker": false,
+     "text": "Love this, congrats to the team! I've seen so many strong people stuck in a job search with no idea why. Can AINA tell the difference between \"your profile is weak\" and \"you're just applying to the wrong roles\"?",
+     "kr": "좋네요, 팀 축하드립니다! 실력 좋은 사람들이 왜인지 구직에 막혀 있는 걸 너무 많이 봤어요. AINA가 '프로필이 약한 것'과 '그냥 지원하는 포지션이 잘못된 것'을 구분해 줄 수 있나요?"
+    },
+    {
+     "author": "Kseniia Ponomareva",
+     "is_maker": true,
+     "text": "Olia, thanks for the question! Yes, exactly - what the first conversation with our career coach is designed to understand: what is actually blocking your job search? For example: Is your resume too weak? Is your positioning unclear? Are you struggling to choose the right role? Do you not know where to start? Are you changing your career direction? The goal is to understand the real problem first, instead of giving the same advice to everyone.",
+     "kr": "Olia, 질문 감사합니다! 네, 바로 그겁니다. 코치와의 첫 대화는 '실제로 무엇이 잡서치를 막고 있는가'를 파악하도록 설계됐습니다. 예를 들면: 이력서가 너무 약한가? 포지셔닝이 불명확한가? 맞는 포지션을 고르는 데 어려움을 겪는가? 어디서 시작해야 할지 모르는가? 커리어 방향을 바꾸는 중인가? 목표는 모두에게 같은 조언을 주는 대신 진짜 문제를 먼저 이해하는 것입니다."
+    },
+    {
+     "author": "Maria Anosova 🔥",
+     "is_maker": false,
+     "text": "Is there a way to practice specifically for behavioral questions vs technical ones?",
+     "kr": "기술 질문과 별개로 행동(behavioral) 질문만 집중적으로 연습하는 방법도 있나요?"
+    },
+    {
+     "author": "Vlad Shipilov",
+     "is_maker": false,
+     "text": "Congrats on the launch! How do you make sure the feedback isn't too generic?",
+     "kr": "출시 축하합니다! 피드백이 너무 일반적(제네릭)하지 않도록 어떻게 보장하나요?"
+    },
+    {
+     "author": "Sviatoslav Dvoretskii",
+     "is_maker": false,
+     "text": "I believe hiring market is a hard thing now so many people just need such a product! BTW I have an idea that even people having current place of work already should think about their next place and the system which can propose suitable offers would be really helpful for everyone. Push you up and good luck!",
+     "kr": "요즘 채용 시장이 워낙 어려워서 많은 사람들이 이런 제품을 정말 필요로 할 것 같습니다! 그나저나 지금 직장이 있는 사람들도 다음 직장을 생각해야 하고, 맞는 제안을 추천해 주는 시스템이 있으면 모두에게 정말 유용할 것 같다는 아이디어도 있습니다. 업보트 눌러드리고 행운을 빕니다!"
+    },
+    {
+     "author": "Chilarai M",
+     "is_maker": false,
+     "text": "Wow! great. Does it cover tech interviews as well?",
+     "kr": "와, 훌륭하네요! 기술 면접도 커버되나요?"
+    },
+    {
+     "author": "⚡️Natallia Mikhnovets",
+     "is_maker": true,
+     "text": "Yes especially for practicing technical reasoning and explaining your decisions clearly. AINA adapts to your role, seniority, and experience, and can cover role-specific technical questions, practical cases, architecture decisions, and trade-offs. Live coding isn't part of this version yet. Which role and tech stack would you want to test it with?",
+     "kr": "네, 특히 기술적 추론과 자기 결정을 명확히 설명하는 연습에 유용합니다. AINA는 역할·연차·경험에 맞춰 동작하며 역할 특화 기술 질문, 실무 케이스, 아키텍처 결정, 트레이드오프를 다룰 수 있습니다. 라이브 코딩은 아직 이 버전에 포함되지 않습니다. 어떤 역할과 기술 스택으로 테스트해 보고 싶으신가요?"
+    },
+    {
+     "author": "Margarita Shvetsova",
+     "is_maker": false,
+     "text": "Very interesting and useful product! Finally something relevant to many people in all industries! Question: can I use this if I'm not actively job hunting, just want to improve my interview skills in general?",
+     "kr": "정말 흥미롭고 유용한 제품이네요! 마침내 모든 업계의 많은 사람들에게 해당되는 게 나왔네요! 질문: 적극적으로 구직 중이 아니고 그냥 면접 스킬 자체를 끌어올리고 싶은 경우에도 사용할 수 있나요?"
+    },
+    {
+     "author": "Stepan Solodnev",
+     "is_maker": false,
+     "text": "Congrats! Does the interview practice adapt to the actual role/company you're applying to?",
+     "kr": "축하합니다! 면접 연습이 실제 지원하는 회사/포지션에 맞춰 조정되나요?"
+    }
+   ],
+   "slug": "aina"
+  },
+  {
+   "name": "MosMos",
+   "tagline_en": "Voice writing that works before, during, and after meetings",
+   "tagline_kr": "회의 전·중·후까지 작동하는 보이스 라이팅",
+   "image": "https://ph-files.imgix.net/1b3fbc2c-3a4f-4cef-8486-e1cb7dc37b98.png",
+   "categories": [
+    "Writing",
+    "Artificial Intelligence",
+    "Audio"
+   ],
+   "upvotes": 357,
+   "comments_count": 104,
+   "maker": "Alex Guo (프로덕트 리드) 외 런치 팀: Justin Jincaid, Ting Chen Liang, lego",
+   "price_model": "Freemium",
+   "price_detail": "페이지에 'Free Options' 배지 표시. 구체적 요금제·가격 금액은 PH 페이지에 미게재(웹사이트 mosmos.io 확인 필요).",
+   "desc_kr": "MosMos는 macOS 네이티브 보이스 워크스페이스로, 화면 어디서든 Fn 키를 누르고 말하면 생각을 다듬어진 텍스트로 바꿔주는 음성 글쓰기 도구다. 사용 중인 앱에 맞춰 문체를 자동 조정하고, 한 번 추가한 전문 용어를 개인 글로사리가 기억해 정확도를 높인다. 'Ask MosMos'로 출처를 확인할 수 있는 웹 검색까지 가능하다. 회의에서는 여러 발화자를 구분해 타임스탬프와 함께 전사하고, 구조화된 노트·요약·결정 사항·액션 아이템을 자동 생성한다. 일반 받아쓰기는 온디바이스 로컬 ASR로 처리되지만, 회의 기능은 녹음 업로드 후 클라우드 처리가 포함된다. 음성 받아쓰기는 현재 영어·중국어를 지원하고, 회의 전사용 MOSS Transcribe Diarize 모델은 30개 이상 언어를 지원한다.",
+   "launch_url_used": "https://www.producthunt.com/products/mosmos",
+   "comment_summary": "메이커 셋(Alex Guo·lego·Ting Chen Liang)이 런치 소개와 함께 거의 모든 질문에 신속히 답변하는 구조다. 질문은 데이터 프라이버시(클라우드 전송 범위), 지원 언어(받아쓰기는 영·중, 회의는 30개+), 축어 전사 대비 다듬기 선택, 발화 후 손질량 등 실사용 관점 위주다. 포럼에는 GPT-6 Astra 챌린지 1위 경쟁 중이라는 메이커 측 지원 요청글도 올라와 있다.",
+   "warnings": "가격 금액 정보는 페이지에 없음(Free Options 배지만 표시). 메이커 답변에 따르면 일반 받아쓰기는 온디바이스 처리, 회의 기능은 음성·전사문의 클라우드 전송 포함이라 프라이버시 정책 확인 필요. GPT-6 Astra Challenge 이벤트 참여 중.",
+   "comments": [
+    {
+     "author": "Alex Guo",
+     "is_maker": true,
+     "text": "Hey Product Hunt,\n\nI'm Alex, the product lead at MosMos and a full-stack developer. My day moves between product discussions, meetings, writing, and building software.\n\nI do a lot of vibe coding, often with several coding agents running at once. Typing instructions into every window quickly becomes the bottleneck. Voice lets me explain requirements, add context, and iterate with multiple agents much faster.\n\nThat's why we built MosMos: I could think faster than I could type.\n\nMosMos is a native macOS voice workspace. Press Fn anywhere to speak, and it turns your thoughts into polished text. It adapts the writing style to the app you're using and remembers personal vocabulary and technical terms.\n\nYou can also use Ask MosMos for quick questions and web searches with reviewable sources.\n\nFor meetings, MosMos records multi-person conversations and produces speaker-separated transcripts, summaries, and action items. Processing runs in the background, so you can keep working.\n\nWe're building MosMos for product managers, developers, operators, and anyone who needs to turn conversations into documents, instructions, and next steps.\n\nMosMos is still early, and we'd especially value feedback on: Voice input speed and writing quality / Multi-agent coding workflows / Meeting summaries and action items.\n\nThanks for checking out MosMos. I'll be here throughout the launch to answer questions and learn from your feedback.",
+     "kr": "안녕하세요 Product Hunt 여러분, 저는 MosMos의 프로덕트 리드이자 풀스택 개발자인 Alex입니다. 하루 종일 제품 논의, 회의, 글쓰기, 소프트웨어 개발 사이를 오갑니다.\n\n저는 코딩 에이전트를 여러 개 동시에 돌리는 바이브 코딩을 많이 하는데, 매 창마다 지시문을 타이핑하는 게 금세 병목이 됩니다. 음성으로 요구사항을 설명하고 맥락을 덧붙이면 여러 에이전트와 훨씬 빠르게 반복 작업을 할 수 있죠.\n\n그래서 MosMos를 만들었습니다. 생각이 타이핑 속도보다 빨랐거든요.\n\nMosMos는 네이티브 macOS 보이스 워크스페이스로, 어디서든 Fn 키를 누르고 말하면 생각을 다듬어진 텍스트로 바꿔줍니다. 사용 중인 앱에 맞춰 문체를 조정하고 개인 단어장과 전문 용어도 기억합니다.\n\nAsk MosMos로 빠른 질문과 출처를 확인할 수 있는 웹 검색도 가능합니다.\n\n회의에서는 여러 명의 대화를 녹음해 화자별 전사문, 요약, 액션 아이템을 만들어 줍니다. 처리는 백그라운드에서 진행되니 작업을 계속할 수 있습니다.\n\n대화를 문서·지시사항·다음 단계로 바꿔야 하는 제품 관리자, 개발자, 운영 담당자 등 모든 분들을 위해 만들고 있습니다.\n\nMosMos는 아직 초기라 음성 입력 속도와 글 품질, 멀티 에이전트 코딩 워크플로, 회의 요약과 액션 아이템에 대한 피드백을 특히 환영합니다. 봐주셔서 감사합니다. 런치 내내 질문에 답하고 피드백에서 배우겠습니다."
+    },
+    {
+     "author": "Ting Chen Liang",
+     "is_maker": true,
+     "text": "Astra made it practical for MosMos to turn spoken thoughts directly into finished writing, not just transcribed text.",
+     "kr": "Astra 덕분에 MosMos가 말로 한 생각을 단순 전사 텍스트가 아니라 완성된 글로 바로 바꾸는 게 실용적으로 가능해졌습니다."
+    },
+    {
+     "author": "Power Valsha",
+     "is_maker": false,
+     "text": "I understand speech recognition runs locally.\n\nFor meeting summaries and text polishing, I wonder what content is sent to external services?",
+     "kr": "음성 인식은 로컬에서 실행된다는 건 이해했습니다. 회의 요약이나 텍스트 다듬기를 할 때는 어떤 내용이 외부 서비스로 전송되는지 궁금하네요?"
+    },
+    {
+     "author": "lego",
+     "is_maker": true,
+     "text": "Thanks for asking! For text polishing, we send the text or transcript being refined, your instructions, language or formatting preferences, and the limited context needed to produce the result.\n\nFor meeting processing, this can include meeting audio and transcripts, along with the meeting title and processing instructions. Local speech recognition applies to regular dictation; meeting features can involve temporary cloud processing.",
+     "kr": "질문 감사합니다! 텍스트 다듬기에서는 다듬을 텍스트나 전사문, 사용자 지시문, 언어·포맷 선호 설정, 결과를 만드는 데 필요한 최소한의 맥락을 전송합니다.\n\n회의 처리의 경우 회의 오디오와 전사문, 회의 제목, 처리 지시문이 포함될 수 있습니다. 로컬 음성 인식은 일반 받아쓰기에 적용되며, 회의 기능은 일시적인 클라우드 처리가 포함될 수 있습니다."
+    },
+    {
+     "author": "Alex Guo",
+     "is_maker": true,
+     "text": "Thanks for asking! We offer a local ASR option for regular dictation. With local ASR selected Voice Input stays on-device. While Meeting uploads the recording for speaker-separated transcription and processes the resulting transcript in the cloud.",
+     "kr": "질문 감사합니다! 일반 받아쓰기에는 로컬 ASR 옵션을 제공합니다. 로컬 ASR을 선택하면 음성 입력이 기기 안에 머뭅니다. 반면 회의(Meeting) 기능은 화자 분리 전사를 위해 녹음 파일을 업로드하고, 만들어진 전사문을 클라우드에서 처리합니다."
+    },
+    {
+     "author": "Stan Xu",
+     "is_maker": false,
+     "text": "Hi, can users choose between verbatim transcription and polished writing?",
+     "kr": "안녕하세요, 사용자가 축어(그대로 받아적기) 전사와 다듬어진 글 중 선택할 수 있나요?"
+    },
+    {
+     "author": "lego",
+     "is_maker": true,
+     "text": "Hi, Stan! Thanks for asking!\n\nYes, you can choose this under \"Polish level\" in Voice Typing.\nThe lowest setting gives you the original transcription without rewriting, while higher settings refine the wording and structure.\nYou control how much polishing is applied.",
+     "kr": "안녕하세요 Stan님, 질문 감사합니다!\n\n네, 음성 타이핑(Voice Typing)의 '폴리시 레벨(Polish level)'에서 선택할 수 있습니다.\n가장 낮은 설정은 고치지 않은 원본 전사문을 제공하고, 높은 설정일수록 문구와 구조를 다듬어 줍니다.\n얼마나 다듬을지는 사용자가 조절합니다."
+    },
+    {
+     "author": "Liam Ward",
+     "is_maker": false,
+     "text": "congrats on the launch @ting_gogogo btw a quick question,how many languages MosMos can translate and write them in writing?",
+     "kr": "런치 축하드려요 @ting_gogogo! 그런데 빠른 질문 하나요. MosMos는 몇 개 언어를 번역해서 글로 써줄 수 있나요?"
+    },
+    {
+     "author": "lego",
+     "is_maker": true,
+     "text": "Thanks so much! MosMos currently supports Chinese and English for speech-to-text, with more languages coming in future model updates. Were you looking for dictation in a particular language, or translation from one language into another?",
+     "kr": "정말 감사합니다! MosMos는 현재 음성-텍스트 변환으로 중국어와 영어를 지원하며, 추후 모델 업데이트로 더 많은 언어가 추가될 예정입니다. 특정 언어로의 받아쓰기가 필요하신가요, 아니면 한 언어에서 다른 언어로의 번역이 필요하신가요?"
+    },
+    {
+     "author": "Alex Guo",
+     "is_maker": true,
+     "text": "Chinese and English are what we currently focus on for voice dictation. For meetings, our MOSS Transcribe Diarize model supports 30+ languages. Sorry for the confusion, and thanks for asking!",
+     "kr": "음성 받아쓰기는 현재 중국어와 영어에 집중하고 있습니다. 회의의 경우 저희 MOSS Transcribe Diarize 모델이 30개 이상 언어를 지원합니다. 혼란을 드려 죄송하고, 질문 감사합니다!"
+    },
+    {
+     "author": "Sukumar",
+     "is_maker": false,
+     "text": "How much do you actually have to clean up after speaking something out?",
+     "kr": "실제로 말을 마친 뒤에는 얼마나 손봐야 하나요?"
+    },
+    {
+     "author": "lego",
+     "is_maker": true,
+     "text": "Thanks for asking!\n\nIt depends on how rough the spoken draft is and the polish level you choose.\nHigher settings help clean up the wording and structure, while the lowest keeps the original transcription.\n\nI'd still give the result a quick read before sending, especially names, numbers, and technical details.",
+     "kr": "질문 감사합니다!\n\n말한 초안이 얼마나 날것이었는지, 그리고 선택한 폴리시 레벨에 따라 다릅니다.\n높은 설정은 문구와 구조를 정리하는 데 도움이 되고, 가장 낮은 설정은 원본 전사문을 그대로 유지합니다.\n\n그래도 보내기 전에 결과를 가볍게 읽어보시길 권합니다. 특히 이름, 숫자, 기술적 세부사항은요."
+    }
+   ],
+   "slug": "mosmos"
+  },
+  {
+   "name": "ProductBridge",
+   "tagline_en": "AI-native customer support and feedback agent",
+   "tagline_kr": "AI 네이티브 고객 지원·피드백 에이전트",
+   "image": "https://ph-files.imgix.net/6f3cceef-8ebb-4587-ad7f-4439173b53ff.png",
+   "categories": [
+    "Customer Success",
+    "Customer Communication"
+   ],
+   "upvotes": 342,
+   "comments_count": 49,
+   "maker": "Hareesh Vemasani (창업자) / 팀: Rohith J",
+   "price_model": "Freemium",
+   "price_detail": "'Free Options' 배지 + 플랫 요금제(시트당·추적 사용자당·해결 건당 과금 없음). 무료 플랜 제공. 이번 런치 프로모션으로 '3개월 무료(3 months free)' 표시. 구체 가격 금액은 PH 페이지에 미게재.",
+   "desc_kr": "ProductBridge는 헬프데스크, 피드백 보드, 설문 도구를 따로 쓰며 매주 복사-붙여넣기하던 팀을 위한 올인원 시스템이다. AI 에이전트가 헬프센터를 근거로 지원 채팅에 답하고, 도구·워크플로·MCP로 고객 API를 호출하며, 필요하면 사람에게 인계한다. 모든 채팅·설문·투표를 수집해 중복을 제거하고 도달 범위와 매출 기준으로 점수화해, 로드맵이 감이 아니라 근거로 결정되게 만든다. 기능을 출시하면 요청했던 고객에게 자동으로 알려주는 클로즈드 루프가 특징이다. Claude·ChatGPT·Cursor에서 고객 요청을 조회할 수 있는 36개 도구의 MCP 서버를 제공한다. 2026년 3월 피드백 수집 에이전트로 당일 1위 런치에 이은 두 번째 런치로, 이번에 라이브 챗·공유 인박스·AI 지원 에이전트·헬프센터·설문 기능이 추가됐다.",
+   "launch_url_used": "https://www.producthunt.com/products/productbridge",
+   "comment_summary": "파운더 Hareesh Vemasani가 3월 1차 런치(당일 1위) 이후의 스토리와 지원+피드백 통합 기능을 길게 소개했고(업보트 11개로 최다), 모든 질문에 신속히 답변했다. 질문은 중복 피드백 묶음 처리, AI 학습 방식(재학습 없이 워크스페이스 데이터 그라운딩), SSO·역할 기반 권한, 세그먼트 간 상충 피드백 우선순위, 지식베이스 신선도 검증 등 기업 도입 관점이 두드러진다. '오래된 답변 방지' 질문에는 완벽한 보장은 어렵다는 솔직한 답변도 있었다.",
+   "warnings": "업보트는 9/18 데일리 리더보드 실시간 기준 342(수집 지시서에는 343으로 기재 — 집계 시점 차이로 추정). 구체 가격 금액은 페이지에 없고 플랫 요금제·무료 플랜·3개월 무료 프로모션만 확인됨. GPT-6 Astra Challenge(OpenAI Day) 태그 참여 중.",
+   "comments": [
+    {
+     "author": "Hareesh Vemasani",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 Hareesh here, founder of ProductBridge. In March we launched here as an AI agent that collects feedback from Slack, Intercom, review sites and your feedback board, merges the duplicates, and turns the pile into a roadmap. You sent it to #1 for the day. Thank you for that 🙏 We spent the six months since watching how teams actually used it, and one pattern kept showing up: the feature request almost never started on the feedback board. It started as a support conversation, in a different tool, attached to a different customer record. Support saw it first, product saw it last, and nobody told the customer when it shipped. So we built the other half. ProductBridge is now AI-native customer support and feedback on one customer record: 💬 Live chat + shared inbox — chat and email together, with assignments, SLAs and CSAT 🤖 AI support agent — grounded on your help center, calls your APIs through tools and workflows, and hands off to a human when it should 📚 Help center — write an article once and the agent answers from it 📊 Surveys — NPS, CSAT and CES inside your product, with responses flowing into the same feedback intelligence 🔌 MCP server — 36 tools, so you can ask Claude, ChatGPT or Cursor what your customers are asking for 🔁 The same closed loop as before — a support chat becomes a feature request, gets scored by reach and revenue, and the customer who asked is notified when it ships. What hasn't changed: flat price. No per-seat, no per-tracked-user, no per-resolution fees. There's a free plan, most teams are live in about 15 minutes, and if you're on Canny, Featurebase or Intercom we'll help you move. One question for you 👇 What's the one thing your support + feedback stack still makes you copy-paste by hand? That's usually where we find the next thing to build. I'll be here all day answering questions 🚀",
+     "kr": "안녕하세요 Product Hunt 👋 ProductBridge 창업자 Hareesh입니다. 3월에 Slack, Intercom, 리뷰 사이트, 피드백 보드에서 피드백을 모아 중복을 합치고 그 더미를 로드맵으로 바꿔주는 AI 에이전트로 여기서 런치했고, 여러분이 당일 1위에 올려주셨죠. 감사합니다 🙏 그 후 6개월간 팀들의 실제 사용 방식을 지켜봤는데 한 가지 패턴이 계속 보였습니다. 기능 요청은 거의 피드백 보드에서 시작되지 않았다는 것. 다른 도구의 다른 고객 기록에 붙은 지원 대화에서 시작됐죠. 지원팀이 먼저 보고 제품팀은 마지막에 봤고, 출시돼도 고객에게 알려주는 사람은 아무도 없었습니다. 그래서 나머지 절반을 만들었습니다. ProductBridge는 이제 하나의 고객 기록 위에서 AI 네이티브 고객 지원과 피드백을 제공합니다: 💬 라이브 챗 + 공유 인박스 — 채팅과 이메일을 함께, 담당자 배정·SLA·CSAT 지원 🤖 AI 지원 에이전트 — 헬프센터에 근거해 답변하고, 도구·워크플로로 고객 API를 호출하며, 필요하면 사람에게 인계 📚 헬프센터 — 글을 한 번 쓰면 에이전트가 그것으로 답변 📊 설문 — 제품 안에서 NPS·CSAT·CES 수집, 응답은 같은 피드백 인텔리전스로 유입 🔌 MCP 서버 — 36개 도구로 Claude, ChatGPT, Cursor에 고객 요청사항을 물어볼 수 있음 🔁 기존과 같은 클로즈드 루프 — 지원 채팅이 기능 요청이 되고, 도달·매출 기준으로 점수화되며, 요청한 고객은 출시 시 알림을 받음. 변하지 않은 것은 플랫 가격입니다. 시트당, 추적 사용자당, 해결 건당 요금이 없죠. 무료 플랜이 있고, 대부분의 팀은 15분 안에 사용을 시작하며, Canny·Featurebase·Intercom 사용 중이라면 이전을 도와드립니다. 질문 하나 드릴게요 👇 지금 지원+피드백 스택에서 여전히 손으로 복사-붙여넣기하게 만드는 게 뭔가요? 보통 그곳에서 다음에 만들 것을 찾습니다. 하루 종일 여기서 질문에 답하겠습니다 🚀"
+    },
+    {
+     "author": "Hareesh Vemasani",
+     "is_maker": true,
+     "text": "Our AI support agent uses GPT-6 Astra to resolve customer chats: it answers from the help center, calls the customer's APIs through tools and workflows, hands off to a human when it should, and turns each conversation into a deduplicated feature request on the roadmap.",
+     "kr": "저희 AI 지원 에이전트는 GPT-6 Astra로 고객 채팅을 처리합니다. 헬프센터에서 답변하고, 도구와 워크플로를 통해 고객의 API를 호출하고, 필요할 때 사람에게 인계하며, 각 대화를 로드맵의 중복 제거된 기능 요청으로 바꿔줍니다."
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "nice launch! the closed loops approach are the really interesting and also the MCP servers with 36 tools cought my attention,\n\nhow well does this work with the clone requests???",
+     "kr": "멋진 런치네요! 클로즈드 루프 방식이 정말 흥미롭고 36개 도구를 갖춘 MCP 서버도 눈에 띄었습니다.\n\n중복(클론) 요청에는 얼마나 잘 작동하나요?"
+    },
+    {
+     "author": "Hareesh Vemasani",
+     "is_maker": true,
+     "text": "Thank you, @amrita_prajapati2! If by clone requests you mean duplicate or closely related feedback, ProductBridge detects and groups them into one request while retaining every customer, vote, and original conversation behind it.\n\nWhen the request moves forward or ships, everyone linked to it can be notified—closing the loop without manually tracking each duplicate.",
+     "kr": "감사합니다 @amrita_prajapati2! 클론 요청이 중복이나 유사 피드백을 말씀하시는 거라면, ProductBridge가 이를 감지해 하나의 요청으로 묶되 그 뒤에 있는 모든 고객·투표·원본 대화를 보존합니다.\n\n요청이 진행되거나 출시되면 연결된 모든 사람에게 알림을 보낼 수 있어, 중복을 일일이 추적하지 않고도 루프를 닫을 수 있습니다."
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "Does the agent learn from past support conversations and feedback support ?",
+     "kr": "에이전트가 과거 지원 대화와 피드백으로부터 학습하나요?"
+    },
+    {
+     "author": "Hareesh Vemasani",
+     "is_maker": true,
+     "text": "Yes! The agent uses past support conversations, customer feedback, help-center articles, your knowledge base, roadmaps, and changelogs as context when responding.",
+     "kr": "네! 에이전트는 답변 시 과거 지원 대화, 고객 피드백, 헬프센터 글, 지식 베이스, 로드맵, 체인지로그를 맥락으로 사용합니다."
+    },
+    {
+     "author": "Rajat Dangi 🛠️",
+     "is_maker": false,
+     "text": "Congrats on the launch @hareesh_vemasani\n\nquick question, does the platform support SSO and role-based access for larger product and support teams?",
+     "kr": "런치 축하드립니다 @hareesh_vemasani!\n\n빠른 질문 하나요. 규모가 큰 제품·지원팀을 위해 SSO와 역할 기반 접근 권한을 지원하나요?"
+    },
+    {
+     "author": "Hareesh Vemasani",
+     "is_maker": true,
+     "text": "Thanks! 😊 Yes, we support role-based access with Owner, Admin, and Member roles. For team SSO/SAML, get in touch with us about the setup. Happy to walk through what your product and support teams need!",
+     "kr": "감사합니다! 😊 네, Owner·Admin·Member 역할로 역할 기반 접근을 지원합니다. 팀용 SSO/SAML은 설정 관련해 저희에게 연락 주세요. 제품팀과 지원팀에 필요한 사항을 함께 살펴드리겠습니다!"
+    },
+    {
+     "author": "Bhavya Sree",
+     "is_maker": false,
+     "text": "Congrats on the launch @hareesh_vemasani, With feedback coming from support chats, surveys, and votes, how do you handle conflicting feedback from different customer segments? Can the AI help identify which insights are worth prioritizing for the roadmap?",
+     "kr": "런치 축하드려요 @hareesh_vemasani! 지원 채팅, 설문, 투표에서 피드백이 들어오는데, 서로 다른 고객 세그먼트 간에 상충하는 피드백은 어떻게 처리하나요? AI가 로드맵에서 우선순위를 둘 만한 인사이트를 찾는 데 도움을 줄 수 있나요?"
+    },
+    {
+     "author": "Hareesh Vemasani",
+     "is_maker": true,
+     "text": "Thanks a lot for the support, @bhavyasree!\n\nProductBridge keeps the customer segment and source attached to every piece of feedback, so teams can see where opinions agree or conflict.\n\nThe AI groups related feedback into themes and highlights signals such as reach, MRR, customer impact, and segment relevance. It helps teams understand what deserves attention, while the final roadmap decision remains with the product team.",
+     "kr": "응원 정말 감사합니다 @bhavyasree!\n\nProductBridge는 모든 피드백에 고객 세그먼트와 출처를 붙여두기 때문에, 팀이 의견이 일치하는지 충돌하는지 볼 수 있습니다.\n\nAI가 관련 피드백을 테마로 묶고 도달 범위, MRR, 고객 영향, 세그먼트 관련성 같은 시그널을 부각합니다. 팀이 무엇에 주목해야 할지 이해하도록 돕되, 최종 로드맵 결정은 제품팀에 남아 있습니다."
+    },
+    {
+     "author": "Taissa Maleh",
+     "is_maker": false,
+     "text": "Congrats on a great product, Hareesh and team. One of the biggest challenges we've faced with AI customer support agents is keeping the knowledge base up to date and ensuring that new information is reflected in customer conversations. In the past, someone asked a question that was slightly different from the usual ones, and the agent provided an outdated answer. Does ProductBridge include checks and validations to prevent this?",
+     "kr": "훌륭한 제품 축하드립니다, Hareesh님과 팀 여러분. AI 고객 지원 에이전트에서 겪는 가장 큰 어려움 중 하나는 지식 베이스를 최신으로 유지하고 새 정보가 고객 대화에 반영되도록 하는 일입니다. 예전에 평소와 조금 다른 질문을 받았는데 에이전트가 오래된 답을 준 적이 있어요. ProductBridge에는 이를 막기 위한 검사·검증 장치가 있나요?"
+    },
+    {
+     "author": "Hareesh Vemasani",
+     "is_maker": true,
+     "text": "Thanks! That's a very real concern.\n\nProductBridge lets you control which sources the agent uses, show sources in replies, and test questions with different wording before going live. Website content can be refreshed manually or on a schedule, and new Q&A snippets are picked up within minutes.\n\nThese controls help reduce outdated answers, but they don't guarantee every answer is correct. Keeping the source content current still matters.",
+     "kr": "감사합니다! 정말 현실적인 우려입니다.\n\nProductBridge는 에이전트가 사용할 소스를 통제하고, 답변에 출처를 표시하고, 실전 투입 전에 다양한 표현으로 질문을 테스트할 수 있게 해줍니다. 웹사이트 콘텐츠는 수동 또는 일정에 따라 새로 고침할 수 있고, 새 Q&A 조각은 몇 분 안에 반영됩니다.\n\n이런 통제 장치들이 오래된 답변을 줄이는 데 도움이 되지만, 모든 답변이 정확하다고 보장하진 않습니다. 소스 콘텐츠를 최신으로 유지하는 것도 여전히 중요합니다."
+    }
+   ],
+   "slug": "productbridge"
+  },
+  {
+   "name": "Sider Omni Sidebar",
+   "tagline_en": "Give every Mac app an Agent Sidebar",
+   "tagline_kr": "모든 Mac 앱에 에이전트 사이드바를 달아주다",
+   "image": "https://ph-files.imgix.net/15395cfe-9ed3-4e0e-95cf-e9708f5a1306.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Mac",
+    "Productivity",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 326,
+   "comments_count": 40,
+   "maker": "Rick Fan, TH, Joel (Sider 팀)",
+   "price_model": "Freemium",
+   "price_detail": "PH 표기 'Free Options'. 무료로 사용 가능하며, GPT-6 Astra 등 모델 사용은 Sider 자체 모델 서비스를 쓰거나 자신의 ChatGPT/Codex 계정을 연결해 플랜에 포함된 크레딧으로 소비하는 방식.",
+   "desc_kr": "Sider Omni는 모든 Mac 앱 곁에 AI 에이전트 사이드바를 띄워, 화면에 보이는 내용을 파악하고 그 자리에서 바로 작업을 수행해 주는 도구다. Numbers로 열어둔 표를 읽어 앱 안에서 직접 차트를 그리거나, 브라우저에서 수집한 정보를 문서·스프레드시트로 정리하는 식으로 데스크톱 앱과 웹을 넘나드는 다단계 작업이 가능하다. macOS 접근성·시각 이해·브라우저 제어를 결합한 Computer Use·Browser Use 기반으로, 결과를 확인하고 다음 수정을 요청하는 대화형 반복 작업에 최적화돼 있다. GPT-6 Astra를 기본 모델로 하며, 자신의 ChatGPT나 Codex 계정을 연결해 기존 크레딧으로 사용할 수도 있다. 화면 읽기는 작업 시작 시점에만 이뤄지고, 기본 '승인 요청' 모드에서는 민감한 정보를 읽기 전 사용자 확인을 거친다.",
+   "launch_url_used": "https://www.producthunt.com/products/sider-omni",
+   "comment_summary": "메이커 소개글과 GPT-6 Astra로 Computer Use·Browser Use 시스템을 재작성했다는 개발 후기가 상단을 차지했고, 질문 대부분은 '화면을 보는 게 개인정보·민감한 코드에 안전한가'와 '기존 ChatGPT/Codex 크레딧을 쓰는 방식'에 집중됐다. 메이커들은 작업 시작 시에만 화면을 읽고 기본 모드에서 승인을 받는다고 답했으며, 오프라인 사용은 아직 불가하다고 밝혔다. 스프레드시트 차트 작성, 앱 간 다단계 작업 같은 실사용 사례에 대한 관심도 눈에 띄었다.",
+   "warnings": "업보트 수(+326)는 리더보드 집계 기준이며 제품 페이지에는 총 업보트가 표기되지 않음. 댓글 수는 페이지네이션 3페이지 기준 약 40개 추정치. 메이커가 '민감한 데이터가 있는 창에서는 아예 실행하지 않는 게 최선'이라 답변해 프라이버시 이슈가 일부 제기됨.",
+   "comments": [
+    {
+     "author": "Rick Fan",
+     "is_maker": true,
+     "text": "Astra made it possible for us, for the first time, to successfully rewrite Omini Bar's complex Computer Use and Browser Use systems. These features require coordinating macOS accessibility, visual understanding, browser control, interaction recovery, and tool protocols across a large codebase—work that previous models such as 5.6 could not complete reliably. Astra can correctly execute complex, multi-step development tasks and automate real UI testing, from identifying failures and tracing their causes to implementing fixes and verifying the complete interaction. This has dramatically reduced development and testing time, enabling us to build capabilities that were previously impractical to complete.",
+     "kr": "Astra 덕분에 우리는 처음으로 Omni Bar의 복잡한 Computer Use·Browser Use 시스템을 성공적으로 재작성할 수 있었습니다. 이 기능들은 대규모 코드베이스 전반에서 macOS 접근성, 시각 이해, 브라우저 제어, 상호작용 복구, 도구 프로토콜을 조율해야 하는 작업이라, 5.6 같은 이전 모델로는 신뢰성 있게 완수하기 어려웠습니다. Astra는 복잡한 다단계 개발 작업을 정확히 수행하고, 실패 지점 식별과 원인 추적부터 수정 구현, 전체 상호작용 검증까지 실제 UI 테스트를 자동화할 수 있습니다. 덕분에 개발·테스트 시간이 크게 줄었고, 이전에는 현실적으로 완성하기 어려웠던 기능들을 만들 수 있게 됐습니다."
+    },
+    {
+     "author": "TH",
+     "is_maker": true,
+     "text": "📌 Hi! We're the team behind Sider Omni. 👋 We built Sider Omni so your agent can join the work you're already doing, with the context to understand it and the ability to act on it. With a table open in Numbers, ask: \"Create a bar chart of sales by region from this table.\" 📊 Sider Omni reads the table already on screen and builds the chart in Numbers. As you inspect it, keep refining: \"Now show return rates by region in a separate chart.\" 🔁 You can see the source data and each change in the same workspace, then ask for the next step without exporting data or starting over. You can also choose from supported models, including GPT-6 Astra, and pick a companion icon that follows you across your apps. ✨ We'd love to hear what you'd use Sider Omni for. 💬",
+     "kr": "📌 안녕하세요! Sider Omni를 만든 팀입니다. 👋 Sider Omni는 이미 하고 계신 작업에 에이전트가 함께 들어와 맥락을 이해하고 직접 실행할 수 있도록 만들었습니다. Numbers에서 표를 열어둔 채 '이 표로 지역별 매출 막대차트 만들어줘'라고 요청하면 📊, Sider Omni가 화면에 떠 있는 표를 읽고 Numbers 안에서 차트를 만들어 줍니다. 결과를 살펴보면서 '이번엔 지역별 반품률을 별도 차트로 보여줘'처럼 계속 다듬을 수도 있습니다 🔁. 원본 데이터와 변경 이력을 같은 작업 공간에서 확인하면서, 데이터를 내보내거나 처음부터 다시 시작할 필요 없이 다음 단계를 요청할 수 있어요. GPT-6 Astra를 포함한 지원 모델 중에서 선택할 수 있고, 여러 앱을 넘나들며 따라다니는 동반 아이콘도 고를 수 있습니다 ✨. Sider Omni를 어떤 용도로 쓰고 싶으신지 많이 알려주세요 💬"
+    },
+    {
+     "author": "Hamza Afzal Butt",
+     "is_maker": false,
+     "text": "How does it decide which AI model or tool is best suited for a specific task and can users customize those preferences? Congrats @rick_fan & team!",
+     "kr": "특정 작업에 어떤 AI 모델이나 도구가 가장 적합한지는 어떻게 판단하나요? 그리고 사용자가 그 기본 설정을 바꿀 수 있나요? @rick_fan 팀 축하드려요!"
+    },
+    {
+     "author": "TH",
+     "is_maker": true,
+     "text": "Thanks! You can choose the AI model, while Sider Omni automatically picks the right tools for each task—such as browser actions, desktop app control, file handling, and terminal commands.",
+     "kr": "감사합니다! AI 모델은 사용자가 직접 고를 수 있고, 각 작업에 맞는 도구(브라우저 조작, 데스크톱 앱 제어, 파일 처리, 터미널 명령 등)는 Sider Omni가 자동으로 선택합니다."
+    },
+    {
+     "author": "Daniel Carter",
+     "is_maker": false,
+     "text": "I'd be a bit curious about the privacy side of this. What can it actually see?",
+     "kr": "개인정보 보호 측면이 좀 궁금하네요. 이거 실제로 뭘 볼 수 있는 건가요?"
+    },
+    {
+     "author": "TH",
+     "is_maker": true,
+     "text": "It can see text, buttons, and screenshots in the window it's attached to—but only after you ask something or start a task that needs that context.",
+     "kr": "붙어 있는 창 안의 텍스트, 버튼, 스크린샷을 볼 수 있습니다. 다만 사용자가 질문을 하거나 해당 맥락이 필요한 작업을 시작한 후에만요."
+    },
+    {
+     "author": "Jabari Zuri",
+     "is_maker": false,
+     "text": "how does it handle sensitive data or private code on screen when reading the active window?",
+     "kr": "활성 창을 읽을 때 화면에 있는 민감한 데이터나 비공개 코드는 어떻게 처리하나요?"
+    },
+    {
+     "author": "Rick Fan",
+     "is_maker": true,
+     "text": "In windows with sensitive data, the best approach is not to launch it.",
+     "kr": "민감한 데이터가 있는 창에서는 아예 실행하지 않는 것이 가장 좋습니다."
+    },
+    {
+     "author": "Grace Gui",
+     "is_maker": false,
+     "text": "Using existing ChatGPT or Codex credits is pretty interesting. How does that work?",
+     "kr": "기존 ChatGPT나 Codex 크레딧을 그대로 쓸 수 있다는 점이 꽤 흥미로운데, 어떻게 작동하나요?"
+    },
+    {
+     "author": "TH",
+     "is_maker": true,
+     "text": "Sider Omni lets you connect your ChatGPT account and use the allowance included with your ChatGPT/Codex plan.",
+     "kr": "Sider Omni에서 ChatGPT 계정을 연결하면 ChatGPT/Codex 플랜에 포함된 사용량을 그대로 쓸 수 있습니다."
+    },
+    {
+     "author": "David Murray",
+     "is_maker": false,
+     "text": "Can it actually do multi step stuff across apps? That's probably the part i'd want to try first.",
+     "kr": "정말 여러 앱에 걸친 다단계 작업도 해낼 수 있나요? 아마 제일 먼저 써보고 싶은 부분이 그거라서요."
+    },
+    {
+     "author": "TH",
+     "is_maker": true,
+     "text": "Yes—that's one of Sider Omni's core capabilities. For example, it can gather information from the browser and organize it into a document or spreadsheet.",
+     "kr": "네, 그건 Sider Omni의 핵심 기능 중 하나입니다. 예를 들어 브라우저에서 정보를 모아 문서나 스프레드시트로 정리할 수 있습니다."
+    }
+   ],
+   "slug": "sider-omni"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div></div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
