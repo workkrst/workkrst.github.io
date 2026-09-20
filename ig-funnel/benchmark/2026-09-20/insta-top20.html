@@ -27,7 +27,8 @@
       padding: 24px 16px;
     }
     .container {
-      max-width: 960px;
+      max-width:  1240px;
+      width: 96%;
       margin: 0 auto;
     }
     .top-nav {
@@ -113,7 +114,7 @@
       text-align: left;
     }
     th, td {
-      padding: 12px 14px;
+      padding:  10px 8px;
       border-bottom: 1px solid var(--border);
       white-space: nowrap;
     }
@@ -314,6 +315,23 @@
       border: 1px solid rgba(56, 189, 248, 0.35);
     }
 
+  
+    /* Horizontal scroll fix */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    @media (min-width: 1024px) {
+      .table-container {
+        overflow-x: hidden; /* Force zero scrollbar on desktop */
+      }
+    }
+    table {
+      width: 100%;
+      table-layout: auto;
+    }
+    
   </style>
 </head>
 <body>
