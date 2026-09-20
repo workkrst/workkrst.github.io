@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>[캐러셀 미리보기] 하지원 × 레몬즙 (5장 세트)</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #1e293b;
+      --card-inner: #0f172a;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #facc15;
+      --accent: #ec4899;
+      --accent-blue: #38bdf8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .top-nav {
+      margin-bottom: 20px;
+    }
+    .top-nav a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .badge {
+      background: var(--primary);
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .badge-secondary {
+      background: var(--card-inner);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      background: #131d31;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .meta-item strong {
+      color: #e2e8f0;
+    }
+
+    /* Carousel Viewer */
+    .viewer-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .carousel-container {
+      position: relative;
+      max-width: 480px;
+      margin: 0 auto;
+      aspect-ratio: 4 / 5;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.6);
+      background: #000;
+    }
+    .carousel-slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+    .carousel-slide.active {
+      display: block;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    /* Navigation Controls */
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .ctrl-btn {
+      background: var(--card-inner);
+      color: #fff;
+      border: 1px solid var(--border);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .ctrl-btn:hover {
+      background: var(--primary);
+      color: #0f172a;
+      border-color: var(--primary);
+    }
+    .slide-indicator {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--primary);
+      min-width: 80px;
+    }
+    .dots-container {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .dot.active {
+      background: var(--primary);
+      width: 24px;
+      border-radius: 5px;
+    }
+
+    /* Thumbnail Strip */
+    .thumb-strip {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 24px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .thumb-item {
+      width: 72px;
+      aspect-ratio: 4 / 5;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .thumb-item.active {
+      border-color: var(--primary);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    .thumb-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Caption Section */
+    .caption-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    .caption-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .caption-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .copy-btn {
+      background: var(--primary);
+      color: #0f172a;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .copy-btn:hover {
+      opacity: 0.9;
+    }
+    .caption-body {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      font-family: inherit;
+      white-space: pre-wrap;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    /* Specs & Funnel */
+    .funnel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .funnel-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+    }
+    .funnel-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .funnel-val {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .funnel-val.highlight {
+      color: var(--primary);
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-nav">
+      <a href="../index.html">← 벤치마킹 리포트 허브로 돌아가기</a>
+    </div>
+
+    <header>
+      <div class="badge-row">
+        <span class="badge">인스타 캐러셀 완성본</span>
+        <span class="badge-secondary">1080×1350 (4:5 피드)</span>
+        <span class="badge-secondary">5 슬라이드</span>
+      </div>
+      <h1>하지원 × 100% 유기농 착즙 레몬수 캐러셀 세트</h1>
+      <div class="meta-bar">
+        <div class="meta-item">셀럽: <strong>하지원</strong></div>
+        <div class="meta-item">소재: <strong>100% 유기농 NFC 착즙 레몬즙</strong></div>
+        <div class="meta-item">댓글 트리거: <strong>'레몬', '정보'</strong></div>
+        <div class="meta-item">제작일: <strong>2026-09-20</strong></div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Carousel Viewer -->
+      <section class="viewer-section">
+        <div class="carousel-container" id="carousel">
+          <div class="carousel-slide active" data-index="0">
+            <img src="images/hajiwon_lemon/slide_01_cover.png" alt="슬라이드 1: 표지">
+          </div>
+          <div class="carousel-slide" data-index="1">
+            <img src="images/hajiwon_lemon/slide_02_story.png" alt="슬라이드 2: 셀럽 스토리">
+          </div>
+          <div class="carousel-slide" data-index="2">
+            <img src="images/hajiwon_lemon/slide_03_benefits.png" alt="슬라이드 3: 3대 핵심 효능">
+          </div>
+          <div class="carousel-slide" data-index="3">
+            <img src="images/hajiwon_lemon/slide_04_howto.png" alt="슬라이드 4: 섭취 꿀팁 & 주의점">
+          </div>
+          <div class="carousel-slide" data-index="4">
+            <img src="images/hajiwon_lemon/slide_05_cta.png" alt="슬라이드 5: 최종 퍼널 CTA">
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="ctrl-btn" onclick="prevSlide()">‹</button>
+          <div class="slide-indicator" id="indicator">1 / 5</div>
+          <button class="ctrl-btn" onclick="nextSlide()">›</button>
+        </div>
+
+        <div class="dots-container" id="dotsContainer">
+          <div class="dot active" onclick="goToSlide(0)"></div>
+          <div class="dot" onclick="goToSlide(1)"></div>
+          <div class="dot" onclick="goToSlide(2)"></div>
+          <div class="dot" onclick="goToSlide(3)"></div>
+          <div class="dot" onclick="goToSlide(4)"></div>
+        </div>
+
+        <div class="thumb-strip">
+          <div class="thumb-item active" onclick="goToSlide(0)">
+            <img src="images/hajiwon_lemon/slide_01_cover.png" alt="썸네일 1">
+          </div>
+          <div class="thumb-item" onclick="goToSlide(1)">
+            <img src="images/hajiwon_lemon/slide_02_story.png" alt="썸네일 2">
+          </div>
+          <div class="thumb-item" onclick="goToSlide(2)">
+            <img src="images/hajiwon_lemon/slide_03_benefits.png" alt="썸네일 3">
+          </div>
+          <div class="thumb-item" onclick="goToSlide(3)">
+            <img src="images/hajiwon_lemon/slide_04_howto.png" alt="썸네일 4">
+          </div>
+          <div class="thumb-item" onclick="goToSlide(4)">
+            <img src="images/hajiwon_lemon/slide_05_cta.png" alt="썸네일 5">
+          </div>
+        </div>
+      </section>
+
+      <!-- Funnel Info -->
+      <div class="funnel-grid">
+        <div class="funnel-box">
+          <div class="funnel-label">🎯 핵심 후킹 포인트</div>
+          <div class="funnel-val">48세 방부제 피부 비결 "노란 한 컵"</div>
+        </div>
+        <div class="funnel-box">
+          <div class="funnel-label">💬 댓글 유도 트리거 (DM 연결)</div>
+          <div class="funnel-val highlight">'레몬' 또는 '정보'</div>
+        </div>
+        <div class="funnel-box">
+          <div class="funnel-label">🛒 연결 상품 (쿠파스)</div>
+          <div class="funnel-val">스페인산 100% 유기농 NFC 착즙 레몬즙</div>
+        </div>
+      </div>
+
+      <!-- Caption -->
+      <section class="caption-card">
+        <div class="caption-header">
+          <div class="caption-title">📱 인스타그램 발행 캡션 전문</div>
+          <button class="copy-btn" onclick="copyCaption()">본문 텍스트 복사</button>
+        </div>
+        <div class="caption-body" id="captionText">[광고]
+48세 하지원의 찐 동안 비결 대공개! ✨
+피부과에서도 놀란 매일 아침 "노란 한 컵"의 기적 🍋
+
+유퀴즈 방송에서 하지원이 직접 밝혀 품절 대란 일어났던 바로 그 루틴!
+"촬영장 갈 때도 텀블러에 꼭 챙겨가요"
+"매일 아침 OOO 3개씩 착즙해 마셨더니 피부가 탱탱해지고 피로가 싹 사라졌어요"
+
+비타민C 폭탄 + 천연 구연산으로 피부 속 잡티 억제는 물론,
+아침 붓기와 만성 피로까지 싹 걷어내주는 기적의 식습관 💛
+
+하지만 생과일을 매일 짜먹으면 치아 에나멜이 상할 수 있다는 사실 알고 계셨나요? 😱
+그래서 하지원도 챙겨 마신다는 '물 한 방울 안 섞인 100% 유기농 NFC 착즙 원액'을 추천드려요!
+
+스틱 1포 뜯어서 시원한 물에 타 마시면 끝! 🧊
+간편하게 매일 아침 비타민C 100% 완충하세요!
+
+하지원이 10년 넘게 마신다는 100% 유기농 착즙 레몬수 정보가 궁금하시다면?
+👇 댓글에 '레몬' 또는 '정보' 남겨주시면 최저가 구매 링크를 DM으로 바로 보내드려요! 💌
+
+(댓글 확인이 늦어지면 프로필 링크에서도 바로 확인 가능합니다 🏃‍♀️💨)
+
+이 포스트는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+
+#하지원 #하지원레몬 #레몬즙 #레몬수 #유기농레몬 #레몬디톡스 #피부관리 #동안루틴 #아침루틴 #이너뷰티 #다이어트식단</div>
+      </section>
+    </main>
+
+    <footer>
+      검색엔진 비공개 리포트 (noindex, nofollow) · workkrst/ig-funnel
+    </footer>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const thumbs = document.querySelectorAll('.thumb-item');
+    const indicator = document.getElementById('indicator');
+
+    function updateCarousel() {
+      slides.forEach((s, idx) => {
+        s.classList.toggle('active', idx === currentSlide);
+      });
+      dots.forEach((d, idx) => {
+        d.classList.toggle('active', idx === currentSlide);
+      });
+      thumbs.forEach((t, idx) => {
+        t.classList.toggle('active', idx === currentSlide);
+      });
+      indicator.textContent = `${currentSlide + 1} / ${slides.length}`;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateCarousel();
+    }
+
+    function goToSlide(idx) {
+      currentSlide = idx;
+      updateCarousel();
+    }
+
+    function copyCaption() {
+      const text = document.getElementById('captionText').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('캡션 텍스트가 클립보드에 복사되었습니다!');
+      });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+  </script>
+</body>
+</html>
