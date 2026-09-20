@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>[2026-09-20] 건강·다이어트·뷰티 화제 소재 Top 10 리포트</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #1e293b;
+      --card-inner: #0f172a;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --accent: #10b981;
+      --highlight: #34d399;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .top-nav {
+      margin-bottom: 20px;
+    }
+    .top-nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+    .header-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .task-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      background: #131d31;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .formula-box {
+      margin-top: 14px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      color: #a7f3d0;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 32px 0 16px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    /* Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 32px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    th {
+      background: #172033;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    tr:hover td {
+      background: #223049;
+    }
+    .rank-cell {
+      text-align: center;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+    .score-cell {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .highlight-score {
+      color: var(--highlight);
+      font-weight: 700;
+    }
+    .badge-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .celeb-tag {
+      background: rgba(16, 185, 129, 0.15);
+      color: #6ee7b7;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .link-btn {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 2px 8px;
+      border: 1px solid var(--primary);
+      border-radius: 4px;
+      font-size: 0.78rem;
+    }
+    .link-btn:hover {
+      background: var(--primary);
+      color: #0b1120;
+    }
+    /* Cards */
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .rank-badge {
+      background: var(--accent);
+      color: #0b1120;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+    .card-title-group {
+      flex: 1;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .card-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .card-subtitle strong {
+      color: #38bdf8;
+    }
+    .score-box {
+      text-align: right;
+    }
+    .score-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .score-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--highlight);
+    }
+    .scores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .score-item {
+      background: var(--card-inner);
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .s-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .s-val {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-top: 2px;
+    }
+    .section-block {
+      background: var(--card-inner);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      border-left: 3px solid var(--accent);
+    }
+    .block-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #6ee7b7;
+      margin-bottom: 6px;
+    }
+    .desc-text {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+    .video-box {
+      background: #142036;
+      border: 1px solid #1e3a5f;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .video-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .verified-tag {
+      background: rgba(56, 189, 248, 0.2);
+      color: #38bdf8;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .video-meta-txt {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .video-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .video-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .video-link:hover {
+      text-decoration: underline;
+    }
+    .idea-box {
+      background: rgba(236, 72, 153, 0.08);
+      border: 1px solid rgba(236, 72, 153, 0.25);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.88rem;
+      color: #fbcfe8;
+    }
+    .idea-tag {
+      font-weight: 700;
+      color: #f472b6;
+      margin-right: 6px;
+    }
+    footer {
+      margin-top: 48px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-nav">
+      <a href="../index.html">← 리포트 허브 목록으로 돌아가기</a>
+    </div>
+
+    <header>
+      <div class="header-title-row">
+        <span class="task-badge">[B작업] 트렌드 소재</span>
+        <h1>건강·다이어트·뷰티 화제 소재 Top 10</h1>
+      </div>
+      <div class="meta-bar">
+        <div class="meta-item">데이터 기준일: <strong>2026-09-20</strong></div>
+        <div class="meta-item">원본 영상 검증: <strong>yt-dlp 16:9 롱폼(3분+) 통과</strong></div>
+        <div class="meta-item">출처 필터: <strong>조선그룹 계열 전면 배제</strong></div>
+      </div>
+      <div class="formula-box">
+        ⚖️ <strong>선정 기준:</strong> 유튜브 원본 영상 존재(필수 통과) + 화제성(30점) + 셀럽 연결(25점) + 상품화(25점) + 전환 용이성(20점) = 100점 만점
+      </div>
+    </header>
+
+    <main>
+      <h2 class="section-title">🏆 Top 10 트렌드 소재 순위</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>셀럽/인물</th>
+              <th>아이템</th>
+              <th style="text-align:right;">총점</th>
+              <th style="text-align:right;">화제성(30)</th>
+              <th style="text-align:right;">셀럽(25)</th>
+              <th style="text-align:right;">상품화(25)</th>
+              <th style="text-align:right;">전환(20)</th>
+              <th>검증 영상/채널</th>
+              <th style="text-align:center;">영상 링크</th>
+            </tr>
+          </thead>
+          <tbody>
+
+        <tr>
+          <td class="rank-cell"><strong>1</strong></td>
+          <td><span class="badge-tag celeb-tag">화사</span></td>
+          <td><strong>닭가슴살</strong></td>
+          <td class="score-cell highlight-score">98점</td>
+          <td class="score-cell">28</td>
+          <td class="score-cell">25</td>
+          <td class="score-cell">25</td>
+          <td class="score-cell">20</td>
+          <td>엠뚜루마뚜루 : MBC 공식 종합 채널 (17분 7초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=vvX_lzp7O0E" target="_blank" rel="noopener">영상보기</a></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>2</strong></td>
+          <td><span class="badge-tag celeb-tag">하지원</span></td>
+          <td><strong>레몬즙</strong></td>
+          <td class="score-cell highlight-score">98점</td>
+          <td class="score-cell">29</td>
+          <td class="score-cell">25</td>
+          <td class="score-cell">25</td>
+          <td class="score-cell">19</td>
+          <td>디글 클래식 :Diggle Classic (16분 17초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=ubCBWEwJxBM" target="_blank" rel="noopener">영상보기</a></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>3</strong></td>
+          <td><span class="badge-tag celeb-tag">최화정</span></td>
+          <td><strong>올리브유</strong></td>
+          <td class="score-cell highlight-score">98점</td>
+          <td class="score-cell">30</td>
+          <td class="score-cell">25</td>
+          <td class="score-cell">24</td>
+          <td class="score-cell">19</td>
+          <td>안녕하세요 최화정이에요 (17분 44초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=lv8J1XEe1ik" target="_blank" rel="noopener">영상보기</a></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>4</strong></td>
+          <td><span class="badge-tag celeb-tag">엄정화</span></td>
+          <td><strong>애사비 (사과식초)</strong></td>
+          <td class="score-cell highlight-score">94점</td>
+          <td class="score-cell">27</td>
+          <td class="score-cell">24</td>
+          <td class="score-cell">25</td>
+          <td class="score-cell">18</td>
+          <td>Umaizing 엄정화TV (14분 25초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=RpieF-ycZKE" target="_blank" rel="noopener">영상보기</a></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>5</strong></td>
+          <td><span class="badge-tag celeb-tag">소유</span></td>
+          <td><strong>그릭요거트</strong></td>
+          <td class="score-cell highlight-score">93점</td>
+          <td class="score-cell">26</td>
+          <td class="score-cell">24</td>
+          <td class="score-cell">25</td>
+          <td class="score-cell">18</td>
+          <td>소유기 SOYOUGI (16분 48초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=U4DQiHTJJpM" target="_blank" rel="noopener">영상보기</a></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>6</strong></td>
+          <td><span class="badge-tag celeb-tag">김종국</span></td>
+          <td><strong>마카</strong></td>
+          <td class="score-cell highlight-score">93점</td>
+          <td class="score-cell">27</td>
+          <td class="score-cell">25</td>
+          <td class="score-cell">24</td>
+          <td class="score-cell">17</td>
+          <td>정세운약사의 건강나눔 (7분 47초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=uUw9iJ6feok" target="_blank" rel="noopener">영상보기</a></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>7</strong></td>
+          <td><span class="badge-tag celeb-tag">한혜진</span></td>
+          <td><strong>오트밀</strong></td>
+          <td class="score-cell highlight-score">92점</td>
+          <td class="score-cell">26</td>
+          <td class="score-cell">24</td>
+          <td class="score-cell">24</td>
+          <td class="score-cell">18</td>
+          <td>SBS Entertainment (1분 28초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=hJyz4pSi7fc" target="_blank" rel="noopener">영상보기</a></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>8</strong></td>
+          <td><span class="badge-tag celeb-tag">윤은혜</span></td>
+          <td><strong>당근라페</strong></td>
+          <td class="score-cell highlight-score">91점</td>
+          <td class="score-cell">26</td>
+          <td class="score-cell">23</td>
+          <td class="score-cell">23</td>
+          <td class="score-cell">19</td>
+          <td>윤은혜의 EUNHYELOGIN (20분 22초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=LJqaO9enT7Q" target="_blank" rel="noopener">영상보기</a></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>9</strong></td>
+          <td><span class="badge-tag celeb-tag">비 (정지훈)</span></td>
+          <td><strong>단백질쉐이크</strong></td>
+          <td class="score-cell highlight-score">91점</td>
+          <td class="score-cell">25</td>
+          <td class="score-cell">25</td>
+          <td class="score-cell">24</td>
+          <td class="score-cell">17</td>
+          <td>Season B Season (16분 51초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=sn_DmjJJiuo" target="_blank" rel="noopener">영상보기</a></td>
+        </tr>
+        
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title">🔍 소재별 상세 분석 및 제작 아이디어</h2>
+      <div class="cards-container">
+
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 1</div>
+            <div class="card-title-group">
+              <h3 class="card-title">화사 × 닭가슴살</h3>
+              <div class="card-subtitle">쿠파스 매칭 키워드: <strong>닭가슴살</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 추천도</span>
+              <span class="score-val">98점 / 100점</span>
+            </div>
+          </div>
+
+          <!-- 점수 Breakdown -->
+          <div class="scores-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val">28점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">20점</span>
+            </div>
+          </div>
+
+          <!-- 화제 근거 -->
+          <div class="section-block">
+            <div class="block-title">🔥 화제성 및 바이럴 근거</div>
+            <p class="desc-text">예능 나혼자산다 및 유튜브에서 매일 챙겨먹는 식단으로 화제. 대중적 접근성이 가장 높은 단백질 필수템.</p>
+          </div>
+
+          <!-- 검증된 유튜브 원본 영상 메타 -->
+          <div class="video-box">
+            <div class="video-header">
+              <span class="verified-tag">✓ 유튜브 원본 영상 검증 완료 (yt-dlp)</span>
+              <span class="video-meta-txt">엠뚜루마뚜루 : MBC 공식 종합 채널 · 2023-07-31 · 조회 2,899,496회</span>
+            </div>
+            <div class="video-title">[#나혼자산다] 오늘 성빈이 먹은 것을 알아보자. 햄버거 2개, 스콘 1개, 도넛 12개, 피자 1판... 그만 알아보자. | #윤성빈 #먹방 MBC230728방송 (17분 7초)</div>
+            <a class="video-link" href="https://www.youtube.com/watch?v=vvX_lzp7O0E" target="_blank" rel="noopener">▶ 유튜브 원본 영상 바로가기 →</a>
+          </div>
+
+          <!-- 1줄 콘텐츠 아이디어 -->
+          <div class="idea-box">
+            <span class="idea-tag">💡 콘텐츠 아이디어 (1줄):</span>
+            <span class="idea-text">1장: '화사가 데뷔 때부터 쟁여두고 먹는 식단' / 2장: 닭가슴살 먹는 클립(제품 무음+블러) → 댓글 '단백질' 유도</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 2</div>
+            <div class="card-title-group">
+              <h3 class="card-title">하지원 × 레몬즙</h3>
+              <div class="card-subtitle">쿠파스 매칭 키워드: <strong>레몬즙</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 추천도</span>
+              <span class="score-val">98점 / 100점</span>
+            </div>
+          </div>
+
+          <!-- 점수 Breakdown -->
+          <div class="scores-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val">29점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">19점</span>
+            </div>
+          </div>
+
+          <!-- 화제 근거 -->
+          <div class="section-block">
+            <div class="block-title">🔥 화제성 및 바이럴 근거</div>
+            <p class="desc-text">유퀴즈 방송에서 동안 피부와 활력 비결로 매일 레몬 3개씩 즙 짜먹는 습관 공개. 최근 유기농 NFC 레몬즙 유행과 결합.</p>
+          </div>
+
+          <!-- 검증된 유튜브 원본 영상 메타 -->
+          <div class="video-box">
+            <div class="video-header">
+              <span class="verified-tag">✓ 유튜브 원본 영상 검증 완료 (yt-dlp)</span>
+              <span class="video-meta-txt">디글 클래식 :Diggle Classic · 2021-12-22 · 조회 755,540회</span>
+            </div>
+            <div class="video-title">[#노가리맛집] 연애에 관심 없는 하지원, 멜로씬에서 설렘 욕구 충족 다한다? (16분 17초)</div>
+            <a class="video-link" href="https://www.youtube.com/watch?v=ubCBWEwJxBM" target="_blank" rel="noopener">▶ 유튜브 원본 영상 바로가기 →</a>
+          </div>
+
+          <!-- 1줄 콘텐츠 아이디어 -->
+          <div class="idea-box">
+            <span class="idea-tag">💡 콘텐츠 아이디어 (1줄):</span>
+            <span class="idea-text">1장: '피부 나이 20대 하지원의 동안 비결' / 2장: 레몬 언급 발언 구간 3중 차단 → 댓글 '레몬' 유도</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 3</div>
+            <div class="card-title-group">
+              <h3 class="card-title">최화정 × 올리브유</h3>
+              <div class="card-subtitle">쿠파스 매칭 키워드: <strong>올리브유</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 추천도</span>
+              <span class="score-val">98점 / 100점</span>
+            </div>
+          </div>
+
+          <!-- 점수 Breakdown -->
+          <div class="scores-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val">30점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">19점</span>
+            </div>
+          </div>
+
+          <!-- 화제 근거 -->
+          <div class="section-block">
+            <div class="block-title">🔥 화제성 및 바이럴 근거</div>
+            <p class="desc-text">유튜브 채널 오픈 직후 아침 공복 올리브유 음용 루틴 공개로 품절 대란 발생. 엑스트라 버진 올리브유 검색량 폭증.</p>
+          </div>
+
+          <!-- 검증된 유튜브 원본 영상 메타 -->
+          <div class="video-box">
+            <div class="video-header">
+              <span class="verified-tag">✓ 유튜브 원본 영상 검증 완료 (yt-dlp)</span>
+              <span class="video-meta-txt">안녕하세요 최화정이에요 · 2026-08-06 · 조회 340,031회</span>
+            </div>
+            <div class="video-title">입맛 돋구는 최화정 초간단 여름 집밥 레시피(오이무침, 강된장) (17분 44초)</div>
+            <a class="video-link" href="https://www.youtube.com/watch?v=lv8J1XEe1ik" target="_blank" rel="noopener">▶ 유튜브 원본 영상 바로가기 →</a>
+          </div>
+
+          <!-- 1줄 콘텐츠 아이디어 -->
+          <div class="idea-box">
+            <span class="idea-tag">💡 콘텐츠 아이디어 (1줄):</span>
+            <span class="idea-text">1장: '60대 최화정이 매일 아침 마신다는 황금 오일' / 2장: 올리브유 꿀꺽 마시는 구간 가림 → 댓글 '오일' 유도</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 4</div>
+            <div class="card-title-group">
+              <h3 class="card-title">엄정화 × 애사비 (사과식초)</h3>
+              <div class="card-subtitle">쿠파스 매칭 키워드: <strong>애사비 (사과식초)</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 추천도</span>
+              <span class="score-val">94점 / 100점</span>
+            </div>
+          </div>
+
+          <!-- 점수 Breakdown -->
+          <div class="scores-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val">27점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+          </div>
+
+          <!-- 화제 근거 -->
+          <div class="section-block">
+            <div class="block-title">🔥 화제성 및 바이럴 근거</div>
+            <p class="desc-text">저탄고지 및 혈당 스파이크 방지 루틴으로 애사비(애플사이다비니거) 소개 후 다이어트 커뮤니티 정석 아이템 등극.</p>
+          </div>
+
+          <!-- 검증된 유튜브 원본 영상 메타 -->
+          <div class="video-box">
+            <div class="video-header">
+              <span class="verified-tag">✓ 유튜브 원본 영상 검증 완료 (yt-dlp)</span>
+              <span class="video-meta-txt">Umaizing 엄정화TV · 2025-04-20 · 조회 94,553회</span>
+            </div>
+            <div class="video-title">엄정화가 해봤던 '찐' 다이어트 식단과 저탄, 저당 다이어트 제품 추천 🍴🍋 (ENG) (14분 25초)</div>
+            <a class="video-link" href="https://www.youtube.com/watch?v=RpieF-ycZKE" target="_blank" rel="noopener">▶ 유튜브 원본 영상 바로가기 →</a>
+          </div>
+
+          <!-- 1줄 콘텐츠 아이디어 -->
+          <div class="idea-box">
+            <span class="idea-tag">💡 콘텐츠 아이디어 (1줄):</span>
+            <span class="idea-text">1장: '50대 복근 엄정화의 식전 필수 루틴' / 2장: 식초 타마시는 장면 블라인드 → 댓글 '식초' 유도</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 5</div>
+            <div class="card-title-group">
+              <h3 class="card-title">소유 × 그릭요거트</h3>
+              <div class="card-subtitle">쿠파스 매칭 키워드: <strong>그릭요거트</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 추천도</span>
+              <span class="score-val">93점 / 100점</span>
+            </div>
+          </div>
+
+          <!-- 점수 Breakdown -->
+          <div class="scores-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val">26점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+          </div>
+
+          <!-- 화제 근거 -->
+          <div class="section-block">
+            <div class="block-title">🔥 화제성 및 바이럴 근거</div>
+            <p class="desc-text">다이어트 유튜버이자 아이돌로서 꾸준한 식단 루틴 공개. 무가당 꾸덕 그릭요거트의 단백질 식단 대표화.</p>
+          </div>
+
+          <!-- 검증된 유튜브 원본 영상 메타 -->
+          <div class="video-box">
+            <div class="video-header">
+              <span class="verified-tag">✓ 유튜브 원본 영상 검증 완료 (yt-dlp)</span>
+              <span class="video-meta-txt">소유기 SOYOUGI · 2023-03-16 · 조회 1,484,785회</span>
+            </div>
+            <div class="video-title">두 달만에 -8kg 감량!👊 소유가 알려주는 저탄고지 다이어트 꿀팁 4가지🔥ㅣ저탄고지, 키토제닉, 식단 추천, 운동 루틴, 장단점 총정리 (16분 48초)</div>
+            <a class="video-link" href="https://www.youtube.com/watch?v=U4DQiHTJJpM" target="_blank" rel="noopener">▶ 유튜브 원본 영상 바로가기 →</a>
+          </div>
+
+          <!-- 1줄 콘텐츠 아이디어 -->
+          <div class="idea-box">
+            <span class="idea-tag">💡 콘텐츠 아이디어 (1줄):</span>
+            <span class="idea-text">1장: '원조 핫바디 소유가 식단 정체기 뚫은 방법' / 2장: 요거트 조합 발언 클립 → 댓글 '요거트' 유도</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 6</div>
+            <div class="card-title-group">
+              <h3 class="card-title">김종국 × 마카</h3>
+              <div class="card-subtitle">쿠파스 매칭 키워드: <strong>마카</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 추천도</span>
+              <span class="score-val">93점 / 100점</span>
+            </div>
+          </div>
+
+          <!-- 점수 Breakdown -->
+          <div class="scores-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val">27점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">17점</span>
+            </div>
+          </div>
+
+          <!-- 화제 근거 -->
+          <div class="section-block">
+            <div class="block-title">🔥 화제성 및 바이럴 근거</div>
+            <p class="desc-text">짐종국 채널에서 운동 전 활력 부스팅 영양제로 페루 마카 및 아르기닌 언급. 헬스/남성 활력 카테고리 베스트셀러.</p>
+          </div>
+
+          <!-- 검증된 유튜브 원본 영상 메타 -->
+          <div class="video-box">
+            <div class="video-header">
+              <span class="verified-tag">✓ 유튜브 원본 영상 검증 완료 (yt-dlp)</span>
+              <span class="video-meta-txt">정세운약사의 건강나눔 · 2022-02-02 · 조회 166,460회</span>
+            </div>
+            <div class="video-title">짐종국님도 광고한 블랙마카. 남자에게 '정말' 좋을까? (7분 47초)</div>
+            <a class="video-link" href="https://www.youtube.com/watch?v=uUw9iJ6feok" target="_blank" rel="noopener">▶ 유튜브 원본 영상 바로가기 →</a>
+          </div>
+
+          <!-- 1줄 콘텐츠 아이디어 -->
+          <div class="idea-box">
+            <span class="idea-tag">💡 콘텐츠 아이디어 (1줄):</span>
+            <span class="idea-text">1장: '김종국이 운동 1시간 전 꼭 챙겨먹는 활력제' / 2장: 보충제 섭취 클립 블라인드 → 댓글 '활력' 유도</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 7</div>
+            <div class="card-title-group">
+              <h3 class="card-title">한혜진 × 오트밀</h3>
+              <div class="card-subtitle">쿠파스 매칭 키워드: <strong>오트밀</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 추천도</span>
+              <span class="score-val">92점 / 100점</span>
+            </div>
+          </div>
+
+          <!-- 점수 Breakdown -->
+          <div class="scores-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val">26점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+          </div>
+
+          <!-- 화제 근거 -->
+          <div class="section-block">
+            <div class="block-title">🔥 화제성 및 바이럴 근거</div>
+            <p class="desc-text">톱모델의 철저한 자기관리 루틴. 혈당 관리와 복근 유지를 위해 아침마다 먹는 오트밀 레시피 바이럴.</p>
+          </div>
+
+          <!-- 검증된 유튜브 원본 영상 메타 -->
+          <div class="video-box">
+            <div class="video-header">
+              <span class="verified-tag">✓ 유튜브 원본 영상 검증 완료 (yt-dlp)</span>
+              <span class="video-meta-txt">SBS Entertainment · 2026-07-19 · 조회 9,085회</span>
+            </div>
+            <div class="video-title">한혜진, 몸매 관리 위해 챙겨 마신 ‘닭가슴살 셰이크’ 레시피 공개↗ (1분 28초)</div>
+            <a class="video-link" href="https://www.youtube.com/watch?v=hJyz4pSi7fc" target="_blank" rel="noopener">▶ 유튜브 원본 영상 바로가기 →</a>
+          </div>
+
+          <!-- 1줄 콘텐츠 아이디어 -->
+          <div class="idea-box">
+            <span class="idea-tag">💡 콘텐츠 아이디어 (1줄):</span>
+            <span class="idea-text">1장: '톱모델 한혜진이 20년째 아침마다 먹는 탄수화물' / 2장: 오트밀 조리 발언 구간 컷 → 댓글 '오트밀' 유도</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 8</div>
+            <div class="card-title-group">
+              <h3 class="card-title">윤은혜 × 당근라페</h3>
+              <div class="card-subtitle">쿠파스 매칭 키워드: <strong>당근라페</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 추천도</span>
+              <span class="score-val">91점 / 100점</span>
+            </div>
+          </div>
+
+          <!-- 점수 Breakdown -->
+          <div class="scores-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val">26점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결 (25)</span>
+              <span class="s-val">23점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 (25)</span>
+              <span class="s-val">23점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">19점</span>
+            </div>
+          </div>
+
+          <!-- 화제 근거 -->
+          <div class="section-block">
+            <div class="block-title">🔥 화제성 및 바이럴 근거</div>
+            <p class="desc-text">급찐급빠 다이어트 식단 영상에서 올리브유+홀그레인 머스타드+당근라페 레시피로 수백만 조회수 달성.</p>
+          </div>
+
+          <!-- 검증된 유튜브 원본 영상 메타 -->
+          <div class="video-box">
+            <div class="video-header">
+              <span class="verified-tag">✓ 유튜브 원본 영상 검증 완료 (yt-dlp)</span>
+              <span class="video-meta-txt">윤은혜의 EUNHYELOGIN · 2025-08-18 · 조회 233,932회</span>
+            </div>
+            <div class="video-title">[돌아온 윤은혜 급찐급빠(2)] 살이 계속 빠져...! 😮 은혜의 급찐급빠 실천 브이로그! (20분 22초)</div>
+            <a class="video-link" href="https://www.youtube.com/watch?v=LJqaO9enT7Q" target="_blank" rel="noopener">▶ 유튜브 원본 영상 바로가기 →</a>
+          </div>
+
+          <!-- 1줄 콘텐츠 아이디어 -->
+          <div class="idea-box">
+            <span class="idea-tag">💡 콘텐츠 아이디어 (1줄):</span>
+            <span class="idea-text">1장: '윤은혜가 일주일 만에 -3kg 감량한 마법의 반찬' / 2장: 라페 식단 설명 구간 발췌 → 댓글 '당근' 유도</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 9</div>
+            <div class="card-title-group">
+              <h3 class="card-title">비 (정지훈) × 단백질쉐이크</h3>
+              <div class="card-subtitle">쿠파스 매칭 키워드: <strong>단백질쉐이크</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 추천도</span>
+              <span class="score-val">91점 / 100점</span>
+            </div>
+          </div>
+
+          <!-- 점수 Breakdown -->
+          <div class="scores-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">17점</span>
+            </div>
+          </div>
+
+          <!-- 화제 근거 -->
+          <div class="section-block">
+            <div class="block-title">🔥 화제성 및 바이럴 근거</div>
+            <p class="desc-text">시즌비시즌에서 강도 높은 타바타 운동 직후 마시는 프로틴 쉐이크 섭취법 노출. 빠른 흡수와 식사 대용 강조.</p>
+          </div>
+
+          <!-- 검증된 유튜브 원본 영상 메타 -->
+          <div class="video-box">
+            <div class="video-header">
+              <span class="verified-tag">✓ 유튜브 원본 영상 검증 완료 (yt-dlp)</span>
+              <span class="video-meta-txt">Season B Season · 2023-11-26 · 조회 266,367회</span>
+            </div>
+            <div class="video-title">[EN] 요즘 닭가슴살 체험하고 단백질 가득 충전하고 온 비 ㅣ시즌비시즌4 EP.08 (16분 51초)</div>
+            <a class="video-link" href="https://www.youtube.com/watch?v=sn_DmjJJiuo" target="_blank" rel="noopener">▶ 유튜브 원본 영상 바로가기 →</a>
+          </div>
+
+          <!-- 1줄 콘텐츠 아이디어 -->
+          <div class="idea-box">
+            <span class="idea-tag">💡 콘텐츠 아이디어 (1줄):</span>
+            <span class="idea-text">1장: '40대에도 전성기 피지컬 유지하는 비의 필수템' / 2장: 쉐이크 마시는 장면 모자이크 → 댓글 '프로틴' 유도</span>
+          </div>
+        </div>
+        
+      </div>
+    </main>
+
+    <footer>
+      검색엔진 비공개 리포트 (noindex, nofollow) · workkrst/ig-funnel
+    </footer>
+  </div>
+</body>
+</html>
