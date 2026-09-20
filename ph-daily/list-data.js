@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-09-20",
+    "url": "2026-09-20/",
+    "top_product": "Bolt Forge",
+    "count": 5,
+    "upvotes_total": 774,
+    "comments_total": 27
+  },
+  {
     "date": "2026-09-19",
     "url": "2026-09-19/",
     "top_product": "Ami AI",
