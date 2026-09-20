@@ -95,9 +95,16 @@
       align-items: center;
       gap: 8px;
     }
-    /* Table */
+    
+    /* Zero horizontal scroll & compact table */
+    .container {
+      max-width: 1200px;
+      width: 96%;
+      margin: 0 auto;
+    }
     .table-container {
-      overflow-x: auto;
+      width: 100%;
+      overflow-x: hidden !important;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
@@ -106,60 +113,59 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       text-align: left;
+      table-layout: auto;
     }
     th, td {
-      padding:  10px 8px;
+      padding: 10px 8px;
       border-bottom: 1px solid var(--border);
-      white-space: nowrap;
+      vertical-align: middle;
     }
     th {
       background: #172033;
       color: var(--text-muted);
       font-weight: 600;
+      white-space: nowrap;
     }
     tr:hover td {
       background: #223049;
     }
-    .rank-cell {
-      text-align: center;
-      color: var(--accent);
-      font-size: 1rem;
-    }
-    .score-cell {
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-    .highlight-score {
-      color: var(--highlight);
-      font-weight: 700;
-    }
-    .badge-tag {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.78rem;
-      font-weight: 600;
-    }
-    .celeb-tag {
-      background: rgba(16, 185, 129, 0.15);
-      color: #6ee7b7;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-    .link-btn {
+    .video-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
       color: var(--primary);
       text-decoration: none;
       font-weight: 600;
-      padding: 2px 8px;
-      border: 1px solid var(--primary);
-      border-radius: 4px;
-      font-size: 0.78rem;
+      font-size: 0.82rem;
+      padding: 4px 10px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 6px;
+      transition: all 0.2s;
+      word-break: keep-all;
     }
-    .link-btn:hover {
-      background: var(--primary);
-      color: #0b1120;
+    .video-pill:hover {
+      background: rgba(56, 189, 248, 0.2);
+      color: #fff;
     }
+    .score-badge-box {
+      text-align: right;
+      white-space: nowrap;
+    }
+    .score-badge-box .main-score {
+      color: var(--highlight);
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+    .score-badge-box .sub-scores {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      letter-spacing: -0.3px;
+    }
+    
     /* Cards */
     .cards-container {
       display: flex;
@@ -389,159 +395,165 @@
         <table>
           <thead>
             <tr>
-              <th>순위</th>
-              <th>셀럽/인물</th>
-              <th>아이템</th>
-              <th style="text-align:right;">총점</th>
-              <th style="text-align:right;" title="화제성 (30점 만점)">화제성</th>
-              <th style="text-align:right;" title="셀럽 연결도 (25점 만점)">셀럽</th>
-              <th style="text-align:right;" title="상품화 가능성 (25점 만점)">상품화</th>
-              <th style="text-align:right;" title="전환 용이성 (20점 만점)">전환</th>
-              <th>검증 영상/채널</th>
-              <th style="text-align:center;">영상 링크</th>
-              <th style="text-align:center;">추천형식</th>
+              <th style="text-align:center; width:50px;">순위</th>
+              <th style="width:100px;">셀럽/인물</th>
+              <th style="min-width:140px;">아이템</th>
+              <th style="text-align:right; min-width:130px;" title="화제성(30) · 셀럽(25) · 상품화(25) · 전환(20)">종합 점수 <span style="font-size:0.7rem; font-weight:normal; color:#94a3b8;">(세부)</span></th>
+              <th style="min-width:240px;">검증 영상 원본 (공식 채널)</th>
+              <th style="text-align:center; width:95px;">추천형식</th>
             </tr>
           </thead>
-          <tbody><tr>
-          <td class="rank-cell"><strong>1</strong></td>
+          <tbody>
+        <tr>
+          <td class="rank-cell" style="text-align:center;"><strong>1</strong></td>
           <td><span class="badge-tag celeb-tag">화사</span></td>
           <td><strong>닭가슴살</strong></td>
-          <td class="score-cell highlight-score">98점</td>
-          <td class="score-cell">28</td>
-          <td class="score-cell">25</td>
-          <td class="score-cell">25</td>
-          <td class="score-cell">20</td>
-          <td>나혼자산다 STUDIO (15분 51초)</td>
-          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=_fiOi4yg-OI" target="_blank" rel="noopener">영상보기</a></td>
+          <td class="score-badge-box">
+            <div class="main-score">98점</div>
+            <div class="sub-scores">화28·셀25·상25·전20</div>
+          </td>
+          <td>
+            <a class="video-pill" href="https://www.youtube.com/watch?v=_fiOi4yg-OI" target="_blank" rel="noopener">
+              ▶ 나혼자산다 STUDIO (15분 51초) ↗
+            </a>
+          </td>
           <td style="text-align:center;"><span class="format-badge format-video">표지+영상</span></td>
         </tr>
-        
         <tr>
-          <td class="rank-cell"><strong>2</strong></td>
+          <td class="rank-cell" style="text-align:center;"><strong>2</strong></td>
           <td><span class="badge-tag celeb-tag">하지원</span></td>
           <td><strong>레몬즙</strong></td>
-          <td class="score-cell highlight-score">98점</td>
-          <td class="score-cell">29</td>
-          <td class="score-cell">25</td>
-          <td class="score-cell">25</td>
-          <td class="score-cell">19</td>
-          <td>디글 클래식 :Diggle Classic (16분 17초)</td>
-          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=ubCBWEwJxBM" target="_blank" rel="noopener">영상보기</a></td>
+          <td class="score-badge-box">
+            <div class="main-score">98점</div>
+            <div class="sub-scores">화29·셀25·상25·전19</div>
+          </td>
+          <td>
+            <a class="video-pill" href="https://www.youtube.com/watch?v=ubCBWEwJxBM" target="_blank" rel="noopener">
+              ▶ 디글 클래식 :Diggle (16분 17초) ↗
+            </a>
+          </td>
           <td style="text-align:center;"><span class="format-badge format-video">표지+영상</span></td>
         </tr>
-        
         <tr>
-          <td class="rank-cell"><strong>3</strong></td>
+          <td class="rank-cell" style="text-align:center;"><strong>3</strong></td>
           <td><span class="badge-tag celeb-tag">최화정</span></td>
           <td><strong>올리브유</strong></td>
-          <td class="score-cell highlight-score">98점</td>
-          <td class="score-cell">30</td>
-          <td class="score-cell">25</td>
-          <td class="score-cell">24</td>
-          <td class="score-cell">19</td>
-          <td>안녕하세요 최화정이에요 (17분 44초)</td>
-          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=lv8J1XEe1ik" target="_blank" rel="noopener">영상보기</a></td>
+          <td class="score-badge-box">
+            <div class="main-score">98점</div>
+            <div class="sub-scores">화30·셀25·상24·전19</div>
+          </td>
+          <td>
+            <a class="video-pill" href="https://www.youtube.com/watch?v=lv8J1XEe1ik" target="_blank" rel="noopener">
+              ▶ 안녕하세요 최화정이에요 (17분 44초) ↗
+            </a>
+          </td>
           <td style="text-align:center;"><span class="format-badge format-video">표지+영상</span></td>
         </tr>
-        
         <tr>
-          <td class="rank-cell"><strong>4</strong></td>
+          <td class="rank-cell" style="text-align:center;"><strong>4</strong></td>
           <td><span class="badge-tag celeb-tag">조현아</span></td>
           <td><strong>다이어트 채소식단</strong></td>
-          <td class="score-cell highlight-score">95점</td>
-          <td class="score-cell">28</td>
-          <td class="score-cell">25</td>
-          <td class="score-cell">24</td>
-          <td class="score-cell">18</td>
-          <td>픽잇 :Pick it (54분 57초)</td>
-          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=bkjWUIDhAKo" target="_blank" rel="noopener">영상보기</a></td>
+          <td class="score-badge-box">
+            <div class="main-score">95점</div>
+            <div class="sub-scores">화28·셀25·상24·전18</div>
+          </td>
+          <td>
+            <a class="video-pill" href="https://www.youtube.com/watch?v=bkjWUIDhAKo" target="_blank" rel="noopener">
+              ▶ 픽잇 :Pick it (54분 57초) ↗
+            </a>
+          </td>
           <td style="text-align:center;"><span class="format-badge format-card">카드뉴스</span></td>
         </tr>
-        
         <tr>
-          <td class="rank-cell"><strong>5</strong></td>
+          <td class="rank-cell" style="text-align:center;"><strong>5</strong></td>
           <td><span class="badge-tag celeb-tag">엄정화</span></td>
           <td><strong>애사비 (사과식초)</strong></td>
-          <td class="score-cell highlight-score">94점</td>
-          <td class="score-cell">27</td>
-          <td class="score-cell">24</td>
-          <td class="score-cell">25</td>
-          <td class="score-cell">18</td>
-          <td>Umaizing 엄정화TV (14분 25초)</td>
-          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=RpieF-ycZKE" target="_blank" rel="noopener">영상보기</a></td>
+          <td class="score-badge-box">
+            <div class="main-score">94점</div>
+            <div class="sub-scores">화27·셀24·상25·전18</div>
+          </td>
+          <td>
+            <a class="video-pill" href="https://www.youtube.com/watch?v=RpieF-ycZKE" target="_blank" rel="noopener">
+              ▶ Umaizing 엄정화TV (14분 25초) ↗
+            </a>
+          </td>
           <td style="text-align:center;"><span class="format-badge format-video">표지+영상</span></td>
         </tr>
-        
         <tr>
-          <td class="rank-cell"><strong>6</strong></td>
+          <td class="rank-cell" style="text-align:center;"><strong>6</strong></td>
           <td><span class="badge-tag celeb-tag">이효리</span></td>
           <td><strong>보이차 (발효차)</strong></td>
-          <td class="score-cell highlight-score">94점</td>
-          <td class="score-cell">27</td>
-          <td class="score-cell">25</td>
-          <td class="score-cell">24</td>
-          <td class="score-cell">18</td>
-          <td>JTBC Voyage (83분 25초)</td>
-          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=ktet-YCb_po" target="_blank" rel="noopener">영상보기</a></td>
+          <td class="score-badge-box">
+            <div class="main-score">94점</div>
+            <div class="sub-scores">화27·셀25·상24·전18</div>
+          </td>
+          <td>
+            <a class="video-pill" href="https://www.youtube.com/watch?v=ktet-YCb_po" target="_blank" rel="noopener">
+              ▶ JTBC Voyage (83분 25초) ↗
+            </a>
+          </td>
           <td style="text-align:center;"><span class="format-badge format-card">카드뉴스</span></td>
         </tr>
-        
         <tr>
-          <td class="rank-cell"><strong>7</strong></td>
+          <td class="rank-cell" style="text-align:center;"><strong>7</strong></td>
           <td><span class="badge-tag celeb-tag">소유</span></td>
           <td><strong>그릭요거트</strong></td>
-          <td class="score-cell highlight-score">93점</td>
-          <td class="score-cell">26</td>
-          <td class="score-cell">24</td>
-          <td class="score-cell">25</td>
-          <td class="score-cell">18</td>
-          <td>소유기 SOYOUGI (16분 48초)</td>
-          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=U4DQiHTJJpM" target="_blank" rel="noopener">영상보기</a></td>
+          <td class="score-badge-box">
+            <div class="main-score">93점</div>
+            <div class="sub-scores">화26·셀24·상25·전18</div>
+          </td>
+          <td>
+            <a class="video-pill" href="https://www.youtube.com/watch?v=U4DQiHTJJpM" target="_blank" rel="noopener">
+              ▶ 소유기 SOYOUGI (16분 48초) ↗
+            </a>
+          </td>
           <td style="text-align:center;"><span class="format-badge format-video">표지+영상</span></td>
         </tr>
-        
         <tr>
-          <td class="rank-cell"><strong>8</strong></td>
+          <td class="rank-cell" style="text-align:center;"><strong>8</strong></td>
           <td><span class="badge-tag celeb-tag">김종국</span></td>
           <td><strong>마카</strong></td>
-          <td class="score-cell highlight-score">93점</td>
-          <td class="score-cell">27</td>
-          <td class="score-cell">25</td>
-          <td class="score-cell">24</td>
-          <td class="score-cell">17</td>
-          <td>정세운약사의 건강나눔 (7분 47초)</td>
-          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=uUw9iJ6feok" target="_blank" rel="noopener">영상보기</a></td>
+          <td class="score-badge-box">
+            <div class="main-score">93점</div>
+            <div class="sub-scores">화27·셀25·상24·전17</div>
+          </td>
+          <td>
+            <a class="video-pill" href="https://www.youtube.com/watch?v=uUw9iJ6feok" target="_blank" rel="noopener">
+              ▶ 정세운약사의 건강나눔 (7분 47초) ↗
+            </a>
+          </td>
           <td style="text-align:center;"><span class="format-badge format-card">카드뉴스</span></td>
         </tr>
-        
         <tr>
-          <td class="rank-cell"><strong>9</strong></td>
+          <td class="rank-cell" style="text-align:center;"><strong>9</strong></td>
           <td><span class="badge-tag celeb-tag">한혜진</span></td>
           <td><strong>오트밀</strong></td>
-          <td class="score-cell highlight-score">92점</td>
-          <td class="score-cell">26</td>
-          <td class="score-cell">24</td>
-          <td class="score-cell">24</td>
-          <td class="score-cell">18</td>
-          <td>SBS Entertainment (1분 28초)</td>
-          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=hJyz4pSi7fc" target="_blank" rel="noopener">영상보기</a></td>
+          <td class="score-badge-box">
+            <div class="main-score">92점</div>
+            <div class="sub-scores">화26·셀24·상24·전18</div>
+          </td>
+          <td>
+            <a class="video-pill" href="https://www.youtube.com/watch?v=hJyz4pSi7fc" target="_blank" rel="noopener">
+              ▶ SBS Entertainment (1분 28초) ↗
+            </a>
+          </td>
           <td style="text-align:center;"><span class="format-badge format-card">카드뉴스</span></td>
         </tr>
-        
         <tr>
-          <td class="rank-cell"><strong>10</strong></td>
+          <td class="rank-cell" style="text-align:center;"><strong>10</strong></td>
           <td><span class="badge-tag celeb-tag">윤은혜</span></td>
           <td><strong>당근라페</strong></td>
-          <td class="score-cell highlight-score">91점</td>
-          <td class="score-cell">26</td>
-          <td class="score-cell">23</td>
-          <td class="score-cell">23</td>
-          <td class="score-cell">19</td>
-          <td>윤은혜의 EUNHYELOGIN (20분 22초)</td>
-          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=LJqaO9enT7Q" target="_blank" rel="noopener">영상보기</a></td>
+          <td class="score-badge-box">
+            <div class="main-score">91점</div>
+            <div class="sub-scores">화26·셀23·상23·전19</div>
+          </td>
+          <td>
+            <a class="video-pill" href="https://www.youtube.com/watch?v=LJqaO9enT7Q" target="_blank" rel="noopener">
+              ▶ 윤은혜의 EUNHYELOGIN (20분 22초) ↗
+            </a>
+          </td>
           <td style="text-align:center;"><span class="format-badge format-video">표지+영상</span></td>
         </tr>
-        
           </tbody>
         </table>
       </div>
@@ -553,7 +565,7 @@
           <div class="card-header">
             <div class="rank-badge">Top 1</div>
             <div class="card-title-group">
-              <h3 class="card-title">화사 × 닭가슴살 <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span> <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천: 표지+영상</span></h3>
+              <h3 class="card-title">화사 × 닭가슴살 <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span></h3>
               <div class="card-subtitle">쿠파스 매칭 키워드: <strong>닭가슴살</strong></div>
             </div>
             <div class="score-box">
@@ -609,7 +621,7 @@
           <div class="card-header">
             <div class="rank-badge">Top 2</div>
             <div class="card-title-group">
-              <h3 class="card-title">하지원 × 레몬즙 <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span> <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천: 표지+영상</span></h3>
+              <h3 class="card-title">하지원 × 레몬즙 <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span></h3>
               <div class="card-subtitle">쿠파스 매칭 키워드: <strong>레몬즙</strong></div>
             </div>
             <div class="score-box">
@@ -665,7 +677,7 @@
           <div class="card-header">
             <div class="rank-badge">Top 3</div>
             <div class="card-title-group">
-              <h3 class="card-title">최화정 × 올리브유 <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span> <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천: 표지+영상</span></h3>
+              <h3 class="card-title">최화정 × 올리브유 <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span></h3>
               <div class="card-subtitle">쿠파스 매칭 키워드: <strong>올리브유</strong></div>
             </div>
             <div class="score-box">
@@ -721,7 +733,7 @@
           <div class="card-header">
             <div class="rank-badge">Top 4</div>
             <div class="card-title-group">
-              <h3 class="card-title">조현아 × 다이어트 채소식단 <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 카드뉴스</span> <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천: 카드뉴스</span></h3>
+              <h3 class="card-title">조현아 × 다이어트 채소식단 <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 카드뉴스</span></h3>
               <div class="card-subtitle">쿠파스 매칭 키워드: <strong>다이어트 채소식단</strong></div>
             </div>
             <div class="score-box">
@@ -777,7 +789,7 @@
           <div class="card-header">
             <div class="rank-badge">Top 5</div>
             <div class="card-title-group">
-              <h3 class="card-title">엄정화 × 애사비 (사과식초) <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span> <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천: 표지+영상</span></h3>
+              <h3 class="card-title">엄정화 × 애사비 (사과식초) <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span></h3>
               <div class="card-subtitle">쿠파스 매칭 키워드: <strong>애사비 (사과식초)</strong></div>
             </div>
             <div class="score-box">
@@ -833,7 +845,7 @@
           <div class="card-header">
             <div class="rank-badge">Top 6</div>
             <div class="card-title-group">
-              <h3 class="card-title">이효리 × 보이차 (발효차) <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 카드뉴스</span> <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천: 카드뉴스</span></h3>
+              <h3 class="card-title">이효리 × 보이차 (발효차) <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 카드뉴스</span></h3>
               <div class="card-subtitle">쿠파스 매칭 키워드: <strong>보이차 (발효차)</strong></div>
             </div>
             <div class="score-box">
@@ -889,7 +901,7 @@
           <div class="card-header">
             <div class="rank-badge">Top 7</div>
             <div class="card-title-group">
-              <h3 class="card-title">소유 × 그릭요거트 <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span> <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천: 표지+영상</span></h3>
+              <h3 class="card-title">소유 × 그릭요거트 <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span></h3>
               <div class="card-subtitle">쿠파스 매칭 키워드: <strong>그릭요거트</strong></div>
             </div>
             <div class="score-box">
@@ -945,7 +957,7 @@
           <div class="card-header">
             <div class="rank-badge">Top 8</div>
             <div class="card-title-group">
-              <h3 class="card-title">김종국 × 마카 <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 카드뉴스</span> <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천: 카드뉴스</span></h3>
+              <h3 class="card-title">김종국 × 마카 <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 카드뉴스</span></h3>
               <div class="card-subtitle">쿠파스 매칭 키워드: <strong>마카</strong></div>
             </div>
             <div class="score-box">
@@ -1001,7 +1013,7 @@
           <div class="card-header">
             <div class="rank-badge">Top 9</div>
             <div class="card-title-group">
-              <h3 class="card-title">한혜진 × 오트밀 <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 카드뉴스</span> <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천: 카드뉴스</span></h3>
+              <h3 class="card-title">한혜진 × 오트밀 <span class="format-badge format-card" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 카드뉴스</span></h3>
               <div class="card-subtitle">쿠파스 매칭 키워드: <strong>오트밀</strong></div>
             </div>
             <div class="score-box">
@@ -1057,7 +1069,7 @@
           <div class="card-header">
             <div class="rank-badge">Top 10</div>
             <div class="card-title-group">
-              <h3 class="card-title">윤은혜 × 당근라페 <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span> <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천: 표지+영상</span></h3>
+              <h3 class="card-title">윤은혜 × 당근라페 <span class="format-badge format-video" style="margin-left:8px; font-size:0.8rem; vertical-align:middle;">추천형식: 표지+영상</span></h3>
               <div class="card-subtitle">쿠파스 매칭 키워드: <strong>당근라페</strong></div>
             </div>
             <div class="score-box">

@@ -99,9 +99,16 @@
       align-items: center;
       gap: 8px;
     }
-    /* Table */
+    
+    /* Zero horizontal scroll & responsive table */
+    .container {
+      max-width: 1200px;
+      width: 96%;
+      margin: 0 auto;
+    }
     .table-container {
-      overflow-x: auto;
+      width: 100%;
+      overflow-x: hidden !important;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
@@ -110,56 +117,25 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       text-align: left;
+      table-layout: auto;
     }
     th, td {
-      padding:  10px 8px;
+      padding: 9px 6px;
       border-bottom: 1px solid var(--border);
-      white-space: nowrap;
+      vertical-align: middle;
     }
     th {
       background: #172033;
       color: var(--text-muted);
       font-weight: 600;
+      white-space: nowrap;
     }
     tr:hover td {
       background: #223049;
     }
-    .rank-cell {
-      text-align: center;
-      color: var(--primary);
-      font-size: 1rem;
-    }
-    .metric-cell {
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-    .badge-tag {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 0.78rem;
-      font-weight: 600;
-    }
-    .celeb-tag {
-      background: rgba(236, 72, 153, 0.15);
-      color: #f472b6;
-      border: 1px solid rgba(236, 72, 153, 0.3);
-    }
-    .link-btn {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 2px 8px;
-      border: 1px solid var(--primary);
-      border-radius: 4px;
-      font-size: 0.78rem;
-    }
-    .link-btn:hover {
-      background: var(--primary);
-      color: #0b1120;
-    }
+    
     /* Cards */
     .cards-container {
       display: flex;
