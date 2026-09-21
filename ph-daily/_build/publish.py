@@ -121,12 +121,15 @@ def cmd_publish(date, meta, dry):
         print(f"[pub:dry-ok] {date}/index.html 빌드 성공 — push·확인 생략")
         return 0
     r = sh(
-        f"git add -A && git commit -m 'ph-daily: {date} 리포트' && git push origin HEAD",
+        f"git add -A && git commit -m 'ph-daily: {date} 리포트' "
+        "&& git pull --rebase --autostash origin master "
+        "&& git push origin HEAD",
         cwd=BASE.parent,
         timeout=180,
     )
     if r.returncode and "nothing to commit" not in (r.stdout or ""):
-        print(f"[pub:FAIL:5] git push 실패\n{(r.stdout or '') + (r.stderr or '')[-600:]}")
+        sh("git rebase --abort", cwd=BASE.parent)  # rebase 충돌 시 원복 (실패 무시)
+        print(f"[pub:FAIL:5] git push 실패 (pull --rebase 후에도)\n{(r.stdout or '') + (r.stderr or '')[-600:]}")
         return 5
     url = f"https://workkrst.github.io/ph-daily/{date}/"
     for i in range(10):
