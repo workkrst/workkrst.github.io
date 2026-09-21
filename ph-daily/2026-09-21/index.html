@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-09-21</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-09-21 · Top 5 · 수집 댓글 40개 · 수집 2026-09-21 12:31 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-09-21",
+ "collected_at": "2026-09-21 12:31 KST",
+ "summary": "AI 에이전트가 '도구'가 아니라 '실행자'가 되는 흐름이 뚜렷한 하루였습니다. 5개 중 3개(Mycel·Minicart·Answers by Context.dev)가 클라이언트 결과물 작성, 스토어 운영, 웹 리서치 같은 실제 업무를 AI가 직접 수행하는 제품이고, 나머지도 GTM 워크플로·노트 앱으로 카테고리가 고르게 분포했습니다. 댓글의 공통 논점은 에이전트 자율성과 사람의 승인 통제 사이 균형으로, 제작자들이 '승인 없이는 아무것도 실행·전달되지 않는다'는 설계를 앞세워 신뢰를 설득하는 모습이 돋보였습니다.",
+ "notable": [
+  {
+   "slug": "mycel",
+   "why": "업보트 1위(277)·댓글 45개로 압도적 반응을 얻었고, 제작자가 수정 사항 학습의 장기 효과 질문에 '오늘 받은 최고의 질문인데 좋은 답이 없다'고 솔직히 인정하며 '지금까지 몇십 개 초안에서 아무도 수정 없이 승인만 했다'는 초기 지표까지 공개했습니다. 작업마다 일회용 샌드박스를 띄우고 자격 증명을 보관하지 않는 보안 구조와 승인 게이트 설계에 호평이 집중됐습니다."
+  },
+  {
+   "slug": "minicart",
+   "why": "AI 팀원 3명(Sloane·Milo·Logan)이 스토어 운영을 직접 수행한다는 컨셉으로 187 업보트를 확보했고, 코드 PH2026으로 첫 3개월 월 $1 프로모션을 진행 중입니다. 댓글에서 고객 응대 AI의 자연스러움과 커스터마이징이 핵심 질문으로 나왔는데, 제작자는 '완전 자율 모드는 신뢰가 쌓인 뒤 켤 수 있다'며 검토·승인 단계를 거치는 점진적 설계를 강조했습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Mycel",
+   "tagline_en": "Bring one past deliverable. Mycel drafts every future one.",
+   "tagline_kr": "지난 결과물 하나만 가져오세요. 앞으로의 모든 결과물은 Mycel이 초안부터 작성합니다.",
+   "image": "https://ph-files.imgix.net/6ae77f74-aded-4237-80c7-5910ccaf94b3.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Productivity",
+    "SaaS",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 277,
+   "comments_count": 45,
+   "maker": "Islam Hachimi (@thislam) — 런치 팀: Zac Zuo, Saad El Gueddari",
+   "price_model": "Freemium",
+   "price_detail": "클라우드 월 $299부터 (론칭 프로모션 3개월 50% 할인), 셀프호스팅은 무료 — 단 AI 토큰·연동·인프라 비용은 자부담",
+   "desc_kr": "Mycel은 서비스 비즈니스가 실제로 파는 일, 즉 고객 관리·결과물 작성·승인·인보이스 처리를 대신 수행하는 AI 에이전트 플랫폼입니다. 작업마다 일회용 샌드박스를 새로 띄워 처리하고 소멸시키며, 에이전트는 어떤 자격 증명도 보관하지 않아 보안 리스크를 줄입니다. 요약과 표의 숫자가 어긋나면 초안을 보류해 이유를 확인시키고, 사용자가 승인 전에 수정한 내용은 규칙으로 저장돼 다음 초안에 자동 반영됩니다. 월간 리포트, SEO 감사, 제안서, 후보자 리스트, 인보이스 독촉처럼 절차는 반복되는데 산출물이 매번 달라지는 클라이언트 업무를 타이머로 스스로 돌립니다. 무엇보다 승인 없이는 어떤 결과물도 고객에게 전달되지 않도록 설계됐습니다. 가격은 월 $299부터이며, 셀프호스팅 시에는 무료로 사용할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/mycel",
+   "comment_summary": "제작자의 론칭 소개글을 시작으로 샌드박스 보안 구조, 수정 사항 학습 방식, 첫 초안 정확도, $299/월과 셀프호스팅 무료의 가격 구조, CMS·광고·MCP 연동 같은 실무 질문이 활발히 오갔습니다. 제작자 Islam Hachimi가 거의 모든 질문에 직접 답했고, 축하 인사와 함께 '승인 전에는 아무것도 고객에게 안 나간다'는 통제권 설계에 대한 호평이 많았습니다.",
+   "warnings": [
+    "페이지에 업보트·댓글 수가 직접 표시되지 않아 제공된 수치(업보트 277, 댓글 45)를 유지함",
+    "페이지 카테고리 표기는 'AI Workflow Automation • AI Engineer'였으나 런치 태그(Productivity, SaaS, Artificial Intelligence)를 유지함",
+    "/products/mycel 페이지에서 댓글 정상 수집 — /posts/ 대체 URL 불필요"
+   ],
+   "comments": [
+    {
+     "author": "Islam Hachimi",
+     "is_maker": true,
+     "text": "It is live. If you run client work, you are the last pair of eyes on everything. Every report, every update, every deck. That is what caps how many clients you can carry. It gets worse as you grow. Three ways out, and you have priced all of them. Hire at $45k plus six weeks of ramp. Keep doing it yourself every evening. Or turn the work down. A chat window drafts fine. It also forgets what you corrected the moment the tab closes. Month six costs you what week one did. Mycel is built the other way round. Every job gets its own machine. A sandbox boots, does the work, and is destroyed. The agent never holds your keys. Then the checks run on the output. A summary says four findings. The table lists five. The draft is held and made to say why, and you never see it. It writes against what that client received last month. An open item does not vanish between deliveries. Edit before you approve and both versions are kept. The diff is what it learns from. It runs on its own clock. Five timers are live in the demo now. Chasing what is owed. Resuming work that stalled. Keeping the business findable. Nobody starts them in the morning. Nothing reaches a client without your sign-off. I am in the comments all day. What is the piece of client work you would never let a machine touch?",
+     "kr": "라이브로 출시했습니다. 클라이언트 업무를 하다 보면 모든 보고서, 업데이트, 제안서를 결국 본인이 마지막으로 검토하게 되죠. 그게 감당 가능한 고객 수를 제한하고, 규모가 커질수록 더 심해집니다. 탈출구는 세 가지뿐이고 비용은 이미 다 계산돼 있습니다. 적응까지 6주 걸리는 인력을 연봉 4만 5천 달러에 뽑거나, 매일 저녁 직접 하거나, 일을 거절하거나. 챗 창으로도 초안은 잘 쓰지만 탭을 닫는 순간 내가 고친 걸 잊어버리고, 6개월째엔 첫 주와 똑같은 비용이 듭니다. Mycel은 거꾸로 설계됐습니다. 작업마다 전용 머신을 띄우고, 샌드박스가 일을 하고 나면 소멸합니다. 에이전트는 절대 키를 쥐지 않죠. 그다음 결과물에 검증이 돌아갑니다. 요약엔 발견사항 4개, 표엔 5개라면 초안을 보류하고 이유를 적게 해서, 그 초안은 여러분 눈에도 안 보입니다. 지난달 그 고객에게 보낸 물건과 대조하며 쓰기에 미결 항목이 납품 사이에 사라지지 않고, 승인 전에 수정하면 두 버전이 모두 보존됩니다. 이 차이(diff)가 학습 재료입니다. 자기 시계로도 돌아갑니다. 데모엔 지금 타이머 다섯 개가 살아 있습니다. 미수금 독촉, 멈춘 작업 재개, 검색 노출 유지—아침에 누가 켜주는 게 아닙니다. 승인 없이는 고객에게 아무것도 전달되지 않습니다. 하루 종일 댓글에 있습니다. 기계에게 절대 맡길 수 없는 클라이언트 업무는 무엇인가요?"
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "Congrats on the launch ! the sandbox technique sounds are useful for client work and also i like that nothings reaches the client without authorizations. how well does Mycel pick up on those modifications over the time????",
+     "kr": "론칭 축하드려요! 샌드박스 방식이 클라이언트 업무에 유용하게 들리고, 승인 없이는 아무것도 고객에게 전달되지 않는 점이 좋네요. Mycel은 시간이 지나면서 그 수정 내용을 얼마나 잘 학습하나요?"
+    },
+    {
+     "author": "Islam Hachimi",
+     "is_maker": true,
+     "text": "best question i've had today and i don't really have a good answer. correction becomes a rule, and rule gets retrieved on the next draft, contradicting drafts get held, that all works :)",
+     "kr": "오늘 받은 질문 중 최고인데 솔직히 딱 좋은 답은 없어요. 수정은 규칙이 되고, 그 규칙이 다음 초안에서 불러와지며, 서로 충돌하는 초안은 보류됩니다. 여기까지는 확실히 동작합니다 :)"
+    },
+    {
+     "author": "Gocha Berulava",
+     "is_maker": false,
+     "text": "Pretty much, but i dont understand part, 299 usd mo and self hosted free",
+     "kr": "대체로 그렇긴 한데 한 부분이 이해가 안 되네요. 월 299달러인데 셀프호스팅은 무료라는 게 무슨 뜻이죠?"
+    },
+    {
+     "author": "Islam Hachimi",
+     "is_maker": true,
+     "text": "yeah so basically on self hosted you have to pay for the ai tokens yourself and all the integrations that make this platform work, you can if you want, you have to deal with infra issues and all the complexities that come with it",
+     "kr": "네, 셀프호스팅은 AI 토큰 비용과 플랫폼을 돌리는 데 필요한 각종 연동 비용을 직접 내시는 방식이에요. 원하시면 그렇게 쓸 수 있는데, 인프라 문제와 그에 딸린 복잡한 것들은 전부 직접 감수하셔야 합니다"
+    },
+    {
+     "author": "Amrani Yasser",
+     "is_maker": false,
+     "text": "Nice one. When it drafts something for a client, how much of it is usually right first time? how much of the work is reading and fixing versus just signing off.",
+     "kr": "좋네요. 고객용 초안을 작성할 때 처음부터 맞는 비율은 어느 정도인가요? 읽고 고치는 작업과 그냥 승인만 하는 일의 비중은 어떻게 되나요?"
+    },
+    {
+     "author": "Islam Hachimi",
+     "is_maker": true,
+     "text": "So far people are just signing off. few dozen drafts, nobody changed anything. That's too few to mean much though. Ask me again when it's a few hundred and I'll give you a real number :)",
+     "kr": "지금까지는 다들 그냥 승인만 하셨어요. 몇십 개 초안에서 아무도 손댄 사람이 없었죠. 물론 표본이 너무 적어 큰 의미는 아닙니다. 몇백 개가 쌓이면 다시 물어보세요. 그때 진짜 숫자를 알려드릴게요 :)"
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": false,
+     "text": "Hey what kind of deliverables can it be is it necessarily a file at the end? Or can it be publishing something ? In your video i noticed ADS, does it run ads too?",
+     "kr": "결과물이 어떤 형태인지 궁금하네요. 꼭 파일로 끝나야 하나요? 아니면 뭔가를 발행하는 것도 가능한가요? 영상에서 광고가 보이던데 광고 운영도 하나요?"
+    },
+    {
+     "author": "Islam Hachimi",
+     "is_maker": true,
+     "text": "good catch on the ads. On deliverables, no it doesn't have to be a file. Most of the time it is, PDFs and CSVs mostly. But it also writes and sends emails, raises invoices and chases them, and a couple of the services can publish a page straight to a CMS when the job calls for it. Ads, yeah it does. Writes them for Meta, Google and LinkedIn. Gives you a few angles with the headline and copy for each and you pick one. It will not spend anything until you click place and set the daily budget yourself. The agent has no access to that bit at all, on purpose. Fair warning on both, they are the newer parts and barely anyone has run them yet. The document side is the bit with actual mileage on it =)",
+     "kr": "광고 부분 잘 보셨네요. 결과물은 꼭 파일일 필요 없습니다. 대부분은 PDF나 CSV긴 한데, 이메일을 쓰고 보내거나 인보이스를 발행해 독촉하거나, 작업에 따라선 CMS에 바로 페이지를 발행하는 서비스도 있습니다. 광고도 됩니다. Meta, 구글, 링크드인용 광고를 써 주고, 헤드라인과 카피를 담은 몇 가지 방향을 보여주면 그중 하나를 고르는 식이에요. 직접 게시를 누르고 일일 예산을 정하기 전까진 한 푼도 쓰지 않으며, 에이전트는 그 부분에 아예 접근 권한이 없습니다. 의도된 설계죠. 다만 두 기능 모두 최신 파트라 써 본 사람이 거의 없다는 건 미리 말씀드립니다. 실전에서 검증된 건 문서 쪽입니다 =)"
+    },
+    {
+     "author": "Aditya Kumar",
+     "is_maker": false,
+     "text": "It's really cool how you can fix the draft once and let Mycel learn from that process. I love the attention to the actual client experience.",
+     "kr": "초안을 한 번만 고쳐주면 Mycel이 그 과정에서 학습한다는 점이 정말 멋져요. 실제 고객 경험까지 신경 쓴 점이 마음에 듭니다."
+    },
+    {
+     "author": "EL MAHFOUD OULHADJ",
+     "is_maker": false,
+     "text": "i find this usefull, is that possible do MCP integration with it?",
+     "kr": "유용해 보이네요. MCP 연동도 가능한가요?"
+    },
+    {
+     "author": "Islam Hachimi",
+     "is_maker": true,
+     "text": "yes, platform features thousands of integrations off the bat",
+     "kr": "네, 플랫폼에 기본으로 수천 개의 연동이 탑재돼 있습니다"
+    }
+   ],
+   "slug": "mycel"
+  },
+  {
+   "name": "Minicart",
+   "tagline_en": "Launch your store. Let AI run the busywork.",
+   "tagline_kr": "스토어를 열고, 귀찮은 운영 업무는 AI에게 맡기세요.",
+   "image": "https://ph-files.imgix.net/0c918a33-9e82-473b-ab2c-3725c3be221c.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Artificial Intelligence",
+    "E-Commerce"
+   ],
+   "upvotes": 187,
+   "comments_count": 26,
+   "maker": "Chris Nguyen (공동창업자) — 런치 팀: Lee Liu, 헌터: Ben Lang",
+   "price_model": "Freemium",
+   "price_detail": "구독제(무료 옵션 표시). Product Hunt 전용 프로모션: 구독 페이지 하단 'Have a code?'에 코드 PH2026 입력 시 첫 3개월 월 $1",
+   "desc_kr": "Minicart는 스토어를 만들고 운영하는 일을 대화만으로 처리할 수 있게 해주는 AI 기반 이커머스 플랫폼입니다. 스토어프론트를 관리하는 Sloane, 마케팅을 만드는 Milo, 물류와 고객 응대를 담당하는 Logan, 이렇게 세 명의 AI 팀원이 제공됩니다. 사진 한 장과 '이걸 15달러에 팔고 싶어'라는 한마디로 상품 등록과 상품 이미지 제작이 끝나고, SNS 게시물이나 할인 프로모션도 대화로 만들어 인스타그램에 바로 발행할 수 있습니다. 기존 스토어 빌더가 설정하고 운영할 도구를 주는 방식이라면, Minicart는 상품과 비즈니스 맥락을 파악한 AI 팀이 하나의 연결된 플랫폼 안에서 직접 작업을 수행합니다. 이미 4,000개 이상의 스토어가 핸드메이드·수집품·의류·서비스 등 다양한 분야에서 Minicart로 만들어졌습니다. 목표는 '비즈니스의 완전 자율주행'이며, 모바일 앱은 11월에 iOS·안드로이드 동시 출시 예정입니다. 현재는 미국에서만 서비스되고 2027년 다른 국가로 확장할 계획입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/minicart",
+   "comment_summary": "공동창업자 Chris Nguyen의 론칭 소개글을 중심으로 에이전트 커스터마이징 가능 여부, 11월 모바일 앱 출시, 국제 서비스 지원(현재 미국 한정, 2027 확장), AI 고객 응대의 자연스러움, 검수 프로세스 등 실사용 관점의 질문이 이어졌습니다. 창업자가 모든 질문에 신속하고 성의 있게 답했고, 첫 3개월 월 $1 프로모션(PH2026) 안내와 함께 전반적으로 긍정적인 호응을 받았습니다.",
+   "warnings": [
+    "페이지에 업보트·댓글 수가 직접 표시되지 않아 제공된 수치(업보트 187, 댓글 26)를 유지함",
+    "페이지 카테고리 표기는 'Ecommerce platforms'였으나 런치 태그(Artificial Intelligence, E-Commerce)를 유지함",
+    "/products/minicart 페이지에서 댓글 정상 수집 — /posts/ 대체 URL 불필요"
+   ],
+   "comments": [
+    {
+     "author": "Chris Nguyen",
+     "is_maker": true,
+     "text": "Thanks for the hunt, @benln !! Hey Product Hunt! I'm Chris, co-founder of Minicart. Everyone has something worth selling. Running a business shouldn't require becoming an ecommerce expert. Maybe you make crochet animals, collect trading cards or resell sneakers. You know what you want to sell. Then comes designing a storefront, adding products, setting up payments, figuring out marketing and managing orders. Getting online is only the beginning. You still have a business to run. We built Minicart to make entrepreneurship accessible through conversation and give business owners an AI team to help do the work. Meet your team: Sloane starts your business: Create your storefront, turn photos into product listings and set up inventory and payments. Milo grows your business: Create promotional discounts, social posts, marketing campaigns and publish to Instagram. Logan operates your business: Help manage orders, shipping/logistics and draft messages for customer support. Here's what that looks like: Upload a photo of something you made and tell Sloane, \"I want to sell this for $15.\" She creates the listing and product imagery. Then ask Milo to create a social post to help get it in front of customers. Traditional store builders give you tools to configure and operate. Minicart's agents work inside one connected platform, using your products and business context to take action. 4,000+ stores have already been built with Minicart, spanning handmade goods, collectibles, apparel and services. Our ambition is full self-driving for business. We're starting by making the everyday work of launching, growing and operating a store easier through AI teammates. We have an exclusive Product Hunt offer: $1/month for your first 3 months. On the subscription page, click \"Have a code?\" at the bottom and enter PH2026. Looking forward to your feedback on how we can make Minicart better :)",
+     "kr": "헌팅해 준 @benln님 감사합니다! 안녕하세요, Product Hunt! Minicart 공동창업자 Chris입니다. 누구나 팔 만한 걸 하나쯤은 갖고 있습니다. 크로셰 인형을 만들거나, 트레이딩 카드를 모으거나, 운동화를 리셀하는 사람들처럼요. 뭘 팔지는 본인이 알지만, 그다음에 스토어 디자인, 상품 등록, 결제 설정, 마케팅, 주문 관리가 찾아옵니다. 온라인 진출은 시작일 뿐이고, 그 뒤로도 장사는 계속됩니다. 우리는 대화만으로 창업의 장벽을 낮추고, 일을 도와줄 AI 팀을 사장님께 드리려고 Minicart를 만들었습니다. 팀원들을 소개합니다. Sloane은 창업을 시작시켜 줍니다: 스토어를 만들고, 사진을 상품 페이지로 바꾸고, 재고와 결제를 설정합니다. Milo는 비즈니스를 키웁니다: 할인 프로모션, SNS 게시물, 마케팅 캠페인을 만들고 인스타그램에 발행합니다. Logan은 운영을 맡습니다: 주문과 배송/물류 관리를 돕고 고객 지원 답변 초안을 씁니다. 실제 모습은 이렇습니다: 만든 물건 사진을 올리고 Sloane에게 '이거 15달러에 팔고 싶어'라고 말하면, 상품 페이지와 상품 이미지를 만들어 줍니다. 이어서 Milo에게 고객 앞에 내놓을 SNS 게시물을 부탁하면 됩니다. 기존 스토어 빌더는 설정하고 운영할 도구를 줄 뿐이지만, Minicart의 에이전트는 하나의 연결된 플랫폼 안에서 상품과 비즈니스 맥락을 활용해 직접 움직입니다. 이미 4,000개 이상의 스토어가 핸드메이드, 수집품, 의류, 서비스 등 다양한 분야에서 Minicart로 만들어졌습니다. 우리의 목표는 비즈니스의 완전 자율주행입니다. 우선 AI 팀원들로 스토어를 열고, 키우고, 운영하는 일상 업무부터 쉽게 만들고 있습니다. Product Hunt 전용 혜택으로 첫 3개월 월 1달러에 이용할 수 있습니다. 구독 페이지 하단의 'Have a code?'를 눌러 PH2026을 입력하세요. Minicart를 더 좋게 만들 피드백 기다리겠습니다 :)"
+    },
+    {
+     "author": "Jason Robinson",
+     "is_maker": false,
+     "text": "I like the workflow, straightforward and easy to use. Are the agents customizable?",
+     "kr": "워크플로우가 마음에 들어요. 직관적이고 쓰기 쉽네요. 에이전트를 커스터마이징할 수 있나요?"
+    },
+    {
+     "author": "Chris Nguyen",
+     "is_maker": true,
+     "text": "Appreciate the love! Our goal is to make Minicart dead simple and user-friendly regardless of your technical background. The agents aren't fully customizable yet but personalization is definitely something we're exploring. How would you envision customizing them for your business? Would love to hear your use case.",
+     "kr": "애정 감사합니다! 기술 배경과 상관없이 누구나 쓸 수 있을 만큼 단순하고 친절하게 만드는 게 목표입니다. 에이전트는 아직 완전한 커스터마이징은 지원하지 않지만, 개인화는 분명히 검토 중인 방향이에요. 비즈니스에 어떤 식으로 커스터마이징되면 좋겠다고 생각하시나요? 사용 사례를 꼭 듣고 싶습니다."
+    },
+    {
+     "author": "Luke Zapart",
+     "is_maker": false,
+     "text": "Looks awesome, wish I had something like this when I was starting an e-commerce store. Do you have a mobile app?",
+     "kr": "정말 멋져 보이네요. 제가 이커머스 스토어를 시작할 때 이런 게 있었다면 좋았을 텐데요. 모바일 앱이 있나요?"
+    },
+    {
+     "author": "Chris Nguyen",
+     "is_maker": true,
+     "text": "Thanks for the kind words! We're planning to launch our mobile app for both iOS and Android in November!",
+     "kr": "좋은 말씀 감사합니다! iOS와 안드로이드 양쪽 모바일 앱을 11월에 출시할 계획입니다!"
+    },
+    {
+     "author": "George Melika",
+     "is_maker": false,
+     "text": "this is amazing! does this work internationally or just in the US?",
+     "kr": "놀랍네요! 해외에서도 사용 가능한가요, 아니면 미국에서만 되나요?"
+    },
+    {
+     "author": "Chris Nguyen",
+     "is_maker": true,
+     "text": "Thanks for the kind words! We're in the US for now, but we're planning to expand to other countries in 2027. If you sign up for Minicart, we can notify you when your country goes live.",
+     "kr": "좋은 말씀 감사합니다! 현재는 미국에서만 서비스 중이지만 2027년에 다른 국가로 확장할 계획입니다. Minicart에 가입해 주시면 해당 국가가 오픈될 때 알려드릴게요."
+    },
+    {
+     "author": "Abdul Rehman",
+     "is_maker": false,
+     "text": "if Logan is replying to customers, does he actually sound like a real person or is it obvious it's a bot?",
+     "kr": "Logan이 고객에게 답장한다면 실제 사람처럼 들리나요, 아니면 봇인 게 티가 나나요?"
+    },
+    {
+     "author": "Chris Nguyen",
+     "is_maker": true,
+     "text": "Great question. Logan drafts the reply for you and it's designed to sound natural and personal, not like a generic bot. You always have the final say, so you can review it, tweak anything you want and send it when it feels right!",
+     "kr": "좋은 질문이에요. Logan이 답장 초안을 작성하는데, 획일적인 봇 티가 나지 않고 자연스럽고 개인적인 톤이 되도록 설계돼 있습니다. 최종 결정권은 언제나 본인에게 있어서, 검토하고 원하는 부분을 고친 뒤 마음에 들 때 보내시면 됩니다!"
+    },
+    {
+     "author": "Boyuan Deng",
+     "is_maker": false,
+     "text": "Does Sloane handle stuff like discount codes and seasonal changes or is that more manual on my end?",
+     "kr": "Sloane이 할인 코드나 시즌별 상품 변경 같은 것도 처리하나요, 아니면 그런 건 제가 직접 해야 하나요?"
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "How detailed is the review process, meaning whether it is possible to approve/edit at each phase or only at the end? Btw, Congratulation @chrisnguyen & @lee_liu 🎊✌️",
+     "kr": "검수 과정은 얼마나 세분화돼 있나요? 각 단계마다 승인·수정이 가능한가요, 아니면 최종 결과물에서만 가능한가요? 그리고 @chrisnguyen, @lee_liu님 론칭 축하드려요 🎊✌️"
+    },
+    {
+     "author": "Chris Nguyen",
+     "is_maker": true,
+     "text": "You have full control to review and edit before anything goes live. As you build confidence and the agent learns your preferences, you'll eventually be able to turn on fully autonomous workflows where it can handle more on your behalf! Really appreciate the kind words and support! We're just getting started!",
+     "kr": "무언가가 실제로 반영되기 전이라면 검토와 수정을 전부 직접 하실 수 있습니다. 신뢰가 쌓이고 에이전트가 선호도를 학습하면, 나중엔 대신 더 많은 일을 처리하는 완전 자율 워크플로우도 켤 수 있게 됩니다! 좋은 말씀과 응원 정말 감사합니다! 아직 시작일 뿐입니다!"
+    }
+   ],
+   "slug": "minicart"
+  },
+  {
+   "name": "Answers by Context.dev",
+   "tagline_en": "Give it a research task + the JSON shape you want back.",
+   "tagline_kr": "리서치 작업과 원하는 JSON 구조를 주면 그대로 돌려준다.",
+   "image": "https://ph-files.imgix.net/c8d5e1f0-dc0a-4ba5-85ac-954d7da0aef4.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "API",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 175,
+   "comments_count": 2,
+   "maker": "Context.dev — Yahia Bakour(창업자), Ely, Nikhil Radosevich",
+   "price_model": "Freemium",
+   "price_detail": "무료 플랜 1,000 크레딧/월(카드 등록 불필요), 유료 Developer $25/월(1만 크레딧) · Pro $149/월(20만 크레딧) · Scale $499/월(100만 크레딧), Enterprise 별도 협의. /answers 엔드포인트는 호출당 100 크레딧(Fast 모드 10 크레딧). 출처: context.dev/pricing",
+   "desc_kr": "Answers by Context.dev는 웹 리서치를 API 호출 한 번으로 끝내주는 도구입니다. 연구 작업과 원하는 JSON 구조만 정의하면, 스스로 출처를 찾고 웹을 조사한 뒤 소스 URL과 함께 구조화된 데이터를 돌려줍니다. 검색·스크래핑·LLM 호출을 일일이 조합하지 않고도 데이터 보강 파이프라인, 비교 도구, 리서치 에이전트를 만들 수 있습니다. 간단한 조회용 Fast 모드와 깊이 있는 리서치용 Ultra 모드를 제공합니다. 상위 제품 Context.dev는 '웹을 스크래핑·보강·이해하는 하나의 API'를 표방하며 TypeScript·Python·Ruby 등 공식 SDK를 갖추고, Mintlify·Daily.dev 등 5,000개 이상 기업이 사용 중입니다. 이번은 Context.dev의 세 번째 Product Hunt 출시이며, 일간 3위에 올랐습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/context-dev",
+   "comment_summary": "창업자 Yahia Bakour가 /answers의 탄생 배경과 활용 예시를 담아 론칭을 소개했고, 실사용자 한 명이 제품 리서치·아웃리치용 에이전트 루프에 연동해 결과 품질이 좋다는 짧은 호평을 남겼습니다. 댓글은 2개로 많지 않지만, 상위 제품 Context.dev는 이전 런치에서 4.9점(리뷰 16개)을 받았던 검증된 팀의 세 번째 출시입니다.",
+   "warnings": [
+    "PH 페이지 마크다운에는 이번 런치의 총 업보트 수가 직접 표시되지 않아 일간 랭킹 수치(175)를 유지함",
+    "페이지에 보이는 댓글 2개는 실측값(2개)과 일치함. 3개월 전 상위 제품 리뷰 3건은 이번 런치 댓글이 아니라 수집에서 제외함",
+    "가격 정보는 PH 페이지에 없어 제품 웹사이트(context.dev/pricing)에서 별도 확인함"
+   ],
+   "comments": [
+    {
+     "author": "Yahia Bakour",
+     "is_maker": true,
+     "text": "Hey folks! Yahia here, founder of Context.dev 👋 If you've built a product that needs information from the web, you know how quickly a simple question turns into a whole engineering project. Find the right pages, scrape them, feed them into a model, get the output into something your code can actually use. We wanted to make that one API call. Today we're launching /answers. Give it a research task and an example of the JSON you want back. It searches the web, reads relevant pages, and returns structured data with source URLs. Things like: \"Find this company's pricing plans and what's included in each.\" \"Does this product support self-hosting?\" \"Compare these three tools on pricing and integrations.\" You choose the output fields so the answer fits directly into whatever you're building. There's a Fast mode for focused lookups and Ultra for deeper research. Our goal with Context.dev has always been to make it ridiculously easy to get web data into your products and agents. This is a pretty big step toward that. Extremely stoked to get it into your hands. Throw a real task at it and tell us where it falls short. I'd love the feedback, especially from the grumpy engineers :)",
+     "kr": "안녕하세요 여러분, Context.dev 창업자 Yahia입니다 👋 웹에서 정보를 가져다 쓰는 제품을 만들어 보셨다면 아실 거예요. 단순한 질문 하나가 순식간에 하나의 엔지니어링 프로젝트가 된다는 것을요. 알맞은 페이지를 찾고, 스크래핑하고, 모델에 넣고, 코드가 실제로 쓸 수 있는 형태로 결과를 받아야 하죠. 저희는 이 전 과정을 API 호출 한 번으로 만들고 싶었습니다. 오늘 /answers를 출시합니다. 리서치 작업과 원하는 JSON 예시만 주면, 알아서 웹을 검색하고 관련 페이지를 읽은 뒤 소스 URL과 함께 구조화된 데이터를 돌려줍니다. 예컨대 '이 회사의 요금제를 찾아 각 플랜에 포함된 내용 정리해 줘', '이 제품은 셀프호스팅 되나요?', '이 세 가지 툴을 가격과 연동 기준으로 비교해 줘' 같은 작업이죠. 출력 필드를 직접 고를 수 있어서 결과를 만들고 있는 제품에 그대로 녹일 수 있습니다. 좁고 빠른 조회용 Fast 모드와 깊은 리서치용 Ultra 모드도 준비했습니다. Context.dev의 목표는 늘 웹 데이터를 여러분의 제품과 에이전트에 터무니없이 쉽게 넣어드리는 것이었는데, 이번이 그 방향의 큰 한 걸음입니다. 실제 작업을 하나 던져주시고 어디가 부족한지 알려주세요. 특히 까다로운 엔지니어분들의 피드백이 기다려집니다 :)"
+    },
+    {
+     "author": "Mahyad",
+     "is_maker": false,
+     "text": "Great product, by a great team! i've integrated it into my agent loop for product research and outreach, and the output quality is great",
+     "kr": "좋은 팀이 만든 훌륭한 제품이네요! 제품 리서치와 아웃리치를 위한 에이전트 루프에 연동해서 쓰고 있는데, 결과 품질이 아주 좋습니다."
+    }
+   ],
+   "slug": "context-dev"
+  },
+  {
+   "name": "Morsa Signals",
+   "tagline_en": "GTM and AI visibility workflows for developer tools",
+   "tagline_kr": "개발자 도구를 위한 GTM·AI 가시성 워크플로",
+   "image": "https://ph-files.imgix.net/d0dbbca0-ca40-4412-8ef9-7f1280c9cd88.gif?auto=compress&codec=mozjpeg&cs=strip&dpr=2&fit=max&fm=webp&frame=1&h=48&w=48",
+   "categories": [
+    "Marketing",
+    "SEO",
+    "Developer Tools"
+   ],
+   "upvotes": 139,
+   "comments_count": 13,
+   "maker": "Morsa — Sergei Petrov, Stas Voronov, Kate Rusalovich",
+   "price_model": "Freemium",
+   "price_detail": null,
+   "desc_kr": "Morsa Signals는 개발자 도구 창업자와 GTM 팀을 위한 GTM·SEO/GEO 워크플로를 한곳에 모은 도구입니다. 아웃리치를 확대하려는 팀에게 적합한 개발자를 찾아주고, 첫 사용자·얼리어답터 후보를 발굴하며, AI 검색 시스템이 내 사이트를 어떻게 이해하는지 감사하고, 추적할 가치가 있는 경쟁사에 대한 첫 판독을 제공합니다. Contact Search·First Users·AI Visibility Audit·Competitor Tracking 네 가지 워크플로로 구성됩니다. 모든 워크플로는 실제 제품과 잠재고객, 풀고자 하는 문제에서 출발해 뻔한 리포트나 데이터베이스가 아니라 집중되고 실행 가능한 결과를 만들어 줍니다. 예컨대 AI Visibility Audit는 웹사이트가 검색·AI 시스템에 제품을 얼마나 명확히 전달하는지 점수화하고, 발견된 공백을 메울 수 있는 바로 쓸 수 있는 프롬프트까지 생성해 줍니다.",
+   "launch_url_used": "https://www.producthunt.com/products/morsa-signals",
+   "comment_summary": "제작 팀의 네 가지 워크플로 소개가 댓글의 중심이고, 실사용자의 '연락처 최신성은 어떻게 보장하나'라는 질문에 제작자가 정적 DB가 아닌 요청별 맞춤 리스트 제작과 최종 수동 검토 과정을 설명하며 성실하게 답변했습니다. AI Visibility 점수를 특히 꼽은 호평과 팀원들의 응원 댓글이 이어지는 분위기입니다.",
+   "warnings": [
+    "PH 페이지 마크다운에는 총 업보트 수가 직접 표시되지 않아 일간 랭킹 수치(139)를 유지함",
+    "댓글은 실측 13개와 일치하나, 12개 상한을 맞추기 위해 마지막 짧은 감사 답글 1개(제작자 Sergei Petrov의 'Nice. Thanks for the feedback!')를 제외하고 12개 수집함",
+    "가격은 웹사이트에 공개된 정액 요금표가 없고, PH 'Free Options' 배지와 '무료 첫 리포트·얼리 액세스' 안내만 확인됨 (price_detail은 null)"
+   ],
+   "comments": [
+    {
+     "author": "Sergei Petrov",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 I'm Sergei, co-founder at Morsa. We built Morsa Signals around a recurring problem with developer tools: strong products often struggle to reach the right developers, explain their relevance, and become discoverable through search and AI systems. Morsa Signals brings together four focused workflows: 🔎 Contact Search — Finds relevant developers for teams scaling outreach, explains why each person fits, and suggests a personalized opening angle. 🌱 First Users — Helps solo and early-stage devtool founders identify potential early adopters for their first outreach conversations. 🤖 AI Visibility Audit — Reviews how clearly a devtool website communicates its product to search and AI systems, then generates a ready-to-use prompt for addressing identified gaps. 📡 Competitor Tracking — Provides a first read on relevant competitors and the public signals worth monitoring. Each workflow starts with the actual product, audience, and problem. The goal is a focused, actionable result rather than a generic report or database. I'd especially value feedback from devtool founders and GTM teams: which problem is most urgent for you, and what would make you trust the result?",
+     "kr": "안녕하세요 Product Hunt 👋 Morsa 공동창업자 Sergei입니다. 저희는 개발자 도구에서 반복해서 겪는 문제에서 출발했습니다. 좋은 제품일수록 적합한 개발자에게 닿고, 왜 필요한지 설명하고, 검색과 AI 시스템에서 잘 검색되는 일에 고전한다는 것이죠. Morsa Signals는 이런 워크플로 네 가지를 한곳에 모았습니다. 🔎 Contact Search — 아웃리치를 확대하는 팀을 위해 적합한 개발자를 찾고, 각 사람이 왜 어울리는지 설명하며, 개인화된 첫 접근 각도까지 제안합니다. 🌱 First Users — 1인·초기 devtool 창업자가 첫 아웃리치 대상이 될 얼리어답터 후보를 찾도록 돕습니다. 🤖 AI Visibility Audit — devtool 웹사이트가 검색·AI 시스템에 제품을 얼마나 명확히 전달하는지 점검하고, 발견된 공백을 메울 수 있는 바로 쓸 수 있는 프롬프트를 만들어 줍니다. 📡 Competitor Tracking — 주목할 만한 경쟁사와 모니터링할 가치가 있는 공개 시그널에 대한 첫 판독을 제공합니다. 각 워크플로는 실제 제품과 잠재고객, 풀고자 하는 문제에서 시작해서, 뻔한 리포트나 데이터베이스가 아니라 집중되고 실행 가능한 결과를 냅니다. devtool 창업자와 GTM 팀분들의 의견이 특히 궁금합니다. 여러분께 가장 절박한 문제는 무엇이고, 결과를 신뢰하려면 무엇이 필요할까요?"
+    },
+    {
+     "author": "Stas Voronov",
+     "is_maker": true,
+     "text": "@sergeipetrov 💪🏽💪🏽💪🏽",
+     "kr": "@sergeipetrov 힘내요! 💪🏽💪🏽💪🏽"
+    },
+    {
+     "author": "Kate Rusalovich",
+     "is_maker": true,
+     "text": "@sergeipetrov 🚀🚀🚀",
+     "kr": "@sergeipetrov 🚀🚀🚀"
+    },
+    {
+     "author": "Kristina Grits",
+     "is_maker": false,
+     "text": "Congrats! The audience is truly specific and might be different to reach for GTM teams. How do you make sure the contacts are relevant and updated?",
+     "kr": "축하합니다! 오디언스가 정말 좁고 특화되어 있다 보니 GTM 팀 입장에서는 도달하기 쉽지 않을 텐데요. 연락처가 계속 적합하고 최신 상태로 유지된다는 걸 어떻게 보장하시나요?"
+    },
+    {
+     "author": "Sergei Petrov",
+     "is_maker": true,
+     "text": "Thanks, Kristina! That's exactly why we don't start with a broad, static contact database. Each search begins with the product, target audience, and problem it solves. We turn that into specific search angles, then match them against public signals such as developer profiles, projects, topics, and recent activity. Each result includes a clear reason why the person is relevant. We build every list for the specific request and check the available public contact data when preparing it. At this stage, I also review the final results manually while we continue improving the matching.",
+     "kr": "감사합니다, Kristina님! 바로 그 이유로 저희는 넓고 정적인 연락처 데이터베이스에서 출발하지 않습니다. 검색은 항상 제품과 타깃 고객, 그 제품이 푸는 문제에서 시작하고, 이를 구체적인 탐색 앵글로 바꾼 뒤 개발자 프로필·프로젝트·다루는 주제·최근 활동 같은 공개 시그널과 대조합니다. 모든 결과에는 그 사람이 왜 적합한지에 대한 명확한 근거가 붙고, 요청별로 리스트를 새로 만들며, 준비 과정에서 공개된 연락처 데이터도 확인합니다. 매칭 품질을 계속 개선하는 동안에는 제가 최종 결과를 직접 검토하기도 합니다."
+    },
+    {
+     "author": "Kristina Grits",
+     "is_maker": false,
+     "text": "Interesting, thanks!",
+     "kr": "흥미롭네요, 감사합니다!"
+    },
+    {
+     "author": "Sergei Petrov",
+     "is_maker": true,
+     "text": "One additional thought behind Morsa Signals: Growing a developer tool rarely comes down to one isolated problem. Some teams need their first users, others need better outreach data, clearer AI visibility, or a better understanding of their competitive space. We brought these workflows together because they all start from the same context: the actual product, its audience, and the problem it solves. If you're building a developer tool, I'd be interested to know which workflow you would use first and what you would need to trust its results.",
+     "kr": "Morsa Signals에 담긴 생각을 하나 더 덧붙이자면, 개발자 도구를 성장시키는 일은 단 하나의 고립된 문제로 귀결되는 경우가 드뭅니다. 어떤 팀은 첫 사용자가 필요하고, 어떤 팀은 더 나은 아웃리치 데이터, 더 선명한 AI 가시성, 경쟁 환경에 대한 제대로 된 이해가 필요하죠. 이 워크플로들을 한곳에 모은 건 전부 '실제 제품, 그 잠재고객, 풀고자 하는 문제'라는 같은 맥락에서 출발하기 때문입니다. 개발자 도구를 만들고 계신 분이라면 어떤 워크플로를 가장 먼저 쓰실지, 결과를 신뢰하려면 무엇이 필요하실지 궁금합니다."
+    },
+    {
+     "author": "Kate Rusalovich",
+     "is_maker": true,
+     "text": "Hey folks 🙌🏻 We're a dev team ourselves, and we built this tool for our own needs first - to find relevant dev customers and boost AI visibility. Excited to share with other dev teams now",
+     "kr": "안녕하세요 🙌🏻 저희도 개발자 팀이라, 적합한 개발자 고객을 찾고 AI 가시성을 높이려는 저흰 자신의 필요로 이 도구를 먼저 만들었습니다. 이제 다른 개발 팀분들께도 소개할 수 있어서 기쁩니다."
+    },
+    {
+     "author": "Jason Robinson",
+     "is_maker": false,
+     "text": "Congrats on the launch. I particularly like the AI Visibility score, I think that is a very useful and needed feature.",
+     "kr": "출시 축하드립니다. 특히 AI Visibility 점수가 마음에 들었는데, 꼭 필요하고 유용한 기능이라고 생각합니다."
+    },
+    {
+     "author": "Sergei Petrov",
+     "is_maker": true,
+     "text": "Thanks, Jason! That's exactly the idea behind it: provide a quick baseline, then explain the specific gaps in positioning, technical readiness, and public footprint behind the score. We're still refining the analysis, so I'd be curious to hear which part of the audit felt most useful to you.",
+     "kr": "감사합니다, Jason님! 바로 그 취지입니다. 빠르게 기준점을 잡아준 다음, 점수 뒤에 있는 포지셔닝·기술적 준비도·공개적 존재감의 구체적인 공백을 설명해 주는 거죠. 아직 분석을 다듬는 중이라 감사 항목 중 어떤 부분이 가장 유용하셨는지 들어보고 싶습니다."
+    },
+    {
+     "author": "Stas Voronov",
+     "is_maker": true,
+     "text": "Hey, I'm Stan from Morsa - we're building that tool for devtool founders to solve main challenge of any startup - how to find customers. Please support our launch 🚀",
+     "kr": "안녕하세요, Morsa의 Stan입니다. 모든 스타트업의 최대 난제인 '고객을 찾는 일'을 devtool 창업자 대상으로 풀어주는 도구를 만들고 있습니다. 출시 응원 부탁드려요 🚀"
+    },
+    {
+     "author": "Rupak Mishra",
+     "is_maker": false,
+     "text": "Congrats on the launch! Product looks great 🚀",
+     "kr": "출시 축하합니다! 제품이 정말 멋져 보네요 🚀"
+    }
+   ],
+   "slug": "morsa-signals"
+  },
+  {
+   "name": "Harbor",
+   "tagline_en": "The Evernote alternative that puts its price in writing",
+   "tagline_kr": "가격을 문서로 약속하는 에버노트 대안",
+   "image": "https://ph-files.imgix.net/bff67e26-a511-48db-bddc-b0ef981edd40.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Productivity",
+    "Notes",
+    "Privacy"
+   ],
+   "upvotes": 137,
+   "comments_count": 2,
+   "maker": "Spicer Matthews (Cloudmanic Labs)",
+   "price_model": "Freemium",
+   "price_detail": "무료로 시작 가능. 유료 단일 플랜 $9.99/월 또는 $99/년. 구독 후 3년간 가격 동결, 이후 연 10% 상한(약속이 계정에 노트로 기록됨). 결제 중단 시 계정은 읽기 전용으로 유지되며 삭제되지 않음. 전 플랜에서 HTML·Markdown·ENEX 전체 내보내기 지원",
+   "desc_kr": "Harbor는 노트, 스캔 문서, PDF, 사진, 녹음 파일을 한곳에 모아두는 프라이빗 세컨드 브레인입니다. 사진과 스캔 PDF 속 글자는 물론 손글씨까지 읽어주는 OCR 검색을 지원하고, 녹음은 자동으로 텍스트로 변환됩니다. 맥, 윈도우, 아이폰, 아이패드, 안드로이드, 웹, CLI를 네이티브로 지원하며 일렉트론 없이 오프라인에서도 동작합니다. 노트북·태그·체크리스트·첨부파일·웹클립을 한 번에 옮기는 에버노트 원스텝 임포트를 제공합니다. 모든 요금제에서 HTML·Markdown·ENEX 전체 내보내기가 가능하고, 노트별·노트북별 암호화도 선택할 수 있습니다(암호화 시 검색·OCR은 불가). 가격은 단일 플랜(월 $9.99 또는 연 $99)으로 구독 후 3년간 동결되고 이후에도 연 10%까지만 오르는 조건이 문서로 보장됩니다.",
+   "launch_url_used": "https://www.producthunt.com/products/harbor-2",
+   "comment_summary": "제작자 Spicer Matthews가 10년 넘게 에버노트를 쓰다 가격 인상과 데이터 반출 제한에 실망해 Harbor를 만들었다는 탄생 배경과 함께, 전 플랫폼 네이티브·원스텝 임포트·전체 내보내기·가격 동결 약속 등 핵심 차별점을 상세히 소개했다. 이용자 댓글로는 에버노트의 내보내기 제한에 대한 불만을 언급하며 Harbor로의 데이터 이전을 기대하는 반응이 있었다. 댓글 수가 아직 2개인 초기 단계로, 제작자 소개글이 대화의 중심이다.",
+   "warnings": [
+    "페이지 마크다운에 제품 총 업보트 수가 직접 표시되지 않아 작업 지시값 137을 유지함 (제작자 댓글의 'Upvote (2)'는 댓글 업보트임). 댓글 2개는 페이지에서 실측·수집 완료"
+   ],
+   "comments": [
+    {
+     "author": "Spicer Matthews",
+     "is_maker": true,
+     "text": "Hi Product Hunt. I'm Spicer, founder of Cloudmanic Labs. We've been building and running software for a little over twenty years, and Harbor is built to run for the next twenty.\n\nThe short story: I used Evernote for more than a decade. Scanned mail, the kids' report cards, recordings of meetings, fifteen years of notes. Then it was sold, the price roughly doubled, the free plan shrank to fifty notes, and getting my own data out got harder.\n\nTo be fair to them, the app is fine. We counted Evernote's 500 most recent US App Store reviews and published the full breakdown. Of the negative ones, 9% mention a bug, crash or sync problem. 54% are about price. The product got better while the deal got worse. That's the thing Harbor is built to fix.\n\nWhat it is: a private second brain. Notes, plus scanned documents, PDFs, photos and recordings, all in one place and all searchable. Search reads the words inside photos and scanned PDFs, including handwriting. Recordings become transcripts.\n\nWhat's different:\n• Native everywhere. Mac, Windows, iPhone, iPad, Android, the web, and a CLI. No Electron. Works offline.\n• One-step Evernote import. Notebooks, tags, checklists, attachments, web clips.\n• You can leave with everything. Full export on every plan (HTML, Markdown, ENEX), plus an open API, a CLI and an MCP server.\n• Bring your own AI. There's no built-in assistant. Connect the ChatGPT or Claude you already pay for and let it search and organize your notes.\n• Optional encryption, per note or per notebook. Your keys, not ours.\n• The price is in writing. One plan, $9.99/mo or $99/yr, free to start. No increase for three years after you subscribe, then capped at 10% a year. Stop paying and your account goes read-only, never deleted. That promise is written into every new account as a note, dated the day you joined.\n\nWhat it isn't: for teams. No shared workspaces, no admin console, no enterprise tier coming. It's personal, on purpose.\n\nThe trade-off people ask about most: when you encrypt a note we genuinely can't read it, which means we can't search inside it or OCR it either. So you encrypt the tax returns and the medical records and leave the rest fully searchable. It's a choice, not a default.\n\nI'll be here all day. Ask the hard ones.",
+     "kr": "안녕하세요 Product Hunt 여러분. 저는 Cloudmanic Labs 창업자 Spicer입니다. 20년 조금 넘게 소프트웨어를 만들고 운영해왔고, Harbor는 앞으로 20년을 버티도록 설계했습니다.\n\n간단한 배경 이야기를 하자면, 저는 에버노트를 10년 넘게 썼습니다. 우편물 스캔본, 아이들 성적표, 회의 녹음, 15년 치 노트까지요. 그러다 에버노트가 팔렸고, 가격은 거의 두 배가 됐고, 무료 플랜은 노트 50개로 줄었고, 제 데이터를 꺼내는 일도 점점 어려워졌습니다.\n\n공정하게 말하면 앱 자체는 괜찮습니다. 에버노트 미국 앱스토어 최근 500개 리뷰를 세어 전체 분석을 공개했는데, 부정적 리뷰 중 9%는 버그·크래시·동기화 문제를, 54%는 가격을 언급했습니다. 제품은 좋아졌는데 조건이 나빠진 거죠. Harbor는 바로 그 부분을 고치려고 만들었습니다.\n\nHarbor가 뭐냐면: 프라이빗 세컨드 브레인입니다. 노트에 스캔 문서, PDF, 사진, 녹음까지 한곳에 담아 전부 검색할 수 있습니다. 검색은 사진과 스캔 PDF 속 글자, 심지어 손글씨까지 읽어내고, 녹음은 텍스트로 변환됩니다.\n\n다른 점들:\n• 모든 플랫폼 네이티브 지원. 맥, 윈도우, 아이폰, 아이패드, 안드로이드, 웹, CLI. 일렉트론 없음, 오프라인 동작.\n• 에버노트 원스텝 임포트. 노트북, 태그, 체크리스트, 첨부파일, 웹클립까지 그대로.\n• 데이터 전부 챙기고 떠날 수 있음. 모든 플랜에서 전체 내보내기(HTML, Markdown, ENEX) 지원, 오픈 API·CLI·MCP 서버 제공.\n• AI는 직접 연결. 내장 어시스턴트가 없습니다. 이미 결제 중인 ChatGPT나 Claude를 연결해 노트를 검색·정리하게 하면 됩니다.\n• 선택적 암호화. 노트별 또는 노트북별로, 키는 저희가 아니라 사용자가 가집니다.\n• 가격은 문서로 약속합니다. 플랜은 하나, 월 $9.99 또는 연 $99, 무료로 시작. 구독 후 3년간 인상 없음, 이후에도 연 10% 상한. 결제를 멈추면 계정은 읽기 전용이 될 뿐 절대 삭제되지 않습니다. 이 약속은 가입일 날짜와 함께 노트 형태로 모든 신규 계정에 기록됩니다.\n\n아닌 것: 팀용이 아닙니다. 공유 워크스페이스도, 관리자 콘솔도, 엔터프라이즈 티어 계획도 없습니다. 의도적으로 개인용입니다.\n\n가장 많이 받는 질문인 트레이드오프: 노트를 암호화하면 저희도 정말 읽을 수 없어서 내부 검색이나 OCR도 불가능합니다. 그래서 세금 신고서나 진료 기록처럼 민감한 것만 암호화하고 나머지는 온전히 검색 가능하게 쓰시면 됩니다. 기본값이 아니라 선택지입니다.\n\n오늘 하루 종일 여기 있겠습니다. 어려운 질문 마음껏 던져주세요."
+    },
+    {
+     "author": "Jay Janarthanan",
+     "is_maker": false,
+     "text": "Evernote has made it imposible to export, hopefully you guys fixed that and i can export evernote content to yours",
+     "kr": "에버노트는 내보내기를 사실상 불가능하게 만들어놨는데, 여기선 그게 잘 되어서 에버노트 콘텐츠를 옮겨올 수 있으면 좋겠네요."
+    }
+   ],
+   "slug": "harbor-2"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div></div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
