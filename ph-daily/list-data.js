@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-09-22",
+    "url": "2026-09-22/",
+    "top_product": "Superset Mobile",
+    "count": 5,
+    "upvotes_total": 1739,
+    "comments_total": 53
+  },
+  {
     "date": "2026-09-21",
     "url": "2026-09-21/",
     "top_product": "Mycel",
