@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-09-23</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-09-23 · Top 5 · 수집 댓글 56개 · 수집 2026-09-23 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-09-23",
+ "collected_at": "2026-09-23 12:30 KST",
+ "summary": "오늘 Product Hunt Top 5는 영상 제작, 데이터 BI, 대화형 문서, 글쓰기 코칭 등 전방위적 실무 AI 도구들과 고성능 오픈소스 데이터베이스가 상위권을 형성했습니다. 커뮤니티에서는 일회성 결과물을 생성하고 끝나는 블랙박스형 AI를 벗어나, 사후 편집 제어권과 추론 쿼리 공개처럼 투명성과 통제권을 보장하는 도구들에 높은 관심을 보였습니다. 또한 AI가 인간의 사고를 대체하기보다 작업자의 역량과 호기심을 보완하고 촉진하는 협업형 인터페이스가 공통된 핵심 화두로 떠올랐습니다.",
+ "notable": [
+  {
+   "slug": "clueso",
+   "why": "Clueso MCP는 Claude나 Cursor 등 에이전트와 연동해 비디오를 대화형으로 제작하면서도 세밀한 타임라인 사후 제어권을 제공해 커뮤니티의 큰 호응을 얻었습니다. 댓글에서는 브라우저 작업 자동 녹화(Browser-use) 지원 여부와 프로그래밍 방식의 코드 모드 연동 등 실무 자동화 파이프라인으로의 확장 가능성에 집중적인 질의가 쏟아졌습니다."
+  },
+  {
+   "slug": "anomalo",
+   "why": "Anomalo는 가설을 묻기 전에 데이터 이상치를 선제 탐지하고 실행 SQL을 투명하게 공개해 실무 신뢰도를 높인 점에서 주목받았습니다. 댓글에서는 AI가 이상치를 미리 선별할 때 분석가의 비즈니스 직관이 퇴화할 수 있다는 우려와, 단순 반복 조회를 줄여 오히려 호기심을 촉진한다는 메이커 측의 활발한 반론이 맞붙었습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Clueso MCP",
+   "tagline_en": "Create and edit videos by chatting",
+   "tagline_kr": "채팅으로 비디오를 만들고 편집하기",
+   "image": "https://ph-files.imgix.net/5fb08d1c-01a1-43a5-a993-958aec64788b.png",
+   "categories": [
+    "Artificial Intelligence",
+    "Animation",
+    "Video"
+   ],
+   "upvotes": 436,
+   "comments_count": 147,
+   "maker": "Neel Balar(@neel_balar) 공동창업자 외 Prajwal Prakash(@prajwal_prakash), Paarth Maheshwari(@paarth_maheshwari), Gurmehar Singh(@gurmehar_singh) (헌터: Kevin William David(@kevin))",
+   "price_model": "프리미엄 (무료 체험 옵션)",
+   "price_detail": "무료 플랜 제공. 신규 구독자 대상 프로모션 코드 PHXCLUESO50 입력 시 첫 달 전 플랜 50% 할인 (9월 25일까지)",
+   "desc_kr": "Clueso는 러프한 화면 녹화본이나 아이디어, 문서, 피그마 파일 등을 바탕으로 스튜디오 품질의 제품 영상과 안내 문서를 제작해 주는 AI 비디오 제작 도구다. 이번 출시는 Claude, ChatGPT, Cursor 등 MCP(Model Context Protocol) 지원 에이전트와 직접 연동해 대화형으로 영상을 제작하고 편집할 수 있는 'Clueso MCP' 버전이다. 단순 생성 후 수정이 불가능했던 기존 AI 영상 도구의 한계를 넘어, 타임라인의 각 장면과 음성, 자막, 모션 그래픽을 에디터나 대화를 통해 정밀하게 수정할 수 있는 완전한 제어권을 제공한다. 에이전트가 스크립트로 도구를 호출하는 코드 모드, 영상 움직임을 파악하는 멀티 프레임 피드백, 텍스트 중첩 등을 즉각 감지하는 결정론적 피드백 등 혁신적인 아키텍처를 도입했다. 9월 22일자 Product Hunt 일일 1위를 차지했으며, 작년 7월 첫 출시에 이은 Clueso의 두 번째 공식 출시이다.",
+   "launch_url_used": "https://www.producthunt.com/products/clueso",
+   "comment_summary": "메이커들이 Clueso MCP의 핵심 차별점으로 세밀한 타임라인 편집 제어권과 에이전트 연동 아키텍처(코드 모드, 다중 프레임 시각화 등)를 소개해 큰 호응을 얻었다. 사용자들은 채용 홍보 영상, 웨비나 포스터, CAD 설명 영상 등 다양한 활용 사례를 공유하는 한편 브라우저 작업 자동 녹화(Browser-use) 및 아바타 지원 여부를 문의했고, 메이커는 현재 베타 테스트 중이라며 적극 화답했다. 커뮤니티에서는 단순 일회성 생성이 아닌 사후 수정과 자동화 파이프라인 연계가 가능하다는 점에 깊은 인상을 받았다며 찬사를 보냈다.",
+   "warnings": "수치(업보트 436·댓글 147)는 수집 시점 참고치. 브라우저 화면 자동 녹화 및 보이스오버 동기화 기능은 현재 베타 지원 단계로 앱 내 지원 채팅을 통한 별도 신청 필요.",
+   "comments": [
+    {
+     "author": "Neel Balar",
+     "is_maker": true,
+     "text": "📌\n\nHey Product Hunt Community! 👋  \n\nI’m Neel, co-founder of Clueso.  \n\nWe launched Clueso here last year with a pretty simple idea: **turn rough screen recordings into polished product videos in minutes.**  \n\nThe response was incredible. Thousands of people started using Clueso, and this community made us #1 Product of the Day, Week, and Month.  \n\nOver the last year, we kept seeing people push Clueso beyond what we originally built it for. They wanted to start with more than a screen recording. They wanted to make more kinds of videos. And increasingly, they wanted AI to do more of the actual work.  \n\nSo today we’re launching **Clueso MCP**.  \n\nNow you can create and edit videos directly from Claude, ChatGPT, Cursor, or any MCP-compatible agent.\n\nGive it a prompt and whatever material you have: a screen recording, deck, document, URL, Figma file, raw footage, reference video you like, or just an idea.  \n\nClueso takes it from there. It plans the video, creates the scenes, writes the script, generates the AI voiceover, adds music, motion graphics, captions and animations, edits everything together, and applies your branding.  \n\n**In fact, our product hunt launch video above was made entirely with Clueso MCP.**  \n\nBasically, you tell it what you want to make, and it makes the video with you.  \n\nThe part we care a lot about is **control**.  \n\nA lot of AI video tools feel like black boxes: you prompt them, get a finished clip back, and if something isn’t quite right, your main option is to keep regenerating.  \n\nClueso is different because there’s a powerful video editor underneath the agent. Everything it creates remains editable. You can open the project and change anything yourself, or just keep chatting with the agent.  \n\nYou could be a marketer making a launch video, a founder making a product demo, a freelancer creating something for a client, a small business making marketing content, or just someone with an idea they want to turn into a great video.  \n\nHere’s what you can do with it:\n\n*   **Create from inspiration.** Give Clueso a few videos you like or a moodboard. It understands the look, feel, and creative direction you’re going for, then creates a full video around your own content, product, and brand.\n    \n*   **Create pretty much any kind of video.** Launch and marketing videos, product demos, walkthroughs, tutorials, explainers, social content, complex motion graphics, animated sequences, logo animations and more.\n    \n*   **Edit however you want.** Jump into the Clueso editor and make changes yourself, or just chat with the agent and ask it to make the edits for you.\n    \n*   **Build custom workflows around video.** Because Clueso works through MCP, you can connect it with tools like Figma, Slack, Linear, social platforms, your CRM, support tools and more and make video creation, editing and distribution part of a larger automated workflow.\n    \n\nSo a feature can ship and turn into a launch video, a finished design can become an explainer, or a completed video can automatically move into the next step of your workflow.  \n\nMaking a video no longer has to start with opening a video editor. You can tell your agent what you need, let it do the work, and still have complete control whenever you want to jump in yourself.  \n\n**Special offer for the PH community:**  \nTo celebrate our launch, we’re offering a **50% discount** on all plans for the first month to first-time subscribers! Use the code PHXCLUESO50 at checkout. Offer valid until September 25, 11:59 pm PT.  \n\n**Want to try it? Connect the Clueso MCP from here:** [**https://clueso.io/mcp**](https://clueso.io/mcp)  \n\nThe support from this community last year was honestly overwhelming. You made us Product of the Month, and we’d love your support again today. ❤️  \n\nI’ll be in the comments all day, so try it, show us what you make, and tell us what works, what doesn’t, and what you’d like to see next.  \n\nHuge thanks to [@KevinWilliamDavid](https://www.producthunt.com/@KevinWilliamDavid) for hunting us!",
+     "kr": "📌\n\n안녕하세요 Product Hunt 커뮤니티 여러분! 👋\n\nClueso 공동창업자 Neel입니다.\n\n저희는 작년에 꽤 단순한 아이디어로 이곳에 Clueso를 출시했습니다. 바로 **거친 화면 녹화본을 몇 분 만에 깔끔한 제품 영상으로 바꿔주는 것**이었습니다.\n\n반응은 폭발적이었습니다. 수천 명의 사용자가 Clueso를 쓰기 시작했고, 이 커뮤니티 덕분에 일일, 주간, 월간 1위 제품에 오를 수 있었습니다.\n\n지난 1년 동안 사용자분들이 Clueso를 저희가 원래 의도했던 범위를 훨씬 넘어 활용하는 모습을 지켜보았습니다. 단순 화면 녹화 이상으로 시작하고 싶어 하셨고, 더 다양한 종류의 영상을 만들고 싶어 하셨으며, 점점 더 AI가 실제 작업의 많은 부분을 맡아주기를 원하셨습니다.\n\n그래서 오늘 저희는 **Clueso MCP**를 출시합니다.\n\n이제 Claude, ChatGPT, Cursor 또는 모든 MCP 호환 에이전트에서 직접 비디오를 제작하고 편집할 수 있습니다.\n\n프롬프트와 함께 여러분이 가진 자료(화면 녹화본, 덱, 문서, URL, Figma 파일, 원본 영상 클립, 마음에 드는 레퍼런스 비디오, 혹은 단순한 아이디어까지)를 건네주기만 하면 됩니다.\n\n그다음은 Clueso가 알아서 처리합니다. 비디오를 기획하고, 장면을 구성하고, 스크립트를 작성하며, AI 보이스오버를 생성하고, 음악과 모션 그래픽, 자막과 애니메이션을 추가하며, 모든 것을 한데 모아 편집하고 브랜드 스타일을 입힙니다.\n\n**실제로 위의 Product Hunt 런칭 비디오도 100% Clueso MCP로 제작되었습니다.**\n\n기본적으로 만들고 싶은 것을 말하면, AI가 당신과 함께 영상을 만들어내는 방식입니다.\n\n저희가 가장 신경 쓴 부분은 바로 **제어권(Control)**입니다.\n\n수많은 AI 비디오 도구들이 블랙박스처럼 느껴집니다. 프롬프트를 넣고 결과 클립을 받은 뒤, 마음에 안 드는 부분이 있으면 계속해서 재생성하는 수밖에 없죠.\n\nClueso는 다릅니다. 에이전트 뒷단에 강력한 비디오 에디터가 탑재되어 있기 때문입니다. 생성된 모든 요소는 언제든 편집 가능합니다. 프로젝트를 열어 직접 수정할 수도 있고, 에이전트와 대화를 이어가며 수정을 지시할 수도 있습니다.\n\n런칭 영상을 만드는 마케터, 제품 데모를 제작하는 창업자, 클라이언트 작업을 하는 프리랜서, 마케팅 콘텐츠를 만드는 소규모 비즈니스, 혹은 훌륭한 영상으로 구현하고 싶은 아이디어가 있는 모든 분들을 위한 도구입니다.\n\n할 수 있는 작업은 다음과 같습니다:\n\n* **영감으로부터 제작.** 마음에 드는 레퍼런스 영상이나 무드보드를 Clueso에 전달하세요. 추구하는 룩앤필과 크리에이티브 방향성을 이해한 뒤, 여러분의 콘텐츠, 제품, 브랜드에 맞춘 풀 비디오를 만들어냅니다.\n* **거의 모든 종류의 비디오 제작.** 런칭 및 마케팅 비디오, 제품 데모, 워크스루, 튜토리얼, 설명 영상, 소셜 콘텐츠, 복잡한 모션 그래픽, 애니메이션 시퀀스, 로고 애니메이션 등을 제작할 수 있습니다.\n* **자유로운 편집.** Clueso 에디터로 바로 들어가 직접 변경하거나, 에이전트에게 채팅으로 수정을 요청하세요.\n* **비디오 중심의 커스텀 워크플로 구축.** Clueso는 MCP를 통해 동작하므로 Figma, Slack, Linear, 소셜 플랫폼, CRM, 지원 도구 등과 연동하여 비디오 제작, 편집, 배포를 더 큰 자동화 파이프라인의 일부로 만들 수 있습니다.\n\n새 기능이 배포되면 즉시 런칭 영상으로 변환되고, 완성된 디자인이 설명 영상으로 바뀌며, 완성된 영상이 워크플로의 다음 단계로 자동 전달될 수 있습니다.\n\n이제 영상을 만들기 위해 비디오 에디터를 먼저 여는 번거로움은 끝났습니다. 에이전트에게 필요한 것을 말하고 작업을 맡기면서도, 원할 때는 언제든 완벽한 제어권을 행사할 수 있습니다.\n\n**PH 커뮤니티를 위한 특별 혜택:**\n이번 출시를 기념하여 첫 구독자분들께 첫 달 모든 플랜 **50% 할인**을 제공합니다! 결제 시 코드 PHXCLUESO50을 입력하세요. 9월 25일 오후 11시 59분(PT)까지 유효합니다.\n\n**체험을 원하시나요? 여기서 Clueso MCP를 연결하세요:** [**https://clueso.io/mcp**](https://clueso.io/mcp)\n\n지난해 커뮤니티가 보내주신 성원은 진심으로 벅찼습니다. 저희를 이달의 제품으로 만들어 주셨던 것처럼, 오늘도 여러분의 응원을 기대합니다. ❤️\n\n종일 댓글에 머물 예정이니 직접 써보시고, 만드신 영상도 보여주시고, 잘 되는 점과 부족한 점, 다음에 보고 싶은 기능을 알려주세요.\n\n저희를 헌팅해 주신 [@KevinWilliamDavid](https://www.producthunt.com/@KevinWilliamDavid) 님께 진심으로 감사드립니다!"
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "[@KevinWilliamDavid](https://www.producthunt.com/@KevinWilliamDavid)  [@neel\\_balar](https://www.producthunt.com/@neel_balar) Nice launch! turning a simple the prompts and raw materials into a fully changable video is a pretty impressive and also the MCP the workflow sounds really powerful, especially being able to edit everything afterward .\n\nwhat been the most surprising use case people have created with Clueso MCP???",
+     "kr": "[@KevinWilliamDavid](https://www.producthunt.com/@KevinWilliamDavid) [@neel\\_balar](https://www.producthunt.com/@neel_balar) 멋진 출시 축하드립니다! 단순한 프롬프트와 원시 자료를 완벽히 수정 가능한 영상으로 변환한다는 점이 정말 인상적이고, 특히 나중에 모든 것을 편집할 수 있다는 점에서 MCP 워크플로가 아주 강력해 보입니다.\n\n사람들이 Clueso MCP로 만든 것 중 가장 놀라웠던 활용 사례는 무엇인가요???"
+    },
+    {
+     "author": "Neel Balar",
+     "is_maker": true,
+     "text": "[@vipul\\_kumar1280](https://www.producthunt.com/@vipul_kumar1280) many unique use cases actually: culture videos for hiring, animated posters for webinars/panel discussions, intro videos for some video games, explainer videos for a cad model, etc  \n  \nThe possibilities are really infinite. Would love to know what you're looking to create.",
+     "kr": "[@vipul\\_kumar1280](https://www.producthunt.com/@vipul_kumar1280) 실제로는 독특한 사용 사례가 정말 많습니다. 채용을 위한 기업 문화 소개 영상, 웨비나/패널 토론용 애니메이션 포스터, 비디오 게임 인트로 영상, CAD 모델 설명 영상 등이 있었죠.\n\n가능성은 정말 무궁무진합니다. 어떤 영상을 만들고 싶으신지 꼭 들어보고 싶네요."
+    },
+    {
+     "author": "Prajwal Prakash",
+     "is_maker": true,
+     "text": "Building the MCP has been such a fun experience. We've spent a lot of time really nailing down aspects of the MCP to make it the best way to create and edit videos with AI. A few novel patterns we've come up with that I think will eventually be widely adopted by design tools in our space\n\n1.  Code mode: the MCP exposes a tool to run scripts using the rest of its tools. This gives all AI clients the ability to programatically call tools, and our tools are granular edits to the timeline of your video, regardless of the capabilities of the harness.\n    \n2.  Multi-frame feedback: the AI client can choose to visualise multiple frames of the video in one call sheet like format, allowing it to understand motion much better than other feedback loops.\n    \n3.  Deterministic feedback: the AI client gets actual feedback every time it makes an edit, so if it puts text on top of text or makes text too small, it instantly gets to know.\n    \n4.  Design guidelines as a tool: Instead of relying on resources, we have a dedicated tool call for the client to make informed decisions about producing good videos. This is overrideable, but it helps you get better outputs when you start from scratch.\n    \n\nOf course, the rest of the tools are granular edits that allow the client to control the video however it and the human behind the client (if any) decide to.\n\nAll of these come together to allow you to make almost any video you please. One thing that's fun to try is pick your favourite launch video, and just ask AI to recreate it with the Clueso MCP but for your product!\n\nIf you're building an MCP, happy to riff on some of our learnings taking this to production. Thank you for your support!",
+     "kr": "MCP를 개발하는 과정은 정말 흥미로운 경험이었습니다. AI로 영상을 제작하고 편집하는 최고의 방식을 만들기 위해 MCP의 세부 요소들을 다듬는 데 많은 시간을 쏟았습니다. 저희 도메인의 디자인 도구들에 궁극적으로 널리 채택될 만한 몇 가지 새로운 패턴들을 고안해 냈습니다.\n\n1. 코드 모드(Code mode): MCP는 나머지 도구들을 조합해 스크립트를 실행할 수 있는 도구를 제공합니다. 이를 통해 하네스의 기능 수준에 구애받지 않고 모든 AI 클라이언트가 프로그래밍 방식으로 도구를 호출할 수 있으며, 저희 도구들은 비디오 타임라인을 아주 세밀하게 편집할 수 있도록 지원합니다.\n\n2. 멀티 프레임 피드백(Multi-frame feedback): AI 클라이언트가 콜 시트(call sheet) 형태의 단일 뷰에서 비디오의 여러 프레임을 시각화하도록 선택할 수 있어, 기존 피드백 루프보다 영상의 모션을 훨씬 더 잘 이해할 수 있습니다.\n\n3. 결정론적 피드백(Deterministic feedback): AI 클라이언트가 편집을 수행할 때마다 실제 피드백을 받으므로, 텍스트 위에 텍스트를 겹쳐 놓거나 폰트 크기를 너무 작게 줄이면 그 즉시 인지할 수 있습니다.\n\n4. 도구로서의 디자인 가이드라인(Design guidelines as a tool): 리소스에만 의존하는 대신, 클라이언트가 양질의 비디오를 만들기 위해 정보에 입각한 판단을 내릴 수 있도록 전용 도구 호출을 마련했습니다. 오버라이드할 수 있지만, 처음부터 작업할 때 훨씬 더 나은 결과를 얻는 데 도움이 됩니다.\n\n물론 나머지 도구들은 클라이언트와 그 뒤의 사용자(있는 경우)가 원하는 대로 비디오를 제어할 수 있는 세분화된 편집 도구들입니다.\n\n이 모든 요소들이 결합되어 원하는 거의 모든 비디오를 만들 수 있게 해줍니다. 한 가지 재미있는 팁을 드리자면, 가장 좋아하는 런칭 비디오를 하나 골라 Clueso MCP로 여러분의 제품에 맞게 재창작해 달라고 AI에 요청해 보세요!\n\n혹시 MCP를 직접 만들고 계신 분이 있다면, 이를 프로덕션에 적용하며 얻은 배움을 기꺼이 나누고 싶습니다. 응원해 주셔서 감사합니다!"
+    },
+    {
+     "author": "Kesavan KK",
+     "is_maker": false,
+     "text": "[@Clueso](https://www.producthunt.com/products/clueso) is absolutely one of my most favourite products. I have been one of the very early customer and started with screen recordings to create demo videos, training manuals and also did some cool podcast edits using the platform. I thought the AI at launch was sensational and now just the ability to create and edit videos using chat is one level up. This team of [@neel\\_balar](https://www.producthunt.com/@neel_balar) and [@prajwal\\_prakash](https://www.producthunt.com/@prajwal_prakash) never stop to surprise me with the pace at which they do high quality stuff. Incredible PH Launch video (I guess done via Clueso itself).",
+     "kr": "[@Clueso](https://www.producthunt.com/products/clueso)는 제가 정말 가장 좋아하는 제품 중 하나입니다. 극초기 고객 중 한 명으로서 화면 녹화로 데모 비디오, 교육 매뉴얼을 만드는 것으로 시작해 이 플랫폼으로 멋진 팟캐스트 편집까지 해보았습니다. 첫 출시 때의 AI도 충격적이었는데, 이제 채팅으로 비디오를 생성하고 편집하는 기능까지 더해져 완전히 한 단계 더 진화했네요. [@neel\\_balar](https://www.producthunt.com/@neel_balar) 님과 [@prajwal\\_prakash](https://www.producthunt.com/@prajwal_prakash) 님의 팀은 고품질의 기능을 만들어내는 속도로 언제나 저를 놀라게 합니다. 놀라운 PH 런칭 영상이네요(이것도 Clueso로 직접 만드신 것 같군요)."
+    },
+    {
+     "author": "Neel Balar",
+     "is_maker": true,
+     "text": "[@kesavan](https://www.producthunt.com/@kesavan) Thank you so much! It's been so great working with you for almost three years now. And yes, the launch video was made with Clueso! All our videos now are made with Clueso – launch videos, product demos, tutorials, animations and infographics, etc",
+     "kr": "[@kesavan](https://www.producthunt.com/@kesavan) 정말 감사합니다! 거의 3년 동안 함께 일할 수 있어 정말 좋았습니다. 네, 말씀하신 대로 런칭 비디오도 Clueso로 제작했습니다! 이제 저희의 모든 영상(런칭 비디오, 제품 데모, 튜토리얼, 애니메이션, 인포그래픽 등)은 전부 Clueso로 만들고 있습니다."
+    },
+    {
+     "author": "Harsh Singh",
+     "is_maker": false,
+     "text": "Love what you’re building here. Curious, can I use the MCP to create an entire video end-to-end?",
+     "kr": "만들고 계신 제품이 정말 마음에 듭니다. 궁금한 점이 있는데, 이 MCP를 사용해 처음부터 끝까지 완전한 비디오 한 편을 엔드투엔드로 제작할 수 있나요?"
+    },
+    {
+     "author": "Neel Balar",
+     "is_maker": true,
+     "text": "[@harshs385](https://www.producthunt.com/@harshs385) yes, you can create any video end to end. You just need to give it a prompt of what you're looking to create along with your context as the input (it could be a screen recording, document, URL or just your idea in text). Clueso then plans your video end to end and starts editing it for you. Once it's done, you can edit directly from the Clueso editor or continue editing via chat from your AI client.  \n  \nExcited to see what you create! Happy to answer any other questions you might have!",
+     "kr": "[@harshs385](https://www.producthunt.com/@harshs385) 네, 어떤 비디오든 엔드투엔드로 제작할 수 있습니다. 만들고자 하는 영상에 대한 프롬프트와 함께 컨텍스트 자료(화면 녹화본, 문서, URL 또는 텍스트로 된 아이디어 등)를 입력으로 제공하기만 하면 됩니다. 그러면 Clueso가 비디오를 엔드투엔드로 기획하고 편집을 시작합니다. 완료되면 Clueso 에디터에서 직접 편집하거나 AI 클라이언트의 채팅을 통해 계속 편집할 수 있습니다.\n\n어떤 결과물을 만들어내실지 기대됩니다! 다른 궁금한 점이 있으시면 언제든 편하게 질문해 주세요!"
+    },
+    {
+     "author": "Vishruth N",
+     "is_maker": false,
+     "text": "Does the MCP also support browser-use tasks? For example, if I want the agent to go record a screen video of a process and make a video explaining how to do it, can it do that?",
+     "kr": "이 MCP는 브라우저 유즈(browser-use) 작업도 지원하나요? 예를 들어, 에이전트가 특정 작업 프로세스의 화면을 직접 녹화하고 이를 설명하는 비디오를 제작하도록 할 수 있나요?"
+    },
+    {
+     "author": "Prajwal Prakash",
+     "is_maker": true,
+     "text": "[@vishruth\\_n](https://www.producthunt.com/@vishruth_n) We actually DO have support for this, which is in beta. Would love to get you set up and get your thoughts on how it performs. Once you sign in, please raise this on our in-app support chat or drop us an email so we can take this forward. Basically, it lets you do exactly what you said and solves for syncing the video and AI generated voiceover.",
+     "kr": "[@vishruth\\_n](https://www.producthunt.com/@vishruth_n) 실제로 해당 기능을 지원하고 있으며, 현재 베타 버전으로 제공 중입니다. 직접 설정해 드리고 성능에 대한 피드백을 받아보고 싶네요. 로그인 후 앱 내 고객지원 채팅이나 이메일로 문의를 남겨주시면 바로 진행을 도와드리겠습니다. 기본적으로 말씀하신 그대로의 동작이 가능하며, 영상과 AI 생성 보이스오버의 싱크를 맞추는 문제도 깔끔하게 해결해 줍니다."
+    },
+    {
+     "author": "Emma Pugsley",
+     "is_maker": false,
+     "text": "Wow, I really love the evolution of this product. I've been testing several video-making tools recently and haven't loved any of them. I keep reverting to making them myself with Adobe, but it feels like such a long process when my other content creation is fast! I'm looking forward to testing it. Does it create an avatar/talking head? Or do I need to upload my own?",
+     "kr": "와, 이 제품의 발전 과정이 정말 놀랍네요. 최근 여러 비디오 제작 도구들을 테스트해 보았는데 마음에 드는 것이 하나도 없었습니다. 결국 계속 Adobe로 직접 작업하는 방식으로 돌아가곤 했는데, 다른 콘텐츠 제작은 빠른데 비디오만 너무 오래 걸린다는 느낌이었거든요! 테스트해 볼 생각에 기대됩니다. 혹시 아바타나 토킹 헤드(말하는 인물 영상)도 생성해 주나요? 아니면 제가 직접 업로드해야 하나요?"
+    },
+    {
+     "author": "Neel Balar",
+     "is_maker": true,
+     "text": "[@you\\_x\\_you\\_i](https://www.producthunt.com/@you_x_you_i) what kind of videos do you typically create? We don't offer a native talking head recorder yet, but you can definitely upload your raw talking head video on Clueso or use one of the AI avatars we offer if you need a talking head in your videos. Excited for you to try out Clueso and hear your thoughts!",
+     "kr": "[@you\\_x\\_you\\_i](https://www.producthunt.com/@you_x_you_i) 평소에 주로 어떤 종류의 비디오를 만드시나요? 아직 자체적인 토킹 헤드 녹화기는 제공하지 않지만, 직접 촬영한 토킹 헤드 원본 영상을 Clueso에 업로드하거나 영상 내에 인물이 필요할 경우 저희가 제공하는 AI 아바타 중 하나를 선택해 활용하실 수 있습니다. Clueso를 직접 사용해 보시고 들려주실 소감이 무척 기대됩니다!"
+    }
+   ],
+   "slug": "clueso"
+  },
+  {
+   "name": "Anomalo",
+   "tagline_en": "Your data is always talking. Don't miss what it's saying.",
+   "tagline_kr": "데이터는 늘 말하고 있습니다. 그 목소리를 놓치지 마세요.",
+   "image": "https://ph-files.imgix.net/40c67bf2-d122-4151-99b5-7d2f0ec44370.png",
+   "categories": [
+    "Artificial Intelligence",
+    "Data & Analytics",
+    "Business Intelligence"
+   ],
+   "upvotes": 273,
+   "comments_count": 23,
+   "maker": "Elliot Shmukler(@eshmu) 공동창업자 겸 CEO 외 John Joo(@john_joo2), Jonathan Karon(@joka) (헌터: Ben Lang(@benln))",
+   "price_model": "무료 시작 (Free to start)",
+   "price_detail": "무료 체험 시작 가능. Snowflake, Databricks, BigQuery 읽기 전용 연동 (엔터프라이즈 플랜 별도 문의)",
+   "desc_kr": "Anomalo는 기업 데이터 웨어하우스의 품질을 모니터링해 온 플랫폼으로, 이번 출시는 AI 기반의 능동형 분석가 'Analyst'를 선보였다. Snowflake, Databricks, BigQuery에 읽기 전용으로 연동하면 데이터의 정상적인 패턴을 스스로 학습한 뒤 중요한 변화와 이상치를 감지해 뉴스피드 형태로 전달한다. 사용자가 미리 가설을 세우고 질문을 던져야만 했던 기존 BI 도구와 달리, 누구도 묻지 않았던 배송 지연이나 특정 SKU의 판매 급변 같은 잠재적 이상 징후를 선제적으로 포착한다. 각 인사이트에는 비즈니스 요약과 기술적 설명뿐만 아니라 실행된 SQL 쿼리와 추론 과정이 투명하게 공개되어 데이터 팀이 신뢰하고 검증할 수 있다. 통계 모델링과 AI 추론을 결합해 데이터 이상 징후를 조기에 발견하고 신속하게 원인을 추적할 수 있도록 지원한다.",
+   "launch_url_used": "https://www.producthunt.com/products/anomalo",
+   "comment_summary": "질문을 던지기 전에 AI가 능동적(proactive)으로 이상 징후를 발굴해 전달하는 방식과 실행된 SQL 쿼리를 투명하게 공개하는 점이 큰 주목을 받았다. AI가 이상치를 미리 선별하면 분석가의 직관과 멘탈 모델 형성이 퇴화할 수 있다는 철학적 비판에 대해, 메이커는 단순 반복 조회를 줄여주고 자연스러운 호기심과 후속 탐구를 촉진한다고 답했다. 소규모 데이터셋에서의 동작 여부와 단순 통신 장애 같은 데이터 결함과 실제 비즈니스 변화를 구별하는 메커니즘에 대해서도 심도 있는 토론이 이어졌다.",
+   "warnings": "수치(업보트 273·댓글 23)는 수집 시점 참고치. 데이터 유입량과 규모에 따라 감지되는 이상치의 종류와 수학적 신뢰도 수준이 달라질 수 있음.",
+   "comments": [
+    {
+     "author": "Elliot Shmukler",
+     "is_maker": true,
+     "text": "📌\n\nHey Product Hunt, I'm Elliot, co-founder and CEO of Anomalo.\n\nI've spent years working with data — growth and product roles at [@instacart](https://www.producthunt.com/@instacart) and [@LinkedIn](https://www.producthunt.com/products/linkedin), then building enterprise data quality tools at [@Anomalo](https://www.producthunt.com/products/anomalo) . I’ve seen that some of the biggest lessons often came from changes in the data. At Instacart, launching one new retailer surfaced an engagement spike that reshaped our growth strategy for years. At LinkedIn, small experiments in network-building tools moved user behavior enough to reset our roadmap.\n\nBut spotting those data changes is hard. You need dashboards for everything that matters and someone watching obsessively. Even with teams of analysts, we missed a lot.\n\nThat's why we built Analyst. Using technology Anomalo pioneered for data quality monitoring, it learns what's normal for your data, then uses AI to spot and explain meaningful changes — creating an automatic news feed of what moved and why.\n\nMost data tools only answer the questions you thought to ask. The valuable data changes are often the ones nobody asked about: a paid social campaign that spiked purchases but only for certain SKUs, a supplier whose delivery times crept up 52% over a quarter, a metric that degraded only because of a mix shift. Anomalo Analyst spots these changes for you. \n\nJust connect [@DataBricks](https://www.producthunt.com/products/databricks) , BigQuery, or [@Snowflake](https://www.producthunt.com/products/snowflake) , read-only, and tell Analyst what matters in each table so the insights are tailored. You’ll start seeing Analyst insights in the first few days. Each insight includes a business summary, a technical summary, and the underlying logic and investigative steps. \n\nFree to start. Give it a try and then tell us what it found.",
+     "kr": "📌\n\n안녕하세요 Product Hunt 여러분, Anomalo 공동창업자 겸 CEO Elliot입니다.\n\n저는 Instacart와 LinkedIn에서 그로스 및 프로덕트 역할을 맡고, 이후 Anomalo에서 엔터프라이즈 데이터 품질 도구를 구축하며 수년간 데이터를 다루어 왔습니다. 그 과정에서 가장 큰 교훈들은 종종 데이터의 변화에서 비롯된다는 것을 배웠습니다. Instacart 시절에는 새로운 리테일러 한 곳을 런칭했을 때 나타난 인게이지먼트 급증이 수년간의 성장 전략을 완전히 재구성했습니다. LinkedIn에서는 네트워크 구축 도구의 작은 실험들이 로드맵을 재설정할 만큼 사용자 행동을 크게 변화시켰죠.\n\n하지만 그러한 데이터의 변화를 포착하기란 어렵습니다. 중요한 모든 지표에 대시보드가 필요하고 누군가 강박적으로 이를 주시해야 하니까요. 분석가 팀이 있어도 놓치는 것이 많았습니다.\n\n그것이 바로 저희가 Analyst를 만든 이유입니다. Anomalo가 데이터 품질 모니터링을 위해 개척한 기술을 활용해 데이터의 '정상 상태'가 무엇인지 학습한 다음, AI를 사용해 의미 있는 변화를 발견하고 설명해 줌으로써 무엇이 왜 움직였는지 보여주는 자동 뉴스피드를 생성합니다.\n\n대부분의 데이터 도구는 여러분이 생각해서 물어본 질문에만 답할 뿐입니다. 하지만 정작 가치 있는 데이터 변화는 아무도 묻지 않았던 것들인 경우가 많습니다. 특정 SKU에서만 구매가 급증한 유료 소셜 캠페인, 한 분기 동안 배송 시간이 52%나 슬그머니 늘어난 공급업체, 믹스 시프트(비중 변화) 때문에 악화된 지표 같은 것들이죠. Anomalo Analyst는 이러한 변화를 여러분 대신 찾아냅니다.\n\nDatabricks, BigQuery 또는 Snowflake를 읽기 전용으로 연결하고 각 테이블에서 무엇이 중요한지 알려주기만 하면 맞춤형 인사이트를 받아볼 수 있습니다. 며칠 안에 Analyst의 인사이트를 보기 시작할 것입니다. 각 인사이트에는 비즈니스 요약, 기술적 세부 정보, 그리고 그 근거가 되는 로직과 조사 단계가 포함됩니다.\n\n무료로 시작할 수 있습니다. 한번 사용해 보시고 무엇을 발견했는지 알려주세요."
+    },
+    {
+     "author": "Emma Pugsley",
+     "is_maker": false,
+     "text": "Congratulations on the launch, it looks great. Does it require a certain amount of data or can it work for startups or sites with low volume?",
+     "kr": "출시 축하드립니다. 정말 멋져 보이네요. 혹시 일정 수준 이상의 데이터 양이 필요한가요, 아니면 트래픽이 적은 스타트업이나 사이트에서도 동작할 수 있나요?"
+    },
+    {
+     "author": "Jonathan Karon",
+     "is_maker": true,
+     "text": "[@you\\_x\\_you\\_i](https://www.producthunt.com/@you_x_you_i) thanks for the kind words! Analyst will work with small datasets too. The types of anomalies detected and level of confidence in the math change with higher volumes of data but as long as you have some fresh data coming in on a regular basis we should find insights. If you try it and find it's not catching what you expect, let us know and we can help.",
+     "kr": "[@you\\_x\\_you\\_i](https://www.producthunt.com/@you_x_you_i) 좋은 말씀 감사합니다! Analyst는 작은 데이터셋에서도 잘 동작합니다. 데이터 양이 많아질수록 감지되는 이상치의 종류와 수학적 신뢰도 수준이 달라지기는 하지만, 정기적으로 새로운 데이터가 유입되는 한 유의미한 인사이트를 찾아낼 수 있습니다. 사용해 보시고 기대한 내용이 잡히지 않는다면 저희에게 알려주세요. 기꺼이 도와드리겠습니다."
+    },
+    {
+     "author": "EaseOps",
+     "is_maker": false,
+     "text": "[@eshmu](https://www.producthunt.com/@eshmu) [@john\\_joo2](https://www.producthunt.com/@john_joo2) [@joka](https://www.producthunt.com/@joka) congrats on the launch ! How do you differentiate this from the already existing tools ?",
+     "kr": "[@eshmu](https://www.producthunt.com/@eshmu) [@john\\_joo2](https://www.producthunt.com/@john_joo2) [@joka](https://www.producthunt.com/@joka) 출시 축하드립니다! 기존에 나와 있는 도구들과의 차별점은 무엇인가요?"
+    },
+    {
+     "author": "Elliot Shmukler",
+     "is_maker": true,
+     "text": "[@john\\_joo2](https://www.producthunt.com/@john_joo2)  [@joka](https://www.producthunt.com/@joka)  [@easeops](https://www.producthunt.com/@easeops) Anomalo Analyst is proactive. You just set it up, and it delivers insights and interesting observations to you -- no need to ask it questions or prompt it in any way. That's a big difference from other AI analytical tools.",
+     "kr": "[@john\\_joo2](https://www.producthunt.com/@john_joo2) [@joka](https://www.producthunt.com/@joka) [@easeops](https://www.producthunt.com/@easeops) Anomalo Analyst는 능동적(proactive)입니다. 설정만 해두면 알아서 흥미로운 관찰 결과와 인사이트를 전달해 줍니다. 질문을 던지거나 어떤 프롬프트도 입력할 필요가 없죠. 이것이 다른 AI 분석 도구들과의 결정적인 차이점입니다."
+    },
+    {
+     "author": "Simon Clark",
+     "is_maker": false,
+     "text": "Do you show the SQ or logic behind each insight so teams can double check.",
+     "kr": "팀원들이 교차 검증할 수 있도록 각 인사이트의 배후에 있는 SQL이나 로직을 보여주나요?"
+    },
+    {
+     "author": "Elliot Shmukler",
+     "is_maker": true,
+     "text": "[@simonclark55](https://www.producthunt.com/@simonclark55) yes, you can see all the logic the agent used including all the SQL queries it ran, precisely so teams can double-check and/or replicate its work.",
+     "kr": "[@simonclark55](https://www.producthunt.com/@simonclark55) 네, 팀에서 에이전트의 작업을 재확인하거나 재현할 수 있도록 실행된 모든 SQL 쿼리를 포함하여 에이전트가 사용한 모든 로직을 정확하게 확인하실 수 있습니다."
+    },
+    {
+     "author": "John Joo",
+     "is_maker": true,
+     "text": "[@simonclark55](https://www.producthunt.com/@simonclark55) Yes, a big part of what we've noticed in launching AI products is that humans don't necessarily trust AI, especially in their most critical workflows. So, we've tried to be as transparent as possible in explaining the reasoning behind the insights we are producing.",
+     "kr": "[@simonclark55](https://www.producthunt.com/@simonclark55) 네, 저희가 AI 제품을 출시하면서 크게 느낀 점 중 하나는 특히 핵심적인 업무 워크플로에서 인간이 AI를 무조건 신뢰하지는 않는다는 사실이었습니다. 그래서 저희는 도출해 낸 인사이트 배후의 추론 과정을 최대한 투명하게 설명하고자 노력했습니다."
+    },
+    {
+     "author": "Konstantin Tikhaev",
+     "is_maker": false,
+     "text": "step 2 has AI agent decide what matters after statistical modeling ranks changes by magnitude. in practice painful work of framing question is where operators build mental model of the business. if tool decides what is worth noticing before human forms hypothesis, understanding of system atrophies or relevance just becomes whatever had highest statistical variance )",
+     "kr": "2단계에서 통계 모델링이 변화 규모순으로 순위를 매긴 후 AI 에이전트가 무엇이 중요한지 결정하도록 되어 있네요. 실제로는 질문을 구체화하는 고통스러운 작업을 거치면서 실무자가 비즈니스에 대한 멘탈 모델을 구축하게 됩니다. 사람이 가설을 세우기도 전에 도구가 주목할 가치가 있는 것을 대신 결정해 버리면 시스템에 대한 이해력이 퇴화하거나, 단순히 통계적 분산이 가장 컸던 것만 의미 있는 것으로 취급될 뿐입니다."
+    },
+    {
+     "author": "John Joo",
+     "is_maker": true,
+     "text": "[@konstantin\\_tikhaev](https://www.producthunt.com/@konstantin_tikhaev) Good point, but we've found our users to have the exact opposite response. They aren't just leaving the AI where it left off. Instead, they are naturally curious. For each generated insight, they often have followup questions and click on \"Dive in with Analyst\" where they can ask. In essence, AI doesn't end up cutting out the thinking. It ends up cutting out the manual labor of writing SQL or having to watch the dashboard all day.",
+     "kr": "[@konstantin\\_tikhaev](https://www.producthunt.com/@konstantin_tikhaev) 좋은 지적입니다만, 저희 사용자들에게서는 정반대의 반응을 확인했습니다. 사용자들은 AI가 제시한 지점에서 생각을 멈추지 않습니다. 오히려 자연스러운 호기심을 갖게 되죠. 생성된 각 인사이트에 대해 후속 질문을 떠올리고 'Analyst와 함께 심층 탐색(Dive in with Analyst)'을 클릭해 질문을 이어갑니다. 본질적으로 AI는 생각하는 행위를 없애는 것이 아니라, SQL을 직접 작성하거나 온종일 대시보드를 감시해야 하는 단순 육체노동을 없애주는 것입니다."
+    },
+    {
+     "author": "Jonathan Karon",
+     "is_maker": true,
+     "text": "[@konstantin\\_tikhaev](https://www.producthunt.com/@konstantin_tikhaev) Very valid concern. What we've found is that Anomalo Analyst supplements that building of mental models, not outsources it. Analyst speeds up the exploratory process where you're exploring and framing those mental models. In the process it learns how you think of the business and it flags unexpected changes that you hadn't thought to look for - so you get alerted when something happens that you never predicted.",
+     "kr": "[@konstantin\\_tikhaev](https://www.producthunt.com/@konstantin_tikhaev) 매우 타당한 우려입니다. 저희가 확인한 바에 따르면 Anomalo Analyst는 멘탈 모델 구축을 외주화하는 것이 아니라 이를 보완해 줍니다. Analyst는 멘탈 모델을 탐색하고 프레임을 짜는 탐색 과정을 가속화합니다. 그 과정에서 사용자가 비즈니스를 어떻게 바라보는지 학습하며, 미처 찾아볼 생각조차 못 했던 예상 밖의 변화를 포착해 알려주므로 전혀 예측하지 못했던 일이 벌어졌을 때 경고를 받을 수 있습니다."
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "the \"distinguish real business changes from broken data\" line is the part that'd make or break this for us. we run a call-quality pipeline where a metric drop is sometimes a real regression and sometimes just a carrier reporting gap for a few hours, and naive anomaly detection flags both identically. curious how Analyst tells those apart in practice - is it mostly pattern-matching against known data-quality signatures (nulls, schema drift, volume drops) or does it also learn what a plausible business explanation looks like for a given table over time?",
+     "kr": "'손상된 데이터와 실제 비즈니스 변화를 구별한다'는 문구가 저희에게는 성패를 가를 핵심 포인트입니다. 저희는 통화 품질 파이프라인을 운영 중인데, 지표 하락이 때로는 실제 성능 저하일 때도 있고 때로는 통신사의 몇 시간짜리 보고 공백일 때도 있습니다. 그런데 단순한 이상 감지기는 두 경우를 똑같이 표시하거든요. Analyst가 실제로 이를 어떻게 구분하는지 궁금합니다. null값, 스키마 변동, 데이터양 급감 같은 알려진 데이터 품질 시그니처와의 패턴 매칭에 주로 의존하나요, 아니면 시간이 흐르면서 해당 테이블에 대해 그럴듯한 비즈니스 설명이 무엇인지까지 학습하나요?"
+    }
+   ],
+   "slug": "anomalo"
+  },
+  {
+   "name": "WZRD",
+   "tagline_en": "AI-native documents, slides, forms and sheets that talk back",
+   "tagline_kr": "대화로 응답하는 AI 기반 문서, 슬라이드, 폼, 스프레드시트",
+   "image": "https://ph-files.imgix.net/33f29e92-9a9c-4cd4-9761-1f7bbd1e7d32.png",
+   "categories": [
+    "Productivity",
+    "No-Code",
+    "Design"
+   ],
+   "upvotes": 254,
+   "comments_count": 50,
+   "maker": "Ali(@ealimohsen) 창업자 (헌터: Jonno Riekwel(@jonnotie), 고인 공동창업자: Mohd(@eyemohd))",
+   "price_model": "무료 시작 (웹사이트에서 바로 체험 가능)",
+   "price_detail": "초기 무료 체험 가능. 엔터프라이즈 AI 경험을 바탕으로 구축",
+   "desc_kr": "WZRD는 기존의 정적인 문서, 슬라이드, 설문 폼, 스프레드시트를 사용자와 양방향으로 대화하는 인터랙티브 AI 경험으로 변환해 주는 생산성 플랫폼이다. 파일 작성에 그치는 일반 AI 도구들과 달리, 결과물 자체가 대화형 인터페이스가 되어 사용자의 질문에 답하고 내용을 가이드한다. 설문지는 대화나 타이핑으로 답변을 수집하고, 스프레드시트는 데이터의 의미를 소리 내어 설명하며, 슬라이드는 스토리텔링을 통해 청중을 안내한다. 별도의 코딩 없이 기존 자료를 업로드하거나 프롬프트로 생성할 수 있으며 브랜드, 개성, 대화 음성을 자유롭게 맞춤 설정할 수 있다. 엔터프라이즈 AI 경험을 다년간 개발해 온 DOO 팀의 노하우를 바탕으로 누구나 쉽게 반응형 지식 콘텐츠를 만들 수 있도록 지원한다.",
+   "launch_url_used": "https://www.producthunt.com/products/wzrd",
+   "comment_summary": "정적인 프레젠테이션이나 문서를 음성과 텍스트로 상호작용하는 반응형 대화 경험으로 탈바꿈시킨다는 아이디어에 호평이 이어졌다. 사용자가 고정된 슬라이드를 따르는 대신 궁금한 점을 자유롭게 물어볼 수 있는지, 팀 관리자가 대화 기록 전문을 검토할 수 있는지, 여러 파일 포맷을 병합할 수 있는지 등에 대한 질문이 집중되었다. 메이커는 대화 트랜스크립트 전체 검토가 가능하고 대화 톤과 음성을 커스텀할 수 있다고 답하며 복잡한 표 서식 지원도 계속 개선 중이라고 밝혔다.",
+   "warnings": "수치(업보트 254·댓글 50)는 수집 시점 참고치. 복잡한 표나 레이아웃이 포함된 문서의 처리 기능은 현재 지속 개선 중.",
+   "comments": [
+    {
+     "author": "Alimo",
+     "is_maker": true,
+     "text": "📌\n\nHey Product Hunt!\n\nI’m Ali, founder of WZRD. I discovered the internet in 1995 and started building websites when I was 12. After 25+ years building on the internet, one thing still feels strangely unchanged:\n\n**We create information, then trap it inside static interfaces.**\n\nAbout a year ago, my late brother and cofounder [@eyemohd](https://www.producthunt.com/@eyemohd) and I kept coming back to one question:\n\n**What if your work could talk back?**\n\nThat question became WZRD.\n\n**What is WZRD?**\n\nWZRD turns documents, slides, forms and sheets into interactive AI experiences.\n\nUpload something you already have or start from a prompt. WZRD turns it into something people can speak to, type to, explore and share.\n\n**Why is it different?**\n\nMost AI tools help you create the file.\n\nWZRD changes what happens after creation.\n\nThe output itself becomes conversational and responsive, so instead of simply scrolling through information, people can ask questions, get guided and interact with it.\n\n**Who is it for?**\n\nFounders, marketers, sales teams, consultants, educators and anyone who regularly creates or shares information through documents, presentations, forms or sheets.\n\n**What can you do today?**\n\n*   Upload your existing work or create from a prompt\n    \n*   Build documents, slides, forms and sheets\n    \n*   Let people interact through voice\n    \n*   Customize the brand, personality and behavior\n    \n*   Publish and share instantly\n    \n*   No coding required\n    \n\nWe built WZRD from years of building AI experiences for enterprise customers at [@DOO](https://www.producthunt.com/products/doo-2) Now we’re bringing those learnings to everyone.\n\nOur ask today is simple:\n\n**Take something you already have, turn it into a WZRD, and tell us where it feels magical and where it still feels like software.**\n\n**Try WZRD:** [https://wzrd.to](https://wzrd.to/)\n\nWe’d genuinely love your feedback.",
+     "kr": "📌\n\n안녕하세요 Product Hunt!\n\nWZRD 창립자 Ali입니다. 저는 1995년에 인터넷을 접하고 12살 때부터 웹사이트를 만들기 시작했습니다. 인터넷에서 25년 넘게 무언가를 만들어왔지만, 이상하리만큼 변하지 않은 것이 하나 있습니다.\n\n**우리는 정보를 만들고, 그것을 정적인 인터페이스 안에 가둬둔다는 점입니다.**\n\n약 1년 전, 세상을 떠난 제 형제이자 공동창업자인 [@eyemohd](https://www.producthunt.com/@eyemohd)와 저는 한 가지 질문에 계속해서 되돌아왔습니다.\n\n**\"우리가 만든 작업물이 우리에게 대답해 줄 수 있다면 어떨까?\"**\n\n그 질문이 바로 WZRD가 되었습니다.\n\n**WZRD란 무엇인가요?**\n\nWZRD는 문서, 슬라이드, 양식, 스프레드시트를 대화형 AI 경험으로 변환해 줍니다.\n\n이미 가지고 있는 자료를 업로드하거나 프롬프트로 시작해 보세요. WZRD가 이를 사람들이 음성이나 타이핑으로 말을 걸고, 탐색하고, 공유할 수 있는 결과물로 바꿔줍니다.\n\n**무엇이 다른가요?**\n\n대부분의 AI 도구는 파일을 만드는 것까지만 돕습니다.\n\nWZRD는 파일 생성 이후의 경험을 바꿉니다.\n\n산출물 자체가 대화형이며 반응형이 되기 때문에, 단순히 정보를 스크롤하는 대신 질문을 던지고, 안내를 받고, 상호작용할 수 있습니다.\n\n**누구를 위한 도구인가요?**\n\n문서, 프레젠테이션, 폼, 스프레드시트를 통해 정보를 정기적으로 제작하거나 공유하는 창업가, 마케터, 영업팀, 컨설턴트, 교육자 등 모든 분들을 위한 도구입니다.\n\n**오늘 바로 할 수 있는 것:**\n\n* 기존 작업물 업로드 또는 프롬프트로 생성\n* 문서, 슬라이드, 폼, 시트 제작\n* 음성을 통한 인터랙션 지원\n* 브랜드, 페르소나, 행동 양식 맞춤 설정\n* 즉시 배포 및 공유\n* 코딩 불필요\n\n저희는 DOO에서 엔터프라이즈 고객을 위한 AI 경험을 수년간 구축하며 쌓은 노하우를 바탕으로 WZRD를 만들었습니다. 이제 그 배움을 모든 분께 전하고자 합니다.\n\n오늘 여러분께 드리는 요청은 단순합니다:\n\n**이미 가지고 계신 자료를 가져와 WZRD로 바꿔보시고, 어느 부분이 마법처럼 느껴지고 어느 부분이 여전히 단순한 소프트웨어처럼 느껴지는지 알려주세요.**\n\n**WZRD 체험하기:** [https://wzrd.to](https://wzrd.to/)\n\n여러분의 피드백을 진심으로 기다립니다."
+    },
+    {
+     "author": "Darly Selby",
+     "is_maker": false,
+     "text": "Does the AI actually adjust the story based on questions from the audience or is it mainly a guided presentation?",
+     "kr": "AI가 청중의 질문에 따라 실제 스토리를 유연하게 조정하나요, 아니면 기본적으로 안내형 프레젠테이션에 가깝나요?"
+    },
+    {
+     "author": "Alimo",
+     "is_maker": true,
+     "text": "[@darly\\_selby](https://www.producthunt.com/@darly_selby) It responds to what people ask using the uploaded content, so they can explore what interests them rather than follow a fixed presentation.",
+     "kr": "[@darly\\_selby](https://www.producthunt.com/@darly_selby) 업로드된 콘텐츠를 바탕으로 사람들이 질문하는 내용에 맞춰 응답하므로, 고정된 프레젠테이션을 일방적으로 따르기보다 관심 있는 부분을 자유롭게 탐색할 수 있습니다."
+    },
+    {
+     "author": "Taissa Maleh",
+     "is_maker": false,
+     "text": "This is pretty awesome since most of the times one job is performed by multiple people along the process, and that becomes the unified version & SOP. What's the level of supervision a human has? Can a manager overwrite anything? And what is the final output it provides?",
+     "kr": "정말 멋지네요. 실무에서는 한 작업에 여러 사람이 참여하면서 하나의 통일된 버전이나 표준 운영 절차(SOP)가 완성되는 경우가 대부분이니까요. 사람이 어느 수준까지 감독할 수 있나요? 관리자가 임의로 덮어쓰거나 수정할 수 있나요? 그리고 최종적으로 제공되는 결과물은 어떤 형태인가요?"
+    },
+    {
+     "author": "Alimo",
+     "is_maker": true,
+     "text": "[@tmaleh\\_](https://www.producthunt.com/@tmaleh_) Thanks, Taissa! You can guide the AI with instructions and review full conversation transcripts. The output is a shareable, interactive experience. What kind of manager override did you have in mind?",
+     "kr": "[@tmaleh\\_](https://www.producthunt.com/@tmaleh_) 감사합니다, Taissa 님! 지시 사항(프롬프트)으로 AI를 가이드할 수 있으며, 전체 대화 트랜스크립트도 빠짐없이 검토할 수 있습니다. 결과물은 공유 가능한 인터랙티브 경험의 형태입니다. 생각하고 계신 관리자 오버라이드 방식은 어떤 형태인가요?"
+    },
+    {
+     "author": "Jurgen Përgega",
+     "is_maker": false,
+     "text": "Congrats on the launch! Can you combine multiple file types into one conversation?",
+     "kr": "출시 축하드립니다! 여러 종류의 파일 형식을 하나의 대화 세션에 결합할 수도 있나요?"
+    },
+    {
+     "author": "Alimo",
+     "is_maker": true,
+     "text": "[@jurgen\\_pergega](https://www.producthunt.com/@jurgen_pergega) Thanks, Jurgen! Right now you can add extra files as supporting knowledge, but combining a deck with its supporting spreadsheet in an interactive experience is a great idea.",
+     "kr": "[@jurgen\\_pergega](https://www.producthunt.com/@jurgen_pergega) 감사합니다, Jurgen 님! 지금도 추가 파일을 보조 지식 자료로 덧붙일 수는 있지만, 발표 슬라이드와 관련 스프레드시트를 단일 인터랙티브 경험으로 묶는 것은 정말 좋은 아이디어네요."
+    },
+    {
+     "author": "Sebastian",
+     "is_maker": false,
+     "text": "What happens when the original document has a lot of formatting or complicated tables? That seems like an interesting test for this.",
+     "kr": "원본 문서에 복잡한 서식이나 복잡한 표가 많은 경우에는 어떻게 처리되나요? 꽤 흥미로운 테스트 케이스가 될 것 같습니다."
+    },
+    {
+     "author": "Alimo",
+     "is_maker": true,
+     "text": "[@sheikh\\_umair1](https://www.producthunt.com/@sheikh_umair1) Good question. That’s definitely an interesting test case. We’re still improving how WZRD handles more complex formatting and tables, but would love to hear your feedback!",
+     "kr": "[@sheikh\\_umair1](https://www.producthunt.com/@sheikh_umair1) 좋은 질문입니다. 확실히 흥미로운 테스트 케이스네요. WZRD가 복잡한 서식과 표를 더 매끄럽게 처리할 수 있도록 현재도 지속적으로 개선 중이며, 직접 써보시고 피드백을 주시면 감사하겠습니다!"
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "Is it possible for teams to personalize the conversational voice, or does everyone share an identical AI experience based on uploads?  \nBtw, Congratulations [@ealimohsen](https://www.producthunt.com/@ealimohsen) and team WZRD 🎊✌️",
+     "kr": "팀에서 대화 음성을 개인화하는 것도 가능한가요, 아니면 업로드된 내용을 바탕으로 모든 사람이 동일한 AI 경험을 공유하게 되나요?  \n그나저나 [@ealimohsen](https://www.producthunt.com/@ealimohsen) 님과 WZRD 팀, 출시 축하드립니다 🎊✌️"
+    },
+    {
+     "author": "Alimo",
+     "is_maker": true,
+     "text": "[@aymi\\_malik](https://www.producthunt.com/@aymi_malik) Teams can personalize its tone and behavior through instructions, so each experience can feel different and different audio voices are available to choose from.",
+     "kr": "[@aymi\\_malik](https://www.producthunt.com/@aymi_malik) 팀에서는 지침을 통해 톤과 행동 양식을 맞춤 설정할 수 있으므로 각 경험이 서로 다르게 느껴지도록 만들 수 있으며, 다양한 오디오 음성 중에서 선택하는 것도 가능합니다."
+    }
+   ],
+   "slug": "wzrd"
+  },
+  {
+   "name": "SereneDB",
+   "tagline_en": "Ultra-Fast Search & Analytics Database, Agentic AI ready",
+   "tagline_kr": "초고속 검색 및 분석 데이터베이스, 에이전틱 AI 준비 완료",
+   "image": "https://ph-files.imgix.net/0984d2bb-8ef1-4691-81a5-b8cfd07815b9.png",
+   "categories": [
+    "Open Source",
+    "Developer Tools",
+    "GitHub"
+   ],
+   "upvotes": 210,
+   "comments_count": 24,
+   "maker": "Alexander Malandin(@malandin) 공동창업자 겸 CEO, Andrey Abramov(@gnusi) 공동창업자 겸 CTO (헌터: Svetlana Ragimova(@svetlana_ragimova))",
+   "price_model": "오픈소스 (무료 / Apache 2.0)",
+   "price_detail": "GitHub에서 무료 다운로드 가능 (Apache 2.0 라이선스). 클러스터 버전 개발 중",
+   "desc_kr": "SereneDB는 12년간의 개발 끝에 공개된 오픈소스 데이터베이스로, 초고속 전문(full-text) 검색과 컬럼형 분석을 단일 엔진으로 통합했다. PostgreSQL 및 Elasticsearch와 완벽히 호환되어 기존의 SQL 쿼리와 드라이버, Elastic 클라이언트를 그대로 유지하면서 두 시스템 간 번거로운 ETL 과정을 완전히 없앨 수 있다. 10억 건의 로그 데이터를 약 10분의 1 수준의 디스크 공간만 사용하면서 8분 이내에 인덱싱하는 뛰어난 압축률과 성능을 자랑한다. 공개 벤치마크인 SearchBench를 통해 Elasticsearch, ClickHouse, Postgres 검색 확장 대비 월등한 처리 속도와 자원 효율을 입증했다. AI 코딩 에이전트와 결합하면 1인 개발자도 단일 가상 머신에서 페타바이트 규모의 엔터프라이즈급 데이터셋을 손쉽게 검색하고 분석할 수 있다.",
+   "launch_url_used": "https://www.producthunt.com/products/serenedb-krummelanke",
+   "comment_summary": "단일 노드에서 10배 적은 디스크 용량으로 Elasticsearch와 ClickHouse를 능가한다는 공개 벤치마크 결과에 개발자 커뮤니티의 이목이 집중되었다. 디스크를 10배 절약하면서도 지연시간 손실이 없는 원리와 페타바이트급 분산 클러스터 지원 로드맵에 대한 기술적 질문이 이어졌다. 메이커는 고효율 압축 덕분에 저장소에서 RAM으로의 전송 속도가 빨라져 오히려 성능이 대폭 향상되었다고 설명하며 구체적인 아키텍처 원리를 공개했다.",
+   "warnings": "수치(업보트 210·댓글 24)는 수집 시점 참고치. 현재는 페더레이션 배포를 지원하며 정식 분산 클러스터링 시스템은 내년 출시 예정.",
+   "comments": [
+    {
+     "author": "Svetlana Ragimova",
+     "is_maker": false,
+     "text": "📌\n\nSereneDB built something that is usually available only to big-wallet vendors: a database that holds a huge amount of data in one node, on an ordinary machine, and does ultra-fast search plus analytics at an enterprise level. Their full-text search is the fastest today, based on benchmarks anyone can verify.  \n\nAnd all this -- open source!  \n\nI have a Master's in CS, but it was a long time ago, and I completely forgot how to code. I still remember the fundamentals of how to build software, though. This era of vibecoding is my renaissance: I use AI to build what I have wanted to create for a long time. One component was missing -- an easy-to-use database. Yes, there is Postgres, but you need real skills to set it up and tune it. With SereneDB I just paste the line into Claude Code, connect the docs MCP, and work (I had to install Docker along the way, though).  \nNow I have almost no limit on data volume: these are enterprise-level datasets I can search and analyze on ordinary virtual machines.\n\nImagine how much freedom that gives to scientists all over the world: all of PubMed's 37 million abstracts, NOAA's daily climate records from 100,000+ stations, every photo NASA's Mars rovers have ever sent back -- searchable and analyzable on an ordinary VM, by one person with a coding assistant. And imagine how many more use cases they will come up with by pairing their AI coding assistants with SereneDB.\n\nI'm proud to be the team's hunter. They see the future, and they built the missing component for it: a vibecoder-friendly, top-level database.",
+     "kr": "📌\n\nSereneDB는 보통 거대 자본을 가진 벤더들만 다룰 수 있었던 것을 만들어냈습니다. 바로 일반 컴퓨터의 단일 노드에 막대한 양의 데이터를 담고, 엔터프라이즈 수준의 초고속 검색과 분석을 동시에 수행하는 데이터베이스입니다. 누구나 검증할 수 있는 벤치마크 기준으로 현재 가장 빠른 전문 검색 엔진입니다.\n\n그리고 이 모든 것이 오픈소스입니다!\n\n저는 컴퓨터 과학 석사 학위가 있지만 오래전 일이라 코딩하는 법을 완전히 잊어버렸습니다. 그래도 소프트웨어를 만드는 기본 원리는 기억하고 있죠. 요즘 같은 바이브코딩(vibecoding) 시대는 저에게 르네상스와 같습니다. 오랜 시간 만들고 싶었던 것을 AI를 활용해 만들고 있으니까요. 딱 하나 빠진 조각이 바로 쓰기 쉬운 데이터베이스였습니다. Postgres가 있긴 하지만 설치하고 튜닝하려면 상당한 기술이 필요하죠. SereneDB를 사용하면 Claude Code에 한 줄을 붙여넣고 문서 MCP를 연결하기만 하면 바로 작업할 수 있습니다(물론 중간에 Docker는 설치해야 했습니다).\n이제 데이터 용량의 한계는 거의 사라졌습니다. 일반 가상 머신에서도 엔터프라이즈급 데이터셋을 마음껏 검색하고 분석할 수 있게 된 것입니다.\n\n이것이 전 세계 과학자들에게 얼마나 큰 자유를 주는지 상상해 보세요. PubMed의 3,700만 개 논문 초록, 10만 개 이상 관측소에서 수집된 NOAA의 일일 기후 기록, NASA 화성 탐사선이 전송한 모든 사진을 코딩 어시스턴트를 든 한 사람이 일반 VM에서 검색하고 분석할 수 있습니다. AI 코딩 어시스턴트와 SereneDB를 결합해 그들이 얼마나 더 많은 유스케이스를 만들어낼지 상상해 보세요.\n\n이 팀의 헌터라는 사실이 자랑스럽습니다. 그들은 미래를 내다보았고, 그 미래에 꼭 필요했던 퍼즐 조각인 바이브코더 친화적인 최고 수준의 데이터베이스를 만들었습니다."
+    },
+    {
+     "author": "Alexander Malandin",
+     "is_maker": true,
+     "text": "Hi Product Hunt! Alexander here, co-founder and CEO of SereneDB.\n\nAndrey and I have known each other for about seventeen years. We met as junior techs sharing a tiny office. We always knew we would build something together; it just took us two decades to find the thing.\n\nI found it by helping people choose and implement databases. For years my job was to solve customers' data problems, and I kept noticing something strange: whatever problem walked through the door, the search engine Andrey had built solved it better and faster than the tools designed for it. Not sometimes. Consistently. I wasn't a believer because he's my friend -- I was a believer because I saw it working in production.\n\nThe more I worked with search as a technology, the clearer the bigger picture became. Our industry's idea of what search can do froze close to a decade ago. Everyone hit the same limits set by existing search vendors, built their architectures around these limits, and stopped asking. Meanwhile the technology kept moving, to the point where people now refuse to believe what they see in demos.\n\nSo we built SereneDB: search and analytics fused in one open-source, Postgres-compatible engine. Our first build-server was assembled in Andrey's apartment -- he paced the room while I turned the screws. Today we're launching Krummelanke, the first named release. Pull it from GitHub and run it.\n\nOne more thing, because I know you will ask. We say it's the fastest search and analytical database on the market, and we know how that sounds. So we have the open-sourced proof: SearchBench, 92 real queries over 100 million, a billion and 10 billion records, every engine tuned with public configs, every result on a live board. Elasticsearch, OpenSearch, ClickHouse, the Postgres search extensions, vanilla Postgres. If you think a config is unfair, file a PR and we'll rerun it.\n\nAsk us anything -- we answer everything, including the uncomfortable questions.",
+     "kr": "안녕하세요 Product Hunt! SereneDB 공동창업자 겸 CEO Alexander입니다.\n\nAndrey와 저는 약 17년 전부터 알고 지냈습니다. 작은 사무실을 함께 쓰던 주니어 엔지니어로 만났죠. 우리는 항상 무언가를 함께 만들 것이라는 걸 알고 있었지만, 그 대상을 찾는 데 20년이 걸렸습니다.\n\n저는 사람들이 데이터베이스를 선택하고 도입하는 것을 돕는 과정에서 그 대상을 찾았습니다. 수년간 제 일은 고객들의 데이터 문제를 해결하는 것이었는데, 묘한 점을 계속 발견했습니다. 어떤 문제가 발생하든 Andrey가 만든 검색 엔진이 그 목적에 맞게 설계된 기존 도구들보다 문제를 더 빠르고 훌륭하게 해결해 냈다는 것입니다. 어쩌다가 한 번이 아니라 항상 일관되게요. 그가 제 친구라서 믿었던 것이 아니라, 실제 프로덕션 환경에서 그렇게 작동하는 것을 직접 보았기 때문에 확신하게 되었습니다.\n\n검색 기술을 다루면 다룰수록 더 큰 그림이 분명해졌습니다. 검색이 무엇을 할 수 있는지에 대한 업계의 생각은 거의 10년 전에 멈춰 있었습니다. 모두가 기존 검색 벤더들이 설정해 놓은 한계에 부딪혔고, 그 한계에 맞춰 아키텍처를 설계한 뒤 더 이상 의문을 품지 않았습니다. 그사이 기술은 계속 발전해서, 이제 사람들은 데모에서 보는 것을 믿으려 하지 않을 정도가 되었죠.\n\n그래서 저희는 SereneDB를 만들었습니다. 검색과 분석이 하나의 오픈소스이자 Postgres 호환 엔진으로 융합된 데이터베이스입니다. 첫 번째 빌드 서버는 Andrey의 아파트에서 조립했습니다. Andrey가 방 안을 서성이는 동안 제가 나사를 조였죠. 오늘 저희는 첫 공식 릴리스인 Krummelanke를 출시합니다. GitHub에서 받아 바로 실행해 보세요.\n\n여러분이 질문하실 것을 알기에 한 가지만 더 말씀드립니다. 저희는 시장에서 가장 빠른 검색 및 분석 데이터베이스라고 말하고 있고, 그것이 어떻게 들릴지 잘 알고 있습니다. 그래서 오픈소스로 입증 자료를 준비했습니다. 1억, 10억, 100억 건의 레코드에 대한 92개의 실제 쿼리를 테스트한 SearchBench입니다. 모든 엔진은 공개된 설정으로 튜닝되었고 모든 결과는 라이브 대시보드에 공개되어 있습니다. Elasticsearch, OpenSearch, ClickHouse, Postgres 검색 확장, 바닐라 Postgres가 포함되어 있습니다. 설정이 불공정하다고 생각되면 PR을 올려주세요. 다시 실행해 드리겠습니다.\n\n무엇이든 물어보세요. 곤란한 질문을 포함해 모든 질문에 답변해 드리겠습니다."
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "[@malandin](https://www.producthunt.com/@malandin) How does SereneDB compare with Elasticsearch on really large production workloads ?",
+     "kr": "[@malandin](https://www.producthunt.com/@malandin) 대규모 실제 프로덕션 워크로드에서 SereneDB는 Elasticsearch와 비교했을 때 어떤가요?"
+    },
+    {
+     "author": "Alexander Malandin",
+     "is_maker": true,
+     "text": "[@dipanshu\\_kushwaha5](https://www.producthunt.com/@dipanshu_kushwaha5) thanks for this question! We have compared ourselves with Elasticsearch on 1B log entries and saw a lot of efficiencies. Have a look here, please: [https://serenedb.com/searchbench](https://serenedb.com/searchbench). On the other hand, if you are asking about petabytes of data, we support this in federated deployments now and working on releasing clustered system in the coming year.",
+     "kr": "[@dipanshu\\_kushwaha5](https://www.producthunt.com/@dipanshu_kushwaha5) 질문 감사합니다! 10억 건의 로그 항목에서 Elasticsearch와 비교를 진행해 많은 효율성을 확인했습니다. 여기를 확인해 주세요: [https://serenedb.com/searchbench](https://serenedb.com/searchbench). 한편 페타바이트 단위의 데이터를 질문하신 것이라면, 현재는 페더레이션 배포로 이를 지원하고 있으며 내년 중 클러스터링 시스템을 정식 출시하기 위해 작업 중입니다."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "What is the downside to saving 10x the disk space compared to Elasticsearch? Is it a matter of query latency or just storage efficiency?  \nAdditionally, Congratulations [@malandin](https://www.producthunt.com/@malandin) and [@gnusi](https://www.producthunt.com/@gnusi) ✌️🎊✌️",
+     "kr": "Elasticsearch 대비 디스크 공간을 10배 절약할 때 발생하는 단점(트레이드오프)은 무엇인가요? 쿼리 지연 시간의 문제인가요, 아니면 순수한 스토리지 효율성 문제인가요?  \n추가로 [@malandin](https://www.producthunt.com/@malandin) 님과 [@gnusi](https://www.producthunt.com/@gnusi) 님 축하드립니다 ✌️🎊✌️"
+    },
+    {
+     "author": "Alexander Malandin",
+     "is_maker": true,
+     "text": "Thank you [@aymi\\_malik](https://www.producthunt.com/@aymi_malik)! Apparently, there's no downsides. On the contrary, there's a huge upside on performance. Once everything is compressed, retrieving from storage to RAM takes less and this greatly increase the overall performance. The benchmark at [serenedb.com/searchbench](https://serenedb.com/searchbench) shows it but it isn't the only place we talk about it. If you are interested, this part is covered in the `Search Benchmark, The Game` story here: [Adaptive Posting Lists](https://serenedb.com/blog/search-optimization-5)",
+     "kr": "[@aymi\\_malik](https://www.producthunt.com/@aymi_malik) 님 감사합니다! 놀랍게도 아무런 단점이 없습니다. 오히려 성능 측면에서 막대한 이점이 있죠. 모든 데이터가 고도로 압축되면 스토리지에서 RAM으로 데이터를 가져오는 시간이 줄어들어 전반적인 성능이 크게 향상됩니다. [serenedb.com/searchbench](https://serenedb.com/searchbench)의 벤치마크 결과가 이를 증명하고 있습니다. 관심이 있으시다면 'Search Benchmark, The Game' 블로그 글인 [적응형 포스팅 리스트(Adaptive Posting Lists)](https://serenedb.com/blog/search-optimization-5)에서 이 내용을 자세히 다루고 있으니 확인해 보세요."
+    },
+    {
+     "author": "Andrey Abramov",
+     "is_maker": true,
+     "text": "Hey everyone, I’m Andrey, CTO of SereneDB.\n\nI’ve been building search engines since 2012, and today we’re launching the first production-ready release of SereneDB—the engine I’ve spent over a decade wanting to build. It delivers sub-second full-text search and fast columnar analytics over billions of records in a single engine. It’s open source, Postgres-compatible, light on infrastructure costs, and straightforward enough for a solo builder with a coding assistant to deploy in an afternoon.\n\nBack in 2012, I was building log storage at Quest Software. After spending a month failing with every relational trick in the book, I gave Lucene a try. A crude prototype answered in milliseconds what had been taking seconds. That was the moment I fell into search, and I never climbed out.\n\nLater at EMC, I pitched and built a search project, co-authored a patent, and fought through a six-month corporate saga to get the engine open-sourced. Over the years that followed, I helped grow that prototype into distributed systems running in production at petabyte-scale enterprises.\n\nAlong the way, something bothered me more with every passing year: search stopped moving. Analytical databases got vectorized execution, cost-based optimizers, and decades of academic research. Search engines, on the other hand, still intersect posting lists the exact same way they did when I started. The industry started treating one product's limitations from 2012 as laws of nature.\n\nSereneDB is what happens when you refuse to accept that. We took the execution mechanics of modern analytical databases—optimizer, physical plan, scoring, all of it—and fused them directly with columnar analytics inside one Postgres-compatible box. The index sits over data on object storage, so your hot working set stays small and your cloud bill stays minimal.\n\nWe benchmark everything in the open at [serenedb.com/searchbench](http://serenedb.com/searchbench). Same machine, one instance per engine, 92 search-and-analytics queries, a 60-second cap, and every config and raw result made public.\n\nA few highlights from the board:  \nPostgres**:** Couldn't return 63 out of 92 queries at 100 million records  \nElasticsearch**:** At 1 billion records, its best configuration (out of four) averages about 3x behind us.\n\nClickHouse**:** At 10 billion records, ClickHouse—which is truly the best column store out there—can't run the 22 relevance-ranked queries at all and times out on 22 more. It beats us on 8, and our write-up breaks down exactly where and why.\n\nAsk me anything about the architecture, execution engine, or benchmarks—I'll go as deep into the technical weeds as you'd like.",
+     "kr": "안녕하세요 여러분, SereneDB CTO Andrey입니다.\n\n저는 2012년부터 검색 엔진을 개발해 왔으며, 오늘 10년 넘게 꿈꿔왔던 엔진인 SereneDB의 첫 프로덕션 지원 버전을 출시합니다. 단일 엔진에서 수십억 건의 레코드에 대해 1초 미만의 전문 검색과 빠른 컬럼형 분석을 동시에 제공합니다. 오픈소스이자 Postgres 호환이며, 인프라 비용이 매우 적게 들고, 코딩 어시스턴트를 활용하는 1인 빌더가 반나절 만에 배포할 수 있을 만큼 간단합니다.\n\n2012년 당시 저는 Quest Software에서 로그 스토리지를 구축하고 있었습니다. 온갖 관계형 데이터베이스 기술을 동원해 한 달간 씨름하다 실패한 뒤 Lucene을 써보았습니다. 조잡한 프로토타입이었지만 기존에 수 초가 걸리던 작업을 수 밀리초 만에 처리하더군요. 그 순간 검색 분야에 푹 빠졌고, 이후 빠져나오지 못했습니다.\n\n이후 EMC에서 검색 프로젝트를 제안해 구축하고 특허를 공동 출원했으며, 6개월간의 지난한 과정을 거쳐 해당 엔진을 오픈소스화했습니다. 그 후 몇 년 동안 그 프로토타입을 페타바이트 규모의 엔터프라이즈 프로덕션에서 동작하는 분산 시스템으로 성장시켰습니다.\n\n그 과정에서 매년 저를 괴롭혔던 점이 있었습니다. 바로 '검색의 발전이 멈췄다'는 사실이었습니다. 분석용 데이터베이스들은 벡터화 실행(vectorized execution), 비용 기반 최적화기(CBO), 수십 년간의 학술 연구를 흡수했습니다. 반면 검색 엔진들은 제가 일을 시작했을 때와 똑같은 방식으로 포스팅 리스트를 교차하고 있었습니다. 업계는 2012년 당시 특정 제품의 한계를 마치 불변의 자연법칙처럼 대하기 시작했습니다.\n\nSereneDB는 그러한 현실을 거부했을 때 탄생한 결과물입니다. 저희는 최적화기, 물리적 실행 계획, 스코어링 등 최신 분석용 데이터베이스의 실행 메커니즘을 가져와 하나의 Postgres 호환 박스 안에서 컬럼형 분석과 직접 융합했습니다. 인덱스는 오브젝트 스토리지의 데이터 위에 위치하므로 핫 워킹 세트(hot working set)를 작게 유지하고 클라우드 청구 비용을 최소화할 수 있습니다.\n\n저희는 모든 것을 [serenedb.com/searchbench](http://serenedb.com/searchbench)에 투명하게 공개해 벤치마크했습니다. 동일한 머신, 엔진당 1개 인스턴스, 92개의 검색 및 분석 쿼리, 60초 타임아웃 제한을 걸고 모든 설정과 로우 데이터를 공개했습니다.\n\n대시보드의 주요 하이라이트는 다음과 같습니다:\nPostgres: 1억 건의 레코드에서 92개 쿼리 중 63개를 반환하지 못함\nElasticsearch: 10억 건의 레코드에서 4가지 설정 중 가장 우수한 설정도 저희보다 평균 약 3배 뒤처짐\nClickHouse: 100억 건의 레코드에서 현존 최고의 컬럼 스토어인 ClickHouse조차 관련도 순위 쿼리 22개를 전혀 실행하지 못하고 다른 22개는 타임아웃 발생. 8개 쿼리에서는 저희를 앞섰으며, 저희 분석 글에서 그 이유와 영역을 정확히 분석해 두었습니다.\n\n아키텍처, 실행 엔진, 벤치마크에 대해 무엇이든 물어보세요. 얼마든지 깊은 기술적 내용까지 답변해 드리겠습니다."
+    },
+    {
+     "author": "Mackenzie Jackson",
+     "is_maker": false,
+     "text": "Important technology to be working on. As AI agents expand traffic at a huge rate, database bottlenecks will be production issues you can't prompt your way out of. Cool stuff",
+     "kr": "정말 중요한 기술 분야에 집중하고 계시네요. AI 에이전트로 인해 트래픽이 폭발적으로 증가하면서 데이터베이스 병목 현상은 단순히 프롬프트로 해결할 수 없는 프로덕션 문제가 될 테니까요. 멋진 제품입니다."
+    },
+    {
+     "author": "Svetlana Ragimova",
+     "is_maker": false,
+     "text": "[@mackenzie\\_jackson](https://www.producthunt.com/@mackenzie_jackson) Exactly! Maybe it is not obvious yet, but it's coming! Agents also generate a lot of data on top of that. So the ability of a database to keep everything in one node and run search & analytics right there where the data is located will be essential.",
+     "kr": "[@mackenzie\\_jackson](https://www.producthunt.com/@mackenzie_jackson) 정확한 지적이십니다! 아직은 뚜렷하게 체감되지 않을지 몰라도 곧 다가올 미래입니다! 게다가 에이전트들은 엄청난 양의 데이터를 생성해 내기도 하죠. 따라서 데이터베이스가 단일 노드에 모든 것을 유지하고 데이터가 위치한 그 자리에서 바로 검색과 분석을 실행할 수 있는 역량이 필수적이 될 것입니다."
+    },
+    {
+     "author": "Stepan Solodnev",
+     "is_maker": false,
+     "text": "Congrats! Giving this enterprise-level product away for free is a big deal! I wonder if there are enough large open datasets to even use it to its full capacity?",
+     "kr": "축하합니다! 이 정도 수준의 엔터프라이즈 제품을 무료로 배포한다는 건 대단한 일입니다! 이 엔진의 최대 성능을 온전히 활용할 수 있을 만큼 거대한 오픈 데이터셋이 충분히 있을지 궁금하네요."
+    },
+    {
+     "author": "Andrey Abramov",
+     "is_maker": true,
+     "text": "[@solodnev](https://www.producthunt.com/@solodnev) Thanks! I think reddit dataset might be a good one! :-)",
+     "kr": "[@solodnev](https://www.producthunt.com/@solodnev) 감사합니다! Reddit 데이터셋이 아주 좋은 후보가 될 수 있을 것 같네요! :-)"
+    }
+   ],
+   "slug": "serenedb-krummelanke"
+  },
+  {
+   "name": "thestory.run",
+   "tagline_en": "A writing coach for corporate influencers.",
+   "tagline_kr": "기업 인플루언서를 위한 글쓰기 코치",
+   "image": "https://ph-files.imgix.net/d69db919-ee76-4948-9ff5-5c4d96e44025.png",
+   "categories": [
+    "Writing",
+    "Social Media",
+    "Social media marketing"
+   ],
+   "upvotes": 174,
+   "comments_count": 10,
+   "maker": "Johannes N(@jollife), Maggie Jandová(@maggieja)",
+   "price_model": "프리미엄 (Freemium)",
+   "price_detail": "최대 5인까지 무료(체험 시간제한 및 기능 차단 없음). 5인 초과 시 코칭 세션당 1유로",
+   "desc_kr": "thestory.run은 소셜 미디어 플랫폼에서 자신의 전문성과 스토리를 진정성 있게 알리고자 하는 기업 인플루언서를 위한 AI 글쓰기 코치 서비스다. 사용자를 대신해 글을 써주는 일반적인 생성형 AI와 달리, 숙련된 인터뷰어처럼 질문을 던져 작성자가 전달하려는 핵심 주장과 스토리 구조를 스스로 도출하도록 이끈다. AI가 사용자의 문체를 흉내 내는 대필자(ghostwriter)가 되는 대신, 스토리 아크를 잡아주고 실제 문장은 사용자가 직접 자신의 목소리로 쓰도록 만든다. 또한 사용자가 어떤 분야로 인정받기를 원하는지 기억하여 글의 방향성이 흩어지지 않도록 피드백을 제공한다. 최대 5인까지 기간 제한 없이 무료로 사용할 수 있으며 이후에는 세션당 1유로의 투명한 가격제를 채택했다.",
+   "launch_url_used": "https://www.producthunt.com/products/thestory-run",
+   "comment_summary": "AI가 글을 대신 써주는 시대에 오히려 질문을 통해 사용자의 생각과 고유한 글쓰기 역량을 이끌어낸다는 '대필자가 아닌 코치'라는 방향성에 호평이 집중되었다. 5인 무료 및 세션당 1유로라는 독특하고 합리적인 요금제와 Swat.io 등 소셜 관리 툴과의 연동 가능성에 대한 관심이 높았다. 코치가 다음 세션에서도 사용자의 핵심 메시지를 기억해 지속적인 글쓰기 지도를 제공하는지에 대한 질문에 메이커는 구조와 메시지를 잡는 마법 같은 경험을 직접 체험해 보길 권했다.",
+   "warnings": "수치(업보트 174·댓글 10)는 수집 시점 참고치. 현재 수집된 댓글 10개 전수 반영 완료.",
+   "comments": [
+    {
+     "author": "Johannes N",
+     "is_maker": true,
+     "text": "📌\n\nHey PH, Johannes here. This started as an embarrassing internal failure. At Swat.io we run a social media management tool for 1,700+ brands, so we thought getting our own people posting on LinkedIn would be easy and obvious. Seven signed up. Two to three were still posting a month later. The rest? Did not know what to write about, did not stay motivated enough over time. Our very own social media manager tried to keep momentum, but she did not have time for a 1:1 sparring with everyone. On the other hand, Claude and other tools came up and suddenly there was AI-written long-form content everywhere. It just did not sound any human anymore after AI took over on it's own to prepare full content schedules. We lost even more people who were excited in the first place. As software as a service builders, we sat together and discussed how can we improve the situation for us internally and for our customers. And after watching the first Ted Lasso episode of the current season, it was obvious, what was missing: A coach that helps you become better on your own. thestory.run does exactly that. The coach asks you questions, the way a good interviewer would, until you know what you actually want to say and why it's worth someone's time. Then it hands you the arc and marks what carries the post. You write the words. Always. It never learns your style, because imitating you is just ghostwriting with extra steps. It remembers what you said you wanted to be known for, so it can tell you when you're drifting. If you want a generic post in 30 seconds, there are 50 better products here today. If you're genuinely interested in what you're posting on your profile, there's no better tool than thestory.run. To also brighten up how tools can be built in a modern age: We made it free for up to five people with no trial clock and no feature gates. Above that you pay 1 euro per coaching session and nothing else. We're super curious to see how this works. What I'd really love from you: tell me what coaches you'd love to have in your day to day live to keep getting better over time. And what kind of coaching personality would you like to have for that? We're still tuning, so let me know what you think about the product and where the coach helped you and what name you gave your coach. Mine, ofc, is called Ted. PS: Yes, once succesful, we'll drop \"the\" from the product name. For that, we just need our very first 18,000 coaching sessions, according to the current domain holder.",
+     "kr": "📌\n\n안녕하세요 PH, Johannes입니다. 이 프로젝트는 사실 부끄러운 사내 실패에서 시작되었습니다. 저희는 Swat.io에서 1,700개 이상의 브랜드를 위한 소셜 미디어 관리 도구를 운영하고 있기에, 저희 직원들이 LinkedIn에 글을 올리도록 하는 것은 당연히 쉽고 자연스러울 것이라 생각했습니다. 7명이 신청했습니다. 하지만 한 달 뒤에도 여전히 글을 올리고 있던 사람은 2~3명뿐이었습니다. 나머지는요? 무엇에 대해 써야 할지 몰랐고, 시간이 지나면서 동기 부여를 유지하지 못했습니다. 저희 사내 소셜 미디어 매니저가 분위기를 띄우려 애썼지만, 모든 사람과 1:1로 스파링을 해줄 시간이 없었죠. 한편 Claude와 다른 도구들이 등장하면서 도처에 AI가 작성한 긴 글들이 넘쳐나기 시작했습니다. AI가 전체 콘텐츠 일정을 대신 짜면서 더 이상 사람의 목소리처럼 느껴지지 않게 되었습니다. 처음에 의욕을 가졌던 사람들조차 더 많이 이탈했죠. SaaS 빌더로서 저희는 한자리에 모여 사내 구성원과 고객들을 위해 이 상황을 어떻게 개선할 수 있을지 논의했습니다. 그리고 '테드 래소(Ted Lasso)' 시즌의 첫 에피소드를 본 후, 무엇이 빠졌는지 분명해졌습니다. 바로 스스로 더 나아질 수 있도록 도와주는 '코치'였습니다. thestory.run이 바로 그 역할을 합니다. 훌륭한 인터뷰어처럼 코치가 질문을 던져 여러분이 실제로 무엇을 말하고 싶은지, 왜 그것이 다른 사람들의 시간을 들여 읽을 가치가 있는지 깨닫게 해줍니다. 그런 다음 스토리 아크를 건네주고 글의 뼈대가 될 핵심을 짚어줍니다. 글을 직접 쓰는 것은 언제나 여러분 자신입니다. AI는 여러분의 문체를 절대 학습하지 않습니다. 당신을 모방하는 것은 번거로운 단계를 거친 대필에 불과하니까요. 코치는 여러분이 어떤 주제로 알려지기를 원했는지를 기억하여 글의 방향이 빗나갈 때 이를 바로잡아 줍니다. 30초 만에 나오는 뻔한 글을 원하신다면 오늘 이곳에 더 나은 제품이 50개는 있습니다. 하지만 프로필에 올리는 글에 진심이시라면 thestory.run보다 더 나은 도구는 없습니다. 또한 요즘 시대에 걸맞은 도구를 제공하기 위해, 최대 5명까지는 체험 기간 제한이나 기능 잠금 없이 완전 무료로 제공합니다. 그 이상의 인원은 코칭 세션당 1유로만 지불하시면 됩니다. 이 방식이 어떻게 작동할지 무척 궁금합니다. 여러분께 꼭 여쭙고 싶은 점이 있습니다. 매일 더 발전하기 위해 일상에서 어떤 코치를 두고 싶으신가요? 그리고 어떤 성격의 코칭 페르소나를 원하시나요? 저희는 여전히 튜닝 중이니 제품에 대한 생각과 코치가 어떤 도움을 주었는지, 코치에게 어떤 이름을 붙여주셨는지 알려주세요. 물론 제 코치의 이름은 '테드(Ted)'입니다. 추신: 네, 성공하면 제품 이름에서 \"the\"를 뗄 예정입니다. 현재 도메인 소유자에 따르면 이를 위해 첫 18,000번의 코칭 세션만 달성하면 됩니다."
+    },
+    {
+     "author": "Rolf Mistelbacher",
+     "is_maker": false,
+     "text": "I have tested this for a bit and think it has a genuinely fresh approach, and that means something in AI-agentic app times. Having people focus on the value of the piece of text you are writing is much needed in these times.",
+     "kr": "이 제품을 잠시 테스트해 보았는데 진정으로 신선한 접근 방식을 가졌다고 생각하며, AI 에이전트 앱이 넘쳐나는 요즘 시대에 이는 매우 의미 있는 일입니다. 작성하고 있는 글 한 편의 가치에 사람들이 집중하도록 만드는 것은 요즘 시대에 정말 꼭 필요한 일입니다."
+    },
+    {
+     "author": "Johannes N",
+     "is_maker": true,
+     "text": "[@rolf\\_mistelbacher](https://www.producthunt.com/@rolf_mistelbacher) thanks for already beta-testing this. always happy to receive feedback before we're hitting producthunt with a new product. keep up your posts on linkedin!",
+     "kr": "[@rolf\\_mistelbacher](https://www.producthunt.com/@rolf_mistelbacher) 미리 베타 테스트에 참여해 주셔서 감사합니다. 신제품으로 Product Hunt에 나오기 전에 피드백을 받는 것은 언제나 기쁜 일입니다. LinkedIn에 계속해서 좋은 글 올려주세요!"
+    },
+    {
+     "author": "Gero Pflüger",
+     "is_maker": false,
+     "text": "The developer, Johannes, shared the tool with me even before it was officially launched. Normally, I outsource my thinking and creativity to some form of AI, thereby stifling my creativity in the long run (yes, I have already noticed a shrinking of own ideas). This tool, on the other hand, uses AI to help me reclaim my creativity. I really like that. The affordable pricing model is also great. Now all I’m hoping for is an integration with [swat.io](http://swat.io/) – then I’d be completely happy.",
+     "kr": "개발자인 Johannes가 공식 출시 전부터 저에게 이 도구를 공유해 주었습니다. 보통 저는 생각과 창의성을 AI에 외주화하곤 했고, 그로 인해 장기적으로는 저 자신의 창의성이 질식당하고 있었습니다(네, 제 스스로의 아이디어가 줄어드는 것을 이미 느끼고 있었습니다). 반면 이 도구는 AI를 활용해 제 창의성을 되찾도록 도와줍니다. 이 점이 정말 마음에 듭니다. 부담 없는 가격 모델도 훌륭하고요. 이제 swat.io와의 연동만 이뤄진다면 더할 나위 없이 완벽할 것 같습니다."
+    },
+    {
+     "author": "Johannes N",
+     "is_maker": true,
+     "text": "[@geropflueger](https://www.producthunt.com/@geropflueger) thanks for sharing your early feedback on using it - glad you reclaimed your creativity! we're working hard on extending features / adding more integrations.",
+     "kr": "[@geropflueger](https://www.producthunt.com/@geropflueger) 초기 사용 후기를 공유해 주셔서 감사합니다. 창의성을 되찾으셨다니 정말 기쁘네요! 기능 확장과 더 많은 연동 추가를 위해 열심히 작업하고 있습니다."
+    },
+    {
+     "author": "Eugene Nechvoloda",
+     "is_maker": false,
+     "text": "This is definitely something new and worth attention. I tested it and it's really cool. Not yet another AI assistant that writes the posts for you but actually helps you bring out the best writing skills in yourself!",
+     "kr": "확실히 새롭고 주목할 만한 제품입니다. 직접 테스트해 보았는데 정말 멋집니다. 대신 글을 써주는 흔해 빠진 또 하나의 AI 어시스턴트가 아니라, 사용자 본인의 최고의 글쓰기 역량을 실제로 이끌어내 주는 도구입니다!"
+    },
+    {
+     "author": "Maggie Jandová",
+     "is_maker": true,
+     "text": "[@eugene\\_nechvoloda1](https://www.producthunt.com/@eugene_nechvoloda1) thank you for the feedback, we believe that anyone can write and get better at sharing their voice authentically. All we need is a little help sometimes and that's where the coach aspect comes in.",
+     "kr": "[@eugene\\_nechvoloda1](https://www.producthunt.com/@eugene_nechvoloda1) 피드백 감사합니다. 저희는 누구나 글을 쓸 수 있고 자신의 진정한 목소리를 나누는 데 더 익숙해질 수 있다고 믿습니다. 가끔은 약간의 도움이 필요할 뿐이며, 바로 그 지점에서 코치의 역할이 빛을 발합니다."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "And then what? Does the coach take note of what stuck and use it for the next meeting?  \nBtw, Congratulations [@jollife](https://www.producthunt.com/@jollife) & [@maggieja](https://www.producthunt.com/@maggieja) 🎊✌️",
+     "kr": "그리고 나서는 어떻게 되나요? 코치가 무엇이 효과적이었는지 기록해 두었다가 다음 미팅 때 활용하나요?  \n그나저나 [@jollife](https://www.producthunt.com/@jollife) 님과 [@maggieja](https://www.producthunt.com/@maggieja) 님 축하드립니다 🎊✌️"
+    },
+    {
+     "author": "Johannes N",
+     "is_maker": true,
+     "text": "[@maggieja](https://www.producthunt.com/@maggieja)  [@aymi\\_malik](https://www.producthunt.com/@aymi_malik) it helps you in finding the key messages / arguments of your post, and presents you with a story arc, so that you can write the post yourself, based on the strong messages and the structure that makes sense. just give it a try! it feels magic the first times you're using it.",
+     "kr": "[@maggieja](https://www.producthunt.com/@maggieja) [@aymi\\_malik](https://www.producthunt.com/@aymi_malik) 글의 핵심 메시지와 주장을 찾는 것을 돕고 스토리 아크를 제시해 주므로, 명확한 메시지와 타당한 구조를 바탕으로 직접 글을 작성할 수 있습니다. 꼭 한번 써보세요! 처음 써보시면 정말 마법처럼 느껴질 겁니다."
+    },
+    {
+     "author": "Cole Sanderson",
+     "is_maker": false,
+     "text": "Really like the “coach, not writer” angle. Feels much more useful than another AI tool that just writes everything for you. Congrats on the launch!",
+     "kr": "'작가가 아닌 코치'라는 관점이 정말 마음에 듭니다. 모든 것을 알아서 써주는 또 다른 AI 도구보다 훨씬 더 유용하게 느껴집니다. 출시 축하드립니다!"
+    }
+   ],
+   "slug": "thestory-run"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div></div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>

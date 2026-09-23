@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-09-23",
+    "url": "2026-09-23/",
+    "top_product": "Clueso MCP",
+    "count": 5,
+    "upvotes_total": 1347,
+    "comments_total": 56
+  },
+  {
     "date": "2026-09-22",
     "url": "2026-09-22/",
     "top_product": "Superset Mobile",
