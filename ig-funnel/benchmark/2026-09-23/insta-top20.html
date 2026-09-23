@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>[2026-09-23] 인스타그램 벤치마킹 반응 Top 20 리포트</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #1e293b;
+      --card-inner: #0f172a;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --accent: #ec4899;
+      --highlight: #f43f5e;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
+    .container {
+      max-width: 1240px;
+      width: 96%;
+      margin: 0 auto;
+    }
+    .top-nav {
+      margin-bottom: 20px;
+    }
+    .top-nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+    .header-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .task-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      background: #131d31;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .meta-item strong {
+      color: #e2e8f0;
+    }
+    .formula-box {
+      margin-top: 14px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      color: #bae6fd;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 32px 0 16px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    /* Table (규칙 7: 가로스크롤 0px, 컴팩트 패딩) */
+    .table-container {
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 32px;
+    }
+    @media (min-width: 1024px) {
+      .table-container {
+        overflow-x: hidden;
+      }
+    }
+    @media (max-width: 1023px) {
+      .table-container {
+        overflow-x: auto;
+      }
+    }
+    table {
+      width: 100%;
+      table-layout: auto;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      text-align: left;
+    }
+    th, td {
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    th {
+      background: #172033;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.82rem;
+    }
+    tr:hover td {
+      background: #223049;
+    }
+    .rank-cell {
+      text-align: center;
+      color: var(--primary);
+      font-size: 0.95rem;
+      width: 45px;
+    }
+    .metric-cell {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .badge-tag {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .celeb-tag {
+      background: rgba(236, 72, 153, 0.15);
+      color: #f472b6;
+      border: 1px solid rgba(236, 72, 153, 0.3);
+    }
+    .fmt-video {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .fmt-card {
+      background: rgba(147, 51, 234, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(147, 51, 234, 0.3);
+    }
+    .link-btn {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 2px 7px;
+      border: 1px solid var(--primary);
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+    .link-btn:hover {
+      background: var(--primary);
+      color: #0b1120;
+    }
+    /* Cards */
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .rank-badge {
+      background: var(--primary);
+      color: #0b1120;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+    .card-title-group {
+      flex: 1;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .card-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .card-subtitle a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .score-box {
+      text-align: right;
+    }
+    .score-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .score-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #38bdf8;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .metric-item {
+      background: var(--card-inner);
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .m-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .m-val {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-top: 2px;
+    }
+    .m-val.highlight {
+      color: var(--highlight);
+    }
+    .section-block {
+      background: var(--card-inner);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      border-left: 3px solid var(--accent);
+    }
+    .block-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #f472b6;
+      margin-bottom: 6px;
+    }
+    .analysis-text {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+    .caption-quote {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: rgba(0,0,0,0.2);
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+    .source-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .source-link:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 48px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-nav">
+      <a href="../index.html">← 리포트 허브 목록으로 돌아가기</a>
+    </div>
+
+    <header>
+      <div class="header-title-row">
+        <span class="task-badge">[A작업] 벤치마킹 Top 20</span>
+        <h1>인스타그램 벤치마킹 반응 Top 20</h1>
+      </div>
+      <div class="meta-bar">
+        <div class="meta-item">데이터 기준일: <strong>2026-09-23</strong></div>
+        <div class="meta-item">분석 대상 기간: <strong>최근 14일 (2026-09-09 ~ 2026-09-23)</strong></div>
+        <div class="meta-item">분석 채널: <strong>옵시디언 9개 벤치마킹 계정</strong></div>
+      </div>
+      <div class="formula-box">
+        📊 <strong>퍼널 평가 산식:</strong> 점수 = 좋아요 + (댓글 × 5) + (조회수 ÷ 10) 
+        <span style="color:var(--text-muted); font-size:0.8rem; margin-left:6px;">(댓글은 DM 퍼널 전환의 핵심 신호로 가중 평가 · 가로스크롤 0px 최적화)</span>
+      </div>
+    </header>
+
+    <main>
+      <h2 class="section-title">🏆 Top 20 핵심 요약</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>셀럽/인물</th>
+              <th>아이템/주제</th>
+              <th>채널</th>
+              <th style="text-align:right;">종합 점수</th>
+              <th style="text-align:right;">댓글</th>
+              <th style="text-align:right;">좋아요</th>
+              <th style="text-align:right;">조회수</th>
+              <th style="text-align:center;">게시물</th>
+              <th style="text-align:center;">추천형식</th>
+            </tr>
+          </thead>
+          <tbody>
+
+        <tr>
+          <td class="rank-cell"><strong>1</strong></td>
+          <td><span class="badge-tag celeb-tag">일반/바이럴</span></td>
+          <td><strong>밤 (제철간식/주방꿀템)</strong></td>
+          <td><a href="https://instagram.com/gomson.recipe" target="_blank" rel="noopener">@gomson.recipe</a></td>
+          <td class="metric-cell">40,829.1</td>
+          <td class="metric-cell">6,132</td>
+          <td class="metric-cell">896</td>
+          <td class="metric-cell">92,731</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdI2YLNyVfS/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>2</strong></td>
+          <td><span class="badge-tag celeb-tag">손예진</span></td>
+          <td><strong>돼지 감자빵 (건강빵/저당식품)</strong></td>
+          <td><a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a></td>
+          <td class="metric-cell">33,693.0</td>
+          <td class="metric-cell">6,610</td>
+          <td class="metric-cell">643</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdTskKbARdZ/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>3</strong></td>
+          <td><span class="badge-tag celeb-tag">츄안도 탄</span></td>
+          <td><strong>항산화 (노화방지 식단)</strong></td>
+          <td><a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a></td>
+          <td class="metric-cell">29,076.0</td>
+          <td class="metric-cell">5,713</td>
+          <td class="metric-cell">511</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdTlg1oGtsW/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>4</strong></td>
+          <td><span class="badge-tag celeb-tag">김강우</span></td>
+          <td><strong>건강주스 (모발건강/서리태귀리)</strong></td>
+          <td><a href="https://instagram.com/remio.pick" target="_blank" rel="noopener">@remio.pick</a></td>
+          <td class="metric-cell">28,812.0</td>
+          <td class="metric-cell">5,494</td>
+          <td class="metric-cell">1,342</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdEGavgAXiT/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>5</strong></td>
+          <td><span class="badge-tag celeb-tag">조현아</span></td>
+          <td><strong>채소 (다이어트 채소식단)</strong></td>
+          <td><a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a></td>
+          <td class="metric-cell">25,633.0</td>
+          <td class="metric-cell">5,011</td>
+          <td class="metric-cell">578</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/Ddau-uVGjQJ/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>6</strong></td>
+          <td><span class="badge-tag celeb-tag">일반/바이럴</span></td>
+          <td><strong>아식스 (트레일화/스니커즈)</strong></td>
+          <td><a href="https://instagram.com/remio.pick" target="_blank" rel="noopener">@remio.pick</a></td>
+          <td class="metric-cell">25,241.0</td>
+          <td class="metric-cell">4,716</td>
+          <td class="metric-cell">1,661</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdQ-KO4k8VC/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>7</strong></td>
+          <td><span class="badge-tag celeb-tag">일반/바이럴</span></td>
+          <td><strong>항산화 (노화방지 식단)</strong></td>
+          <td><a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a></td>
+          <td class="metric-cell">25,184.0</td>
+          <td class="metric-cell">4,929</td>
+          <td class="metric-cell">539</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdWRNHegcMi/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>8</strong></td>
+          <td><span class="badge-tag celeb-tag">세탁 전문가</span></td>
+          <td><strong>기름 얼룩 (얼룩제거제/세탁)</strong></td>
+          <td><a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a></td>
+          <td class="metric-cell">21,671.8</td>
+          <td class="metric-cell">3,603</td>
+          <td class="metric-cell">315</td>
+          <td class="metric-cell">33,418</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdPx7GdhESh/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>9</strong></td>
+          <td><span class="badge-tag celeb-tag">살림 전문가</span></td>
+          <td><strong>바퀴 (부착식 무빙바퀴)</strong></td>
+          <td><a href="https://instagram.com/home.it_insta" target="_blank" rel="noopener">@home.it_insta</a></td>
+          <td class="metric-cell">21,526.8</td>
+          <td class="metric-cell">2,154</td>
+          <td class="metric-cell">1,540</td>
+          <td class="metric-cell">92,168</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdSQxdxzepm/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>10</strong></td>
+          <td><span class="badge-tag celeb-tag">손예진</span></td>
+          <td><strong>빵 (건강빵/베이커리)</strong></td>
+          <td><a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a></td>
+          <td class="metric-cell">21,333.0</td>
+          <td class="metric-cell">4,186</td>
+          <td class="metric-cell">403</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdT2XXDGgJv/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>11</strong></td>
+          <td><span class="badge-tag celeb-tag">비</span></td>
+          <td><strong>항산화 (노화방지 식단)</strong></td>
+          <td><a href="https://instagram.com/remio.pick" target="_blank" rel="noopener">@remio.pick</a></td>
+          <td class="metric-cell">20,650.0</td>
+          <td class="metric-cell">4,030</td>
+          <td class="metric-cell">500</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/Ddd2hhWE8F8/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>12</strong></td>
+          <td><span class="badge-tag celeb-tag">비</span></td>
+          <td><strong>생활/건강 아이템</strong></td>
+          <td><a href="https://instagram.com/gomson.salim" target="_blank" rel="noopener">@gomson.salim</a></td>
+          <td class="metric-cell">19,874.0</td>
+          <td class="metric-cell">3,916</td>
+          <td class="metric-cell">294</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdJcuyIgXcS/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>13</strong></td>
+          <td><span class="badge-tag celeb-tag">김혜수</span></td>
+          <td><strong>과자 (저칼로리 스낵)</strong></td>
+          <td><a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a></td>
+          <td class="metric-cell">19,101.0</td>
+          <td class="metric-cell">3,760</td>
+          <td class="metric-cell">301</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdWMCPzGn5Q/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>14</strong></td>
+          <td><span class="badge-tag celeb-tag">김혜수</span></td>
+          <td><strong>과자 (저칼로리 스낵)</strong></td>
+          <td><a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a></td>
+          <td class="metric-cell">18,664.0</td>
+          <td class="metric-cell">3,667</td>
+          <td class="metric-cell">329</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdcokNggTl2/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>15</strong></td>
+          <td><span class="badge-tag celeb-tag">하지원</span></td>
+          <td><strong>생활/건강 아이템</strong></td>
+          <td><a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a></td>
+          <td class="metric-cell">18,578.0</td>
+          <td class="metric-cell">3,621</td>
+          <td class="metric-cell">473</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdRGa3eAUqq/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>16</strong></td>
+          <td><span class="badge-tag celeb-tag">비</span></td>
+          <td><strong>생활/건강 아이템</strong></td>
+          <td><a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a></td>
+          <td class="metric-cell">18,429.0</td>
+          <td class="metric-cell">3,556</td>
+          <td class="metric-cell">649</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdOGerUgYCn/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>17</strong></td>
+          <td><span class="badge-tag celeb-tag">일반/바이럴</span></td>
+          <td><strong>생활/건강 아이템</strong></td>
+          <td><a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a></td>
+          <td class="metric-cell">17,542.0</td>
+          <td class="metric-cell">3,448</td>
+          <td class="metric-cell">302</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdcqbS6ARkF/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>18</strong></td>
+          <td><span class="badge-tag celeb-tag">57세 최고령 산모</span></td>
+          <td><strong>생활/건강 아이템</strong></td>
+          <td><a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a></td>
+          <td class="metric-cell">17,455.0</td>
+          <td class="metric-cell">3,397</td>
+          <td class="metric-cell">470</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdaBK-NgVkg/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>19</strong></td>
+          <td><span class="badge-tag celeb-tag">손예진</span></td>
+          <td><strong>소고기 (단백질식단/소고기)</strong></td>
+          <td><a href="https://instagram.com/gomson.recipe" target="_blank" rel="noopener">@gomson.recipe</a></td>
+          <td class="metric-cell">17,153.0</td>
+          <td class="metric-cell">3,338</td>
+          <td class="metric-cell">463</td>
+          <td class="metric-cell">0</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdK7qTxEhiv/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>20</strong></td>
+          <td><span class="badge-tag celeb-tag">비</span></td>
+          <td><strong>밤 (제철간식/주방꿀템)</strong></td>
+          <td><a href="https://instagram.com/ko.kkiri.pick" target="_blank" rel="noopener">@ko.kkiri.pick</a></td>
+          <td class="metric-cell">17,078.0</td>
+          <td class="metric-cell">3,047</td>
+          <td class="metric-cell">316</td>
+          <td class="metric-cell">15,270</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.instagram.com/p/DdP2l0iPknY/" target="_blank" rel="noopener">보기</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title">🔍 항목별 심층 퍼널 분석 (Top 1 ~ 20)</h2>
+      <div class="cards-container">
+
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 1</div>
+            <div class="card-title-group">
+              <h3 class="card-title">일반/바이럴 × 밤 (제철간식/주방꿀템)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/gomson.recipe" target="_blank" rel="noopener">@gomson.recipe</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">40,829.1점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">6,132개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">896개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">92,731회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">결핍과 궁금증을 자극하는 미스터리형 후킹 카피로 이탈을 방지함. 제품명을 직접 밝히지 않고 발언 클립에 집중시켜 자발적 제품 문의 댓글을 유발함. 좋아요 대비 댓글 비율(684.4%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"💛 밤 절대 그냥 삶지 마세요
+
+✔ 병뚜껑에 밤을 끼워 안전하게 칼집 내고
+✔ 삶을 때 이것 두 가지 넣기
+✔ 익은 밤은 껍질 벗기기도 한결 쉽게 🌰✨
+
+포슬포슬한 밤 좋아하신다면
+알아두면 유용한 방법이에요.
+
+💬 ..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdI2YLNyVfS/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 2</div>
+            <div class="card-title-group">
+              <h3 class="card-title">손예진 × 돼지 감자빵 (건강빵/저당식품)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">33,693.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">6,610개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">643개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(1028.0%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"손예진님이 극찬한 5천원짜리 빵?! 👀
+냉부해 셰프들도 보자마자
+그 자리에서 바로 주문하더라구요ㅋㅋ
+
+건강빵인데 식감도 좋고,
+너무 맛있어서 손예진 님 가족들도
+자주 먹는다고 해요🥹
+
+게다가 당류는 2g밖에 안 들어..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdTskKbARdZ/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 3</div>
+            <div class="card-title-group">
+              <h3 class="card-title">츄안도 탄 × 항산화 (노화방지 식단)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">29,076.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">5,713개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">511개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(1118.0%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"☑️ 댓글에 (나도) 남겨주세요!
+
+올해 60세라는 츄안도 탄의 동안 비결이 대체 뭘까요?😳
+수십 년째 매일 한 끼로 꼭 챙겼다는 음식이 있다는데요!
+
+그 안에 들어가는 비법재료가
+항산화와 관련해 주목받는 성분이라고..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdTlg1oGtsW/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 4</div>
+            <div class="card-title-group">
+              <h3 class="card-title">김강우 × 건강주스 (모발건강/서리태귀리)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/remio.pick" target="_blank" rel="noopener">@remio.pick</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">28,812.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">5,494개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">1,342개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 제품명을 직접 밝히지 않고 발언 클립에 집중시켜 자발적 제품 문의 댓글을 유발함. 좋아요 대비 댓글 비율(409.4%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"48세 김강우님이 무려 10년 넘게 아침마다 챙겨 마신다고 알려진 건강주스인데요!
+
+한 잔만 마셔도 꽤 든든하고 포만감이 오래가는 편이라 바쁜 아침 식사 대용으로 챙기기 좋고, 단백질과 식이섬유, 좋은 지방까지 한 ..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdEGavgAXiT/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 5</div>
+            <div class="card-title-group">
+              <h3 class="card-title">조현아 × 채소 (다이어트 채소식단)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">25,633.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">5,011개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">578개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(867.0%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"☑️ 댓글에 (채소) 남겨주세요!
+
+최근 건강하게 체중 관리를 이어간
+조현아 님의 식단이 화제인데요✨
+
+무겁게 먹기보다 채소 위주로 가볍게 챙기면서
+특히 자주 먹었다는 ‘이 채소’가 있다고 해요👀
+
+식이섬유도 풍부해..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/Ddau-uVGjQJ/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 6</div>
+            <div class="card-title-group">
+              <h3 class="card-title">일반/바이럴 × 아식스 (트레일화/스니커즈)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/remio.pick" target="_blank" rel="noopener">@remio.pick</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">25,241.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">4,716개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">1,661개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">결핍과 궁금증을 자극하는 미스터리형 후킹 카피로 이탈을 방지함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(283.9%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"요즘 아식스 신상 중에 이거 진짜 예쁘게 나온듯..🤎
+
+딱 처음 봤을때는 디자인 때문에 눈에 들어왔는데
+알아보니까 원래 2000년대 트레일화에서 영감 받아서 만든 모델이라 특유의 빈티지하면서도 힙한 느낌 제대로👀
+
+..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdQ-KO4k8VC/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 7</div>
+            <div class="card-title-group">
+              <h3 class="card-title">일반/바이럴 × 항산화 (노화방지 식단)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">25,184.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">4,929개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">539개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(914.5%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"타임지 선정 세계 최강 동안 1위ㄷㄷ
+올해 60세 라는게 믿기지 않네요🔥
+
+수십년 째 식단으로 이걸 드셨다고 해요.
+가장 강력한 항산화 물질로 유명한데
+노화를 막는 유일한 식품이라고도
+알려져 있더라구요!👀
+
+섬유질도..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdWRNHegcMi/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 8</div>
+            <div class="card-title-group">
+              <h3 class="card-title">세탁 전문가 × 기름 얼룩 (얼룩제거제/세탁)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">21,671.8점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">3,603개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">315개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">33,418회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">결핍과 궁금증을 자극하는 미스터리형 후킹 카피로 이탈을 방지함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(1143.8%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"세탁소 사장님들은 절대 보지 마세요!🤫
+옷에 기름 얼룩 묻으면 주방세제로 아무리 문질러도
+잘 안 지워지는 경우 많잖아요😭
+
+근데 이거 그냥 칙칙 뿌리고 탈탈 털어주기만 하면
+묵은 기름 얼룩까지 싹 지워지는 거 있죠?..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdPx7GdhESh/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 9</div>
+            <div class="card-title-group">
+              <h3 class="card-title">살림 전문가 × 바퀴 (부착식 무빙바퀴)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/home.it_insta" target="_blank" rel="noopener">@home.it_insta</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">21,526.8점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">2,154개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">1,540개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">92,168회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">직관적인 비포애프터 및 효능 체감 문구로 대중적 공감대를 형성함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(139.9%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"청소할 때마다 무거운 거 옮기는 게
+은근 일이잖아요🥹
+
+근데 밑에 이거 하나 붙여두니까
+무거운 물건도 힘 안 들이고 쓱- 밀 수 있어서
+청소할 때 진짜 편하더라고요✨
+
+다이소 제품은 4개 부착 기준 최대 8kg,
+조..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdSQxdxzepm/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 10</div>
+            <div class="card-title-group">
+              <h3 class="card-title">손예진 × 빵 (건강빵/베이커리)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">21,333.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">4,186개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">403개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">직관적인 비포애프터 및 효능 체감 문구로 대중적 공감대를 형성함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(1038.7%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"☑️ 댓글에 (나도) 남겨주세요!
+❤️답글이 달리지 않아도 디엠 갑니다😁
+
+손예진 님이 xx에서 우연히 발견했다가
+맛있어서 계속 찾게 됐다는 **‘이 빵’**🥖✨
+
+그냥 먹어도 맛있지만
+올리브유에 발사믹까지 곁들이면..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdT2XXDGgJv/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 11</div>
+            <div class="card-title-group">
+              <h3 class="card-title">비 × 항산화 (노화방지 식단)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/remio.pick" target="_blank" rel="noopener">@remio.pick</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">20,650.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">4,030개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">500개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(806.0%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"57세에 쌍둥이를 출산해 화제가 됐던 최고령 산모👶🏻
+
+늦은 나이에 출산을 준비하면서 평소 먹는 것부터 꾸준히 신경 썼다고 하는데요👀
+특히 매일 먹는 밥에도 그냥 흰쌀만 먹기보다 이걸 꼭 섞어 챙기는 식습관을 유지했..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/Ddd2hhWE8F8/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 12</div>
+            <div class="card-title-group">
+              <h3 class="card-title">비 × 생활/건강 아이템</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/gomson.salim" target="_blank" rel="noopener">@gomson.salim</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">19,874.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">3,916개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">294개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 제품명을 직접 밝히지 않고 발언 클립에 집중시켜 자발적 제품 문의 댓글을 유발함. 좋아요 대비 댓글 비율(1332.0%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"[광고]
+속도가 너무 빨라서 오히려 무서워 그만뒀다는 식단😳
+
+특히 단기간 식단 관리할 때
+이 조합만 한 게 없다며 추천하길래
+저도 보자마자 바로 저장해뒀어요👀✨
+
+👉 “비결” 남겨주세요 💌..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdJcuyIgXcS/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 13</div>
+            <div class="card-title-group">
+              <h3 class="card-title">김혜수 × 과자 (저칼로리 스낵)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">19,101.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">3,760개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">301개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">직관적인 비포애프터 및 효능 체감 문구로 대중적 공감대를 형성함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(1249.2%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"☑️ 댓글에 (나도) 남겨주세요!
+☑️ 답글 달리지 않아도 디엠 갑니다!
+과자 먹고 살찌면 안 된다고 말했던 김혜수 님도
+도저히 못 끊는 최애 과자가 있다고 해요😳
+
+배부른 느낌 없이 계속 손이 가고,
+오래 먹어도 ..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdWMCPzGn5Q/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 14</div>
+            <div class="card-title-group">
+              <h3 class="card-title">김혜수 × 과자 (저칼로리 스낵)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">18,664.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">3,667개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">329개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">직관적인 비포애프터 및 효능 체감 문구로 대중적 공감대를 형성함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(1114.6%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"김혜수님이 극찬한 최애 과자👀
+같이 먹어본 사람들까지 전부
+인생 과자라고 난리였다는데요!
+
+한번 먹기 시작하면 자꾸 손이 가고
+먹어도 먹어도 계속 당긴다는 이 과자...🤭
+도대체 얼마나 맛있길래 그러나 싶어서
+저도 ..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdcokNggTl2/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 15</div>
+            <div class="card-title-group">
+              <h3 class="card-title">하지원 × 생활/건강 아이템</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">18,578.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">3,621개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">473개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(765.5%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"네?! 15년동안 매일 마셨다구요?!👀
+최근 한층 더 슬림하고 생기 있어진 모습으로
+눈길을 끄는 하지원 님✨
+
+알고 보니 평소 건강 관리를 위해
+아침마다 꾸준히 챙겨 마시는 게 있다고 하는데요👀
+
+마시면 잠도 깨는 ..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdRGa3eAUqq/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 16</div>
+            <div class="card-title-group">
+              <h3 class="card-title">비 × 생활/건강 아이템</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/tem.duck" target="_blank" rel="noopener">@tem.duck</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">18,429.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">3,556개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">649개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(547.9%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"지구에서 가장 완벽한 음식이라고?!😳
+신체나이가 무려 10대로 나와서
+의사 선생님도 깜짝 놀랐다고 해요✨
+
+알고 보니 무려 21년 동안
+매일 빠짐없이 챙겨 드셨다고 하더라구요.
+꾸준함이 정말 대단하죠?👏
+
+건강에 관..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdOGerUgYCn/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 17</div>
+            <div class="card-title-group">
+              <h3 class="card-title">일반/바이럴 × 생활/건강 아이템</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">17,542.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">3,448개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">302개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(1141.7%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"☑️ 댓글에 (나도) 남겨주세요!
+☑️ 답글 안달려도 디엠 갑니다!
+
+먹는 걸 워낙 좋아한다는 쌈디 님✨
+평소엔 1일 1식으로 식사량을 조절하기도 한다고 하는데요.
+
+최근 식단 관리하는 분들이 많이 먹는
+‘이 메뉴’..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdcqbS6ARkF/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 18</div>
+            <div class="card-title-group">
+              <h3 class="card-title">57세 최고령 산모 × 생활/건강 아이템</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/homemaster00" target="_blank" rel="noopener">@homemaster00</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">17,455.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">3,397개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">470개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(722.8%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"☑️ 댓글에 (나도) 남겨주세요!
+
+57세에 쌍둥이를 출산해 화제가 된 한 산모✨
+평소 식습관 관리도 정말 철저했다고 하는데요.
+
+몸에 부담되는 음식은 최대한 줄이고
+밥을 지을 때 ‘이것’을 함께 넣어 먹는 습관을
+..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdaBK-NgVkg/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 19</div>
+            <div class="card-title-group">
+              <h3 class="card-title">손예진 × 소고기 (단백질식단/소고기)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/gomson.recipe" target="_blank" rel="noopener">@gomson.recipe</a> · <strong>추천 형식: 카드뉴스</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">17,153.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">3,338개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">463개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">0회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 제품명을 직접 밝히지 않고 발언 클립에 집중시켜 자발적 제품 문의 댓글을 유발함. 좋아요 대비 댓글 비율(721.0%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"현빈♥손예진 부부의 아침 식단으로도 알려진 메뉴💕
+
+매일 계란, 닭가슴살이 지겹다면
+소고기 듬뿍 넣어 롱파이를
+이렇게 만들어보세요🥩
+
+겉은 바삭하고 속은 고기로 꽉 차서
+식단 메뉴 같지 않은데 단백질까지 든든하게✨
+..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdK7qTxEhiv/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 20</div>
+            <div class="card-title-group">
+              <h3 class="card-title">비 × 밤 (제철간식/주방꿀템)</h3>
+              <div class="card-subtitle">게시 계정: <a href="https://instagram.com/ko.kkiri.pick" target="_blank" rel="noopener">@ko.kkiri.pick</a> · <strong>추천 형식: 표지+영상</strong></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">퍼널 점수</span>
+              <span class="score-val">17,078.0점</span>
+            </div>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="m-label">댓글 (가중치 x5)</span>
+              <span class="m-val highlight">3,047개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">좋아요</span>
+              <span class="m-val">316개</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">조회수 (릴스)</span>
+              <span class="m-val">15,270회</span>
+            </div>
+            <div class="metric-item">
+              <span class="m-label">추천 제작 형식</span>
+              <span class="m-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">💡 왜 터졌나 (퍼널 분석)</div>
+            <p class="analysis-text">셀럽의 일상 루틴과 실천 비법을 노출하여 초반 호기심과 신뢰를 극대화함. 본문 하단에 '정보' 또는 '링크' 댓글을 명확히 유도하여 폭발적인 참여 반응을 이끌어냄. 좋아요 대비 댓글 비율(964.2%)이 매우 높아 댓글 기반 DM 자동화(쿠파스 링크) 전환에 최적화된 구조임.</p>
+          </div>
+
+          <div class="caption-quote">"여러분 아침 절대 거르지 마세요!
+
+아침에 출근 준비하느라 정신없어서 굶거나 커피로 대충 때우다 점심에 폭식했던 적 다들 있으시죠 🥹
+전날 밤에 1분 만에 만들어두고 아침에 숟가락만 꺼내 먹으면 혈당도 싹 잡히고 진..."</div>
+
+          <div class="card-footer">
+            <a class="source-link" href="https://www.instagram.com/p/DdP2l0iPknY/" target="_blank" rel="noopener">📱 인스타그램 원본 게시물 바로가기 →</a>
+          </div>
+        </div>
+        
+      </div>
+    </main>
+
+    <footer>
+      검색엔진 비공개 리포트 (noindex, nofollow) · workkrst/ig-funnel
+    </footer>
+  </div>
+</body>
+</html>
