@@ -1,0 +1,340 @@
+{
+ "date": "2026-09-24",
+ "collected_at": "2026-09-24 12:31 KST",
+ "summary": "오늘 Top 5는 인공지능과 개발자 도구 및 생산성 카테고리가 주를 이룬 가운데, 실제 업무를 직접 수행하는 자율형 AI 에이전트와 이를 평가·보조하는 인프라가 강세를 보였습니다. 커뮤니티 댓글에서는 마케팅 자동화의 사용자 승인 통제권, 캔버스 기반의 영구 맥락 보존, 단일 지표 평가 시의 트레이드오프 등 실무 도입 시의 안정성과 신뢰성에 대한 논의가 활발히 이어졌습니다.",
+ "notable": [
+  {
+   "slug": "naise-ai",
+   "why": "브랜드 가이드라인을 유지하며 소셜 마케팅 전 과정을 자율 실행하는 에이전트로 실무자들의 큰 관심을 모았습니다. 댓글에서는 콘텐츠 발행 전 100% 사용자 승인 절차와 슬랙·팀즈 연동 로드맵, 에이전시를 위한 멀티 브랜드 워크스페이스 지원 여부에 대한 질문이 집중되었습니다."
+  },
+  {
+   "slug": "pactto-replay",
+   "why": "미팅 후에도 맥락이 사라지지 않는 영구 공유 룸에서 AI와 함께 작업하는 크리에이티브 협업 캔버스입니다. 댓글에서는 20명이 동시에 4K 영상을 실시간 동기화해 검토할 수 있는 성능에 호평이 쏟아졌으며, 에셋 버전 간 비교 기능과 모바일 지원에 대한 질의가 활발했습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Solid",
+   "tagline_en": "Agents with their own computers, accounts, and budgets.",
+   "tagline_kr": "자체 컴퓨터, 계정 및 예산을 갖춘 AI 에이전트",
+   "image": "https://ph-files.imgix.net/6ce26f07-1a8a-405d-b13e-5ef988443499.svg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Productivity",
+    "Artificial Intelligence",
+    "Development"
+   ],
+   "upvotes": 408,
+   "comments_count": 42,
+   "maker": null,
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Solid는 자체 컴퓨터 환경과 전용 계정, 독립적인 실행 예산을 부여받아 자율적으로 업무를 수행하는 차세대 AI 에이전트 플랫폼입니다. 기존의 단순 텍스트 생성형 챗봇과 달리, 실제 개발 및 업무 환경에서 직접 소프트웨어를 조작하고 연동된 계정을 통해 복합적인 작업을 자율적으로 실행할 수 있도록 설계되었습니다. 에이전트마다 독립된 리소스와 지출 한도를 지정할 수 있어 예측 가능하고 안전하게 대규모 자동화 워크플로를 운영할 수 있습니다. 개발자와 팀의 생산성을 비약적으로 향상시키며 복잡한 반복 업무를 신뢰성 있게 위임할 수 있는 새로운 작업 방식을 제안합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/solid-3",
+   "comment_summary": "수집된 제품 페이지에 런칭 댓글 데이터가 존재하지 않아 상세 댓글 흐름을 확인할 수 없습니다. 런칭 당일 408개의 업보트와 42개의 댓글을 기록하며 일간 1위에 올랐으나 크롤링 시점의 페이지 매핑 이슈로 개별 의견 수집은 제한되었습니다.",
+   "warnings": "수치(업보트 408·댓글 42)는 수집 시점 참고치. 수집된 마크다운 파일(solid-3.md)이 Product Hunt의 리다이렉트로 인해 BuzzFeed 페이지로 연결되어 있어, 세부 메이커 및 댓글 원문을 확인할 수 없어 comments는 빈 배열(0개)로 처리함.",
+   "comments": [],
+   "slug": "solid-3"
+  },
+  {
+   "name": "Naise AI",
+   "tagline_en": "Autonomous marketing agents that actually execute",
+   "tagline_kr": "실제로 실행까지 담당하는 자율 마케팅 AI 에이전트",
+   "image": "https://ph-files.imgix.net/3e15259f-aaf6-4938-bf3c-e0f68c7ff8e9.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Social Media",
+    "Marketing",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 327,
+   "comments_count": 54,
+   "maker": "Roy Kek(@roy_kek) 공동창업자, Andika Fadhilah(@andika_fadhilah) 공동창업자 (팀: Rohan Chaubey(@rohanrecommends))",
+   "price_model": "프리미엄 (무료 체험 옵션)",
+   "price_detail": "별도 프로모션 코드 없이 3일간 무료 체험(3-day free trial) 제공.",
+   "desc_kr": "Naise AI는 창업자와 소규모 팀을 위해 풀스택 마케팅 부서 수준의 업무를 대신 수행해 주는 자율형 마케팅 에이전트 플랫폼입니다. 빈 입력창에 프롬프트를 매번 입력하는 대신 영구 메모리(Persistent Memory)에 브랜드 가이드라인을 저장하고 프롬프트 플레이북을 선택해 업무를 위임할 수 있습니다. 플랫폼 내에서 실제 인플루언서 검증, 기자 피칭, 소셜 미디어 콘텐츠 네이티브 생성 및 예약 발행까지 전 과정을 자율적으로 처리합니다. 인스타그램, 틱톡, 페이스북, X(구 트위터) 등 주요 SNS 플랫폼과 직접 연동되며 모든 게시물은 사용자의 최종 승인을 거쳐 안전하게 발행됩니다. 이를 통해 마케팅 운영 시간을 주당 40시간 이상 절약하고 비용을 최대 80%까지 절감할 수 있도록 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/naise-ai",
+   "comment_summary": "경쟁사 분석의 깊이와 에이전시를 위한 멀티 브랜드 워크스페이스 지원 여부, 게시 전 최종 승인 프로세스에 대한 질의가 활발히 이어졌습니다. 제작자 Roy Kek은 웹 스크래핑과 미디어 조사를 통한 심층 브랜드 감사와 100% 사용자 승인 기반 발행 방식을 설명하며 향후 슬랙/팀즈 연동 계획을 밝혔습니다. 댓글 작성자들은 이민 컨설팅과 같은 틈새 시장에서의 활용 가능성과 실제 성과 기반의 피드백 반영 루프에 큰 관심을 보였습니다.",
+   "warnings": "수치(업보트 327·댓글 54)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료. 슬랙/팀즈 승인 연동 및 원클릭 광고·동영상 생성 기능은 로드맵상 추가 예정.",
+   "comments": [
+    {
+     "author": "Roy Kek",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋 Roy here, Co-Founder of Naise AI.  \n  \n**The Problem & Solution**  \n\nYour social media marketing isn’t working, and you don’t know why. 😵‍💫\n\nYou may know:\n\n*   What makes your business different\n    \n*   That content and social media should drive growth\n    \n*   That you need a clear, consistent marketing strategy\n    \n\nBut you may not know:\n\n*   What should your brand be known for?\n    \n*   Which content pillars should you focus on?\n    \n*   What topics will attract the right audience?\n    \n*   How do you turn attention into leads or customers?\n    \n\nNaise AI helps you manage the entire process.  \n\nFrom research and strategy to content creation, scheduling, publishing and performance analysis, Naise AI acts like your always-on social media marketing partner.\n\n**Why we’re different**\n\n*   🔌 Connects directly to your social media platforms, that unncovers deeper insights that general AI tools may miss\n    \n*   🧠 Built with marketing-focused models trained on large amounts of social media and marketing data\n    \n*   🏢 Understands your business, brand, audience and goals before making recommendations\n    \n*   👥 Works like part of your marketing team, not just another AI tool\n    \n*   🌍 Looks beyond your own account by analysing competitors, trends, news and relevant content\n    \n*   ✍️ Turns research and strategy into actual scripts, captions, images and content ideas\n    \n*   🔄 Learns from your performance and continuously suggests improvements\n    \n\n**HOW IT WORKS**  \n\n1\\. **Tell Naise AI about your business** 🏢\n\nWe learn about your brand, products, audience, goals and tone of voice.  \n\n2\\. **We research your marketing landscape** 🔍\n\nNaise AI analyses your social media presence, competitors, references, industry news and relevant online conversations.  \n\n3\\. **We analyse what is working** 📈\n\nWe identify your content pillars, successful hooks, formats, posting times and areas for improvement.  \n\n4\\. **We find trends and content opportunities** 🔥\n\nDiscover viral videos, trending topics, timely news and ideas that are relevant to your business.  \n\n5\\. **We help you create content** ✍️\n\nGenerate scripts, captions, content ideas and images based on your brand and current trends.  \n\n6\\. **We help you plan and publish** 🗓️\n\nNaise AI recommends when to post, prepares your captions and helps schedule and publish your content.  \n\n7\\. **We monitor your results** 👀\n\nTrack your performance and receive suggestions on what to improve next.  \n\n8\\. **Coming soon: Generate ads and videos in one click** 🎬\n\nCreate campaign-ready ads and videos with less manual work.  \n\nNaise AI helps take social media off your plate, so you can focus on your business while your content keeps moving.  \n  \n**Target & The Offer 🎁**  \n\nWhether you are a solo founder or a scaling agency, Naise is built to save you 40+ hours a week and cut marketing costs up to 80%.  \n\nWe are offering a straight 3-day free trial for everyone today. No special promo code needed!\n\n🔗 **Get your free trial here:** [https://naise.ai/](https://naise.ai/)\n\nWe are still very early and far from perfect. We genuinely want to build what overworked marketers actually need to survive.\n\nWhich of the three agents would you deploy first? Let me know in the comments, I will be hanging out here all day!",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋 Naise AI의 공동창업자 Roy입니다.\n\n**문제와 해결책**\n\n소셜 미디어 마케팅이 제대로 작동하지 않는데 왜 그런지 모르겠다고 느끼신 적 있으신가요? 😵‍💫\n\n여러분은 다음과 같은 점을 잘 알고 계실 것입니다.\n* 우리 비즈니스의 차별점이 무엇인지\n* 콘텐츠와 소셜 미디어가 성장을 견인해야 한다는 점\n* 명확하고 일관된 마케팅 전략이 필요하다는 점\n\n하지만 다음과 같은 점은 알기 어려울 수 있습니다.\n* 우리 브랜드가 무엇으로 알려져야 하는가?\n* 어떤 콘텐츠 핵심 기둥(Pillar)에 집중해야 하는가?\n* 어떤 주제가 적합한 잠재 고객을 끌어들일 수 있는가?\n* 고객의 관심을 어떻게 리드나 실제 고객 전환으로 연결할 것인가?\n\nNaise AI는 이 모든 과정을 관리할 수 있도록 돕습니다.\n\n조사 및 전략 수립부터 콘텐츠 제작, 예약, 발행 및 성과 분석에 이르기까지, Naise AI는 언제나 깨어있는 소셜 미디어 마케팅 파트너처럼 작동합니다.\n\n**Naise AI만의 차별점**\n* 🔌 소셜 미디어 플랫폼에 직접 연결되어 일반 AI 도구가 놓치기 쉬운 심층 인사이트를 발굴합니다.\n* 🧠 방대한 양의 소셜 미디어 및 마케팅 데이터로 학습된 마케팅 특화 모델 기반으로 구축되었습니다.\n* 🏢 제안을 내놓기 전에 비즈니스, 브랜드, 타깃 고객 및 목표를 먼저 깊이 이해합니다.\n* 👥 단순한 또 하나의 AI 도구가 아니라 마케팅 팀의 일원처럼 긴밀히 협력합니다.\n* 🌍 자체 계정뿐 아니라 경쟁사, 트렌드, 뉴스 및 관련 대화를 분석하여 더 넓은 시야를 확보합니다.\n* ✍️ 조사와 전략을 실제 스크립트, 캡션, 이미지 및 콘텐츠 아이디어로 구현합니다.\n* 🔄 실제 성과 데이터를 학습하여 지속적으로 개선 방안을 제안합니다.\n\n**작동 방식**\n1. **비즈니스에 대해 Naise AI에 알려주세요** 🏢\n브랜드, 제품, 타깃층, 목표 및 브랜드 보이스 톤을 학습합니다.\n\n2. **마케팅 환경을 조사합니다** 🔍\n소셜 미디어 현황, 경쟁사, 레퍼런스, 업계 뉴스 및 온라인 대화를 분석합니다.\n\n3. **무엇이 효과적인지 분석합니다** 📈\n콘텐츠 기둥, 성공적인 후킹 포인트, 포맷, 최적 게시 시간 및 개선 영역을 식별합니다.\n\n4. **트렌드와 콘텐츠 기회를 포착합니다** 🔥\n비즈니스와 밀접한 바이럴 영상, 트렌딩 토픽, 시의성 있는 뉴스와 아이디어를 발굴합니다.\n\n5. **콘텐츠 제작을 돕습니다** ✍️\n브랜드와 최신 트렌드를 바탕으로 스크립트, 캡션, 아이디어, 이미지를 생성합니다.\n\n6. **기획과 발행을 지원합니다** 🗓️\n최적 게시 시간을 추천하고 캡션을 준비하여 콘텐츠 스케줄링 및 게시를 돕습니다.\n\n7. **성과를 모니터링합니다** 👀\n성과를 추적하고 다음에 개선해야 할 점에 대한 제안을 제공합니다.\n\n8. **출시 예정: 원클릭 광고 및 영상 생성** 🎬\n수작업을 줄이고 캠페인에 바로 투입 가능한 광고와 영상을 생성합니다.\n\nNaise AI가 소셜 미디어의 부담을 덜어주므로 여러분은 비즈니스 자체에 집중할 수 있고, 콘텐츠는 멈추지 않고 계속 돌아갑니다.\n\n**대상 및 혜택 🎁**\n1인 창업자부터 확장 중인 에이전시까지, Naise는 주당 40시간 이상을 절약하고 마케팅 비용을 최대 80% 절감할 수 있도록 설계되었습니다.\n\n오늘 모든 분들께 조건 없는 3일 무료 체험을 제공합니다. 별도 프로모션 코드는 필요하지 않습니다!\n\n🔗 **무료 체험 시작하기:** https://naise.ai/\n\n저희는 아직 극초기 단계이며 완벽과는 거리가 있습니다. 과도한 업무에 지친 마케터들이 살아남기 위해 진정으로 필요한 것을 만들고자 합니다.\n\n세 가지 에이전트 중 어떤 것을 먼저 배포해보고 싶으신가요? 댓글로 알려주세요. 오늘 하루 종일 머물며 답변드리겠습니다!"
+    },
+    {
+     "author": "Andika Fadhilah",
+     "is_maker": true,
+     "text": "Very happy to finally launch Naise AI to the world! 🚀",
+     "kr": "마침내 Naise AI를 세상에 선보이게 되어 정말 기쁩니다! 🚀"
+    },
+    {
+     "author": "Vikram",
+     "is_maker": false,
+     "text": "[@roy\\_kek](https://www.producthunt.com/@roy_kek) qq how deep does the competitor analysis feature actually go in practice?",
+     "kr": "[@roy\\_kek](https://www.producthunt.com/@roy_kek) 간단한 질문인데요, 경쟁사 분석 기능이 실제로는 얼마나 깊이 있게 들어가나요?"
+    },
+    {
+     "author": "Roy Kek",
+     "is_maker": true,
+     "text": "[@vikramp7470](https://www.producthunt.com/@vikramp7470) We do a very indepth research by scraping the net and search for useful information from market research sites, media outlet to even social media postings to provide a comprehensive brand audit for your company",
+     "kr": "[@vikramp7470](https://www.producthunt.com/@vikramp7470) 저희는 웹 스크래핑을 통해 시장 조사 사이트, 언론 미디어부터 소셜 미디어 게시물에 이르기까지 유용한 정보를 검색하고 심층 조사하여 회사를 위한 종합적인 브랜드 감사를 제공합니다."
+    },
+    {
+     "author": "Anant Gupta",
+     "is_maker": false,
+     "text": "For agencies, can we have multiple brands inside the same dashboard / workspace, or do you have to create new accounts for different brands? How does that work?",
+     "kr": "에이전시의 경우 동일한 대시보드/워크스페이스 내에 여러 브랜드를 둘 수 있나요, 아니면 브랜드마다 새 계정을 만들어야 하나요? 어떻게 작동하나요?"
+    },
+    {
+     "author": "Roy Kek",
+     "is_maker": true,
+     "text": "[@iamanantgupta](https://www.producthunt.com/@iamanantgupta) You do not need to have different accounts to do so. For agencies you can have multiple brands in different workspace within the same account.",
+     "kr": "[@iamanantgupta](https://www.producthunt.com/@iamanantgupta) 별도의 계정을 만드실 필요가 없습니다. 에이전시의 경우 동일한 계정 내에서 워크스페이스별로 여러 브랜드를 나누어 관리하실 수 있습니다."
+    },
+    {
+     "author": "Nuseir Yassin",
+     "is_maker": false,
+     "text": "May I ask how much control do users have before Naise publishes something? I’d definitely want an approval step for brand-sensitive content. Can this approval process be set up on Slack or similar work apps??",
+     "kr": "Naise가 콘텐츠를 발행하기 전에 사용자가 어느 정도까지 통제권을 갖는지 여쭤봐도 될까요? 브랜드에 민감한 콘텐츠의 경우 승인 단계가 꼭 필요할 것 같은데요. 이 승인 절차를 슬랙이나 유사한 업무용 앱에서 설정할 수 있나요??"
+    },
+    {
+     "author": "Roy Kek",
+     "is_maker": true,
+     "text": "[@nuseir\\_yassin1](https://www.producthunt.com/@nuseir_yassin1) Hi Nuseir Great Question ! You have 100% control. Naise will generate the strategy, draft the content, and build the calendar, but absolutely nothing gets published until you or your team hits 'Approve.'\n\nCurrently, that full approval flow happens directly inside our dashboard. However, piping those approval requests directly into a Slack or Microsoft Teams channel is actually on our immediate roadmap.  \n\nOut of curiosity, does your team primarily use Slack, or are you on Teams? Let me know so we can make sure we prioritize the right integration first!",
+     "kr": "[@nuseir\\_yassin1](https://www.producthunt.com/@nuseir_yassin1) Nuseir 님 좋은 질문 감사합니다! 사용자가 100%의 통제권을 갖습니다. Naise가 전략을 생성하고 콘텐츠 초안을 작성하며 캘린더를 구성하지만, 귀하나 귀하의 팀이 '승인' 버튼을 누르기 전까지는 절대 어떤 것도 발행되지 않습니다.\n\n현재 이 전체 승인 흐름은 대시보드 내에서 직접 이루어집니다. 하지만 이러한 승인 요청을 슬랙이나 마이크로소프트 팀즈 채널로 직접 연동하는 기능이 현재 최우선 로드맵에 포함되어 있습니다.\n\n참고로 팀에서는 주로 슬랙을 사용하시나요, 아니면 팀즈를 사용하시나요? 알려주시면 적절한 연동 우선순위를 정하는 데 큰 도움이 됩니다!"
+    },
+    {
+     "author": "Raghav Mehra",
+     "is_maker": false,
+     "text": "I create content for a few brands, Naise could come in handy. Could you tell me how it handles content that references breaking news or fast-moving trends without losing brand consistency?",
+     "kr": "여러 브랜드를 위해 콘텐츠를 제작하고 있는데 Naise가 유용하게 쓰일 것 같네요. 브랜드 일관성을 잃지 않으면서 속보나 급변하는 트렌드를 반영하는 콘텐츠를 어떻게 다루는지 설명해 주실 수 있나요?"
+    },
+    {
+     "author": "Roy Kek",
+     "is_maker": true,
+     "text": "[@ragsyme](https://www.producthunt.com/@ragsyme) We have the context memory features that is stored within the social media management feature. It will store all your branding guide as context, so it will never lose brand consistency. All research results from the social media and brand audit are also store as MD file for context purposes, which further strengthen the prior Context.  \n  \nNaise AI acts as your AI social Media marketing agent",
+     "kr": "[@ragsyme](https://www.producthunt.com/@ragsyme) 소셜 미디어 관리 기능 내에 컨텍스트 메모리 기능이 내장되어 있습니다. 모든 브랜드 가이드를 맥락 정보로 보관하므로 브랜드 일관성을 결코 잃지 않습니다. 소셜 미디어 및 브랜드 감사에서 나온 모든 조사 결과 역시 맥락 유지를 위해 MD 파일로 저장되어 기존 맥락을 한층 더 강화해 줍니다.\n\nNaise AI는 여러분의 AI 소셜 미디어 마케팅 전담 에이전트 역할을 합니다."
+    },
+    {
+     "author": "Divya Kothari",
+     "is_maker": false,
+     "text": "The performance feedback loop is interesting. Does Naise actually adjust future content based on what performs best? Or can we ask it to tweak based on our feedback?",
+     "kr": "성과 피드백 루프가 흥미롭네요. Naise가 가장 좋은 성과를 낸 콘텐츠를 기반으로 향후 콘텐츠를 실제로 조정하나요? 아니면 사용자 피드백에 맞춰 조정하도록 요청할 수 있나요?"
+    },
+    {
+     "author": "Roy Kek",
+     "is_maker": true,
+     "text": "[@divya\\_kothari1](https://www.producthunt.com/@divya_kothari1) For the initial social audit, naise will gauge it base on your current social media profile performance. But you will be able to tweak it in the future base on your feedback.",
+     "kr": "[@divya\\_kothari1](https://www.producthunt.com/@divya_kothari1) 초기 소셜 감사의 경우 Naise가 현재 소셜 미디어 프로필 성과를 기준으로 측정합니다. 하지만 향후에는 사용자의 피드백을 기반으로 얼마든지 미세 조정하실 수 있습니다."
+    }
+   ],
+   "slug": "naise-ai"
+  },
+  {
+   "name": "Claude Opus 5.5",
+   "tagline_en": "Anthropic's first model in their new Claude 5.5 family",
+   "tagline_kr": "새로운 Claude 5.5 패밀리의 첫 번째 모델",
+   "image": "https://ph-files.imgix.net/8c1c1deb-2da7-42fc-9bca-d45c505dd4ed.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Developer Tools",
+    "Artificial Intelligence",
+    "Development"
+   ],
+   "upvotes": 276,
+   "comments_count": 5,
+   "maker": "Anthropic (헌터: Rohan Chaubey(@rohanrecommends))",
+   "price_model": "유료 API / 클라우드 크레딧 (Free Options)",
+   "price_detail": "일반적인 워크로드 기준 기존 Opus 5 대비 토큰 비용 40% 절감. AWS, GCP, Azure 및 Anthropic API 플랫폼을 통해 사용 가능.",
+   "desc_kr": "Claude Opus 5.5는 앤트로픽이 선보이는 새로운 Claude 5.5 제품군의 첫 번째 플래그십 AI 모델입니다. 긴 맥락이 요구되는 에이전틱 코딩(agentic coding)과 심층적인 지식 작업에 특화되어 대폭 향상된 성능과 직관적인 의사소통 능력을 제공합니다. 전작인 Opus 5 대비 일반 작업 기준 토큰 비용을 40% 절감하면서도 출력 속도를 높이고 프롬프트 인젝션 방어 등 안전성을 한층 강화했습니다. 개발자와 연구진, 기업 고객이 대규모 코드 감사나 장기 실행 워크플로를 더욱 효율적이고 경제적으로 수행할 수 있도록 지원합니다. 현재 Anthropic 플랫폼뿐만 아니라 AWS, Google Cloud, Microsoft Azure 등 주요 클라우드 환경에서 바로 연동할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/claude-fable-5-1",
+   "comment_summary": "장시간 집중적인 코딩 작업에서 토큰 비용이 40% 절감된 점과 캐시 읽기 비용 인하에 대해 개발자들의 긍정적인 평가가 이어졌습니다. 일부 사용자는 이전 Fable 5.1 모델과의 체감 성능을 비교하며 Fable 사용량이 소진되었을 때 Opus 5보다 훨씬 훌륭한 대안이라는 의견을 제시했습니다. 한편 앤트로픽의 빠른 모델 출시 속도에 대한 재치 있는 반응과 긴 컨텍스트 작업의 경제성에 대한 기대감이 함께 나타났습니다.",
+   "warnings": "수치(업보트 276·댓글 5)는 수집 시점 참고치. 제품 페이지 슬러그는 과거 런칭된 claude-fable-5-1을 공유하고 있으나 이번 런칭 대상 모델은 신규 출시된 Claude Opus 5.5임. 런칭 댓글 5건 전수 수집 완료.",
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "**Claude Opus 5.5** is Anthropic’s first model in the new Claude 5.5 family.\n\n**Problem / solution:** It helps with long, complex work like agentic coding and knowledge work, and is built to do that work more efficiently.\n\n**What’s different?** It leads in agentic coding, computer use, and knowledge work, while costing 40% less than Opus 5 on typical workloads.\n\n**Features and benefits**\n\n\\- Stronger performance on complex tasks.\n\n\\- Better communication that is clearer and easier to follow.\n\n\\- Stronger safety safeguards and resistance to prompt injection.\n\n\\- Faster output and lower token costs.\n\n**Who it’s for**\n\n\\- Developers, enterprises, researchers, and teams handling coding, audits, analysis, and long-running workflows.\n\n**How to access it?** Claude Opus 5.5 is now available on all platforms, including Amazon Web Services, Google Cloud, and Microsoft Azure. On the Claude Platform, developers can [get started](https://platform.claude.com/docs/en/models/overview) with claude-opus-5-5.\n\nP.S. I hunt the latest and greatest launches in tech, SaaS and AI, follow to be notified **→** [@rohanrecommends](https://www.producthunt.com/@rohanrecommends)",
+     "kr": "**Claude Opus 5.5**는 새로운 Claude 5.5 패밀리에서 앤트로픽이 선보이는 첫 번째 모델입니다.\n\n**문제 / 해결책:** 에이전틱 코딩이나 전문 지식 작업과 같은 길고 복잡한 작업을 지원하며, 이러한 업무를 훨씬 더 효율적으로 처리하도록 설계되었습니다.\n\n**차별점은 무엇인가요?** 에이전틱 코딩, 컴퓨터 사용(computer use), 지식 작업 분야를 선도하며, 일반적인 워크로드 기준 Opus 5 대비 40% 저렴한 비용을 자랑합니다.\n\n**주요 기능 및 이점**\n- 복잡한 작업에서 더욱 강력해진 성능\n- 더 명확하고 따라가기 쉬워진 커뮤니케이션 능력\n- 강화된 안전 보호 장치 및 프롬프트 인젝션 저항성\n- 더 빠른 출력 속도와 절감된 토큰 비용\n\n**대상 사용자**\n- 코딩, 코드 감사, 분석 및 장시간 실행 워크플로를 다루는 개발자, 기업, 연구자 및 팀\n\n**접근 방법**\nClaude Opus 5.5는 현재 AWS, Google Cloud, Microsoft Azure를 포함한 모든 플랫폼에서 사용 가능합니다. Claude Platform에서 개발자는 claude-opus-5-5로 바로 시작할 수 있습니다.\n\n추신: 저는 기술, SaaS, AI 분야의 최신 최고의 제품들을 발굴하고 있으니 소식을 받으시려면 팔로우해 주세요 → [@rohanrecommends](https://www.producthunt.com/@rohanrecommends)"
+    },
+    {
+     "author": "Abhishek Yadav",
+     "is_maker": false,
+     "text": "This gonna save good amount of Tokens used for coding with better quality work; but I still feels Fable 5.1 is better than Opus 5.5;",
+     "kr": "더 나은 작업 품질과 함께 코딩에 사용되는 토큰 양을 상당 부분 절약해 주겠네요. 다만 저는 아직 Opus 5.5보다 Fable 5.1이 더 낫다고 느껴집니다."
+    },
+    {
+     "author": "Jim Engine",
+     "is_maker": false,
+     "text": "Anthropic: \"Let's pace AI\"  \nAlso Anthropic a few seconds later:",
+     "kr": "앤트로픽: \"AI 개발 속도를 조절합시다\"\n몇 초 후의 앤트로픽:"
+    },
+    {
+     "author": "Jim Beno",
+     "is_maker": false,
+     "text": "So far seems like a much better option compared to Opus 5 when your Fable usage runs out.",
+     "kr": "지금까지 보기엔 Fable 사용량을 다 썼을 때 Opus 5에 비해 훨씬 더 나은 선택지인 것 같습니다."
+    },
+    {
+     "author": "Salman Parvez",
+     "is_maker": false,
+     "text": "Lower token cost on long, context-heavy work is the part I care about most. Congrats on the launch.",
+     "kr": "길고 맥락이 많은 작업에서 토큰 비용이 낮아진 점이 제가 가장 눈여겨보는 부분입니다. 출시를 축하드립니다."
+    }
+   ],
+   "slug": "claude-fable-5-1"
+  },
+  {
+   "name": "Pactto",
+   "tagline_en": "The room where creative teams align and AI takes action",
+   "tagline_kr": "크리에이티브 팀이 협업하고 AI가 실행하는 실시간 작업 캔버스",
+   "image": "https://ph-files.imgix.net/7bf8eed7-99a5-462c-90ab-0a487ca99be3.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Meetings",
+    "Artificial Intelligence",
+    "Video"
+   ],
+   "upvotes": 165,
+   "comments_count": 40,
+   "maker": "Demian Borba(@demianborba) 공동창업자 겸 CEO, Sherif Assaf(@sherif__assaf) 공동창업자 겸 CPO, Amaro Adonis(@adonis_amorim)",
+   "price_model": "무료 플랜 / 프리미엄 (Free Options)",
+   "price_detail": "기본 무료 옵션 제공. Product Hunt 커뮤니티 대상 다이렉트 액세스 오픈 중.",
+   "desc_kr": "Pactto는 크리에이티브 팀이 고화질로 에셋을 공유하고 AI 에이전트와 함께 실시간 검토 및 수정을 진행할 수 있는 영구 공유 캔버스 플랫폼입니다. 회의가 끝나면 대화 맥락이 사라지는 기존 화상회의 도구들과 달리, 모든 대화와 결정 사항, 피드백을 단일 공간에 영구적으로 보존하고 누적합니다. 내장된 AI 에이전트는 사용자의 의도를 이해하여 음성 피드백을 실시간 수정 사항, 요약 문서, 후속 실행 과제로 즉시 전환해 줍니다. 최대 20명이 4K 비디오를 프레임 단위로 완벽히 동기화해 감상하며 화면에 직접 드로잉 주석을 달 수 있는 고화질 플레이백을 지원합니다. 팟캐스트 제작팀, 영상 디자인 에이전시, 건축가, 스포츠 코치 등 시각적 피드백이 핵심인 다양한 팀의 협업 병목 현상을 해소합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/pactto-replay",
+   "comment_summary": "미팅 종료 후에도 맥락이 휘발되지 않는 영구 룸(persistent room) 개념과 다자간 4K 고화질 비디오 실시간 동기화 재생에 대한 찬사가 이어졌습니다. 사용자들은 모바일 지원 여부, 에셋 버전 간 나란히 보기(side-by-side) 비교, 팟캐스트 제작진의 구체적 활용 사례를 질문했습니다. 공동창업자인 Demian Borba와 Sherif Assaf는 웹 브라우저 기반의 완벽한 모바일 대응과 버전 비교 뷰 개발 로드맵을 공유하며 적극적으로 소통했습니다.",
+   "warnings": "수치(업보트 165·댓글 40)는 수집 시점 참고치. 이번 출시는 Pactto의 3번째 런칭으로 AI 네이티브 캔버스 베타 공개 버전임. 1페이지 내 주요 댓글 12개를 선별 수집 완료.",
+   "comments": [
+    {
+     "author": "Demian Borba",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋  \n\nI'm Demian Borba, co-founder and CEO of Pactto. For the past 2 years, we've been heads down building this in collaboration with some of the best creative minds in the world. Today, it finally goes out into the wild.\n\nWe started building a collaborative AI canvas before the category had a name. While the rest of the industry was shipping single-player AI tools, we were obsessed with a different question: what happens when AI agents enter a room where multiple people are creating together? Not as a chatbot in a sidebar, but as a real participant in the work.\n\nIn March 2026, a16z described \"shared canvas AI platforms that multiple people can use at once\" as a category that doesn't exist yet. **Until today.**\n\nWe built Pactto for creative teams. The room turned out to travel further than we expected. Some use cases we have on Pactto today:\n\n🎬 **Creative agencies.** Every asset, board, and decision of an AI project in one room, from v1 to launch.\n\n🎙️ **Podcast teams.** One room per episode. Brief it, review the cut at real quality, generate cover art, map every social short.\n\n🏛️ **Architects.** Walk clients through renders and plans at full resolution, mark up the drawing, log every decision.\n\n📊 **Founders pitching.** Present your deck and demo at full quality. Every investor question stays in the room instead of a follow-up email.\n\n🏄 **Coaches.** Review technique frame by frame, draw on the frame live, keep every cue in one room per athlete.\n\n🗣️ **Language tutors.** A persistent room per student where every correction and vocab list is kept.\n\nEvery one of them is the same thing underneath: a room that doesn't reset when the meeting ends. Context doesn't disappear. It compounds.  \n  \nThe AI assistant is always listening, building context, suggesting actions, and taking action.\n\n  \nBring your assets, present at the highest quality, review together, make decisions, and let AI agents apply them, live. All within the same shared context.  \n\nTo celebrate, we're opening direct access for the Product Hunt community, visit [www.pactto.com](https://www.pactto.com/) or email me at [demian@pactto.com](mailto:demian@pactto.com) if you have feedback, issues, or feature requests. We are here for you.\n\nOn behalf of the Pactto team: thank you! 🙏  \n  \nWe'd love to hear what you think, what you'd break, and what you'd build with it. 👋",
+     "kr": "Product Hunt 여러분 안녕하세요 👋\n\nPactto의 공동창업자 겸 CEO Demian Borba입니다. 지난 2년간 전 세계 최고의 크리에이티브 인재들과 협력하며 오직 이 제품을 만드는 데만 몰두해 왔습니다. 그리고 오늘, 드디어 세상에 공개합니다.\n\n저희는 이 카테고리에 이름조차 붙기 전부터 협업형 AI 캔버스를 구축하기 시작했습니다. 업계 전체가 1인용 AI 도구를 출시하는 동안, 저희는 다른 질문에 집착했습니다. 여러 사람이 함께 창작하는 공간에 AI 에이전트가 들어오면 어떤 일이 벌어질까? 사이드바의 단순한 챗봇이 아니라, 실제 작업에 직접 참여하는 일원으로서 말이죠.\n\n2026년 3월, a16z는 '여러 사람이 동시에 사용할 수 있는 공유 캔버스 AI 플랫폼'을 아직 존재하지 않는 카테고리로 규정한 바 있습니다. **바로 오늘까지는 말입니다.**\n\n저희는 크리에이티브 팀을 위해 Pactto를 만들었습니다. 하지만 이 공유 공간의 활용 범위는 저희의 기대를 훨씬 뛰어넘었습니다. 오늘날 Pactto에서 실제로 활용되고 있는 사례들입니다:\n\n🎬 **크리에이티브 에이전시:** v1부터 최종 런칭까지, AI 프로젝트의 모든 에셋, 보드, 결정 사항을 단 하나의 룸에서 관리합니다.\n🎙️ **팟캐스트 팀:** 에피소드당 하나의 룸을 배정합니다. 기획 브리핑, 실제 화질의 컷 검토, 커버 아트 생성, 모든 숏폼 매핑까지 처리합니다.\n🏛️ **건축가:** 클라이언트에게 전체 해상도로 렌더링과 도면을 안내하고, 도면 위에 실시간 마크업을 남기며 모든 결정을 기록합니다.\n📊 **창업자 피칭:** 풀 퀄리티로 덱과 데모를 발표합니다. 모든 투자자의 질문이 후속 이메일 대신 룸 안에 그대로 남습니다.\n🏄 **코치:** 선수의 기술을 프레임별로 검토하고 실시간으로 드로잉하며 선수당 하나의 룸에 모든 피드백을 보관합니다.\n🗣️ **언어 튜터:** 학생마다 영구 룸을 제공하여 모든 교정 사항과 어휘 목록을 지속 보관합니다.\n\n이 모든 것의 밑바탕은 동일합니다. 미팅이 끝나도 리셋되지 않는 방이라는 점입니다. 맥락은 사라지지 않고 계속 누적됩니다.\n\nAI 어시스턴트는 항상 귀 기울여 듣고, 맥락을 구축하며, 조치를 제안하고 직접 실행합니다.\n\n에셋을 가져와 최고 화질로 발표하고, 함께 검토하며 의사결정을 내리고, AI 에이전트가 이를 실시간으로 반영하도록 해보세요. 이 모든 것이 동일한 공유 맥락 안에서 이루어집니다.\n\n출시를 기념하여 Product Hunt 커뮤니티에 다이렉트 액세스를 오픈합니다. www.pactto.com을 방문하시거나 피드백, 문제점, 기능 요청이 있으시면 제 이메일(demian@pactto.com)로 언제든 연락해 주세요. 저희는 여러분을 위해 여기 있습니다.\n\nPactto 팀 전체를 대표하여 감사의 말씀을 전합니다! 🙏\n\n여러분이 어떻게 생각하시는지, 무엇을 깨뜨려 보고 또 이것으로 무엇을 만드실지 정말 기대됩니다. 👋"
+    },
+    {
+     "author": "Vikram",
+     "is_maker": false,
+     "text": "[@demianborba](https://www.producthunt.com/@demianborba) I’d love to see a tutorial on how the podcast teams are using this specifically nice work team, Is there a mobile app for clients who want to review stuff on the go?",
+     "kr": "[@demianborba](https://www.producthunt.com/@demianborba) 팟캐스트 팀이 구체적으로 이를 어떻게 활용하고 있는지 튜토리얼을 보고 싶네요. 멋진 작업입니다 팀 여러분! 이동 중에 검토하고 싶어 하는 클라이언트를 위한 모바일 앱도 있나요?"
+    },
+    {
+     "author": "Demian Borba",
+     "is_maker": true,
+     "text": "[@vikramp7470](https://www.producthunt.com/@vikramp7470) Hi there, thanks a lot for your comment here. We have a dedicated use case page that talks a little bit more of how podcast teams are using Pactto: [https://www.pactto.com/use-cases/podcast-teams](https://www.pactto.com/use-cases/podcast-teams) We don't have a mobile app, [@Pactto](https://www.producthunt.com/products/pactto-replay) is 100% browser based and it works really well on mobile, for instance, we run Stanford StartX AI roundtables every Friday on Pactto, and multiple people join from their mobile devices. And when the meeting is over, we can use Pactto to generate images or documents with summaries and action items. Last time, we created a full blog post before the meeting ended. Looking forward to hearing your thoughts.",
+     "kr": "[@vikramp7470](https://www.producthunt.com/@vikramp7470) 안녕하세요, 댓글 남겨주셔서 정말 감사합니다. 팟캐스트 팀이 Pactto를 어떻게 활용하는지 자세히 설명한 전용 유스케이스 페이지(https://www.pactto.com/use-cases/podcast-teams)가 마련되어 있습니다. 별도의 모바일 앱은 없지만, Pactto는 100% 브라우저 기반으로 모바일에서도 매우 매끄럽게 작동합니다. 예를 들어 매주 금요일 스탠퍼드 StartX AI 라운드테이블을 Pactto에서 진행하는데 여러 참가자가 모바일 기기로 접속합니다. 그리고 미팅이 끝나면 Pactto를 이용해 요약본과 액션 아이템이 담긴 이미지나 문서를 생성할 수 있죠. 지난번에는 미팅이 끝나기도 전에 블로그 포스트 전문을 완성했습니다. 소견을 들려주시면 감사하겠습니다."
+    },
+    {
+     "author": "Vikram",
+     "is_maker": false,
+     "text": "[@demianborba](https://www.producthunt.com/@demianborba) good to know the mobile browser experience is seamless, generating summaries and a full blog post right as a meeting ends sounds like a massive time saver for content workflows, Congrats for launch",
+     "kr": "[@demianborba](https://www.producthunt.com/@demianborba) 모바일 브라우저 경험이 매끄럽다니 다행이네요. 미팅이 끝나자마자 요약본과 블로그 글 전문을 생성하는 건 콘텐츠 워크플로에서 엄청난 시간 절약이 될 것 같습니다. 출시 축하드립니다!"
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "[@demianborba](https://www.producthunt.com/@demianborba) can multiple team members review the same asset simultaneously ?",
+     "kr": "[@demianborba](https://www.producthunt.com/@demianborba) 여러 팀원이 동일한 에셋을 동시에 검토할 수 있나요?"
+    },
+    {
+     "author": "Demian Borba",
+     "is_maker": true,
+     "text": "[@dipanshu\\_kushwaha5](https://www.producthunt.com/@dipanshu_kushwaha5) yes, especially if you are reviewing a video. The playback will sync in high quality across all people and devices, live. Please give it a try and let us know your thoughts.",
+     "kr": "[@dipanshu\\_kushwaha5](https://www.producthunt.com/@dipanshu_kushwaha5) 네, 특히 비디오를 검토할 때 더욱 진가를 발휘합니다. 모든 사용자와 기기에서 실시간 고화질로 재생이 완벽히 동기화됩니다. 꼭 한번 사용해 보시고 의견을 남겨주세요."
+    },
+    {
+     "author": "James Touhey",
+     "is_maker": false,
+     "text": "Pactto is flexible enough to be used by any number of teams, but after getting a demo, I think it's especially valuable for content agencies, especially those working with video and animation. We would have used the sh!% out of this when I owned my agency. Highly recommend you check it out; plus, Demian is a just a good dude to connect with. Congrats team!",
+     "kr": "Pactto는 어떤 팀이든 쓸 수 있을 만큼 유연하지만, 데모를 받아본 결과 특히 비디오와 애니메이션을 다루는 콘텐츠 에이전시에 매우 가치 있다고 생각합니다. 제가 에이전시를 운영할 때 이 제품이 있었다면 정말 영혼까지 끌어다 썼을 겁니다. 꼭 확인해 보시길 강력 추천합니다. 게다가 Demian은 소통하기에도 정말 좋은 분입니다. 팀 여러분 축하드려요!"
+    },
+    {
+     "author": "James Wilson",
+     "is_maker": false,
+     "text": "It could be useful to compare two versions side by side with the feedback attached to the extra changes.",
+     "kr": "추가 변경 사항에 피드백을 첨부한 채로 두 버전을 나란히 비교할 수 있다면 매우 유용할 것 같습니다."
+    },
+    {
+     "author": "Sherif Assaf",
+     "is_maker": true,
+     "text": "[@james\\_wilson60](https://www.producthunt.com/@james_wilson60) You're absolutely right! We have versioning in place and now we're actively working on having them viewed side by side. It will be in Pactto shortly! Stay Tuned!  \n  \nPlease use the product and share any feedback directly with us ([sherif@pactto.com](mailto:sherif@pactto.com) and [demian@pactto.com](mailto:demian@pactto.com))",
+     "kr": "[@james\\_wilson60](https://www.producthunt.com/@james_wilson60) 전적으로 맞는 말씀입니다! 이미 버전 관리 기능이 마련되어 있으며, 현재 나란히 두고 비교해 볼 수 있는 뷰를 적극적으로 개발하고 있습니다. 곧 Pactto에 추가될 예정이니 기대해 주세요! 제품을 사용해 보시고 어떤 피드백이든 저희에게 직접 공유해 주세요 (sherif@pactto.com, demian@pactto.com)."
+    },
+    {
+     "author": "Aibek Yegemberdin",
+     "is_maker": false,
+     "text": "This is such a polished product, I’m a huge believer in the power of the canvas, and adding video chat is usually the one missing piece for collaborative work!",
+     "kr": "정말 완성도 높은 제품이네요. 저는 캔버스가 지닌 힘을 굳게 믿는 편인데, 비디오 채팅을 결합한 것이야말로 협업 작업에서 늘 빠져 있던 결정적인 한 조각이었습니다!"
+    },
+    {
+     "author": "Sherif Assaf",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋\n\nI'm Sherif Assaf, co-founder and CPO for Pactto.  \n  \nToday is a big day for us. \n\nAfter months of building, testing, questioning, redesigning, and rebuilding closely with our community…\n\n**Pactto is live in Beta 🚀**\n\nPactto started from a frustration we kept seeing again and again:\n\nAI-generated assets are accelerating creative output, pushing teams to take ideas from concept to production across more channels, formats, and variations faster than ever before. **But human alignment remains the bottleneck in that process.**\n\nAssets live everywhere. Feedback is scattered across meetings, Slack, comments, and recordings. Decisions lose context. And edits still have to be carried manually across too many tools.\n\n**And that’s why we built Pactto.**  \nPactto is an AI-native room where creative teams meet, align and AI agents make changes live in one persistent room.\n\nSo with Pactto:\n\n**Your Project lives in one persistent room**, where teams can bring all assets together in an infinite multiplayer canvas, organize them and review them live in high-quality synchronized playback.\n\n**Feedback stays connected to the work.** Pactto listens to the conversation, understands what you’re referring to, and captures feedback in context while everyone is still there.\n\n**AI doesn’t just summarize. It acts.** Pactto’s agents understand your intent and can turn voice feedback into edits, suggestions, tasks, and actions. **Say it. Watch it change.**\n\n **The room remembers what meetings forget.** Every asset, conversation, decision, task, and open question becomes part of the project memory. Come back tomorrow and Pactto knows where the work left off.\n\nWe’re so grateful to the community that helped shape Pactto. Now we're most excited to see how people continue to use it, what works, what doesn’t, and what we need to make better.\n\nAs Demian mentioned, please reach out to him or myself ([sherif@pactto.com](mailto:sherif@pactto.com)) with any feedback or suggestions.\n\nThank You!",
+     "kr": "Product Hunt 여러분 안녕하세요 👋\n\nPactto의 공동창업자 겸 CPO Sherif Assaf입니다.\n\n오늘은 저희에게 매우 뜻깊은 날입니다.\n\n커뮤니티와 함께 긴밀히 개발하고, 테스트하고, 고민하고, 재설계하고, 다시 빌드하기를 수개월…\n\n**Pactto가 마침내 오픈 베타로 공개되었습니다 🚀**\n\nPactto는 저희가 지속적으로 목격했던 하나의 좌절감에서 시작되었습니다.\n\nAI가 생성한 에셋들이 크리에이티브 결과물을 가속화하여 팀이 아이디어를 컨셉에서 프로덕션까지 더 많은 채널과 포맷, 다양한 바리에이션으로 전례 없이 빠르게 추진하도록 만들고 있습니다. **하지만 인간 간의 정렬(human alignment)은 여전히 그 과정의 병목으로 남아 있습니다.**\n\n에셋은 사방에 흩어져 있고, 피드백은 미팅, 슬랙, 댓글, 녹화본 전반에 파편화되어 있습니다. 의사결정의 맥락은 유실되고, 수정 사항은 여전히 너무 많은 도구 사이를 수작업으로 옮겨 다녀야 합니다.\n\n**이것이 바로 저희가 Pactto를 만든 이유입니다.**\nPactto는 크리에이티브 팀이 만나 정렬하고 AI 에이전트가 단 하나의 영구 룸에서 실시간으로 변경 사항을 적용하는 AI 네이티브 공간입니다.\n\nPactto와 함께라면:\n\n**프로젝트가 단 하나의 영구적인 룸에 상주합니다.** 팀은 무한한 멀티플레이어 캔버스에 모든 에셋을 모아 정리하고, 고화질 동기화 재생으로 실시간 검토할 수 있습니다.\n\n**피드백이 작업물과 분리되지 않고 연결되어 유지됩니다.** Pactto는 대화를 경청하고 사용자가 무엇을 가리키는지 이해하여, 모든 사람이 여전히 참여하고 있는 상태에서 맥락에 맞게 피드백을 기록합니다.\n\n**AI는 단순히 요약만 하지 않고 직접 행동합니다.** Pactto의 에이전트는 사용자의 의도를 파악하여 음성 피드백을 편집, 제안, 작업 및 실행 가능한 액션으로 전환합니다. **말하면, 실시간으로 바뀌는 것을 볼 수 있습니다.**\n\n**미팅이 끝나면 잊혀지는 것들을 룸이 기억합니다.** 모든 에셋, 대화, 의사결정, 태스크, 미해결 질문이 프로젝트 메모리의 일부가 됩니다. 다음 날 돌아와도 Pactto는 작업이 어디서 멈췄는지 정확히 알고 있습니다.\n\nPactto를 다듬는 데 도움을 준 커뮤니티에 진심으로 감사드립니다. 이제 사람들이 이 도구를 어떻게 계속 사용할지, 무엇이 잘 작동하고 무엇이 부족하며 어떤 점을 개선해야 할지 지켜보는 것이 가장 기대됩니다.\n\nDemian이 말씀드렸듯 피드백이나 제안이 있다면 저(sherif@pactto.com)나 Demian에게 언제든 연락해 주세요.\n\n감사합니다!"
+    },
+    {
+     "author": "Linus Ekenstam",
+     "is_maker": false,
+     "text": "This is so exciting to me, I've seen the progress of Pactto over the past year or so, and to see where the team has been able to take this is insane. There is so many reasons for me to replace Zoom, Miro and even Figjam, and use Pactto instead.  \n  \nOne of the main things that always impressed me was the video playback, its real-time and synched, meaning you can have 20 people watch a 4K video live, and everyone will watch the same frame at the same time, in full resolution.  \n  \nAbsolute killer product for any remote video team, or even video team where you want to stay on top of your work.  \n  \nBut in my experience, this tool is for all remote teams, not just video, its simply a killer canvas, killer conference tool, killer video tool.  \n  \nHats up to Demian, Sherif, Amaro and the rest of the team 🎉",
+     "kr": "정말 가슴 뛰는 출시네요. 지난 1년 정도 Pactto의 발전을 지켜봐 왔는데, 팀이 이 제품을 여기까지 끌어올렸다는 사실이 놀랍기만 합니다. 줌(Zoom), 미로(Miro), 심지어 피그잼(Figjam)을 버리고 Pactto를 사용해야 할 이유가 너무나 많습니다.\n\n제가 가장 감명받았던 핵심 중 하나는 바로 실시간 동기화되는 비디오 재생이었습니다. 20명이 4K 비디오를 라이브로 보더라도 모든 사람이 완벽한 해상도로 정확히 동일한 프레임을 동시에 시청할 수 있다는 의미죠.\n\n원격 영상 제작팀뿐만 아니라 업무를 완벽하게 통제하고 싶은 모든 비디오 팀에게 절대적인 킬러 프로덕트입니다.\n\n하지만 제 경험상 이 도구는 영상 팀뿐 아니라 모든 원격 협업 팀을 위한 것입니다. 그야말로 최고의 캔버스이자 최고의 화상회의 도구, 최고의 비디오 도구입니다.\n\nDemian, Sherif, Amaro를 비롯한 팀원 모두에게 경의를 표합니다 🎉"
+    }
+   ],
+   "slug": "pactto-replay"
+  },
+  {
+   "name": "AgentScore",
+   "tagline_en": "Daily score to see if your agent gets better",
+   "tagline_kr": "에이전트 성능의 향상 여부를 매일 측정하는 종합 품질 점수",
+   "image": "https://ph-files.imgix.net/27e4ff4c-485e-427a-9acf-9ff447e31dcc.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Open Source",
+    "Developer Tools"
+   ],
+   "upvotes": 150,
+   "comments_count": 6,
+   "maker": "César M.(@heycesr) 창업자, Paula Cavero(@paula_cavero) (헌터: fmerian(@fmerian))",
+   "price_model": "오픈소스 (무료 / Open Source)",
+   "price_detail": "오픈소스 플랫폼으로 기본 무료 제공. Latitude 계정 연동을 통해 사용 가능.",
+   "desc_kr": "AgentScore는 오픈소스 AI 에이전트 관측 플랫폼 Latitude가 선보인 에이전트 품질 일일 평가 지표입니다. 프로덕션 환경에서 실행 중인 AI 에이전트의 실행 트레이스를 연결하면 결과 품질(Outcome), 신뢰성(Reliability), 비용(Cost), 속도(Speed), 안전성(Safety) 등 5개 축을 종합 평가하여 단일 점수로 제공합니다. 점수는 매일 자동으로 갱신되어 모델 변경이나 프롬프트 수정 후 에이전트가 실제로 개선되었는지 한눈에 파악할 수 있습니다. 반복적으로 발생하는 실패 요인을 심층 추적하고 해당 증거를 코딩 에이전트에 전달하여 자동으로 버그 수정 풀 리퀘스트를 생성하도록 연계할 수 있습니다. 기존의 단순한 로그 수집을 넘어 에이전트의 실시간 회복력과 프로덕션 신뢰성을 확보해 줍니다.",
+   "launch_url_used": "https://www.producthunt.com/products/latitude-4",
+   "comment_summary": "단일 점수로 요약하는 방식이 직관적이지만 특정 항목 간의 트레이드오프를 가릴 수 있다는 우려와 함께 세부 지표별 가중치 커스터마이징 가능 여부에 대한 질문이 제기되었습니다. 또한 프로덕션 에이전트 연동 시 추가 코딩이 필요한지, 기존 로그가 놓치기 쉬운 이상 징후를 감지할 수 있는지에 대한 기술적 질의가 이어졌습니다. 오픈소스 생태계에 대한 응원과 함께 9번째 런칭을 축하하는 커뮤니티의 지지가 나타났습니다.",
+   "warnings": "수치(업보트 150·댓글 6)는 수집 시점 참고치. 이번 출시는 Latitude 팀의 9번째 런칭인 AgentScore 기능 공개 기준임. 런칭 댓글 6건 전수 수집 완료.",
+   "comments": [
+    {
+     "author": "César M.",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 I’m César, founder of Latitude.  \n  \nOver the past year, we’ve spoken with many teams running AI agents in production. Across all those conversations, one question kept coming up:  \n  \nIs your agent getting better over time?  \n  \nMost teams could answer for a few regression tests or isolated metrics, but not for the whole agent. Current eval systems have a coverage problem.  \n  \nThat’s why we built Agent Score.  \n  \nConnect your production traces and Latitude automatically evaluates your agent across:  \n  \n• Outcome  \n  \n• Reliability  \n  \n• Cost  \n  \n• Speed  \n  \n• Safety  \n  \nIt brings everything together into one quality score that updates daily, so you can see whether your agent is improving, what’s lowering its score, and the production sessions behind every result.  \n  \nFrom there, Latitude helps you investigate recurring failures, track them over time, and send the evidence to your coding agent to open a fix.  \n  \nWe’d love for you to try Agent Score and tell us what you think. Any feedback is more than welcome 🙏",
+     "kr": "Product Hunt 여러분 안녕하세요 👋 Latitude의 창업자 César입니다.\n\n지난 1년 동안 프로덕션 환경에서 AI 에이전트를 운영하는 수많은 팀들과 이야기를 나누었습니다. 그 모든 대화에서 항상 한 가지 질문이 반복해서 나왔습니다.\n\n'여러분의 에이전트는 시간이 지남에 따라 점차 개선되고 있습니까?'\n\n대부분의 팀은 몇 가지 회귀 테스트나 개별 지표에 대해서는 답할 수 있었지만, 에이전트 전체에 대해서는 답하지 못했습니다. 현재의 평가 시스템들은 커버리지 한계 문제를 안고 있기 때문입니다.\n\n이것이 바로 저희가 Agent Score를 만든 이유입니다.\n\n프로덕션 실행 트레이스를 연결하면 Latitude가 다음 5가지 영역에 걸쳐 에이전트를 자동으로 평가합니다.\n• 결과 품질 (Outcome)\n• 신뢰성 (Reliability)\n• 비용 (Cost)\n• 속도 (Speed)\n• 안전성 (Safety)\n\n이 모든 것을 매일 업데이트되는 단일 품질 점수로 통합하여, 에이전트가 개선되고 있는지, 무엇이 점수를 깎아먹고 있는지, 그리고 각 결과 뒤에 있는 프로덕션 세션을 한눈에 확인할 수 있습니다.\n\n여기서 더 나아가 Latitude는 반복되는 장애 요인을 조사하고 시간에 따라 추적하며, 증거 자료를 코딩 에이전트에 전달하여 버그 수정 PR을 생성할 수 있도록 지원합니다.\n\nAgent Score를 직접 사용해 보시고 의견을 들려주시면 감사하겠습니다. 어떤 피드백이든 두 팔 벌려 환영합니다 🙏"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "oss ftw!",
+     "kr": "오픈소스 최고!"
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "Can this detect issues that traditional logs and traces usually miss ?",
+     "kr": "전통적인 로그와 트레이스가 놓치기 쉬운 문제들도 감지해 낼 수 있나요?"
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "[@heycesr](https://www.producthunt.com/@heycesr) and [@paula\\_cavero](https://www.producthunt.com/@paula_cavero) Congratulations on the launch of #AgentScore 🌟✌️. Quick Q, Is there any coding involved in the association of the production agent or is it more passive integration?",
+     "kr": "[@heycesr](https://www.producthunt.com/@heycesr) 님, [@paula\\_cavero](https://www.producthunt.com/@paula_cavero) 님 #AgentScore 출시를 축하드립니다 🌟✌️. 빠른 질문 하나 드리자면, 프로덕션 에이전트를 연동할 때 별도의 코딩 작업이 필요한가요, 아니면 수동적인(패시브) 연동에 가까운가요?"
+    },
+    {
+     "author": "Suryansh Tiwari",
+     "is_maker": false,
+     "text": "one daily score is nice but i'd worry it hides stuff. like if cost goes down but outcome quality drops a bit, the total could still look fine\n\ncan we set our own weights for each category? for us safety matters way more than speed\n\ncongrats on the 9th launch btw, that's wild",
+     "kr": "하루 한 번 단일 점수가 매겨지는 건 좋지만 세부 사항을 가릴까 봐 걱정되네요. 가령 비용은 줄었지만 결과 품질이 약간 떨어진 경우 전체 점수는 여전히 괜찮아 보일 수 있잖아요.\n\n각 카테고리별로 자체 가중치를 설정할 수 있나요? 저희는 속도보다 안전성이 훨씬 더 중요하거든요.\n\n그건 그렇고 9번째 출시 축하드립니다, 정말 대단하네요!"
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "the \"one score across outcome/reliability/cost/speed/safety\" framing is useful but also where I'd worry about a single number hiding a tradeoff, an agent that gets faster and cheaper by being slightly less reliable could show a flat or improving score if the weighting favors cost. do you expose the five sub-scores individually as well, or is the daily score genuinely a blend with no visibility into which dimension moved",
+     "kr": "'결과/신뢰성/비용/속도/안전성을 아우르는 단일 점수'라는 프레임워크는 유용하지만, 동시에 단 하나의 숫자가 트레이드오프를 숨길 수 있다는 점이 우려됩니다. 예를 들어 신뢰성이 약간 떨어지는 대신 더 빠르고 저렴해진 에이전트는 가중치가 비용 쪽으로 치우칠 경우 점수가 유지되거나 오히려 향상되는 것처럼 보일 수 있으니까요. 5가지 하위 점수도 개별적으로 공개되나요, 아니면 일일 점수가 어느 차원이 변했는지 파악할 수 없는 단순 혼합치인가요?"
+    }
+   ],
+   "slug": "latitude-4"
+  }
+ ]
+}
