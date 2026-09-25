@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-09-25",
+    "url": "2026-09-25/",
+    "top_product": "Scholé Learn by Building",
+    "count": 5,
+    "upvotes_total": 1364,
+    "comments_total": 60
+  },
+  {
     "date": "2026-09-24",
     "url": "2026-09-24/",
     "top_product": "Solid",

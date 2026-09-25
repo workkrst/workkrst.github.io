@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-09-25</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-09-25 · Top 5 · 수집 댓글 60개 · 수집 2026-09-25 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-09-25",
+ "collected_at": "2026-09-25 12:30 KST",
+ "summary": "오늘 Product Hunt Top 5는 인공지능(4개)과 개발자 도구(3개)가 주류를 이룬 가운데, 단순한 AI 래퍼를 넘어 기존 에이전트 및 개발 워크플로우에 직접 연동되는 MCP와 실무 인프라 도구들이 두각을 나타냈습니다. 커뮤니티 댓글에서는 RAG와 지식 추적 모델을 활용한 AI 출력의 정확성 검증, 그리고 실제 서버 맥락과 권한 제어에 기반한 안전한 실행 여부가 핵심 공통 논점으로 다뤄졌습니다.",
+ "notable": [
+  {
+   "slug": "floot",
+   "why": "독립형 AI 래퍼 개발을 탈피하고 Claude와 ChatGPT에 연결되는 MCP로 피벗한 전략과 토큰 마크업 없는 고정 요금제가 개발자들의 열렬한 호응을 얻었습니다. 실제로 1년간 즉석 카메라 대여 사업의 전체 시스템을 Floot으로 구축해 운영 중이라는 사용자의 생생한 후기가 공유되며 뛰어난 실용성을 입증했습니다."
+  },
+  {
+   "slug": "schole-2",
+   "why": "AI가 대신 결과를 만들어주는 방식을 넘어 브라우저 확장과 화면 인식을 통해 사용자가 직접 실습하며 배우는 학습 모드가 큰 주목을 받았습니다. 댓글에서는 RAG 공식 문서 연동과 지식 추적(Knowledge Tracing) 모델을 통해 생성된 레슨의 정확성과 실제 숙련도를 과학적으로 검증한다는 제작자의 설명이 높은 신뢰를 얻었습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Scholé Learn by Building",
+   "tagline_en": "Learning should be more than \"click next\"",
+   "tagline_kr": "단순히 '다음'을 클릭하는 것을 넘어, 직접 만들며 배우는 AI 맞춤형 학습",
+   "image": "https://ph-files.imgix.net/b742df3f-7260-46e4-8a25-057ab0673158.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Productivity",
+    "Education",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 322,
+   "comments_count": 47,
+   "maker": "Vinitra Swamy(@vinitra) 창업자/메이커, Paola Mejia(@paola_mejia) 메이커 (헌터: Rohan Chaubey(@rohanrecommends))",
+   "price_model": "무료 (Free)",
+   "price_detail": "오늘 런칭을 기념하여 모든 기능 무료 제공. 별도 계정 생성이나 신용카드 등록 없이 바로 체험 가능.",
+   "desc_kr": "Scholé Learn by Building은 웹상에서 실제 프로젝트를 직접 구축하면서 배우는 AI 기반의 실전형 학습 플랫폼입니다. 강의를 보거나 AI에게 설명을 요구하는 수동적인 방식을 벗어나, 'Learn Anywhere' 브라우저 확장 프로그램을 통해 사용자의 화면을 실시간으로 확인하며 필요한 시점에 시각적 힌트와 작업을 안내합니다. 버클리 및 하버드 연구진의 교육 이론과 지식 추적(Knowledge Tracing) 모델을 결합하여, 사용자의 오개념이나 병목 지점을 정밀하게 추적하고 맞춤형 연습을 제안합니다. 사용자가 구축한 모든 결과물은 개인 지식 그래프(Knowledge Graph)에 자동으로 누적되어 체계적인 역량 성장을 돕습니다. Claude 에이전트 구축부터 웹사이트 제작까지 사용자가 원하는 도구를 현장에서 즉시 학습하고 실무에 적용할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/schole-2",
+   "comment_summary": "댓글에서는 AI가 생성한 레슨의 정확성을 검증하는 방식과 사용자의 실제 역량 습득 여부를 판별하는 기준에 대한 심도 있는 질문이 이어졌습니다. 공동 제작자인 Vinitra Swamy와 Paola Mejia는 RAG 기반 공식 문서 연동과 컴퓨터 유즈 에이전트 활용, 그리고 지식 추적 모델(Knowledge Tracing)을 통한 오개념 분석 원리를 상세히 설명했습니다. 사용자들은 실제 업무 도구 환경 위에서 직접 만들며 배우는 실전 학습 방식에 대해 큰 기대와 호평을 표했습니다.",
+   "warnings": "수치(업보트 322·댓글 47)는 수집 시점 참고치. Scholé의 3번째 런칭인 'Learn by Building' 기능 출시 기준임. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Vinitra Swamy",
+     "is_maker": true,
+     "text": "Hi Product Hunt! Vini here 👋  \n  \nYou can read about building an agent. You can watch someone else build one on YouTube. You can even ask ChatGPT to explain it perfectly.  \n  \nThat’s great. But you won’t properly learn it until you build one yourself. And if AI builds the whole thing for you, you haven’t really solved that problem either.  \n  \nThis is something we at [**Scholé**](https://schole.ai/) think about a lot. We’re AI-for-education researchers, and we use AI constantly ourselves. It’s incredibly useful. But getting something done and learning how to do it aren’t the same thing.  \n  \nSo we built Scholé’s [**Learn Anywhere**](https://schole.ai/learn-anywhere) mode. 🚀💻🌎  \n\nIt’s an agentic browser extension that guides you through a real project, in the tools you want to learn. It sees what’s on your screen, checks things off the task list, and gives you visual hints on screen with sparkles when you need them. _You_ _do the building, and_ _explain why you made the choices you did_.  \n\nBuild your first agent ([**try it!**](https://app.schole.ai/g/claude-agent)), explore gemini notebook features ([**try it!**](https://app.schole.ai/g/gemini-notebook)), finally make your first website with Github ([**try it!**](https://app.schole.ai/g/github-pages)) or any other scenario you can come up with, **all for free for today's launch**. Notably, what you build counts towards your Scholé lesson progress and updates your knowledge graph. You shouldn’t have to finish \"learning\" before you get to make something.  \n\nThis is the help we wish we’d had when we were learning how to build things. Very excited for you to [**explore it**](https://schole.ai/learn-anywhere) (no credit card or account needed!) and would love to hear your feedback. :)  \n\nWhat would you learn first? 🌟  \n\nLots of love,  \nVini & Team Scholé",
+     "kr": "Product Hunt 여러분 안녕하세요! Vini입니다 👋\n\n에이전트를 만드는 방법에 대해 글을 읽을 수도 있고, 유튜브에서 누군가 만드는 영상을 볼 수도 있습니다. 심지어 ChatGPT에게 완벽한 설명을 부탁할 수도 있죠.\n\n다 좋습니다. 하지만 여러분이 직접 에이전트를 만들어보기 전까지는 제대로 배울 수 없습니다. 그리고 AI가 모든 것을 대신 만들어준다면 그것 역시 학습 문제를 해결해 주지 못합니다.\n\n이것은 저희 [Scholé](https://schole.ai/) 팀이 깊이 고민해 온 문제입니다. 저희는 교육용 AI 연구자들이며, 스스로도 AI를 끊임없이 활용하고 있습니다. AI는 놀라울 정도로 유용하지만, 무언가를 완성해 내는 것과 그것을 하는 방법을 배우는 것은 전혀 다른 일입니다.\n\n그래서 저희는 Scholé의 [Learn Anywhere](https://schole.ai/learn-anywhere) 모드를 구축했습니다. 🚀💻🌎\n\n배우고자 하는 도구 안에서 실제 프로젝트를 진행할 수 있도록 안내하는 에이전틱 브라우저 확장 프로그램입니다. 사용자의 화면을 인식하고 과제 목록을 체크하며, 필요할 때 화면에 반짝이는 시각적 힌트를 제공합니다. 여러분이 직접 제작하고, 왜 그런 선택을 했는지 설명하게 됩니다.\n\n첫 에이전트 구축하기([체험하기](https://app.schole.ai/g/claude-agent)), 제미나이 노트북 기능 탐색([체험하기](https://app.schole.ai/g/gemini-notebook)), GitHub으로 첫 웹사이트 만들기([체험하기](https://app.schole.ai/g/github-pages)) 등 여러분이 생각하는 모든 시나리오를 오늘 출시를 기념하여 모두 무료로 이용하실 수 있습니다. 특히 여러분이 만든 것은 Scholé 레슨 진행 상황에 반영되며 지식 그래프를 업데이트합니다. 무언가를 만들기 전에 '학습'을 끝내야만 할 이유는 없습니다.\n\n무언가를 만드는 법을 배울 때 저희에게도 꼭 있었으면 했던 도움을 구현했습니다. 여러분께서 직접 체험해 보시길 기대하며(신용카드나 계정 필요 없음!), 피드백도 환영합니다. :)\n\n어떤 것을 가장 먼저 배워보고 싶으신가요? 🌟\n\n많은 관심 부탁드립니다,\nVini & Scholé 팀 드림"
+    },
+    {
+     "author": "Zaur Bahramov",
+     "is_maker": false,
+     "text": "Idea is cool! How do you make sure a generated lesson is actually correct?",
+     "kr": "아이디어가 정말 멋지네요! 생성된 레슨이 실제로 정확한지는 어떻게 확인하나요?"
+    },
+    {
+     "author": "Vinitra Swamy",
+     "is_maker": true,
+     "text": "[@zaur\\_bahramov](https://www.producthunt.com/@zaur_bahramov) very happy to hear you like it! We are using a knowledge graph of materials with RAG to ground the lessons in the tools' documentation, and AI upskilling lectures from our professor friends at Berkeley, Harvard, and more. :) For the tasks, we're constantly keep them up to date with computer-use agents that actually interpret and click around the UI like a human does.",
+     "kr": "[@zaur\\_bahramov](https://www.producthunt.com/@zaur_bahramov) 마음에 들어 하셔서 정말 기쁩니다! 저희는 도구의 공식 문서에 레슨을 접목하기 위해 RAG 기반의 자료 지식 그래프를 활용하고 있으며, 버클리와 하버드 등의 교수진 친구들이 제공하는 AI 역량 강화 강의도 반영하고 있습니다. :) 실습 과제의 경우, 사람처럼 UI를 직접 해석하고 클릭하는 컴퓨터 유즈(Computer-use) 에이전트를 통해 지속적으로 최신 상태를 유지하고 있습니다."
+    },
+    {
+     "author": "Jack Thompson",
+     "is_maker": false,
+     "text": "How do you decide when someone has actually mastered a skill?",
+     "kr": "누군가가 특정 기술을 실제로 완벽히 습득했는지는 어떻게 판별하나요?"
+    },
+    {
+     "author": "Paola Mejia",
+     "is_maker": true,
+     "text": "[@jackthompson68](https://www.producthunt.com/@jackthompson68) we have some knowledge tracing models that track the skill mastery and accounting for guessing and forgetting",
+     "kr": "[@jackthompson68](https://www.producthunt.com/@jackthompson68) 저희는 추측이나 망각 요소까지 감안하여 기술 숙련도를 추적하는 지식 추적(Knowledge Tracing) 모델을 보유하고 있습니다."
+    },
+    {
+     "author": "Vinitra Swamy",
+     "is_maker": true,
+     "text": "[@jackthompson68](https://www.producthunt.com/@jackthompson68)  it's actually super interesting, there's a lot of work on alpha/beta distributions towards mastery tracking (using the knowledge tracing models Paola is mentioning). If you'd like to chat about it more, would love to talk!",
+     "kr": "[@jackthompson68](https://www.producthunt.com/@jackthompson68) 실제로 매우 흥미로운 영역인데요, Paola가 언급한 지식 추적 모델을 활용하여 숙련도 추적을 위한 알파/베타 분포에 대해 많은 연구가 이루어지고 있습니다. 더 자세히 이야기 나누고 싶으시다면 언제든 환영합니다!"
+    },
+    {
+     "author": "Akinwande Kehinde",
+     "is_maker": false,
+     "text": "> Can I learn any skill on it",
+     "kr": "> 여기서 어떤 기술이든 배울 수 있나요?"
+    },
+    {
+     "author": "Vinitra Swamy",
+     "is_maker": true,
+     "text": "[@akinwande\\_kehinde](https://www.producthunt.com/@akinwande_kehinde) yes! You can try our lesson builder!",
+     "kr": "[@akinwande\\_kehinde](https://www.producthunt.com/@akinwande_kehinde) 네! 저희의 레슨 빌더(Lesson Builder)를 직접 사용해 보세요!"
+    },
+    {
+     "author": "Vinitra Swamy",
+     "is_maker": true,
+     "text": "We have a lot of expert curated curriculum on AI tools, but you can create a lesson on Scholé on any topic from any grounding sources",
+     "kr": "저희는 AI 도구에 대한 전문가 큐레이션 커리큘럼을 많이 보유하고 있지만, 어떤 근거 자료로부터든 원하는 모든 주제에 대해 Scholé에서 레슨을 만들 수 있습니다."
+    },
+    {
+     "author": "Irene Chan",
+     "is_maker": false,
+     "text": "Oh, this is very interesting. I really like task-based learning! What kind of tasks does it give you?",
+     "kr": "오, 정말 흥미롭네요. 과제 기반 학습을 참 좋아하는데요! 어떤 종류의 과제들이 주어지나요?"
+    },
+    {
+     "author": "Vinitra Swamy",
+     "is_maker": true,
+     "text": "[@heyitsirenechan](https://www.producthunt.com/@heyitsirenechan) hi irene! you could check out a few of the tasks here: [https://schole.ai/learn-anywhere](https://schole.ai/learn-anywhere)  \n\nIn the gemini notebook lesson, for example, it helps you create your first notebook, then add different modalities of sources (pdfs / slides / videos) and figure out what happens to the summary when you remove sources, or how to reference specific citations! It can really be any task that helps you become a better user or deeply understand the functionality of any tool.",
+     "kr": "[@heyitsirenechan](https://www.producthunt.com/@heyitsirenechan) 안녕하세요 Irene 님! 여기에서 몇 가지 과제를 확인해 보실 수 있습니다: https://schole.ai/learn-anywhere\n\n예를 들어 제미나이 노트북(Gemini Notebook) 레슨에서는 첫 노트북을 만든 다음, 다양한 형식의 소스(PDF/슬라이드/영상)를 추가해 보고, 소스를 제거했을 때 요약이 어떻게 바뀌는지 확인하거나 특정 인용을 참조하는 방법을 익히도록 돕습니다! 어떤 도구이든 더 뛰어난 사용자가 되거나 기능을 깊이 있게 이해할 수 있도록 돕는 과제라면 무엇이든 가능합니다."
+    },
+    {
+     "author": "Advin Jadis",
+     "is_maker": false,
+     "text": "How does it decide which skill to teach when someone gets stuck?",
+     "kr": "학습자가 막혔을 때 어떤 기술을 가르쳐야 할지는 어떻게 결정하나요?"
+    }
+   ],
+   "slug": "schole-2"
+  },
+  {
+   "name": "Floot MCP",
+   "tagline_en": "Build and ship web and mobile apps inside Claude or ChatGPT",
+   "tagline_kr": "Claude나 ChatGPT 채팅창 안에서 웹 및 모바일 앱을 직접 제작하고 배포",
+   "image": "https://ph-files.imgix.net/11e2e51b-0936-47c1-a2b8-2281d2927129.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Developer Tools",
+    "Artificial Intelligence",
+    "No-Code"
+   ],
+   "upvotes": 311,
+   "comments_count": 64,
+   "maker": "Yuj Yao(@yujian) 공동창업자, Adrian Yumul(@yumul), Joanie Lam(@joanie_lam1), Allen Tang(@allen_285174)",
+   "price_model": "프리미엄 (Free Options / 정액제)",
+   "price_detail": "기본 무료 옵션 제공. AI 토큰 종량제 과금 없이 고정 플랫폼 요금으로 운영되며 런칭 기념 30% 할인 제공.",
+   "desc_kr": "Floot MCP는 사용자가 즐겨 쓰는 Claude나 ChatGPT 환경을 그대로 활용하여 풀스택 웹 및 모바일 앱을 즉시 구축하고 배포할 수 있는 Model Context Protocol 연동 플랫폼입니다. 복잡한 로컬 설정이나 서비스 연동 없이도 데이터베이스, 사용자 인증, 클라우드 호스팅 및 라이브 URL이 완비된 워크스페이스를 AI에게 즉시 제공합니다. 자체 AI 모델을 개발해 토큰당 마크업을 부과하는 대신, 사용자의 기존 Claude나 ChatGPT 구독을 두뇌로 활용하고 인프라에 대한 고정 플랫폼 요금만 청구하여 비용을 크게 낮췄습니다. 웹 배포에 그치지 않고 Apple Developer 및 Google Play 계정을 한 번 연동하면 동일한 채팅 대화창에서 iOS와 안드로이드 스토어로 원클릭 앱 배포와 업데이트를 지속할 수 있습니다. AWS Lambda와 Neon 서버리스 PostgreSQL 기반으로 안정적인 백엔드 인프라를 자동으로 관리합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/floot",
+   "comment_summary": "독립적인 AI 래퍼(Wrapper) 개발 대신 Claude와 ChatGPT에 연결되는 MCP 형태로 전환한 전략과 토큰 마크업 없는 투명한 가격 정책에 개발자들의 호평이 쏟아졌습니다. 백엔드 구성에 대한 질의에 제작자는 AWS Lambda와 Neon PostgreSQL을 활용하여 인프라 관리 부담을 완전히 제거했다고 설명했습니다. 또한 1년간 즉석 카메라 렌탈 비즈니스 전체 시스템을 Floot으로 구축해 운영 중이라는 실제 고객의 추천 후기가 공유되며 신뢰를 더했습니다.",
+   "warnings": "수치(업보트 311·댓글 64)는 수집 시점 참고치. Floot의 2번째 런칭으로 Claude/ChatGPT MCP 연동 및 모바일 앱 배포 기능 공개 기준임. 수집된 1페이지 댓글 중 핵심 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Yuj Yao",
+     "is_maker": true,
+     "text": "Hey Product Hunt - Yuj from Floot here!  \n\n**Super excited to launch the new Floot MCP** - Floot now gives Claude or ChatGPT a zero-setup place to build and publish full-stack apps.  \n\nWe started Floot a little over a year ago. At the time, we thought a great app builder needed its own AI agent as well as the infrastructure behind it.  \n\nThat’s assumption has changed. Claude and ChatGPT have become very good at building software, so creating another agent no longer felt useful. The better product was to give people a simple way to build with the agents they already use.  \n\nThat’s what Floot MCP does. Connect it once, and Claude or ChatGPT gets a cloud workspace with data, user accounts, hosting, and publishing already set up. There’s nothing to install and no need to wire together separate services. You can keep working on the same project from the web, desktop, or mobile.  \n\nYour existing Claude or ChatGPT subscription handles the AI. Floot charges a flat platform fee instead of metering AI usage, which makes it much cheaper than many app builders.  \n\nWe’ve also just added **mobile publishing**. The same project can ship to the web, iOS, and Android. Connect your Apple Developer or Google Play account once, then keep shipping from the same conversation where you built the app.\n\n**Try out free now on** [**floot.com**](https://floot.com/)**!**  \n\nWe’d love to see what you make, and I’m happy to answer any questions - thanks so much for the support ❤️",
+     "kr": "Product Hunt 여러분 안녕하세요 - Floot의 Yuj입니다!\n\n**새로운 Floot MCP를 선보이게 되어 매우 기쁩니다** - Floot은 이제 Claude나 ChatGPT에 사전 설정 없이 풀스택 앱을 구축하고 배포할 수 있는 공간을 제공합니다.\n\n저희는 1년여 전에 Floot을 시작했습니다. 그 당시에는 훌륭한 앱 빌더가 되려면 자체 AI 에이전트와 그 뒤를 받치는 인프라가 모두 필요하다고 생각했습니다.\n\n하지만 그 전제는 바뀌었습니다. Claude와 ChatGPT가 소프트웨어 구축을 매우 훌륭하게 해내기 시작하면서 또 다른 에이전트를 만드는 것이 더 이상 유용하지 않게 느껴졌습니다. 더 나은 제품이란 사람들이 이미 사용 중인 에이전트를 활용해 쉽게 개발할 수 있는 방식을 제공하는 것이었습니다.\n\n그것이 바로 Floot MCP가 하는 일입니다. 한 번만 연결하면 Claude나 ChatGPT가 데이터, 사용자 계정, 호스팅, 배포가 이미 구성된 클라우드 워크스페이스를 갖게 됩니다. 설치할 것도 없고 별도의 서비스들을 서로 연결할 필요도 없습니다. 웹, 데스크톱, 모바일 어디서든 동일한 프로젝트를 계속 작업할 수 있습니다.\n\n기존의 Claude나 ChatGPT 구독이 AI 두뇌 역할을 수행합니다. Floot은 AI 사용량을 종량제로 계량하는 대신 고정 플랫폼 요금을 부과하므로 여러 앱 빌더들에 비해 훨씬 저렴합니다.\n\n또한 방금 **모바일 배포** 기능도 추가했습니다. 동일한 프로젝트를 웹, iOS, 안드로이드로 배포할 수 있습니다. Apple Developer 또는 Google Play 계정을 한 번 연동하면 앱을 만든 바로 그 대화창에서 지속적으로 앱 스토어에 업데이트를 배포할 수 있습니다.\n\n**지금 [floot.com](https://floot.com/)에서 무료로 시작해 보세요!**\n\n여러분이 무엇을 만드실지 정말 기대되며 어떤 질문이든 기꺼이 답변해 드리겠습니다. 응원해 주셔서 진심으로 감사드립니다 ❤️"
+    },
+    {
+     "author": "Vikram",
+     "is_maker": false,
+     "text": "[@yujian](https://www.producthunt.com/@yujian) really smart pivot to build this as an MCP rather than a standalone agent, Congrats on the launch🙌",
+     "kr": "[@yujian](https://www.producthunt.com/@yujian) 독립형 에이전트 대신 MCP 형태로 구축한 것은 정말 현명한 피벗이네요, 출시를 축하드립니다🙌"
+    },
+    {
+     "author": "Yuj Yao",
+     "is_maker": true,
+     "text": "[@vikramp7470](https://www.producthunt.com/@vikramp7470) Thank you - and yes I do think this will happen to most of the wrappers",
+     "kr": "[@vikramp7470](https://www.producthunt.com/@vikramp7470) 감사합니다 - 네, 저 역시 대부분의 래퍼(wrapper) 제품들이 이런 방향으로 갈 것이라 생각합니다"
+    },
+    {
+     "author": "Allen Tang",
+     "is_maker": true,
+     "text": "[@yujian](https://www.producthunt.com/@yujian)  [@vikramp7470](https://www.producthunt.com/@vikramp7470) Thanks Vikram! We really think MCP is where building with AI is heading, so glad it resonates 🙌",
+     "kr": "[@yujian](https://www.producthunt.com/@yujian) [@vikramp7470](https://www.producthunt.com/@vikramp7470) Vikram 님 감사합니다! 저희도 MCP야말로 AI 기반 개발이 나아갈 미래라고 굳게 믿고 있는데 공감해 주셔서 기쁩니다 🙌"
+    },
+    {
+     "author": "Mei Chen",
+     "is_maker": false,
+     "text": "[@yujian](https://www.producthunt.com/@yujian) Really impressed with Floot. It’s such a simple way to build without all the token markup stuff you run into with Lovable. The pricing just feels much more straightforward. Floot also takes care of hosting and everything else.",
+     "kr": "[@yujian](https://www.producthunt.com/@yujian) Floot에 정말 깊은 인상을 받았습니다. Lovable 같은 곳에서 마주치는 골치 아픈 토큰 마크업 없이 구축할 수 있는 아주 단순한 방식이네요. 가격 정책이 훨씬 더 직관적으로 느껴집니다. 호스팅과 그 외 모든 것도 Floot이 알아서 처리해 주고요."
+    },
+    {
+     "author": "Yuj Yao",
+     "is_maker": true,
+     "text": "[@mei\\_chen1](https://www.producthunt.com/@mei_chen1) Thank you!",
+     "kr": "[@mei\\_chen1](https://www.producthunt.com/@mei_chen1) 감사합니다!"
+    },
+    {
+     "author": "Allen Tang",
+     "is_maker": true,
+     "text": "[@yujian](https://www.producthunt.com/@yujian)  [@mei\\_chen1](https://www.producthunt.com/@mei_chen1) Appreciate it, Mei! No token markup was a big one for us, glad the pricing feels simple.",
+     "kr": "[@yujian](https://www.producthunt.com/@yujian) [@mei\\_chen1](https://www.producthunt.com/@mei_chen1) 좋은 말씀 감사드려요, Mei 님! 토큰 마크업을 없애는 것이 저희에게도 매우 중요한 과제였는데 가격 구조가 단순하게 느껴지셨다니 기쁩니다."
+    },
+    {
+     "author": "Emma Pugsley",
+     "is_maker": false,
+     "text": "I love the pivot. What was it that made you realise a wrapper isn't the way forward? Also, can you share any live examples of an app?",
+     "kr": "피벗 방향이 정말 마음에 듭니다. 단순 래퍼가 올바른 길이 아니라는 걸 깨닫게 된 계기가 무엇이었나요? 그리고 실제로 동작하는 앱 예시도 공유해 주실 수 있나요?"
+    },
+    {
+     "author": "Yuj Yao",
+     "is_maker": true,
+     "text": "[@you\\_x\\_you\\_i](https://www.producthunt.com/@you_x_you_i) Honestly it's just the slow growth, intellectually, it's also realizing that agents are so capable today now that you don't need to have special engineering around them. You can check out other user's submitted websites here: [https://floot.com/en/showcase](https://floot.com/en/showcase)",
+     "kr": "[@you\\_x\\_you\\_i](https://www.producthunt.com/@you_x_you_i) 솔직히 말씀드리면 성장세가 더뎠던 점도 있고, 지적으로는 오늘날의 AI 에이전트들이 이미 너무나 뛰어나서 굳이 복잡한 전용 엔지니어링을 둘 필요가 없다는 점을 깨달았기 때문입니다. 다른 사용자들이 만든 웹사이트들은 여기서 확인해 보실 수 있습니다: https://floot.com/en/showcase"
+    },
+    {
+     "author": "KP",
+     "is_maker": false,
+     "text": "Very cool! What’s your back end layer?",
+     "kr": "정말 멋지네요! 백엔드 계층은 어떤 걸 사용하시나요?"
+    },
+    {
+     "author": "Yuj Yao",
+     "is_maker": true,
+     "text": "[@thisiskp\\_](https://www.producthunt.com/@thisiskp_) We use AWS lambda + NEON database!",
+     "kr": "[@thisiskp\\_](https://www.producthunt.com/@thisiskp_) 저희는 AWS Lambda와 Neon 데이터베이스를 사용하고 있습니다!"
+    },
+    {
+     "author": "Lukáš Řezník",
+     "is_maker": false,
+     "text": "We built the entire system for our instant camera rental business with Floot. Both for customers and for our employees. We've been operating it for a year now and we can't praise it enough. Previously, it would have taken us years to develop such a system.",
+     "kr": "저희는 즉석 카메라 대여 사업의 전체 시스템을 Floot으로 구축했습니다. 고객용 시스템과 직원용 시스템 모두를요. 벌써 1년 동안 운영하고 있는데 아무리 칭찬해도 모자랍니다. 이전 같았으면 이런 시스템을 개발하는 데 수년이 걸렸을 것입니다."
+    }
+   ],
+   "slug": "floot"
+  },
+  {
+   "name": "CtrlOps 1.0",
+   "tagline_en": "Your server. Audited, managed, and deployed with AI.",
+   "tagline_kr": "AI로 감사·관리·배포까지 한 번에 수행하는 리눅스 서버 관리 플랫폼",
+   "image": "https://ph-files.imgix.net/5f6dfcb1-cc3e-4c3b-93ef-cba65cb248df.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Linux",
+    "Developer Tools",
+    "Security"
+   ],
+   "upvotes": 252,
+   "comments_count": 73,
+   "maker": "Daxesh Italiya(@daxesh_italiya) 창업자, Parth Makwana(@parth_makwana07) 공동창업자, Hiren Kalariya(@hiren_kalariya) (헌터: fmerian(@fmerian))",
+   "price_model": "프리미엄 (Free Options / 1개월 무료)",
+   "price_detail": "신용카드 등록 없이 1개월간 무료 체험 제공. 이후 플랜별 유료 라이선스 제공.",
+   "desc_kr": "CtrlOps 1.0은 복잡한 터미널 명령어와 개별 관리 도구 없이도 리눅스 서버를 안전하게 운영할 수 있도록 돕는 로컬 기반의 차세대 서버 관리 플랫폼입니다. 자연어 기반 AI 터미널을 탑재하여 서버의 실시간 상태를 분석하고 최적의 명령어를 추천하며, 사용자의 승인을 거쳐야만 명령어가 실행되도록 안전성을 보장합니다. 25가지 보안 항목을 점검하는 보안 감사(Security Audit) 리포트와 원클릭 취약점 수정, 전체 서버 접근 권한 일괄 회수 및 세분화된 역할 관리(RBAC) 기능을 제공합니다. SSH 접속 없이도 서버 내 모든 로그를 검색하고 실시간 테일(tail)할 수 있으며, PM2 프로세스 관리 및 GitHub 기반 원클릭 배포까지 단일 대시보드에서 처리합니다. 100% 로컬 환경에서 구동되어 서버 인증 정보와 SSH 키가 외부로 유출되지 않으며 Mac, Windows, Linux를 모두 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/ctrlops",
+   "comment_summary": "AWS EC2 환경에서의 실전 디버깅 방식과 복수 서버 간의 세분화된 접근 권한(RBAC) 관리 및 볼트 락(Vault Lock) 보안에 대한 기술적 질의가 주를 이뤘습니다. 제작진은 AI가 실제 서버 상태(CPU, 메모리, 프로세스)를 파악한 후 사전 승인 기반으로만 명령을 실행하며, 키 페어 기반의 중앙 제어 방식을 채택했다고 설명했습니다. 참여자들은 터미널과 SFTP, 대시보드를 오가던 번거로움을 해결하고 보안까지 로컬에서 지켜주는 완성도 높은 도구라며 호평했습니다.",
+   "warnings": "수치(업보트 252·댓글 73)는 수집 시점 참고치. 지난 5월 첫 런칭(#5위) 이후 4개월 만의 1.0 정식 메이저 업데이트 기준임. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Daxesh Italiya",
+     "is_maker": true,
+     "text": "Hey 👋\n\nWe know you’re happy with CtrlOps as an SSH client.\n\n  \nBut we kept asking ourselves:\n\n**What if CtrlOps could do more than just connect to your servers?**\n\n  \nSo this time, we're going **beyond SSH clients.**\n\n  \nYour server shouldn’t require you to remember a command for everything.\n\n  \nNeed to check security?\n\n→ Run a full security audit.\n\n  \nNeed to remove someone's access?\n\n→ Do it across your servers in one action.\n\n  \nNeed to find a log?\n\n→ Search and tail it without SSH.\n\n  \nNeed to restart a PM2 process?\n\n→ One click.\n\n  \nNeed to create a server user?\n\n→ Do it from the UI.\n\n  \nNeed to move from Termius?\n\n→ Import your hosts and SSH keys in ~30 seconds.\n\n  \nNeed to protect your CtrlOps setup?\n\n→ Lock it with Vault Lock.\n\n  \nNeed to move your CtrlOps setup to another machine?\n\n→ Backup and restore everything.\n\n  \nAnd we’ve added 14+ more improvements across Deployments, File Manager, AI Terminal, and Infra Details.\n\n  \n**This is our second Product Hunt launch.**\n\nThe first launch helped us prove the idea.\n\nThe conversations after that launch helped us understand what DevOps teams actually need.\n\n  \nSo we went back to work.\n\nMore listening.\n\nMore shipping.\n\nLess repetitive terminal work.\n\n  \nOur mission hasn't changed:\n**Simplify DevOps.**\n\n  \nBut CtrlOps has grown far beyond being just an SSH client.\n\nIf you manage Linux servers, we'd love to have you try the new CtrlOps.\n\n  \nAnd tell us:\n\n**What should we take beyond SSH next?**",
+     "kr": "안녕하세요 👋\n\n여러분께서 SSH 클라이언트로서의 CtrlOps에 만족하고 계신다는 점을 잘 알고 있습니다.\n\n하지만 저희는 스스로에게 계속 질문을 던졌습니다:\n**CtrlOps가 단순히 서버에 연결하는 것 이상의 역할을 할 수 있다면 어떨까?**\n\n그래서 이번에는 **단순 SSH 클라이언트를 넘어섭니다.**\n\n서버를 다루기 위해 모든 명령어를 일일이 기억할 필요가 없어야 합니다.\n\n보안 점검이 필요하신가요?\n→ 전체 보안 감사를 실행하세요.\n\n누군가의 접근 권한을 삭제해야 하나요?\n→ 한 번의 작업으로 전체 서버에서 일괄 처리하세요.\n\n로그를 찾아야 하나요?\n→ SSH 접속 없이도 검색하고 실시간 테일(tail)을 확인하세요.\n\nPM2 프로세스를 재시작해야 하나요?\n→ 클릭 한 번이면 됩니다.\n\n서버 사용자를 생성해야 하나요?\n→ UI에서 바로 처리하세요.\n\nTermius에서 이전하고 싶으신가요?\n→ 호스트와 SSH 키를 약 30초 만에 가져오세요.\n\nCtrlOps 설정을 보호하고 싶으신가요?\n→ 볼트 락(Vault Lock)으로 잠그세요.\n\nCtrlOps 설정을 다른 기기로 옮겨야 하나요?\n→ 모든 것을 백업하고 복원하세요.\n\n그리고 배포, 파일 관리자, AI 터미널, 인프라 세부 정보 전반에 걸쳐 14가지 이상의 개선 사항을 추가했습니다.\n\n**이번이 저희의 두 번째 Product Hunt 출시입니다.**\n첫 번째 출시는 아이디어를 검증하는 데 도움이 되었습니다.\n출시 후 나눈 대화들은 데브옵스 팀에 진정으로 필요한 것이 무엇인지 이해하도록 도왔습니다.\n\n그래서 저희는 다시 개발에 집중했습니다.\n더 많이 경청하고, 더 많이 출시하며, 반복적인 터미널 작업을 줄였습니다.\n\n저희의 사명은 변하지 않았습니다: **DevOps를 단순화하는 것.**\n하지만 CtrlOps는 이제 단순한 SSH 클라이언트를 훨씬 뛰어넘어 성장했습니다.\n\n리눅스 서버를 관리하고 계신다면 새로워진 CtrlOps를 꼭 사용해 보시길 바랍니다.\n\n그리고 알려주세요:\n**다음에는 SSH를 넘어 어떤 영역을 다루어야 할까요?**"
+    },
+    {
+     "author": "AL-AMIN AMINU SULEIMAN",
+     "is_maker": false,
+     "text": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) Wow This is really a great product,i have question please,I am currently using AWS EC2 and the OS I m using Linux, so this is actually a problem I am facing honestly because I find it difficult to learn every terminal command, like I know almost 20% of the running command while using ChatGPT for the rest 80% of the commands, so now can you please enlight me more on how this actually works with example of how it can help me in my work?",
+     "kr": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) 와, 정말 훌륭한 제품이네요. 질문이 하나 있습니다. 저는 현재 AWS EC2의 리눅스 OS를 사용하고 있는데, 모든 터미널 명령어를 외우기가 어려워 솔직히 애를 먹고 있습니다. 실행하는 명령어의 20% 정도만 알고 나머지 80%는 ChatGPT를 참고하거든요. 이것이 제 실무에서 어떻게 도움이 될 수 있는지 구체적인 예시와 함께 작동 방식을 설명해 주실 수 있나요?"
+    },
+    {
+     "author": "Parth Makwana",
+     "is_maker": true,
+     "text": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya)  [@alamin001](https://www.producthunt.com/@alamin001) Thanks so much, really glad it resonates with you!  \n\nThat's exactly the problem CtrlOps was built for. You don't need to know the commands at all, you just describe what you want in plain English, and the AI figures out the right command for your actual server.\n\n  \nHere's a real example. Say your app is running slow on your EC2 instance. Instead of Googling or asking ChatGPT and copying commands blindly, you'd just type into CtrlOps: \"why is my server running slow?\"\n\n  \nThe AI Terminal looks at your actual server, live CPU, memory, running processes, and figures out what's actually happening. It then shows you the exact command it wants to run, explains what that command does, and waits for you to approve it before anything runs. Nothing executes without your yes.\n\n  \nThat's the big difference from copying commands out of ChatGPT: this AI already knows your real server, not just guessing generically, and it never runs anything behind your back.\n\n  \nSince you're on EC2, you can connect it directly (we support .pem key files), and it works the same way whether you're deploying, debugging, or just checking server health.\n\n  \nHappy to answer anything else, or point you to a quick demo video if that'd help!",
+     "kr": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) [@alamin001](https://www.producthunt.com/@alamin001) 정말 감사드리며, 깊이 공감해 주셔서 기쁩니다! 바로 그 문제를 해결하기 위해 CtrlOps가 만들어졌습니다. 명령어를 전혀 모르셔도 상관없습니다. 원하는 내용을 일반 영어로 설명하기만 하면 AI가 실제 서버 환경에 맞는 정확한 명령어를 찾아냅니다.\n\n실제 예시를 하나 들어보겠습니다. 만약 EC2 인스턴스에서 실행 중인 앱이 느려졌다고 해보죠. 구글링을 하거나 ChatGPT에 물어보고 명령어를 맹목적으로 복사하는 대신, CtrlOps에 그저 \"why is my server running slow? (서버가 왜 이렇게 느린가요?)\"라고 입력하기만 하면 됩니다.\n\nAI 터미널이 실제 서버의 실시간 CPU, 메모리, 실행 중인 프로세스를 살펴보고 현재 무슨 일이 일어나고 있는지 파악합니다. 그런 다음 실행하고자 하는 정확한 명령어를 보여주고, 그 명령어가 무엇을 하는지 설명한 뒤 사용자가 승인할 때까지 대기합니다. 사용자의 승인 없이는 아무것도 실행되지 않습니다.\n\n이것이 ChatGPT에서 명령어를 복사해 오는 것과의 결정적인 차이입니다. 이 AI는 막연히 추측하는 것이 아니라 실제 서버 상태를 이미 파악하고 있으며, 사용자의 등 뒤에서 몰래 무언가를 실행하지 않습니다.\n\nEC2를 사용 중이시므로 .pem 키 파일을 통해 바로 연결할 수 있으며, 배포나 디버깅, 단순 서버 상태 점검 등 모든 작업에서 동일한 방식으로 작동합니다.\n\n더 궁금한 점이 있으시면 언제든 질문해 주세요. 도움이 필요하시다면 빠른 데모 영상도 안내해 드릴 수 있습니다!"
+    },
+    {
+     "author": "Priya K",
+     "is_maker": false,
+     "text": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya)  [@alamin001](https://www.producthunt.com/@alamin001)  [@parth\\_makwana07](https://www.producthunt.com/@parth_makwana07) I usually just copy-paste from ChatGPT anyway, so having it built-in with actual server context is a game-changer. congrats team",
+     "kr": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) [@alamin001](https://www.producthunt.com/@alamin001) [@parth\\_makwana07](https://www.producthunt.com/@parth_makwana07) 어차피 저도 보통 ChatGPT에서 복사해서 붙여넣곤 했는데, 실제 서버 맥락이 내장되어 있다는 건 판도를 바꿀 기능이네요. 팀원 여러분 축하드립니다."
+    },
+    {
+     "author": "AL-AMIN AMINU SULEIMAN",
+     "is_maker": false,
+     "text": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya)  [@parth\\_makwana07](https://www.producthunt.com/@parth_makwana07) actually your team did a great job for figuring this kind of problem we are facing on our daily task, this is really a game changer, you guys are solving real problem, you did a great job",
+     "kr": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) [@parth\\_makwana07](https://www.producthunt.com/@parth_makwana07) 저희가 일상 업무에서 겪는 이러한 문제점을 정확히 포착해 내시다니 정말 훌륭합니다. 진정한 게임 체인저이며, 실질적인 문제를 훌륭히 해결해 주셨네요."
+    },
+    {
+     "author": "Julian Ting",
+     "is_maker": false,
+     "text": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) The one-click server actions caught my attention. Being able to manage users, PM2 processes, and logs without writing commands could save a lot of repetitive work.",
+     "kr": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) 원클릭 서버 액션 기능이 눈에 띄네요. 명령어를 직접 작성하지 않고도 사용자, PM2 프로세스, 로그를 관리할 수 있다는 건 수많은 반복 업무를 줄여줄 것 같습니다."
+    },
+    {
+     "author": "Parth Makwana",
+     "is_maker": true,
+     "text": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya)  [@julian\\_ting2](https://www.producthunt.com/@julian_ting2) We want to make it easy to use; that's why. The user always comes first!  \n  \nGlad you like it; feel free to use it and share your feedback with us!",
+     "kr": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) [@julian\\_ting2](https://www.producthunt.com/@julian_ting2) 사용하기 쉽게 만드는 것이 저희의 핵심 목표이기 때문입니다. 사용자가 언제나 최우선이니까요! 마음에 드셨다니 기쁘며, 편하게 사용해 보시고 피드백을 공유해 주세요!"
+    },
+    {
+     "author": "Mohsin Ali",
+     "is_maker": false,
+     "text": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) How does the access management handle different roles across different servers?",
+     "kr": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) 접근 권한 관리가 서로 다른 여러 서버에 걸쳐 다양한 역할을 어떻게 처리하나요?"
+    },
+    {
+     "author": "Parth Makwana",
+     "is_maker": true,
+     "text": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya)  [@mohsinproduct](https://www.producthunt.com/@mohsinproduct) CtrlOps handles access management across different servers by using individual SSH key pairs for each user, assigning roles with specific permissions, and managing these keys per server. Roles like Administrator, Developer, Operator, and Auditor have defined access levels, such as full access, deployment rights, monitoring, or read-only.  \n  \nYou can add SSH keys to specific servers, assign roles, set expiration dates, and view activity logs from a central dashboard, ensuring secure, role-based access control across your server fleet.",
+     "kr": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) [@mohsinproduct](https://www.producthunt.com/@mohsinproduct) CtrlOps는 사용자마다 개별 SSH 키 페어를 사용하고 특정 권한이 부여된 역할을 할당하여 서버별로 이 키들을 관리함으로써 접근 권한을 제어합니다. 관리자(Administrator), 개발자(Developer), 운영자(Operator), 감사자(Auditor)와 같은 역할은 전체 액세스, 배포 권한, 모니터링, 읽기 전용 등 명확한 접근 레벨을 갖습니다.\n\n특정 서버에 SSH 키를 추가하고 역할을 할당하며 만료일을 설정하고 중앙 대시보드에서 활동 로그를 확인할 수 있어 서버 플릿 전체에 걸쳐 안전한 역할 기반 접근 제어(RBAC)를 보장합니다."
+    },
+    {
+     "author": "Grayson Bass",
+     "is_maker": false,
+     "text": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) How does Vault Lock protect the CtrlOps setup, especially when working across multiple machines?",
+     "kr": "[@daxesh\\_italiya](https://www.producthunt.com/@daxesh_italiya) 특히 여러 기기에서 작업할 때 볼트 락(Vault Lock)이 CtrlOps 설정을 어떻게 보호해 주나요?"
+    },
+    {
+     "author": "Parth Makwana",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 We launched CtrlOps 4 months ago, ranked #5, and never stopped shipping. Our mission is one line: Simplify DevOps. After hundreds of conversations with developers and IT teams, here is what we built since May. 1. Security Audit Reports run 25 checks over SSH and give you a hardening score, a downloadable PDF report, and a fix command for every finding. 2. Global Access Management shows who can log into every server and lets you onboard or offboard someone across your whole fleet in a single action. 3. Custom User Roles let you create Read-Only or Read-Write system users directly from the UI without opening a terminal. 4. Log Management finds every log file on your server, groups them, and lets you search, tail live, or download without a single SSH command. 5. PM2 Process Manager shows live CPU and memory per process and lets you restart, reload, or stop any of them in one click. 6. Vault Lock sets a passphrase that seals the entire app so your servers and keys stay protected on a shared or stolen machine. 🔒 7. Migrate from Termius imports all your saved hosts and SSH keys in about 30 seconds. 8. Centralized Backup and Restore lets you export your full CtrlOps setup and restore it on any machine in one go. Plus 14 more enhancements across the File Manager, Deployments, AI Terminal, and Infra Details. If you manage Linux servers, try CtrlOps free for one month at ctrlops.io. No credit card, no catch. 🚀 What would make CtrlOps a must-have for your team?",
+     "kr": "Product Hunt 여러분 안녕하세요 👋 저희는 4개월 전 CtrlOps를 출시하여 일간 5위를 기록한 후 쉼 없이 기능을 배포해 왔습니다. 저희의 사명은 단 한 줄, 'DevOps의 단순화'입니다. 수백 명의 개발자 및 IT 팀과 대화를 나눈 끝에 지난 5월 이후 새롭게 구축한 기능들을 소개합니다. 1. 보안 감사 보고서: SSH를 통해 25개 항목을 점검하고 강화 점수, 다운로드 가능한 PDF 리포트, 발견된 취약점별 수정 명령어를 제공합니다. 2. 글로벌 접근 권한 관리: 모든 서버에 누가 로그인할 수 있는지 표시하고 단 한 번의 조작으로 전체 서버에 걸쳐 인원을 온보딩하거나 권한을 회수할 수 있습니다. 3. 맞춤형 사용자 역할: 터미널을 열지 않고도 UI에서 직접 읽기 전용 또는 읽기/쓰기 시스템 사용자를 생성할 수 있습니다. 4. 로그 관리: 서버 내 모든 로그 파일을 찾아 그룹화하고 SSH 명령어 없이 검색, 실시간 테일(tail), 다운로드가 가능합니다. 5. PM2 프로세스 관리자: 프로세스별 실시간 CPU 및 메모리를 확인하고 클릭 한 번으로 재시작, 리로드, 중지가 가능합니다. 6. 볼트 락: 비밀번호를 설정하여 앱 전체를 암호화하므로 공용 PC나 분실 기기에서도 서버와 키를 안전하게 보호합니다. 🔒 7. Termius에서 이전: 저장된 호스트와 SSH 키를 약 30초 만에 가져옵니다. 8. 중앙 집중식 백업 및 복원: 전체 설정을 내보내고 다른 기기에 한 번에 복원할 수 있습니다. 여기에 파일 관리자, 배포, AI 터미널, 인프라 세부 정보 전반의 14가지 추가 개선이 이뤄졌습니다. 리눅스 서버를 관리하신다면 ctrlops.io에서 신용카드 없이 1개월간 무료로 사용해 보세요. 🚀 팀에 CtrlOps가 꼭 필요한 도구가 되려면 어떤 기능이 더 필요할까요?"
+    },
+    {
+     "author": "kalariya hiren",
+     "is_maker": true,
+     "text": "[@parth\\_makwana07](https://www.producthunt.com/@parth_makwana07) This launch feels extra special after everything we’ve shipped since our first launch. 🚀",
+     "kr": "[@parth\\_makwana07](https://www.producthunt.com/@parth_makwana07) 첫 런칭 이후 지금까지 우리가 출시해 온 모든 것들을 돌아보니 이번 출시가 더욱 특별하게 느껴지네요. 🚀"
+    }
+   ],
+   "slug": "ctrlops"
+  },
+  {
+   "name": "minimi 2.0",
+   "tagline_en": "AI cat that closes your open loops",
+   "tagline_kr": "놓치기 쉬운 할 일과 미완료 작업(오픈 루프)을 자동으로 찾아 해결해 주는 AI 고양이",
+   "image": "https://ph-files.imgix.net/4347ee5e-4d2a-4ebc-b82c-b13824b529a7.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Productivity",
+    "User Experience",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 247,
+   "comments_count": 38,
+   "maker": "Jay Gadekar(@jay_gadekar) 공동창업자, Ojasvika Sahu(@ojasvika_sahu) 공동창업자 (헌터: Kevin William David(@kevin))",
+   "price_model": "프리미엄 (Free Options / 3개월 50% 할인)",
+   "price_detail": "기본 무료 옵션 제공. 유료 플랜 3개월간 50% 할인 혜택 제공.",
+   "desc_kr": "minimi 2.0은 사용자가 직접 맥락을 설명하거나 명령을 내리지 않아도 일상의 미완료 작업(Open Loops)을 선제적으로 찾아 닫아주는 앰비언트(ambient) 개인 인공지능 서비스입니다. 과거 Shram 생산성 도구에서 진화한 minimi는 귀여운 가상 AI 고양이 캐릭터를 컨셉으로 삼아 사용자의 작업 맥락을 친근하게 관리합니다. 첫 번째 고양이인 'Cotton'이 사용자의 개인 컨텍스트와 배경지식을 자동으로 축적하여 LLM에 매번 장문의 배경 설명을 입력해야 하는 피로를 없애줍니다. 이번 2.0에 새롭게 합류한 두 번째 고양이 'Melody'는 누적된 컨텍스트를 바탕으로 슬랙, 링크드인, 이메일 등에 묻혀 있는 약속과 할 일을 자동으로 포착하고 완결 여부까지 추적합니다. 수집된 맥락은 MCP 서버를 통해 Claude 등 외부 AI 에이전트에 바로 연동할 수 있어 잦은 컨텍스트 전환에 시달리는 창업자와 전문가에게 강력한 생산성을 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/shram",
+   "comment_summary": "사용자가 피그마나 슬랙 등 다른 툴에서 작업을 실제로 마쳤을 때 minimi가 이를 어떻게 감지하고 자동으로 작업을 완결(auto-resolve)하는지에 대한 질문이 주목을 받았습니다. 제작자 Jay Gadekar는 사용자의 결정과 행동 흐름을 추적하여 별도 입력 없이도 오픈 루프를 닫아준다고 답변했습니다. 3개월 이상 사용해 온 얼리어답터들은 슬랙 구석에 묻힌 할 일을 놓치지 않게 해줘 업무 위기를 넘겼다는 생생한 후기를 공유하며 응원을 보냈습니다.",
+   "warnings": "수치(업보트 247·댓글 38)는 수집 시점 참고치. 제품 슬러그는 구 서비스명인 shram을 유지하고 있으나 현재 서비스명은 minimi 2.0임. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Jay Gadekar",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋 I'm Jay, co-founder of minimi. Three months ago, we released minimi in memory of our pet kitten, Cotton 🐈. We started as a Mac app that collects your personal context and builds memory, so you never have to explain yourself to AI again. You could plug minimi in as an MCP into any AI, agent or harness you like. Today, we're introducing Melody 🐈‍⬛, the second AI cat on minimi. She uses your personal context and never let's you miss your commitments by finding your open loops and closing them automatically. No manual prompting, no typing in context. If you want to context-switch like a pro, minimi is for you. Just install it and forget. minimi will come to you. 🐱",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋 minimi의 공동 창업자 Jay입니다. 3개월 전 저희는 세상을 떠난 반려 고양이 Cotton 🐈을 기리며 minimi를 출시했습니다. 사용자의 개인 컨텍스트를 수집하고 메모리를 구축하여 AI에게 매번 자신을 다시 설명할 필요가 없도록 돕는 Mac 앱으로 출발했죠. minimi를 MCP로 원하는 어떤 AI나 에이전트, 프레임워크에든 연결할 수 있었습니다. 오늘 저희는 minimi의 두 번째 AI 고양이인 Melody 🐈‍⬛를 소개합니다. Melody는 개인 컨텍스트를 활용하여 미완료 작업(오픈 루프)을 찾아내고 자동으로 닫아주어 약속이나 할 일을 절대 놓치지 않게 합니다. 수동 프롬프트 입력도, 컨텍스트 타이핑도 필요 없습니다. 프로처럼 컨텍스트 전환을 다루고 싶다면 minimi가 제격입니다. 그저 설치하고 잊어버리세요. minimi가 알아서 다가올 테니까요. 🐱"
+    },
+    {
+     "author": "Prannay Kedia",
+     "is_maker": false,
+     "text": "Was fortunate enough to use minimi since before it was called minimi 😛 (more than 6 months now) - I can go on and on about how I don’t have to type 15 paragraphs into Claude for 1 small thing anymore through their Context layer but what’s even more insane is how they manage to genuinely close open loops. I’ve been guilty of not responding to really important things for days at a time due to nothing other than overwhelm, Minimi’s managed to not just remind me of them but also close them for me!",
+     "kr": "minimi라는 이름으로 불리기 전부터 운 좋게 사용해 볼 수 있었습니다 😛 (벌써 6개월이 넘었네요). 컨텍스트 레이어 덕분에 사소한 작업 하나 때문에 Claude에 15문단씩 입력할 필요가 없어진 점도 끝없이 칭찬할 수 있지만, 무엇보다 미완료 작업(오픈 루프)을 진정으로 종결해 주는 기능은 정말 놀랍습니다. 업무 과중으로 며칠씩 중요한 일에 답장하지 못했던 적이 많았는데, minimi는 이를 상기시켜 주는 것을 넘어 알아서 해결까지 해주었습니다!"
+    },
+    {
+     "author": "Ojasvika Sahu",
+     "is_maker": true,
+     "text": "[@prannay\\_kedia](https://www.producthunt.com/@prannay_kedia) thank you for being our earliest believer Prannay!",
+     "kr": "[@prannay\\_kedia](https://www.producthunt.com/@prannay_kedia) 저희의 가장 초기부터 믿고 지지해 주셔서 정말 감사해요 Prannay 님!"
+    },
+    {
+     "author": "Jay Gadekar",
+     "is_maker": true,
+     "text": "[@prannay\\_kedia](https://www.producthunt.com/@prannay_kedia) thanks for sharing this Prannay :))",
+     "kr": "[@prannay\\_kedia](https://www.producthunt.com/@prannay_kedia) 소중한 후기 나눠주셔서 감사합니다 Prannay 님 :))"
+    },
+    {
+     "author": "Santiago Puig",
+     "is_maker": false,
+     "text": "How are we able to verify that mini actually was able to close the loop, does Minimi verify that itself? Congrats on the launch",
+     "kr": "minimi가 실제로 루프를 닫았는지 어떻게 확인할 수 있나요, minimi가 스스로 검증하나요? 출시를 축하드립니다"
+    },
+    {
+     "author": "Jay Gadekar",
+     "is_maker": true,
+     "text": "[@santiago\\_puig](https://www.producthunt.com/@santiago_puig) yes, minimi can trace your decisions so if you text me on LinkedIn to make a poster, minimi will find this as an open loop. Then, if I go on Figma and actually do it, it will auto-resolve it. Hope this helps! :)",
+     "kr": "[@santiago\\_puig](https://www.producthunt.com/@santiago_puig) 네, minimi는 사용자의 결정을 추적할 수 있습니다. 예를 들어 링크드인에서 포스터를 만들어 달라는 메시지를 받으면 minimi는 이를 미완료 루프로 인식합니다. 그런 다음 사용자가 Figma에 들어가 실제로 작업을 수행하면 자동으로 해결 처리합니다. 도움이 되셨기를 바랍니다! :)"
+    },
+    {
+     "author": "Kalpesh Bhalekar",
+     "is_maker": false,
+     "text": "I've been using Minimi for almost 3 months now, absolutely amazed on how it finds tasks that were absolutely hidden in some deep corner of Slack for me!\n\nSaved my job multiple times :D",
+     "kr": "거의 3개월 동안 Minimi를 사용해 왔는데, 슬랙의 깊숙한 곳에 완전히 묻혀 있던 업무들을 귀신같이 찾아내는 걸 보고 감탄했습니다!\n\n제 밥줄을 여러 번 구제해 줬어요 :D"
+    },
+    {
+     "author": "Jay Gadekar",
+     "is_maker": true,
+     "text": "[@kalpesh\\_bhalekar1](https://www.producthunt.com/@kalpesh_bhalekar1) thank you so much Kalpesh, always our biggest supporter!",
+     "kr": "[@kalpesh\\_bhalekar1](https://www.producthunt.com/@kalpesh_bhalekar1) 정말 감사드려요 Kalpesh 님, 언제나 가장 든든한 지원자십니다!"
+    },
+    {
+     "author": "Jay Gadekar",
+     "is_maker": true,
+     "text": "[@kalpesh\\_bhalekar1](https://www.producthunt.com/@kalpesh_bhalekar1) Thanks Kalpesh, glad you are liking it :))",
+     "kr": "[@kalpesh\\_bhalekar1](https://www.producthunt.com/@kalpesh_bhalekar1) 감사해요 Kalpesh 님, 마음에 들어 하셔서 기쁩니다 :))"
+    },
+    {
+     "author": "Aryan Rajput",
+     "is_maker": false,
+     "text": "The amount of context switching I had to do was insane, so I tried out Minimi, and I loved it, congratulations on the launch, guys.  \n  \nPS also love the organic content you've been producing :) keep going",
+     "kr": "감당해야 했던 컨텍스트 전환의 양이 엄청났는데, Minimi를 써보고 정말 반했습니다. 출시 축하드립니다 여러분.\n\n추신: 직접 제작하시는 오가닉 콘텐츠들도 정말 잘 보고 있어요 :) 계속 힘내세요"
+    },
+    {
+     "author": "Jay Gadekar",
+     "is_maker": true,
+     "text": "[@aryan\\_rajput9](https://www.producthunt.com/@aryan_rajput9) thank you aryan! <3",
+     "kr": "[@aryan\\_rajput9](https://www.producthunt.com/@aryan_rajput9) 고마워요 Aryan! <3"
+    },
+    {
+     "author": "Anand Ashok",
+     "is_maker": false,
+     "text": "Been using minimi for the last month, superb product.  \nReally does a great job, especially for founders like me that context switch all day a hundred, minime is like a life saviour",
+     "kr": "지난 한 달 동안 minimi를 사용해 왔는데 최고의 제품입니다.\n특히 하루에도 수백 번씩 컨텍스트 전환을 겪는 저 같은 창업자에게 minimi는 구세주와 같습니다"
+    }
+   ],
+   "slug": "shram"
+  },
+  {
+   "name": "NOAN",
+   "tagline_en": "The fact layer for your AI agents",
+   "tagline_kr": "모든 AI 에이전트와 팀을 위한 검증된 비즈니스 단일 진실 소스(팩트 레이어)",
+   "image": "https://ph-files.imgix.net/7cde5a50-8ded-4645-ba89-b32d6d1dc73a.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "API",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 232,
+   "comments_count": 32,
+   "maker": "Neal Mann(@neal_mann) 창업자, Daniel Montreal Hellmuth(@danmonthell), Hope Kelly(@hope_kelly1) (헌터: Ben Lang(@benln))",
+   "price_model": "프리미엄 (Free Options / Starter 3개월 50% 할인)",
+   "price_detail": "기본 무료 옵션 제공. 코드 PRODUCTHUNT50 사용 시 첫 3개월간 Starter 플랜 50% 할인.",
+   "desc_kr": "NOAN은 기업 내 수많은 문서와 흩어진 데이터를 단 하나의 검증된 진실(Source of Truth)로 정립하여 사람과 AI 에이전트 모두에게 제공하는 팩트 레이어(Fact Layer) 플랫폼입니다. 가격 정책, 고객 페르소나(ICP), 브랜드 보이스 등 공식 합의된 비즈니스 팩트를 블록 단위로 구조화하고 엄격한 버전 관리와 권한 기반 승인 절차를 지원합니다. API와 호스팅된 MCP 서버를 통해 Claude Code, Cursor, Codex 등 다양한 에이전트에 단 1분 만에 연결하여 동일한 비즈니스 팩트를 일관되게 주입할 수 있습니다. 슬랙용 에이전트인 'Verity'를 지원해 대화 중 새로운 팩트를 초안 작성하고 모순된 진술을 실시간 감지하며 모든 읽기·쓰기 내역은 소셜 타임라인 형태의 액티비티 피드에서 투명하게 추적됩니다. 고객 지원, 시장 조사 등 실제 자사 운영에 쓰이는 27개 에이전트 코드를 오픈소스(MIT 라이선스)로 함께 공개했습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/noan-2",
+   "comment_summary": "여러 팀이나 에이전트가 동시에 정보를 수정할 때의 버전 충돌 처리와 깃허브 풀 리퀘스트 방식의 승인 흐름, 그리고 액티비티 피드의 추적성에 대한 질문이 집중되었습니다. 창업자 Neal Mann과 메이커들은 API를 통한 실시간 전파와 승인 권한, 슬랙 연동을 통한 분산 승인 체계를 명확히 설명했습니다. 사용자들은 Claude나 챗봇 단독 사용 시 발생하는 진실 왜곡을 방지하고 기업 차원의 일관성을 부여하는 핵심 기반이라는 점에 주목했습니다.",
+   "warnings": "수치(업보트 232·댓글 32)는 수집 시점 참고치. 2025년 첫 런칭 이후 API 및 MCP 기반 팩트 레이어로 전면 재출시(Relaunch)한 기준임. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Luc Kelly",
+     "is_maker": false,
+     "text": "Not gonna lie didn’t see the point of getting this when I already had Claude but now with the API and MCP it’s a game changer. To have a single source of truth is so refreshing both for me and especially for my team who aren’t as up to date on Ai",
+     "kr": "솔직히 Claude가 이미 있는 상황에서 이걸 왜 써야 하는지 몰랐는데, API와 MCP가 나오면서 완전히 게임 체인저가 되었네요. 단일 진실 소스를 갖는다는 것은 저뿐만 아니라 특히 AI에 익숙하지 않은 팀원들에게 정말 큰 도움이 됩니다."
+    },
+    {
+     "author": "Neal Mann",
+     "is_maker": true,
+     "text": "[@luc\\_kelly](https://www.producthunt.com/@luc_kelly) exactly, for instance you can have a non-technical team using claude cowork etc and on the same fact layer as the technical team building your customer support agent. It just takes a mindset shift of what your company is - it's about fact control on the API!",
+     "kr": "[@luc\\_kelly](https://www.producthunt.com/@luc_kelly) 정확합니다. 예를 들어 비개발 팀이 Claude Cowork 등을 사용할 때 고객 지원 에이전트를 구축하는 개발 팀과 완전히 동일한 팩트 레이어 위에서 협업할 수 있습니다. 기업이 무엇인지에 대한 발상의 전환만 있으면 됩니다. 바로 API를 통한 팩트 통제입니다!"
+    },
+    {
+     "author": "Hope Kelly",
+     "is_maker": true,
+     "text": "[@luc\\_kelly](https://www.producthunt.com/@luc_kelly) Thanks for the support!",
+     "kr": "[@luc\\_kelly](https://www.producthunt.com/@luc_kelly) 응원해 주셔서 감사합니다!"
+    },
+    {
+     "author": "Lucy Rolff",
+     "is_maker": false,
+     "text": "I like the idea of keeping approved business facts separate from all the other documents. That seems especially useful as teams start using more AI agents.",
+     "kr": "승인된 비즈니스 팩트를 다른 모든 문서와 분리해 보관한다는 아이디어가 마음에 듭니다. 팀에서 AI 에이전트를 점점 더 많이 활용하게 됨에 따라 특히 유용할 것 같습니다."
+    },
+    {
+     "author": "Neal Mann",
+     "is_maker": true,
+     "text": "[@lucy\\_rolff](https://www.producthunt.com/@lucy_rolff) thanks! Exactly - it's really the key to keeping your team and agents aligned. The thing is business doesn't rely on memory, it's really built on defined decisions, for example you set your pricing - so we've built the platform for you to use those to control how your company runs. It's incredible what you can automate accurately with this approach.",
+     "kr": "[@lucy\\_rolff](https://www.producthunt.com/@lucy_rolff) 감사합니다! 맞습니다 - 바로 그것이 팀과 에이전트가 동일한 방향을 유지하도록 하는 핵심입니다. 중요한 것은 비즈니스는 막연한 기억에 의존하는 것이 아니라 정의된 결정(예: 가격 정책 수립)을 바탕으로 구축된다는 점입니다. 따라서 저희는 이러한 결정들을 바탕으로 회사가 운영되는 방식을 제어할 수 있는 플랫폼을 만들었습니다. 이러한 접근 방식을 통해 얼마나 놀랍도록 정확하게 업무를 자동화할 수 있는지 확인해 보세요."
+    },
+    {
+     "author": "Hope Kelly",
+     "is_maker": true,
+     "text": "[@lucy\\_rolff](https://www.producthunt.com/@lucy_rolff)  [@neal\\_mann](https://www.producthunt.com/@neal_mann) no more \"where's the latest version of this?\" 🫠",
+     "kr": "[@lucy\\_rolff](https://www.producthunt.com/@lucy_rolff) [@neal\\_mann](https://www.producthunt.com/@neal_mann) 더 이상 \"이거 최신 버전이 어디 있지?\" 하고 찾을 필요가 없습니다 🫠"
+    },
+    {
+     "author": "Advin Jadis",
+     "is_maker": false,
+     "text": "How do you handle cases where two teams approve different facts about the same product?",
+     "kr": "동일한 제품에 대해 두 팀이 서로 다른 팩트를 승인하는 경우는 어떻게 처리하나요?"
+    },
+    {
+     "author": "Neal Mann",
+     "is_maker": true,
+     "text": "[@advin\\_jadis](https://www.producthunt.com/@advin_jadis) great question, there are fact level permissions firstly so it depends who has the rights, then there are draft approvals just like with a pull request in github. Then our graph highlights any overlap - you can easily build an agent with the model of your choice that scans for drift too. If you're using Verity in slack you can select an owner of a 'stack' of facts in a channel and then they have approvals right from slack.",
+     "kr": "[@advin\\_jadis](https://www.producthunt.com/@advin_jadis) 훌륭한 질문입니다. 우선 팩트 단위 권한이 있어 누가 권한을 가졌는지에 따라 결정되며, GitHub의 풀 리퀘스트처럼 초안 승인 절차가 존재합니다. 또한 그래프가 중복되거나 상충되는 내용을 하이라이트해 주며, 원하는 모델을 사용해 불일치를 스캔하는 에이전트를 쉽게 구축할 수도 있습니다. 슬랙에서 Verity를 사용 중이라면 채널 내 팩트 '스택'의 소유자를 지정해 슬랙에서 바로 승인할 수도 있습니다."
+    },
+    {
+     "author": "Daniel Montreal Hellmuth",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 Dan here, one of the makers.  \n\nOnce we released the NOAN API and MCP, something changed for us: we could build any agent to help run the business in minutes. We now have 27 agents performing different automations.  \n\nEvery agent we run is the same small program running on a schedule in GitHub Actions.  \n  \nEach agent is guided by facts in NOAN. One fact is its playbook for what to do and how to decide. Another sets its tone and templates. Both sit next to the facts they work from: our pricing, positioning and customers.  \n\nSo when we want an agent to behave differently, we edit a fact, not code. The next run picks it up.  \n\nThat's how we run our sales, customer success, operations and weekly reporting today.  \n  \nHappy to answer questions!",
+     "kr": "Product Hunt 여러분 안녕하세요 👋 메이커 중 한 명인 Dan입니다.\n\nNOAN API와 MCP를 출시한 이후 저희에게 큰 변화가 생겼습니다. 비즈니스 운영을 돕는 어떤 에이전트든 단 몇 분 만에 구축할 수 있게 되었기 때문입니다. 현재 저희는 서로 다른 자동화를 수행하는 27개의 에이전트를 운영하고 있습니다.\n\n저희가 실행하는 모든 에이전트는 GitHub Actions에서 일정에 따라 실행되는 동일한 작은 프로그램입니다.\n\n각 에이전트는 NOAN에 등록된 팩트의 안내를 받습니다. 하나의 팩트는 무엇을 해야 하고 어떻게 판단해야 하는지에 대한 플레이북 역할을 하고, 또 다른 팩트는 톤앤매너와 템플릿을 설정합니다. 이 두 가지는 가격 정책, 포지셔닝, 고객 정보 등 에이전트가 참조하는 실제 팩트 바로 옆에 자리합니다.\n\n따라서 에이전트의 동작을 바꾸고 싶을 때 코드를 수정하는 것이 아니라 팩트를 수정하기만 하면 됩니다. 다음 실행 시 자동으로 이를 반영합니다.\n\n이것이 바로 저희가 오늘날 영업, 고객 성공, 운영 및 주간 리포팅을 실행하는 방식입니다.\n\n질문이 있으시면 기쁘게 답변드리겠습니다!"
+    },
+    {
+     "author": "Neal Mann",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 I'm Neal, founder of NOAN.\n\n**Why we built this** Before NOAN I spent years helping companies connect strategy, brand and execution. The hard part was never the ideas. It was getting everyone to work from the same version of the truth.\n\nAI made that problem worse, fast. Every team started pointing its own tools and agents at the same scattered docs, decks and prompts: pricing in one place, positioning in another, the ICP in a prompt someone wrote months ago. Each one came back with a slightly different company. More context doesn't fix that. More retrieval just gives agents more things that look right. What they need is a list of things that are true, verified by someone who knows. So we built NOAN around that idea from day one, and we run our own company on it.",
+     "kr": "Product Hunt 여러분 안녕하세요 👋 NOAN의 창업자 Neal입니다.\n\n**이 제품을 만든 이유** NOAN을 시작하기 전 저는 수년 동안 기업들이 전략, 브랜드, 실행을 연결할 수 있도록 도왔습니다. 어려운 부분은 아이디어가 아니었습니다. 모두가 동일한 버전의 진실을 기반으로 일하게 만드는 것이었습니다.\n\nAI는 이 문제를 매우 빠르게 악화시켰습니다. 모든 팀이 흩어져 있는 문서, 발표 자료, 프롬프트에 저마다의 도구와 에이전트를 연결하기 시작했습니다. 가격은 한 곳에, 포지셔닝은 다른 곳에, 고객 페르소나는 몇 달 전에 누군가 작성한 프롬프트에 들어있었죠. 각 도구는 조금씩 다른 회사의 모습을 내놓았습니다. 맥락을 더 많이 제공한다고 해결되지 않습니다. 더 많은 검색(Retrieval)은 그저 그럴듯해 보이는 더 많은 정보를 에이전트에게 쥐어줄 뿐입니다. 에이전트에게 진정 필요한 것은 아는 사람에 의해 검증된 '참된 사실들의 목록'입니다. 그래서 저희는 첫날부터 이 아이디어를 중심으로 NOAN을 구축했고, 저희 회사 역시 이 위에서 운영하고 있습니다."
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "[@neal\\_mann](https://www.producthunt.com/@neal_mann) nice launch! the variance between company memory and verify truth makes the lot of sense.\n\nhow much the setup does it usually takes before an agent can start using the NOAN competently.",
+     "kr": "[@neal\\_mann](https://www.producthunt.com/@neal_mann) 멋진 출시네요! 기업의 기억(메모리)과 검증된 진실(팩트) 간의 차이에 대한 설명이 매우 일리 있게 와닿습니다.\n\n에이전트가 NOAN을 능숙하게 활용하기까지 대략 어느 정도의 설정 시간이 걸리나요?"
+    },
+    {
+     "author": "Neal Mann",
+     "is_maker": true,
+     "text": "[@amrita\\_prajapati2](https://www.producthunt.com/@amrita_prajapati2) thanks! It's very quick, you just give your AI platform of choice, say Claude, the API docs and it sets you up on NOAN. It will help you build your fact layer and it then understands how to use all the functionality, like the task board or contacts network as it's all on the API - and it gets going!",
+     "kr": "[@amrita\\_prajapati2](https://www.producthunt.com/@amrita_prajapati2) 감사합니다! 매우 빠릅니다. Claude 같은 원하는 AI 플랫폼에 API 문서를 제공하기만 하면 NOAN 설정을 스스로 진행합니다. 팩트 레이어를 구축하도록 돕고, 모든 기능이 API로 열려 있으므로 작업 보드나 연락처 네트워크 등을 활용하는 방법을 곧바로 이해하여 즉시 실행에 들어갑니다!"
+    }
+   ],
+   "slug": "noan-2"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div></div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
