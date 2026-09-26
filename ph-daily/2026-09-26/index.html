@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-09-26</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-09-26 · Top 5 · 수집 댓글 60개 · 수집 2026-09-26 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-09-26",
+ "collected_at": "2026-09-26 12:30 KST",
+ "summary": "오늘 Product Hunt Top 5는 인공지능(AI)과 개발자 도구가 지배적인 가운데, VC 투자 유치와 마케팅 엔지니어링, 실시간 월드 모델 등 실무 파이프라인과 인터랙티브 미디어 전반으로 AI 활용이 심화되는 흐름을 보였습니다. 커뮤니티 댓글에서는 단순 생성을 넘어 사용자의 실시간 제어 가능성과 인간 승인 중심의 피드백 루프, 그리고 환각 방지와 프라이버시 보호 같은 실무 신뢰성 검증이 공통적인 핵심 논점으로 부각되었습니다.",
+ "notable": [
+  {
+   "slug": "pixverse-r2",
+   "why": "댓글에서는 Decart Oasis 및 DeepMind Genie 대비 실시간 세션 유지력과 WASD 조작을 통한 환경 제어 수준에 대한 기술적 질의가 집중되었습니다. 메이커는 사전 학습과 증류를 거쳐 브라우저에서 동적으로 반응하는 월드를 구현했다고 밝혔으며, 사용자들은 인터랙티브 미디어의 진화에 높은 기대를 표했습니다."
+  },
+  {
+   "slug": "bleetz-network",
+   "why": "댓글에서는 무차별 콜드 메일 스팸을 대체하는 에이전트 간(A2A) 피칭 구조에 호평이 쏟아진 동시에, 모의 피칭 중 AI 환각 방지 대책과 매칭 기준에 관한 기술적 문의가 잇따랐습니다. 제작자는 대화 라운드 압축과 결정론적 필터를 통해 사실 왜곡을 방지하고 펀드 데이터를 투명하게 공개한다고 답변하여 실무 유용성을 인정받았습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "PixVerse R2",
+   "tagline_en": "A real-time world model you can explore and change",
+   "tagline_kr": "탐험하고 실시간으로 변화시킬 수 있는 실시간 월드 모델",
+   "image": "https://ph-files.imgix.net/2feee7e8-aeed-40ff-8a23-ad1d27e04314.svg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Developer Tools",
+    "Artificial Intelligence",
+    "Games"
+   ],
+   "upvotes": 341,
+   "comments_count": 48,
+   "maker": "Loqi(@littlefatty), Jaden(@jadenx), AmazingSylvia(@sylvia_sheng) (헌터: Chris Messina(@chrismessina))",
+   "price_model": "무료 (Free)",
+   "price_detail": "기본 무료 제공. 웹 브라우저에서 R2 기반의 실시간 생성 월드를 무료로 직접 탐험하고 체험 가능.",
+   "desc_kr": "PixVerse R2는 고정된 비디오 클립을 일방적으로 생성하는 대신 실시간으로 탐험하고 변화시킬 수 있는 시청각 월드 모델(World Model)입니다. 사용자는 WASD 키보드 입력으로 공간을 자유롭게 이동하고, 프롬프트를 입력하여 생성 중인 장면에 새로운 요소나 변화를 실시간으로 즉각 반영할 수 있습니다. Omni Causal AR 기반의 지속적인 사전 학습과 증류(Distillation) 기술을 적용하여 장시간 세션에서도 이전 상호작용의 연속성과 일관성을 안정적으로 유지합니다. Vercel의 Next.js 기반 인프라를 활용하여 별도 설치 없이 웹 브라우저에서 즉시 인터랙티브 스토리, 게임 프로토타입, 생성형 가상 환경을 체험할 수 있도록 구현되었습니다. 단순한 AI 비디오 생성을 넘어 사용자의 입력과 행동에 따라 동적으로 반응하는 차세대 인터랙티브 미디어의 새로운 가능성을 제시합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/pixverse-r2",
+   "comment_summary": "댓글에서는 기존 Decart Oasis나 구글 딥마인드 Genie 등과의 차별점, 장시간 세션 유지 능력, WASD 키 조작 및 프롬프트 제어 수준에 대한 질문이 집중되었습니다. 메이커 팀은 R2가 단순 데모를 넘어 사용자의 액션에 실시간 반응하는 시청각 스트림을 구현했으며, 지속적인 상호작용 제어력을 높여갈 것이라고 설명했습니다. 사용자들은 직관적인 인터랙션과 실시간 월드 모델의 발전 속도에 놀라움을 표하며 인터랙티브 스토리와 게임 제작에 대한 기대감을 나타냈습니다.",
+   "warnings": "수치(업보트 341·댓글 48)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Loqi",
+     "is_maker": true,
+     "text": "We built PixVerse R2's interactive web experience with Next.js on Vercel, which became important because R2 isn't a traditional generate-and-wait video product — it is a continuously running world that responds to users in real time. That infrastructure helped us turn R2 from a model demonstration into PixVerse World: a browser-based experience where anyone can step into AI-generated worlds, interact with characters, shape stories, and see the world respond as it unfolds.",
+     "kr": "저희는 Vercel의 Next.js를 기반으로 PixVerse R2의 대화형 웹 경험을 구축했습니다. R2는 생성을 누르고 기다리는 기존의 비디오 제품이 아니라 사용자와 실시간으로 반응하며 지속적으로 작동하는 월드이기 때문에 이 인프라가 매우 중요했습니다. 이러한 기반 덕분에 R2를 단순한 모델 시연을 넘어 누구든 AI가 생성한 세계에 들어가 캐릭터와 소통하고 스토리를 만들어가며 세계가 펼쳐지는 모습을 실시간으로 경험할 수 있는 브라우저 기반의 PixVerse World로 구현할 수 있었습니다."
+    },
+    {
+     "author": "Jaden",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋\n\nWe’re the PixVerse team. Meet **PixVerse R2**: a real-time world model you can explore and change while it’s being generated.\n\n**Explore. Change. Keep going.**\n\n*   **Explore with WASD.** Move through the world and choose where to go next.\n    \n*   **Change it with a prompt.** Introduce a new element or change the scene as it unfolds.\n    \n*   **Keep going.** Continue interacting in the same evolving world after each change.\n    \n\nA collection of R2-powered worlds is now open to explore. [**Try R2 →**](https://world.pixverse.video/)\n\n**How R2 works**\n\nR2 builds its world-model capabilities through continuous pretraining with Omni Causal AR, then distills that same foundation for real-time interaction. The aim is to make worlds more persistent, controllable, and scalable.\n\n[Read the technical report →](https://pixverse.ai/en/blog/pixverse-r2-scaling-real-time-omni-world-models)\n\nWhether you’re experimenting with interactive stories, game prototypes, or AI worlds, we’d love your feedback. **What would you explore or change first?**\n\n_The gallery combines AI concept scenes with an overview of R2’s architecture._",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋\n\n저희는 PixVerse 팀입니다. 생성되는 과정 중에 직접 탐험하고 변경할 수 있는 실시간 월드 모델, **PixVerse R2**를 소개합니다.\n\n**탐험하고. 변경하고. 계속 나아가세요.**\n\n*   **WASD 키로 탐험:** 월드를 돌아다니며 다음 목적지를 자유롭게 선택하세요.\n*   **프롬프트로 변화 주기:** 장면이 펼쳐지는 동안 새로운 요소를 도입하거나 배경을 변경하세요.\n*   **연속적인 상호작용:** 변화가 일어난 뒤에도 진화하는 동일한 월드 내에서 계속 상호작용하세요.\n\n현재 R2 기반의 다양한 월드 컬렉션을 직접 둘러보실 수 있습니다. [**R2 체험하기 →**](https://world.pixverse.video/)\n\n**R2의 작동 원리**\n\nR2는 Omni Causal AR을 통한 지속적인 사전 학습으로 월드 모델 역량을 구축한 후, 이를 실시간 상호작용을 위해 지식 증류(distill)했습니다. 목표는 월드를 보다 지속 가능하고 제어 가능하며 확장성 있게 만드는 것입니다.\n\n[기술 보고서 읽어보기 →](https://pixverse.ai/en/blog/pixverse-r2-scaling-real-time-omni-world-models)\n\n인터랙티브 스토리, 게임 프로토타입, AI 월드를 실험 중이시라면 피드백을 들려주세요. **여러분은 무엇을 가장 먼저 탐험하거나 바꿔보고 싶으신가요?**"
+    },
+    {
+     "author": "Justin Jincaid",
+     "is_maker": false,
+     "text": "[@jadenx](https://www.producthunt.com/@jadenx) Shoutout to this new launch, Jaden! Keep up the great work!",
+     "kr": "[@jadenx](https://www.producthunt.com/@jadenx) 새로운 출시를 축하해, Jaden! 멋진 작업 계속 이어가길 응원할게!"
+    },
+    {
+     "author": "AmazingSylvia",
+     "is_maker": true,
+     "text": "[@justin2025](https://www.producthunt.com/@justin2025) Thank you Justin🫶🏻",
+     "kr": "[@justin2025](https://www.producthunt.com/@justin2025) 응원 고마워요 Justin🫶🏻"
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "[@jadenx](https://www.producthunt.com/@jadenx) Can R2 remember previous interactions across longer sessions ?",
+     "kr": "[@jadenx](https://www.producthunt.com/@jadenx) R2가 더 긴 세션 동안에도 이전의 상호작용들을 기억할 수 있나요?"
+    },
+    {
+     "author": "Curious Kitty",
+     "is_maker": false,
+     "text": "If you compare R2 to Decart Oasis and Google DeepMind’s Genie-style interactive world models, where do you feel you’re clearly ahead today (latency, controllability, multimodal input, session length, world consistency), and where do you think they have an edge?",
+     "kr": "R2를 Decart Oasis나 Google DeepMind의 Genie 스타일 대화형 월드 모델과 비교했을 때, 현재 지연 시간, 제어 가능성, 멀티모달 입력, 세션 길이, 월드 일관성 측면에서 어디가 확실히 앞서 있다고 보시나요? 그리고 그들이 가진 장점은 무엇이라고 생각하시나요?"
+    },
+    {
+     "author": "James Frank",
+     "is_maker": false,
+     "text": "I can see this being pretty fun for interactive stories. You could probably take the same world in completely different directions. How much control does the user have?",
+     "kr": "인터랙티브 스토리를 만들 때 꽤 재미있을 것 같습니다. 같은 월드를 완전히 다른 방향으로 이끌어갈 수도 있겠네요. 사용자가 어느 정도까지 제어할 수 있나요?"
+    },
+    {
+     "author": "AmazingSylvia",
+     "is_maker": true,
+     "text": "[@james_frank9](https://www.producthunt.com/@james_frank9) Exactly, that’s one of the fun parts. You can move around with WASD and prompt changes as the world evolves, so the same starting point can go in pretty different directions. We’re definitely interested in pushing the control further too. What kind of story would you try first?",
+     "kr": "[@james_frank9](https://www.producthunt.com/@james_frank9) 정확합니다, 그게 바로 재미있는 부분 중 하나예요. 월드가 진화하는 동안 WASD로 돌아다니고 프롬프트를 통해 변화를 줄 수 있어서 동일한 시작점에서도 완전히 다른 방향으로 나아갈 수 있습니다. 저희도 제어 능력을 더욱 발전시키는 데 큰 관심을 두고 있습니다. 어떤 이야기를 가장 먼저 시도해보고 싶으신가요?"
+    },
+    {
+     "author": "Owen Far",
+     "is_maker": false,
+     "text": "This is just crazy where we're heading 😮 This looks really great! Congrats on the launch! The landing hero kinda made me feel a bit dizzy because some are really moving fast visuals so it was hard to focus on the text (but this just might be me). Otherwise you do a really good job at explaining the product upfront. The one other minor detail I noticed is the \"muted\" icon when I go to the gallery, that stripped musical note is not very common and I honestly though it looked a broken icon until I clicked it and saw the complete icon. Maybe use the same icons as you find in YouTube etc.? This is my 2c, wish you all the best with the launch!",
+     "kr": "우리가 어디로 향하고 있는지 정말 놀랍네요 😮 정말 멋져 보입니다! 출시를 축하드려요! 랜딩 히어로 영역의 비주얼 움직임이 너무 빨라서 텍스트에 집중하기가 조금 어지러웠지만(저만 그럴 수도 있습니다), 전반적으로 제품에 대한 사전 설명이 매우 훌륭합니다. 한 가지 사소하게 눈에 띈 점은 갤러리로 이동했을 때의 '음소거' 아이콘이었는데, 빗금이 그어진 음표 아이콘이 낯설어서 클릭해 보기 전까지는 아이콘이 깨진 줄 알았습니다. 유튜브 등에서 쓰이는 익숙한 아이콘을 사용하는 건 어떨까요? 제 작은 의견이었으며, 출시 대박 나시길 응원합니다!"
+    },
+    {
+     "author": "AmazingSylvia",
+     "is_maker": true,
+     "text": "[@owenfar](https://www.producthunt.com/@owenfar) Thanks Owen, for your support and suggestions😊",
+     "kr": "[@owenfar](https://www.producthunt.com/@owenfar) Owen님, 응원과 소중한 제안 감사드립니다😊"
+    },
+    {
+     "author": "Mingyang Dai",
+     "is_maker": false,
+     "text": "Really fun demo. I spent way longer than expected just testing random prompts 😅",
+     "kr": "정말 재미있는 데모네요. 랜덤 프롬프트를 테스트하느라 생각보다 훨씬 긴 시간을 보냈습니다 😅"
+    },
+    {
+     "author": "AmazingSylvia",
+     "is_maker": true,
+     "text": "[@cheng_ju1](https://www.producthunt.com/@cheng_ju1) Glad to hear you already have fun with R2🫶",
+     "kr": "[@cheng_ju1](https://www.producthunt.com/@cheng_ju1) 벌써 R2를 재미있게 즐기고 계신다니 기쁩니다🫶"
+    }
+   ],
+   "slug": "pixverse-r2"
+  },
+  {
+   "name": "Bleetz Network",
+   "tagline_en": "AI agent-to-agent VC fundraising & scouting network",
+   "tagline_kr": "AI 에이전트 간(A2A) VC 투자 유치 및 스타트업 발굴 네트워크",
+   "image": "https://ph-files.imgix.net/63a59ae9-d84b-457d-bcaf-a7934c3c2497.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Venture Capital",
+    "Artificial Intelligence",
+    "Fundraising"
+   ],
+   "upvotes": 255,
+   "comments_count": 67,
+   "maker": "Davit Svanidze(@davitausberlin) 창업자/메이커, Germán Merlo(@german_merlo1) 메이커",
+   "price_model": "무료 (Free)",
+   "price_detail": "완전 무료 제공 (토큰 소모 비용 한도 내에서 창업자 및 투자자 대상 무료 운영). 별도 조건이나 비용 없음.",
+   "desc_kr": "Bleetz Network는 창업자의 AI 에이전트와 2,000여 개 글로벌 VC 펀드를 모사한 시뮬레이션 AI 에이전트 간의 상호작용(A2A)을 통해 투자 유치 매칭을 자동화하는 플랫폼입니다. 창업자가 피치 덱을 업로드하고 조건을 설정하면, AI 에이전트가 분야, 투자 단계, 지역, 투자 논거(Thesis) 등을 정밀하게 대조하여 적합한 펀드 에이전트에게 직접 피칭을 진행합니다. 모의 대화를 거쳐 시뮬레이션 VC 에이전트로부터 YES, NO, MAYBE 형태의 신속한 의사결정과 피드백을 실시간으로 전달받습니다. 최종적으로 'YES' 결과를 도출한 경우에 한해 해당 실제 VC 펀드와 투자 심사역의 공식 연락처 및 상세 프로필 정보가 잠금 해제되어 직접 컨택할 수 있습니다. 무차별적인 콜드 이메일 발송에 낭비되는 시간과 리소스를 획기적으로 줄이고, 창업자와 투자자 모두에게 최적화된 초기 검증 기회를 무료로 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/bleetz-network",
+   "comment_summary": "댓글에서는 VC 에이전트의 피칭 시뮬레이션 방식과 환각(Hallucination) 방지책, 그리고 매칭 알고리즘의 기준에 대한 기술적·운영적 문의가 집중되었습니다. 창업자 Davit Svanidze는 환각 방지를 위해 대화 라운드를 1~2회로 압축하고 결정론적 필터를 적용했으며, 무료로 운영되는 플랫폼 취지를 설명했습니다. 사용자들은 창업자의 시간을 크게 낭비시키는 콜드 메일 스팸을 혁신적으로 대체하는 에이전트 간 매칭(A2A) 접근법에 큰 호응을 보였습니다.",
+   "warnings": "수치(업보트 255·댓글 67)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Davit Svanidze",
+     "is_maker": true,
+     "text": "We host our main platform, FlowMarket, on Vercel, and we use it to quickly deploy and test various landing pages and web apps, including Bleetz. The speed of deployment lets us ship, test, and iterate fast, which is essential for a small team. We can spin up and validate new pages and products in days rather than weeks, so we spend our time on the actual product and matching logic instead of infrastructure.",
+     "kr": "저희는 메인 플랫폼인 FlowMarket을 Vercel에 호스팅하고 있으며, Bleetz를 포함한 다양한 랜딩 페이지와 웹 앱을 신속하게 배포하고 테스트하는 데 Vercel을 활용하고 있습니다. 배포 속도가 빨라 빠르게 출시하고 검증하며 반복 개선할 수 있는데, 이는 소규모 팀에게 필수적인 요소입니다. 몇 주가 아닌 며칠 만에 새로운 페이지와 제품을 띄워 검증할 수 있으므로, 인프라 작업 대신 실제 제품과 매칭 로직 개발에 온전히 시간을 쏟을 수 있습니다."
+    },
+    {
+     "author": "Davit Svanidze",
+     "is_maker": true,
+     "text": "Dear community, I’m the founder of FlowMarket, the world’s first (and, if I’m not mistaken, only) A2A (agent-to-agent) network, where businesses can find suppliers and customers within seconds. In the midst of my fundraising journey, I realised that the whole process is highly broken and inefficient, at least for us founders. There are thousands of VCs worldwide. How do you know which ones are right for you and which aren’t? How do you screen them instantly based on their sector, investment thesis, geography, and other factors? So, I decided to create Bleetz Network (Blitz - the German word for lightning, symbolising speed). We’ve gathered 2,000 VC funds from around the world, enriched them with relevant data, and turned them into simulated VC agents. Your agent gets matched with the right agents, pitches them, and gets one of three answers: YES, NO, or MAYBE, where you get a chance to continue the conversation. If you get a YES, you’ll see the contact details of the fund and its investment team, and the rest is up to you. The platform is completely free, with no strings attached. I wish I had this when I first started my fundraising process. Have fun and good luck! Davit",
+     "kr": "커뮤니티 여러분 안녕하세요, 기업이 몇 초 만에 공급업체와 고객을 찾을 수 있는 세계 최초(아마도 유일한) A2A(에이전트 간) 네트워크 FlowMarket의 창업자입니다. 직접 투자 유치를 진행하면서 창업자의 관점에서 전체 프로세스가 매우 비효율적이고 망가져 있다는 것을 깨달았습니다. 전 세계에 수천 개의 VC가 있는데, 어떤 곳이 내게 맞고 어떤 곳이 맞지 않는지 어떻게 알 수 있을까요? 섹터, 투자 논거, 지역 등의 요소를 바탕으로 어떻게 즉각 선별할 수 있을까요? 그래서 속도를 상징하는 독일어 번개(Blitz)에서 따온 Bleetz Network를 만들기로 했습니다. 전 세계 2,000개 VC 펀드를 모아 관련 데이터로 보강하고 시뮬레이션 VC 에이전트로 전환했습니다. 여러분의 에이전트가 적합한 VC 에이전트와 매칭되어 피칭하고 YES, NO 또는 대화를 이어갈 수 있는 MAYBE 중 하나의 답변을 받습니다. YES를 받으면 해당 펀드와 투자 팀의 연락처가 공개되며, 이후는 여러분에게 달려 있습니다. 플랫폼은 아무런 조건 없이 완전 무료입니다. 제가 처음 투자 유치를 시작했을 때 이런 도구가 있었으면 좋았겠다고 생각했습니다. 재미있게 활용하시고 행운을 빕니다! Davit 드림"
+    },
+    {
+     "author": "Priya K",
+     "is_maker": false,
+     "text": "[@davitausberlin](https://www.producthunt.com/@davitausberlin) Really clever way to use AI, much better than just another generic cold email writer.",
+     "kr": "[@davitausberlin](https://www.producthunt.com/@davitausberlin) 흔한 콜드 이메일 작성 도구보다 훨씬 훌륭하고 영리한 AI 활용 방식이네요."
+    },
+    {
+     "author": "Davit Svanidze",
+     "is_maker": true,
+     "text": "[@priya_kushwaha1](https://www.producthunt.com/@priya_kushwaha1) I'm glad you like it! Yes, I thought there are enough tools which spray and pray, basically turning a pitch into a spam email.",
+     "kr": "[@priya_kushwaha1](https://www.producthunt.com/@priya_kushwaha1) 마음에 드셨다니 기쁩니다! 맞아요, 무차별 살포식으로 피치를 스팸 메일로 만들어버리는 도구는 이미 충분히 많다고 생각했습니다."
+    },
+    {
+     "author": "Orkhan Ilyas",
+     "is_maker": false,
+     "text": "[@davitausberlin](https://www.producthunt.com/@davitausberlin) Congrats on the launch! 🎉 This is a really interesting way to make the fundraising process faster and easier for founders. Wishing you lots of success with Bleetz! 🚀",
+     "kr": "[@davitausberlin](https://www.producthunt.com/@davitausberlin) 출시 축하드립니다! 🎉 창업자들의 투자 유치 과정을 더 빠르고 쉽게 만들어주는 정말 흥미로운 방식이네요. Bleetz의 큰 성공을 기원합니다! 🚀"
+    },
+    {
+     "author": "Davit Svanidze",
+     "is_maker": true,
+     "text": "[@orkhan_ilyas](https://www.producthunt.com/@orkhan_ilyas) Thanks a lot for you support! Yes, we are using it for ourselves and it makes fundraising much more efficient!",
+     "kr": "[@orkhan_ilyas](https://www.producthunt.com/@orkhan_ilyas) 응원해 주셔서 정말 감사합니다! 네, 저희 스스로도 직접 사용하고 있는데 투자 유치가 훨씬 효율적으로 진행되고 있습니다!"
+    },
+    {
+     "author": "David Turner",
+     "is_maker": false,
+     "text": "[@davitausberlin](https://www.producthunt.com/@davitausberlin) The fact that it’s free makes it easy for founders to explore without having to commit first.",
+     "kr": "[@davitausberlin](https://www.producthunt.com/@davitausberlin) 무료라는 점 덕분에 창업자들이 초기에 부담 없이 탐색해 볼 수 있겠네요."
+    },
+    {
+     "author": "Davit Svanidze",
+     "is_maker": true,
+     "text": "[@david_turner12](https://www.producthunt.com/@david_turner12) Its FlowMarkets gift to the founders. FlowMarket is our main platform. Bleetz is just a sub-segment and we don't have to monetise it. So that everybody is free to use, unless we start bleeding tokens too hard",
+     "kr": "[@david_turner12](https://www.producthunt.com/@david_turner12) FlowMarket이 창업자분들께 드리는 선물입니다. FlowMarket이 저희의 메인 플랫폼이고 Bleetz는 서브 세그먼트라 수익화할 필요가 없습니다. 토큰 비용이 너무 과도하게 발생하지 않는 한 모든 분이 자유롭게 무료로 이용하실 수 있습니다."
+    },
+    {
+     "author": "Dim Neocleous",
+     "is_maker": false,
+     "text": "[@davitausberlin](https://www.producthunt.com/@davitausberlin) Love it, Tinder/Bumble for matching startups with VCs, and the simulation stage is also very nice!",
+     "kr": "[@davitausberlin](https://www.producthunt.com/@davitausberlin) 스타트업과 VC를 매칭해 주는 틴더/범블 같아서 정말 좋네요. 시뮬레이션 단계도 매우 훌륭합니다!"
+    },
+    {
+     "author": "Julian Ting",
+     "is_maker": false,
+     "text": "[@davitausberlin](https://www.producthunt.com/@davitausberlin) Can founders see why a particular VC was matched with them, such as sector, geography, or investment stage?",
+     "kr": "[@davitausberlin](https://www.producthunt.com/@davitausberlin) 창업자가 특정 VC와 매칭된 이유(분야, 지역, 투자 단계 등)를 확인할 수 있나요?"
+    },
+    {
+     "author": "Davit Svanidze",
+     "is_maker": true,
+     "text": "[@julian_ting2](https://www.producthunt.com/@julian_ting2) Yes, fund profile is visible, incl. all or most of relevant data. Geo, thesis, stage, sector are always visible",
+     "kr": "[@julian_ting2](https://www.producthunt.com/@julian_ting2) 네, 관련된 데이터 대부분을 포함하여 펀드 프로필을 확인하실 수 있습니다. 지역, 투자 논거, 단계, 섹터 정보는 항상 공개됩니다."
+    },
+    {
+     "author": "Curious Kitty",
+     "is_maker": false,
+     "text": "How does the 10-round agent conversation actually work in the messy real world—what does the startup agent pull from a deck vs from a short description, how do you prevent it from “hallucinating” facts, and what do VCs say are the most useful (or most annoying) types of follow-up questions it generates?",
+     "kr": "실제 환경에서 10라운드 에이전트 대화가 어떻게 작동하나요? 스타트업 에이전트는 피치 덱과 짧은 설명 중 어디서 정보를 가져오는지, 사실에 대한 '환각'은 어떻게 방지하는지, 그리고 VC들이 보기에 생성되는 후속 질문 중 가장 유용하거나 번거로운 유형은 무엇이라고 하나요?"
+    }
+   ],
+   "slug": "bleetz-network"
+  },
+  {
+   "name": "Quiver GTM",
+   "tagline_en": "Run developer marketing like an engineering system",
+   "tagline_kr": "개발자 마케팅을 엔지니어링 시스템처럼 체계적으로 운영",
+   "image": "https://ph-files.imgix.net/be797103-5ec0-47f0-9087-0b05151c9b0e.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Marketing",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 168,
+   "comments_count": 31,
+   "maker": "Tessa Kriesel(@tessak22) 창업자/메이커 (헌터: fmerian(@fmerian))",
+   "price_model": "프리미엄 (Free Options / Open Source)",
+   "price_detail": "무료 오픈소스(MIT 라이선스) 셀프 호스팅 지원. 관리형 팀 액세스와 빌트인 태스크가 포함된 호스팅 클라우드 유료 플랜 제공 (다양한 제품 사용 시 할인 혜택 제공).",
+   "desc_kr": "Quiver GTM은 기술 창업자와 개발 도구(Dev-tool) 팀을 위해 개발자 마케팅을 하나의 엔지니어링 시스템처럼 체계적으로 운영할 수 있도록 돕는 에이전틱 마케팅 플랫폼입니다. 제품 맥락(Context), 고객 피드백 증거, 마케팅 캠페인, 콘텐츠, 작업 및 성과 지표를 단일 진실 소스(Single Source of Truth)로 결합하여 파편화된 마케팅 툴을 통합합니다. AI 에이전트가 시장 조사 및 콘텐츠 초안을 작성하되, 자동 덮어쓰기 대신 '현재 vs 제안' 변경안을 제시하고 사람이 승인해야 반영되는 엄격한 피드백 루프와 버전 관리 기능을 제공합니다. 전용 Content API와 모델 컨텍스트 프로토콜(MCP) 연동을 지원하여 멀티 채널 콘텐츠 배포와 LLM 기반 워크플로우를 원활하게 확장할 수 있습니다. 무료 오픈소스(MIT 라이선스) 셀프 호스팅 에디션과 팀 협업 기능을 갖춘 관리형 호스팅 서비스를 함께 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/quiver-gtm",
+   "comment_summary": "댓글에서는 사람이 승인하는 피드백 루프(Human-approved feedback loop)의 실제 작동 원리와 버전 롤백, MCP 연동 및 초기 온보딩 워크플로우에 대한 구체적인 질문이 이어졌습니다. 제작자 Tessa Kriesel은 에이전트가 단독으로 문서를 재작성하지 않고 변경 제안을 생성해 버전별로 투명하게 승인 관리하는 원리와 MCP 활용 팁을 상세히 안내했습니다. 사용자들은 모호하고 직관에 의존하던 마케팅을 코드 및 엔지니어링 파이프라인처럼 체계화한 점에 큰 지지를 보냈습니다.",
+   "warnings": "수치(업보트 168·댓글 31)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Tessa Kriesel",
+     "is_maker": true,
+     "text": "Quiver runs on Next.js, the Vercel AI SDK, Vercel Cron, Preview Deployments, and the Domains API. It is multi-tenant, with a dedicated subdomain for every workspace, so routing was the hard infrastructure problem. Host-based middleware resolves the workspace; AI responses stream from the default runtime; Cron runs scheduled work; and when a workspace is created, Quiver attaches its subdomain through the Domains API so certificate provisioning happens automatically. Without Vercel, I would have needed to operate a proxy for tenant subdomains, certificate automation, a scheduler, and separate streaming infrastructure—none of which is the product. Vercel let me focus on building Quiver's developer marketing system. Preview Deployments also shaped the product: every change gets a review URL before production, mirroring Quiver's own Draft → Review → Live workflow.",
+     "kr": "Quiver는 Next.js, Vercel AI SDK, Vercel Cron, 프리뷰 배포 및 Domains API 기반으로 실행됩니다. 모든 워크스페이스에 전용 서브도메인이 할당되는 멀티 테넌트 구조라 라우팅이 가장 까다로운 인프라 과제였습니다. 호스트 기반 미들웨어가 워크스페이스를 처리하고 기본 런타임에서 AI 응답을 스트리밍하며 Cron이 예약된 작업을 실행하고 새 워크스페이스 생성 시 Domains API를 통해 서브도메인이 연결되어 인증서가 자동 발급됩니다. Vercel이 없었다면 테넌트 서브도메인용 프록시, 인증서 자동화, 스케줄러, 별도의 스트리밍 인프라를 직접 운영해야 했을 텐데 이는 제품의 본질이 아닙니다. Vercel 덕분에 Quiver의 개발자 마케팅 시스템 자체에만 집중할 수 있었습니다. 또한 프리뷰 배포는 제품 구조에도 영감을 주어 프로덕션 반영 전 검토 URL을 제공하는 방식이 Quiver의 '초안 → 검토 → 라이브' 워크플로우와 그대로 맞닿아 있습니다."
+    },
+    {
+     "author": "Tessa Kriesel",
+     "is_maker": true,
+     "text": "Hey Product Hunt—I’m Tessa 👋\n\nEngineers hate marketing because it feels vague, disconnected, and impossible to debug. And without a system, it is.\n\nI built Quiver to turn developer marketing into an engineering system: one source of truth, version history, explicit states, APIs, observability, and feedback loops.\n\nIf you’re an engineer or technical founder trying to do marketing without a system, try Quiver: https://www.quivergtm.dev/\n\nI use Quiver every day to run marketing as a connected system instead of a pile of chats, docs, and disconnected tools. Product context informs the research. Research informs the work. Campaigns connect what ships to the results. Those results feed the next decision. Agents can do the work. I still decide what is true, what ships, and what the results mean.\n\nFinally, marketing that makes sense to engineers.",
+     "kr": "Product Hunt 여러분 안녕하세요, Tessa입니다 👋\n\n엔지니어들이 마케팅을 꺼리는 이유는 모호하고 단절되어 있으며 디버깅이 불가능하게 느껴지기 때문입니다. 그리고 체계적인 시스템이 없다면 실제로 그렇습니다.\n\n저는 개발자 마케팅을 엔지니어링 시스템으로 전환하기 위해 Quiver를 구축했습니다. 단일 진실 소스, 버전 히스토리, 명시적 상태값, API, 관측 가능성(Observability), 그리고 피드백 루프를 갖추고 있습니다.\n\n시스템 없이 마케팅을 시도하느라 어려움을 겪고 계신 엔지니어나 기술 창업자라면 Quiver를 체험해 보세요: https://www.quivergtm.dev/\n\n저는 파편화된 채팅, 문서, 툴의 더미 대신 연결된 시스템으로 마케팅을 운영하기 위해 매일 Quiver를 사용합니다. 제품 맥락이 조사를 뒷받침하고, 조사가 실행 작업을 이끌며, 캠페인이 출시된 결과물과 성과를 연결합니다. 그리고 그 결과가 다음 의사결정의 밑거름이 됩니다. 에이전트가 작업을 수행할 수는 있지만, 무엇이 진실인지, 무엇을 배포할지, 그 결과가 무엇을 의미하는지는 여전히 사람이 결정합니다.\n\n드디어 엔지니어에게도 온전히 와닿는 마케팅이 탄생했습니다."
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "[@tessak22](https://www.producthunt.com/@tessak22) S/O for this new launch! keep up the great work",
+     "kr": "[@tessak22](https://www.producthunt.com/@tessak22) 새로운 출시를 열렬히 축하합니다! 멋진 활약 계속 기대할게요"
+    },
+    {
+     "author": "Owen Far",
+     "is_maker": false,
+     "text": "[@tessak22](https://www.producthunt.com/@tessak22) This looks very interesting, but I wish I could see something more visual. I think I understand the concept because I am an engineer, but just an image or two would help me grasp a bit more what to expect quickly. Like, is it through CLI, is it a web UI, etc. Otherwise I really like the clean look & feel :) Wish you all the best with Quiver!",
+     "kr": "[@tessak22](https://www.producthunt.com/@tessak22) 아주 흥미로워 보이지만, 시각적인 자료가 조금 더 있었으면 좋겠습니다. 엔지니어라서 개념은 이해가 가지만 이미지 한두 장이 더 있다면 어떤 형태(CLI인지, 웹 UI인지 등)인지 훨씬 빠르게 파악할 수 있을 것 같아요. 그 외에는 깔끔한 룩앤필이 정말 마음에 듭니다 :) Quiver의 순항을 기원합니다!"
+    },
+    {
+     "author": "Tessa Kriesel",
+     "is_maker": true,
+     "text": "[@owenfar](https://www.producthunt.com/@owenfar) I hear you there. Did you check the docs? Its a web UI, MCP, and content API. Start with the MCP. Its really powerful. Ask your LLM what it can do and it will get you started! Good feedback though. I need to make it more clear.",
+     "kr": "[@owenfar](https://www.producthunt.com/@owenfar) 말씀에 전적으로 공감합니다. 문서를 확인해 보셨나요? 웹 UI, MCP, 그리고 콘텐츠 API 형태로 구성되어 있습니다. 우선 MCP부터 시작해 보세요. 정말 강력합니다. 선호하시는 LLM에게 무엇을 할 수 있는지 물어보시면 바로 시작할 수 있습니다! 좋은 피드백 감사드리며, 더 명확하게 알 수 있도록 보완하겠습니다."
+    },
+    {
+     "author": "Tessa Kriesel",
+     "is_maker": true,
+     "text": "[@owenfar](https://www.producthunt.com/@owenfar) I built a [**Getting Started Guide**](https://www.quivergtm.dev/getting-started) to help you!",
+     "kr": "[@owenfar](https://www.producthunt.com/@owenfar) 도움을 드리기 위해 [**시작 가이드(Getting Started Guide)**](https://www.quivergtm.dev/getting-started)를 작성해 두었습니다!"
+    },
+    {
+     "author": "Curious Kitty",
+     "is_maker": false,
+     "text": "Can you walk through how the human-approved feedback loop works in practice: how does Quiver generate context update proposals from research/performance, how do you review/compare/restore versions, and how do you avoid agents “learning” the wrong thing from one-off results?",
+     "kr": "사람이 승인하는 피드백 루프가 실제로 어떻게 작동하는지 설명해 주실 수 있나요? Quiver가 연구나 성과 데이터로부터 맥락 업데이트 제안을 어떻게 생성하는지, 버전을 어떻게 검토/비교/복원하는지, 그리고 일회성 결과로부터 에이전트가 잘못된 내용을 '학습'하지 않도록 어떻게 방지하나요?"
+    },
+    {
+     "author": "Tessa Kriesel",
+     "is_maker": true,
+     "text": "[@curiouskitty](https://www.producthunt.com/@curiouskitty) these are really great questions! Thank you for asking so thoughtfully because it allows me to speak on some of my favorite features of Quiver. \n\nThe important distinction is that Quiver **proposes learning; it doesn’t silently learn**.\n\n**From research:** when you add a call, survey, review, or support thread, Quiver analyzes it against the active context. It extracts themes, verbatim customer language, product signals, and evidence that validates or challenges active hypotheses. If that evidence suggests a context change, it creates a proposal with the **current value, proposed value, rationale, and source**.\n\n**From performance:** when you log campaign or content results—metrics, qualitative notes, what worked, and what didn’t—Quiver runs the same kind of synthesis. Again, the result is a pending proposal, not an automatic rewrite.\n\nOn the Context page, you review each proposal side by side: **Current vs. Proposed**, with the reason behind it. You can approve or reject it. Approval creates a new context version; rejection changes nothing. Version history records the source, change summary, and timestamp. You can inspect any previous snapshot and restore it—restoration creates another version rather than deleting history.\n\nThat approval boundary is how we avoid overlearning from one-off results. One anomalous post or customer comment may raise a proposal, but it cannot become organizational truth on its own. You can reject it, leave the existing hypothesis in place, or wait for repeated evidence. Quiver isn’t secretly fine-tuning a model on your activity—the “learning” is explicit, evidence-linked, versioned, and reversible.",
+     "kr": "[@curiouskitty](https://www.producthunt.com/@curiouskitty) 정말 훌륭한 질문입니다! Quiver에서 제가 가장 좋아하는 기능들을 설명할 수 있게 해 주셔서 감사합니다.\n\n가장 중요한 차이점은 Quiver가 **조용히 자체 학습하는 것이 아니라 학습할 내용을 '제안'한다**는 점입니다.\n\n**조사 데이터로부터:** 미팅 통화, 설문, 리뷰, 지원 스레드를 추가하면 Quiver가 활성 맥락과 대조 분석합니다. 핵심 테마, 고객의 원문 표현, 제품 신호, 그리고 가설을 검증하거나 반박하는 증거를 추출합니다. 이러한 증거가 맥락 수정을 시사할 경우 **현재 값, 제안 값, 근거 및 출처**가 포함된 제안을 생성합니다.\n\n**성과 지표로부터:** 캠페인이나 콘텐츠 결과(지표, 정성적 메모, 성공 요인 및 실패 요인)를 기록하면 동일한 종합 분석을 거칩니다. 이 역시 자동 수정이 아닌 대기 상태의 제안으로 등록됩니다.\n\n컨텍스트 페이지에서 **현재 값 vs 제안 값**을 근거 이유와 함께 나란히 비교 검토할 수 있습니다. 이를 승인하거나 거부할 수 있으며, 승인하면 새로운 컨텍스트 버전이 생성되고 거부하면 아무것도 변경되지 않습니다. 버전 히스토리에는 출처, 변경 요약, 타임스탬프가 기록됩니다. 과거의 어떤 스냅샷이든 확인하고 복원할 수 있으며, 복원 시에도 히스토리를 덮어쓰지 않고 새로운 버전으로 기록됩니다.\n\n이러한 승인 경계가 바로 일회성 결과에 과적합 학습되는 것을 방지하는 핵심입니다. 하나의 예외적인 포스트나 고객 코멘트가 제안을 생성할 수는 있지만 그것만으로 조직 차원의 진실이 될 수는 없습니다. 거부하거나 기존 가설을 유지하거나 반복적인 증거를 기다릴 수 있습니다. Quiver는 활동 데이터를 바탕으로 몰래 모델을 파인튜닝하지 않으며, '학습'은 명시적이고 증거와 연결되며 버전 관리되고 되돌릴 수 있습니다."
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "[@tessak22](https://www.producthunt.com/@tessak22) is the 🐐 and [@Quiver GTM](https://www.producthunt.com/products/quiver-gtm) an unfair advantage if you're building a developer tool. no brainer.",
+     "kr": "[@tessak22](https://www.producthunt.com/@tessak22) 님은 최고(GOAT)이며 개발자 도구를 만들고 있다면 [@Quiver GTM](https://www.producthunt.com/products/quiver-gtm)은 엄청난 압도적 이점입니다. 고민할 필요도 없어요."
+    },
+    {
+     "author": "rishabh",
+     "is_maker": false,
+     "text": "Congrats on the launch! As a solo technical founder, I found it a little hard to understand how I'd get started with Quiver and fit it into my workflow. Is there a walkthrough or example you'd recommend? [@fmerian](https://www.producthunt.com/@fmerian) [@tessak22](https://www.producthunt.com/@tessak22)",
+     "kr": "출시를 축하합니다! 1인 기술 창업자로서 Quiver를 어떻게 시작하고 제 워크플로우에 녹여낼 수 있을지 이해하기가 조금 어려웠습니다. 추천해 주실 만한 튜토리얼이나 예시가 있을까요? [@fmerian](https://www.producthunt.com/@fmerian) [@tessak22](https://www.producthunt.com/@tessak22)"
+    },
+    {
+     "author": "Tessa Kriesel",
+     "is_maker": true,
+     "text": "[@fmerian](https://www.producthunt.com/@fmerian)  [@trishabh33](https://www.producthunt.com/@trishabh33) Great feedback! Get the MCP installed and chat with your LLM of choice. It will take you through it all. The first thing you want to do is expand your product marketing context. Its going to make assumptions based on the onboarding scan, and you will want to ensure your product marketing context is viable and up-to-date. Once your context is solid, everything gets better. It needs to understand the product that its helping you market. Then I would feed it a lot of data. Import all of your research and customer/user transcripts. Then begin adding your current marketing artifacts. As you add more context, you will find the value increasing. Quiver will empower your LLM to create better marketing results. There is so much more to it, but this will get you started!",
+     "kr": "[@fmerian](https://www.producthunt.com/@fmerian) [@trishabh33](https://www.producthunt.com/@trishabh33) 좋은 피드백 감사합니다! MCP를 설치하고 선호하는 LLM과 대화를 시작해 보세요. 모든 과정을 차근차근 안내해 줄 것입니다. 가장 먼저 해야 할 일은 제품 마케팅 맥락을 확장하는 것입니다. 온보딩 스캔을 기반으로 가정을 세울 텐데, 제품 마케팅 컨텍스트가 유효하고 최신 상태인지 확인해야 합니다. 컨텍스트가 견고해지면 모든 것이 개선됩니다. 마케팅을 돕기 위해서는 대상 제품을 제대로 이해해야 하니까요. 그 다음 많은 데이터를 주입하는 것을 추천합니다. 모든 시장 조사와 고객 인터뷰 녹취록을 임포트하세요. 그리고 현재의 마케팅 산출물들을 추가하기 시작하세요. 맥락이 쌓일수록 그 가치는 더욱 커질 것입니다. Quiver는 LLM이 더 나은 마케팅 성과를 낼 수 있도록 힘을 실어줄 것입니다. 훨씬 더 많은 기능이 있지만 이것으로 충분히 시작하실 수 있습니다!"
+    },
+    {
+     "author": "Matheus Paranhos",
+     "is_maker": false,
+     "text": "Pretty solid launch! As an engineer and solo founder constantly launching products that's definitely something I'd use to run launching campaigns!",
+     "kr": "정말 탄탄한 런칭이네요! 지속적으로 제품을 출시하는 엔지니어이자 1인 창업자로서 런칭 캠페인을 운영할 때 꼭 사용해보고 싶은 도구입니다!"
+    }
+   ],
+   "slug": "quiver-gtm"
+  },
+  {
+   "name": "10xJoy",
+   "tagline_en": "Discover desired outcomes + connect w/ builders who can help",
+   "tagline_kr": "원하는 비즈니스 성과를 정의하고 이를 구현할 전문 빌더와 연결",
+   "image": "https://ph-files.imgix.net/0b8d189c-f177-452d-a19e-381be0285502.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Productivity",
+    "Artificial Intelligence",
+    "Marketplace"
+   ],
+   "upvotes": 151,
+   "comments_count": 24,
+   "maker": "Philip Loyd(@philip_loyd) 메이커, Cristian Deluxe(@cristiandeluxe) 메이커",
+   "price_model": "무료 (Free)",
+   "price_detail": "클라이언트와 빌더 모두 무료로 플랫폼 이용 가능. 실제 프로젝트 범위, 계약 및 대금 지급은 선정된 빌더와 직접 협의하여 진행.",
+   "desc_kr": "10xJoy는 기술적 구현 방법을 잘 모르더라도 비즈니스 목표와 원하는 결과(Desired Outcomes)를 대화형 AI 'Joy'를 통해 명확한 요구 명세서(Project Brief)로 작성해 주는 AI 비즈니스 매칭 플랫폼입니다. 업무용 이메일로 대화를 시작하면 회사 웹사이트의 공개 정보를 AI가 미리 파악하여 불필요한 반복 질문 없이 핵심 목표를 도출합니다. 사용자와 AI가 함께 작성한 기획서는 자유롭게 수정할 수 있으며, 검증된 빌더 풀 중에서 최대 3명의 적합한 전문가를 선별 추천합니다. 대화 전문은 철저히 보호되며, 의뢰인이 직접 승인한 최종 기획서와 연락처만 선택된 빌더에게 이메일로 전달되어 안전한 연결을 지원합니다. 중개 수수료나 유료 노출 없이 순수한 적합도만으로 매칭하며, 계약과 결제는 빌더와 클라이언트 간의 직접 합의로 이루어집니다.",
+   "launch_url_used": "https://www.producthunt.com/products/10xjoy",
+   "comment_summary": "댓글에서는 빌더 검증 및 품질 유지 방식, 스팸 방지 장치, AI와의 대화 중 기획 방향이 바뀔 때의 대응과 데이터 프라이버시 정책에 대한 질의가 이어졌습니다. 공동 제작자인 Philip Loyd와 Cristian Deluxe는 이메일 소유권 및 수동 프로필 검증, Claude 모델과의 대화 내용 비공개 원칙, 사용자가 최종 승인한 브리프만 전달되는 보안 구조를 상세히 밝혔습니다. 사용자들은 무엇을 만들지 기술적으로 고민하기 전에 달성하고자 하는 비즈니스 결과부터 시작할 수 있다는 접근 방식에 높은 만족감을 나타냈습니다.",
+   "warnings": "수치(업보트 151·댓글 24)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Philip Loyd",
+     "is_maker": true,
+     "text": "We use Vercel to deploy and host the 10xJoy web app. Preview deployments let us review changes before promoting them to production, which helped us turn an early idea into a working beta and keep improving it quickly. That supported the product we are launching: a simple conversation with Joy that helps people clarify business outcomes, review an editable project brief, and take the next step toward connecting with a builder.",
+     "kr": "저희는 10xJoy 웹 앱을 배포하고 호스팅하는 데 Vercel을 사용하고 있습니다. 프리뷰 배포 덕분에 프로덕션에 반영하기 전에 변경 사항을 미리 검토할 수 있어 초기 아이디어를 동작하는 베타 버전으로 신속하게 발전시키고 빠르게 개선할 수 있었습니다. 이를 바탕으로 사용자가 Joy와의 간단한 대화를 통해 비즈니스 성과를 명확히 정의하고, 수정 가능한 프로젝트 브리프를 검토한 뒤 빌더와 연결되는 다음 단계로 나아갈 수 있는 제품을 선보이게 되었습니다."
+    },
+    {
+     "author": "Philip Loyd",
+     "is_maker": true,
+     "text": "Hey Product Hunt! We’re Philip and Cristian, the makers of 10xJoy. You shouldn’t need to know what to build to get help making your business better. Start with your business email, talk through the outcomes you want with Joy, and review a brief in your own words. We’re launching an early beta and welcoming our first builders. As the reviewed directory grows, clients can see up to three eligible suggestions, choose who to contact, and approve their brief for an introduction coordinated by email with our team. The gallery’s sample builders and email illustrate that journey. Builders: tell Joy what you do, add a work example, and send your profile for human review. 10xJoy is free to use for clients and builders. Project work, scope, contracts, and payments are agreed directly with the builder. The aim is simple: a little less friction, a little more joy, and more room for what matters—maybe even that vacation. 🏝️ We’d love your feedback: does Joy make the next step feel simpler?",
+     "kr": "Product Hunt 여러분 안녕하세요! 10xJoy의 제작자인 Philip과 Cristian입니다. 비즈니스를 개선하기 위해 무엇을 만들어야 하는지 기술적으로 미리 알 필요는 없습니다. 비즈니스 이메일로 시작해 Joy와 원하는 결과에 대해 이야기를 나누고, 여러분의 언어로 정리된 브리프를 검토해 보세요. 저희는 얼리 베타를 런칭하고 첫 번째 빌더들을 맞이하고 있습니다. 검증된 디렉토리가 커짐에 따라 의뢰인은 최대 3개의 적합한 추천을 확인하고 연락할 상대를 선택한 후 브리프를 승인하여 저희 팀의 이메일 조율을 통해 소개를 받게 됩니다. 갤러리의 샘플 빌더와 이메일이 그 과정을 잘 보여줍니다. 빌더 여러분: Joy에게 전문 분야를 알리고 작업 예시를 추가하여 프로필 검토를 요청하세요. 10xJoy는 클라이언트와 빌더 모두에게 완전 무료입니다. 프로젝트 작업, 범위, 계약 및 대금 지급은 빌더와 직접 협의합니다. 목표는 단순합니다: 마찰을 줄이고, 즐거움을 더하며, 정말 중요한 일(어쩌면 휴가까지도! 🏝️)에 집중할 여유를 만드는 것입니다. 여러분의 피드백을 기다립니다: Joy가 다음 단계로 나아가는 과정을 더 간단하게 느끼게 해주나요?"
+    },
+    {
+     "author": "Curious Kitty",
+     "is_maker": false,
+     "text": "Because projects are contracted and paid directly with the builder, how are you designing incentives and feedback loops so quality stays high (and spam stays low) without becoming a heavy-handed gatekeeper—and what’s your privacy posture on what gets sent to the AI provider vs. kept internal?",
+     "kr": "프로젝트 계약과 결제가 빌더와 직접 이루어지는데, 과도한 통제자가 되지 않으면서도 품질을 높게 유지하고 스팸을 줄이기 위해 인센티브와 피드백 루프를 어떻게 설계하고 계신가요? 그리고 AI 공급업체로 전송되는 데이터와 내부에 보관되는 데이터에 대한 개인정보 보호 정책은 어떻게 되나요?"
+    },
+    {
+     "author": "Cristian Deluxe",
+     "is_maker": true,
+     "text": "Fair questions. On quality: builders are listed only after they verify ownership of their email and a human reviews the profile, and every introduction goes through us, so we see each approved brief and which builders accept it. There is no paid placement and 10xJoy is free on both sides, so the only thing that moves a builder up the shortlist is fit with the outcomes in the brief. Spam is handled at the door: a business email to start, per-session and per-IP limits on Joy, and bot detection on the endpoint. On privacy: the model (Claude) sees the conversation, the profile Joy builds from it and the public text of your company site, so it does not ask what it can read. The chat stays in our own database and is never shown to builders. They receive the saved brief and your contact email only after you tick consent for the builders you picked, and since this morning the consent step says exactly that.",
+     "kr": "타당한 질문입니다. 품질 측면에서: 빌더는 이메일 소유권을 검증하고 사람이 직접 프로필을 검토한 후에만 등록되며, 모든 소개는 저희를 거치기 때문에 승인된 브리프와 이를 수락한 빌더를 모두 확인할 수 있습니다. 유료 광고 배치가 없고 양측 모두 무료이므로 빌더가 추천 목록 상위에 오를 수 있는 유일한 기준은 브리프의 목표 결과와의 적합성뿐입니다. 스팸은 초기 진입 단계에서 차단됩니다. 비즈니스 이메일 필수 입력, Joy 세션 및 IP별 사용 제한, 엔드포인트 봇 감지 기능이 적용되어 있습니다. 개인정보 보호 측면에서: 모델(Claude)은 대화 내용, Joy가 이를 바탕으로 작성한 프로필, 그리고 회사 웹사이트의 공개 텍스트를 확인하여 이미 알 수 있는 내용을 중복해서 묻지 않습니다. 채팅 내용은 자체 데이터베이스에만 보관되며 빌더에게 절대 공개되지 않습니다. 선택한 빌더에 대해 동의 체크를 마친 후에만 저장된 브리프와 담당자 이메일이 전달되며, 오늘 아침부터 동의 안내 문구에도 이 내용이 명확히 명시되었습니다."
+    },
+    {
+     "author": "Philip Loyd",
+     "is_maker": true,
+     "text": "[@curiouskitty](https://www.producthunt.com/@curiouskitty) hopping in here to just mention I love this question, and it's really going to be a foundational trust factor. Joy has to a be a fair, unbiased, helpful advisor to business owners; and at the same time a fair and equal recommender for builders. Each request will only receive a max of 3 suggested builders, and those recs should be constantly reviewed and improved over time.  \n  \nIn addition to [@cristiandeluxe](https://www.producthunt.com/@cristiandeluxe) 's spam blocking mechanisms, I usually tend to lean into a more fair and self-governing system that doesn't require a human in the loop to review and approve builder applications. That is going to be a losing battle in a lot of respects and the last job I want to give a human is reviewing hundreds or thousands of applications every day to manually weed out the real and fake builders. I'll be pushing for more positive reinforcement methods similar to how the Product Hunt community feeds the flywheel of creativity and invention in an ultra positive environment. There's always a dark shadow-banned existence out there for bot accounts that try and beat the system, and I could see 10xJoy having similar auto-moderation methods in place to keep the bad actors in check.  \n  \nThe ultimate goal for 10xJoy will be to become a trusted marketplace for positive outcomes in all shapes and sizes across every industry. With that mission, we are going to have a ton of fun building in functionality that keep people coming back, not because we force them, but because 10xJoy truly brings 10x the results compared to anything else they might try to get around the system. More inclusivity, more benefits, maximum value generated, with near-zero time-to-value.  \n  \nAgain... excellent question. So glad you asked it. I'd love to hear how the MVP measures up to your expectations and anywhere we could improve. 😇",
+     "kr": "[@curiouskitty](https://www.producthunt.com/@curiouskitty) 저도 덧붙이자면 정말 좋은 질문이며 이것이 기본적인 신뢰의 핵심 요소가 될 것입니다. Joy는 비즈니스 소유자에게 공정하고 편향되지 않은 유용한 조언자여야 하며, 동시에 빌더들에게도 공평하고 균등한 추천자가 되어야 합니다. 각 요청당 최대 3명의 빌더만 추천받게 되며 이 추천은 시간이 흐름에 따라 지속적으로 검토되고 개선되어야 합니다.\n\n[@cristiandeluxe](https://www.producthunt.com/@cristiandeluxe) 가 언급한 스팸 차단 메커니즘에 더해, 저는 빌더 지원서를 검토하고 승인하는 데 사람이 일일이 개입할 필요가 없는 보다 공정하고 자율적인 시스템을 지향합니다. 매일 수백 수천 건의 지원서를 수동으로 검토해 진짜와 가짜를 가려내는 일은 지속하기 어려운 싸움이기 때문입니다. Product Hunt 커뮤니티가 긍정적인 환경 속에서 창의성과 발명의 플라이휠을 돌리는 것과 유사하게 긍정적 강화 방식을 적극 도입할 것입니다. 시스템을 악용하려는 봇 계정에 대해서는 섀도우 밴과 같은 자동 중재 방식을 두어 악성 사용자를 통제할 계획입니다.\n\n10xJoy의 궁극적인 목표는 모든 산업 분야에서 다양한 형태의 긍정적인 성과를 만들어내는 신뢰받는 마켓플레이스가 되는 것입니다. 강제가 아니라 10xJoy가 다른 어떤 방법보다도 10배의 결과를 제공하기 때문에 사용자들이 자발적으로 다시 찾도록 만드는 기능을 즐겁게 구축해 나갈 것입니다.\n\n다시 한번 훌륭한 질문에 감사드리며, 현재의 MVP가 기대에 부합하는지 개선할 점이 있다면 언제든 말씀해 주세요. 😇"
+    },
+    {
+     "author": "Zarnappa Earnoor",
+     "is_maker": false,
+     "text": "What happens if someone starts with one idea and realizes during the conversation that they actually need something else?",
+     "kr": "처음에 한 가지 아이디어로 시작했다가 대화 도중에 실제로 다른 것이 필요하다는 것을 깨닫게 되면 어떻게 되나요?"
+    },
+    {
+     "author": "Philip Loyd",
+     "is_maker": true,
+     "text": "[@zarnappa_earnoor6478](https://www.producthunt.com/@zarnappa_earnoor6478) good question! The end result is an editable brief that you and Joy co-write, so everything is subject to change. Also! Joy loves to recommend surprising solutions and builders to solve your problems. There's also no limit to how many briefs you want to create, so go nuts. :D",
+     "kr": "[@zarnappa_earnoor6478](https://www.producthunt.com/@zarnappa_earnoor6478) 좋은 질문입니다! 최종 결과물은 사용자와 Joy가 함께 작성하는 수정 가능한 브리프이므로 언제든 자유롭게 변경할 수 있습니다. 또한 Joy는 문제를 해결하기 위한 놀라운 솔루션과 빌더를 추천해 주기도 합니다. 만들 수 있는 브리프의 개수에도 제한이 없으니 마음껏 활용해 보세요. :D"
+    },
+    {
+     "author": "Cristian Deluxe",
+     "is_maker": true,
+     "text": "@zarnappa_earnoor6478 Adding to Phil: the pivot is cheap by design because what gets shared is the brief, not the chat. Joy re-reads your goal and outcomes after every turn, so when you change direction mid-conversation the next draft follows the latest version, and you can still edit it by hand before anything goes to a builder.",
+     "kr": "@zarnappa_earnoor6478 Phil의 답변에 덧붙이자면, 공유되는 것은 채팅 전체가 아니라 브리프이기 때문에 방향 전환에 드는 비용이 매우 적도록 설계되었습니다. Joy는 대화 턴마다 목표와 결과물을 다시 읽기 때문에 대화 중간에 방향을 바꾸면 다음 초안이 최신 버전을 따르게 되며, 빌더에게 전달되기 전에 손으로 직접 수정할 수도 있습니다."
+    },
+    {
+     "author": "Victor Guichard",
+     "is_maker": false,
+     "text": "I like the idea of starting with what you want to achieve rather than having to figure out what to build first.",
+     "kr": "무엇을 만들어야 할지부터 고민하기보다 달성하고자 하는 목표에서부터 시작한다는 아이디어가 마음에 드네요."
+    },
+    {
+     "author": "Philip Loyd",
+     "is_maker": true,
+     "text": "[@victor_guichard12](https://www.producthunt.com/@victor_guichard12) Amen. Desired outcomes FTW. 🙌",
+     "kr": "[@victor_guichard12](https://www.producthunt.com/@victor_guichard12) 전적으로 공감합니다. 원하는 성과에 집중하는 것이 최고죠. 🙌"
+    },
+    {
+     "author": "Cristian Deluxe",
+     "is_maker": true,
+     "text": "@victor_guichard12 That order is deliberate. Joy asks who leads the work and what outcome you want before any word about tech, and it reads the public site behind your business email first so it does not ask what it can find on its own. A tool (\"a CRM\") only shows up once an outcome (\"fewer lost leads\") exists to justify it.",
+     "kr": "@victor_guichard12 그 순서는 의도된 것입니다. Joy는 기술에 대한 언급 이전에 누가 업무를 주도하고 어떤 결과를 원하는지 먼저 묻고, 비즈니스 이메일에 연결된 공개 웹사이트를 먼저 읽어 혼자 찾을 수 있는 정보는 묻지 않습니다. 도구(예: 'CRM')는 이를 정당화하는 성과(예: '리드 유실 감소')가 존재할 때만 비로소 등장합니다."
+    },
+    {
+     "author": "Andrea Zanon",
+     "is_maker": false,
+     "text": "The editable brief is a nice touch. I’d definitely want to change a few things before sending it on.",
+     "kr": "수정 가능한 브리프 기능이 참 좋네요. 다른 사람에게 전달하기 전에 몇 가지 내용을 직접 다듬고 싶을 테니까요."
+    }
+   ],
+   "slug": "10xjoy"
+  },
+  {
+   "name": "DEV·TV",
+   "tagline_en": "A retro TV for GitHub, HN, Hugging Face & more: 10 channels",
+   "tagline_kr": "GitHub, Hacker News, Hugging Face 등을 감상하는 10개 채널 레트로 TV",
+   "image": "https://ph-files.imgix.net/7e7072c0-1444-4579-9e54-4fa34b07a22d.gif?auto=compress&codec=mozjpeg&cs=strip&dpr=2&fit=crop&fm=webp&frame=1&h=48&w=48",
+   "categories": [
+    "Open Source",
+    "TV",
+    "Developer Tools"
+   ],
+   "upvotes": 139,
+   "comments_count": 16,
+   "maker": "Souvik Palit(@shouvik_palit) 메이커",
+   "price_model": "무료 (Free / Open Source)",
+   "price_detail": "완전 무료 및 오픈소스(MIT 라이선스). 별도 회원가입, 백엔드 서버, API 키 없이 단일 HTML 파일로 브라우저에서 바로 동작.",
+   "desc_kr": "DEV·TV는 개발자들이 습관적으로 확인하는 GitHub, Hacker News, DEV, Hugging Face 등의 개발 트렌드를 10개의 실시간 채널로 자동 방영해 주는 레트로 감성의 웹 TV입니다. 백엔드 서버나 로그인, 빌드 과정 없이 순수 HTML 파일 하나로 구동되며 브라우저에서 공개 API를 직접 호출하여 작동합니다. AI 요약이나 인위적인 큐레이션 없이 신뢰할 수 있는 원본 소스 데이터를 그대로 보여주며, 내장 리더기를 통해 상세 내용을 빠르게 읽을 수 있습니다. 사무실 공용 디스플레이나 재택근무 팀의 보조 모니터 탭에 띄워두면 개발 몰입을 방해받지 않고 자연스럽게 최신 기술 이슈를 팀 전체가 공유할 수 있습니다. 완전 무료이자 MIT 라이선스 오픈소스로 공개되어 누구나 자유롭게 활용하고 커스터마이징할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/dev-tv",
+   "comment_summary": "댓글에서는 백엔드 없이 단일 HTML 파일로 구동되는 기술적 구조와 AI 요약이 배제된 실제 소스 콘텐츠 제공 원칙, 사무실 공유 스크린으로서의 활용성에 대한 긍정적 평가가 주를 이뤘습니다. 제작자 Souvik Palit은 개발 집중 흐름을 깨뜨리는 둠스크롤링 대신 가볍게 훑어볼 수 있는 환경적 인식(Ambient Awareness)을 지향했다고 설명하며 사용자 피드백을 반영해 Swift 릴리즈 채널을 즉각 추가했습니다. 사용자들은 레트로 TV 특유의 화면 전환 효과와 노이즈 감성, 그리고 업무 중 서브 모니터에 띄워두기 좋은 편의성에 호평을 보냈습니다.",
+   "warnings": "수치(업보트 139·댓글 16)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Souvik Palit",
+     "is_maker": true,
+     "text": "My favorite way to use it: on a shared screen. Leave DEV·TV running on an office TV (or an always-on tab for a remote team) and it becomes ambient team awareness. People glance at it over coffee, it runs in the background all day, and in standup anyone can point at it and say \"did anyone see this?\" No shared Twitter lists, no newsletter everyone has to follow, no curation. It's one HTML file, so there's nothing to maintain.",
+     "kr": "제가 가장 좋아하는 활용 방식은 공유 스크린에 띄워두는 것입니다. 사무실 TV(또는 원격 근무 팀의 상시 켜둔 브라우저 탭)에 DEV·TV를 틀어두면 자연스럽게 팀 전체의 배경 상황 인지(Ambient awareness) 수단이 됩니다. 커피를 마시며 힐끗 보기도 하고 하루 종일 백그라운드에서 돌아가며, 스탠드업 미팅에서 누구든 화면을 가리키며 '이거 보셨어요?'라고 말할 수 있습니다. 트위터 목록을 공유하거나 모두가 뉴스레터를 구독할 필요도 없고 별도의 큐레이션도 없습니다. HTML 파일 하나로 이루어져 있어 유지 관리할 것도 전혀 없습니다."
+    },
+    {
+     "author": "John Joo",
+     "is_maker": false,
+     "text": "What a cool idea! To make it really addictive and more like TV, it would be cool to generate short 30-60 sec video clips of anything that you'd read. Like all of those AI papers, Github, and HN articles could be short videos. I'd have this playing in my background while working.",
+     "kr": "정말 멋진 아이디어네요! 더욱 몰입감 있고 진짜 TV처럼 느껴지도록 읽을거리들을 30~60초 분량의 짧은 영상 클립으로 생성해 주면 정말 좋을 것 같습니다. AI 논문, GitHub, HN 기사들을 숏폼 비디오로 볼 수 있다면 일하는 동안 백그라운드에 계속 틀어놓을 텐데요."
+    },
+    {
+     "author": "Souvik Palit",
+     "is_maker": true,
+     "text": "[@john_joo2](https://www.producthunt.com/@john_joo2) Thanks John! .\n\nGenerated video is tempting, but I've been trying to keep DEV·TV to real source content, nothing AI-rewritten. Generating clips would also need a backend and real costs for every story.\n\nClosest thing right now: the HN Video and AI Video channels play actual talks and demos that Hacker News upvoted. Do give those a try",
+     "kr": "[@john_joo2](https://www.producthunt.com/@john_joo2) John님 감사합니다!\n\n생성형 비디오는 솔깃한 제안이지만, 저는 DEV·TV를 AI가 재작성한 것이 아닌 실제 원본 소스 콘텐츠로 유지하고자 노력하고 있습니다. 영상 클립을 생성하려면 백엔드 서버도 필요하고 기사마다 실제 비용이 발생하게 됩니다.\n\n현재 가장 유사한 대안으로는 Hacker News에서 추천을 받은 실제 강연과 데모를 재생해 주는 HN Video와 AI Video 채널이 있습니다. 꼭 한번 시청해 보세요."
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "According to what do you choose those resources?",
+     "kr": "어떤 기준에 따라 리소스를 선정하시나요?"
+    },
+    {
+     "author": "Souvik Palit",
+     "is_maker": true,
+     "text": "[@busmark_w_nika](https://www.producthunt.com/@busmark_w_nika) Hey Nika, mostly developer habits. I started with the tabs I kept opening myself (GitHub, Hacker News, DEV, Hugging Face), then added the stuff I was googling separately: framework releases, new papers, security vulnerabilities.\n\nThe other filter was technical. DEV·TV has no backend, so every source has to work straight from the browser with no API key. That ruled out a few I wanted, like Reddit, X and Product Hunt itself.",
+     "kr": "[@busmark_w_nika](https://www.producthunt.com/@busmark_w_nika) Nika님 안녕하세요, 주로 개발자들의 이용 습관을 따랐습니다. 저 스스로 계속 열어보던 탭(GitHub, Hacker News, DEV, Hugging Face)으로 시작했고, 이후 별도로 구글링하던 항목들(프레임워크 출시 소식, 새 논문, 보안 취약점 등)을 추가했습니다.\n\n또 다른 필터 기준은 기술적인 제약이었습니다. DEV·TV에는 백엔드가 없기 때문에 모든 소스는 API 키 없이 브라우저에서 직접 동작해야 했습니다. 그 때문에 Reddit, X, 그리고 Product Hunt 자체처럼 제가 원했던 몇 가지 소스는 제외해야 했습니다."
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "[@shouvik_palit](https://www.producthunt.com/@shouvik_palit) Aaa, I first thought, that PH should be applied there :)",
+     "kr": "[@shouvik_palit](https://www.producthunt.com/@shouvik_palit) 아하, 저는 당연히 Product Hunt도 적용되어 있을 거라고 생각했었네요 :)"
+    },
+    {
+     "author": "Souvik Palit",
+     "is_maker": true,
+     "text": "[@busmark_w_nika](https://www.producthunt.com/@busmark_w_nika) :) :) That was one of my first thoughts. It would've been fun to launch a TV here with a Product Hunt channel on it, but unfortunately the API needs a private token that can't sit in browser code. If DEV·TV ever gets a backend, it's first on the list.",
+     "kr": "[@busmark_w_nika](https://www.producthunt.com/@busmark_w_nika) :) :) 저도 가장 먼저 떠올렸던 생각입니다. Product Hunt 채널이 포함된 TV로 이곳에 출시했다면 정말 재미있었겠지만, 아쉽게도 PH API는 브라우저 코드에 둘 수 없는 비공개 토큰이 필요합니다. 만약 DEV·TV에 백엔드가 구축된다면 최우선 순위로 추가될 것입니다."
+    },
+    {
+     "author": "Dieter Verlaeckt",
+     "is_maker": false,
+     "text": "This is an original tool, but not sure if it wants to be a gimmick or a real source of knowledge?",
+     "kr": "독창적인 도구이긴 한데, 단순한 재미 요소(기믹)를 노린 것인지 실제 지식의 원천이 되고자 하는 것인지 잘 모르겠네요?"
+    },
+    {
+     "author": "Souvik Palit",
+     "is_maker": true,
+     "text": "[@dvstudio80](https://www.producthunt.com/@dvstudio80) The TV look is the fun part, but the content is all real: GitHub repos, HN stories, papers, releases. Nothing is made up or summarized. So a fun interface for real sources, I guess.",
+     "kr": "[@dvstudio80](https://www.producthunt.com/@dvstudio80) TV 외형은 재미 요소이지만 콘텐츠는 모두 진짜입니다. GitHub 저장소, HN 스토리, 논문, 릴리즈 소식 등 어떤 것도 조작되거나 임의로 요약되지 않았습니다. 즉, 실제 소스를 접하기 위한 재미있는 인터페이스라고 보시면 될 것 같습니다."
+    },
+    {
+     "author": "Jaewon Seo",
+     "is_maker": false,
+     "text": "would love an apple dev channel in there. swift releases and app review guideline changes are the stuff i always hear about a week late",
+     "kr": "애플 개발자 채널도 들어가면 좋겠네요. Swift 릴리즈나 앱 심사 지침 변경 사항은 항상 일주일씩 늦게 접하게 되더라고요."
+    },
+    {
+     "author": "Souvik Palit",
+     "is_maker": true,
+     "text": "[@jaewon_seo](https://www.producthunt.com/@jaewon_seo) Added! Swift releases are now in the Releases channel. App Review guideline changes will take more digging, but they're on the list.",
+     "kr": "[@jaewon_seo](https://www.producthunt.com/@jaewon_seo) 추가 완료했습니다! 이제 Releases 채널에서 Swift 릴리즈 소식을 확인하실 수 있습니다. 앱 심사 지침 변경 사항은 좀 더 조사가 필요하지만 우선 위시리스트에 올려두었습니다."
+    },
+    {
+     "author": "Frank Reyna",
+     "is_maker": false,
+     "text": "This is very cool. Excellent for my third screen while working in IT. I can gander over and check what is scrolling nicely as I'm doing my work. Nice flow to it. Full screen and channel transition fizz is excellent.",
+     "kr": "정말 멋지네요. IT 업무를 보면서 세 번째 모니터에 띄워두기에 최고입니다. 일하면서 화면에 부드럽게 스크롤되는 소식들을 힐끗 확인하기 좋습니다. 흐름도 매끄럽고 전체 화면 모드와 채널 전환 시 치지직거리는 노이즈 효과가 압권이네요."
+    }
+   ],
+   "slug": "dev-tv"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div></div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
