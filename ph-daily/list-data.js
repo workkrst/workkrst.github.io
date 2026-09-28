@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-09-28",
+    "url": "2026-09-28/",
+    "top_product": "GPT-6 Sol & Luna",
+    "count": 5,
+    "upvotes_total": 1066,
+    "comments_total": 44
+  },
+  {
     "date": "2026-09-27",
     "url": "2026-09-27/",
     "top_product": "Hemory",
