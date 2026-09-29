@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-09-29</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-09-29 · Top 5 · 수집 댓글 60개 · 수집 2026-09-29 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-09-29",
+ "collected_at": "2026-09-29 12:30 KST",
+ "summary": "오늘 톱 5 제품은 MCP 기반의 비즈니스 및 웹 데이터 분석 도구가 1·2위를 차지한 가운데 메시징 SaaS와 개발자 시스템 유틸리티 및 보안 솔루션이 뒤를 이었습니다. 커뮤니티 댓글에서는 AI 에이전트 연동 시 발생하는 수치 환각(Hallucination) 방지와 원천 데이터 출처 검증 메커니즘이 집중적으로 논의되었습니다. 아울러 엔터프라이즈 도입을 위한 읽기/설정 권한 분리와 시크릿 유출 방지 등 안전한 AI 에이전트 거버넌스 구축이 공통 화두로 떠올랐습니다.",
+ "notable": [
+  {
+   "slug": "databox",
+   "why": "지표 변동의 원인을 규명하는 과정에서 AI의 환각(Hallucination) 방지 및 원천 출처 검증 메커니즘에 커뮤니티의 질문이 집중되었습니다. 메이커는 수치를 임의 생성하지 않고 실시간 MCP 툴 호출을 통해 실제 원천 데이터를 인용하며, 도구별 세분화된 실행 권한을 제공한다고 답변해 신뢰를 얻었습니다."
+  },
+  {
+   "slug": "statable-analytics",
+   "why": "쿠키 없는 환경의 전환 추적 한계와 함께 AI 에이전트 연동 시 기업 보안 승인을 통과하기 위한 접근 제어가 주요 쟁점으로 떠올랐습니다. 메이커는 에이전트에게 24시간 솔트 회전 해시 기반의 집계 통계만 제공하고 원시 IP는 저장하지 않는다는 명확한 데이터 보호 아키텍처를 제시해 실무자들의 호평을 받았습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "MCP Connectors by Databox",
+   "tagline_en": "Give your AI Analyst context to explain performance and act",
+   "tagline_kr": "AI 애널리스트에게 성과를 설명하고 직접 실행할 수 있는 비즈니스 맥락을 제공",
+   "image": "https://ph-files.imgix.net/98b326f4-055d-4d4b-9943-a627e902fedc.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Analytics",
+    "SaaS",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 389,
+   "comments_count": 75,
+   "maker": "Peter Caputa(@pc4media), Ziga Potocnik(@zigapotocnik), Davorin Gabrovec(@davorin), Jakob Zmrzlikar(@jakobzmrzlikar) (헌터: Rohan Chaubey(@rohanrecommends))",
+   "price_model": "무료 옵션 제공 (Free Options)",
+   "price_detail": "기본 분석 및 커넥터 체험을 무료(Freemium)로 제공하며, 연동 도구 개수 및 정기 루틴 자동화 규모에 따라 유료 플랜이 적용됩니다.",
+   "desc_kr": "Databox가 자사의 AI 비즈니스 분석 에이전트 Genie에 MCP(Model Context Protocol) 기반 공식 커넥터를 결합하여 실시간 비즈니스 맥락을 연결하는 솔루션을 출시했습니다. 단순한 대시보드 지표 변동 확인을 넘어, 매출이나 가입자 수가 변동했을 때 HubSpot, Slack, Linear, Notion 등 팀 협업 및 CRM 도구의 실제 대화와 티켓 데이터를 실시간으로 조회하여 원인을 명확히 짚어냅니다. 10개 이상의 원클릭 공식 커넥터뿐 아니라 커스텀 MCP 서버 URL 연동을 지원하여 기업 고유의 내부 인프라나 특수 데이터 소스도 손쉽게 연결할 수 있습니다. 지표 분석에 그치지 않고 광고 캠페인 자동 중단, 사이트 콘텐츠 갱신, 세일즈 후속 작업 생성 등 실제 도구 내 조치를 트리거하는 스킬(Skills)과 정기 루틴(Routines) 자동화를 지원합니다. 모든 조치에 대해 항상 허용, 승인 필요, 차단 등 세분화된 권한 제어를 제공하여 AI 에이전트의 안전하고 신뢰할 수 있는 데이터 분석 및 자동화를 보장합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/databox",
+   "comment_summary": "공식 커넥터 선정 기준과 커스텀 MCP 연동 방식, 그리고 실시간 지표 분석 시 발생할 수 있는 환각(Hallucination) 방지 및 데이터 출처 검증 메커니즘에 질문이 집중되었습니다. 메이커 측은 수치를 임의 생성하는 것이 아니라 실제 데이터 소스와 라이브 MCP 툴 호출을 통해 근거 자료를 직접 제시하므로 사용자가 직접 원천 데이터를 검증할 수 있다고 설명했습니다. 지표의 단순 수치 변화뿐 아니라 그 이면에 숨겨진 맥락(CRM 노트, 슬랙 논의 등)까지 한 화면에서 파악할 수 있어 수작업 분석 부담을 획기적으로 줄여준다는 호평이 이어졌습니다.",
+   "warnings": "수치(업보트 389·댓글 75)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Peter Caputa",
+     "is_maker": true,
+     "text": "Hi Product Hunt! 👋  \n\nI'm Pete from Databox. Today we're launching MCP connectors for Genie, our AI Analyst.  \n\nGenie analyzes your live metrics and tells you what changed. But a metric alone rarely explains what's going on.  \n\nTrial signups dip, and the reason is a pricing change your team shipped two weeks ago. Traffic jumps, and behind it is an influencer mentioning you on reddit that none of your analytics can track. The numbers alone can't tell you why something happened.\n\nThe deal context in your CRM, the tickets in your support desk, the tasks in your project tool and the Slack messages where your team discussed that unexpected Reddit mention. That's the explanation, and it's spread across the tools where work and conversations happen.  \n\nThat context is what separates a generic report from a useful one. Any AI can look at a chart and tell you a number fell 12%. Knowing that two big deals slipped because you didn't anticipate a more extensive legal review, support tickets spiked after a feature release, and the reasons your ad strategy changed mid-month is what makes a report useful and actionable. Until now, getting that kind of answer meant someone gathering the context by hand, every time.  \n\nMCP connectors give Genie that context. Connect your tools, and Genie pulls from them during analysis, so its answers reflect what's actually happening in your business.   \n\nIn addition to automating reporting, you can also use Databox's new MCP connectors to execute actions in other tools, based on your analysis. Want to shut down an ad campaign once it stops performing? No problem. Just write a skill in Databox that instructs your ad platform to shut down a campaign once frequency hits 5 and conversion rate drops below 1%. Want to update content on a website page after it stops getting search traffic? Easy. Want to create a task for your sales team if they have too many deals open without a next step? Even easier.  \n\nHow it works:\n\n*   **One-click connectors:** HubSpot, Slack, Notion, Linear, Mixpanel, Semrush, Klaviyo, Ahrefs, and more, with 10+ available at launch\n    \n*   **Custom connectors:** add any MCP server by URL, with OAuth, API key, or bearer token support\n    \n*   **Permissions you control:** set every tool to always allow, needs approval, or blocked, so Genie only acts where you've said it can\n    \n*   **Skills & Routines**: Write skills that pull data from specific integrations and context from specific MCP servers, automate actions based on the analysis. Run it completely autonomously using Routines.  \n    \n\nMCP connectors are live today: [https://databox.com/](https://databox.com/)  \n  \nIf there's a tool you want Genie connected to, tell us below.  \n\nThanks for checking it out 🙏",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋\n\n저는 Databox의 Pete입니다. 오늘 저희 AI 애널리스트인 Genie를 위한 MCP 커넥터를 공식 출시합니다.\n\nGenie는 라이브 지표를 분석하여 무엇이 변경되었는지 알려줍니다. 하지만 지표 수치 하나만으로는 실제로 무슨 일이 일어나고 있는지 설명하기 어렵습니다.\n\n체험판 가입자가 급감했는데 그 실제 원인이 2주 전 팀에서 적용한 가격 정책 변경 때문일 수 있습니다. 트래픽이 급증했는데 그 배경에는 어떤 분석 도구로도 추적되지 않던 Reddit 인플루언서의 언급이 있었을 수도 있습니다. 숫자 자체만으로는 왜 그런 일이 일어났는지 이유를 말해줄 수 없습니다.\n\nCRM에 담긴 딜 맥락, 지원 데스크의 티켓, 프로젝트 도구의 작업들, 그리고 Reddit 언급에 대해 팀원들이 이야기를 나눈 Slack 메시지까지, 업무와 대화가 오가는 여러 도구에 흩어져 있는 정보들이야말로 진정한 설명입니다.\n\n이러한 비즈니스 맥락이 일반적인 보고서와 진정으로 유용한 보고서를 가르는 차이점입니다. 어떤 AI든 차트를 보고 숫자가 12% 하락했다고 말할 수는 있습니다. 하지만 예상보다 길어진 법무 검토로 인해 대형 계약 2건이 지연되었거나 기능 릴리즈 후 지원 티켓이 급증했거나 월중 광고 전략이 변경된 이유를 아는 것이야말로 보고서를 실질적으로 활용 가능하게 만듭니다. 지금까지 이런 해답을 얻으려면 매번 사람이 일일이 수작업으로 맥락을 취합해야 했습니다.\n\nMCP 커넥터는 Genie에게 바로 그 맥락을 제공합니다. 팀에서 사용하는 도구를 연결하면 Genie가 분석 과정에서 이를 불러와 비즈니스에서 실제로 벌어지는 현실을 답변에 온전히 반영합니다.\n\n보고 자동화뿐만 아니라 Databox의 새로운 MCP 커넥터를 사용하여 분석 결과를 바탕으로 다른 도구에서 직접 실행 작업을 트리거할 수도 있습니다. 성과가 저조한 광고 캠페인을 자동으로 중단하고 싶으신가요? 문제없습니다. 빈도가 5에 도달하고 전환율이 1% 미만으로 떨어지면 광고 플랫폼에 캠페인 중단을 지시하는 스킬을 작성하면 됩니다. 검색 트래픽이 끊긴 웹사이트 페이지의 콘텐츠를 업데이트하거나 다음 단계 없이 열려 있는 딜이 너무 많은 영업팀에 작업을 할당하는 것도 훨씬 간단해집니다.\n\n작동 방식:\n\n* **원클릭 커넥터:** HubSpot, Slack, Notion, Linear, Mixpanel, Semrush, Klaviyo, Ahrefs 등 10개 이상 기본 제공\n* **커스텀 커넥터:** OAuth, API 키, 베어러 토큰을 지원하여 URL만으로 모든 MCP 서버 추가 가능\n* **직접 제어하는 권한:** 항상 허용, 승인 필요, 차단 등 세부 설정으로 지정된 범위 내에서만 Genie 작동\n* **스킬 및 루틴:** 특정 연동 도구의 데이터와 MCP 맥락을 결합하여 분석 기반 조치를 자동화하고 루틴으로 완전 자율 실행\n\nMCP 커넥터는 오늘 바로 이용 가능합니다: [https://databox.com/](https://databox.com/)\n\nGenie와 연결하고 싶은 도구가 있다면 아래에 댓글로 남겨주세요.\n\n확인해 주셔서 감사합니다 🙏"
+    },
+    {
+     "author": "David Turner",
+     "is_maker": false,
+     "text": "[@pc4media](https://www.producthunt.com/@pc4media) The one-click connectors with HubSpot, Slack, Notion, and Linear sound really useful. Having all that context in one analysis could save a lot of manual work.",
+     "kr": "[@pc4media](https://www.producthunt.com/@pc4media) HubSpot, Slack, Notion, Linear와의 원클릭 연동이 정말 유용해 보이네요. 한 번의 분석에 이 모든 맥락을 담아낼 수 있다면 엄청난 수작업을 줄일 수 있을 것 같습니다."
+    },
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "[@pc4media](https://www.producthunt.com/@pc4media) Many congratulations Ziga, Peter, Davorin and team on another great launch! 😊\n\n**How I met the makers?**\n\nI met the makers through a hunter friend in March. This is our seventh launch together in the past seven months.\n\n**What is the new launch about?**\n\nDatabox is an agentic analytics platform that brings together your business performance data and gives your AI Analyst, Genie, the context behind every metric.\n\nWith MCP Connectors, it can pull information from tools like HubSpot, Slack, Notion, Linear, Mixpanel, Semrush, and Klaviyo, so when a number changes, you do not just see _what_ happened, but also _why_ it happened. You can even automate actions based on the insights through Skills and Routines.\n\n**Why I endorse it?**\n\nI endorse this launch because it solves a very real problem: dashboards often tell you that a metric moved, but the actual explanation lives in your CRM, support desk, project tools, or team conversations.\n\n[@Databox](https://www.producthunt.com/products/databox) connects those dots automatically, saves teams from manual reporting, and makes AI-generated insights more grounded, actionable, and useful.\n\nThe team’s consistent shipping cadence and focus on practical AI workflows make this a standout launch. ❤️",
+     "kr": "[@pc4media](https://www.producthunt.com/@pc4media) Ziga, Peter, Davorin 그리고 팀 여러분, 또 한 번의 멋진 출시를 진심으로 축하드립니다! 😊\n\n**메이커들을 어떻게 알게 되었나요?**\n\n지난 3월 헌터 친구를 통해 메이커들을 처음 만났습니다. 지난 7개월 동안 벌써 일곱 번째로 함께하는 출시네요.\n\n**이번 신규 출시는 어떤 제품인가요?**\n\nDatabox는 비즈니스 성과 데이터를 통합하고 AI 애널리스트인 Genie에게 각 지표의 숨은 배경 맥락을 제공하는 에이전틱 분석 플랫폼입니다.\n\nMCP 커넥터를 통해 HubSpot, Slack, Notion, Linear, Mixpanel, Semrush, Klaviyo 등의 도구에서 정보를 가져오므로 수치가 변했을 때 단순히 '무엇이' 일어났는지뿐만 아니라 '왜' 일어났는지까지 확인할 수 있습니다. 스킬과 루틴을 통해 인사이트를 바탕으로 한 후속 조치까지 자동화할 수 있죠.\n\n**이 제품을 지지하는 이유:**\n\n대시보드는 지표가 변했다는 사실만 알려줄 뿐 실제 원인 설명은 CRM, 헬프데스크, 프로젝트 관리 도구, 팀 대화 속에 묻혀 있는 현실적인 문제를 해결해 주기 때문입니다.\n\n[@Databox](https://www.producthunt.com/products/databox)는 이러한 파편화된 접점들을 자동으로 연결하여 수동 보고 작업에서 팀을 해방하고, AI가 생성한 인사이트를 훨씬 탄탄하고 실행 가능하며 유용하게 만들어 줍니다.\n\n꾸준한 제품 릴리즈 속도와 실용적인 AI 워크플로우에 대한 집중도가 이번 출시를 더욱 돋보이게 만듭니다. ❤️"
+    },
+    {
+     "author": "Curious Kitty",
+     "is_maker": false,
+     "text": "How did you prioritize which connectors to ship first, and what’s your bar for a connector being ‘good enough’ (tool granularity, auditability, token/tool-manifest size, reliability of OAuth/auth flows) versus leaving it to “bring your own MCP server”?",
+     "kr": "어떤 커넥터를 우선 출시할지 어떻게 우선순위를 정하셨나요? 그리고 '자체 MCP 서버 가져오기(BYO MCP)'로 넘기는 대신 기본 탑재 커넥터로 인정하는 기준(도구의 세분성, 감사 가능성, 토큰/매니페스트 크기, OAuth/인증 흐름의 안정성 등)은 무엇인가요?"
+    },
+    {
+     "author": "Ziga Potocnik",
+     "is_maker": true,
+     "text": "[@curiouskitty](https://www.producthunt.com/@curiouskitty) Great question. Here's how we approached it.\n\n  \n**What shipped first.** We started from two signals. The first was which tools our customers already connect to Databox as data sources, since that's where the metrics come from. The second was where the \"why\" behind those metrics usually lives: team chat, docs, project tools, email, and calendars. A connector made the first list only if it could explain a real metric change. For example, it should show the actual ad creative behind a CPC shift or the deal notes behind a revenue drop, not just repeat numbers we already have.\n\n  \n**Our bar for good enough:**\n\n*   **Vendor-built and vendor-hosted.** Every official connector uses the vendor's own remote MCP server. We don't maintain community forks.\n    \n*   **Standard, reliable auth.** Almost all use OAuth, so connecting takes one click and a sign-in. Servers that need self-hosting or a custom deployment stay out of the official list.\n    \n*   **Tools that add context.** We rated each server on whether its tools actually help explain a number. Some servers only return the same numbers we already ingest, with no access to the content behind them. We ranked those lower even when the tool is popular.\n    \n*   **Granular tools.** Every tool is listed separately, and permissions work tool by tool with one main setting per connector. That only works if the server's tools are split sensibly.\n    \n\n**Everything else goes through custom connectors.** The MCP ecosystem is moving too fast for any official list to keep up. Custom connectors take any server URL with OAuth, API key, or bearer token auth. They go through the same schema parsing and the same per-tool permissions, so the long tail works on day one. Tools that people keep adding as custom connectors are strong candidates for the official list.",
+     "kr": "[@curiouskitty](https://www.producthunt.com/@curiouskitty) 좋은 질문입니다. 저희 접근 방식은 다음과 같습니다.\n\n**우선 출시 기준:** 저희는 두 가지 신호에서 출발했습니다. 첫 번째는 지표의 원천이 되는 데이터 소스로서 고객들이 이미 Databox에 가장 많이 연결해 둔 도구가 무엇인가였고, 두 번째는 지표 이면의 '이유'가 주로 존재하는 곳(팀 메신저, 문서, 프로젝트 도구, 이메일, 캘린더)이었습니다. 이미 보유한 숫자를 단순히 반복하는 것이 아니라 CPC 변화 이면의 실제 광고 소재나 매출 감소 이면의 딜 메모를 보여줄 수 있는 등 실제 지표 변화를 설명할 수 있는 커넥터만을 1차 목록에 포함했습니다.\n\n**기본 커넥터 품질 기준:**\n* **벤더 자체 구축 및 호스팅:** 모든 공식 커넥터는 벤더 자체 원격 MCP 서버를 사용합니다. 커뮤니티 포크 버전은 유지 관리하지 않습니다.\n* **표준적이고 안정적인 인증:** 대부분 OAuth를 사용하여 클릭 한 번과 로그인만으로 연결됩니다. 자체 호스팅이나 별도 배포가 필요한 서버는 공식 목록에서 제외했습니다.\n* **맥락을 더해주는 도구:** 서버의 도구가 실제로 수치를 설명하는 데 도움이 되는지 평가했습니다. 인기 있는 도구라도 배경 콘텐츠 없이 단순 수치만 반환하는 서버는 후순위로 미뤘습니다.\n* **세분화된 도구:** 각 도구가 분리되어 개별 도구 단위로 권한이 제어될 수 있어야 합니다.\n\n**그 외의 모든 도구는 커스텀 커넥터로 지원:** 공식 목록만으로는 급변하는 MCP 생태계를 모두 따라잡을 수 없습니다. 커스텀 커넥터는 URL과 OAuth, API 키, 토큰 인증만으로 어떤 서버든 연결 가능하며 동일한 스키마 파싱 및 도구별 권한 제어가 적용되므로 롱테일 도구도 출시 첫날부터 바로 활용할 수 있습니다. 사용자들이 커스텀으로 자주 추가하는 도구는 차기 공식 커넥터의 강력한 후보가 됩니다."
+    },
+    {
+     "author": "Mateja Verlic Bruncic",
+     "is_maker": false,
+     "text": "Routines and skills are nice on their own, they give the power to anyone using them. But pairing them with MCPs inside Genie, AI Analyst? Sweet :) Having MCPs to provide more context for a report (e.g. a CRM note) so I can better understand why the numbers changed is super helpful.  \n  \nNow all three parts come together into one system that can help me get better results and insights. Can't wait to also get the agents in the mix, I've heard they're coming soon.",
+     "kr": "루틴과 스킬 자체만으로도 훌륭하고 사용자에게 큰 힘을 실어줍니다. 그런데 이것을 AI 애널리스트 Genie 안에서 MCP와 결합한다니 정말 환상적이네요 :) 보고서에 더 많은 맥락(예: CRM 메모)을 제공해 수치가 변한 이유를 명확히 이해할 수 있게 해주는 MCP는 정말 큰 도움이 됩니다.\n\n이제 이 세 가지 요소가 단일 시스템으로 융합되어 더 뛰어난 성과와 인사이트를 이끌어낼 수 있겠네요. 곧 에이전트까지 본격 합류한다고 들었는데 무척 기대됩니다."
+    },
+    {
+     "author": "Ziga Potocnik",
+     "is_maker": true,
+     "text": "[@mateja_verlic_bruncic](https://www.producthunt.com/@mateja_verlic_bruncic) Thanks, Mateja! That's the part we're most excited about too. Skills tell Genie, our AI Analyst, how to do the work. Routines make sure it happens on schedule. Connectors bring in the context behind the numbers, like that CRM note, and let it act on what it finds. Put together, a weekly report doesn't just show what changed. It explains why and can help you do something about it.  \n\nAgents are next, and they build on all three. Stay tuned.",
+     "kr": "[@mateja_verlic_bruncic](https://www.producthunt.com/@mateja_verlic_bruncic) 감사합니다 Mateja님! 저희도 가장 기대하고 있는 부분입니다. 스킬은 AI 애널리스트 Genie에게 작업 수행 방식을 알려주고, 루틴은 정해진 일정에 맞춰 실행되도록 보장합니다. 커넥터는 CRM 메모처럼 숫자 이면의 맥락을 가져와 발견한 결과를 바탕으로 직접 행동할 수 있게 돕습니다. 이 모든 것이 결합되면 주간 보고서는 단순히 무엇이 변했는지만 보여주는 데 그치지 않고, 이유를 설명하며 후속 조치까지 실질적으로 지원합니다.\n\n다음 단계는 에이전트이며, 이 세 가지 토대 위에 구축될 예정입니다. 기대해 주세요."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "Do you trust AI tools to explain your business data or do you still perfer checking the numbers yourself",
+     "kr": "비즈니스 데이터를 설명하는 AI 도구를 온전히 신뢰하시나요, 아니면 여전히 직접 숫자를 확인하는 것을 선호하시나요?"
+    },
+    {
+     "author": "Ziga Potocnik",
+     "is_maker": true,
+     "text": "[@shivam_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) Both, and that's how it should be. We don't think you should trust an answer you can't check.  \n\nThat's why the AI Analyst shows its work. When it explains why a number moved, it points to the actual deal, ticket, or conversation behind it, so you can open the source and see for yourself. The difference is you're checking an answer instead of building one from scratch across five tools.\n\n  \nTrust comes from being right a few times in a row. Showing the source makes that easy to judge.",
+     "kr": "[@shivam_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) 둘 다이며, 당연히 그래야 한다고 생각합니다. 직접 검증할 수 없는 답변을 맹신해서는 안 됩니다.\n\n그렇기 때문에 저희 AI 애널리스트는 그 도출 과정을 투명하게 공개합니다. 숫자가 움직인 이유를 설명할 때 그 배경이 된 실제 딜, 티켓, 대화를 명시적으로 지목하므로 사용자가 직접 출처를 열어 검증할 수 있습니다. 5개의 도구를 오가며 처음부터 답을 찾는 대신 이미 정리된 답변의 사실 여부만 확인하면 된다는 점이 결정적인 차이입니다.\n\n신뢰는 지속적으로 올바른 답변을 내놓을 때 형성됩니다. 원천 출처를 명확히 보여주는 구조 덕분에 신뢰도를 쉽게 판단할 수 있습니다."
+    },
+    {
+     "author": "Latif Alp Adur",
+     "is_maker": false,
+     "text": "Do you have mechanisms for provenance checking facts/numbers via some kind of multi-agent checks or \"citing\"? How do you make sure that there are no hallucinated results?  \n(i assumed that this might be the problem you have, but depending on structure of your soft ig you might even avoid this entirely with retrieval-based approach over generated (AI just needed to find and point to smth in the data instead of \"read and then rewrite in the return response\")\n\nCongrats on the launch!!",
+     "kr": "멀티 에이전트 교차 검증이나 출처 '인용(citing)'을 통해 사실 및 수치의 출처를 검증하는 메커니즘이 있나요? 환각(hallucination) 결과가 발생하지 않도록 어떻게 방지하시나요?  \n(이런 문제가 있을 수 있다고 생각하지만, 생성 방식 대신 검색 기반 접근법(단순히 읽고 재작성하는 대신 데이터를 찾아 가리키기만 하는 방식)을 취한다면 완전히 피할 수도 있을 것 같네요.)\n\n출시를 축하합니다!!"
+    },
+    {
+     "author": "Ziga Potocnik",
+     "is_maker": true,
+     "text": "[@alp_adur](https://www.producthunt.com/@alp_adur) Thanks, Latif, and great question. You're right that the retrieval side does most of the work here.  \n\nThe numbers aren't generated. When Genie, our AI Analyst, answers a metric question, it queries your actual Databox data sources connected or uses correct MCP tool calls and works from what comes back. It doesn't recall or estimate numbers. Connectors work the same way. The context behind a number comes from live tool calls to your connected tools, so the AI Analyst is pointing at a real deal, ticket, or thread. It isn't writing its own version of what probably happened.  \n\nIt also points you to the source it used, so you can open it and check. We don't claim hallucinations are impossible. No one building on LLMs honestly can. But grounding every answer in retrieved data and showing where it came from is how we keep it tight, and how you can catch it when something's off.",
+     "kr": "[@alp_adur](https://www.producthunt.com/@alp_adur) Latif님 감사합니다. 아주 훌륭한 질문입니다. 말씀하신 대로 검색(retrieval) 영역이 대부분의 역할을 담당하고 있습니다.\n\n숫자는 모델이 임의로 생성해 내는 것이 아닙니다. AI 애널리스트 Genie가 지표 질문에 답할 때 실제로 연동된 Databox 데이터 소스를 쿼리하거나 정확한 MCP 도구 호출을 수행하여 반환된 실제 결과값을 기반으로 작동합니다. 숫자를 기억에 의존하거나 추정하지 않습니다. 커넥터 역시 마찬가지 방식으로 작동합니다. 수치 이면의 맥락은 연결된 도구로의 실시간 도구 호출에서 나오므로, AI 애널리스트는 가공된 이야기가 아닌 실제 딜, 티켓, 대화 스레드를 정확히 가리킵니다.\n\n또한 사용한 원천 출처를 직접 링크해 주므로 사용자가 언제든 열어 확인할 수 있습니다. LLM을 기반으로 제품을 만드는 사람이라면 누구도 환각이 100% 불가능하다고 솔직히 단언할 수는 없을 것입니다. 하지만 검색된 실데이터에 모든 답변의 근거를 두고 그 출처를 명확히 제시하는 방식으로 오차를 최소화하고, 이상이 있을 때 사용자가 즉시 발견할 수 있도록 설계했습니다."
+    },
+    {
+     "author": "Jakob Zmrzlikar",
+     "is_maker": true,
+     "text": "Hey PH, I am Jakob, one of the engineers who worked on MCP connectors.  \n  \nThe idea is simple: Genie already knows your number, and now it can check the tools where the whole story behind them lives, eg. your CRM, Slack, or ad account. It can also act there on your behalf, like updating a deal or posting a message.\n\nSince that means AI touching real tools, we put a lot of care into permissions. Every single action can be set to always allow, needs approval, or blocked. Anything that can change something asks you first by default, and Genie waits for your OK before running it.  \n  \nAnd if any tool you use isn't in our predefined catalog, you can still connect it yourself. Many apps now offer MCP connection link, so you just paste that in and Genie picks up that functionality. Because that link could point anywhere, we check it carefully before connecting.  \n  \nHappy to answer any technical questions :) Which tool is the first you would trust Genie to use?",
+     "kr": "PH 여러분 안녕하세요, 저는 MCP 커넥터 개발에 참여한 엔지니어 Jakob입니다.\n\n아이디어는 간단합니다. Genie는 이미 여러분의 지표 수치를 알고 있으며, 이제는 CRM, Slack, 광고 계정처럼 그 수치 뒤에 숨은 전체 스토리가 담긴 도구들까지 직접 확인할 수 있습니다. 또한 딜을 업데이트하거나 메시지를 게시하는 등 사용자를 대신하여 해당 도구에서 직접 조치를 취할 수도 있습니다.\n\n이는 AI가 실제 도구를 직접 다루는 것을 의미하므로, 저희는 권한 관리에 각별한 주의를 기울였습니다. 모든 개별 작업은 '항상 허용', '승인 필요', '차단'으로 설정할 수 있습니다. 시스템에 변경을 가하는 모든 작업은 기본적으로 사용자에게 먼저 확인을 요청하며, Genie는 승인이 떨어질 때까지 실행을 대기합니다.\n\n사용 중인 도구가 사전 정의된 카탈로그에 없더라도 직접 연결할 수 있습니다. 요즘 많은 앱이 MCP 연결 링크를 제공하므로 이를 붙여넣기만 하면 Genie가 해당 기능을 즉시 인식합니다. 외부 링크가 보안상 위험할 수 있으므로 연결 전 철저한 검증 과정을 거칩니다.\n\n기술적인 질문이 있다면 무엇이든 기쁘게 답변해 드리겠습니다 :) 여러분이 Genie에게 가장 먼저 권한을 맡기고 싶은 도구는 무엇인가요?"
+    }
+   ],
+   "slug": "databox"
+  },
+  {
+   "name": "Statable Analytics",
+   "tagline_en": "Web analytics built for you and your AI agents",
+   "tagline_kr": "사람과 AI 에이전트를 위해 구축된 차세대 웹 분석 플랫폼",
+   "image": "https://ph-files.imgix.net/ca5b43bf-23b6-46cb-bbfc-457139f9a245.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Analytics",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 281,
+   "comments_count": 15,
+   "maker": "Yevhen Skrypets(@yevhen_skrypets), Andy Malinovskyi(@andyrvua), Anatolii Vasylenko(@anatolii_vasylenko) (헌터: Ben Lang(@benln))",
+   "price_model": "무료 옵션 제공 (Free Options)",
+   "price_detail": ".edu 도메인 및 GitHub/GitLab Pages 호스팅 사이트에 대해 평생 완전 무료를 지원하며, 일반 도메인 및 트래픽 규모에 따른 유료 플랜을 운영합니다.",
+   "desc_kr": "Statable Analytics는 복잡한 설정과 쿠키 동의 배너에 지친 웹 마스터와 개발자를 위해 제작된 사람과 AI 에이전트 친화적인 웹 분석 플랫폼입니다. 쿠키나 기기 핑거프린팅 없이 순수하게 방문자 해시(24시간 주기 솔트 회전) 기반으로 작동하며 모든 데이터가 유럽연합(네덜란드) 내에 안전하게 보관되어 GDPR 등 유럽 규제를 철저히 준수합니다. 내장된 MCP(Model Context Protocol) 서버를 통해 Claude, ChatGPT, Cursor, Codex 등 다양한 AI 에이전트와 손쉽게 연동하여 대화형 인터페이스로 트래픽 분석, 퍼널 진단, 목표 설정을 수행할 수 있습니다. OAuth 연동 시 '읽기 전용'과 '설정 권한'을 엄격히 분리할 수 있으며, 읽기 권한에서도 개별 IP나 세션 원시 데이터 대신 철저히 집계된 통계 데이터만을 전달하여 개인정보 유출을 방지합니다. 여러 도메인과 서브도메인을 단일 계정에서 분리하거나 통합 관리할 수 있어 간결하면서도 안전한 사이트 운영을 돕습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/statable-analytics",
+   "comment_summary": "쿠키 없는 환경에서의 전환 추적 및 다일간의 여정 분석 한계, 그리고 서브도메인 통합 관리 방식에 대한 실무적 질의가 이어졌습니다. 특히 AI 에이전트 연동 시 OAuth의 읽기/설정 권한 분리와 원시 IP 비저장 정책 등 민감 데이터 보호 아키텍처에 대한 보안 피드백이 호평을 받았습니다. 복잡하고 무거운 GA4를 대체할 수 있는 경량화된 유럽형 분석 도구이자 MCP를 통한 에이전트 협업 기능이 돋보인다는 평가입니다.",
+   "warnings": "수치(업보트 281·댓글 15)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Yevhen Skrypets",
+     "is_maker": true,
+     "text": "Hey Product Hunt. Yevhen here.\n\nI have built and grown websites for over 20 years, living inside analytics every day. GA4 kept growing, with more reports and more setup, most of which I never opened. :) At some point I found myself taking a Google Analytics course, and that is when it clicked: I am not the audience for this product. So I started building my own.\n\nBuilding it myself meant I set the requirements, and from the start those were: collect as little as possible, no fingerprinting, and a product shaped around European regulation. Statable is **cookieless, EU-hosted (NL)** and needs no consent banner for analytics.\n\nThen AI got good enough to take over my routine work, but agents had no way into analytics. That is what the **MCP server** fixed. Now the numbers live where I already work: I ask Claude what moved last week and get an answer from my own data, and when I need a funnel for the signup flow I describe it in a sentence instead of clicking through a builder.\n\nConnecting is one OAuth sign-in, and you choose whether an assistant can configure anything or only read.\n\n**Free forever on .edu and GitHub or GitLab Pages.**\n\nWould you use this? If not, what stops you? I am here all day.",
+     "kr": "Product Hunt 여러분 안녕하세요. Yevhen입니다.\n\n저는 20년 넘게 웹사이트를 만들고 성장시키며 매일 분석 도구와 함께 생활해 왔습니다. 하지만 GA4는 보고서와 설정만 계속 늘어났고, 그중 대부분은 열어보지도 않는 것들이었습니다. :) 어느 순간 Google Analytics 강의를 듣고 있는 제 자신을 발견했고, 그때 깨달았습니다. '나는 이 제품의 타깃 사용자가 아니구나.' 그래서 저만의 분석 도구를 직접 만들기 시작했습니다.\n\n직접 개발한다는 것은 제가 직접 요구사항을 정의할 수 있다는 의미였고, 처음부터 정한 기준은 '최소한의 데이터만 수집할 것', '핑거프린팅 금지', 그리고 '유럽 규제에 맞춘 제품'이었습니다. Statable은 **쿠키를 사용하지 않으며(cookieless), 네덜란드(EU)에 호스팅**되어 별도의 쿠키 동의 배너가 전혀 필요하지 않습니다.\n\n이후 AI가 일상 업무를 대신할 만큼 발전했지만, 에이전트들이 웹 분석 데이터에 접근할 방법이 없었습니다. 바로 그 점을 **MCP 서버**로 해결했습니다. 이제 수치는 제가 일하는 공간에 공존합니다. Claude에게 지난주에 어떤 지표가 변했는지 질문하면 자체 데이터에서 바로 답을 얻을 수 있고, 가입 플로우 퍼널이 필요할 때 복잡한 빌더를 클릭하는 대신 문장 하나로 설명하기만 하면 됩니다.\n\n연동은 한 번의 OAuth 로그인으로 끝나며, AI 어시스턴트에게 설정 권한을 부여할지 읽기 권한만 줄지 직접 선택할 수 있습니다.\n\n**.edu 도메인 및 GitHub/GitLab Pages에서는 평생 무료입니다.**\n\n이 도구를 사용해 보시겠습니까? 사용을 망설이게 하는 점이 있다면 무엇인가요? 오늘 하루 종일 대기하겠습니다."
+    },
+    {
+     "author": "Amy Bradley",
+     "is_maker": false,
+     "text": "Does it still capture enough detail for meaningful conversion analysis without cookies?",
+     "kr": "쿠키가 없는 상태에서도 유의미한 전환 분석을 수행할 수 있을 만큼 충분한 세부 정보를 수집할 수 있나요?"
+    },
+    {
+     "author": "Yevhen Skrypets",
+     "is_maker": true,
+     "text": "[@amybradley](https://www.producthunt.com/@amybradley) For conversions that happen within a visit, yes: goals, custom events with properties, funnels, and the source, UTM or referrer the person came from.\n\nWhere it's weaker is a journey spread over several days. The visitor ID is a hash that rotates every 24 hours, so someone who reads on Monday and signs up on Thursday counts as two visitors, and the signup gets credited to Thursday's source. That's the trade we made for no cookies and no banner.\n\nHow long is the path to a conversion on your site?",
+     "kr": "[@amybradley](https://www.producthunt.com/@amybradley) 단일 방문 세션 내에서 발생하는 전환의 경우 충분히 수집 가능합니다. 목표, 속성이 포함된 커스텀 이벤트, 퍼널, 유입 출처, UTM 파라미터 및 리퍼러 정보를 완벽히 지원합니다.\n\n다만 며칠에 걸쳐 분산된 방문 여정의 추적에는 한계가 있습니다. 방문자 ID는 24시간마다 순환하는 해시값이기 때문에, 월요일에 글을 읽고 목요일에 가입한 사용자는 2명의 방문자로 집계되며 가입 전환 기여도는 목요일 유입 출처로 잡힙니다. 이는 쿠키와 동의 배너를 없애기 위해 타협한 지점입니다.\n\n운영 중이신 사이트의 전환 경로는 대략 며칠 정도 소요되나요?"
+    },
+    {
+     "author": "Manon Briffaut",
+     "is_maker": false,
+     "text": "How it handles sites with several domains or subdomains. Can one account keep those properties organized separately?",
+     "kr": "여러 도메인이나 서브도메인이 있는 사이트는 어떻게 처리되나요? 하나의 계정에서 각 속성을 별도로 정리하여 관리할 수 있나요?"
+    },
+    {
+     "author": "Yevhen Skrypets",
+     "is_maker": true,
+     "text": "[@manonbriffaut](https://www.producthunt.com/@manonbriffaut) Both ways, your call. By default each domain or subdomain is its own site with its own dashboard, all under one account.\n\nIf you'd rather see them together, put the same snippet on all of them, say [example.com](http://example.com/), [blog.example.com](http://blog.example.com/) and [app.example.com](http://app.example.com/), and list those hostnames in the site's allowlist. Anything else sending that snippet, like staging or a copied site, gets dropped. The Hosts report then splits the combined traffic by hostname, so you can still see each one on its own.\n\nWhat's the setup on your side, separate products or one product across subdomains?",
+     "kr": "[@manonbriffaut](https://www.producthunt.com/@manonbriffaut) 두 가지 방식 모두 가능하며 선택하실 수 있습니다. 기본적으로 각 도메인이나 서브도메인은 단일 계정 내에서 개별 대시보드를 가진 독립 사이트로 관리됩니다.\n\n만약 하나로 통합해서 보고 싶으시다면, [example.com](http://example.com/), [blog.example.com](http://blog.example.com/), [app.example.com](http://app.example.com/) 등 모든 사이트에 동일한 스니펫을 적용하고 사이트 허용 목록(allowlist)에 해당 호스트명을 등록하시면 됩니다. 스테이징이나 복제 사이트처럼 그 외의 경로에서 전송되는 스니펫 데이터는 자동으로 필터링되어 제외됩니다. 그 후 'Hosts' 보고서에서 통합 트래픽을 호스트명별로 분리해 보여주므로 각각의 트래픽도 개별적으로 확인하실 수 있습니다.\n\n현재 운영 중이신 환경은 별개의 제품인가요, 아니면 서브도메인에 걸친 단일 제품 구조인가요?"
+    },
+    {
+     "author": "Germán Merlo",
+     "is_maker": false,
+     "text": "That's impressive Yevhen! Congrats on the launch",
+     "kr": "정말 인상적입니다 Yevhen! 출시를 축하드립니다."
+    },
+    {
+     "author": "Yevhen Skrypets",
+     "is_maker": true,
+     "text": "[@german_merlo1](https://www.producthunt.com/@german_merlo1) Thanks Germán! Day one and already at #2, still a bit surreal. Appreciate you stopping by",
+     "kr": "[@german_merlo1](https://www.producthunt.com/@german_merlo1) 감사합니다 Germán님! 출시 첫날인데 벌써 2위에 올라 다소 비현실적으로 느껴지네요. 응원해 주셔서 감사합니다."
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "the read vs configure split on the OAuth connection is the detail that would actually get this approved internally, most MCP analytics tools I've seen just hand the agent full write access and hope for the best. one thing I'd want to know before connecting it to anything real: if I only grant read access, can the agent still see raw visitor-level data (IPs, hashed IDs, individual sessions) or is it aggregated numbers only at that permission level? that distinction matters a lot once you're piping traffic data through a model you don't fully control.",
+     "kr": "OAuth 연동 시 읽기와 설정 권한을 분리한 점이야말로 사내 보안 승인을 이끌어낼 수 있는 핵심적인 디테일입니다. 제가 본 대부분의 MCP 분석 도구는 에이전트에게 전체 쓰기 권한을 넘겨주고 문제가 없기만을 바랄 뿐이었거든요. 실제 프로덕션 환경에 연결하기 전에 한 가지 확인하고 싶은 점이 있습니다. 읽기 권한만 부여했을 때 에이전트가 개별 방문자 수준의 원시 데이터(IP, 해시 ID, 개별 세션)까지 볼 수 있나요, 아니면 해당 권한에서는 철저히 집계된 수치만 볼 수 있나요? 통제할 수 없는 외부 모델로 트래픽 데이터를 파이프라인할 때는 이 구분이 매우 중요합니다."
+    },
+    {
+     "author": "Anatolii Vasylenko",
+     "is_maker": true,
+     "text": "[@galdayan](https://www.producthunt.com/@galdayan) read access is aggregates only. We don't store visitor IPs. We use them on arrival to look up country, region and city, and to build a visitor hash. Then we discard them. The hash is salted daily and never exposed. No tool lists individual visitors or sessions. With read access, the agent sees totals: visitors and pageviews by page, source, country, device, etc\n\nPage paths, UTM tags and custom event properties come back as your site sends them. We strip query strings from page URLs, but nothing else. So keep emails and customer IDs out of them.",
+     "kr": "[@galdayan](https://www.producthunt.com/@galdayan) 읽기 권한은 철저히 집계된 데이터(aggregates)만을 제공합니다. 저희는 방문자 IP를 일절 저장하지 않습니다. 트래픽 유입 시 국가, 지역, 도시를 조회하고 방문자 해시를 생성하는 용도로만 일시 사용한 후 즉시 폐기합니다. 이 해시값은 매일 새로운 솔트(salt)가 적용되며 외부에 절대 노출되지 않습니다. 어떤 도구도 개별 방문자나 세션을 나열하지 않습니다. 읽기 권한에서 에이전트는 페이지, 유입 출처, 국가, 기기별 방문자 수와 페이지뷰 총합만을 보게 됩니다.\n\n페이지 경로, UTM 태그, 커스텀 이벤트 속성은 사이트에서 전송한 그대로 반환됩니다. 페이지 URL에서 쿼리 스트링은 자동으로 제거하지만 그 외의 요소는 유지되므로, URL 경로에 이메일이나 고객 식별자(ID)가 포함되지 않도록 관리해 주시기 바랍니다."
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "[@anatolii_vasylenko](https://www.producthunt.com/@anatolii_vasylenko) that clears it up, the daily-salted hash plus stripped query strings is basically the config I'd want to see documented on the site itself, not just in a comment thread. most tools bury this kind of detail in a privacy policy page nobody reads before granting access. good answer.",
+     "kr": "[@anatolii_vasylenko](https://www.producthunt.com/@anatolii_vasylenko) 명쾌하게 해결되었습니다. 매일 솔트가 바뀌는 해시와 쿼리 스트링 제거 처리는 댓글 스레드뿐만 아니라 웹사이트 공식 문서에도 꼭 명시해 주셨으면 하는 훌륭한 보안 구성이네요. 대다수 도구는 권한 부여 전에 아무도 읽지 않는 개인정보처리방침 페이지 구석에 이런 디테일을 묻어두곤 하니까요. 훌륭한 답변 감사합니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "this looks really useful for teams that want analytic without adding more complexity the MCP support for connecting AI agents directly to analytics is especially interesting",
+     "kr": "불필요한 복잡성 없이 웹 분석을 도입하고자 하는 팀에게 정말 유용해 보입니다. 특히 AI 에이전트를 분석 도구에 직접 연결할 수 있는 MCP 지원이 무척 흥미롭네요."
+    },
+    {
+     "author": "Yevhen Skrypets",
+     "is_maker": true,
+     "text": "[@shivam_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) Thanks! Curious which agent you'd plug in first, Claude, Cursor or something else?",
+     "kr": "[@shivam_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) 감사합니다! Claude, Cursor, 혹은 다른 도구 중 어떤 에이전트를 가장 먼저 연결해 보고 싶으신가요?"
+    }
+   ],
+   "slug": "statable-analytics"
+  },
+  {
+   "name": "SaleSmartly",
+   "tagline_en": "Turn conversations across every channel into customers",
+   "tagline_kr": "모든 채널의 고객 대화를 매출과 고객으로 전환하는 옴니채널 플랫폼",
+   "image": "https://ph-files.imgix.net/cd3bacd3-ee76-4ec3-92d3-c229414cd8a7.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Messaging",
+    "Sales",
+    "Social Media"
+   ],
+   "upvotes": 257,
+   "comments_count": 61,
+   "maker": "Rooster(@rooster_zeng), Vita(@lv_lv2), Silvia(@silvia_liu) (헌터: Justin Jincaid(@justin2025))",
+   "price_model": "무료 옵션 제공 (Free Options)",
+   "price_detail": "기본 옴니채널 수신함 및 무료 체험 옵션을 제공하며, 연동 채널 수 및 AI 자동 응답·팀 규모에 따라 유료 플랜을 운영합니다.",
+   "desc_kr": "SaleSmartly는 WhatsApp, Instagram, Messenger, TikTok, Telegram, LINE, WeChat 등 전 세계 주요 메신저와 소셜 채널의 고객 문의를 단 하나의 공유 수신함에 통합하는 고객 관리 솔루션입니다. 24시간 연중무휴로 작동하는 AI 에이전트가 고객의 문의에 즉시 응답하고 잠재 고객 자격을 평가(Lead Qualification)하며 실시간 다국어 번역을 지원합니다. 대화 이력과 고객 태그 및 상세 정보가 CRM에 실시간으로 연동되어 단순 복붙식 답변이 아닌 이전 대화 맥락을 온전히 반영한 맞춤형 후속 응대가 가능합니다. 팀원별 담당 채널 지정, 문의 유형에 따른 스마트 라우팅 규칙, 그리고 역할별 데이터 접근 제어를 통해 고객 개인정보를 안전하게 보호합니다. 데스크톱 웹뿐만 아니라 iOS 및 Android 모바일 앱을 지원하여 이동 중에도 누락 없이 신속하게 고객 문의를 처리할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/salesmartly",
+   "comment_summary": "여러 소셜 채널의 통합 수신함 운영 시 팀원 간 권한 분리 및 개인정보 보호 방식, 그리고 모바일 앱 지원 여부에 질문이 집중되었습니다. 메이커 측은 상담원별 채널 및 대화 배정 규칙을 통해 접근 권한을 세분화할 수 있으며 iOS/Android 앱을 통해 이동 중에도 실시간 응대가 가능하다고 밝혔습니다. 여러 채널을 오가며 메시지를 놓치던 운영 번거로움을 해결하고 내장 CRM으로 맞춤형 후속 관리가 가능해진 점에 실무진들의 긍정적인 반응이 이어졌습니다.",
+   "warnings": "수치(업보트 257·댓글 61)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Rooster",
+     "is_maker": true,
+     "text": "Hi everyone, I’m Jia, the founder of SaleSmartly.👋\n\nOver the past few years, I’ve been working closely with businesses serving customers across different markets. I kept seeing the same challenge: customer conversations were spreading across WhatsApp, Instagram, Facebook, TikTok, and other channels, making it harder for teams to keep track of leads, respond quickly, and build lasting customer relationships.\n\nThat’s why we built **SaleSmartly**.🚀\n\nWe started with a simple idea: **bring every customer conversation into one place.**💬\n\nToday, SaleSmartly combines **omnichannel inbox, CRM, automation, and AI** to help businesses capture leads, manage conversations, automate repetitive work, and turn customer interactions into real business growth.\n\nAs we worked with more customers, their feedback pushed us beyond simply managing messages. They wanted AI to handle more conversations, smarter automation across the customer journey, and better ways to understand and convert their leads.\n\n**That feedback is shaping our roadmap for the years ahead.**✨\n\nWe’re building toward a more intelligent customer engagement platform where **AI Agents and human teams work together**, conversations can trigger automated workflows, and customer data can be connected across the entire journey—from the first interaction to conversion and retention.🤖🤝\n\nOur goal is simple:\n\n**Help businesses turn every customer conversation into an opportunity for growth.**📈\n\nWe’re excited to share SaleSmartly with the Product Hunt community.🧡\n\n👉 **Try SaleSmartly and let us know what you think.** Your feedback will directly help shape what we build next.\n\nAnd if you find SaleSmartly useful, **we’d really appreciate your support for our Product Hunt launch.**🙌\n\nIf you’re interested in learning more about SaleSmartly or exploring how it could work for your business, feel free to reach out to us directly:\n\n💬 **WhatsApp:** [https://d.salesmartly.com/fx9oas](https://d.salesmartly.com/fx9oas)\n\n✈️ **Telegram:** [https://d.salesmartly.com/fx9naj](https://d.salesmartly.com/fx9naj)\n\nThanks for being here!",
+     "kr": "여러분 안녕하세요, SaleSmartly의 창립자 Jia입니다.👋\n\n지난 몇 년간 다양한 글로벌 시장에서 고객을 응대하는 기업들과 긴밀히 협력해 왔습니다. 그 과정에서 항상 동일한 어려움을 목격했습니다. 고객과의 대화가 WhatsApp, Instagram, Facebook, TikTok 등 수많은 채널로 파편화되어 팀이 잠재 고객을 추적하고 신속하게 응답하며 지속적인 고객 관계를 구축하기가 점점 더 어려워지고 있다는 점이었습니다.\n\n그것이 바로 저희가 **SaleSmartly**를 만든 이유입니다.🚀\n\n저희는 아주 단순한 아이디어에서 출발했습니다: **'모든 고객 대화를 한곳으로 모으자.'**💬\n\n현재 SaleSmartly는 **옴니채널 수신함, CRM, 자동화, 그리고 AI**를 결합하여 기업이 리드를 확보하고 대화를 관리하며 반복 업무를 자동화하여 고객과의 상호작용을 실질적인 비즈니스 성장으로 전환하도록 돕습니다.\n\n수많은 고객과 협력하면서 받은 피드백은 단순 메시지 관리를 넘어선 영역으로 저희를 이끌었습니다. 고객들은 AI가 더 많은 대화를 처리하고 전체 고객 여정에 걸쳐 더 지능적인 자동화가 이뤄지며 리드를 더 깊이 이해하고 전환할 수 있는 솔루션을 원했습니다.\n\n**이러한 피드백이 향후 수년간의 제품 로드맵을 형성하고 있습니다.**✨\n\n저희는 **AI 에이전트와 사람이 긴밀히 협력**하고 대화가 자동화된 워크플로우를 트리거하며 첫 접점부터 전환과 유지에 이르는 전 여정에 걸쳐 고객 데이터가 하나로 연결되는 지능형 고객 인게이지먼트 플랫폼을 구축해 나가고 있습니다.🤖🤝\n\n저희의 목표는 단순합니다:\n\n**모든 고객 대화를 비즈니스 성장의 기회로 전환하도록 돕는 것입니다.**📈\n\nProduct Hunt 커뮤니티에 SaleSmartly를 선보이게 되어 매우 기쁩니다.🧡\n\n👉 **SaleSmartly를 체험해 보시고 의견을 들려주세요.** 여러분의 피드백이 차기 기능 개발에 직접 반영됩니다.\n\nSaleSmartly가 유용하다고 느끼신다면 **이번 Product Hunt 출시에 따뜻한 지지를 보내주시면 큰 힘이 되겠습니다.**🙌\n\n자세한 상담이나 비즈니스 맞춤 도입을 원하시면 언제든 직접 문의해 주세요:\n\n💬 **WhatsApp:** [https://d.salesmartly.com/fx9oas](https://d.salesmartly.com/fx9oas)\n\n✈️ **Telegram:** [https://d.salesmartly.com/fx9naj](https://d.salesmartly.com/fx9naj)\n\n함께해 주셔서 감사합니다!"
+    },
+    {
+     "author": "Orkhan Ilyas",
+     "is_maker": false,
+     "text": "[@rooster_zeng](https://www.producthunt.com/@rooster_zeng) Congrats on the launch! 🎉 Bringing all customer conversations into one place with AI and automation is a really useful idea. Wishing you and the SaleSmartly team a successful launch! 🚀",
+     "kr": "[@rooster_zeng](https://www.producthunt.com/@rooster_zeng) 출시를 축하드립니다! 🎉 모든 고객 대화를 AI 및 자동화와 함께 한곳으로 모으는 것은 정말 유용한 아이디어네요. SaleSmartly 팀의 성공적인 론칭을 기원합니다! 🚀"
+    },
+    {
+     "author": "Vita",
+     "is_maker": true,
+     "text": "[@orkhan_ilyas](https://www.producthunt.com/@orkhan_ilyas) Thank you, Orkhan! Bringing conversations into one place was where we started. As we heard from more teams, it became clear they also needed help with the repetitive work that comes after a message arrives. Really appreciate your support and kind wishes!",
+     "kr": "[@orkhan_ilyas](https://www.producthunt.com/@orkhan_ilyas) 감사합니다 Orkhan님! 대화를 한곳으로 모으는 것이 저희의 시작점이었습니다. 더 많은 팀의 이야기를 들으면서 메시지가 도착한 후 이어지는 반복 업무에도 도움이 절실하다는 점이 분명해졌습니다. 응원과 따뜻한 축하에 진심으로 감사드립니다!"
+    },
+    {
+     "author": "Julian Ting",
+     "is_maker": false,
+     "text": "[@rooster_zeng](https://www.producthunt.com/@rooster_zeng) Which channel has been the hardest for businesses to manage separately so far?",
+     "kr": "[@rooster_zeng](https://www.producthunt.com/@rooster_zeng) 지금까지 기업들이 개별적으로 관리하기 가장 까다로웠던 채널은 무엇이었나요?"
+    },
+    {
+     "author": "Vita",
+     "is_maker": true,
+     "text": "[@julian_ting2](https://www.producthunt.com/@julian_ting2) Great question, Julian. I’d say WhatsApp is often the trickiest, especially when several teammates share a number or a business manages multiple accounts. It becomes easy to lose track of who owns a conversation and what’s already been discussed. That’s one of the reasons we built the shared inbox and conversation routing into SaleSmartly.",
+     "kr": "[@julian_ting2](https://www.producthunt.com/@julian_ting2) 좋은 질문입니다 Julian님. 특히 여러 팀원이 하나의 전화번호를 공유하거나 여러 계정을 동시에 운영해야 하는 WhatsApp이 가장 까다로운 편입니다. 대화의 담당자가 누구인지, 이미 어떤 논의가 오갔는지 파악을 놓치기 십상이기 때문입니다. 그것이 저희가 SaleSmartly에 공유 수신함과 대화 라우팅 기능을 구축한 주요 이유 중 하나입니다."
+    },
+    {
+     "author": "Denis Prodan",
+     "is_maker": false,
+     "text": "keen to try it! how out-of-the-box is the implementation and further use?",
+     "kr": "꼭 사용해 보고 싶네요! 초기 도입과 지속적인 활용이 얼마나 즉시 사용 가능한(out-of-the-box) 수준인가요?"
+    },
+    {
+     "author": "Vita",
+     "is_maker": true,
+     "text": "[@denis_prodan](https://www.producthunt.com/@denis_prodan) \n\nThanks, Denis! For the core setup, you connect the channels you use and their conversations appear in one shared inbox. Your team can then manage chats and customer details there day to day. AI replies and routing can be configured as you need them, so you can start with the inbox and add more automation later. Setup varies a little by channel—WhatsApp Business API, for example, has its own connection steps.\n\nIf you’d like help getting started, reach out to us directly:\n\n💬 **WhatsApp:** [https://d.salesmartly.com/fx9oas](https://d.salesmartly.com/fx9oas)  \n✈️ **Telegram:** [https://d.salesmartly.com/fx9naj](https://d.salesmartly.com/fx9naj)",
+     "kr": "[@denis_prodan](https://www.producthunt.com/@denis_prodan) 감사합니다 Denis님! 핵심 설정은 사용 중인 채널을 연동하기만 하면 모든 대화가 하나의 공유 수신함에 바로 표시되는 구조입니다. 팀원들은 그곳에서 일상적인 채팅과 고객 정보를 곧바로 관리할 수 있습니다. AI 자동 응답 및 라우팅은 필요에 따라 점진적으로 설정할 수 있으므로, 우선 수신함 기능부터 시작하고 추후 자동화를 확장하실 수 있습니다. 채널별로 설정 방식에 약간의 차이는 있습니다(예: WhatsApp Business API는 별도 연결 단계가 필요합니다).\n\n도입 지원이 필요하시면 언제든 직접 문의해 주세요:\n\n💬 **WhatsApp:** [https://d.salesmartly.com/fx9oas](https://d.salesmartly.com/fx9oas)\n✈️ **Telegram:** [https://d.salesmartly.com/fx9naj](https://d.salesmartly.com/fx9naj)"
+    },
+    {
+     "author": "Brent Vardy",
+     "is_maker": false,
+     "text": "[@deepaksingh09](https://www.producthunt.com/@deepaksingh09) Like the idea of having one inbox for all my social accounts. How do you handle privacy? Best of luck with the launch.",
+     "kr": "[@deepaksingh09](https://www.producthunt.com/@deepaksingh09) 모든 소셜 계정을 위한 단일 수신함이라는 콘셉트가 마음에 듭니다. 개인정보 보호는 어떻게 처리하시나요? 출시 성공을 빕니다."
+    },
+    {
+     "author": "Vita",
+     "is_maker": true,
+     "text": "[@deepaksingh09](https://www.producthunt.com/@deepaksingh09)  [@codeandsea](https://www.producthunt.com/@codeandsea) Good question, Brent, and thanks for the launch wishes. Having one inbox doesn’t mean everyone on the team can see every conversation. Admins can control access by role and social account, including limiting agents to their own conversations. We’ve also published more detail on how we handle personal data in our [privacy policy](https://en.salesmartly.com/en/privacy_policy/).",
+     "kr": "[@deepaksingh09](https://www.producthunt.com/@deepaksingh09) [@codeandsea](https://www.producthunt.com/@codeandsea) 좋은 질문입니다 Brent님, 출시 응원에도 감사드립니다. 하나의 수신함에 모인다고 해서 팀의 모든 구성원이 모든 대화를 열람할 수 있는 것은 아닙니다. 관리자는 역할 및 소셜 계정별로 접근 권한을 제어할 수 있으며, 상담원이 본인에게 배정된 대화만 보도록 제한할 수도 있습니다. 개인 데이터 처리에 대한 자세한 내용은 [개인정보 보호정책](https://en.salesmartly.com/en/privacy_policy/)에서 확인하실 수 있습니다."
+    },
+    {
+     "author": "Andy2026",
+     "is_maker": false,
+     "text": "The CRM connection could help a team follow up based on previous needs instead of sending generic messages.",
+     "kr": "CRM 연동 기능 덕분에 일괄적인 스팸성 메시지 대신 이전 고객 니즈에 기반한 맞춤형 후속 응대가 가능해지겠네요."
+    },
+    {
+     "author": "Vita",
+     "is_maker": true,
+     "text": "[@andy2026](https://www.producthunt.com/@andy2026) That’s exactly the use case we had in mind. SaleSmartly keeps conversation history, customer details, and tags together, so a follow-up can reflect what someone actually asked about instead of feeling like a generic message. Thanks for highlighting the CRM side of the product!",
+     "kr": "[@andy2026](https://www.producthunt.com/@andy2026) 바로 저희가 구상했던 핵심 활용 사례입니다! SaleSmartly는 대화 이력, 고객 상세 정보, 태그를 한곳에 묶어 관리하므로, 기계적인 일괄 메시지가 아니라 고객이 실제로 문의했던 내용을 정확히 반영한 후속 소통이 가능합니다. 제품의 CRM 강점을 짚어주셔서 감사합니다!"
+    },
+    {
+     "author": "Khalid Khair",
+     "is_maker": false,
+     "text": "Congrats on the launch! Will definitely save me from the hassle of having to switch between inboxes to know whats new",
+     "kr": "출시 축하드립니다! 새 메시지가 왔는지 확인하려고 여러 수신함을 번갈아 확인해야 했던 번거로움을 확실하게 덜어주겠네요."
+    }
+   ],
+   "slug": "salesmartly"
+  },
+  {
+   "name": "Vitals ",
+   "tagline_en": "A Mac activity monitor that thinks in apps, not processes",
+   "tagline_kr": "개별 프로세스가 아닌 앱 단위로 Mac 자원과 상태를 모니터링",
+   "image": "https://ph-files.imgix.net/1ea922a7-4ad3-4e0a-99b1-6ef369aadc55.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Mac",
+    "Developer Tools",
+    "Menu Bar Apps"
+   ],
+   "upvotes": 249,
+   "comments_count": 32,
+   "maker": "Atta 🐬(@attacomsian) (헌터: Aleksandar Blazhev(@byalexai))",
+   "price_model": "유료 / 일회성 결제 (Payment Required)",
+   "price_detail": "초기 1,000개 라이선스에 대해 $5 특별 할인가(정가 $29에서 83% 할인)가 적용되며, 구독이나 계정 가입 없이 1회 결제로 평생 라이선스를 소유합니다.",
+   "desc_kr": "Vitals는 수천 개의 복잡한 백그라운드 프로세스로 가득 찬 기본 활성 상태 보기(Activity Monitor)를 탈피하여 사용자에게 친숙한 '앱 단위'로 Mac 자원을 모니터링해 주는 네이티브 Mac 유틸리티입니다. 수많은 Google Chrome Helper나 헬퍼 프로세스들을 해당 앱 하나로 자동 통합 집계하여 메모리, CPU, 에너지, 디스크, 네트워크 사용량을 직관적으로 보여줍니다. 30일간의 자원 사용 기록을 보관하며 앱이 비정상적으로 자원을 과소비할 때 스마트하게 알림을 제공합니다. 특히 개발자들을 위해 프로젝트별로 잊혀진 로컬 개발 서버와 도커 컨테이너, 점유 중인 포트를 감지하여 클릭 한 번으로 종료할 수 있는 기능을 지원합니다. 모든 지표는 메뉴 막대에 맞춤 배치할 수 있으며 어떤 데이터도 외부로 전송되지 않고 Mac 내부에서만 안전하게 동작합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/vitals-3",
+   "comment_summary": "iStat Menus나 Stats 같은 기존 메뉴 바 도구와의 차별점, Chrome 헬퍼 프로세스 집계 방식, 그리고 백그라운드 개발 서버 감지 기능에 대해 사용자들의 관심이 집중되었습니다. 메이커는 단순 전체 시스템 부하 그래프를 보여주는 것을 넘어 자원을 갉아먹는 주체(앱 이름, 프로젝트별 개발 서버)를 정확히 지목해 원클릭으로 종료할 수 있는 직관성을 강조했습니다. 복잡한 프로세스 목록을 일일이 계산할 필요 없이 깔끔하고 미려한 네이티브 UI로 자원을 파악할 수 있어 유료 구매자들의 호평이 이어졌습니다.",
+   "warnings": "수치(업보트 249·댓글 32)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Atta 🐬",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋\n\nI'm Atta. I make Mac apps on my own, and Vitals is the one I made for myself first.\n\nMy Mac would get hot and slow, so I'd open Activity Monitor and find 1,041 processes, 96 of them called \"Google Chrome Helper\". It never told me the one thing I wanted to know: which app is doing this?\n\nSo I built the tool that answers that. Vitals adds every helper to the app that launched it. One row per app, one figure each for memory, CPU, energy, disk, and network. Click the row, and everything about that app is in one place. It keeps 30 days of history, tells you when an app starts misbehaving, and finds the dev servers you forgot were running, grouped by project.\n\nThat is also what makes it different. Activity Monitor and the terminal tools show you processes and leave the adding up to you. The menu bar monitors show you how busy your Mac is, with gauges and graphs, but not which app is behind it. Vitals starts from the app, and I built it to feel like one native Mac app, not a dashboard.\n\nVersion 1.1 ships today. Every readout can be its own menu bar item; volume and Bluetooth sit beside them, and you arrange the panel and the window the way you like.\n\nTwo days ago I put it on X. 800+ people bought it in 72 hours, which I still don't quite believe. It's $5 for the first 1,000 licenses, then $29. One payment, no subscription, no account, and nothing leaves your Mac.\n\n👉 [https://vitalsmac.com](https://vitalsmac.com/)\n\nI'll be here all day. Tell me what you'd want Vitals to answer next, and what you'd want it to stop doing.",
+     "kr": "Product Hunt 여러분 안녕하세요 👋\n\n저는 Atta입니다. 1인 개발자로 Mac 앱을 만들고 있으며, Vitals는 제가 쓰기 위해 처음 개발한 앱입니다.\n\nMac이 뜨거워지고 느려질 때마다 활성 상태 보기(Activity Monitor)를 열어보면 1,041개의 프로세스가 떠 있고 그중 96개가 'Google Chrome Helper'라는 이름으로 채워져 있었습니다. 정작 제가 가장 알고 싶었던 단 한 가지, 즉 '도대체 어떤 앱이 범인인가?'에 대해서는 전혀 알려주지 못했습니다.\n\n그래서 그 질문에 답을 주는 도구를 직접 구축했습니다. Vitals는 모든 헬퍼 프로세스를 그것을 실행한 부모 앱에 합산합니다. 앱당 하나의 행으로 메모리, CPU, 에너지, 디스크, 네트워크 사용량을 각각 하나의 수치로 보여줍니다. 해당 행을 클릭하면 그 앱에 관한 모든 정보가 한곳에 정리되어 나타납니다. 30일간의 히스토리를 유지하고, 앱이 비정상적으로 작동하기 시작하면 알려주며, 켜둔 채 잊어버린 개발 서버들을 프로젝트별로 묶어 찾아줍니다.\n\n그것이 바로 기존 도구들과의 차별점입니다. 기본 활성 상태 보기와 터미널 도구들은 프로세스 목록만 나열할 뿐 합산은 사용자의 몫으로 남겨둡니다. 기존 메뉴 바 모니터들은 게이지와 그래프로 Mac이 얼마나 바쁜지는 보여주지만 그 배후에 어떤 앱이 있는지는 알려주지 않습니다. Vitals는 앱에서 출발하며, 복잡한 대시보드가 아닌 깔끔한 네이티브 Mac 앱처럼 느껴지도록 설계했습니다.\n\n오늘 버전 1.1이 배포됩니다. 모든 모니터링 항목을 메뉴 막대 개별 아이템으로 둘 수 있고, 볼륨과 블루투스도 함께 배치할 수 있으며 패널과 창을 원하는 대로 커스텀할 수 있습니다.\n\n이틀 전 X에 올렸는데 72시간 만에 800명 이상이 구매해 주셔서 아직도 믿기지 않습니다. 첫 1,000개 라이선스는 $5에 제공되며 이후에는 $29입니다. 구독료나 계정 가입 없는 1회 결제이며, 어떠한 데이터도 사용자의 Mac 외부로 유출되지 않습니다.\n\n👉 [https://vitalsmac.com](https://vitalsmac.com/)\n\n오늘 온종일 대기하겠습니다. Vitals가 다음에 어떤 문제를 해결해 주길 바라시는지, 어떤 기능을 줄여주길 바라시는지 자유롭게 의견을 들려주세요."
+    },
+    {
+     "author": "Palash Bagchi",
+     "is_maker": false,
+     "text": "[@attacomsian](https://www.producthunt.com/@attacomsian) Pre Sale Query: Looks like a nice app with amazing UI. Will it help me optimise storage and RAM too, or is it just a monitor?",
+     "kr": "[@attacomsian](https://www.producthunt.com/@attacomsian) 구매 전 질문입니다: 미려한 UI의 멋진 앱이네요. 단순 모니터링 기능뿐만 아니라 저장 공간이나 RAM 최적화도 도와주나요?"
+    },
+    {
+     "author": "Atta 🐬",
+     "is_maker": true,
+     "text": "[@palash_bagchi](https://www.producthunt.com/@palash_bagchi) Thank you so much!  \n  \nToday Vitals shows exactly what's eating your RAM and disk, and lets you quit heavy apps or stop forgotten dev servers in one click. Storage cleanup is on our list, and we're building it next: what's taking up your space and what's safe to remove. It'll arrive as a free update.",
+     "kr": "[@palash_bagchi](https://www.producthunt.com/@palash_bagchi) 대단히 감사합니다!  \n  \n현재 Vitals는 무엇이 RAM과 디스크를 소모하고 있는지 정확히 보여주며, 무거운 앱을 종료하거나 잊혀진 개발 서버를 원클릭으로 중지할 수 있도록 지원합니다. 저장 공간 정리 기능도 로드맵에 포함되어 있으며 현재 개발 중입니다. 어떤 파일이 용량을 차지하고 있고 무엇을 안전하게 삭제할 수 있는지 안내해 드릴 예정이며, 무료 업데이트로 제공됩니다."
+    },
+    {
+     "author": "Curious Kitty",
+     "is_maker": false,
+     "text": "A lot of power users already run iStat Menus or Stats for sensors + menu bar graphs—what’s the clearest “switching moment” where those tools (or Activity Monitor) stop being enough and Vitals becomes the faster answer?",
+     "kr": "수많은 파워 유저들이 이미 센서와 메뉴 바 그래프를 위해 iStat Menus나 Stats를 사용하고 있습니다. 그러한 도구(또는 활성 상태 보기)로는 부족하고 Vitals가 더 빠른 해결책이 되는 가장 명확한 '전환의 순간'은 언제인가요?"
+    },
+    {
+     "author": "Atta 🐬",
+     "is_maker": true,
+     "text": "[@curiouskitty](https://www.producthunt.com/@curiouskitty) iStat Menus and Stats are great at telling you your Mac is busy. The switching moment is when you want to know who's doing it.\n\nInstead of a graph at 90% and a hunt through hundreds of \"Helper\" processes in Activity Monitor, Vitals shows you the app by name: Chrome as one row, your forgotten dev server under its project, and one click to quit it.\n\nThe graphs tell you something's wrong. Vitals gives you the name.",
+     "kr": "[@curiouskitty](https://www.producthunt.com/@curiouskitty) iStat Menus와 Stats는 Mac이 얼마나 바쁜지 알려주는 데 아주 훌륭합니다. 전환의 순간은 바로 '누가 그렇게 만들고 있는가?'를 알고 싶을 때 찾아옵니다.\n\n90%를 가리키는 그래프를 보고 활성 상태 보기에서 수백 개의 'Helper' 프로세스를 뒤지는 대신, Vitals는 앱 이름을 직관적으로 보여줍니다. Chrome이 단일 행으로 표시되고 잊혀진 개발 서버는 해당 프로젝트 폴더 아래에 묶이며 클릭 한 번으로 종료할 수 있습니다.\n\n그래프는 무언가 잘못되었다는 신호만 줄 뿐이지만, Vitals는 그 원인이 되는 정확한 이름을 알려줍니다."
+    },
+    {
+     "author": "Alexandra Protsenko",
+     "is_maker": false,
+     "text": "Atta, congrats on launching Vitals. Can I tune the alert thresholds per app, or mute them for an app like Chrome that always runs hot?",
+     "kr": "Atta님, Vitals 출시를 축하합니다. 앱별로 알림 임계값을 세부 설정하거나 늘 자원을 많이 먹는 Chrome 같은 앱의 알림을 음소거할 수 있나요?"
+    },
+    {
+     "author": "Atta 🐬",
+     "is_maker": true,
+     "text": "[@protsenkoalexandra](https://www.producthunt.com/@protsenkoalexandra) Thank you!\n\nNot per app yet. Today you can tune the thresholds in Settings → Insights, but they apply to every app. Muting one app (Chrome is the usual suspect) and giving an app its own thresholds are both on the list, and mute is coming first.",
+     "kr": "[@protsenkoalexandra](https://www.producthunt.com/@protsenkoalexandra) 감사합니다!\n\n아직 앱별 개별 설정은 지원되지 않습니다. 현재는 'Settings → Insights'에서 임계값을 조정할 수 있으나 모든 앱에 공통 적용됩니다. 특정 앱 음소거(Chrome이 대표적이죠) 및 앱별 개별 임계값 설정 모두 로드맵에 포함되어 있으며, 음소거 기능이 먼저 적용될 예정입니다."
+    },
+    {
+     "author": "Marylou",
+     "is_maker": false,
+     "text": "Love the ‘apps not processes’ approach. How does Vitals group chrome’s 15 processes?Congrats on the launch !",
+     "kr": "'프로세스가 아닌 앱' 접근법이 정말 마음에 듭니다. Vitals는 크롬의 15개 프로세스를 어떻게 그룹화하나요? 출시 축하드립니다!"
+    },
+    {
+     "author": "Atta 🐬",
+     "is_maker": true,
+     "text": "[@marylou_mega](https://www.producthunt.com/@marylou_mega) Thank you so much! 🙏\n\nAll of Chrome's helper processes roll up into a single \"Google Chrome\" row, so you see one number for memory and CPU instead of 15 lines to add up yourself. Click the row to see every process underneath.\n\nIn the next update it gets better: Chrome's row splits by what the processes are doing, so you can see at a glance whether it's your tabs, your extensions, or the GPU using the memory. Same for Edge, Brave, Arc, and apps like Slack and VS Code.",
+     "kr": "[@marylou_mega](https://www.producthunt.com/@marylou_mega) 대단히 감사합니다! 🙏\n\nChrome의 모든 헬퍼 프로세스는 하나의 'Google Chrome' 행으로 롤업되어 사용자가 직접 15개 줄을 더할 필요 없이 메모리와 CPU 사용량을 단일 수치로 볼 수 있습니다. 해당 행을 클릭하면 그 아래의 모든 세부 프로세스도 확인할 수 있습니다.\n\n다음 업데이트에서는 더욱 개선됩니다. Chrome 행이 각 프로세스의 역할별로 세분화되어 탭, 확장 프로그램, GPU 중 어떤 것이 메모리를 소모하고 있는지 한눈에 확인할 수 있게 됩니다. 이는 Edge, Brave, Arc 및 Slack, VS Code 같은 앱에도 동일하게 적용됩니다."
+    },
+    {
+     "author": "Gary Shenk",
+     "is_maker": false,
+     "text": "Does it identify what launched the server or only show its resource usage?",
+     "kr": "서버를 실행한 주체까지 식별해 주나요, 아니면 단순히 리소스 사용량만 보여주나요?"
+    },
+    {
+     "author": "Atta 🐬",
+     "is_maker": true,
+     "text": "[@garyshenk](https://www.producthunt.com/@garyshenk) Yes! Vitals shows where each server came from, not just what it's using.\n\nEvery dev server is grouped under its project folder, along with the app that started it (Terminal, VS Code, Cursor…) and the ports it's holding.\n\nYou can stop it or free up a port in one click.\n\nDocker containers join their project too. Thanks for asking! 🙌",
+     "kr": "[@garyshenk](https://www.producthunt.com/@garyshenk) 네! Vitals는 자원 사용량뿐만 아니라 각 서버가 어디에서 실행되었는지 출처까지 명확히 보여줍니다.\n\n모든 개발 서버는 해당 서버를 실행한 애플리케이션(터미널, VS Code, Cursor 등) 및 점유 중인 포트 정보와 함께 관련 프로젝트 폴더 아래에 묶여 표시됩니다.\n\n클릭 한 번으로 서버를 중지하거나 포트를 해제할 수 있습니다.\n\n도커 컨테이너 역시 해당 프로젝트에 함께 그룹화됩니다. 질문해 주셔서 감사합니다! 🙌"
+    },
+    {
+     "author": "Ofir Smolinsky",
+     "is_maker": false,
+     "text": "as one of the first users i highly reccomend it!!  \n  \nvery helpful as someone multi-tasking PRs over multiple repos, worktrees, and agents. alot of the time my mac gets stuck due to left over servers and simulators, and i always had to hunt down what causes the lags  \n  \nnot anymore!",
+     "kr": "초기 사용자 중 한 명으로서 강력히 추천합니다!!\n\n여러 리포지토리와 워크트리, 에이전트에 걸쳐 PR 멀티태스킹을 하는 입장에서 정말 큰 도움이 됩니다. 이전에는 방치된 개발 서버나 시뮬레이터 때문에 Mac이 버벅거릴 때마다 원인을 찾아 헤매야 했는데, 이제는 더 이상 그럴 필요가 없습니다!"
+    }
+   ],
+   "slug": "vitals-3"
+  },
+  {
+   "name": "VibeDefend by CybeDefend",
+   "tagline_en": "The one command line to secure your Cursor and Claude Code",
+   "tagline_kr": "단 한 줄의 명령어로 Cursor와 Claude Code를 안전하게 보호하는 보안 솔루션",
+   "image": "https://ph-files.imgix.net/a70eb924-fefc-418d-a54c-e4476a197424.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Developer Tools",
+    "Security",
+    "Vibe coding"
+   ],
+   "upvotes": 230,
+   "comments_count": 64,
+   "maker": "Julien Zammit(@julien_zammit), Axel Paulin(@axel_paulin), Florentin Ledy(@florentin_ledy) (헌터: fmerian(@fmerian))",
+   "price_model": "무료 옵션 제공 (Free Options)",
+   "price_detail": "신용카드 등록 없이 무료 플랜을 즉시 시작할 수 있으며, 첫 달 50% 할인 코드(WELCOME50) 및 프로젝트 규모 확장에 따른 유료 플랜을 제공합니다.",
+   "desc_kr": "VibeDefend by CybeDefend는 단 한 줄의 npx 명령어로 Claude Code, Cursor, Windsurf, Copilot, Codex 등 주요 AI 코딩 에이전트에 직접 설치되는 실시간 보안 가드 솔루션입니다. 코드가 커밋된 사후에 검사하는 기존 보안 스캐너와 달리, 에이전트가 코드를 작성하는 바로 그 순간(Shift-0)에 열려 있는 diff를 실시간 검사합니다. 리포지토리 분석을 통해 사내 고유의 비즈니스 규칙과 규정 준수 사항을 자동 마이닝하여 에이전트의 컨텍스트에 주입함으로써 보안 부채를 사전에 차단합니다. 또한 rm -rf, sudo 실행, .env나 시크릿 키 무단 읽기 등 위험한 셸 명령과 치명적 실수를 감지하여 실행 전에 강력히 차단하는 액션 가드(Action Guard) 기능을 제공합니다. SAST, SCA, 시크릿 유출 방지, IaC 및 컨테이너 스캔을 망라하여 개발자가 '바이브 코딩(Vibe Coding)'의 속도를 유지하면서도 기업 보안 기준을 완벽히 지킬 수 있도록 돕습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/cybedefend",
+   "comment_summary": "AI 에이전트의 자동 커밋에 따른 시크릿 유출 및 데이터 유출 방지 메커니즘, 리포지토리에서 마이닝한 비즈니스 규칙의 제어 방식에 대한 개발팀과 보안 리더들의 질의가 집중되었습니다. 메이커 측은 코드가 생성되는 시점에 즉각 개입하는 'Shift-0' 접근법과 위험 셸 명령어 사전 차단 가드를 통해 자율 에이전트 운영의 안전성을 보장한다고 설명했습니다. 한 줄 명령어로 Claude Code와 Cursor에 손쉽게 연동되어 개발 속도를 저해하지 않으면서도 강력한 보안 거버넌스를 구축할 수 있다는 점에서 큰 호응을 얻었습니다.",
+   "warnings": "수치(업보트 230·댓글 64)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "this just makes so much sense. security is an everyone problem, and [@CybeDefend](https://www.producthunt.com/products/cybedefend) makes it a no brainer.\n\ns/o ?makers for the great work on this new launch.",
+     "kr": "정말 지극히 당연하고 필요한 솔루션입니다. 보안은 모두의 문제이며, [@CybeDefend](https://www.producthunt.com/products/cybedefend)는 이를 고민할 필요 없이 명쾌하게 만들어 줍니다.\n\n이번 멋진 신규 출시를 이뤄낸 메이커분들께 큰 응원을 보냅니다."
+    },
+    {
+     "author": "Axel Paulin",
+     "is_maker": true,
+     "text": "Hey Product Hunt ! 👋 I’m Axel, the third co-founder, handling Growth and Go-To-Market here at CybeDefend\n\n  \n[@julien_zammit](https://www.producthunt.com/@julien_zammit) shared our origin story, and [@florentin_ledy](https://www.producthunt.com/@florentin_ledy) highlighted the tech. I want to talk about what happens when you actually put VibeDefend in the hands of a dev team.  \n\nWhen we ran our study, we found something crazy: left to their own devices, AI agents ignored internal business and compliance rules in 88% of cases. They write fast, but they accumulate silent technical debt just as quickly.  \n\n**By governing the agent at the exact moment the code is written (an approach we call \"Shift-0\"), VibeDefend brings that rule compliance up to 89%.**  \n\nIt’s not just a security tool; **it’s an enabler.** It allows your team to confidently scale \"vibe-coding\" without the CISO or the Lead Dev losing sleep over what’s being shipped to production.\n\n  \nI’ll be hanging out in the comments all day with the team. I'd love to know: what is the main risk keeping your team from giving full autonomy to AI coding agents right now? Let's chat!",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋 저는 CybeDefend의 세 번째 공동 창업자로서 성장 및 GTM을 총괄하고 있는 Axel입니다.\n\n[@julien_zammit](https://www.producthunt.com/@julien_zammit)이 창업 스토리를 공유했고 [@florentin_ledy](https://www.producthunt.com/@florentin_ledy)가 기술적 디테일을 짚어주었으니, 저는 개발팀에 VibeDefend를 실제로 도입했을 때 일어나는 변화에 대해 말씀드리고자 합니다.\n\n자체 조사를 진행했을 때 충격적인 사실을 발견했습니다. 별도의 통제 없이 AI 에이전트를 가동했을 때 무려 88%의 상황에서 사내 비즈니스 로직과 규정 준수 규칙을 무시했다는 점입니다. 코드를 작성하는 속도는 매우 빠르지만 그만큼 소리 없이 기술 부채를 쌓아 올리고 있었던 것입니다.\n\n**코드가 작성되는 바로 그 순간 에이전트를 거버넌스하는 방식(저희가 'Shift-0'라 부르는 접근법)을 통해, VibeDefend는 규칙 준수율을 89%까지 끌어올립니다.**\n\n이는 단순한 보안 도구가 아니라 **성장의 촉진제(enabler)**입니다. 정보보호최고책임자(CISO)나 리드 개발자가 프로덕션에 배포될 코드를 걱정하느라 잠 못 이루는 일 없이, 개발팀이 '바이브 코딩'을 자신 있게 대규모로 확장할 수 있도록 지원합니다.\n\n오늘 팀과 함께 온종일 댓글에 머물 예정입니다. 현재 여러분의 팀이 AI 코딩 에이전트에게 완전한 자율성을 부여하는 것을 주저하게 만드는 가장 큰 위험 요인은 무엇인가요? 편하게 이야기 나눠봅시다!"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "> What is the main risk keeping your team from giving full autonomy to AI coding agents right now?\n\nfun fact: 81% of the community is a 'human-in-the-loop' type of developer, according to [this thread](https://www.producthunt.com/p/kilocode/how-do-you-like-to-work-with-ai-coding-agents).",
+     "kr": "> 현재 여러분의 팀이 AI 코딩 에이전트에게 완전한 자율성을 부여하는 것을 주저하게 만드는 가장 큰 위험 요인은 무엇인가요?\n\n흥미로운 사실: [이 스레드](https://www.producthunt.com/p/kilocode/how-do-you-like-to-work-with-ai-coding-agents)에 따르면 개발자 커뮤니티의 81%가 여전히 사람의 개입과 검토(human-in-the-loop)를 선호하는 개발자라고 합니다."
+    },
+    {
+     "author": "Vikram",
+     "is_maker": false,
+     "text": "[@axel_paulin](https://www.producthunt.com/@axel_paulin) i think the main concern for us is data leakage and accidental secret exposures when agents auto-commit. best of luck for launch",
+     "kr": "[@axel_paulin](https://www.producthunt.com/@axel_paulin) 저희에게 가장 큰 우려는 에이전트가 자동 커밋을 수행할 때 발생하는 데이터 유출과 부주의한 시크릿 키 노출입니다. 출시 성공을 응원합니다."
+    },
+    {
+     "author": "Axel Paulin",
+     "is_maker": true,
+     "text": "[@vikramp7470](https://www.producthunt.com/@vikramp7470) Hey Vikram, thanks for the support! 🙌  \n\nYou hit the nail on the head. Accidental secret exposure and data leakage are the exact nightmares keeping engineering leaders from adopting fully autonomous agents. Agents are incredibly fast, but they often lack the contextual awareness of what is sensitive.\n\n  \nThis is exactly what CybeDefend is built to prevent. Because we operate at the \"Shift-0\" level (intercepting right at the generation phase, _before_ any auto-commit), we act as a hard boundary. If an agent tries to leak a secret, push PII, or bypass a core security rule, we instantly block that specific dangerous action in real-time, without breaking the rest of the agent's workflow.",
+     "kr": "[@vikramp7470](https://www.producthunt.com/@vikramp7470) Vikram님, 응원해 주셔서 감사합니다! 🙌\n\n핵심을 정확히 짚어주셨습니다. 부주의한 시크릿 노출과 데이터 유출이야말로 엔지니어링 리더들이 완전 자율 에이전트 도입을 주저하게 만드는 결정적인 악몽입니다. 에이전트는 놀라울 정도로 빠르지만 무엇이 민감한 정보인지에 대한 맥락적 인식이 부족한 경우가 많습니다.\n\n그것이 바로 CybeDefend가 해결하고자 하는 핵심 문제입니다. 저희는 'Shift-0' 레벨(자동 커밋이 일어나기 전, 코드 생성 단계에서 즉각 개입)에서 동작하므로 강력한 방어선 역할을 합니다. 에이전트가 시크릿을 유출하거나 개인식별정보(PII)를 푸시하거나 핵심 보안 규칙을 우회하려 할 경우, 에이전트의 전체 워크플로우를 중단시키지 않으면서 해당 위험 행동만을 실시간으로 즉시 차단합니다."
+    },
+    {
+     "author": "Grayson Bass",
+     "is_maker": false,
+     "text": "  [@axel_paulin](https://www.producthunt.com/@axel_paulin) Can teams add their own custom security rules based on the type of project they’re working on?",
+     "kr": "[@axel_paulin](https://www.producthunt.com/@axel_paulin) 진행 중인 프로젝트 유형에 따라 개발팀이 자체 커스텀 보안 규칙을 추가할 수 있나요?"
+    },
+    {
+     "author": "Florentin Ledy",
+     "is_maker": true,
+     "text": "[@axel_paulin](https://www.producthunt.com/@axel_paulin)  [@grayson_bass](https://www.producthunt.com/@grayson_bass) Yes! Everything in VibeDefend is set at the project level, so each project gets rules that fit what it actually is:\n\n*   Business and security rules are mined from each repo, so a fintech API and an internal tool won't end up with the same rules. They keep growing session after session through rule proposals your team reviews.\n    \n*   For Action Guards, you can create your own blocking rules directly in the project's VibeDefend tab, on top of the default presets, and set each one to warn, block or off.\n    \n\nThose rules apply to every AI agent working on that project, so the whole team shares the same policy.",
+     "kr": "[@axel_paulin](https://www.producthunt.com/@axel_paulin) [@grayson_bass](https://www.producthunt.com/@grayson_bass) 네! VibeDefend의 모든 설정은 프로젝트 단위로 이루어지므로 각 프로젝트의 실질적인 성격에 맞는 규칙이 적용됩니다:\n\n* 각 리포지토리에서 비즈니스 및 보안 규칙을 마이닝하므로 핀테크 API와 사내 내부 도구에 서로 다른 규칙이 적용됩니다. 또한 팀이 검토하는 규칙 제안을 통해 세션이 거듭될수록 규칙 베이스가 확장됩니다.\n* 액션 가드(Action Guard)의 경우 기본 프리셋 외에도 프로젝트의 VibeDefend 탭에서 직접 차단 규칙을 생성하고 '경고(warn)', '차단(block)', '끄기(off)'로 개별 설정할 수 있습니다.\n\n이러한 규칙은 해당 프로젝트에서 작업하는 모든 AI 에이전트에 적용되므로 팀 전체가 일관된 보안 정책을 공유하게 됩니다."
+    },
+    {
+     "author": "Axel Paulin",
+     "is_maker": true,
+     "text": "[@grayson_bass](https://www.producthunt.com/@grayson_bass) To add to what [@florentin_ledy](https://www.producthunt.com/@florentin_ledy) said, this flexibility is exactly what keeps CISOs and Lead Devs happy! 🤝 You can enforce strict boundaries on critical production repos, while leaving more freedom for internal or experimental tools.\n\nOut of curiosity Grayson, what kind of specific security rules is your team looking to enforce with AI agents right now?",
+     "kr": "[@grayson_bass](https://www.producthunt.com/@grayson_bass) [@florentin_ledy](https://www.producthunt.com/@florentin_ledy)의 설명에 덧붙이자면, 이러한 유연성이야말로 CISO와 리드 개발자 모두를 만족시키는 핵심입니다! 🤝 핵심 프로덕션 리포지토리에는 엄격한 경계를 강제하면서 내부 도구나 실험용 프로젝트에는 더 많은 자율성을 부여할 수 있으니까요.\n\n궁금한 점이 있는데 Grayson님, 현재 팀에서 AI 에이전트에 적용하고자 하는 구체적인 보안 규칙에는 어떤 것들이 있으신가요?"
+    },
+    {
+     "author": "Matheus Paranhos",
+     "is_maker": false,
+     "text": "Hey! Solid launch! I wonder how can I integrate this application into my current setup",
+     "kr": "멋진 출시입니다! 현재 개발 환경에 이 애플리케이션을 어떻게 연동할 수 있는지 궁금합니다."
+    },
+    {
+     "author": "Axel Paulin",
+     "is_maker": true,
+     "text": "[@matheus_paranhos1](https://www.producthunt.com/@matheus_paranhos1) Hey Matheus, thanks a lot for the support! 🙌\n\n  \nIntegration is actually designed to be super straightforward. You can check out the step-by-step guides for different environments right here in our documentation: [https://docs.cybedefend.com/latest/api-reference/introduction](https://docs.cybedefend.com/latest/api-reference/introduction)  \n  \nTo point you in the exact right direction, I'd love to know a bit more about your current setup!  \nLet me know, I'd be happy to walk you through how it would fit perfectly into your workflow! 🚀",
+     "kr": "[@matheus_paranhos1](https://www.producthunt.com/@matheus_paranhos1) Matheus님, 응원해 주셔서 감사합니다! 🙌\n\n연동은 실제로 매우 간단하게 설계되었습니다. 공식 문서에서 환경별 단계별 가이드를 확인하실 수 있습니다: [https://docs.cybedefend.com/latest/api-reference/introduction](https://docs.cybedefend.com/latest/api-reference/introduction)\n\n가장 적합한 방법을 안내해 드리기 위해 현재 운영 중이신 환경에 대해 조금 더 알려주시면 감사하겠습니다! 워크플로우에 어떻게 완벽히 맞아떨어질지 기쁜 마음으로 안내해 드리겠습니다! 🚀"
+    },
+    {
+     "author": "Florentin Ledy",
+     "is_maker": true,
+     "text": "[@matheus_paranhos1](https://www.producthunt.com/@matheus_paranhos1)  [@axel_paulin](https://www.producthunt.com/@axel_paulin) You'll also find all the native integrations we offer here, and I'm happy to help if you need anything:\n\n[https://www.cybedefend.com/en/integrations](https://www.cybedefend.com/en/integrations)",
+     "kr": "[@matheus_paranhos1](https://www.producthunt.com/@matheus_paranhos1) [@axel_paulin](https://www.producthunt.com/@axel_paulin) 저희가 제공하는 모든 기본 네이티브 연동 목록은 이곳에서도 확인하실 수 있으며, 도움이 필요하시면 언제든 편하게 말씀해 주세요:\n\n[https://www.cybedefend.com/en/integrations](https://www.cybedefend.com/en/integrations)"
+    },
+    {
+     "author": "Louis Goudal",
+     "is_maker": false,
+     "text": "Hey, what an amazing idea ! Is it easy to integrate to any project ?",
+     "kr": "정말 훌륭한 아이디어네요! 어떤 프로젝트든 쉽게 연동할 수 있나요?"
+    }
+   ],
+   "slug": "cybedefend"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div></div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>

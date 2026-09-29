@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-09-29",
+    "url": "2026-09-29/",
+    "top_product": "MCP Connectors by Databox",
+    "count": 5,
+    "upvotes_total": 1406,
+    "comments_total": 60
+  },
+  {
     "date": "2026-09-28",
     "url": "2026-09-28/",
     "top_product": "GPT-6 Sol & Luna",
