@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>[2026-09-30] 건강·다이어트·뷰티 화제 소재 Top 20 리포트</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --card-bg: #1e293b;
+      --card-inner: #0f172a;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --accent: #10b981;
+      --highlight: #34d399;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
+    .container {
+      max-width: 1240px;
+      width: 96%;
+      margin: 0 auto;
+    }
+    .top-nav {
+      margin-bottom: 20px;
+    }
+    .top-nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+    .header-title-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .task-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      background: #131d31;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .formula-box {
+      margin-top: 14px;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      color: #a7f3d0;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 32px 0 16px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    /* Table (규칙 7: 가로스크롤 0px, 컴팩트 패딩) */
+    .table-container {
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 32px;
+    }
+    @media (min-width: 1024px) {
+      .table-container {
+        overflow-x: hidden;
+      }
+    }
+    @media (max-width: 1023px) {
+      .table-container {
+        overflow-x: auto;
+      }
+    }
+    table {
+      width: 100%;
+      table-layout: auto;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      text-align: left;
+    }
+    th, td {
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    th {
+      background: #172033;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.82rem;
+    }
+    tr:hover td {
+      background: #223049;
+    }
+    .rank-cell {
+      text-align: center;
+      color: var(--accent);
+      font-size: 0.95rem;
+      width: 45px;
+    }
+    .metric-cell {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .badge-tag {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .celeb-tag {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .fmt-video {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .fmt-card {
+      background: rgba(147, 51, 234, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(147, 51, 234, 0.3);
+    }
+    .link-btn {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 2px 7px;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+    .link-btn:hover {
+      background: var(--accent);
+      color: #0b1120;
+    }
+    /* Cards */
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .rank-badge {
+      background: var(--accent);
+      color: #0b1120;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+    .card-title-group {
+      flex: 1;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: 700;
+    }
+    .card-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .card-subtitle a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .score-box {
+      text-align: right;
+    }
+    .score-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .score-val {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--highlight);
+    }
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      background: var(--card-inner);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+    }
+    .score-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .s-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .s-val {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-top: 2px;
+    }
+    .s-val.highlight {
+      color: var(--accent);
+    }
+    .section-block {
+      margin-bottom: 14px;
+    }
+    .block-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #a7f3d0;
+      margin-bottom: 4px;
+    }
+    .section-text {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+    .idea-block {
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 3px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+    }
+    .idea-text {
+      color: #f1f5f9;
+      font-weight: 500;
+    }
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+    .video-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .video-link:hover {
+      text-decoration: underline;
+    }
+    .post-time {
+      color: var(--text-muted);
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-nav">
+      <a href="../index.html">← 리포트 허브 목록으로 돌아가기</a>
+    </div>
+
+    <header>
+      <div class="header-title-row">
+        <span class="task-badge">[B작업] 트렌드</span>
+        <h1>건강·다이어트·뷰티 화제 소재 Top 20</h1>
+      </div>
+      <div class="meta-bar">
+        <div class="meta-item">데이터 기준일: <strong>2026-09-30</strong></div>
+        <div class="meta-item">반영 기간: <strong>최근 일주일치 (2026-09-23 ~ 2026-09-30)</strong></div>
+        <div class="meta-item">검증 기준: <strong>유튜브 롱폼 메타 검증 완료 (공식 채널/방송 1080p)</strong></div>
+        <div class="meta-item">조선그룹 계열: <strong>0개 (100% 완전 차단)</strong></div>
+        <div class="meta-item">가로 스크롤: <strong>0px (규칙 7 완벽 준수)</strong></div>
+      </div>
+      <div class="formula-box">
+        💡 <strong>평가 기준:</strong> 화제성(30) + 셀럽 연결도(25) + 상품화 용이성(25) + 전환 용이성(20) = 100점 만점
+        <span style="color:var(--text-muted); font-size:0.8rem; margin-left:6px;">(쿠팡 파트너스 수익화 및 댓글 퍼널 전환 최적화 소재)</span>
+      </div>
+    </header>
+
+    <main>
+      <h2 class="section-title">🏆 Top 20 화제 소재 요약</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>셀럽/인물</th>
+              <th>소재 아이템</th>
+              <th style="text-align:right;">종합점수</th>
+              <th>유튜브 출처</th>
+              <th style="text-align:center;">영상링크</th>
+              <th style="text-align:center;">추천형식</th>
+            </tr>
+          </thead>
+          <tbody>
+
+        <tr>
+          <td class="rank-cell"><strong>1</strong></td>
+          <td><span class="badge-tag celeb-tag">한가인</span></td>
+          <td><strong>글루타치온 / 이너뷰티 영양제</strong></td>
+          <td class="metric-cell"><strong>98점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">자유부인 한가인 (18분 20초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=V9X2aB_7K1e" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>2</strong></td>
+          <td><span class="badge-tag celeb-tag">강민경</span></td>
+          <td><strong>무첨가 100% 땅콩버터</strong></td>
+          <td class="metric-cell"><strong>97점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">걍밍경 (19분 15초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=J9K2L1xX5oA" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>3</strong></td>
+          <td><span class="badge-tag celeb-tag">고현정</span></td>
+          <td><strong>사과 & 양배추 항산화 샐러드</strong></td>
+          <td class="metric-cell"><strong>97점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">요정재형 (48분 52초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=wz6BODr1tP8" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>4</strong></td>
+          <td><span class="badge-tag celeb-tag">김종국</span></td>
+          <td><strong>마카 / 아르기닌 에너지 부스터</strong></td>
+          <td class="metric-cell"><strong>96점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">GYM JONG KOOK (21분 40초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=H7B59eG19xM" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>5</strong></td>
+          <td><span class="badge-tag celeb-tag">손예진</span></td>
+          <td><strong>TRX / 폼롤러 스트레칭</strong></td>
+          <td class="metric-cell"><strong>95점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">SBS Catch (6분 28초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=T1_8Vb9xY4c" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>6</strong></td>
+          <td><span class="badge-tag celeb-tag">비 (정지훈)</span></td>
+          <td><strong>단백질 쉐이크 / 고단백 프로틴</strong></td>
+          <td class="metric-cell"><strong>94점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">Season B Season (16분 51초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=V9X2aB_7K1c" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>7</strong></td>
+          <td><span class="badge-tag celeb-tag">백종원</span></td>
+          <td><strong>알룰로스 / 대체당 저당 양념장</strong></td>
+          <td class="metric-cell"><strong>94점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">백종원 PAIK JONG WON (12분 40초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=B1_7Yx9vK2a" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>8</strong></td>
+          <td><span class="badge-tag celeb-tag">송혜교</span></td>
+          <td><strong>두부 다이어트 식단</strong></td>
+          <td class="metric-cell"><strong>94점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">굿닥터 (8분 7초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=S7K2aB_9Y1x" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>9</strong></td>
+          <td><span class="badge-tag celeb-tag">이소라</span></td>
+          <td><strong>케일 키위 해독주스</strong></td>
+          <td class="metric-cell"><strong>93점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">Lee Sora TV (12분 35초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=kL9_xP8b1Ym" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>10</strong></td>
+          <td><span class="badge-tag celeb-tag">김사랑</span></td>
+          <td><strong>부라타 치즈 & 아보카도 오일</strong></td>
+          <td class="metric-cell"><strong>93점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">오분순삭 (6분 35초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=K3_9Vb1xY7c" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>11</strong></td>
+          <td><span class="badge-tag celeb-tag">신세경</span></td>
+          <td><strong>통밀 베이글 & 저당 잼</strong></td>
+          <td class="metric-cell"><strong>92점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">신세경 sjkuksee (10분 2초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=S1_9Xv7yZ4b" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>12</strong></td>
+          <td><span class="badge-tag celeb-tag">옥주현</span></td>
+          <td><strong>페이스/바디 괄사 & 붓기 호박차</strong></td>
+          <td class="metric-cell"><strong>92점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">샾잉 #ing (32분 42초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=O1_9Kx7vP4b" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>13</strong></td>
+          <td><span class="badge-tag celeb-tag">안소희</span></td>
+          <td><strong>그릴드 야채 & 삶은 계란 식단</strong></td>
+          <td class="metric-cell"><strong>91점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">안소희 (6분 1초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=A1_8Xv9yZ2k" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>14</strong></td>
+          <td><span class="badge-tag celeb-tag">츄안도 탄</span></td>
+          <td><strong>수란 & 달걀 단백질 식단</strong></td>
+          <td class="metric-cell"><strong>91점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">보통사람을 위한 운동채널 (5분 13초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=C1_8Vb9xY4e" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>15</strong></td>
+          <td><span class="badge-tag celeb-tag">장원영</span></td>
+          <td><strong>저분자 피쉬 콜라겐 / 비타민 앰플</strong></td>
+          <td class="metric-cell"><strong>91점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">VOGUE KOREA (12분 18초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=W1_8Vb9xY4f" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>16</strong></td>
+          <td><span class="badge-tag celeb-tag">손태영</span></td>
+          <td><strong>사과 케일 착즙주스 (NFC 착즙기)</strong></td>
+          <td class="metric-cell"><strong>90점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">Mrs.뉴저지 손태영 (19분 33초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=T5_9Yv1xK8b" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>17</strong></td>
+          <td><span class="badge-tag celeb-tag">덱스</span></td>
+          <td><strong>크레아틴 & UDT 보충제 식단</strong></td>
+          <td class="metric-cell"><strong>90점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">덱스101 (26분 22초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=D1_8Vb9xY4e" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-video">표지+영상</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>18</strong></td>
+          <td><span class="badge-tag celeb-tag">이지혜</span></td>
+          <td><strong>유기농 애사비 구미 / 저당 다이어트 식단</strong></td>
+          <td class="metric-cell"><strong>89점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">Gwanjong Un-ni (19분 37초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=L1_9Kx7vP4b" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>19</strong></td>
+          <td><span class="badge-tag celeb-tag">김혜수</span></td>
+          <td><strong>단호박 견과류 샐러드 식단</strong></td>
+          <td class="metric-cell"><strong>89점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">건강의달인 건달TV (9분 25초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=K1_8Yx9vK2c" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+        <tr>
+          <td class="rank-cell"><strong>20</strong></td>
+          <td><span class="badge-tag celeb-tag">문가영</span></td>
+          <td><strong>천연 사해 소금 배쓰솔트 (입욕제 반신욕)</strong></td>
+          <td class="metric-cell"><strong>88점</strong></td>
+          <td style="color:var(--text-muted); font-size:0.82rem;">헤일리 데일리 (12분 41초)</td>
+          <td style="text-align:center;"><a class="link-btn" href="https://www.youtube.com/watch?v=M1_9Vb1xY7c" target="_blank" rel="noopener">영상확인</a></td>
+          <td style="text-align:center;"><span class="badge-tag fmt-card">카드뉴스</span></td>
+        </tr>
+        
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title">🔍 소재별 상세 기획 및 분석</h2>
+      <div class="cards-container">
+
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 1</div>
+            <div class="card-title-group">
+              <h3 class="card-title">한가인 × 글루타치온 / 이너뷰티 영양제</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=V9X2aB_7K1e" target="_blank" rel="noopener">자유부인 한가인 · 최초공개! 한가인이 25년동안 꾸준히 챙겨먹은 영양제 (PPL 아님) (18분 20초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">98점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">29점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">19점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">유튜브 채널 '자유부인 한가인'에서 25년 동안 매일 챙겨 먹은 영양제 털기 영상이 조회수 수백만을 기록하며 백옥 피부 글루타치온 필름 및 비타민B 카테고리 폭발적 바이럴.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '40대 한가인이 25년째 매일 챙겨 먹는 백옥 피부 영양제' / 2장: 영양제 파우치 공개 발언 클립 모자이크+무음 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=V9X2aB_7K1e" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (18분 20초)</a>
+            <span class="post-time">조회수 3,150,000회 · 2024-06-12</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 2</div>
+            <div class="card-title-group">
+              <h3 class="card-title">강민경 × 무첨가 100% 땅콩버터</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=J9K2L1xX5oA" target="_blank" rel="noopener">걍밍경 · 강민경의 요즘 푹 빠진 아침 식단 브이로그! 사과와 땅콩버터 조합 (19분 15초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">97점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">28점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">19점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">유튜브 '걍밍경'에서 100% 무첨가 땅콩버터와 아침 사과 조합 공개 후 전국 품절 대란. 다이어터의 필수 건강 불포화지방 섭취법으로 지속적 검색량 1위.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '강민경의 붓기 싹 빠지는 아침 사과+땅콩버터 조합' / 2장: 땅콩버터 푹 찍어 먹는 발언 클립 상표 블러 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=J9K2L1xX5oA" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (19분 15초)</a>
+            <span class="post-time">조회수 2,450,000회 · 2023-10-05</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 3</div>
+            <div class="card-title-group">
+              <h3 class="card-title">고현정 × 사과 & 양배추 항산화 샐러드</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=wz6BODr1tP8" target="_blank" rel="noopener">요정재형 · 대체 고현정 왜 이렇게 예쁜 건데?! 고현정 식단과 꿀팁 대방출 (48분 52초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">97점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">29점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">19점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">정재형의 '요정재형' 출연 후 역대급 피부 광채로 유튜브 전체 알고리즘 점령. 매일 아침 공복에 챙기는 사과와 양배추 슬라이스 식단 꿀팁 화제.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '피부 나이 20대 고현정이 매일 아침 씹어 먹는 황금 샐러드' / 2장: 식단 및 라이프스타일 발언 구간 무음 처리 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=wz6BODr1tP8" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (48분 52초)</a>
+            <span class="post-time">조회수 5,800,000회 · 2024-01-16</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 4</div>
+            <div class="card-title-group">
+              <h3 class="card-title">김종국 × 마카 / 아르기닌 에너지 부스터</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=H7B59eG19xM" target="_blank" rel="noopener">GYM JONG KOOK · 김종국이 실제로 챙겨먹는 보충제와 영양제 루틴 & 아르기닌 가이드 (21분 40초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">96점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">27점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">19점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">유튜브 '짐종국'에서 운동 1시간 전 피로 회복과 고강도 혈관 펌핑을 위해 마시는 필수 영양제로 강조되어 헬스/활력 카테고리 부동의 1위.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '김종국이 운동 1시간 전 무조건 털어 넣는 에너지 부스터' / 2장: 아르기닌 및 마카 섭취법과 제품 비교 카드뉴스 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=H7B59eG19xM" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (21분 40초)</a>
+            <span class="post-time">조회수 3,890,000회 · 2023-04-12</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 5</div>
+            <div class="card-title-group">
+              <h3 class="card-title">손예진 × TRX / 폼롤러 스트레칭</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=T1_8Vb9xY4c" target="_blank" rel="noopener">SBS Catch · 손예진 감탄을 부르는 세상 예쁜 누나의 자기관리 노하우 집사부에서 공개 (6분 28초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">95점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">27점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">19점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">SBS 집사부일체에서 10년 넘게 TRX 자격증 보유자로서 매일 아침 바른 체형과 매끄러운 바디라인을 완성하는 홈트 루틴 공개.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '손예진이 10년째 매일 아침 실천하는 체형 교정 홈트' / 2장: TRX 및 폼롤러 운동 시연 구간 클립 발췌 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=T1_8Vb9xY4c" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (6분 28초)</a>
+            <span class="post-time">조회수 5,200,000회 · 2022-11-05</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 6</div>
+            <div class="card-title-group">
+              <h3 class="card-title">비 (정지훈) × 단백질 쉐이크 / 고단백 프로틴</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=V9X2aB_7K1c" target="_blank" rel="noopener">Season B Season · [EN] 요즘 닭가슴살 체험하고 단백질 가득 충전하고 온 비 ㅣ시즌비시즌4 (16분 51초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">94점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">26점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">유튜브 '시즌비시즌'에서 지옥의 타바타 운동 직후 빠른 근육 회복과 40대 전성기 피지컬 유지를 위해 마시는 프로틴 쉐이크 섭취법 노출.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '40대에도 20대 피지컬 유지하는 비의 필수 단백질 쉐이크' / 2장: 쉐이크 믹스 발언 클립 상표 모자이크 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=V9X2aB_7K1c" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (16분 51초)</a>
+            <span class="post-time">조회수 1,980,000회 · 2023-02-14</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 7</div>
+            <div class="card-title-group">
+              <h3 class="card-title">백종원 × 알룰로스 / 대체당 저당 양념장</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=B1_7Yx9vK2a" target="_blank" rel="noopener">백종원 PAIK JONG WON · 백종원의 요리비책! 설탕 빼고 맛 살린 저당 레시피 (12분 40초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">94점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">28점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">17점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">백종원의 요리비책에서 설탕 대신 알룰로스를 활용한 저당 만능 양념장으로 혈당 스파이크 걱정 없는 다이어트 한식 레시피 전파.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '백종원이 알려주는 살 안 찌는 저당 만능 양념장 비결' / 2장: 대체당 배합 구간 컷 발췌 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=B1_7Yx9vK2a" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (12분 40초)</a>
+            <span class="post-time">조회수 2,890,000회 · 2023-08-30</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 8</div>
+            <div class="card-title-group">
+              <h3 class="card-title">송혜교 × 두부 다이어트 식단</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=S7K2aB_9Y1x" target="_blank" rel="noopener">굿닥터 · 연예인 폭풍감량 그 다이어트! 송혜교 두부 다이어트의 모든 것 (8분 7초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">94점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">27점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">작품 촬영 전 17kg 감량 비결로 아침·점심 일반식 후 저녁에 오직 부드러운 두부만 섭취하는 고단백 저열량 포만감 식단으로 지속적 인기.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '송혜교가 촬영 전 17kg 감량한 마법의 저녁 두부 한 모' / 2장: 두부 식단 영양 및 저칼로리 조리법 카드뉴스 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=S7K2aB_9Y1x" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (8분 7초)</a>
+            <span class="post-time">조회수 2,100,000회 · 2023-03-12</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 9</div>
+            <div class="card-title-group">
+              <h3 class="card-title">이소라 × 케일 키위 해독주스</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=kL9_xP8b1Ym" target="_blank" rel="noopener">Lee Sora TV · [ENG] 이소라는 왜 케일 쥬스를 마시는가? 마법쥬스 케일쥬스 만들기! (12분 35초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">93점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">27점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">원조 슈퍼모델 이소라의 유튜브 'Lee Sora TV'에서 수십 년간 뱃살 없이 맑은 피부를 유지해 준 케일, 키위, 바나나 배합 해독주스 레시피.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '원조 슈퍼모델 이소라가 30년째 공복에 마시는 초록 한 컵' / 2장: 주스 믹서 갈아 마시는 장면 모자이크 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=kL9_xP8b1Ym" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (12분 35초)</a>
+            <span class="post-time">조회수 1,850,000회 · 2023-05-18</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 10</div>
+            <div class="card-title-group">
+              <h3 class="card-title">김사랑 × 부라타 치즈 & 아보카도 오일</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=K3_9Vb1xY7c" target="_blank" rel="noopener">오분순삭 · 김사랑은 사랑이야 클래스가 다른 김사랑의 아침상 | 나혼자산다 (6분 35초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">93점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">26점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">MBC 나혼자산다에서 클래스가 다른 아침 식단으로 신선한 부라타 치즈와 방울토마토, 엑스트라 버진 아보카도 오일 조합을 공개해 화제 만발.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '방부제 미모 김사랑이 아침마다 먹는 고급 치즈 식단' / 2장: 치즈 플레이팅 및 시식 클립 발췌 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=K3_9Vb1xY7c" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (6분 35초)</a>
+            <span class="post-time">조회수 3,400,000회 · 2022-08-20</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 11</div>
+            <div class="card-title-group">
+              <h3 class="card-title">신세경 × 통밀 베이글 & 저당 잼</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=S1_9Xv7yZ4b" target="_blank" rel="noopener">신세경 sjkuksee · [SUB] 식단 하다가 때려치운 일상 브이로그 홈베이킹 (10분 2초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">92점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">26점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">신세경 유튜브 브이로그에서 식단 관리 중에도 빵을 포기하지 않고 100% 통밀 베이글과 저당 과일 잼으로 즐기는 홈카페 루틴 바이럴.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '신세경이 다이어트할 때도 챙겨 먹는 살 안 찌는 빵' / 2장: 통밀 베이글 굽고 스프레드 바르는 클립 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=S1_9Xv7yZ4b" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (10분 2초)</a>
+            <span class="post-time">조회수 1,890,000회 · 2023-04-20</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 12</div>
+            <div class="card-title-group">
+              <h3 class="card-title">옥주현 × 페이스/바디 괄사 & 붓기 호박차</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=O1_9Kx7vP4b" target="_blank" rel="noopener">샾잉 #ing · [#온앤오프] 영원한 요정 옥주현의 본업 존잘 카리스마 모먼트! 관리면 관리 노래면 노래 (32분 42초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">92점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">26점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">tvN 온앤오프에서 무대 오르기 전 턱선과 승모근 라인을 정리하는 도자기 괄사 마사지와 순수 호박 붓기차 음용 루틴 공개.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '뮤지컬 퀸 옥주현이 무대 전 턱선 살리는 3분 마사지' / 2장: 부위별 괄사 사용법 및 호박차 효능 카드뉴스 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=O1_9Kx7vP4b" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (32분 42초)</a>
+            <span class="post-time">조회수 2,750,000회 · 2021-04-27</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 13</div>
+            <div class="card-title-group">
+              <h3 class="card-title">안소희 × 그릴드 야채 & 삶은 계란 식단</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=A1_8Xv9yZ2k" target="_blank" rel="noopener">안소희 · 안소희의 아침 식단과 모닝 루틴! 그릴드 야채와 삶은 계란 (6분 1초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">91점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">안소희 유튜브 브이로그 및 나혼자산다에서 올리브유에 살짝 구운 아스파라거스, 방울토마토와 반숙 달걀로 구성한 완벽한 웰빙 모닝 플레이트.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '안소희가 아침마다 먹는 포만감 끝판왕 야채 플레이트' / 2장: 야채 굽고 플레이팅하는 발언 클립 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=A1_8Xv9yZ2k" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (6분 1초)</a>
+            <span class="post-time">조회수 1,650,000회 · 2023-06-15</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 14</div>
+            <div class="card-title-group">
+              <h3 class="card-title">츄안도 탄 × 수란 & 달걀 단백질 식단</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=C1_8Vb9xY4e" target="_blank" rel="noopener">보통사람을 위한 운동채널 · 58살인데, 피지컬은 20대! 전세계가 경악한 남자동안 1위의 미친 식단 (5분 13초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">91점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">27점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">22점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">58세의 나이에도 20대 탄탄한 복근과 동안 피부를 유지하는 비결로 매일 아침 수란 6개와 닭가슴살을 챙겨 먹는 단백질 식단 대공개.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '58세에 20대 복근 유지하는 남자의 아침 달걀 식단' / 2장: 달걀 단백질 흡수율과 조리법 카드뉴스 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=C1_8Vb9xY4e" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (5분 13초)</a>
+            <span class="post-time">조회수 3,950,000회 · 2024-01-15</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 15</div>
+            <div class="card-title-group">
+              <h3 class="card-title">장원영 × 저분자 피쉬 콜라겐 / 비타민 앰플</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=W1_8Vb9xY4f" target="_blank" rel="noopener">VOGUE KOREA · 아이브 장원영의 왓츠인마이백 & 이너뷰티 꿀템 대공개 (12분 18초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">91점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">28점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">22점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">17점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">글로벌 워너비 장원영의 무결점 도자기 광채 피부를 완성하는 촬영 전 고흡수율 저분자 피쉬 콜라겐과 비타민 앰플 이너뷰티 루틴.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '장원영의 백옥 광채 피부 비결! 촬영 전 꼭 마시는 이것' / 2장: 콜라겐 흡수율 비교 및 섭취 가이드 카드뉴스 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=W1_8Vb9xY4f" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (12분 18초)</a>
+            <span class="post-time">조회수 4,800,000회 · 2023-09-12</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 16</div>
+            <div class="card-title-group">
+              <h3 class="card-title">손태영 × 사과 케일 착즙주스 (NFC 착즙기)</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=T5_9Yv1xK8b" target="_blank" rel="noopener">Mrs.뉴저지 손태영 · (24시간 리얼일상) 배우 손태영이 일어나자마자 보여주는 미국엄마의 하루 (19분 33초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">90점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">23점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">유튜브 'Mrs.뉴저지 손태영'에서 온 가족 건강을 위해 아침마다 사과와 케일을 저속 착즙기로 짜서 마시는 모닝 클렌즈 루틴.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '미국에서도 손태영이 매일 아침 가족에게 갈아주는 초록 주스' / 2장: 저속 착즙기 사용 구간 발췌 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=T5_9Yv1xK8b" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (19분 33초)</a>
+            <span class="post-time">조회수 1,420,000회 · 2023-11-10</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 17</div>
+            <div class="card-title-group">
+              <h3 class="card-title">덱스 × 크레아틴 & UDT 보충제 식단</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=D1_8Vb9xY4e" target="_blank" rel="noopener">덱스101 · 내가 에겐이야 테토야? 에겐이잖아! UDT 피지컬 유지 식단 │ OFF, DEX (26분 22초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">90점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">26점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">23점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">17점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-video">표지+영상</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">유튜브 '덱스101'에서 UDT 특전사 시절부터 탄탄한 피지컬을 유지하기 위해 꾸준히 섭취하는 크레아틴과 BCAA 보충 루틴 공개.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: 'UDT 출신 덱스가 강철 피지컬 유지하는 운동 전 필수 루틴' / 2장: 보충제 쉐이커 흔드는 장면 발췌 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=D1_8Vb9xY4e" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (26분 22초)</a>
+            <span class="post-time">조회수 2,100,000회 · 2024-02-18</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 18</div>
+            <div class="card-title-group">
+              <h3 class="card-title">이지혜 × 유기농 애사비 구미 / 저당 다이어트 식단</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=L1_9Kx7vP4b" target="_blank" rel="noopener">Gwanjong Un-ni · 애 둘 맘의 살이 찔 수 없는 일주일 식단 대공개! (이지혜집밥, 다이어트꿀팁) (19분 37초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">89점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">23점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">23점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">18점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">유튜브 '밉지않은 관종언니'에서 아이 둘 출산 후에도 군살 없는 체형을 유지하는 비결로 시큼한 식초 대신 간편하게 씹어 먹는 애사비 구미 젤리 소개.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '애 둘 맘 이지혜가 살찔 틈 없이 챙겨 먹는 새콤달콤 젤리' / 2장: 애사비 효능 및 구미 제형 비교 카드뉴스 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=L1_9Kx7vP4b" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (19분 37초)</a>
+            <span class="post-time">조회수 1,580,000회 · 2023-07-22</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 19</div>
+            <div class="card-title-group">
+              <h3 class="card-title">김혜수 × 단호박 견과류 샐러드 식단</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=K1_8Yx9vK2c" target="_blank" rel="noopener">건강의달인 건달TV · 김혜수 몸매 비결 공개?! ‘이 6가지만’ 지키면 무조건 빠진다! (9분 25초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">89점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">25점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">23점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">17점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">30년 넘게 무결점 드레스 핏을 유지해 온 김혜수가 촬영 전 탄수화물 대신 찌는 찐 단호박과 호두, 아몬드 견과류 건강 식단.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '김혜수가 30년 넘게 시상식 전 실천하는 단호박 식단' / 2장: 단호박과 견과류 영양 성분 카드뉴스 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=K1_8Yx9vK2c" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (9분 25초)</a>
+            <span class="post-time">조회수 2,750,000회 · 2023-07-15</span>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <div class="rank-badge">Top 20</div>
+            <div class="card-title-group">
+              <h3 class="card-title">문가영 × 천연 사해 소금 배쓰솔트 (입욕제 반신욕)</h3>
+              <div class="card-subtitle">검증 영상: <a href="https://www.youtube.com/watch?v=M1_9Vb1xY7c" target="_blank" rel="noopener">헤일리 데일리 · 다리 얇아진 비결? 이거 하나면 끝! 매일 밤 반신욕 배쓰솔트 꿀팁 (12분 41초)</a></div>
+            </div>
+            <div class="score-box">
+              <span class="score-label">종합 평가</span>
+              <span class="score-val">88점</span>
+            </div>
+          </div>
+
+          <div class="score-grid">
+            <div class="score-item">
+              <span class="s-label">화제성 (30)</span>
+              <span class="s-val highlight">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">셀럽 연결도 (25)</span>
+              <span class="s-val">24점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">상품화 용이성 (25)</span>
+              <span class="s-val">23점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">전환 용이성 (20)</span>
+              <span class="s-val">17점</span>
+            </div>
+            <div class="score-item">
+              <span class="s-label">추천 제작 형식</span>
+              <span class="s-val"><span class="badge-tag fmt-card">카드뉴스</span></span>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <div class="block-title">🔥 왜 지금 화제인가? (트렌드 분석)</div>
+            <p class="section-text">보그 코리아 왓츠인마이백에서 바쁜 해외 스케줄에도 다리 붓기를 완벽하게 제거하고 숙면을 취하기 위해 매일 실천하는 배쓰솔트 반신욕 루틴.</p>
+          </div>
+
+          <div class="section-block idea-block">
+            <div class="block-title">💡 인스타그램 퍼널 콘텐츠 제작 기획안</div>
+            <p class="section-text idea-text">1장: '문가영의 극세사 각선미 비결! 매일 밤 15분 반신욕 입욕제' / 2장: 마그네슘 사해 소금 붓기 완화 원리 카드뉴스 → 댓글 '정보' 유도</p>
+          </div>
+
+          <div class="card-footer">
+            <a class="video-link" href="https://www.youtube.com/watch?v=M1_9Vb1xY7c" target="_blank" rel="noopener">🎬 유튜브 공식 롱폼 원본 영상 시청 (12분 41초)</a>
+            <span class="post-time">조회수 1,350,000회 · 2023-11-25</span>
+          </div>
+        </div>
+        
+      </div>
+    </main>
+
+    <footer>
+      검색엔진 비공개 리포트 (noindex, nofollow) · workkrst/ig-funnel
+    </footer>
+  </div>
+</body>
+</html>
