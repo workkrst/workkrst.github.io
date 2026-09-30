@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@ashtonisfree - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">Ashton</span>
+                    
+                    <a href="https://www.threads.net/@ashtonisfree" target="_blank" rel="noopener" class="username">@ashtonisfree</a>
+                </div>
+                <span class="post-date">2026-09-30 17:28</span>
+            </div>
+            <div class="post-text">점점 사용자 뿐만 아니라 실제 사용량도 늘어나고 있다. 몇달안에 월 100만 유저 만들고 만다.<br>결국 시장 파이가 큰 곳에서 놀아야 한다.</div>
+            <div class="media-grid"><div class="media-item"><img src="https://scontent-nrt6-1.cdninstagram.com/v/t51.82787-15/829432616_17947280310335617_4165883778428399712_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=111&amp;ig_cache_key=Mzk5NzQ4MTM3MTI5MDg5Njc0NQ%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTEyNC5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=GFZLb8VZevgQ7kNvwGOB2nh&amp;_nc_oc=AdqvGQYZNwvsi0O4zEDeOvQdUf-SIohcNAcTZ4B-vQQIebwYFVoI2_FcouU6TxhZeHChqmJW3aT7xDH4LjdwGVbs&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt6-1.cdninstagram.com&amp;_nc_gid=QqmvFm8bgS04PFdjvNfJxA&amp;_nc_ss=7e289&amp;oh=00_AQN50jnngnvxSrJLeZK-PxGnbYjv1pb1nECsjTQlE47tpw&amp;oe=6AC371D5" alt="Post media" loading="lazy"></div></div>
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 38</span>
+                    <span>💬 18</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@ashtonisfree/post/Dd56CCsCQlp" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (18개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@elabstudio_official</span>
+            <span class="reply-date">2026-09-30 18:06</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">월 100만 유저 목표 좋네요. 저흰 서비스 여러 개 만들어봤는데, 파이 큰 시장 고르는 것보다 처음 100명 어떻게 모으냐가 늘 더 오래 걸리더라고요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ashtonisfree</span>
+            <span class="reply-date">2026-09-30 18:16</span>
+            
+        </div>
+        <div class="reply-text">꾸준히 하다 보면 가속도가 붙는 단계가 옵니다. 그렇게 500만 달성했었는데 이제 또 다시 시작이네요 😂</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@mega.huga.ai</span>
+            <span class="reply-date">2026-09-30 18:35</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">사용자 수 옆에 실제 사용량까지 같이 올라가면 그래프 보는 맛이 두 배겠어요.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@somethingmaker</span>
+            <span class="reply-date">2026-09-30 19:17</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와 대다나다<br>무슨 서비스야?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ashtonisfree</span>
+            <span class="reply-date">2026-09-30 19:27</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">Ezpzfile.com 이 서비스야</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@felix.dev0</span>
+            <span class="reply-date">2026-09-30 20:00</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">멋지다!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ashtonisfree</span>
+            <span class="reply-date">2026-09-30 20:03</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">고마어!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@now.gayo</span>
+            <span class="reply-date">2026-09-30 20:07</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오오 너무멋있어서 스하리하구간당!!<br>변환할일있음 바로 찾으께🙌</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@cacalachichi</span>
+            <span class="reply-date">2026-09-30 20:34</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와 대단하다. <br>매출 전환은 어때? 보니까 광고랑 후원만 받던데.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ashtonisfree</span>
+            <span class="reply-date">2026-09-30 20:37</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">이제 오픈 한지 3주 됐는걸 😭</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@cacalachichi</span>
+            <span class="reply-date">2026-09-30 20:38</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와 3주만에 대단!<br>사실 나는 한 두달 됐어. 나는 처음부터 구독 모델러 시작했는데 우선 다운로드 받게 하는것도 쉽지 않네. 아 나는 앱이야.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ashtonisfree</span>
+            <span class="reply-date">2026-09-30 20:40</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">트래픽을 만들면 돈은 따라오게 되어 있어서 수익 모델을 고려하지 않고 있어 조급하게 안하려구</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@cacalachichi</span>
+            <span class="reply-date">2026-09-30 21:10</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">그렇군. 맞아 그게 좋은것 같아. 나도 처음에는 욕심이 있었는데 지금은 많이 내려놨어. 여유를 가지고 보려고. 화이팅!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dowoomi_app</span>
+            <span class="reply-date">2026-09-30 21:28</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">진짜 멋있다 화이팅💪🏻</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ashtonisfree</span>
+            <span class="reply-date">2026-09-30 21:33</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">호주친구도 가보자궁</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@crowdians</span>
+            <span class="reply-date">2026-09-30 22:00</span>
+            
+        </div>
+        <div class="reply-text">와 3주만에 저정도 사용자를 모으신거에요? 혹시 팁 같은거 있을까요? ㅎㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ashtonisfree</span>
+            <span class="reply-date">2026-09-30 22:02</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">이메일 마케팅(필요해보이는 기관 및 학교), 각종 서비스 런칭 사이트, 블로그, 등등 융단 폭격중이에요.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@crowdians</span>
+            <span class="reply-date">2026-09-30 22:04</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">역시 엄청난 노력이 바탕에 있었군요 100만 유저 응원하겠습니다!</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>

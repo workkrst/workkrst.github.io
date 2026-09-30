@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@ddalggak.boss - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">​딸깍보스 | 식품위탁판매 수익극대화 전문가</span>
+                    
+                    <a href="https://www.threads.net/@ddalggak.boss" target="_blank" rel="noopener" class="username">@ddalggak.boss</a>
+                </div>
+                <span class="post-date">2026-09-30 23:54</span>
+            </div>
+            <div class="post-text">9월도 끝! 매출 9억 넘겼네요<br><br>사실 추석 아니었으면 10억 그냥 넘었을텐데<br>(추석 선물세트 안팔았어요)<br><br>월 300받던 삶에서<br>월 순수익을 1.6억을 찍어보네요 단순 계산만 해봐도 이번 한달이 제 인생 50개월 벌어줬네요<br><br>쿠팡도 첫 달에 2억정도 만들어보니까<br>오히려 더 쉽고 단순했습니다 경쟁도 덜하고<br>(매출내긴 쉬운데 마진이ㅠㅠ)<br><br>여튼 저는 효율 충이라 매출만 높은거 <br>전혀 의미 없다고 생각합니다 여튼..!<br><br>저는 사업은 시간을 벌어주는 도구라고 생각해요<br><br>현재의 시간을 갈아 넣어서<br>결과를 만들어 미래의 시간을 벌어다 주는 도구<br><br>부업강의 너무 후킹 많이 하잖아요<br>하루 1시간 , Ai커머스 , 자는데도 돈 벌린다 ㅋㅋ<br><br>근데 그렇게 쉽고 진입장벽이 낮으면<br>특히 커머스는 바로 뺏기고 유지가 어렵습니다<br><br>근데 그 노하우? 그 유료강의에서 안 풀고<br>일부만 풀고 진짜 중요한건 가볍게 얘기합니다<br><br>오히려 그 중요한게 제일 기본이고 본질이거든요<br><br>그걸 좀 바로 잡아 보려고 합니다</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 21</span>
+                    <span>💬 10</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@ddalggak.boss/post/Dd6mHDQkj-H" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (3개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ddalggak.boss</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-01 00:01</span>
+                    <span class="reply-likes">❤️ 4</span>
+                </div>
+                <div class="reply-text">결국 누군가에게 무형적 유형적 상품이나 서비스를 파는걸 유통이라 합니다<br><br>결국 내 상품을 소비자에게 노출시켜 클릭을 유도하고 전환을 시키는게 본질이고 전부입니다.<br><br>수익을 올리려면 노출을 높이고 클릭율을 높이고 전환율을 높이면 되는거고. <br><br>싸게 가져와서 수익이 남으면 끝입니다.<br><br>참 쉽죠?<br><br>근데 아무도 어떻게 해야 남는지<br>어떤 상품을 어떤 방법으로 팔아야할지<br><br>어디서는 이렇게 팔고, 저기서는 요렇게 팔아야하는지 안알려줍니다<br><br>다들 하나같이 똑같이 얘기해요<br><br>&quot; 저 이렇게 딸깍해서 팔았어요 &quot;<br>&quot; 매출 얼마인데 하루 1시간 했어요 &quot;<br>&quot; 누구나 쉽게 할 수 일어요 &quot;<br><br>그 중에 고수분들도 계시는데<br>제가 그분들 강의 다 들어봤습니다<br><br>본인 실력과 강의력은 별개입니다<br>그리고 찐 노하우는 사소한것에서부터 나오는건데 그런걸 전부 담을 수 있을까요? 쉽지 않습니다<br><br>어떤 플랫폼에서 파냐도 중요하지만<br>결국 실력을 길러야됩니다..<br><br>그걸 알려주는 커머스 강사가 몇이나될까요?</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ddalggak.boss</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-01 00:16</span>
+                    <span class="reply-likes">❤️ 2</span>
+                </div>
+                <div class="reply-text">저는 퇴사하고 3개월 동안<br><br>9시에 일 시작해서 새벽 1~2시까지 일하고 쓰러져 자고 반복했습니다<br><br>토요일은 cs하루종일 하고 <br>일요일부터 다시 반복<br><br>부업으로 월 100만원만 더 벌어보고싶다라는 생각 저도 했습니다<br><br>근데 지금은 주말에 쌓이는 재주문만 2-300만원입니다 그게 식품의 매력적인 부분이기도 하구요<br><br>장점도 뚜렷하고 단점도 뚜렷한데<br>그 장점이 단점을 커버하고도 남습니다<br><br>말이 길어지는데 드리고 싶은 말씀은<br><br>쉬운건 인생에 없습니다<br>졸라 열심히 6개월만 갈아넣어보세요<br><br>진짜로 인생이 바뀝니다<br>쉽게 얻은 성과는 쉽게 뺏깁니다..<br><br>AI는 언제나 보조수단이고 생산성도구지 만능이 아니에요...<br><br>특히 커머스는 플랫폼마다 로직이 있고<br>꼼수가 있고 편법이 있습니다<br><br>그냥 올린다고 팔리면 상위셀러들 다 망했죠ㅋㅋㅋㅋㅋㅋㅋ</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ddalggak.boss</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-01 00:23</span>
+                    
+                </div>
+                <div class="reply-text">그래서 뭐 언제 알려줄거냐고 싶으시죠?<br><br>사실 뚜렷한 계획은 없습니다 ㅎㅎ<br><br>뭔가 하더라도 정말 소수로 진행해보고<br>제가 누굴 가르칠 자격이 있는지 점검해 보고싶네요</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (10개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kcool_2024</span>
+            <span class="reply-date">2026-10-01 00:09</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">우와 대단하네요..말로만 듣던 억대 순수익 .  대단하십니다.  저는 9월엔 폭망했는데.<br>스하리 하고 갑니다.  자주 볼께요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddalggak.boss</span>
+            <span class="reply-date">2026-10-01 00:25</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">등락이 있어야 고점이 뚫리더라구요 ㅎㅎ 화이팅</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hi.developer_</span>
+            <span class="reply-date">2026-10-01 00:13</span>
+            
+        </div>
+        <div class="reply-text">와 건보료랑 재산세 소득세는 얼마나 내시는거에요?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddalggak.boss</span>
+            <span class="reply-date">2026-10-01 00:16</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">많이내죠 직원도 있어서</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@rneogud</span>
+            <span class="reply-date">2026-10-01 00:20</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">대단쓰</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ke_rin_2</span>
+            <span class="reply-date">2026-10-01 01:27</span>
+            
+        </div>
+        <div class="reply-text">형님 개부자시네여ㄷㄷ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddalggak.boss</span>
+            <span class="reply-date">2026-10-01 01:28</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">제가 기준이 높아서 아직 서민입니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@mrseo_ssi</span>
+            <span class="reply-date">2026-10-01 01:30</span>
+            
+        </div>
+        <div class="reply-text">대단하네~~나도 한번 배워보고 싶네요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddalggak.boss</span>
+            <span class="reply-date">2026-10-01 01:36</span>
+            
+        </div>
+        <div class="reply-text">편하게 연락주세요~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@sjinhx</span>
+            <span class="reply-date">2026-10-01 01:53</span>
+            
+        </div>
+        <div class="reply-text">진짜 궁금하네 ㅋㅋㅋㅋㅋㅋ 멀리서 몰래 훔쳐보고싶다...</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>

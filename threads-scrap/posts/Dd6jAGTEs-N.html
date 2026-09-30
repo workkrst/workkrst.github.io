@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@korean_money_printer - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">코리안 머니 프린터</span>
+                    
+                    <a href="https://www.threads.net/@korean_money_printer" target="_blank" rel="noopener" class="username">@korean_money_printer</a>
+                </div>
+                <span class="post-date">2026-09-30 23:26</span>
+            </div>
+            <div class="post-text">코리안 머니 프린터가 싹 다푸는 3개월 간 2,500만 원 매출 만드는 방법 (인증 완)<br><br>&quot;개구라 스캠, 주작아니에요?&quot;<br><br>개구라 스캠, 주작이라 생각 되면 스킵 ㄱㄱ.<br><br>한 가지 사례를 들어 보자.<br><br>매출 비법 소스가 있다면 얼마에 사겠는가?<br><br>3765000원, 3120000원, 982100원, 389600원, 87200원.<br><br>중 어느 가격에 사겠는가?<br><br>이게 Pricing 전략 중 하나다.<br><br>&quot;엥, Pricing 전략이 뭐에요?&quot;<br><br>너의 제품/서비스에 가격표를 붙이는 일인데, 여기에도 숨겨진 전략이 있다.<br>(ㄹㅇ 개꿀팁이니 7번만 반복해서 읽어라.)<br><br>&quot;&quot;&quot;&quot;&quot;<br>너가 진짜 개쩌는 제품이라고 &quot;믿는다면&quot;<br>(최소한 메이커, 창업자는 내가 만다는 제품이, 개쩌는 제품이라 &quot;믿어야&quot; 한다.)<br><br>너가 가격을 결정 해야 해야 한다.<br>&quot;&quot;&quot;&quot;&quot;<br><br>&quot;헤에에...? 너무 당연한 말 아니에요??&quot;</div>
+            <div class="media-grid"><div class="media-item"><img src="https://scontent-nrt6-1.cdninstagram.com/v/t51.82787-15/825324748_17988723189117942_4882835364286056763_n.jpg?stp=cp6_dst-jpg_e35_tt6&amp;_nc_cat=106&amp;ig_cache_key=Mzk5NzY2MTU1NzYzNTA3NTk4MQ%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMjM4Mi5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=V1utVrWc7YoQ7kNvwEcwVgC&amp;_nc_oc=AdrHFshRnmK8QeQAZ9BTaZydWCdc8351VGqmfJj1PryKUoKSyxxCf6XboTQp5_LFffRh95LgE5SDikoFTbL73rYN&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt6-1.cdninstagram.com&amp;_nc_gid=hU6INxKEJSnS6sW9pw0nVg&amp;_nc_ss=7e289&amp;oh=00_AQPcQIfbiDa_Nd6iwhwUL3VOY_57VrDyPshT1Sq8f5opsg&amp;oe=6AC36FD9" alt="Post media" loading="lazy"></div></div>
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 8</span>
+                    <span>💬 0</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@korean_money_printer/post/Dd6jAGTEs-N" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (3개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@korean_money_printer</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-09-30 23:27</span>
+                    <span class="reply-likes">❤️ 5</span>
+                </div>
+                <div class="reply-text">너무 당연하지만, 너무 당연한 것에 진리가 숨어 있다.<br><br>두 번째로는 앵커링을 해야 한다.<br><br>앵커링은 반드시 &quot;높은 순서대로 제시&quot;를 해야 한다.<br><br>3765000원, 3120000, 982100원, 389600원, 87200원.<br><br>또한, 앵커링이 제시 되는 순간에 고민은<br><br>&#x27;살까, 말까?&#x27;<br>&#x27;어떤 가격에 살까?&#x27;로 된다.<br><br>쉽게 말하면, 넛지이고, 조금 더 나아가면 다크 심리학이 가미 된다.<br><br>100원 단위까지 한 이유는 진짜 할인처럼 보이기 위헤서이다.<br><br>&quot;아하 그렇구나 뭔가 모르겠지만, 알 거 같기도 하고 ^_^&quot;<br><br>코머프가 항상 강조 하는 것은 페이드 마케팅인데, 조금 밤티 광고들과 제품들이 너무 많이 보인다. 코머프가 뚝배기(=머리)을 박아 가면서 실행을 강조하는데, 지금바로 실행하는 사람이 늘어 나고 있다.<br><br>&quot;엥? 자의식 과잉 아닌가요?&quot;<br><br>그럴 수 있다. 하지만, 내가 강조하고 싶은 부분은 이미 그들은 스타트 라인을 끊고 전력질주 하기 시작 했다는 것이다.<br><br>&quot;오호..&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@korean_money_printer</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-09-30 23:27</span>
+                    
+                </div>
+                <div class="reply-text">그리고, 개밤티 제품 뿐만이 아니라, 개밤티 퍼널에도 문제가 있다.<br><br>진짜 ㅈㄴㄱ 고민을 한 흔적이 전혀 느껴지지 않는 제품이 93% 이상이다.<br><br>&quot;엥 근데, 퍼널은 무슨 말이에요?&quot;<br><br>퍼널은 깔대기라는 말인데, &quot;사용자를 부으면&quot;, 퍼널의 마지막단 (결제 + 재구매 or 리드 확보)까지 어떻게 설계할 것이냐에 대한 것이다.<br><br>&quot;헤에엥? 페이드 마케팅만 하면 되는 거 아니에요?&quot;<br><br>페이드 마케팅에 대해서 오디언스들이 웜업이 시작 되었으니, 이제 다음 단계로 나아갈 차례다. (페이드 마케팅은 주기적으로 이야기할 것이다.)<br><br>퍼널을 보면, 목표는 결국 (결제 + 재구매 or 리드 확보)이다. 반드시 반드시 반드시 기억해라. (별표 30만개)<br><br>가끔 메타 광고에서 &quot;트래픽&quot;으로 돌리는 사람이 있는데, 그냥 근처 보육원에 기부하는 게 이득이다. (이것을 언급 안하면 그냥 강의팔이 ㅅㄲ니깐 먹금 하고 환불 요청해라.)<br><br>&quot;오호라.. 이런 개꿀팁을 이제 그만 뿌리시죠..?&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@korean_money_printer</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-09-30 23:27</span>
+                    <span class="reply-likes">❤️ 1</span>
+                </div>
+                <div class="reply-text">이런 개꿀 팁은 전부 싹 다 계속 푼다.<br><br>상위 1%만 1,000만원+ 매출을 내고, 심지어는 그들은 대가리 깨져 가면서 배운 것을 쉽게 공유 하지 않는다. (세상의 이치다)<br><br>&quot;그러면... 코리안 머니 프린터 님은 왜 공유 함요...?&quot;<br><br>내 글을 팔로우 한다면 알겠지만, 어느 강의팔이, 전자책 팔이와 다름 없이 강의팔이, 전자책 팔이를 하려고 했다.<br><br>&quot;엥...? 무료로 개꿀통, 개꿀팁 싹다 푸는 코머프가...?&quot;<br><br>그렇다. 하지만, 내가 글에서도 적었지만, 전자책, 강의를 사지 않아도 된다.<br>(나는 팔지도 않는다.)<br><br>그냥 내 프로필 링크를 복사해서 지피티에 넣으면 돈 복사 되도록 쓰레드에 글을 계속 쓰는 것이다.<br><br>심지어 이미 대기업 출신들은 이미 하고 있다.<br><br>내 한 마디에 소름 돋으면서 실행하러 간 사람들은 계 탄 것이다.<br><br>바이브 코딩, 페이드 마케팅을 통한 수익화가 궁금하면 바나프레소 시그니처 아아 한 잔 준비 후 DM ㄱㄱ<br><br>개꾸르팁 보따리 싹다 푸는 중</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (0)</h3>
+            <p class="empty-replies">등록된 댓글이 없습니다.</p>
+        </div>
+        
+    </div>
+</body>
+</html>

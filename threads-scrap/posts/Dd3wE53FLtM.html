@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@korean_money_printer - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">코리안 머니 프린터</span>
+                    
+                    <a href="https://www.threads.net/@korean_money_printer" target="_blank" rel="noopener" class="username">@korean_money_printer</a>
+                </div>
+                <span class="post-date">2026-09-29 21:23</span>
+            </div>
+            <div class="post-text">3개월 간 월 2,500만 원 매출을 만든 &quot;페이드 마케팅 공식&quot;<br><br>코리안 머니 프린터인 내가 뚝배기(=머리) 깨져 가면서 배운 것들 공짜로 싹다 푼다. (약 330만 원 상당 ㄷㄷㄷㄷ)<br><br>&quot;페이드 마케팅&quot;을 모르면 다음 글로 ㄱㄱ (어차피 돈 못 범)<br><br>&quot;님아, 이제 페이드 마케팅 하려고 하는데, 어떻게 해야 해요?&quot;<br><br>0. 비즈니스 포트폴리오 생성 및 광고 계정 생성<br>1. 메타 픽셀, 전환 API 설치.<br>2. 전환 이벤트 (구매 등) 심기<br>3. 소재 제작.<br><br>캠페인 - 세트 - 소재<br><br>이 순서만 알면 된다.<br><br>1-1-N으로 해야 한다.<br><br>계속</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 26</span>
+                    <span>💬 4</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@korean_money_printer/post/Dd3wE53FLtM" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (1개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@korean_money_printer</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-09-29 21:23</span>
+                    <span class="reply-likes">❤️ 8</span>
+                </div>
+                <div class="reply-text">그냥 모르겠으면, 이번 글 싹다 복사해서 지피티나 클로드에게 쉽게 설명해달라고 하면 된다. 진리임. <br><br>그리고, 정적 이미지 소재의 비율도 중요하다.<br> <br>A. 9:16<br>B. 4:5<br>C. 1:1 등이 있음.<br><br>이제 여기까지 왔으면 이런 말을 한다.<br><br>&quot;소재는 어떻게 만들어야 하는지 모르겠어요 ㅠㅠ&quot;<br><br>1. 아바타/페르소나<br>2. 앵글<br>3. 오퍼<br>4. 광고 포멧.<br><br>각각 3x3x3x3 하면 벌써 81개의 소재가 나온다. <br><br>적당히 조합하면 끝임.<br><br>광고 지표에서는 다음과 같은 것들을 보면 된다.<br><br>CPM, CPI(앱), ROAS, ROI, CVR, CPC, 프리퀀시(스펠링 몰라 한글로 표기), 등이 있음.<br><br>&quot;헤엣, 그러면 하루에 얼마 광고비로 써야 해용?&quot;<br>-&gt; 하루에 5만 원 태워라. (이것도 못 태우면 그냥 쓰레드에 평생 홍보 ㄱㄱ)<br><br>소재는 세트당 최소 5개로 ㄱㄱ (보통 5만 원이면, 특정 소재에 몰림)<br><br>궁금한 거 있으면, DM ㄱㄱ<br><br>ㄹㅇ 개꾸르팁 싹다 푸는 중</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (4개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@mkr_logg</span>
+            <span class="reply-date">2026-09-29 21:57</span>
+            
+        </div>
+        <div class="reply-text">잘써먹겠습니다 감사합니다!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@status_code_301</span>
+            <span class="reply-date">2026-09-29 23:00</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">배부르다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@korean_money_printer</span>
+            <span class="reply-date">2026-09-29 23:06</span>
+            
+        </div>
+        <div class="reply-text">등 따숩고 배부르도록 가주아</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@magu___mnmk</span>
+            <span class="reply-date">2026-09-29 23:46</span>
+            
+        </div>
+        <div class="reply-text">굿</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
