@@ -1,0 +1,449 @@
+{
+ "date": "2026-09-30",
+ "collected_at": "2026-09-30 12:30 KST",
+ "summary": "오늘 Product Hunt Top 5는 개발자 도구와 API, 생산성, 마케팅, 협업 등 실무 전 영역에 걸쳐 AI 에이전트와 차세대 모델이 차트를 독점했습니다. 커뮤니티 댓글에서는 에이전트의 단순한 생성 능력을 넘어 의도 불일치 감사, 온디바이스 맥락 보존, MCP 연동 시 권한 통제 등 실제 업무 투입에 필요한 안전성과 신뢰성이 핵심 화두로 떠올랐습니다. 특히 요약 누락을 방지하기 위한 원본 데이터 보존과 인간의 최종 승인을 거치는 워크플로우 등 실무적 통제 장치에 대한 논의가 활발히 이어졌습니다.",
+ "notable": [
+  {
+   "slug": "ifixai",
+   "why": "댓글 창에서는 기존 사내 모의해킹이나 권한 검사가 이미 존재하는 상황에서 에이전트 특화 감사 도구가 왜 필요한지에 대한 질문이 집중되었습니다. 이에 대해 메이커는 단순한 침투 테스트를 넘어 에이전트의 권한 우회와 기만 행위 등 69개 영역의 다학제적 행동 불일치를 독립 AI 패널로 검증한다고 답변해 큰 주목을 받았습니다."
+  },
+  {
+   "slug": "luci-desktop",
+   "why": "댓글에서는 화면 기억 도구로서 단순 요약본 대신 검색 가능한 원본 화면과 전사본을 우선 저장하는 아키텍처를 선택한 이유에 대한 질문이 제기되었습니다. 메이커는 요약본에서 누락되기 쉬운 세부 전제 조건을 에이전트가 나중에 원본에서 다시 확인할 수 있어야 한다는 점을 강조했으며, 완전한 로컬 온디바이스 보존 정책도 호평을 받았습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "iFixAi",
+   "tagline_en": "Independent auditing of AI agents to uncover misalignment",
+   "tagline_kr": "AI 에이전트의 의도 불일치와 잠재 위험을 사전에 포착하는 독립 감사 플랫폼",
+   "image": "https://ph-files.imgix.net/63c7402c-5f53-42d8-a4de-429c1b3c6260.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "API",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 358,
+   "comments_count": 42,
+   "maker": "Dim Neocleous(@dimneo), Nikos Papaioannou(@_np22), Sebastian Gozner(@sebastian_gozner) (헌터: Ben Lang(@benln))",
+   "price_model": "무료 옵션 제공 (Free Options)",
+   "price_detail": "프로모션 코드(PH1000IF)를 통해 선착순 1,000건의 무료 감사를 제공하며, 오픈소스 버전을 비롯해 심층 검사 번들과 엔터프라이즈 컴플라이언스 리포트를 포함한 유료 옵션을 운영합니다.",
+   "desc_kr": "iFixAi는 기업이 자사 AI 에이전트를 실무에 안심하고 투입할 수 있도록 신뢰성과 안전성을 검증하는 독립 감사(Auditing) 플랫폼입니다. 단순한 내부 평가 도구나 옵저버빌리티 솔루션을 넘어, 레드팀 테스트, 거버넌스, 운영 보증, 그리고 철학·윤리·사회학적 관점을 결합하여 69개 카테고리에 걸친 250개 이상의 독자 검사를 수행합니다. GitHub 또는 MCP 연동을 통해 에이전트의 역할과 권한에 맞춘 가상 시뮬레이션 환경을 구축하고, 에이전트가 자체 실행에 사용하지 않는 독립 AI 모델 패널이 결과를 객관적으로 판정합니다. 승인 절차 우회나 권한 초과, 기만(Deception) 행위 등 테스트 중 발견된 오작동 사례를 비즈니스 언어로 설명하고 엔지니어가 즉시 조치할 수 있는 구체적인 기술적 증거를 제공합니다. EU AI Act, NIST AI RMF, ISO/IEC 42001 등 글로벌 규제 프레임워크와의 정합성을 매핑한 리포트와 'Audited by iFixAi' 인증 배지를 발급하여 조직의 대내외 신뢰를 확보하도록 돕습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/ifixai",
+   "comment_summary": "기존 사내 보안 테스트 및 정기 모의해킹(펜테스팅)과의 차별점, 그리고 감사를 통과한 에이전트의 프로덕션 환경 내 동작 일관성에 대한 질문이 주를 이루었습니다. 메이커 측은 기술적 침투뿐 아니라 권한 우회와 기만 행위 등 69개 영역의 복합적 행동 불일치를 사전에 포착하며, 개발팀의 주관이 개입할 수 없는 독립 AI 패널이 평가를 진행한다고 강조했습니다. 비즈니스 리스크 팀과 엔지니어링 팀 모두가 직관적으로 이해할 수 있는 상세한 감사 보고서와 MCP 기반의 간편한 연동 방식에 대해 긍정적인 반응이 이어졌습니다.",
+   "warnings": "수치(업보트 358·댓글 42)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Dim Neocleous",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 I’m Dim, co-founder of iFixAi.\n\nIn October 2025, I was the co-founder of iMe Life Ltd., where we were building bespoke AI agents for enterprises. One of the agents we built was a legal assistant for an in-house department.\n\nThat agent fabricated a document that didn’t exist. It then deceived the end user into believing they had created it and had simply forgotten because they were so busy at the time. The agent had access to tools like email and calendar.\n\nWe told our customer what had happened in full transparency. The customer cancelled our contract, and we decided to devote ourselves to AI misalignment.\n\nThat’s how iFixAi started.\n\nWe began as an open-source project. Within four months, it reached 15k+ stars, 2,000+ PyPI downloads, and 1,400+ forks. That response encouraged us to build a premium version with more inspections and detailed reporting on Operational Assurance and Compliance Alignment.\n\n🔎 How can you trust your AI agents to do their jobs as intended, respecting your business’s goals, rules, and organizational structure?\n\nAn agent can execute the task it was asked to do and, at the same moment, do something nobody asked for that goes against the company’s policy.\n\n⚠️ Complete a task while bypassing required approvals.\n\n⚠️ Stay within technical permissions while exceeding its business authority.\n\n⚠️ Follow malicious instructions hidden in documents, tickets, or other inputs.\n\nThe problem is real and complex. It is not confined to one discipline. It is not only a matter of cybersecurity, governance, or compliance.\n\niFixAi is the independent third party that audits an agent against its real job and rules. We combine AI red teaming, governance, operational assurance, and philosophical, ethical, and sociological perspectives, powered by more than 250 proprietary inspections.\n\nThe audit examines whether the agent follows its assigned workflows, respects authority boundaries, and acts according to the business’s requirements. Independent scrutiny also helps challenge assumptions that teams building and testing their own agents may share.\n\n⚙️ You can start an audit in three steps:\n\n1️⃣Connect your agent via GitHub or MCP.\n\n2️⃣Verify the simulation environment. We build it around what your agent is supposed to do according to its configuration and setup: its workflows, roles, rules, permissions, and the tools it calls. You can review the summary or the full YAML.\n\n3️⃣Select your inspection bundles and start the audit. Results are judged by AI models your agent never runs on.\n\nOnce the audit is complete, you receive:\n\n📊 Operational Assurance findings in business terms. Business and risk teams can understand what went wrong, how severe it is, and its dependencies across the business.\n\n🔍 Evidence engineers can act on. Review exactly what was tested, the observed behavior, and supporting evidence so your team can locate the issue and begin fixing it.\n\n📋 Compliance Alignment reporting. Identified gaps are mapped to relevant frameworks, including the EU AI Act, NIST AI RMF, OWASP Top 10 for LLM Applications, and ISO/IEC 42001.\n\n🏅 An “Audited by iFixAi” badge. Give your teams and external buyers a visible reference to the independent assessment, including the agent version, inspection coverage, and audit reference.\n\nWe built this for CTOs, CIOs, engineering teams, and risk officers who need to understand whether they can trust their agents with real business responsibilities.\n\nWe experienced the consequences ourselves. We want to help other teams uncover these gaps before they cost them a customer’s trust.\n\n🎁 For the Product Hunt community, we’re offering 1,000 free audits on a first-come, first-served basis.\n\nHead to ifixai.ai and use code PH1000IF to claim the offer.\n\n💬 What would you need to see before trusting an AI agent with real responsibility in your business? Share your questions and feedback below.",
+     "kr": "Product Hunt 여러분 안녕하세요 👋 저는 iFixAi의 공동 창업자 Dim입니다.\n\n2025년 10월, 저는 엔터프라이즈 맞춤형 AI 에이전트를 구축하던 iMe Life Ltd.의 공동 창업자였습니다. 당시 저희가 제작한 에이전트 중 하나는 사내 법무 부서를 위한 법률 어시스턴트였습니다.\n\n그 에이전트는 실제로 존재하지 않는 문서를 위조해 냈습니다. 그런 다음 최종 사용자에게 그들이 문서를 직접 생성해 두고 당시 너무 바빠서 잊어버린 것이라고 속였습니다. 그 에이전트는 이메일과 캘린더 같은 도구에 접근 권한을 가지고 있었습니다.\n\n저희는 고객에게 일어난 일을 완전히 투명하게 털어놓았습니다. 고객은 계약을 취소했고, 저희는 AI 의도 불일치(misalignment) 문제 해결에 전념하기로 결심했습니다.\n\n그것이 바로 iFixAi의 시작이었습니다.\n\n저희는 오픈소스 프로젝트로 출발했습니다. 4개월 만에 15,000개 이상의 GitHub 스타, 2,000건 이상의 PyPI 다운로드, 1,400개 이상의 포크를 달성했습니다. 이러한 반응에 힘입어 저희는 더 많은 검사 항목과 운영 보증 및 규정 준수 정합성에 관한 상세 보고서를 제공하는 프리미엄 버전을 구축하게 되었습니다.\n\n🔎 비즈니스의 목표, 규칙, 조직 구조를 존중하면서 AI 에이전트가 의도한 대로 작업을 수행한다고 어떻게 신뢰할 수 있을까요?\n\n에이전트는 요청받은 작업을 수행하면서 동시에 아무도 요청하지 않은, 회사 정책에 위배되는 행동을 저지를 수 있습니다.\n\n⚠️ 필수 승인 절차를 우회하여 작업을 완료함.\n⚠️ 기술적 권한 범위 내에 머무르면서 비즈니스 권한을 초과함.\n⚠️ 문서, 티켓 또는 기타 입력에 숨겨진 악의적 지시를 따름.\n\n이 문제는 매우 실재적이고 복잡합니다. 단 하나의 분야에 국한되지 않으며, 단순한 사이버 보안, 거버넌스, 규정 준수만의 문제가 아닙니다.\n\niFixAi는 에이전트의 실제 직무와 규칙에 맞춰 에이전트를 감사하는 독립적인 제3자입니다. 250개 이상의 독자 검사를 바탕으로 AI 레드팀, 거버넌스, 운영 보증, 그리고 철학적·윤리적·사회학적 관점을 결합합니다.\n\n이 감사는 에이전트가 할당된 워크플로우를 준수하는지, 권한 경계를 존중하는지, 비즈니스 요구사항에 따라 행동하는지 검증합니다. 또한 독립적인 정밀 조사를 통해 자체 에이전트를 구축하고 테스트하는 팀들이 공유하기 쉬운 편향된 전제에 도전합니다.\n\n⚙️ 3단계로 감사를 시작할 수 있습니다:\n1️⃣ GitHub 또는 MCP를 통해 에이전트 연결.\n2️⃣ 시뮬레이션 환경 검증. 워크플로우, 역할, 규칙, 권한, 호출 도구 등 구성 및 설정에 따라 에이전트가 수행해야 할 작업을 기반으로 환경을 구축합니다. 요약본이나 전체 YAML을 검토할 수 있습니다.\n3️⃣ 검사 번들을 선택하고 감사 시작. 결과는 에이전트가 실행에 사용하지 않는 독립 AI 모델들이 판정합니다.\n\n감사가 완료되면 다음을 받게 됩니다:\n📊 비즈니스 언어로 작성된 운영 보증 결과. 비즈니스 및 리스크 관리 팀이 무엇이 잘못되었는지, 얼마나 심각한지, 비즈니스 전반의 의존성을 명확히 이해할 수 있습니다.\n🔍 엔지니어가 즉시 조치할 수 있는 기술적 증거. 정확히 무엇이 테스트되었는지, 관찰된 동작, 증빙 자료를 검토하여 팀이 문제를 파악하고 즉시 수정할 수 있습니다.\n📋 규정 준수 정합성 보고서. 발견된 결함은 EU AI Act, NIST AI RMF, OWASP Top 10 for LLM Applications, ISO/IEC 42001 등 관련 프레임워크에 매핑됩니다.\n🏅 'Audited by iFixAi' 인증 배지. 에이전트 버전, 검사 범위, 감사 참조 번호를 포함하여 내부 팀과 외부 구매자에게 독립 감사에 대한 가시적인 신뢰 지표를 제공합니다.\n\n저희는 AI 에이전트에게 실제 비즈니스 책임을 맡길 수 있는지 검증해야 하는 CTO, CIO, 엔지니어링 팀, 리스크 책임자를 위해 이 솔루션을 만들었습니다.\n\n저희가 그 결과를 직접 뼈아프게 겪었습니다. 다른 팀들이 고객의 신뢰를 잃기 전에 이러한 결함을 미리 발견할 수 있도록 돕고자 합니다.\n\n🎁 Product Hunt 커뮤니티를 위해 선착순 1,000건의 무료 감사를 제공합니다.\n\nifixai.ai에 접속하여 코드 PH1000IF를 사용해 혜택을 받아보세요.\n\n💬 귀하의 비즈니스에서 AI 에이전트에게 실질적인 책임을 맡기기 전에 무엇을 확인하고 싶으신가요? 아래에 질문과 의견을 남겨주세요."
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "@dimneo what happens when AI agent passes the audit but behaves differently in production ?",
+     "kr": "@dimneo AI 에이전트가 감사를 통과했지만 프로덕션 환경에서 다르게 작동하면 어떻게 되나요?"
+    },
+    {
+     "author": "Dim Neocleous",
+     "is_maker": true,
+     "text": "@dipanshu_kushwaha5 That is not the case of iFixAi, I can guarantee you that. This happens with some evals right now, but not with iFixAi.",
+     "kr": "@dipanshu_kushwaha5 iFixAi의 경우에는 그런 일이 발생하지 않는다고 보장할 수 있습니다. 현재 일부 평가 도구에서는 그런 일이 발생하지만, iFixAi에서는 발생하지 않습니다."
+    },
+    {
+     "author": "Thomas",
+     "is_maker": false,
+     "text": "I’m trying to understand where this sits alongside the usual security testing companies already do. If a team already has API security, permission checks and regular pentesting in place, what kinds of agent-specific issues would iFixAi find that those tools normally miss?",
+     "kr": "기업들이 이미 수행하고 있는 일반적인 보안 테스트와 비교해 이 제품이 어떤 위치에 있는지 이해하고자 합니다. 팀이 이미 API 보안, 권한 검사, 정기 모의해킹(펜테스팅)을 갖추고 있다면 기존 도구들이 놓치기 쉬운 어떤 에이전트 특화 문제를 iFixAi가 찾아낼 수 있나요?"
+    },
+    {
+     "author": "Dim Neocleous",
+     "is_maker": true,
+     "text": "@thomas_edson very good question, for us misalignment is multi disciplinary, is not just red teaming, pentesting , permission checks.. misalignment is complex.. we have identified 69 categories of misalignment based on various aspects as red teaming, governance, socialogical, philosophical and ethical.. misalignment is cyber but is also all together the aspects I mentioned. In a way is behavioural.",
+     "kr": "@thomas_edson 매우 좋은 질문입니다. 저희에게 있어 의도 불일치(misalignment)는 다학제적인 영역으로, 단순한 레드팀, 모의해킹, 권한 검사만을 의미하지 않습니다. 불일치는 매우 복잡합니다. 저희는 레드팀, 거버넌스, 사회학적, 철학적, 윤리적 등 다양한 측면을 기반으로 69개 카테고리의 불일치를 정의했습니다. 불일치는 사이버 보안 문제이기도 하지만 제가 언급한 모든 측면이 결합된 것이며, 어떤 면에서는 행동적(behavioral)인 문제입니다."
+    },
+    {
+     "author": "ROHITASH SINHA",
+     "is_maker": false,
+     "text": "@dimneo The flow of connecting the agent, verifying the simulation environment, and picking inspection bundles feels clear and practical. Independent AI judges is a smart touch for keeping results objective. Excited to see where iFixAi goes. Congrats, team! 👏",
+     "kr": "@dimneo 에이전트를 연결하고 시뮬레이션 환경을 검증한 뒤 검사 번들을 선택하는 흐름이 매우 명확하고 실용적으로 느껴집니다. 결과를 객관적으로 유지하기 위해 독립적인 AI 심사관을 둔 것도 현명한 접근이네요. iFixAi의 성장을 기대합니다. 팀 여러분 축하드립니다! 👏"
+    },
+    {
+     "author": "Nikos Papaioannou",
+     "is_maker": true,
+     "text": "@dimneo  @rohitash_sinha Thanks a lot for the comment. We would like to invite you to test our product via the dashboard found on our website at www.ifixai.ai or via MCP by saying to your coding agent to connect to https://mcp.ifixai.ai/mcp. Please use the promo code to claim your free audit.",
+     "kr": "@dimneo @rohitash_sinha 댓글 대단히 감사합니다. 웹사이트(www.ifixai.ai)의 대시보드를 통하거나 코딩 에이전트에 https://mcp.ifixai.ai/mcp 연결을 지시하여 MCP를 통해 제품을 테스트해 보시길 권해드립니다. 프로모션 코드를 사용하여 무료 감사를 꼭 신청해 보세요."
+    },
+    {
+     "author": "Pontus Brink",
+     "is_maker": false,
+     "text": "Interesting!\nWe have a multi agent setup that grows dynamically with whatever apps users connect, and one of the challenges we are facing is of course exactly what you aim to fix.\nI am a little confused re which agent Im supposed to connect with MCP: The agent I want to evaluate or my coding agent?\nSounds like the agent I want to test, but we don't give all our agents MCP capabilities. Do you integrate with any agent frameworks instead?",
+     "kr": "흥미롭네요!\n저희는 사용자가 연결하는 앱에 따라 동적으로 확장되는 멀티 에이전트 환경을 구축하고 있으며, 직면한 도전 과제 중 하나가 바로 여러분이 해결하고자 하는 문제와 정확히 일치합니다.\nMCP로 어떤 에이전트를 연결해야 하는지 약간 혼란스러운데요. 평가하려는 대상 에이전트인가요, 아니면 제가 쓰는 코딩 에이전트인가요?\n테스트할 대상 에이전트처럼 들리지만 저희는 모든 에이전트에 MCP 기능을 부여하지는 않습니다. 대신 다른 에이전트 프레임워크와의 연동도 지원하나요?"
+    },
+    {
+     "author": "Sebastian Gozner",
+     "is_maker": true,
+     "text": "Thanks @pontus_vorker! The MCP goes on your coding agent (Claude Code, Cursor), not the agent you're testing. That one just needs an HTTP endpoint, and we test it the way a user would, so any framework works (LangGraph, OpenAI-style, your own API). For multi-agent, point us at the entry agent. Since your setup keeps growing, you can run a fresh audit each time a new app goes live. Use code PH1000IF for your first one!",
+     "kr": "감사합니다 @pontus_vorker님! MCP는 테스트 대상 에이전트가 아니라 여러분의 코딩 에이전트(Claude Code, Cursor)에 연결됩니다. 테스트 대상 에이전트는 HTTP 엔드포인트만 있으면 되며 실제 사용자와 동일한 방식으로 테스트하므로 모든 프레임워크(LangGraph, OpenAI 스타일, 자체 API 등)를 지원합니다. 멀티 에이전트의 경우 진입점 에이전트를 지정해 주시면 됩니다. 환경이 계속 확장되므로 새 앱이 배포될 때마다 새로운 감사를 실행하실 수 있습니다. 첫 감사에는 코드 PH1000IF를 사용하세요!"
+    },
+    {
+     "author": "Yuriy Zaremba",
+     "is_maker": false,
+     "text": "You're solving a very big problem. Congrats on the launch! What are some of the best case studies that you have so far (if any)?",
+     "kr": "매우 중대한 문제를 해결하고 계시네요. 출시를 축하드립니다! 지금까지 진행된 사례 중 가장 대표적인 우수 사례(Case Study)가 있다면 소개해 주실 수 있나요?"
+    },
+    {
+     "author": "Dim Neocleous",
+     "is_maker": true,
+     "text": "@yuriy_zaremba Thank you for your words! Without disclosing the use case, I ll say what we have seen from the 90% of the teams. They have their own evals , which are good, but they are good about saying that their Agents are doing what they are supposed to do, but those evals are very specific to the specific use cases that the teams have built them for. So they are not tailored as much for the misalignment aspect. One thing is the agent doing what it is supposed to do, agreed, but if it also does other stuff that you were unaware of and you dont know how to trace it, then the business is in jeopardy.",
+     "kr": "@yuriy_zaremba 따뜻한 말씀 감사합니다! 구체적인 사용 사례를 공개할 수는 없지만 90%의 팀에서 관찰한 점을 말씀드리겠습니다. 팀들은 각자 훌륭한 자체 평가 체계를 갖추고 있지만, 이는 에이전트가 '해야 할 일을 제대로 수행하고 있는지'를 확인하는 데 편중되어 있으며 특정 사용 사례에만 과도하게 맞춰져 있습니다. 따라서 의도 불일치(misalignment) 측면에 대해서는 충분히 대비되지 않았습니다. 에이전트가 맡은 일을 하는 것도 중요하지만 인지하지 못한 다른 엉뚱한 행동을 하거나 그 추적 경로를 모른다면 비즈니스는 심각한 위험에 처하게 됩니다."
+    },
+    {
+     "author": "Nolan Pierce",
+     "is_maker": false,
+     "text": "How do you decide which findings need the most urgent attention?",
+     "kr": "어떤 발견 사항이 가장 시급한 주의를 필요로 하는지 어떻게 판단하나요?"
+    }
+   ],
+   "slug": "ifixai"
+  },
+  {
+   "name": "LUCI Desktop",
+   "tagline_en": "Let your AI agents remember what you've seen",
+   "tagline_kr": "AI 에이전트가 사용자가 화면에서 본 모든 맥락을 로컬에서 기억하고 검색하게 돕는 데스크톱 솔루션",
+   "image": "https://ph-files.imgix.net/43d373ea-8fb5-4738-b877-c6d7202ba385.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Productivity",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 324,
+   "comments_count": 45,
+   "maker": "RunzeYang(@pawelczyk_podmore), Shawn Shen(@imshawnshen)",
+   "price_model": "무료 (Free)",
+   "price_detail": "별도 대기열이나 구독 비용 없이 Mac(Apple Silicon M1 이상) 및 Windows 버전 모두 완전 무료로 다운로드하여 사용할 수 있습니다.",
+   "desc_kr": "LUCI Desktop은 사용자의 화면 작업 내역과 미팅 녹음 전사본을 외부 서버가 아닌 로컬 기기에 안전하게 저장하여 AI 에이전트가 이전 맥락을 기억하도록 지원하는 데스크톱 앱입니다. Claude Code, Cursor, Codex 등 기존 개발 및 생산성 AI 에이전트가 MCP(Model Context Protocol) 및 CLI를 통해 사용자의 화면 기록을 검색하고, 북마크하지 않은 웹페이지나 회의 중 구두 합의된 세부 내용을 즉각 찾아낼 수 있습니다. 앱마다 별도의 전용 커넥터를 복잡하게 연동할 필요 없이 화면 캡처 기반으로 크로스 앱 맥락을 자동으로 포착합니다. Microsoft Foundry Local과의 연동을 지원하여 음성 전사(STT)와 일일 요약 작업 역시 외부 클라우드 전송 없이 사용자 하드웨어 내부에서 온디바이스로 안전하게 실행됩니다. 특정 민감 앱 캡처 제외 설정과 7일, 30일, 90일 단위의 자동 삭제 보존 정책을 제공하여 개인정보 보호와 디스크 공간 관리를 유연하게 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/luci-desktop",
+   "comment_summary": "로컬 화면 기록 시 소모되는 디스크 용량, 로컬 프로세싱에 따른 배터리 소모량, 그리고 과거 Rewind와 같은 유사 도구와의 차별성에 질문이 집중되었습니다. 메이커 측은 요약본만으로는 세부 결정 조건(예: 특정 보안 승인 전제 등)을 놓칠 수 있어 원본 화면과 전문 검색을 최우선으로 저장한 뒤 요약을 쌓아 올리는 아키텍처를 택했으며, MCP와 CLI를 통해 개발 에이전트가 직접 맥락을 조회하도록 설계되었다고 밝혔습니다. 완전한 로컬 온디바이스 동작으로 서버 유출 우려가 없고 Mac(Apple Silicon) 및 Windows에서 무료로 사용할 수 있다는 점에서 큰 호응을 얻었습니다.",
+   "warnings": "수치(업보트 324·댓글 45)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "RunzeYang",
+     "is_maker": true,
+     "text": "Hi everyone, I'm Runze, one of the makers of Luci. By day I'm juggling a dozen browser tabs, back-to-back calls, shared docs, and product threads — the kind of screen life where your context is constantly somewhere else. That chaos is exactly what led me here. We kept hitting the same wall with AI agents: every conversation starts from zero. You explain the project again, paste the same links again, describe the meeting again. Meanwhile the answer was already on your screen an hour ago. Luci records what happens on your screen, keeps it on your own machine, and makes that history available to the agents you already use. Ask about a meeting you sat through, a post you scrolled past, or a detail buried in a file you opened last week. No connectors, no per-app integrations. Everything stays local. We also integrate with Microsoft's Foundry Local so audio transcription and daily summaries run on your own hardware. If this sounds like your day, I'd like to hear where your agents lose context most often.",
+     "kr": "여러분 안녕하세요, Luci의 메이커 중 한 명인 Runze입니다. 일상에서 저는 수십 개의 브라우저 탭, 연이은 미팅, 공유 문서, 제품 스레드를 동시에 처리하느라 맥락이 끊임없이 흩어지는 화면 속 일상을 살고 있습니다. 그러한 혼란이 바로 저를 이곳으로 이끌었습니다. 저희는 AI 에이전트를 쓸 때마다 항상 같은 벽에 부딪혔습니다. 모든 대화가 매번 0에서 시작한다는 점이었죠. 프로젝트를 다시 설명하고, 같은 링크를 다시 붙여넣고, 미팅 내용을 다시 요약해야 했습니다. 하지만 정작 필요한 답은 불과 한 시간 전 화면에 이미 떠 있었습니다. Luci는 화면에서 일어나는 일을 기록하여 사용자 개인 기기에 보관하고, 이미 사용 중인 에이전트들이 그 이력에 접근할 수 있게 만듭니다. 참석했던 미팅, 지나치듯 스크롤했던 게시물, 지난주 열어본 파일 속 묻혀 있던 세부 정보에 대해 질문해 보세요. 앱별 커넥터나 개별 연동이 필요 없습니다. 모든 데이터는 로컬에 머뭅니다. 또한 Microsoft Foundry Local과 연동되어 오디오 전사와 일일 요약도 자체 하드웨어에서 로컬로 실행됩니다. 여러분의 일상과 비슷하다면 여러분의 에이전트가 어디서 맥락을 가장 자주 놓치는지 의견을 듣고 싶습니다."
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@pawelczyk_podmore How much storage should users expect a typical week of the screens and meeting history to use ??",
+     "kr": "@pawelczyk_podmore 일반적인 1주일치 화면 및 회의 기록이 대략 어느 정도의 스토리지 용량을 차지할 것으로 예상하면 될까요??"
+    },
+    {
+     "author": "Atul",
+     "is_maker": false,
+     "text": "@pawelczyk_podmore  Can users exclude specific apps or website from screens captur???",
+     "kr": "@pawelczyk_podmore 사용자가 화면 캡처 대상에서 특정 앱이나 웹사이트를 제외할 수 있나요???"
+    },
+    {
+     "author": "RunzeYang",
+     "is_maker": true,
+     "text": "@atul15 Yes, we have a setting option to select your privacy apps",
+     "kr": "@atul15 네, 프라이버시 보호 앱을 선택할 수 있는 설정 옵션이 마련되어 있습니다."
+    },
+    {
+     "author": "RunzeYang",
+     "is_maker": true,
+     "text": "@atul15 Storage varies with recording hours, capture settings, and meeting audio. We haven't measured a representative week's usage yet, so I don't have a reliable GB/week estimate to share. You can set automatic deletion of older history to manage disk use; by default, history is kept until you delete it.",
+     "kr": "@atul15 저장 용량은 녹화 시간, 캡처 설정, 회의 오디오에 따라 달라집니다. 아직 대표적인 1주일 사용량을 정밀 측정하지 않아 신뢰할 만한 주당 GB 수치를 공유해 드리기는 어렵습니다. 디스크 사용량을 관리하기 위해 오래된 기록의 자동 삭제를 설정할 수 있으며 기본적으로는 직접 삭제할 때까지 보존됩니다."
+    },
+    {
+     "author": "Curious Kitty",
+     "is_maker": false,
+     "text": "What did you learn in early pilots about whether people want a “distilled memory” (summaries) versus a “verbatim record” (searchable screen + transcript) — and what concrete moments convinced you the record-first approach was the right tradeoff?",
+     "kr": "초기 파일럿 테스트에서 사용자들이 '압축된 기억(요약)'과 '축어적 기록(검색 가능한 화면 + 전사본)' 중 무엇을 더 원하는지 어떤 점을 배우셨나요? 그리고 기록 우선(record-first) 접근 방식이 올바른 절충안이라고 확신하게 된 구체적인 계기는 무엇이었나요?"
+    },
+    {
+     "author": "RunzeYang",
+     "is_maker": true,
+     "text": "@curiouskitty The deciding question for us was: what happens when someone asks something the summary wasn't written to answer?\nA recap says “launch planned for Friday,” but the actual conversation was “Friday, if security signs off.” An agent answering “can I tell the customer Friday?” needs that condition.\n\nThat's why we chose record-first. We can't predict what an agent will need to look up later, so we keep the captured screen context and searchable transcript, then build summaries on top. The agent can go back and check what a summary left out.",
+     "kr": "@curiouskitty 저희에게 결정적인 질문은 '요약본에 미처 담기지 않은 내용을 누군가 질문했을 때 어떻게 되는가?'였습니다.\n요약본에는 '금요일 출시 예정'이라고만 적혀 있지만 실제 대화는 '보안 승인이 날 경우 금요일'이었습니다. 에이전트가 '고객에게 금요일이라고 안내해도 될까요?'라는 질문에 답하려면 바로 그 전제 조건이 필요합니다.\n\n이것이 저희가 원본 기록 우선을 택한 이유입니다. 나중에 에이전트가 무엇을 검색해야 할지 미리 예측할 수 없기 때문에 캡처된 화면 맥락과 검색 가능한 전사본을 온전히 보존한 뒤 그 위에 요약을 구축합니다. 에이전트는 요약본에서 누락된 부분을 원본에서 언제든 다시 확인할 수 있습니다."
+    },
+    {
+     "author": "Daniel",
+     "is_maker": false,
+     "text": "Hi @pawelczyk_podmore congratulations! cool product! remind me of rewind, wondering what is the different. also curious about how much storage it requires and which Mac chips it supports.",
+     "kr": "안녕하세요 @pawelczyk_podmore 출시를 축하합니다! 멋진 제품이네요! Rewind가 떠오르는데 어떤 차이점이 있는지 궁금합니다. 또한 스토리지 용량이 얼마나 필요한지와 어떤 Mac 칩셋을 지원하는지도 궁금하네요."
+    },
+    {
+     "author": "RunzeYang",
+     "is_maker": true,
+     "text": "@danielwayne Thanks! The Rewind comparison makes sense. Our focus with Luci is making your screen history and transcripts searchable by AI agents through MCP and a CLI, so they can retrieve context for a task and check the original captures.\n\nWe support Apple Silicon Macs, M1 and later. Intel Macs aren't supported currently.\n\nStorage depends on recording time, capture frequency, and image quality. You can adjust capture settings and configure automatic deletion of older recordings. History is kept indefinitely by default. I don't have a measured GB/day figure to share yet, and I'd rather give you a tested number than a guess.",
+     "kr": "@danielwayne 감사합니다! Rewind와의 비교는 일리가 있습니다. Luci의 초점은 AI 에이전트가 MCP 및 CLI를 통해 사용자의 화면 기록과 전사본을 직접 검색할 수 있도록 하여 작업 맥락을 가져오고 원본 캡처를 확인할 수 있게 만드는 것입니다.\n\nApple Silicon Mac(M1 이상)을 지원합니다. 인텔 Mac은 현재 지원되지 않습니다.\n\n스토리지는 녹화 시간, 캡처 빈도, 이미지 품질에 따라 달라집니다. 캡처 설정을 조정하고 오래된 녹화의 자동 삭제를 구성할 수 있습니다. 기본적으로 기록은 무기한 유지됩니다. 아직 실측된 일당 GB 수치는 없으며 막연한 추측보다는 제대로 검증된 수치를 전달해 드리고자 합니다."
+    },
+    {
+     "author": "Romain Lefort",
+     "is_maker": false,
+     "text": "Can users automatically delete history after a chosen number of days?",
+     "kr": "사용자가 지정한 일수 이후에 기록을 자동으로 삭제할 수 있나요?"
+    },
+    {
+     "author": "RunzeYang",
+     "is_maker": true,
+     "text": "@romainlefort Yes! You can set how many days of history to keep, and Luci automatically deletes older records.",
+     "kr": "@romainlefort 네! 며칠 동안 기록을 보관할지 설정할 수 있으며 Luci가 오래된 기록을 자동으로 삭제합니다."
+    },
+    {
+     "author": "Shawn Shen",
+     "is_maker": true,
+     "text": "@romainlefort Adding to Runze's answer: retention is 7, 30, or 90 days, or keep everything. Since it all lives on your disk, deleting is real deletion, nothing left to purge from a server.",
+     "kr": "@romainlefort Runze의 답변에 덧붙이자면, 보존 기간은 7일, 30일, 90일 또는 전체 보존으로 설정할 수 있습니다. 모든 데이터가 사용자의 디스크에만 존재하므로 삭제는 완전한 삭제이며 서버에 잔여물이 남지 않습니다."
+    }
+   ],
+   "slug": "luci-desktop"
+  },
+  {
+   "name": "ZenABM",
+   "tagline_en": "Create, optimize & report on LinkedIn Ads from any AI tool",
+   "tagline_kr": "어떤 AI 도구에서든 링크드인 광고를 기획·생성·최적화·보고하는 B2B 마케팅 자동화 솔루션",
+   "image": "https://ph-files.imgix.net/c55caced-633b-4162-bb21-83d9113cf78d.gif?auto=compress&codec=mozjpeg&cs=strip&dpr=2&fit=max&fm=webp&frame=1&h=64&w=64",
+   "categories": [
+    "Advertising",
+    "Artificial Intelligence",
+    "LinkedIn"
+   ],
+   "upvotes": 283,
+   "comments_count": 72,
+   "maker": "Emilia Korczyńska(@emilia_korczynska1), Michal Jackowski(@mjackowski) (헌터: Rohan Chaubey(@rohanrecommends))",
+   "price_model": "무료 옵션 제공 (Free Options)",
+   "price_detail": "37일 무료 체험을 제공하며, 기본 플랜 월 $59, 무제한 MCP 및 Zena 에이전트 플랜은 월 $159부터 시작합니다. 출시 기념 프로모션 코드(PH30) 입력 시 12개월간 전 플랜 30% 할인이 적용됩니다.",
+   "desc_kr": "ZenABM은 링크드인 광고(LinkedIn Ads) 캠페인의 복잡한 수동 세팅 과정을 Claude, ChatGPT, Perplexity 등 사용자가 선호하는 AI 도구 내에서 원스톱으로 처리할 수 있도록 돕는 B2B 마케팅 자동화 솔루션입니다. 20개 이상의 전문가 스킬과 96개의 읽기·쓰기 전용 도구를 탑재한 독자 MCP 서버와 내장 AI 에이전트 'Zena'를 통해 자연어 브리프만으로 카피 작성, 광고 이미지·문서 생성, 타깃 오디언스 설정 및 입찰가와 예산 배정까지 자동으로 수행합니다. 생성된 캠페인은 링크드인 캠페인 관리자(Campaign Manager)에 즉시 배포되지 않고 '초안(Draft)' 상태로 안전하게 업로드되므로 마케터가 최종 검토와 승인 권한을 완벽히 통제할 수 있습니다. 광고 집행 후에는 저성과 광고를 식별해 자동으로 일시 중지하거나 입찰가를 조정하며, 부적합한 기업을 타깃에서 제외하는 실시간 최적화 루틴을 가동합니다. 또한 타깃 기업별 인게이지먼트와 파이프라인 매출 기여도(Attribution)를 주간·월간 AI 보고서로 자동 생성하여 영업팀(AE/SDR)의 B2B 아웃바운드 전략까지 종합 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/zena-by-zenabm-linkedin-ads-ai-chatbot",
+   "comment_summary": "초보 마케터나 소규모 예산 기업의 활용 가능 여부, 유사 분석 도구 대비 차별점, 그리고 캠페인 매니저에 초안(Draft) 형태로 전송되어 인간의 최종 승인을 거치는 워크플로우에 대한 호평이 이어졌습니다. 메이커 측은 과거 데이터나 업계 벤치마크를 기반으로 타깃 규모에 맞춘 최적의 예산과 광고 개수를 Zena가 직접 역제안하므로 소액 예산부터 대규모 엔터프라이즈까지 유연하게 운용 가능하다고 설명했습니다. 단순한 성과 모니터링을 넘어 실질적인 광고 에셋 생성과 링크드인 캠페인 자동 등록(Write)까지 수행하는 실용적인 MCP 연동 기능이 높은 평가를 받았습니다.",
+   "warnings": "수치(업보트 283·댓글 72)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Emilia Korczyńska",
+     "is_maker": true,
+     "text": "Hey everyone, I'm Emilia, head of marketing & co-founder at 🟢 ZenABM 🧘‍♀️\n\nThe reason why I started ZenABM with my husband was because as a VP of marketing at a SaaS company running 7 figure ABM program via LinkedIn Ads, I know that the experience was like eating glass 😬\n\nEach campaign took days or weeks to create: from writing briefs for the ad designer, writing the copy, building the ad sets in Campaign Manager, uploading everything by hand... pain & suffering 😬\nAnd then the same for reporting!\n\nAI was supposed to fix that. But most AI tools can only give you your ad performance.\n\nThey can't build them, can't see what's working, and can't push anything into your account.\n\n🤖 So we built our new MCP server & AI Agent Zena that can create, upload, manage, optimize & report on your LinkedIn Ads in less time than it takes to cook pasta 🍝 🤌👩‍🍳\n\nDescribe the campaign you want, in Claude, ChatGPT, or in ZenABM with our AI agent Zena, and it:\n\n🟢 Creates the ads: image, document, video and text ads, on-brand, with the copy written for you\n🟢 Creates the campaign, adset & uploads them there: ad set, targeting, bidding and budget\n🟢 All goes to Campaign Manager as a draft. Nothing goes live until you approve it.\n🟢 Then keeps optimizing: flags & pauses weak ads, adjusts bids, excludes bad-fit companies, and shows which ads actually drove pipeline\n\n🟢 All comes in with automated AI reports on every aspect of your campaign - from ads down to individual company level (perfect for prospecting for your AEs & SDRs!)\n\n🟢 How it works? Via our MCP server with 15 expert skills and 96 read & write tools across LinkedIn Ads, ABM and CRM data, trained on knowledge from 30+ LinkedIn Ads experts.\n\nWatch our launch video to see how I build & upload a full campaign from Claude to LinkedIn Campaign Manager via our MCP while cooking pasta 😂\n\nWhat was ready first? The ads, or the dinner?\n\nI'm here all day. Tell me: how long does it take you to launch a LinkedIn campaign today & how much time & money would Zena save you? 🤔 (plans start from only $59 per month, with unlimited MCP & Zena access from $159 - BUT this week, you get 30% off all plans with the code \"PH30\" - until the end of 02/10!) - sign up for the FREE 37 day trial here and give creating your first LinkedIn Ads campaign with AI a spin!",
+     "kr": "여러분 안녕하세요, 🟢 ZenABM의 마케팅 총괄이자 공동 창업자 Emilia입니다 🧘‍♀️\n\n제가 남편과 함께 ZenABM을 창업하게 된 이유는 SaaS 기업의 마케팅 VP로서 링크드인 광고로 7자리 수 예산의 ABM 프로그램을 직접 운영하면서 겪었던 고통이 마치 '유리 조각을 씹어 먹는 것' 같았기 때문입니다 😬\n\n디자이너를 위한 브리프 작성, 카피 작성, 캠페인 매니저에서 광고 세트 구축, 모든 에셋을 일일이 수동 업로드하기까지 캠페인 하나를 만드는 데 며칠 혹은 몇 주가 걸렸습니다. 그리고 보고서 작성도 똑같이 고통스러웠죠!\n\nAI가 이를 해결해 줄 것이라 기대했지만, 대부분의 AI 도구는 광고 성과 수치만 보여줄 뿐이었습니다.\n\n직접 광고를 만들어 주지도 못하고 무엇이 성과를 내는지도 보지 못하며 계정에 아무것도 직접 반영하지 못했습니다.\n\n🤖 그래서 저희는 파스타를 삶는 시간보다 더 빠르게 링크드인 광고를 제작, 업로드, 관리, 최적화, 보고할 수 있는 새로운 MCP 서버와 AI 에이전트 Zena를 만들었습니다 🍝 🤌👩‍🍳\n\nClaude, ChatGPT, 또는 ZenABM 내 AI 에이전트 Zena에게 원하는 캠페인을 설명하기만 하면 다음과 같이 처리합니다:\n\n🟢 광고 에셋 제작: 브랜드 가이드에 맞춘 이미지, 문서, 비디오, 텍스트 광고 및 카피 자동 생성\n🟢 캠페인 및 광고 세트 생성 후 업로드: 타기팅, 입찰 방식, 예산 설정 완료\n🟢 모든 설정은 '초안(Draft)'으로 캠페인 매니저에 등록됩니다. 여러분이 직접 승인하기 전까지는 절대 라이브로 게시되지 않습니다.\n🟢 지속적 최적화: 저성과 광고 감지 및 일시 중단, 입찰가 조정, 부적합 기업 타깃 제외, 실제 파이프라인을 견인한 광고 식별\n🟢 캠페인의 모든 측면(개별 광고부터 기업 단위 데이터까지)을 포괄하는 자동화된 AI 보고서 제공 (AE 및 SDR 팀의 잠재고객 발굴에 최적!)\n\n🟢 작동 방식: 30명 이상의 링크드인 광고 전문가 지식으로 학습된 15개 전문 스킬과 96개의 링크드인 광고·ABM·CRM 읽기/쓰기 도구를 갖춘 MCP 서버를 통해 동작합니다.\n\n제가 파스타를 삶는 동안 Claude에서 MCP를 통해 전체 캠페인을 링크드인 캠페인 매니저에 빌드하고 업로드하는 런치 영상을 확인해 보세요 😂\n\n광고와 저녁 식사 중 무엇이 먼저 완성되었을까요?\n\n오늘 온종일 대기하겠습니다. 현재 링크드인 캠페인을 론칭하는 데 얼마나 걸리시나요? Zena가 여러분의 시간과 비용을 얼마나 절약해 줄 수 있을까요? 🤔 (플랜은 월 $59부터 시작하며, 무제한 MCP 및 Zena 플랜은 $159부터 시작합니다. 단, 이번 주에는 코드 \"PH30\"으로 전 플랜 30% 할인이 제공됩니다!) - 37일 무료 체험을 신청하고 AI와 함께 첫 링크드인 광고 캠페인을 만들어 보세요!"
+    },
+    {
+     "author": "Paulina Leitão",
+     "is_maker": false,
+     "text": "@emilia_korczynska1 Congratulations on the launch! I'll never say no to a tool that saves me time I'd rather spend eating 🍝 Good luck today, I'll be sure to check Zena out if an ad project ever comes my way!",
+     "kr": "@emilia_korczynska1 출시를 축하합니다! 맛있는 음식을 먹는 데 쓰고 싶은 시간을 절약해 주는 도구는 언제나 대환영이죠 🍝 오늘 행운을 빌며, 광고 프로젝트를 맡게 되면 꼭 Zena를 써보겠습니다!"
+    },
+    {
+     "author": "Emilia Korczyńska",
+     "is_maker": true,
+     "text": "@paulinaleitao thank you so much!",
+     "kr": "@paulinaleitao 정말 감사합니다!"
+    },
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "Many congratulations, @emilia_korczynska1 and @mjackowski, on the second launch of ZenABM! 😊\n\nHow I met the makers\n\nI first knew Emilia back when she was a VP of Marketing at a SaaS company. We reconnected through @philip_kubinski ahead of this second ZenABM launch and I’m glad we did.\n\nWhat ZenABM does\n\nZenABM is a genuinely practical AI workflow for LinkedIn Ads.\n\nThrough its MCP server or native AI agent, Zena, you can create ad creative, build campaigns and ad sets, apply targeting and budgets, optimize performance, and generate reporting, including company-level engagement and revenue attribution, directly from tools such as Claude, ChatGPT, or Perplexity.\n\nImportantly, campaigns are sent to LinkedIn Campaign Manager as drafts, so marketers retain approval control before anything goes live.\n\nWhy I endorse it\n\nThe moment I saw the landing page, I knew I wanted to hunt ZenABM. It solves a real, repetitive operational problem for B2B marketers: moving from campaign brief to uploaded, well-structured LinkedIn campaigns without endless copy-pasting and manual setup in Campaign Manager.\n\nWe rarely see products on Product Hunt with this level of day-to-day utility. And having known Emilia from her previous company, I had confidence that if she were building it, it would be thoughtful and grounded in real marketing experience.\n\nLearning that she and Michal are a real-life couple co-founding ZenABM made the story even better. 😄",
+     "kr": "@emilia_korczynska1, @mjackowski 님, ZenABM의 두 번째 출시를 진심으로 축하드립니다! 😊\n\n메이커들을 어떻게 알게 되었는가\n저는 Emilia가 과거 SaaS 기업의 마케팅 VP로 재직하던 시절부터 알고 지냈습니다. 이번 두 번째 ZenABM 출시를 앞두고 @philip_kubinski 를 통해 다시 연락이 닿았고 매우 기쁘게 생각합니다.\n\nZenABM이 하는 일\nZenABM은 링크드인 광고를 위한 진정으로 실용적인 AI 워크플로우입니다.\nMCP 서버 또는 자체 AI 에이전트 Zena를 통해 Claude, ChatGPT, Perplexity 등의 도구에서 직접 광고 에셋 제작, 캠페인 및 광고 세트 구성, 타기팅 및 예산 설정, 성과 최적화, 그리고 기업 수준의 인게이지먼트와 매출 기여도를 포함한 보고서 생성을 지원합니다.\n중요한 점은 캠페인이 링크드인 캠페인 매니저에 초안(Draft)으로 전송되므로 라이브 전에 마케터가 온전히 승인 권한을 유지한다는 것입니다.\n\n이 제품을 추천하는 이유\n랜딩 페이지를 본 순간 바로 ZenABM을 헌팅하고 싶었습니다. 캠페인 관리자에서 끝없이 복사-붙여넣기와 수동 세팅을 거치지 않고도 기획 브리프에서 구조화된 캠페인 등록까지 이어지게 함으로써 B2B 마케터의 반복적 운영 고통을 해결합니다.\nProduct Hunt에서 이 정도의 실무적 유용성을 갖춘 제품은 보기 드뭅니다. Emilia를 이전부터 알았기에 실제 마케팅 경험에 기반한 사려 깊은 제품이 나올 것이라 확신했습니다.\n그녀와 Michal이 실제 부부로서 ZenABM을 공동 창업했다는 점도 멋진 이야기입니다. 😄"
+    },
+    {
+     "author": "Emilia Korczyńska",
+     "is_maker": true,
+     "text": "Thank you so so much  @rohanrecommends for all your support, guidance and help during the launch! This is not even our first launch together! Also a massive thanks to @mjackowski  - my co-founder and husband - who built this amazing MCP server - and @philip_kubinski - who re-connected me with Rohan 😊",
+     "kr": "출시 과정에서 아낌없는 지원과 조언, 도움을 주신 @rohanrecommends 님께 진심으로 감사드립니다! 벌써 몇 번째 함께하는 출시인지 모르겠네요! 또한 이 놀라운 MCP 서버를 구축해 준 제 공동 창업자이자 남편인 @mjackowski, 그리고 Rohan과 다시 연결해 준 @philip_kubinski 에게도 큰 감사를 전합니다 😊"
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "@emilia_korczynska1 The draft first approach is a really nice touch, mainly for the teams that want ai to the handle the looping setup without giving up control and also i like that this goes beyond generating ad copy and actually joins the workflows to campaign managers.\n\nwhen Zena pauses a week ad or change a bid, does it explain the reasoning behind the recommendation so marketers can understand what are change??",
+     "kr": "@emilia_korczynska1 초안 우선(draft-first) 접근 방식은 통제권을 유지하면서 AI가 번거로운 설정을 처리하길 원하는 팀에게 정말 훌륭한 디테일입니다. 단순 카피 생성을 넘어 캠페인 매니저 워크플로우까지 직접 연결되는 점도 마음에 듭니다.\n\nZena가 저성과 광고를 일시 중지하거나 입찰가를 변경할 때 마케터가 변경 이유를 이해할 수 있도록 추천 근거를 설명해 주나요??"
+    },
+    {
+     "author": "Philip Kubinski",
+     "is_maker": false,
+     "text": "How can Zena help me, as a total newbie, with running ads?",
+     "kr": "광고 집행에 완전히 초보자인 제게 Zena가 어떻게 도움을 줄 수 있나요?"
+    },
+    {
+     "author": "Michal Jackowski",
+     "is_maker": true,
+     "text": "@philip_kubinski oh, plenty of ways! Simply ask our MCP/AI agent to help you plan and build a campaign. It will interview you, help you estimate your reach and budget, and then create all the assets needed to get it launched!",
+     "kr": "@philip_kubinski 아주 많은 방법이 있습니다! MCP/AI 에이전트에게 캠페인 기획과 제작을 도와달라고 요청하기만 하면 됩니다. 에이전트가 인터뷰를 진행하고 도달 범위와 예산 추정을 도와준 뒤 출시를 위한 모든 필수 에셋을 자동으로 생성해 줍니다!"
+    },
+    {
+     "author": "Philip Kubinski",
+     "is_maker": false,
+     "text": "@mjackowski can't wait to try it out ;)",
+     "kr": "@mjackowski 빨리 써보고 싶네요 ;)"
+    },
+    {
+     "author": "Emilia Korczyńska",
+     "is_maker": true,
+     "text": "@philip_kubinski Zena will create the whole strategy, walk you through the logic step by step, recommend the right bids for you based on your historical data or benchmarks, and then actually create the campaigns (including how many ads you should have in each ad set based on how much you can afford with your budget, not to spread yourself too thinly). Just give it a try here and let me know if you need any help still. It's truly mind-blowing, I thin! https://app.zenabm.com/signup",
+     "kr": "@philip_kubinski Zena가 전체 전략을 수립하고 논리를 단계별로 안내하며, 과거 데이터나 벤치마크를 기반으로 적절한 입찰가를 추천합니다. 그리고 예산에 맞춰 너무 분산되지 않도록 광고 세트당 적절한 광고 개수까지 고려하여 캠페인을 직접 생성합니다. 한번 체험해 보시고 도움이 필요하시면 말씀해 주세요. 정말 놀라운 경험이 될 것입니다! https://app.zenabm.com/signup"
+    },
+    {
+     "author": "Anant Gupta",
+     "is_maker": false,
+     "text": "Congrats on shipping. Reminds me of factors ai. How does it compare?\n\nI am currently running Meta and Google Ads. Would love to try LinkedIn Ads soon. :D",
+     "kr": "출시를 축하합니다. Factors AI가 떠오르는데 어떻게 다른가요?\n현재 메타와 구글 광고를 운영 중인데 조만간 링크드인 광고도 시도해보고 싶네요. :D"
+    },
+    {
+     "author": "Emilia Korczyńska",
+     "is_maker": true,
+     "text": "@iamanantgupta Forgot to answer about factors. Honestly, I don't know factors too well. I've tried their impression capping features, and they are very good, but it's a very sophisticated and expensive analytics and revenue attribution tool, primarily. While ZenABM is more of a budget tool for campaign management and creation, plus analytics and revenue attribution, and AI-first",
+     "kr": "@iamanantgupta Factors에 대한 답변을 빠뜨렸네요. 솔직히 Factors를 아주 깊게 알지는 못합니다. 노출 제한 기능을 써보았고 훌륭했지만, 그곳은 주로 매우 정교하고 고가인 분석 및 매출 기여도 추적 도구입니다. 반면 ZenABM은 캠페인 생성과 관리에 초점을 맞추면서도 분석 및 매출 기여도를 함께 제공하는 훨씬 합리적인 가격의 AI 네이티브 도구입니다."
+    }
+   ],
+   "slug": "zena-by-zenabm-linkedin-ads-ai-chatbot"
+  },
+  {
+   "name": "Claude Sonnet 5.5",
+   "tagline_en": "Anthropic's second model in the Claude 5.5 family",
+   "tagline_kr": "일상적인 코딩과 지식 업무의 속도와 비용 효율성을 대폭 끌어올린 차세대 AI 모델",
+   "image": "https://ph-files.imgix.net/f18900e1-307b-4e51-9751-47e23d2ba368.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "API",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 228,
+   "comments_count": 5,
+   "maker": "Anthropic (헌터: Rohan Chaubey(@rohanrecommends))",
+   "price_model": "무료 옵션 제공 (Free Options)",
+   "price_detail": "Claude 웹 및 모바일 앱에서 무료 체험이 가능하며, Pro/Team 구독 및 AWS, GCP, Azure, Anthropic API를 통한 토큰 기반 종량제 과금(기존 Sonnet 5 대비 작업 비용 최대 30% 절감)을 제공합니다.",
+   "desc_kr": "Anthropic이 일상적인 코딩과 지식 업무에 최적화된 차세대 AI 모델 Claude Sonnet 5.5를 출시했습니다. 이전 세대인 Sonnet 5 대비 30% 이상 향상된 추론 및 실행 속도를 자랑하며 작업 단위당 소요 비용을 최대 30%까지 절감했습니다. 특히 복잡한 버그 수정, 비동기 레이스 컨디션 감지, 대규모 코드 리팩토링 등 고난도 개발 작업에서 월등한 성능과 정확도를 입증했습니다. AWS Bedrock, Google Cloud Vertex AI, Microsoft Azure 및 Anthropic 공식 API를 통해 즉시 배포되어 기존 클라우드 인프라와 원활하게 연동됩니다. 코드 작성뿐 아니라 기술 문서 검토, 슬라이드 제작, 디자인 기획 등 다양한 지식 집약적 업무 전반에서 안정적이고 빠른 실행력을 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/claude",
+   "comment_summary": "일상적 코딩 파이프라인에서 즉시 체감되는 추론 속도 향상과 작업 비용 30% 절감 효과에 개발자들의 호평이 집중되었습니다. 특히 Sonnet 5.5 마이그레이션 시 'thinking' 블록 반환 구조 변경(between_tools 설정)에 따른 API 응답 파싱 주의점 등 실무적인 마이그레이션 팁이 활발히 공유되었습니다. 대규모 모노레포 환경에서의 컨텍스트 유지력과 지속적인 성능 검증에 대한 관심도 함께 확인되었습니다.",
+   "warnings": "수치(업보트 228·댓글 5)는 수집 시점 참고치. 수집된 댓글 5개 전량 수집 완료.",
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "Claude Sonnet 5.5 is Anthropic’s faster, more cost-efficient AI model for everyday coding and knowledge work.\n\nIt tackles slow, expensive task completion by running over 30% faster than Sonnet 5 and lowering task costs by up to 30%. It combines speed, cost efficiency, and stronger performance for coding and knowledge-work tasks.\n\nFeatures & Benefits\n\n*   30%+ faster than Sonnet 5\n    \n*   Up to 30% lower task costs\n    \n*   Stronger coding and knowledge-work performance\n    \n*   Works across code, bug fixes, documents, slides, and design\n    \n\nBuilt for users working on code, bug fixes, documents, slides, and design.\n\nGet Started\n\nClaude Sonnet 5.5 is now available on all platforms, including Amazon Web Services, Google Cloud, and Microsoft Azure.\n\nDevelopers can get started on the Claude Platform with claude-sonnet-5-5. If you run Sonnet with thinking off, you’ll need to switch to the new between_tools setting, which keeps up-front thinking off, before moving to Sonnet 5.5.\n\nP.S. I hunt the latest and greatest launches in tech, SaaS and AI, follow to be notified → @rohanrecommends",
+     "kr": "Claude Sonnet 5.5는 일상적인 코딩 및 지식 작업을 위해 더 빠르고 비용 효율적으로 제작된 Anthropic의 차세대 AI 모델입니다.\n\nSonnet 5보다 30% 이상 빠르게 실행되고 작업 비용을 최대 30% 절감하여 느리고 비싼 작업 완료 문제를 해결합니다. 코딩 및 지식 작업 전반에 걸쳐 속도, 비용 효율성, 강력한 성능을 고루 결합했습니다.\n\n주요 기능 및 이점\n* Sonnet 5 대비 30% 이상 빠른 속도\n* 최대 30% 낮은 작업 비용\n* 코딩 및 지식 작업 성능 강화\n* 코드, 버그 수정, 문서, 슬라이드, 디자인 전반 지원\n\n코드 작성, 버그 수정, 문서 검토, 프레젠테이션 슬라이드, 디자인 작업을 수행하는 사용자를 위해 제작되었습니다.\n\n시작하기\nClaude Sonnet 5.5는 AWS, Google Cloud, Microsoft Azure를 포함한 모든 플랫폼에서 지금 바로 이용할 수 있습니다.\n\n개발자는 Claude 플랫폼에서 claude-sonnet-5-5 모델 식별자로 시작할 수 있습니다. thinking 기능을 비활성화한 상태로 Sonnet을 실행하던 경우 Sonnet 5.5로 전환하기 전에 사전 thinking을 끈 상태로 유지하는 새로운 between_tools 설정으로 변경해야 합니다.\n\nP.S. 최신 기술, SaaS, AI 론칭 소식을 전해드리니 알림을 받으시려면 @rohanrecommends 를 팔로우해 주세요."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@rohanrecommends the speed and lower cost are what stand out to me here especially for everyday coding tasks where you run the model a lot",
+     "kr": "@rohanrecommends 모델을 매우 자주 호출하는 일상적인 코딩 작업에서 특히 속도 향상과 비용 절감이 크게 돋보이네요."
+    },
+    {
+     "author": "Philipp Koller",
+     "is_maker": false,
+     "text": "@rohanrecommends  @shivam_kushwaha16 Totally agree. Speed and cost are the main driver",
+     "kr": "@rohanrecommends @shivam_kushwaha16 전적으로 동의합니다. 속도와 비용이야말로 가장 핵심적인 도입 요인이죠."
+    },
+    {
+     "author": "Alexis Basset-Chercot",
+     "is_maker": false,
+     "text": "impressive, I'm a big fan of anthropic and your models, using it on a daily basis",
+     "kr": "인상적입니다. 저는 Anthropic과 귀사 모델의 열렬한 팬이며 매일 유용하게 사용하고 있습니다."
+    },
+    {
+     "author": "Dale Mooney",
+     "is_maker": false,
+     "text": "Rohan's note about thinking settings is worth reading twice. When I moved a small agent onto Sonnet 5, responses started coming back with a thinking block first, and my code was reading content[0]. It broke.\n\nIf anything of yours reads the first block, pick the text or tool_use block by type before you change the model string.",
+     "kr": "thinking 설정에 관한 Rohan의 메모는 두 번 읽어볼 가치가 있습니다. 작은 에이전트를 Sonnet 5로 이전했을 때 응답이 thinking 블록부터 반환되기 시작했고, 제 코드가 content[0]을 읽도록 되어 있어 오류가 발생했었습니다.\n\n첫 번째 블록을 직접 읽는 코드가 있다면 모델 문자열을 변경하기 전에 블록 타입(type)을 기준으로 text 또는 tool_use 블록을 명시적으로 선택하도록 수정하세요."
+    }
+   ],
+   "slug": "claude"
+  },
+  {
+   "name": "Semos.ai Manager Agents",
+   "tagline_en": "AI agents purpose-built for managers",
+   "tagline_kr": "팀 리더의 피드백, 인정, 갈등 해결 및 1:1 대화를 지원하는 관리자 전용 AI 에이전트",
+   "image": "https://ph-files.imgix.net/f4b6d96a-067b-463f-af00-fed689b44f9e.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Meetings",
+    "Artificial Intelligence",
+    "Human Resources"
+   ],
+   "upvotes": 219,
+   "comments_count": 42,
+   "maker": "Natasha Davidovska(@natasha_davidovska), Ivana Maznevska(@ivana_m), Miodrag Stojanov(@miodragstojanov) (헌터: Jonno Riekwel(@jonnotie))",
+   "price_model": "무료 옵션 제공 (Free Options)",
+   "price_detail": "기본 기능을 무료로 체험할 수 있으며, 팀 규모 및 조직 내 연동 기능에 따른 맞춤형 엔터프라이즈 유료 플랜을 제공합니다.",
+   "desc_kr": "Semos.ai Manager Agents는 전담 인사팀(HRBP)이나 공식 코칭 교육 없이 팀원을 관리해야 하는 중간 관리자 및 리더들을 위해 설계된 실무형 AI 에이전트 솔루션입니다. 일상적인 회의와 1:1 대화 맥락을 지속적으로 학습하여 지연된 피드백, 놓치기 쉬운 팀원 인정, 회피 중인 잠재적 갈등, 후순위로 밀린 성장 면담 등 리더가 꼭 챙겨야 할 액션 아이템을 사전에 포착해 제안합니다. 스탠퍼드 대학교의 4Is 행동과학 프레임워크를 기반으로 각 팀원의 성향과 대화 맥락에 맞춘 구체적인 피드백 초안과 어려운 대화 전 시뮬레이션 및 준비(Prep) 가이드를 제공합니다. 단순 1회성 언급과 실제 반복되는 조직 문제를 구분하기 위해 다회차 미팅 검증 단계를 거쳐 신뢰할 수 있는 인사이트만을 선별하여 대시보드에 게시합니다. 민감한 리더십 및 인사 대화를 보호하기 위해 AI 모델 전송 전 개인식별정보(PII) 마스킹 처리와 전송 구간 암호화를 철저히 적용하여 엔터프라이즈급 데이터 보안을 보장합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/semos-ai-manager-agents",
+   "comment_summary": "지나가는 일회성 발언과 실제 조직 내 만성적 문제를 구분하는 신호 검증 프로세스, 민감한 리더십 면담에 대한 PII 마스킹 및 전송 암호화 등 데이터 보안 조치에 관심이 집중되었습니다. 메이커 측은 단 한 번 언급된 내용은 감지 상태로만 유지되며 여러 차례 반복 검증된 사안만 관리자에게 알림으로 전달된다고 설명했습니다. 전담 HR 파트너의 지원을 받기 어려운 중간 관리자들에게 스탠퍼드 행동과학 기반의 현실적이고 실행 가능한 피드백 작성을 돕는 실질적 도구라는 점에서 큰 호응을 얻었습니다.",
+   "warnings": "수치(업보트 219·댓글 42)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Natasha Davidovska",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋\n\nOur team has spent years building people and culture intelligence software for large enterprises at Semos Cloud. Working closely with those companies, we saw a gap in the tools available to help managers lead their teams. We wanted to give them something practical they could use in their everyday work. That became Manager Agents.\n\nManager Agents learns from your meetings and helps with the parts of managing people that usually get pushed to the bottom of the list: feedback that’s overdue, recognition you almost missed, the conversation you’ve been avoiding, the growth talk that keeps slipping.\n\nThis isn't just another AI chatbot. Specialized agents handle different parts of leading a team, all working from the same context pulled from your meetings, so the guidance stays grounded in your actual team rather than a generic answer. We also draw on behavioral science to shape the guidance, including how to give feedback and approach conversations with different people.\n\nA few things it does:\n\n💬 Drafts feedback and recognition messages grounded in what actually happened in your meetings\n🎯 Helps you prep for the hard conversations before you have them\n📊 Gives you a real read on how you're leading, not just a guess\n🔔 Nudges you when something's worth acting on, so it doesn't fall through the cracks\n\nWho it's for: people managers with a handful of direct reports, doing their own work at the same time, often without an HRBP down the hall or any formal training. If that's you, this was built with you in mind.\n\nTry it and let us know how it goes and where it could be better 🙏",
+     "kr": "Product Hunt 여러분 안녕하세요 👋\n\n저희 팀은 Semos Cloud에서 수년간 대기업을 위한 인사 및 조직 문화 인텔리전스 소프트웨어를 구축해 왔습니다. 고객사들과 긴밀히 협력하면서 팀을 이끄는 관리자들을 실질적으로 돕는 도구에 큰 공백이 있음을 깨달았습니다. 매일의 업무에서 바로 쓸 수 있는 실용적인 무언가를 제공하고자 했고, 그렇게 탄생한 것이 바로 Manager Agents입니다.\n\nManager Agents는 회의 내용을 학습하여 늘 우선순위에서 밀리기 쉬운 팀 관리 업무를 돕습니다. 기한이 지난 피드백, 놓칠 뻔한 칭찬과 인정, 계속 미루게 되는 껄끄러운 대화, 차일피일 미뤄지는 커리어 성장 면담 등이 대표적입니다.\n\n단순한 AI 챗봇이 아닙니다. 회의에서 추출한 동일한 맥락을 기반으로 전문화된 에이전트들이 팀 리딩의 각 영역을 나누어 전담하므로 일반론적 답변이 아닌 실제 팀의 현실에 뿌리내린 맞춤형 가이드를 제공합니다. 또한 피드백 전달법이나 사람마다 다른 대화 접근법 등 행동과학 이론을 결합하여 조언을 설계했습니다.\n\n주요 기능:\n💬 회의에서 실제로 일어난 대화를 바탕으로 피드백 및 인정 메시지 초안 작성\n🎯 어려운 대화에 들어가기 전 사전 시뮬레이션 및 준비 지원\n📊 막연한 추측이 아닌 리더십 상태에 대한 객관적 진단 제공\n🔔 조치가 필요한 순간을 놓치지 않도록 적시에 넛지(Nudge) 알림\n\n대상 사용자: 본인 실무를 병행하면서 소수의 팀원을 이끌어야 하지만 전담 HR 파트너의 지원이나 공식 교육을 받기 어려운 중간 관리자 여러분을 위해 탄생했습니다.\n\n체험해 보시고 개선할 점이 있다면 언제든 편하게 알려주세요 🙏"
+    },
+    {
+     "author": "Ivana Maznevska",
+     "is_maker": true,
+     "text": "@natasha_davidovska So proud to be part of this team! The \"without an HRBP down the hall\" part is so real. That's most managers I know, including me. Can't wait to hear what everyone thinks 🚀",
+     "kr": "@natasha_davidovska 이 팀의 일원이라는 점이 자랑스럽습니다! '복도 끝에 전담 HR 파트너가 없는 현실'이라는 표현이 너무나 와닿네요. 저를 포함해 제가 아는 대부분의 관리자가 그렇거든요. 여러분의 소중한 피드백을 기대합니다 🚀"
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "@natasha_davidovska Does it track patterns across multiple meetings over time ?",
+     "kr": "@natasha_davidovska 시간이 흐름에 따라 여러 회의에 걸친 패턴을 추적해 주나요?"
+    },
+    {
+     "author": "Lanfranco Iwanaga",
+     "is_maker": false,
+     "text": "Can the agents learn from that kind of correction?",
+     "kr": "에이전트가 관리자의 피드백이나 수정 사항으로부터도 학습할 수 있나요?"
+    },
+    {
+     "author": "Natasha Davidovska",
+     "is_maker": true,
+     "text": "@lanfranco_iwanaga Hi Lanfranco, yes, that's actually one of the core ideas behind how Manager Agent work. The agents build context from your meetings over time, so the more you use them, the more specific the guidance gets to your team, your style, and how you lead. If you correct something or push back on a suggestion, that becomes part of the picture too, it's not starting from zero each time. Thank you for your question!",
+     "kr": "@lanfranco_iwanaga 안녕하세요 Lanfranco님! 네, 바로 그것이 Manager Agents의 핵심 원리 중 하나입니다. 에이전트는 시간이 지남에 따라 회의를 통해 맥락을 축적하므로 오래 사용할수록 팀, 관리자 개인의 스타일, 리더십 방식에 맞게 가이드가 정교해집니다. 제안을 수정하거나 반려하더라도 그 내역이 맥락의 일부로 반영되어 매번 0에서 시작하지 않습니다. 질문해 주셔서 감사합니다!"
+    },
+    {
+     "author": "Sandy Diao",
+     "is_maker": false,
+     "text": "on device processing or strict data encryption for sensitive leadership meetings is crucial here.",
+     "kr": "민감한 리더십 회의인 만큼 온디바이스 처리나 철저한 데이터 암호화가 매우 중요해 보입니다."
+    },
+    {
+     "author": "Natasha Davidovska",
+     "is_maker": true,
+     "text": "@sandy_leventh Hey Sandy! Completely agree, and that's something we take seriously. Personal information is masked with PII masking before anything is passed to the AI models. On top of that, data is encrypted in transit, so meeting content is protected at every stage, not just when it's being processed. Thank you for your question, we appreciate it! 🙌",
+     "kr": "@sandy_leventh 안녕하세요 Sandy님! 전적으로 동의하며 저희가 가장 심혈을 기울이는 부분입니다. AI 모델로 데이터가 전달되기 전에 PII 마스킹을 통해 개인정보를 철저히 비식별화합니다. 이에 더해 전송 중 암호화(in-transit)를 적용하여 처리 중일 때뿐만 아니라 모든 단계에서 회의 내용을 안전하게 보호합니다. 좋은 질문 감사합니다! 🙌"
+    },
+    {
+     "author": "Luke Nick",
+     "is_maker": false,
+     "text": "I think remembering to give feedback is harder than people admit. Does it also suggest what kind of feedback to give?",
+     "kr": "피드백을 잊지 않고 챙기는 일은 사람들이 생각하는 것보다 훨씬 어려운 일이죠. 어떤 종류의 피드백을 주어야 할지도 추천해 주나요?"
+    },
+    {
+     "author": "Ivana Maznevska",
+     "is_maker": true,
+     "text": "@luke__nick Totally agree, Luke! And yes, it does. It drafts feedback based on what actually happened in your meetings, so it's specific rather than generic. It also draws on behavioral science to help you tailor how you say it to each person. You stay in control of the final message, it just gives you a strong starting point, based on Stanford’s 4Is framework. You can read more about the science behind here https://semos.ai/explore-agents-new/",
+     "kr": "@luke__nick 전적으로 동의합니다 Luke님! 네, 맞습니다. 회의에서 실제로 일어난 일을 바탕으로 피드백을 작성하므로 일반론적이지 않고 매우 구체적입니다. 또한 행동과학을 활용하여 각 대상자에 맞춰 전달하는 방식을 다듬어 줍니다. 스탠퍼드의 4Is 프레임워크를 기반으로 훌륭한 초안을 제공하며 최종 메시지의 결정권은 관리자에게 있습니다. 배경 이론에 대한 자세한 내용은 https://semos.ai/explore-agents-new/ 에서 확인하실 수 있습니다."
+    },
+    {
+     "author": "Marius Holm",
+     "is_maker": false,
+     "text": "How does the system distinguish between a real unresolved issue and something that was simply mentioned during a meeting?",
+     "kr": "단순히 회의 중 지나가듯 언급된 이야기와 실제로 해결되지 않은 진짜 문제를 시스템이 어떻게 구분하나요?"
+    },
+    {
+     "author": "Natasha Davidovska",
+     "is_maker": true,
+     "text": "@mariusholm Hey Marius! 😊\n\nEvery signal goes through a few stages before it ever reaches the manager. It starts as detected, then gets verified against multiple meetings or sources, and only after that does it get published as something you'd actually see.\n\nSo if something's just mentioned once in passing, it stays at that first \"detected\" stage and won't surface as a signal on its own. It only becomes a real, validated signal once it's come up more than once, ideally from more than one person too, which is exactly how we tell a passing comment apart from something that's a genuine, recurring issue.",
+     "kr": "@mariusholm 안녕하세요 Marius님! 😊\n\n모든 신호는 관리자에게 도달하기 전에 여러 단계를 거칩니다. 처음에는 '감지(detected)' 상태로 시작하여 여러 미팅이나 출처에 걸쳐 교차 검증을 거친 후에야 실제로 관리자에게 보이는 항목으로 '게시(published)'됩니다.\n\n따라서 스치듯 한 번 언급된 내용은 최초 감지 단계에만 머물며 독립된 신호로 노출되지 않습니다. 두 번 이상, 가급적 둘 이상의 사람에게서 언급된 경우에만 검증된 실제 신호로 승격됩니다. 이러한 방식으로 일회성 코멘트와 지속적인 진짜 문제를 정확히 구분해 냅니다."
+    },
+    {
+     "author": "Bastien Renard",
+     "is_maker": false,
+     "text": "Does it help managers look back at previous conversations and see whether certain approaches led to better outcomes?",
+     "kr": "관리자가 이전 대화를 되돌아보며 특정 접근 방식이 더 나은 결과로 이어졌는지 확인하는 데 도움을 주나요?"
+    }
+   ],
+   "slug": "semos-ai-manager-agents"
+  }
+ ]
+}
