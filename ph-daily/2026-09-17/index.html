@@ -59,6 +59,9 @@ header .meta{color:var(--sub);font-size:14px;margin-top:4px}
 .toast.show{transform:translateX(-50%);opacity:1}
 footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
 a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+.visit:hover{filter:brightness(1.08)}
+.ws{color:var(--acc);font-weight:700;text-decoration:none;font-size:12px;margin-left:8px}
 </style>
 </head>
 <body>
@@ -283,7 +286,8 @@ const DATA = {
     "댓글 작성자 Atharva Deosthale은 PH에서 'Maker'(Imagine 제품) 배지가 붙지만 Appwrite 메이커가 아니어서 is_maker=false 처리"
    ],
    "slug": "appwrite",
-   "comment_summary": "네이티브 PostgreSQL 18 지원이 가장 반가운 소식으로 꼽혔고, VectorsDB를 최애 기능으로 드는 개발자 반응이 눈에 띄었다. 셀프호스팅 확장성 질문에는 Cloud는 사용량 기반 자동 확장, 셀프호스트는 Kubernetes·DevOps 경험이 필요하다는 솔직한 답변이 돌아왔다. 팀 멤버들이 각자 맡은 기능(콘솔·OAuth·Postgres)을 소개하는 댓글도 이어졌다."
+   "comment_summary": "네이티브 PostgreSQL 18 지원이 가장 반가운 소식으로 꼽혔고, VectorsDB를 최애 기능으로 드는 개발자 반응이 눈에 띄었다. 셀프호스팅 확장성 질문에는 Cloud는 사용량 기반 자동 확장, 셀프호스트는 Kubernetes·DevOps 경험이 필요하다는 솔직한 답변이 돌아왔다. 팀 멤버들이 각자 맡은 기능(콘솔·OAuth·Postgres)을 소개하는 댓글도 이어졌다.",
+   "website": "https://appwrite.io/"
   },
   {
    "name": "Gemini 3.8 & 3.8 Live Extended Thinking",
@@ -333,7 +337,8 @@ const DATA = {
     "댓글 4개는 제품 페이지에서 전부 수집(런치 페이지 표기 4개와 일치), 메이커 작성 댓글 없음"
    ],
    "slug": "gemini-3-8-3-8-live-extended-thinking",
-   "comment_summary": "실시간 상호작용의 실제 지연시간과 비용 구조가 핵심 질문이었고, 이 비용이라면 학생마다 라이브 AI 튜터를 둘 수 있다는 비전도 나왔다. 발표자가 제미나이를 이름으로 불러 스스로 업데이트를 설명하게 한 데모가 자연스럽다는 호평이 많았고, 표현이 다소 과하다는 지적도 있었다."
+   "comment_summary": "실시간 상호작용의 실제 지연시간과 비용 구조가 핵심 질문이었고, 이 비용이라면 학생마다 라이브 AI 튜터를 둘 수 있다는 비전도 나왔다. 발표자가 제미나이를 이름으로 불러 스스로 업데이트를 설명하게 한 데모가 자연스럽다는 호평이 많았고, 표현이 다소 과하다는 지적도 있었다.",
+   "website": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
   },
   {
    "name": "Toki Coordination",
@@ -432,7 +437,8 @@ const DATA = {
     "정확한 가격 금액은 페이지에서 확인 불가 (무료 + 유료 플랜 'Toki Super' 존재 사실만 확인)"
    ],
    "slug": "toki-ai",
-   "comment_summary": "Calendly·Cal.com 등 기존 일정 도구 연동 여부, 수신자가 AI 비서임을 인지하는지 묻는 질문에 메이커가 투명하게 답했다. 웹 버전 온보딩 부재 지적에는 앱에만 있다는 답변이 돌아왔고, 다수 의견 vs 합의 불가 통보 방식도 정리해줬다. 런치 기간 Toki Super 1개월 초대 코드를 배포 중이다."
+   "comment_summary": "Calendly·Cal.com 등 기존 일정 도구 연동 여부, 수신자가 AI 비서임을 인지하는지 묻는 질문에 메이커가 투명하게 답했다. 웹 버전 온보딩 부재 지적에는 앱에만 있다는 답변이 돌아왔고, 다수 의견 vs 합의 불가 통보 방식도 정리해줬다. 런치 기간 Toki Super 1개월 초대 코드를 배포 중이다.",
+   "website": "https://toki.com/"
   },
   {
    "name": "CAT ME app",
@@ -525,7 +531,8 @@ const DATA = {
     "메이커 댓글 3건(Damjanski의 @busmark_w_nika/@christian_onochie/@orenr 답글)에는 고양이 이미지가 첨부돼 있었으나 text 필드에는 댓글 텍스트만 원문 그대로 기록함"
    ],
    "slug": "cat-me-app",
-   "comment_summary": "결과물이 단순 필터 수준을 넘어 진짜 재미있다는 평가와 함께 '친구에게 공유할 수 있는 제품'이라는 반응이 많았다. 친구 사진 업로드 시 원본 보관 우려에 메이커가 '처리 즉시 삭제, 데이터 무저장'이라고 즉답했고, 그 답변이 사용 심리를 높였다."
+   "comment_summary": "결과물이 단순 필터 수준을 넘어 진짜 재미있다는 평가와 함께 '친구에게 공유할 수 있는 제품'이라는 반응이 많았다. 친구 사진 업로드 시 원본 보관 우려에 메이커가 '처리 즉시 삭제, 데이터 무저장'이라고 즉답했고, 그 답변이 사용 심리를 높였다.",
+   "website": "https://apps.apple.com/app/cat-me-ai/id6803704105"
   }
  ]
 };
@@ -556,14 +563,14 @@ function renderGrid(){
   c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
   <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
   <div class="desc">${p.desc_kr||''}</div>
-  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}</div>`;
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="ws" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">↗ 웹사이트</a>`:''}</div>`;
   c.onclick=()=>openModal(p);g.appendChild(c);
  });
 }
 function openModal(p){
  const m=$('#modal');const tot=(p.comments||[]).length;
  m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
- <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div></div>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}</div>
  <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
  <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
  <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>

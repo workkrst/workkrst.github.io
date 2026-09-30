@@ -59,6 +59,9 @@ header .meta{color:var(--sub);font-size:14px;margin-top:4px}
 .toast.show{transform:translateX(-50%);opacity:1}
 footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
 a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+.visit:hover{filter:brightness(1.08)}
+.ws{color:var(--acc);font-weight:700;text-decoration:none;font-size:12px;margin-left:8px}
 </style>
 </head>
 <body>
@@ -139,7 +142,8 @@ const DATA = {
      "kr": "'작업당 비용 9%'라는 수치가 헤드라인을 장식하고 있지만, 저희에게 실제로 중요한 것은 토큰당 비용이 아니라 초당 토큰 수(tokens/sec)입니다. 저희는 음성 에이전트를 운영하고 있는데, 비용은 저렴하지만 첫 번째 토큰 생성까지 200ms 더 느린 모델은 통화자가 청구서 요금을 알아채기 훨씬 전에 침묵을 먼저 눈치채기 때문에 비싸더라도 빠른 모델보다 훨씬 불리합니다. 저지연 스트리밍 환경에서 Sol을 직접 테스트해 보신 분이 계신가요, 아니면 지금까지의 벤치마크는 모두 배치/오프라인 형태의 작업 기준인가요?"
     }
    ],
-   "slug": "gpt-6-sol-luna"
+   "slug": "gpt-6-sol-luna",
+   "website": "https://openai.com/"
   },
   {
    "name": "Humalike x GTA RP",
@@ -237,7 +241,8 @@ const DATA = {
      "kr": "[@rajesh_gupta__](https://www.producthunt.com/@rajesh_gupta__) 100% 동감합니다. 정말 감사합니다!"
     }
    ],
-   "slug": "humalike-2"
+   "slug": "humalike-2",
+   "website": "https://www.humalike.ai/"
   },
   {
    "name": "Cuey",
@@ -334,7 +339,8 @@ const DATA = {
      "kr": "[@suryansh_tiwari2](https://www.producthunt.com/@suryansh_tiwari2) 응원해 주셔서 감사합니다! Cuey는 ChatGPT, Claude, Gemini 및 일부 다른 AI 모델 내부에서 동작하는 Chrome 확장 프로그램입니다. 주력 AI에 질문을 던지면 Cuey는 세 개의 다른 모델에 동일한 프롬프트를 전송하여, 주력 AI의 답변 대비 유의미한 차이점(delta)을 제공할 수 있는지 백그라운드에서 조용히 확인합니다. 다른 모델이 유의미한 정보를 제공할 수 있다고 판단되면 알림이 표시되고 사이드바를 열어 답변들을 비교할 수 있습니다. 그렇지 않다면 작업 흐름이 전혀 방해받지 않고 그대로 유지됩니다.  \n  \n물론 주력 AI의 답변에 대해 세컨드 오피니언을 꼭 받아보고 싶다면 수동으로 비교를 실행할 수도 있습니다."
     }
    ],
-   "slug": "cuey-2"
+   "slug": "cuey-2",
+   "website": "https://cuey.io/install?utm_source=producthunt&utm_medium=referral&utm_campaign=product_hunt_2026-09-27"
   },
   {
    "name": "Superhuman Go",
@@ -400,7 +406,8 @@ const DATA = {
      "kr": "'프롬프트 기반이 아닌 선제적(proactive) 방식'은 제대로 완성하기가 훨씬 까다로운 영역입니다. 프롬프트 기반 도구는 사용자가 요청할 때만 관여하지만, 선제적 도구는 자신의 제안이 정말 환영받을 타이밍인지 아니면 무시당할 소음에 불과한지를 추측해야 하기 때문입니다. 긴 이메일 초안을 작성할 때와 마찬가지로 Slack에서 키보드를 칠 때마다 실시간 제안이 계속 뜬다면 꽤 성가실 수도 있어 보입니다. 제안이 얼마나 자주 적극적으로 뜰지 앱별 또는 상황별로 민감도를 세부 조절할 수 있나요, 아니면 모든 곳에 단일 민감도 설정만 적용되나요?"
     }
    ],
-   "slug": "superhuman-go"
+   "slug": "superhuman-go",
+   "website": "https://superhuman.com/go"
   },
   {
    "name": "Harmony",
@@ -479,7 +486,8 @@ const DATA = {
      "kr": "Harmony의 R&D 부사장으로서 제가 가장 주목하는 점은 60% 이상의 자동 해결률이라는 수치뿐만 아니라 그 이면에 있는 아키텍처입니다. 모델이 액션을 직접 임의 실행하는 일은 절대 없으며, 오직 사전에 승인된 워크플로우에 요청을 매칭할 뿐입니다. 또한 모델이 참조하는 모든 객체는 실제 사내 IdP 및 MDM 데이터와 일치해야 하며, 그렇지 않으면 요청 자체가 즉시 실패합니다. 이는 모든 보안 팀이 실질적으로 묻지만 대부분의 AI 도구들이 얼버무리는 \"에이전트가 잘못 판단하거나 악의적인 프롬프트가 주입되면 어떻게 되는가?\"라는 질문에 대한 가장 정확한 해답입니다. 범위가 제한된 자격 증명, 자격 적격성 규칙, 민감한 작업에 대한 사람의 최종 승인, 그리고 빈틈없는 감사 추적 기록이 갖춰져 있기 때문에, 프롬프트 주입 공격이 모델의 해석을 왜곡할 수는 있어도 그 결과를 악의적으로 '실행할' 대상 자체가 존재하지 않습니다. 이것이 바로 보안 팀이 스스로 설계했을 법한 이상적인 에이전틱 AI의 모습입니다! 🚀"
     }
    ],
-   "slug": "harmony-it"
+   "slug": "harmony-it",
+   "website": "https://harmony.io/"
   }
  ]
 };
@@ -510,14 +518,14 @@ function renderGrid(){
   c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
   <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
   <div class="desc">${p.desc_kr||''}</div>
-  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}</div>`;
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="ws" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">↗ 웹사이트</a>`:''}</div>`;
   c.onclick=()=>openModal(p);g.appendChild(c);
  });
 }
 function openModal(p){
  const m=$('#modal');const tot=(p.comments||[]).length;
  m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
- <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div></div>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}</div>
  <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
  <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
  <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>

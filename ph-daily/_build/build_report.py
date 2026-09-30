@@ -67,6 +67,9 @@ header .meta{color:var(--sub);font-size:14px;margin-top:4px}
 .toast.show{transform:translateX(-50%);opacity:1}
 footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
 a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+.visit:hover{filter:brightness(1.08)}
+.ws{color:var(--acc);font-weight:700;text-decoration:none;font-size:12px;margin-left:8px}
 </style>
 </head>
 <body>
@@ -113,14 +116,14 @@ function renderGrid(){
   c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
   <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
   <div class="desc">${p.desc_kr||''}</div>
-  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}</div>`;
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="ws" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">↗ 웹사이트</a>`:''}</div>`;
   c.onclick=()=>openModal(p);g.appendChild(c);
  });
 }
 function openModal(p){
  const m=$('#modal');const tot=(p.comments||[]).length;
  m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
- <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div></div>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}</div>
  <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
  <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
  <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>

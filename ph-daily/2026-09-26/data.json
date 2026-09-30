@@ -106,7 +106,8 @@
      "kr": "[@cheng_ju1](https://www.producthunt.com/@cheng_ju1) 벌써 R2를 재미있게 즐기고 계신다니 기쁩니다🫶"
     }
    ],
-   "slug": "pixverse-r2"
+   "slug": "pixverse-r2",
+   "website": "https://world.pixverse.video/home/"
   },
   {
    "name": "Bleetz Network",
@@ -201,7 +202,8 @@
      "kr": "실제 환경에서 10라운드 에이전트 대화가 어떻게 작동하나요? 스타트업 에이전트는 피치 덱과 짧은 설명 중 어디서 정보를 가져오는지, 사실에 대한 '환각'은 어떻게 방지하는지, 그리고 VC들이 보기에 생성되는 후속 질문 중 가장 유용하거나 번거로운 유형은 무엇이라고 하나요?"
     }
    ],
-   "slug": "bleetz-network"
+   "slug": "bleetz-network",
+   "website": "https://bleetz.network/"
   },
   {
    "name": "Quiver GTM",
@@ -296,7 +298,8 @@
      "kr": "정말 탄탄한 런칭이네요! 지속적으로 제품을 출시하는 엔지니어이자 1인 창업자로서 런칭 캠페인을 운영할 때 꼭 사용해보고 싶은 도구입니다!"
     }
    ],
-   "slug": "quiver-gtm"
+   "slug": "quiver-gtm",
+   "website": "https://www.quivergtm.dev/"
   },
   {
    "name": "10xJoy",
@@ -391,7 +394,8 @@
      "kr": "수정 가능한 브리프 기능이 참 좋네요. 다른 사람에게 전달하기 전에 몇 가지 내용을 직접 다듬고 싶을 테니까요."
     }
    ],
-   "slug": "10xjoy"
+   "slug": "10xjoy",
+   "website": "https://10xjoy.com/"
   },
   {
    "name": "DEV·TV",
@@ -486,7 +490,8 @@
      "kr": "정말 멋지네요. IT 업무를 보면서 세 번째 모니터에 띄워두기에 최고입니다. 일하면서 화면에 부드럽게 스크롤되는 소식들을 힐끗 확인하기 좋습니다. 흐름도 매끄럽고 전체 화면 모드와 채널 전환 시 치지직거리는 노이즈 효과가 압권이네요."
     }
    ],
-   "slug": "dev-tv"
+   "slug": "dev-tv",
+   "website": "https://shouvik12.github.io/devtv/"
   }
  ]
 }

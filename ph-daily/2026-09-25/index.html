@@ -59,6 +59,9 @@ header .meta{color:var(--sub);font-size:14px;margin-top:4px}
 .toast.show{transform:translateX(-50%);opacity:1}
 footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
 a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+.visit:hover{filter:brightness(1.08)}
+.ws{color:var(--acc);font-weight:700;text-decoration:none;font-size:12px;margin-left:8px}
 </style>
 </head>
 <body>
@@ -185,7 +188,8 @@ const DATA = {
      "kr": "학습자가 막혔을 때 어떤 기술을 가르쳐야 할지는 어떻게 결정하나요?"
     }
    ],
-   "slug": "schole-2"
+   "slug": "schole-2",
+   "website": "https://schole.ai/"
   },
   {
    "name": "Floot MCP",
@@ -280,7 +284,8 @@ const DATA = {
      "kr": "저희는 즉석 카메라 대여 사업의 전체 시스템을 Floot으로 구축했습니다. 고객용 시스템과 직원용 시스템 모두를요. 벌써 1년 동안 운영하고 있는데 아무리 칭찬해도 모자랍니다. 이전 같았으면 이런 시스템을 개발하는 데 수년이 걸렸을 것입니다."
     }
    ],
-   "slug": "floot"
+   "slug": "floot",
+   "website": "https://floot.com/"
   },
   {
    "name": "CtrlOps 1.0",
@@ -375,7 +380,8 @@ const DATA = {
      "kr": "[@parth\\_makwana07](https://www.producthunt.com/@parth_makwana07) 첫 런칭 이후 지금까지 우리가 출시해 온 모든 것들을 돌아보니 이번 출시가 더욱 특별하게 느껴지네요. 🚀"
     }
    ],
-   "slug": "ctrlops"
+   "slug": "ctrlops",
+   "website": "https://ctrlops.io/"
   },
   {
    "name": "minimi 2.0",
@@ -470,7 +476,8 @@ const DATA = {
      "kr": "지난 한 달 동안 minimi를 사용해 왔는데 최고의 제품입니다.\n특히 하루에도 수백 번씩 컨텍스트 전환을 겪는 저 같은 창업자에게 minimi는 구세주와 같습니다"
     }
    ],
-   "slug": "shram"
+   "slug": "shram",
+   "website": "https://www.projectminimi.com/"
   },
   {
    "name": "NOAN",
@@ -565,7 +572,8 @@ const DATA = {
      "kr": "[@amrita\\_prajapati2](https://www.producthunt.com/@amrita_prajapati2) 감사합니다! 매우 빠릅니다. Claude 같은 원하는 AI 플랫폼에 API 문서를 제공하기만 하면 NOAN 설정을 스스로 진행합니다. 팩트 레이어를 구축하도록 돕고, 모든 기능이 API로 열려 있으므로 작업 보드나 연락처 네트워크 등을 활용하는 방법을 곧바로 이해하여 즉시 실행에 들어갑니다!"
     }
    ],
-   "slug": "noan-2"
+   "slug": "noan-2",
+   "website": "https://getnoan.com/?utm_source=producthunt&utm_medium=referral&utm_campaign=profile"
   }
  ]
 };
@@ -596,14 +604,14 @@ function renderGrid(){
   c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
   <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
   <div class="desc">${p.desc_kr||''}</div>
-  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}</div>`;
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="ws" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">↗ 웹사이트</a>`:''}</div>`;
   c.onclick=()=>openModal(p);g.appendChild(c);
  });
 }
 function openModal(p){
  const m=$('#modal');const tot=(p.comments||[]).length;
  m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
- <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div></div>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}</div>
  <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
  <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
  <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>

@@ -58,7 +58,8 @@
      "kr": "'내부 벤치마크에서 Bolt 최상위 유료 모델의 91%'라는 문구가 그 문장에서 과하게 무거운 역할을 하고 있네요 — 내부 벤치마크는 보통 새 물건을 좋아 보이게끔 고르는 경향이 있으니까요. 외부인이 재실행할 수 있는 공개 평가나 태스크 세트가 있나요, 아니면 당분간 91%라는 수치를 그저 믿어야 하나요?"
     }
    ],
-   "slug": "bolt-new"
+   "slug": "bolt-new",
+   "website": "https://bolt.new/"
   },
   {
    "name": "Mantra Timer",
@@ -140,7 +141,8 @@
      "kr": "차분한 느낌이 좋네요. 수익 모델은 어떻게 되나요?"
     }
    ],
-   "slug": "transcendence"
+   "slug": "transcendence",
+   "website": "https://mantratimer.app/"
   },
   {
    "name": "Lumiko",
@@ -199,7 +201,8 @@
      "kr": "마음에 들고, 필요할 때 쓸 것 같습니다. 절약해 주는 시간과 수고를 생각하면 $9 일회성 결제는 나쁘지 않네요. 출시 축하드립니다. 건투를 빕니다!!!"
     }
    ],
-   "slug": "lumiko"
+   "slug": "lumiko",
+   "website": "https://lumiko.dev/"
   },
   {
    "name": "Steam Frame",
@@ -246,7 +249,8 @@
      "kr": "'컨트롤러가 VR 완드이자 풀 게임패드로 쓰인다'는 부분이 이 제품의 영리한 점입니다. 대부분의 스탠드얼론 헤드셋은 VR 입력이냐 제대로 된 컨트롤러냐를 골라야 하니까요. Valve 컨트롤러만 해도 가볍지 않은데, Quest와 비교해 장시간 사용 시 헤드셋이 얼마나 무겁게 느껴질지 궁금합니다."
     }
    ],
-   "slug": "steam-machine"
+   "slug": "steam-machine",
+   "website": "https://steampowered.com/"
   },
   {
    "name": "Lull",
@@ -287,7 +291,8 @@
      "kr": "출시 축하합니다! 할루시네이션(환각) 응답은 어떻게 처리하나요?"
     }
    ],
-   "slug": "lull-3"
+   "slug": "lull-3",
+   "website": "https://lullme.app/"
   }
  ]
 }

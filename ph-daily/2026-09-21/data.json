@@ -110,7 +110,8 @@
      "kr": "네, 플랫폼에 기본으로 수천 개의 연동이 탑재돼 있습니다"
     }
    ],
-   "slug": "mycel"
+   "slug": "mycel",
+   "website": "https://mycelai.dev/"
   },
   {
    "name": "Minicart",
@@ -208,7 +209,8 @@
      "kr": "무언가가 실제로 반영되기 전이라면 검토와 수정을 전부 직접 하실 수 있습니다. 신뢰가 쌓이고 에이전트가 선호도를 학습하면, 나중엔 대신 더 많은 일을 처리하는 완전 자율 워크플로우도 켤 수 있게 됩니다! 좋은 말씀과 응원 정말 감사합니다! 아직 시작일 뿐입니다!"
     }
    ],
-   "slug": "minicart"
+   "slug": "minicart",
+   "website": "https://minicart.com/?promo=PH2026&utm_source=producthunt"
   },
   {
    "name": "Answers by Context.dev",
@@ -247,7 +249,8 @@
      "kr": "좋은 팀이 만든 훌륭한 제품이네요! 제품 리서치와 아웃리치를 위한 에이전트 루프에 연동해서 쓰고 있는데, 결과 품질이 아주 좋습니다."
     }
    ],
-   "slug": "context-dev"
+   "slug": "context-dev",
+   "website": "https://context.dev/"
   },
   {
    "name": "Morsa Signals",
@@ -346,7 +349,8 @@
      "kr": "출시 축하합니다! 제품이 정말 멋져 보네요 🚀"
     }
    ],
-   "slug": "morsa-signals"
+   "slug": "morsa-signals",
+   "website": "https://signals.morsa.io/"
   },
   {
    "name": "Harbor",
@@ -383,7 +387,8 @@
      "kr": "에버노트는 내보내기를 사실상 불가능하게 만들어놨는데, 여기선 그게 잘 되어서 에버노트 콘텐츠를 옮겨올 수 있으면 좋겠네요."
     }
    ],
-   "slug": "harbor-2"
+   "slug": "harbor-2",
+   "website": "https://harbor.my/"
   }
  ]
 }

@@ -4,7 +4,7 @@
 #   publish.py merge   YYYY-MM-DD [--wait N]          _pending 원본 → data.json 병합 (파일 없으면 최대 N초 대기, 기본 300)
 #   publish.py publish YYYY-MM-DD [--meta FILE] [--dry] meta 반영 → list_gen → build → git push → URL 200 확인
 # 종료코드: 0 성공 / 2 수집데이터 없음 / 3 데이터 손상 / 4 빌드 실패 / 5 push 실패 / 6 URL 확인 실패
-import argparse, json, subprocess, sys, time, urllib.request
+import argparse, json, re, subprocess, sys, time, urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -15,6 +15,27 @@ REQ = ["name", "tagline_kr", "desc_kr", "image", "maker", "price_model", "launch
 
 def sh(cmd, cwd=None, timeout=600):
     return subprocess.run(cmd, shell=True, cwd=cwd, capture_output=True, text=True, timeout=timeout)
+
+
+def extract_website(date, slug):
+    if not slug:
+        return None
+    try:
+        raw_file = BASE / "_pending" / str(date) / "raw" / f"{slug}.md"
+        if not raw_file.exists():
+            return None
+        text = raw_file.read_text(encoding="utf-8")
+    except Exception:
+        return None
+    m = re.search(r"\[\s*Visit website\s*\]\(\s*(https?://[^)\s]+)\s*\)", text)
+    if not m:
+        return None
+    url = m.group(1)
+    url = url.replace("?ref=producthunt", "")
+    url = url.replace("&ref=producthunt", "")
+    if url.endswith("?") or url.endswith("&"):
+        url = url[:-1]
+    return url
 
 
 def cmd_merge(date, wait):
@@ -52,6 +73,10 @@ def cmd_merge(date, wait):
         print(f"[merge:FAIL:3] 파일은 있으나 유효 제품 없음. 파싱오류: {parse_err}")
         return 3
     products = sorted(merged.values(), key=lambda p: -p.get("upvotes", 0))
+    for p in products:
+        w = extract_website(date, p.get("slug"))
+        if w:
+            p["website"] = w
     miss = [f"{p.get('slug','?')}:{f}" for p in products for f in REQ if not p.get(f)]
     no_sum = [p.get("slug", "?") for p in products if not p.get("comment_summary")]
     data = {
@@ -63,7 +88,8 @@ def cmd_merge(date, wait):
     }
     ddir.mkdir(parents=True, exist_ok=True)
     dj.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"[merge:ok] 제품 {len(products)}개, 댓글 {sum(len(p.get('comments', [])) for p in products)}개 → {dj}")
+    ws_cnt = sum(1 for p in products if p.get("website"))
+    print(f"[merge:ok] 제품 {len(products)}개, 댓글 {sum(len(p.get('comments', [])) for p in products)}개, 웹사이트 링크 {ws_cnt}/{len(products)} 추출 → {dj}")
     if miss:
         print(f"[merge:warn] 필수필드 누락: {', '.join(miss)}")
     if no_sum:

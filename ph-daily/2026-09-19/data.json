@@ -106,7 +106,8 @@
      "kr": "출시 축하합니다. 최근 아웃리치 플랫폼 몇 곳을 써봤지만 성과가 별로 없어서 꼭 써보고 싶네요. 제가 이 분야를 잘 몰라서 그렇다고 생각하는데, 내장된 수정/추천 기능이 정말 마음에 듭니다. 이메일을 보낸다면 리스트 웜업은 어떻게 하나요? 콜드 아웃리치의 낮은 응답률에 대해 배운 게 하나 있다면 그거죠."
     }
    ],
-   "slug": "ami-ai"
+   "slug": "ami-ai",
+   "website": "https://aisdr.com/ai-gtm-agent-ami/"
   },
   {
    "name": "AINA",
@@ -201,7 +202,8 @@
      "kr": "축하합니다! 면접 연습이 실제 지원하는 회사/포지션에 맞춰 조정되나요?"
     }
    ],
-   "slug": "aina"
+   "slug": "aina",
+   "website": "https://aina-tech.io/candidate"
   },
   {
    "name": "MosMos",
@@ -296,7 +298,8 @@
      "kr": "질문 감사합니다!\n\n말한 초안이 얼마나 날것이었는지, 그리고 선택한 폴리시 레벨에 따라 다릅니다.\n높은 설정은 문구와 구조를 정리하는 데 도움이 되고, 가장 낮은 설정은 원본 전사문을 그대로 유지합니다.\n\n그래도 보내기 전에 결과를 가볍게 읽어보시길 권합니다. 특히 이름, 숫자, 기술적 세부사항은요."
     }
    ],
-   "slug": "mosmos"
+   "slug": "mosmos",
+   "website": "https://mosmos.io/"
   },
   {
    "name": "ProductBridge",
@@ -390,7 +393,8 @@
      "kr": "감사합니다! 정말 현실적인 우려입니다.\n\nProductBridge는 에이전트가 사용할 소스를 통제하고, 답변에 출처를 표시하고, 실전 투입 전에 다양한 표현으로 질문을 테스트할 수 있게 해줍니다. 웹사이트 콘텐츠는 수동 또는 일정에 따라 새로 고침할 수 있고, 새 Q&A 조각은 몇 분 안에 반영됩니다.\n\n이런 통제 장치들이 오래된 답변을 줄이는 데 도움이 되지만, 모든 답변이 정확하다고 보장하진 않습니다. 소스 콘텐츠를 최신으로 유지하는 것도 여전히 중요합니다."
     }
    ],
-   "slug": "productbridge"
+   "slug": "productbridge",
+   "website": "https://productbridge.io/"
   },
   {
    "name": "Sider Omni Sidebar",
@@ -485,7 +489,8 @@
      "kr": "네, 그건 Sider Omni의 핵심 기능 중 하나입니다. 예를 들어 브라우저에서 정보를 모아 문서나 스프레드시트로 정리할 수 있습니다."
     }
    ],
-   "slug": "sider-omni"
+   "slug": "sider-omni",
+   "website": "https://sider.ai/lab/sider-omni"
   }
  ]
 }
