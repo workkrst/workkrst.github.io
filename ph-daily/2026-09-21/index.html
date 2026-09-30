@@ -41,7 +41,7 @@ header .meta{color:var(--sub);font-size:14px;margin-top:4px}
 .modal-bg.open{display:flex}
 .modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
 .modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
-.modal .m-head{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
 .modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
 .close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
 .sect{margin-top:18px}
@@ -62,7 +62,8 @@ a{color:var(--acc)}
 .visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
 .visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
 .visit:hover{filter:brightness(1.08)}
-.ws{color:var(--acc);font-weight:700;text-decoration:none;font-size:12px;margin-left:8px}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
 </style>
 </head>
 <body>
@@ -502,7 +503,7 @@ function renderGrid(){
   c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
   <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
   <div class="desc">${p.desc_kr||''}</div>
-  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="ws" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">↗ 웹사이트</a>`:''}</div>`;
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
   c.onclick=()=>openModal(p);g.appendChild(c);
  });
 }
