@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@korean_money_printer - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username { color: var(--subtext-color); font-size: 14px; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">코리안 머니 프린터</span>
+                    
+                    <span class="username">@korean_money_printer</span>
+                </div>
+                <span class="post-date">2026-09-29 00:33</span>
+            </div>
+            <div class="post-text">미국과 일본 창업자들은 이미 돈 버는 개꿀통을 찾았습니다.<br><br>이걸 펭귄 밀크 같은 야물딱진 고단백 이유식 수준으로 준비 했습니다<br><br>&quot;퍼널&quot;에 대한 키워드에 관심이 안생기면 읽지 마세요.<br><br>1. 퀴즈 퍼널<br>2. VSL<br><br>&quot;헤에엣! 퀴즈 퍼널이 뭔가용?&quot;<br><br>퀴즈 퍼널은 뭐냐면, 객관식으로 존나게 쭉 나열 하는 거임. 마치 심리 테스트처럼.<br><br>&quot;엥? 이딴게 퍼널??! 이라구연?&quot;<br><br>ㅇㅇ 준온나 퍼널임. <br><br>근데 이게 악독한게 여러 가지 심리학적인 기법이 들어가 있음.<br><br>바로 퀴즈 퍼널 사례 간드아잇.<br><br>1. 미래 연인 그려 주는 서비스 사례<br>-&gt; 퀴즈 퍼널이 100~200개가 넘어감 바리에이션이 200개가 넘는 거임. 그냥 존나게 테스트 해서 위너 찾는 것. <br><br>&quot;님아, 아니 이딴 미래 연인 그려 주는 서비스가 돈이 돼요??&quot;<br><br>하... 코리안 머니 프린터가 진짜 계속 강조 하는 게 뭐지?<br><br>&quot;ㅍㅇㄷ ㅁㅋㅌ&quot;<br><br>이거 완성 못하면 그냥 썰글이나 읽으러 가는 게 서로 도움 될 거 같다.</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 34</span>
+                    <span>💬 4</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@korean_money_printer/post/Dd1g-cvEtix" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (2개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@korean_money_printer</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-09-29 00:33</span>
+                    <span class="reply-likes">❤️ 2</span>
+                </div>
+                <div class="reply-text">위 초성은 뭐지?<br><br>당연히, &quot;페이드 마케팅&quot;임. <br><br>&quot;아니 페이드 마케팅이 뭔데요!??&quot;<br><br>돈 주고 메타, 구글, X, 틱톡 등에 광고 하는 거임.<br><br>&quot;헤엣? 이게 돈이 된다고요? 제 돈을 쓰는데요?&quot;<br><br>띠-용.<br><br>100원을 써서 200원을 벌면?<br>1억을 써서 2억을 벌면?<br><br>안 할 이유가 없다. (다만 존나 간단할 뿐 쉽지는 않음.)<br>-&gt; 이 문장을 10번 읽고 다음으로 가라.<br><br>&quot;아니 그러면, 님 광고대행사 하려고 하죠!?&quot;<br>-&gt; (이런 발상은 10점 만점 중 5점 평타는 함.)<br><br>광고대행사 같이 마크업 10% 떼먹는 일은 안함. (돈이 안되서 내 바이오 봐라 1억 번다잖냐 참고로 1억불)<br><br>광고대행사 뚝빼기는 많이 깼지만, 나중에 다시 한 번 깨보기로 하면서<br><br>그리고, 참고로 이 개꿀딱 꿀이 흐르는 글은 언제 삭제 할지 모르니깐 미리미리 저장 해두셈;; 내가 기분파라 그냥 30분 뒤 삭제할 수도 있음<br><br>자자자 그러면<br><br>두 번째 퍼널 들가가간다 입 벌려어어잇</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@korean_money_printer</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-09-29 00:33</span>
+                    <span class="reply-likes">❤️ 4</span>
+                </div>
+                <div class="reply-text">2. VSL<br>Video Sales Letter.<br>-&gt; 이제 주옥 같은 월 500만 원! 수강생 어쩌구저쩌구, 무료 전자책 어쩌구, 이런 시부렁 주옥 같은 상세 페이지도 ㅈㄴ 지겹다. <br><br>그냥 창업자가 나와서 헤드 토킹으로 이빨 까는 거임. 전환률 차이가 주옥 됨.<br><br>2번 하는 강의 팔이는 못 봄. 왜? ㅈㄴ 쪽팔리거든 실제 성과가 대충 지피티도 짜깁기 한 전자책 밖에 없는 애들이 대다수라.<br><br>실제로 자신의 제품을 팔아본 애도 거의 없음.<br><br>보통은 사람들 Manipulation 해서 돈 버는 게 가장 빨리 되는 지름 길임.<br>예시: ㅈㅊ, ㄷㅋㅅㄹㅎ<br><br>&quot;그냥 돈 벌고 싶으면 재네들이나 나처럼 해외 문물 빠르게 전파 하면 끝임;;&quot;<br>-&gt; 17번 반복 해서 읽어라<br><br>하 전자책으로 풀려고 했는데 ㄹㅇ 맛보기로 너무 많이 풀고 있다.<br><br>이런 990만 원짜리 개꿀 인사이트, 제품 빌딩, 사주, 캐릭터 챗, 광고 관심 있으면, 바나프레소 시그니처 아아 한 잔 준비 하고 DM ㄱㄱ 개꿀팁 다 푼다.</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (4개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jiyooni_p</span>
+            <span class="reply-date">2026-09-29 01:37</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">바나프레손가몬가 아아와 디저트는<br>준비할테니 몇명 모아서 세미나 좀 ㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@korean_money_printer</span>
+            <span class="reply-date">2026-09-29 01:39</span>
+            
+        </div>
+        <div class="reply-text">제가 이래 보여도 나름 낯을 가려서 호호…  이런 인사이트는 쓰레드에 많이 많이 무료로 풀어 보겠다능</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@tongtong_duck</span>
+            <span class="reply-date">2026-09-29 21:38</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">코머프 멋져🐥</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@korean_money_printer</span>
+            <span class="reply-date">2026-09-29 21:38</span>
+            
+        </div>
+        <div class="reply-text">아리가토링링~</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
