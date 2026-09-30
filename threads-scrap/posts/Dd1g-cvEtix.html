@@ -55,7 +55,12 @@
             gap: 8px;
         }
         .display-name { font-weight: 700; font-size: 17px; }
-        .username { color: var(--subtext-color); font-size: 14px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
         .verified-badge {
             color: #0095f6;
             font-weight: bold;
@@ -185,7 +190,7 @@
                 <div class="author-main">
                     <span class="display-name">코리안 머니 프린터</span>
                     
-                    <span class="username">@korean_money_printer</span>
+                    <a href="https://www.threads.net/@korean_money_printer" target="_blank" rel="noopener" class="username">@korean_money_printer</a>
                 </div>
                 <span class="post-date">2026-09-29 00:33</span>
             </div>

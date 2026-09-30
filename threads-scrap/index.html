@@ -68,19 +68,47 @@
             gap: 8px;
         }
         .author-name { font-weight: 700; font-size: 15px; }
-        .author-handle { color: var(--subtext-color); font-size: 13px; }
+        .author-handle {
+            color: var(--subtext-color);
+            font-size: 13px;
+            text-decoration: none;
+        }
+        .author-handle:hover { text-decoration: underline; }
         .card-date { color: var(--subtext-color); font-size: 12px; }
+        .card-body-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
         .card-body { margin-bottom: 14px; }
         .card-summary {
             font-size: 15px;
             color: #d8dade;
             line-height: 1.5;
         }
+        .card-body-link:hover .card-summary {
+            color: #ffffff;
+        }
         .card-footer {
             display: flex;
-            gap: 16px;
+            justify-content: space-between;
+            align-items: center;
             color: var(--subtext-color);
             font-size: 13px;
+        }
+        .card-footer-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover {
+            color: var(--text-color);
+            text-decoration: underline;
         }
         .empty-list {
             text-align: center;
@@ -98,22 +126,27 @@
         </header>
         <main class="card-grid">
             
-        <a href="posts/Dd1g-cvEtix.html" class="archive-card">
+        <div class="archive-card">
             <div class="card-header">
                 <div class="card-author">
                     <span class="author-name">코리안 머니 프린터</span>
-                    <span class="author-handle">@korean_money_printer</span>
                 </div>
                 <span class="card-date">2026-09-29 00:33</span>
             </div>
-            <div class="card-body">
-                <p class="card-summary">미국과 일본 창업자들은 이미 돈 버는 개꿀통을 찾았습니다.</p>
-            </div>
+            <a href="posts/Dd1g-cvEtix.html" class="card-body-link">
+                <div class="card-body">
+                    <p class="card-summary">미국과 일본 창업자들은 이미 돈 버는 개꿀통을 찾았습니다.</p>
+                </div>
+            </a>
             <div class="card-footer">
-                <span class="stat-item">❤️ 34</span>
-                <span class="stat-item">💬 4</span>
+                <div class="card-footer-left">
+                    <a href="https://www.threads.net/@korean_money_printer" target="_blank" rel="noopener" class="author-handle">@korean_money_printer</a>
+                    <span class="stat-item">❤️ 34</span>
+                    <span class="stat-item">💬 4</span>
+                </div>
+                <a href="https://www.threads.net/@korean_money_printer/post/Dd1g-cvEtix" target="_blank" rel="noopener" class="orig-link">원글 ↗</a>
             </div>
-        </a>
+        </div>
         
         </main>
     </div>
