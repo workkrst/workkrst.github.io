@@ -4,7 +4,7 @@
 #   publish.py merge   YYYY-MM-DD [--wait N]          _pending 원본 → data.json 병합 (파일 없으면 최대 N초 대기, 기본 300)
 #   publish.py publish YYYY-MM-DD [--meta FILE] [--dry] meta 반영 → list_gen → build → git push → URL 200 확인
 # 종료코드: 0 성공 / 2 수집데이터 없음 / 3 데이터 손상 / 4 빌드 실패 / 5 push 실패 / 6 URL 확인 실패
-import argparse, json, re, subprocess, sys, time, urllib.request
+import argparse, json, os, re, subprocess, sys, time, urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -97,6 +97,24 @@ def cmd_merge(date, wait):
     return 0
 
 
+def commit_disquiet_registry(date):
+    dq_reg = BASE / "_pending" / str(date) / "disquiet.json.registry"
+    if dq_reg.exists():
+        tmp_path = BASE / "_pending" / f"disquiet_seen.tmp.{os.getpid()}"
+        seen_path = BASE / "_pending" / "disquiet_seen.json"
+        try:
+            tmp_path.write_bytes(dq_reg.read_bytes())
+            os.replace(tmp_path, seen_path)
+            print(f"[pub:ok] disquiet 레지스트리 갱신 완료: {seen_path}")
+        except Exception as e:
+            print(f"[pub:warn] disquiet 레지스트리 갱신 실패 ({e}) — 발행 성공에는 영향 없음")
+            try:
+                if tmp_path.exists():
+                    tmp_path.unlink()
+            except Exception:
+                pass
+
+
 def apply_meta(date, meta_path):
     dj = BASE / date / "data.json"
     data = json.loads(dj.read_text(encoding="utf-8"))
@@ -105,8 +123,11 @@ def apply_meta(date, meta_path):
         data["summary"] = m["summary"]
     if m.get("notable") is not None:
         data["notable"] = m["notable"]
+    if "disquiet" in m:
+        data["disquiet"] = m["disquiet"]
     dj.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"[meta:ok] summary {len(data.get('summary',''))}자, notable {len(data.get('notable',[]))}개 반영")
+    dq_cnt = len(data["disquiet"]) if isinstance(data.get("disquiet"), list) else 0
+    print(f"[meta:ok] summary {len(data.get('summary',''))}자, notable {len(data.get('notable',[]))}개, disquiet {dq_cnt}개 반영")
 
 
 def cmd_publish(date, meta, dry):
@@ -165,6 +186,7 @@ def cmd_publish(date, meta, dry):
             ) as resp:
                 if resp.status == 200:
                     print(f"[pub:ok] {url} (200, 시도 {i + 1}) — 제품 {len(ps)}개 · 댓글 {ctot}개")
+                    commit_disquiet_registry(date)
                     return 0
         except Exception:
             pass
