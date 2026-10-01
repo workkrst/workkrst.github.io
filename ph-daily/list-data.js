@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-01",
+    "url": "2026-10-01/",
+    "top_product": "Pexo",
+    "count": 5,
+    "upvotes_total": 5457,
+    "comments_total": 59
+  },
+  {
     "date": "2026-09-30",
     "url": "2026-09-30/",
     "top_product": "iFixAi",
