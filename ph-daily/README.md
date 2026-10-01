@@ -13,6 +13,8 @@ Product Hunt 업보트 Top 5를 매일 자동 수집·번역·발행하는 정�
    → `_pending/{D}/raw/{S}.md` (403·차단 대응은 Apify가 처리, 3,000자 미만이면 `/posts/`→`/products/` 폴백)
 3. LLM이 선정·번역·요약 → `_pending/{D}/{A,B,C}.json`
    - 제품 정보·댓글 번역·comment_summary 포함. 필수 필드는 `publish.py`의 `REQ` 참조
+4. `_build/fetch_disquiet.py <out.json>` — 디스콰이엇 신규 수집 (아래 섹션 참조)
+   - **부가 작업**: 실패해도 전체 실패 아님 — 조용히 무시하고 당일 디스콰이엇 섹션만 누락
 
 ### 2) 발행 — 매일 12:30 (브리핑)
 ```bash
@@ -20,7 +22,17 @@ python3 _build/publish.py merge {D}
 python3 _build/publish.py publish {D} --meta /tmp/ph-meta-{D}.json
 ```
 - `merge`: `_pending/{D}/*.json` → `{D}/data.json` 병합. 이때 `extract_website()`가 website 필드 자동 추출(아래 참조)
-- `publish`: meta(summary·notable) 반영 → `build_report.py`(일일 페이지) → `list_gen.py`(목록) → git push(`pull --rebase --autostash` 내장) → URL 200 확인
+- `publish`: meta(summary·notable·disquiet) 반영 → `build_report.py`(일일 페이지) → `list_gen.py`(목록) → git push(`pull --rebase --autostash` 내장) → URL 200 확인 → **디스콰이엇 레지스트리 커밋**
+
+## 디스콰이엇 섹션 (2026-10-01 추가)
+
+일일 페이지 PH 섹션 아래에 가로선으로 구분돼 "🇰🇷 디스콰이엇 신규 프로덕트"가 카드로 표시된다. PH Top5 큐레이션과 달리 신규 등록분 전체를 간략 카드(제품명·태그라인·AI 한줄 코멘트·업보트·디스콰이엇 링크)로 나열한다.
+
+- **데이터 흐름**: `fetch_disquiet.py`가 `disquiet.io/products?page=1..2`를 직접 GET(서버사이드 렌더링이라 Apify 불필요, 무료) → "인기 프로덕트" 사이드바·AD 제외 후 메인 리스트 20개/페이지 파싱 → **레지스트리 diff로 오늘 신규만** `_pending/{D}/disquiet.json` 저장
+- **중복 관리**: `_pending/disquiet_seen.json`에 본 slug 누적. 갱신본은 `<out.json>.registry`에 임시 저장되고 **URL 200 확인 후에야** 정식 레지스트리로 교체(atomic) — 발행 실패 시 다음 날 diff에 다시 잡혀 유실 없음
+- **코멘트**: 발행 크론의 agy 브리프가 disquiet.json을 읽어 제품당 한국어 한줄 코멘트 작성 → meta JSON의 `disquiet` 키로 publish에 전달
+- **UI**: `data.json`에 `disquiet` 키가 없거나 빈 배열이면 섹션 자체가 렌더링되지 않음(자동 숨김). 카드 전체 클릭 = 디스콰이엇 페이지 새 탭
+- **초기 시딩**: `fetch_disquiet.py <out.json> --init` — 첫 실행 시 레지스트리만 채우고 미출력. `--keep K`로 페이지1 앞 K개는 신규로 남길 수 있음
 
 ## 링크 기능 (2026-09-30 추가)
 
@@ -41,6 +53,8 @@ python3 _build/publish.py publish {D} --meta /tmp/ph-meta-{D}.json
 
 2026-09-30 실적: 14회차 70개 제품 중 69개 소급 성공 (weave 1개 제외).
 
+디스콰이엇 섹션은 2026-10-01부터라 과거 회차 소급 대상 아님.
+
 ## 파일 구조
 
 ```
@@ -52,12 +66,16 @@ ph-daily/
 │   └── index.html        # 빌드 산출물 — 직접 수정 금지 (build_report.py가 재생성)
 ├── _build/
 │   ├── fetch_ph.py       # Apify web-fetch 수집기 (home/slug 모드)
-│   ├── publish.py        # merge/publish 진입점 + extract_website()
-│   ├── build_report.py   # 일일 index.html 생성기 (템플릿 내장)
+│   ├── fetch_disquiet.py # 디스콰이엇 수집기 (직접 GET + 레지스트리 diff)
+│   ├── publish.py        # merge/publish 진입점 + extract_website() + 레지스트리 커밋
+│   ├── build_report.py   # 일일 index.html 생성기 (템플릿 내장, 디스콰이엇 섹션 포함)
 │   └── list_gen.py       # 목록 데이터 생성기
 └── _pending/{D}/         # 수집 원본 (gitignore — 미게시)
     ├── raw/*.md          # PH 페이지 원문 (website 추출 재료)
-    └── {A,B,C}.json      # 번역·요약 산출물
+    ├── {A,B,C}.json      # 번역·요약 산출물
+    └── disquiet.json     # 디스콰이엇 오늘 신규 (+ .registry 임시 갱신본)
+
+`_pending/disquiet_seen.json` — 디스콰이엇 중복 필터 레지스트리 (gitignore)
 ```
 
 ## 주의사항
