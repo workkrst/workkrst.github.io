@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@bybrezel - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">Brezel</span>
+                    
+                    <a href="https://www.threads.net/@bybrezel" target="_blank" rel="noopener" class="username">@bybrezel</a>
+                </div>
+                <span class="post-date">2026-10-01 17:42</span>
+            </div>
+            <div class="post-text">…… 아니 나 이제 진짜 어쩌지<br>직장인들 업무할 때 쓰라고 만든 앱이<br>대만 앱스토어 카메라 1위했어………<br>한국에서는 지금 차트에도 없는데<br>대만에서 앱스토어 전체 6등이래…..<br>나 지금 손이 너무 떨려ㅜㅜㅜㅜㅜㅠㅠㅠ<br>근데 우리 엄마 아빠는 이게 무슨 재롱잔치 인기상 같은 건줄 아나 반응이 1도 없어😭😭😭😭😭</div>
+            <div class="media-grid"><div class="media-item"><img src="https://scontent-nrt1-2.cdninstagram.com/v/t51.82787-15/825320896_17985946251113536_643963254294239940_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=104&amp;ig_cache_key=Mzk5ODIxMjc2ODI5MzIwNDM5OQ%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMjA5MS5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=N7hJk-4XIP0Q7kNvwFEKYTY&amp;_nc_oc=Ado-tUKNAupRgfX_NDOzZM5LVcEG3e5sTHGHYI5efHT3L7QKmF8OgfjKfY4z8aPc3-rBax_9UgDOYTXaRA1YhvSl&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt1-2.cdninstagram.com&amp;_nc_gid=G7XXxlE7lzJq-6X4GBiQ9Q&amp;_nc_ss=7e289&amp;oh=00_AQPcpZwtiBC7BukiVeUyhZG3do_wDMzPKvEF2mcEQ6mziA&amp;oe=6AC4E2DF" alt="Post media" loading="lazy"></div></div>
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 426</span>
+                    <span>💬 114</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@bybrezel/post/Dd8gVROjDGv" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (114개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 18:51</span>
+            <span class="reply-likes">❤️ 26</span>
+        </div>
+        <div class="reply-text">기본 갤러리에 사진 저장 안되는 아이폰 서브카메라야.<br>업무 사진 많이 찍어야 하는 직장인들/1인 사업가면 한 번 써봐!<br>https://apps.apple.com/kr/app/sub-camera/id6770336562?l￼</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@grandnull</span>
+            <span class="reply-date">2026-10-01 17:48</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">근데 쓰니 대만사람이야? 왜 대만에서 그래? 다른앱도 대만에서 순위오르더니</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 17:52</span>
+            <span class="reply-likes">❤️ 6</span>
+        </div>
+        <div class="reply-text">그니까 말야.. 나 서울 신월동에서 태어난 완전 토종 한국인인데 .. 조상님중에 대만분이 계신가 왤케 대만에서만 잘풀리지😭😭</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@grandnull</span>
+            <span class="reply-date">2026-10-01 17:53</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">대만언어로 로컬라이징했어??</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 17:54</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">아니 나 심지어 번체 중국어는 뒤늦게 추가해서 지금 앱에 번체 중국어가 계속 오류 나는데도 엄청 좋아해주셔…………..그래서 더 얼떨떨해…🫪</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@grandnull</span>
+            <span class="reply-date">2026-10-01 17:57</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">대박이다 신기하네</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@csjlabs</span>
+            <span class="reply-date">2026-10-01 17:55</span>
+            <span class="reply-likes">❤️ 26</span>
+        </div>
+        <div class="reply-text">글로벌 앱 ㅊㅊㅊ 🎉🎉</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 17:58</span>
+            <span class="reply-likes">❤️ 7</span>
+        </div>
+        <div class="reply-text">고마워 이게 꿈인지 생신지ㅜㅜㅜ 아 맞다 나 어제 안샀어 앱 다운 받았어 !!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@csjlabs</span>
+            <span class="reply-date">2026-10-01 18:00</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">고마워 🩷🩷🩷🩷</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 18:02</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">컨셉 너무 좋아 차트인 가보자고👏👏</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jlpt_tango_official</span>
+            <span class="reply-date">2026-10-01 18:06</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오메데토!!🥳</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 18:08</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">아리가또ㅜㅜㅜㅜㅜㅜㅜㅜ😭😭😭 쓰레드에서 축하받으니까 이제야 좀 실감난다ㅜㅜ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nicegoodhappyday</span>
+            <span class="reply-date">2026-10-01 18:21</span>
+            <span class="reply-likes">❤️ 4</span>
+        </div>
+        <div class="reply-text">아무것도 모르는 순수한이의 질문. 이거 1위하면 좋은점이 뭐얌? ^^*</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 18:27</span>
+            <span class="reply-likes">❤️ 14</span>
+        </div>
+        <div class="reply-text">ㅋㅋㅋㅋㅋㅋㅋㅋ우리엄빠와 어쩜 이렇게 똑같은 질문을😭😭!! 그냥 뭐든 인정받은 것 같아 기분이 좋자나~! 한 잔 해!!ㅎㅎㅎㅎㅎㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@_hxx.ceo_</span>
+            <span class="reply-date">2026-10-01 18:22</span>
+            <span class="reply-likes">❤️ 5</span>
+        </div>
+        <div class="reply-text">재롱잔치 인기상ㅋㅋㅋㅋㅋ 너무 귀엽다 축하해~!!! 어떤 카메라앱인지는 모르겠지만 수요가 확실히 있는 서비스인가보당!!! 전세계로 뻗어나가아ㅏㅏㅏ~!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 18:29</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">고마워!!! 글로벌로 가보면 진짜 좋겠다 🥹🥹🥹</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@rainy50818</span>
+            <span class="reply-date">2026-10-01 18:31</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">뭐든 1등하기 쉽지 않지~ 축하해! 나도 이따 집에서 써봐야징</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 18:36</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">사진 많이 찍는 업종이야?! 그럼 유용하게 쓰이면 좋겠다!! 축하댓글 고마워 ㅎㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@consumer_app_mania</span>
+            <span class="reply-date">2026-10-01 18:48</span>
+            <span class="reply-likes">❤️ 10</span>
+        </div>
+        <div class="reply-text">제대로된 Pain Killer 앱이라 그런지 사람들이 발견하기만 하면 반응하나봐 전체1등까지 가보자~~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 18:53</span>
+            <span class="reply-likes">❤️ 4</span>
+        </div>
+        <div class="reply-text">지금 확인해보니 전체앱 4등이래ㅠㅠ 응원 고마워! 스친 덕에 큰 꿈을 그릴 수 있게 되었어🫶</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hfr.x01</span>
+            <span class="reply-date">2026-10-01 18:55</span>
+            <span class="reply-likes">❤️ 5</span>
+        </div>
+        <div class="reply-text">마케팅도 따로안하고1등이에요?ㅎㄷㄷ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 19:01</span>
+            <span class="reply-likes">❤️ 5</span>
+        </div>
+        <div class="reply-text">번체 중국어로 쓰레드 계정 운영했어요!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hfr.x01</span>
+            <span class="reply-date">2026-10-01 19:08</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오오 그론방법이!! 축하드려요~~!!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 19:21</span>
+            
+        </div>
+        <div class="reply-text">ㅎㅎㅎ감사합니다!!!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@field_of_mugwort</span>
+            <span class="reply-date">2026-10-01 18:55</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오? 마침나 필요한거였는데!!<br>리서치 할때 좋겠다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 19:00</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">맞아 시장조사같은 거 할 때 엄청 유용해!! 써보고 필요한 기능 있으면 피드백은 언제든 환영이야 ✨</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@field_of_mugwort</span>
+            <span class="reply-date">2026-10-01 19:23</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">자동삭제 기능도 있고 카테고리도 있어서<br>넘 유용하다 ~ ▓<br>소리만 어떻게 좀 작게 됐으면!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 00:07</span>
+            
+        </div>
+        <div class="reply-text">피드백 고마워!! 더 개선해나가볼게 🥰</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@windoooing</span>
+            <span class="reply-date">2026-10-01 19:22</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">너무 좋은거 알아간다<br>지금 2테라 다써서 어찌하나 동동거리고 있었는데</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 19:53</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">앗 이건 저장공간을 해결해주지는 않아!! 아이폰 용량은 동일하게 사용하는데 분리해주는 기능이야 ㅎㅎ 한 번 써보는 거 추천해!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@windoooing</span>
+            <span class="reply-date">2026-10-01 20:00</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">촬영하면 어플에만 남아있고<br>바로 내 앨범에 안들어가던데<br>그때는 용량을 안쓰는거 아냐?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 00:07</span>
+            
+        </div>
+        <div class="reply-text">아냐! 그럼 다른 앱들과 동일한 방식으로 앱 용량이 올라가!! 예를 들면 넷플릭스 오프라인 다운받으면 넷플릭스 용량 올라가듯!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@lumpen.mya</span>
+            <span class="reply-date">2026-10-01 19:28</span>
+            
+        </div>
+        <div class="reply-text">레전드</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nissy.app</span>
+            <span class="reply-date">2026-10-01 19:28</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와 진짜 대단하세요!! 너무너무 축하드려요~!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 19:58</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">ㅠㅠ 너무너무 감사합니다!! 축하는 받아도 받아도 즐겁네요 :)</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nissy.app</span>
+            <span class="reply-date">2026-10-01 19:59</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">맞아요~!!<br>제 앱은 아직 한국이랑 대만에 많이 못 알렸는데, 저도 더 분발해야겠단 생각이 드네요! 1인 개발 같이 파이팅해요~!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 00:08</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">응원합니다!! 종종 보면 열심히 리포할게요:)</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@happytony74</span>
+            <span class="reply-date">2026-10-01 19:37</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">대단하다 축하해 스하리완료</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 19:54</span>
+            
+        </div>
+        <div class="reply-text">고마워!!! 🙏🙏</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@berliner02_</span>
+            <span class="reply-date">2026-10-01 19:40</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오호 나는 기카 앱만 쓰는데<br>게다가 아이폰은 라이카 공식 앱도 있잖아</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 19:53</span>
+            
+        </div>
+        <div class="reply-text">기카 앱이 뭐야? 처음 들어봐 나는 !!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@berliner02_</span>
+            <span class="reply-date">2026-10-01 19:53</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">기본 카메라지 써드 파티보다 좋은</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 19:55</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">아…… 나 방금 너무 할미같았다……ㅜㅜ ㅋㅋㅋ 기본 카메라!! 줄임말이구나ㅎㅎㅎ<br>마쟈 확실히 화질이나 여러가지는 기카가 좋아 이건 단지 한번 보고 버릴 업무용 사진에 더 적합!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@berliner02_</span>
+            <span class="reply-date">2026-10-01 19:56</span>
+            
+        </div>
+        <div class="reply-text">내가봤을때 구린 기카 앱이 애플하고 삼성<br>기능많아지는데 쓰기 불편하고 직관적이지 않음<br>전문적인 기능들고 반쪽 짜리고 과대 광고 지</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@chris.nomaddev</span>
+            <span class="reply-date">2026-10-01 19:42</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">수익 창출은 어떻게?!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 19:57</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">일부 기능은 평생구매로 해놨어!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@96._.ryul</span>
+            <span class="reply-date">2026-10-01 19:51</span>
+            <span class="reply-likes">❤️ 14</span>
+        </div>
+        <div class="reply-text">헐... 난 업무상 사진 겁나찍는데 맨날 개인사진이랑 잇어서 짜증났었는데... 한번 써볼게 진짜 고마워!!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@effibono</span>
+            <span class="reply-date">2026-10-01 19:55</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">축하드립니다 ㅎ 부러워요!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 20:37</span>
+            
+        </div>
+        <div class="reply-text">그냥 지나치지 않고 축하해주셔서 감사합니다!!😊</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@effibono</span>
+            <span class="reply-date">2026-10-01 20:39</span>
+            
+        </div>
+        <div class="reply-text">ㅎㅎ 수익으로 연결되시길</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@a11251814</span>
+            <span class="reply-date">2026-10-01 20:10</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">안드로이드는 없습니까?ㅠㅜ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@pizzahoshii</span>
+            <span class="reply-date">2026-10-01 20:11</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">안드는 없음?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 20:37</span>
+            
+        </div>
+        <div class="reply-text">네ㅜㅜ 혹시 서브카메라 이름으로 안드 개발하고 싶으신 개발자님 계시면 연락주셔요 저는 안드는 문외한이라…🥹</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jongrojabsangin</span>
+            <span class="reply-date">2026-10-01 20:19</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">멋있따 스친아</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 00:08</span>
+            
+        </div>
+        <div class="reply-text">고마워!! 너무 기분 좋다!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@biny.hdesign</span>
+            <span class="reply-date">2026-10-01 20:20</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오 좋은데?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 00:09</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">사진찍을 일 많으면 추천해:3</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@yuymmy_y</span>
+            <span class="reply-date">2026-10-01 20:21</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">천재야???</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 20:38</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">엄마에게 이 영광을!! 고마워ㅜㅜ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jumjangee_kr</span>
+            <span class="reply-date">2026-10-01 20:28</span>
+            <span class="reply-likes">❤️ 3</span>
+        </div>
+        <div class="reply-text">사주에 금수가 많나? 🤭 하는 사주적의심</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 20:39</span>
+            
+        </div>
+        <div class="reply-text">금..수..?! 그건 어떤 역할을 하는걸까 ㅠㅜ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@peevl__ee</span>
+            <span class="reply-date">2026-10-02 04:44</span>
+            
+        </div>
+        <div class="reply-text">병오년이라서 저 말 하는 듯</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@localkitchenloki</span>
+            <span class="reply-date">2026-10-01 20:38</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">워매 캡컷을 재껴부럿다이!!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 01:59</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">살다살다 이런일이 ㅠㅠ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@larry.labs_</span>
+            <span class="reply-date">2026-10-01 20:52</span>
+            
+        </div>
+        <div class="reply-text">와오 1위 달성 축하해👏👏👏</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@east_start</span>
+            <span class="reply-date">2026-10-01 21:08</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">나 이거 잘쓰는중...!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 01:58</span>
+            
+        </div>
+        <div class="reply-text">대박!!! 실유저 발견ㅎㅎㅎ 고마워!!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kang_pomelo</span>
+            <span class="reply-date">2026-10-01 21:14</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">스하리!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 00:09</span>
+            
+        </div>
+        <div class="reply-text">고마워!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jeyuc.bokaume</span>
+            <span class="reply-date">2026-10-01 21:15</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">축하해!!! oodd 잘 쓰고 있는데 왼쪽으로 넘길 때 delete 문구가 왼쪽에 있어서 처음 익숙해질 무렵에는 문구가 오른쪽에 있으면 좋겠다고 생각했어 <br>잘 쓰고 있는데 이런 조은 소식이🎁</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 01:56</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오 Oodd쓰는구나!! 고마워 이부분 한번 확인해보고 다음 업데이트때 개선해볼게🥰</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ourdodo_bros</span>
+            <span class="reply-date">2026-10-01 21:16</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">헐 이걸로 블로그나 릴스 만들때 연결잘돼?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 01:57</span>
+            
+        </div>
+        <div class="reply-text">연결이 잘된다는 게 정확하게 어떤 의미일까?! 🥹 사진을 가지고 올 수 있냐고 물어보는거라면 게시용 내보내기 기능을 쓰면 됨ㅎㅎ!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@zero_to_one_ai</span>
+            <span class="reply-date">2026-10-01 21:34</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">역시 한국인들은 글로벌로 나가야한다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 01:58</span>
+            
+        </div>
+        <div class="reply-text">자랑스럽다 한국인들 💗</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@rami.leove</span>
+            <span class="reply-date">2026-10-01 21:42</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">아 퇴사하니까 이제 발견함<br>퇴사전 알았다면•• 1테라가 다 차지않았늘템데•••ㅠㅠ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@heyplanb</span>
+            <span class="reply-date">2026-10-01 22:05</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">전환율 좋아?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 23:12</span>
+            
+        </div>
+        <div class="reply-text">글쎄.. 내가 기준이 없어서 전환율이 얼마여야 좋은건지 잘몰라ㅜ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@heyplanb</span>
+            <span class="reply-date">2026-10-01 23:39</span>
+            
+        </div>
+        <div class="reply-text">한 1프로?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@windsoul</span>
+            <span class="reply-date">2026-10-01 22:09</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">업무용으로 이런거 필요했는데 바로 설치했어.<br>내일부터 업무에 당장 써볼게 😎</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 23:12</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">써보고 피드백은 언제든 환영이야 ㅎㅎ 고마워!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@came.ture</span>
+            <span class="reply-date">2026-10-01 22:10</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">기본폴더 아니고 다른 폴더를 하나 더 만들어서 거기 저장해주는거얌?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 23:12</span>
+            
+        </div>
+        <div class="reply-text">독립된 갤러리가 하나 더 생기는 개념이야!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@wordpressinformation7</span>
+            <span class="reply-date">2026-10-01 22:17</span>
+            
+        </div>
+        <div class="reply-text">우와 축하합니다! 이제 저는 아이폰을 사야겠네요.😄</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@thegreatgrandbusan</span>
+            <span class="reply-date">2026-10-01 22:27</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">축하드립니다!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 01:58</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">감사합니다!! 정말 꿈만같네요!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@3arcoco</span>
+            <span class="reply-date">2026-10-01 22:37</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">이거 며칠전에 올라온 그거구나 사진 자동삭제기능이 있는앱 맞지?<br>일단 축하해<br>그리고 안드로이드좀 만들어줘...<br>안그래도 개인정보들어간거 사진찍을일이 믾은데 일일이 지우기도ㅠ지쳐서 만들까 말까 고민중 ㅜㅜ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 23:10</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">마쟈 🥹 날 기억해주다니,, 고마워ㅠㅠ<br>내가 쓰려고 만들었던 거라 안드 생각은 못해봤는데 요청이 많네ㅜㅜㅎㅎ 고맙게 생각하고 고민해볼게!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@_cherry0617</span>
+            <span class="reply-date">2026-10-01 22:52</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와..스치니🙏🏻진짜고마워 이런거 필요했어 ㅠㅠㅠ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 01:56</span>
+            
+        </div>
+        <div class="reply-text">유용하게 쓰이면 좋게다!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@cucu_girl875</span>
+            <span class="reply-date">2026-10-01 23:01</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">헐 아이디어 너무 좋다 ;; 스치니 천재인가<br>바로 다운받겠숴</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-01 23:11</span>
+            
+        </div>
+        <div class="reply-text">꼭 유용하게 쓰이길 바래🥰 프리뷰화면 스와이핑 해서 폴더선택 가능해!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@maeil_maeil_maeil_</span>
+            <span class="reply-date">2026-10-01 23:55</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">다운했어!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 01:56</span>
+            
+        </div>
+        <div class="reply-text">고마워 🥹🥹</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@beeingmyse1f</span>
+            <span class="reply-date">2026-10-02 01:14</span>
+            
+        </div>
+        <div class="reply-text">와!!!<br>갤럭시 버전도 만들어주면 안될까ㅠ<br>곧 갤럭시로 바꿀 예정인데…</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ouinoza.ca_</span>
+            <span class="reply-date">2026-10-02 01:46</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">그러니까 아이폰에깔면 파일로 분류가 되고, 내 개인 사진첩에선 안보인다는거지???</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 01:55</span>
+            
+        </div>
+        <div class="reply-text">업무용 갤러리가 하나 더 생기는거야! 거기에 사진이 쌓여</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@grow_lge</span>
+            <span class="reply-date">2026-10-02 02:03</span>
+            
+        </div>
+        <div class="reply-text">외국 계정은 어떻게 운영했어? 완전 대단하다!!<br>나는 내계정도 관리가 어려븐데...<br>앞으로도 많이많이 이용되길 바랄게!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nuriai26</span>
+            <span class="reply-date">2026-10-02 02:36</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">뭔가 했더니 매번 사진찍고 갤러리에서 지우는 불편함을 없애주는 앱이었군 멋져!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 04:27</span>
+            
+        </div>
+        <div class="reply-text">업무용 사진만 모아둘 수 있는 두번째 카메라야!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@lilbini.ai</span>
+            <span class="reply-date">2026-10-02 03:31</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">멋지다 부럽다..!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 04:26</span>
+            
+        </div>
+        <div class="reply-text">고마워!!! 부끄럽당</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@grace365_24</span>
+            <span class="reply-date">2026-10-02 04:10</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">미쳤네 ~~~~ 완젼 축하해 !!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bybrezel</span>
+            <span class="reply-date">2026-10-02 04:26</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">고마워!! 반응들이 좋으니까 너무 뿌듯하당 ㅎㅎㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@simpleiv7</span>
+            <span class="reply-date">2026-10-02 06:48</span>
+            
+        </div>
+        <div class="reply-text">축하드립니다! 대단하시네요!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@moonggzuck</span>
+            <span class="reply-date">2026-10-02 07:55</span>
+            
+        </div>
+        <div class="reply-text">축하드립니다! 언젠가는 안드로이드버전도 꼭나왔음좋겠네요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@wlsrn0609</span>
+            <span class="reply-date">2026-10-02 08:10</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">아이디어가 좋다! 바로 다운받음!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@think_abell</span>
+            <span class="reply-date">2026-10-02 08:24</span>
+            
+        </div>
+        <div class="reply-text">나 깔아볼래</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@daan__oio</span>
+            <span class="reply-date">2026-10-02 08:30</span>
+            
+        </div>
+        <div class="reply-text">사진찍고 지피티 제미나이 같은곳에서사진파일 찾을수있어?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@maju_bodaa</span>
+            <span class="reply-date">2026-10-02 09:15</span>
+            
+        </div>
+        <div class="reply-text">우와... 안드로이드는 없지?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@eric_cho.on_earth</span>
+            <span class="reply-date">2026-10-02 09:29</span>
+            
+        </div>
+        <div class="reply-text">👍</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@mindmoon.app</span>
+            <span class="reply-date">2026-10-02 10:02</span>
+            
+        </div>
+        <div class="reply-text">와 대박 멋있어 축하해!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@welleat_app</span>
+            <span class="reply-date">2026-10-02 10:12</span>
+            
+        </div>
+        <div class="reply-text">짱 멋지다 계속해서 이 부분에서 1등 하즈앗!!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@xia_tarot_</span>
+            <span class="reply-date">2026-10-02 10:30</span>
+            
+        </div>
+        <div class="reply-text">어머!!!</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
