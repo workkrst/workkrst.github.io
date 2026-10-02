@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-02",
+    "url": "2026-10-02/",
+    "top_product": "Monospace from Directus",
+    "count": 5,
+    "upvotes_total": 1301,
+    "comments_total": 55
+  },
+  {
     "date": "2026-10-01",
     "url": "2026-10-01/",
     "top_product": "Pexo",

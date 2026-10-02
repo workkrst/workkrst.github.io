@@ -1,0 +1,467 @@
+{
+ "date": "2026-10-02",
+ "collected_at": "2026-10-02 12:31 KST",
+ "summary": "오늘 차트는 개발자 도구(Developer Tools)와 AI 카테고리가 최상위권을 장악한 가운데, API 거버넌스부터 온콜 대응, GEO 마케팅, 상시 가동형 개인 비서까지 실무 워크플로우를 자율 대행하는 전문 에이전트 제품들이 두각을 나타냈습니다. 커뮤니티 댓글에서는 에이전트가 복잡한 인프라와 프로덕션 환경에서 실시간 액션을 수행할 때 발생할 수 있는 오류를 차단하기 위한 세밀한 권한 제어와 인간의 사전 승인(Human-in-the-loop) 안전장치가 공통 핵심 화두로 집중 논의되었습니다. 사용자들은 단순한 보조 기능을 넘어 전용 가상 머신(VM) 탑재, Rust 기반의 연합 쿼리 성능, 자동 생성된 풀 리퀘스트(PR)의 신뢰성 등 실제 프로덕션 워크로드에서 검증 가능한 기술적 완성도를 면밀히 평가했습니다.",
+ "notable": [
+  {
+   "slug": "directus",
+   "why": "복잡한 ETL이나 마이그레이션 없이 이기종 데이터베이스 간 가상 관계를 설정해 단일 쿼리 및 MCP 도구 호출로 통합 조회할 수 있다는 점에 개발자들의 뜨거운 찬사가 쏟아졌습니다. 특히 댓글에서는 Rust 기반 엔진의 높은 메모리 효율성과 완전한 온프레미스 셀프 호스팅을 통한 데이터 주권 보장, 그리고 AI 에이전트 대상 행·필드 단위 세부 권한 정책의 실효성이 집중 호평을 받았습니다."
+  },
+  {
+   "slug": "dots-by-openai",
+   "why": "에이전트마다 독립된 전용 클라우드 컴퓨터(VM)와 브라우저를 할당하여 24시간 연중무휴 백그라운드에서 프로젝트를 주도적으로 실행하는 올웨이즈온 아키텍처가 큰 주목을 받았습니다. 댓글에서는 미발행 청구서를 선제 감지해 초안을 작성한 사례 등 주도적 비서 역량에 호응하면서도, 4,000여 개 앱 연동 환경에서 돌발 액션을 방지하기 위한 승인 게이트와 활동 보기(Activity View)의 제어력에 대해 심도 있는 질의응답이 이어졌습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Monospace from Directus",
+   "tagline_en": "The governed API layer for every app, person, and agent",
+   "tagline_kr": "모든 앱, 구성원, AI 에이전트가 단일 권한 모델로 데이터를 실시간 읽고 쓸 수 있는 거버넌스 API 레이어",
+   "image": "https://ph-files.imgix.net/f2d08a6b-b088-4b28-affa-1c10df46549b.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "API",
+    "Developer Tools",
+    "Data"
+   ],
+   "upvotes": 404,
+   "comments_count": 85,
+   "maker": "Ben Haynes(@benhaynes), Hannes Küttner(@hanneskuettner) (헌터: fmerian(@fmerian))",
+   "price_model": "무료 옵션 제공 (Free Options)",
+   "price_detail": "기본 오픈소스 및 셀프 호스팅 방식으로 무료 사용이 가능하며, 추가 기능 및 클라우드 배포 옵션에 따라 유료 플랜을 제공합니다.",
+   "desc_kr": "Monospace from Directus는 기업의 다양한 데이터 소스와 이를 활용하는 개발자, 비즈니스 팀, AI 에이전트 사이에 위치하는 거버넌스 API 레이어 솔루션입니다. 별도의 데이터 복제나 이동, 복잡한 ETL 파이프라인 구축 없이도 레거시 데이터베이스부터 최신 SaaS API까지 모든 데이터에 대해 실시간 읽기 및 쓰기 권한을 안전하게 부여합니다. 스키마와 쿼리를 실시간으로 자동 분석하여 기존 데이터베이스 구조를 변경하지 않고도 직관적인 인터페이스와 표준화된 API를 즉시 생성합니다. 데이터 소스 간 가상 관계(Virtual Relations) 설정을 지원하여 서로 다른 데이터베이스의 정보도 단 한 번의 단일 API 호출이나 MCP 도구 호출로 조회할 수 있습니다. 행(Row) 및 필드 단위의 세밀한 권한 정책과 Rust 기반의 고성능 엔진을 탑재하였으며, 완벽한 온프레미스 셀프 호스팅을 통해 데이터 주권을 완벽하게 보장합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/directus",
+   "comment_summary": "서로 다른 복수의 데이터베이스를 연동할 때의 쿼리 처리 방식과 에이전트 대상 세부 권한 제어 범위, 그리고 노후화된 레거시 스키마 지원 여부에 대한 질문이 집중되었습니다. 메이커 측은 데이터를 직접 가져오지 않고 분산 쿼리 엔진을 통해 단일 결과로 제공하며, 행·필드 단위의 엄격한 최소 권한 정책과 유연한 커스텀 커넥터를 지원한다고 설명했습니다. Rust 기반의 뛰어난 메모리 효율성과 완전한 셀프 호스팅 지원으로 데이터 주권을 지킬 수 있다는 점에 개발자들의 뜨거운 호평이 이어졌습니다.",
+   "warnings": "수치(업보트 404·댓글 85)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Ben Haynes",
+     "is_maker": true,
+     "text": "Hi Product Hunt... Ben here, CEO of Directus 👋  \n  \nYears ago, we built Directus because every project started the same way: a database full of data and weeks of work before anyone could safely build on it.  \n  \nThat problem hasn’t stood still. The data is spread across more systems and the amount of people who need it keeps growing. Developers shipping apps, business teams who want to build their own tools, and AI agents. Every project adds another integration and another set of permissions to maintain.  \n  \nMonospace is our answer. A governed API layer between your data and everyone who builds on it. Connect any database, API or SaaS system you run, and people, apps and agents get live read-write access under one permissions model. Each caller gets its own key. Row and field-level rules decide what it can see on every request. No data copied or moved, and you self-host it.  \n  \nWe would love to hear your feedback and questions. Really appreciate you taking the time to take a look at our launch!",
+     "kr": "Product Hunt 여러분 안녕하세요... Directus의 CEO Ben입니다 👋  \n  \n수년 전 저희가 Directus를 처음 만들었을 때, 모든 프로젝트는 늘 같은 방식으로 시작되었습니다. 데이터베이스에는 데이터가 가득했지만, 누군가 그 위에서 안전하게 개발을 시작하기까지는 수주간의 작업이 필요했죠.  \n  \n그 문제는 여전히 계속되고 있습니다. 데이터는 더 많은 시스템에 분산되었고, 이에 접근해야 하는 사용자는 계속 늘고 있습니다. 앱을 배포하는 개발자, 자체 도구를 만들고자 하는 비즈니스 팀, 그리고 AI 에이전트까지 말이죠. 새 프로젝트마다 또 다른 연동과 권한 설정 작업이 늘어납니다.  \n  \nMonospace는 이에 대한 저희의 해답입니다. 기업의 데이터와 그 데이터를 활용해 개발하는 모든 주체 사이에 위치하는 거버넌스 API 레이어입니다. 운영 중인 어떤 데이터베이스, API, SaaS 시스템이든 연결하면 사용자, 앱, 에이전트가 단일 권한 모델 아래에서 실시간 읽기/쓰기 권한을 얻게 됩니다. 각 호출 주체는 고유한 키를 부여받으며, 매 요청마다 행 및 필드 수준의 규칙을 통해 볼 수 있는 데이터를 결정합니다. 데이터를 복사하거나 이동할 필요가 없으며, 사용자가 직접 셀프 호스팅할 수 있습니다.  \n  \n여러분의 피드백과 질문을 언제든 환영합니다. 출시를 확인해 주셔서 진심으로 감사드립니다!"
+    },
+    {
+     "author": "Priya K",
+     "is_maker": false,
+     "text": "@benhaynes love the approach of introspecting the schema on the fly instead of forcing a migration. congrats for ship",
+     "kr": "@benhaynes 마이그레이션을 강제하는 대신 스키마를 실시간으로 자동 분석하는 접근 방식이 정말 마음에 듭니다. 출시 축하드려요!"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "Looking forward to seeing what the community will build with this new product by @Directus",
+     "kr": "@Directus의 이 새로운 제품으로 커뮤니티가 어떤 결과물을 만들어낼지 정말 기대됩니다."
+    },
+    {
+     "author": "Hemendra Khatik",
+     "is_maker": false,
+     "text": "@benhaynes If i hook up two databases, Does it pulls data from both at once? or does it stay separate?",
+     "kr": "@benhaynes 두 개의 데이터베이스를 연결하면 양쪽에서 데이터를 한 번에 가져오나요, 아니면 분리되어 유지되나요?"
+    },
+    {
+     "author": "Hannes Küttner",
+     "is_maker": true,
+     "text": "@benhaynes  @hemendra_khatik Monospace leaves your data where it lives naturally. We are not pulling any data at all, just making it available in a standardized API. When a request comes in to Monospace we plan the query across the individual data sources and serve it as a single result.  \n  \nThat means we do allow you to create virtual relations between different data sources. You can have customer data live in one database and their orders in a separate database and still query it with a single request (or have your agent request it with a single MCP tool call) without additional round trips or N+1 queries.",
+     "kr": "@benhaynes @hemendra_khatik Monospace는 데이터를 본래 위치에 그대로 둡니다. 데이터를 미리 끌어오지 않고, 표준화된 API를 통해 제공할 뿐입니다. Monospace로 요청이 들어오면 개별 데이터 소스 전반에 걸쳐 쿼리 계획을 수립하고 이를 단일 결과로 제공합니다.  \n  \n즉, 서로 다른 데이터 소스 간에 가상 관계(virtual relations)를 생성할 수 있습니다. 고객 데이터가 한 데이터베이스에 있고 주문 내역이 별도의 데이터베이스에 있더라도, 추가적인 왕복 호출이나 N+1 쿼리 없이 단 한 번의 요청(또는 에이전트의 단일 MCP 도구 호출)으로 이를 조회할 수 있습니다."
+    },
+    {
+     "author": "Guillaume CHAU",
+     "is_maker": true,
+     "text": "@benhaynes  @hemendra_khatik You can create relations between the two databases and both will be queried at the same time if needed.",
+     "kr": "@benhaynes @hemendra_khatik 두 데이터베이스 간에 관계를 생성할 수 있으며, 필요한 경우 두 데이터베이스를 동시에 쿼리합니다."
+    },
+    {
+     "author": "André J",
+     "is_maker": false,
+     "text": "Okay investor hat on! Who are your main competitors in this space? no pun intended. And how do you compete? whats your differentiator against the competition?",
+     "kr": "투자자 관점에서 질문드립니다! 이 분야에서 주요 경쟁사는 누구인가요? 그리고 어떻게 경쟁하시나요? 경쟁 제품 대비 차별화 포인트는 무엇인가요?"
+    },
+    {
+     "author": "Rijk van Zanten",
+     "is_maker": true,
+     "text": "@alchemist_studio Great question! It's easy to mistake Monospace for one of the many tools out there that focusses on pulling a bunch of data to then visualize for business intelligence etc. Monospace focusses a lot more on helping you get the data to your own apps and agents and is therefore better compared to a Hasura or Supabase in terms of day-to-day usage, with our federated querying engine and management studio being the big differentiators 🚀",
+     "kr": "@alchemist_studio 좋은 질문입니다! Monospace를 수많은 데이터를 끌어와 BI용으로 시각화하는 일반적인 도구 중 하나로 오해하기 쉽습니다. 하지만 Monospace는 기업 고유의 앱과 에이전트로 데이터를 전달하는 데 훨씬 더 집중하므로, 일상적인 사용 관점에서는 Hasura나 Supabase와 비교하는 것이 더 적절합니다. 연합 쿼리(federated querying) 엔진과 관리 스튜디오가 저희만의 핵심 차별점입니다 🚀"
+    },
+    {
+     "author": "Bryant Gillespie",
+     "is_maker": true,
+     "text": "After putting Monospace through the ringer over the last 6 weeks - it's impossible to not get excited when building with this tool.\n\nThere are hard problems and then there are hard problems... And live data federation across databases, APIs, and services that:\n\n*   is self hostable\n*   is super performant and memory efficient (thanks Rust! 🦀)\n*   doesn't require ETL or data warehouses\n*   can allow flexible yet granular access policies for every type of caller\n*   scales easily for production workloads\n*   and most important - makes life simpler for developers like myself....\n\nis indeed a very hard problem to solve.\n\nAnd as the head cheerleader over here at Directus, I just wanted to pop in and congrats to our freaking awesome team for bringing this idea into reality. There's far too many names to name so I'll just call out the engineering ring leader - @hanneskuettner - massive congrats to the team my friend. 🍻",
+     "kr": "지난 6주 동안 Monospace를 철저히 검증해 본 입장에서, 이 도구로 무언가를 구축할 때 흥분하지 않기란 불가능했습니다.\n\n어려운 문제 중에서도 정말 해결하기 어려운 문제가 있습니다... 데이터베이스, API, 서비스 전반에 걸친 실시간 데이터 연합 중에서도:\n\n* 셀프 호스팅이 가능하고\n* 매우 우수한 성능과 메모리 효율성을 갖추었으며 (Rust 덕분입니다! 🦀)\n* ETL이나 데이터 웨어하우스가 필요 없고\n* 모든 유형의 호출자에 대해 유연하면서도 세밀한 접근 정책을 지원하며\n* 프로덕션 워크로드에 맞게 쉽게 확장되고\n* 무엇보다 저와 같은 개발자의 삶을 단순하게 만들어 주는 도구는...\n\n정말로 해결하기 까다로운 문제입니다.\n\nDirectus의 열렬한 응원자로서, 이 아이디어를 현실로 만들어낸 우리 멋진 팀에게 축하를 전하고 싶습니다. 언급할 이름이 너무 많지만 엔지니어링 리더인 @hanneskuettner를 특별히 꼽고 싶네요. 우리 팀 모두 축하합니다 친구들! 🍻"
+    },
+    {
+     "author": "Jordan Taylor",
+     "is_maker": false,
+     "text": "Is there a way to limit an agent to specific actions rather than just specific tables?",
+     "kr": "단순히 특정 테이블뿐만 아니라 에이전트의 특정 동작(action)까지 제한할 수 있는 방법이 있나요?"
+    },
+    {
+     "author": "Marc Backes",
+     "is_maker": true,
+     "text": "@jordantaylor58 absolutely. You can configure permissions are granular as you like. You can do simple things like \"Can read all blog posts which are in draft, but not update, create, or delete\".\n\nOr you can do something a bit more complicated like \"Can read all blog posts, and create new ones (but not setting status to 'Published'). Can update only posts written by <List of users>, but only the title (not the body) and only if the title contains 'Draft' in it\".",
+     "kr": "@jordantaylor58 물론입니다. 원하는 만큼 세밀하게 권한을 구성할 수 있습니다. 예를 들어 '초안 상태의 모든 블로그 글을 읽을 수는 있지만 수정, 생성, 삭제는 불가'와 같이 간단하게 설정할 수 있습니다.\n\n혹은 더 복잡하게 '모든 블로그 글을 읽고 새 글을 작성할 수 있지만 상태를 Published로 변경할 수는 없음. <특정 사용자 목록>이 작성한 글만 수정할 수 있되 제목만 가능하고(본문 불가), 제목에 Draft라는 단어가 포함된 경우에만 수정 가능'과 같은 설정도 가능합니다."
+    },
+    {
+     "author": "Jason Scott",
+     "is_maker": false,
+     "text": "How does this work with older databases that have unusual schemas or limited API capabilities?",
+     "kr": "특이한 스키마를 가졌거나 API 기능이 제한적인 노후화된 레거시 데이터베이스와는 어떻게 연동되나요?"
+    }
+   ],
+   "slug": "directus",
+   "website": "https://directus.io/"
+  },
+  {
+   "name": "Yedric.ai",
+   "tagline_en": "Let users control your SaaS with natural language",
+   "tagline_kr": "자연어 대화만으로 사용자가 SaaS의 기능을 직접 제어할 수 있게 돕는 임베디드 AI 에이전트",
+   "image": "https://ph-files.imgix.net/2a221451-6f4e-42bd-9f92-68a6acd50e2a.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "SaaS",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 271,
+   "comments_count": 20,
+   "maker": "Aaron Wadler(@aaroneous), Ryan ODonnell(@ryan_odonnell), Ben Lang(@benln)",
+   "price_model": "무료 (Free / BYOK)",
+   "price_detail": "기본 무료로 제공되며, 사용자가 자체 LLM API 키를 직접 등록하여 사용하는 BYOK(Bring Your Own Key) 방식을 채택하고 있습니다.",
+   "desc_kr": "Yedric.ai는 사용자가 SaaS 제품 내 모든 메뉴와 설정을 일일이 찾아 헤매지 않고 자연어로 명령하여 제품 기능을 즉각 실행할 수 있게 돕는 임베더블 AI 에이전트입니다. 개발자가 복잡한 에이전트 아키텍처를 밑바닥부터 직접 구축하고 유지보수할 필요 없이, 단 하나의 스크립트 태그와 위젯 삽입만으로 30분 이내에 기존 SaaS를 AI 네이티브 환경으로 전환해 줍니다. 기존에 보유한 제품 문서나 헬프센터를 연결하여 지식 베이스를 구축하고, 기존 CRUD API나 MCP 서버 연동을 통해 계정 조회, 설정 변경, 워크플로우 실행 등 실제 인앱 액션을 수행합니다. 특히 사용자가 시도했으나 지원되지 않는 요청을 실시간 대화 대시보드로 집계해 주어, 사용자의 실제 미충족 요구사항과 기능 개선점을 즉각 파악할 수 있는 강력한 제품 인사이트를 제공합니다. 사용자의 로그인 세션을 안전하게 검증하는 보안 모드(Secure Mode)와 현재 페이지 컨텍스트를 반영하는 동적 프롬프트를 지원하여 안전하고 직관적인 인앱 대화 경험을 완성합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/yedric-ai",
+   "comment_summary": "기존 SaaS의 수많은 API 및 액션을 점진적으로 연결하는 워크플로우와 기술적인 임베딩 구현 방식에 대한 질문이 활발히 이어졌습니다. 메이커 측은 처음부터 모든 액션을 연동할 필요 없이 문서 연결부터 시작한 뒤 MCP나 OpenAPI 스펙을 통해 점진적으로 액션을 확장할 수 있으며 대화 분석 대시보드가 우선순위 설정에 큰 도움이 된다고 설명했습니다. 여러 읽기 작업을 조합해 엑셀 수작업을 없애주는 실용성과 사용자 피드백 누락을 방지하는 구조에 대해 긍정적인 평가를 받았습니다.",
+   "warnings": "수치(업보트 271·댓글 20)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 11개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Aaron Wadler",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋\n\nI've spent more than two decades building SaaS products, and the basic interaction model has barely changed: we decide what the software can do, organize those capabilities into an interface, and then expect users to figure out how it works. Every new capability means more for users to learn.\n\nAI gives us an opportunity to flip that model around. Instead of making users learn how our software works, what if they could simply tell it what they want to accomplish?\n\nThat's what we built Yedric to do. Yedric is an embeddable AI agent that turns what your app can already do into things users can simply ask for. You give Yedric access to your product knowledge, user context, and APIs, and he can actually get things done inside your app.\n\nWe originally built this technology for our own Shopify apps. We wanted users to be able to say things like \"turn off email notifications\" or \"fix my broken integration\" and have the app handle it for them instead of sending them through docs, support, or a maze of settings.\n\nThen something unexpected happened.\n\nThose conversations became one of our best sources of product insight. When users asked for something our apps couldn't do, we could see exactly what they were trying to accomplish, in their own words, at the moment they were trying to do it. In one month, a single app surfaced more than 80 distinct feature requests this way.\n\nThat's when we realized this shouldn't just be something we built for ourselves.\n\nWe've tried to make adding this kind of AI to an existing SaaS product ridiculously easy. Most developers can have Yedric running in under 30 minutes, and it's free (you bring your own LLM key).\n\nWe're still early, and that's a big part of why we're launching here. I'm curious whether other SaaS builders are seeing the same shift: five years from now, how much software will still make users navigate an interface vs. letting them simply ask for what they want?\n\nThanks for checking out Yedric. I'll be here all day answering questions and would love your feedback!",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋\n\n저는 20년 넘게 SaaS 제품을 만들어 왔지만, 기본적인 상호작용 방식은 거의 변하지 않았습니다. 개발사가 소프트웨어의 기능을 정의하고, 이를 인터페이스로 구성한 뒤 사용자가 사용법을 알아내기를 기대하는 방식이었죠. 새로운 기능이 추가될 때마다 사용자가 배워야 할 것은 더 늘어났습니다.\n\nAI는 이 모델을 완전히 뒤집을 기회를 제공합니다. 사용자에게 소프트웨어 사용법을 학습시키는 대신, 원하는 목표를 그냥 말하게 하면 어떨까요?\n\n그것이 바로 저희가 Yedric을 구축한 이유입니다. Yedric은 앱이 이미 할 수 있는 일들을 사용자가 자연어로 요청할 수 있게 변환해 주는 임베디드 AI 에이전트입니다. Yedric에 제품 지식, 사용자 컨텍스트, API 접근 권한을 부여하면 앱 내부에서 실제로 작업을 수행합니다.\n\n원래 저희는 자체 Shopify 앱을 위해 이 기술을 개발했습니다. 사용자가 문서나 고객지원, 복잡한 설정 미로를 헤매지 않고 \"이메일 알림 꺼줘\"라거나 \"망가진 연동 고쳐줘\"라고 말하면 앱이 알아서 처리해 주기를 원했기 때문입니다.\n\n그런데 뜻밖의 일이 일어났습니다.\n\n이러한 대화들이 제품에 대한 가장 훌륭한 인사이트 원천이 된 것입니다. 사용자가 앱에서 지원하지 않는 기능을 요구할 때, 사용자가 달성하려던 목표가 무엇인지 그 순간 그들의 언어로 정확히 확인할 수 있었습니다. 단 한 달 만에 한 앱에서 80개 이상의 뚜렷한 기능 요청을 이런 방식으로 발굴했습니다.\n\n그때 저희는 이것이 저희 자신만을 위한 도구로 남아서는 안 된다는 것을 깨달았습니다.\n\n기존 SaaS 제품에 이런 AI를 연동하는 과정을 극도로 쉽게 만들고자 노력했습니다. 대부분의 개발자는 30분 이내에 Yedric을 실행할 수 있으며, 완전 무료(자체 LLM 키 등록 방식)입니다.\n\n아직 초기 단계이며, 이것이 바로 이곳에 런칭한 중요한 이유입니다. 다른 SaaS 제작자분들도 이와 같은 변화를 체감하고 계시는지 궁금합니다. 지금으로부터 5년 뒤, 인터페이스를 직접 탐색해야 하는 소프트웨어와 원하는 바를 말하기만 하면 되는 소프트웨어의 비율은 어떻게 될까요?\n\nYedric을 살펴봐 주셔서 감사합니다. 오늘 하루 종일 질문에 답변드리며 소중한 피드백을 기다리겠습니다!"
+    },
+    {
+     "author": "Rohit Kushwaha",
+     "is_maker": false,
+     "text": "@aaroneous Giving users a simple way to control the product makes a lot of sense. What kind of APIs work best with Yedric?",
+     "kr": "@aaroneous 사용자가 제품을 제어할 수 있는 단순한 방법을 제공한다는 점이 매우 합리적이네요. Yedric과 가장 잘 어울리는 API 유형은 무엇인가요?"
+    },
+    {
+     "author": "Aaron Wadler",
+     "is_maker": true,
+     "text": "@rohit62661 Any of the CRUD APIs an app already has are a great place to start. The more a developer exposes, the more freely users can just tell the app what they want to accomplish.\n\nOne example I like is combining data from multiple read operations. Instead of exporting everything to Excel and manually putting it together, you can just ask for the result you want directly in the app.",
+     "kr": "@rohit62661 앱이 이미 보유하고 있는 CRUD API라면 무엇이든 훌륭한 출발점이 됩니다. 개발자가 더 많은 API를 노출할수록, 사용자는 달성하고자 하는 바를 앱에 훨씬 자유롭게 말할 수 있습니다.\n\n제가 좋아하는 예시 중 하나는 여러 읽기 작업의 데이터를 결합하는 것입니다. 모든 데이터를 엑셀로 내보내 수작업으로 취합하는 대신, 앱 내에서 원하는 결과를 직접 요청하기만 하면 됩니다."
+    },
+    {
+     "author": "Rohit Kushwaha",
+     "is_maker": false,
+     "text": "@aaroneous That's a good example. It can save users a lot of time.",
+     "kr": "@aaroneous 좋은 예시네요. 사용자들의 시간을 정말 많이 아껴줄 수 있겠습니다."
+    },
+    {
+     "author": "Camila Duarte",
+     "is_maker": false,
+     "text": "What does the integration process look like for an existing SaaS with a large action set?",
+     "kr": "수많은 액션을 보유한 기존 SaaS의 경우 연동 프로세스가 어떻게 진행되나요?"
+    },
+    {
+     "author": "Ryan ODonnell",
+     "is_maker": true,
+     "text": "@camiladuarte Great q! You don't have to wire up everything at once.\n\n1.  Start with knowledge. Embed Yedric then connect your docs. You'll get useful learnings day one.\n2.  Expose actions from your existing API or MCP. Otherwise, point to the endpoints you want to use.\n3.  Grow actions from real usage. The conversation dashboard will show you what users are actually asking for so you can prioritize based on that instead of guessing.\n\nWe do this ourselves with our own Shopify apps. For example, Infinite Options has ~dozen actions from building custom form fields to setting up complex condition logic and navigating the app's UI.",
+     "kr": "@camiladuarte 좋은 질문입니다! 모든 것을 한꺼번에 연결할 필요는 없습니다.\n\n1. 지식부터 시작하세요. Yedric을 임베드한 뒤 문서를 연결합니다. 첫날부터 유용한 인사이트를 얻을 수 있습니다.\n2. 기존 API나 MCP에서 액션을 노출합니다. 또는 사용하고자 하는 엔드포인트를 지정합니다.\n3. 실제 사용량을 보며 액션을 점진적으로 확장하세요. 대화 대시보드를 통해 사용자가 실제로 무엇을 요구하는지 확인할 수 있으므로 추측 대신 실제 데이터에 기반해 우선순위를 정할 수 있습니다.\n\n저희 역시 자체 Shopify 앱에서 이 방식을 적용하고 있습니다. 예를 들어 Infinite Options 앱은 커스텀 폼 필드 생성부터 복잡한 조건부 로직 설정 및 앱 UI 탐색에 이르기까지 약 10여 개의 액션을 갖추고 있습니다."
+    },
+    {
+     "author": "Jordan Taylor",
+     "is_maker": false,
+     "text": "Do you see it as a replacement for traditional navigation or more as another way to access it?",
+     "kr": "이 기능을 전통적인 내비게이션의 대체제로 보시나요, 아니면 접근을 위한 또 다른 보완 수단으로 보시나요?"
+    },
+    {
+     "author": "Fletcher Graham",
+     "is_maker": false,
+     "text": "Does it ask follow up questions or try to infer the intended action?",
+     "kr": "의도한 동작을 추론하나요, 아니면 사용자에게 후속 질문을 던지나요?"
+    },
+    {
+     "author": "Jordin S",
+     "is_maker": false,
+     "text": "The conversations dashboard is the gem of this whole thing, in my opinion. Being able to quickly see structured data with real insights into where customers are driving conversations makes life much easier when it comes to identifying painpoints and documentation gaps. Nothing slips through the cracks.",
+     "kr": "제 생각에는 대화 대시보드가 이 제품의 백미입니다. 고객이 주도하는 대화의 맥락에 대한 실질적인 인사이트를 구조화된 데이터로 빠르게 확인할 수 있어, 문제점과 문서의 공백을 파악하기가 훨씬 수월해집니다. 어떤 내용도 놓치지 않게 되네요."
+    },
+    {
+     "author": "Erik V",
+     "is_maker": false,
+     "text": "How does the app interface work technically? How does the agent act is my SaaS?",
+     "kr": "앱 인터페이스가 기술적으로 어떻게 작동하나요? 에이전트가 제 SaaS 내에서 어떻게 동작하나요?"
+    },
+    {
+     "author": "Darryl Norris",
+     "is_maker": true,
+     "text": "@erik_v  Great questions!\n\n> How does the app interface work technically?\n\nYou embed Yedric with one script tag and a small widget element in your app, and Secure Mode lets your server sign the logged-in user's ID so the agent knows exactly who it's talking to. Point it at your help center or docs and it builds a knowledge base it searches before answering, and page prompts give it extra context based on which page the user is on.\n\n> How does the agent act is my SaaS?\n\nServer-side actions run through MCP: you connect an MCP server, import an OpenAPI spec, or point us at your API docs, and the agent can call your API to look up an account, change a setting or start a workflow.",
+     "kr": "@erik_v 좋은 질문입니다!\n\n> 앱 인터페이스가 기술적으로 어떻게 작동하나요?\n\n앱에 스크립트 태그 하나와 작은 위젯 엘리먼트만 임베드하면 되며, 보안 모드(Secure Mode)를 통해 서버에서 로그인한 사용자의 ID에 서명하므로 에이전트가 대화 상대가 누구인지 정확히 인식합니다. 헬프센터나 문서를 지정하면 답변 전에 검색할 지식 베이스를 구축하며, 페이지별 프롬프트가 사용자가 위치한 페이지에 따른 추가 컨텍스트를 제공합니다.\n\n> 에이전트가 SaaS 내에서 어떻게 동작하나요?\n\n서버 측 액션은 MCP를 통해 실행됩니다. MCP 서버를 연결하거나 OpenAPI 사양을 가져오거나 API 문서를 지정하면, 에이전트가 API를 호출하여 계정을 조회하고 설정을 변경하거나 워크플로우를 시작할 수 있습니다."
+    }
+   ],
+   "slug": "yedric-ai",
+   "website": "https://www.yedric.ai/"
+  },
+  {
+   "name": "Dots by OpenAI",
+   "tagline_en": "Always on agents built to handle everything",
+   "tagline_kr": "클라우드 컴퓨터와 브라우저를 갖추고 24시간 자율적으로 작업을 완수하는 ChatGPT 기반 올웨이즈온 개인 AI 에이전트",
+   "image": "https://ph-files.imgix.net/519805d7-071f-4da1-9b9d-eaf71592b9c4.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Productivity",
+    "Task Management",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 260,
+   "comments_count": 8,
+   "maker": "KP(@thisiskp_), Sam Altman(@sama), Greg Brockman(@greg_brockman)",
+   "price_model": "유료 (Payment Required)",
+   "price_detail": "ChatGPT Pro 및 Business Premium 유료 구독자에게 순차적으로 배포되고 있습니다.",
+   "desc_kr": "Dots by OpenAI는 최신 GPT-6 Astra 모델을 기반으로 사용자의 목표를 24시간 연중무휴 자율적으로 수행하는 ChatGPT의 상시 가동형(always-on) 개인 AI 에이전트입니다. 개별 Dot마다 독립된 전용 클라우드 가상 머신(VM)과 웹 브라우저를 탑재하고 플러그인을 통해 4,000개 이상의 애플리케이션과 연동되어 백그라운드에서 프로젝트를 주도적으로 실행합니다. 데스크톱, 웹, 모바일의 ChatGPT는 물론 Slack 및 Teams에서도 메시지나 음성 통화로 호출할 수 있으며 사용자의 피드백을 학습해 작업 선호도를 지속적으로 개선합니다. 잊고 있던 청구서 발행을 먼저 인지하여 초안을 작성한 뒤 승인을 요청하는 등 사용자가 알아차리기 전에 필요한 업무를 선제적으로 파악하여 제안합니다. 사용자가 설정하는 커스텀 규칙(Custom Rules)과 실시간 활동 보기(Activity View), 자동 검토 기능을 통해 에이전트의 모든 자율 행동을 투명하게 통제할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/dots-by-openai",
+   "comment_summary": "기존 ChatGPT 앱과의 근본적인 차별점 및 전용 가상 머신(VM) 탑재의 의미, 그리고 선제적 작업에 대한 인간 승인 절차의 안전성에 대한 논의가 주를 이루었습니다. 헌터 측은 사용자 전용 클라우드 컴퓨터를 기반으로 상시 구동되는 완전한 자율 에이전트라는 점을 강조하며 미발행 청구서 감지 등 능동적 비서 역할의 잠재력을 제시했습니다. 4,000여 개 앱 연동 환경에서 발생할 수 있는 오작동 위험을 활동 보기와 맞춤 규칙으로 제어할 수 있다는 점에 긍정적인 반응과 함께 상위 유료 플랜 접근 권한에 대한 관심이 쏟아졌습니다.",
+   "warnings": "수치(업보트 260·댓글 8)는 수집 시점 참고치. 수집된 8개 댓글 전수 수집 완료.",
+   "comments": [
+    {
+     "author": "KP",
+     "is_maker": false,
+     "text": "Hey PH community 👋\n\nExcited to hunt Dots today. ChatGPT joins the personal AI agents race with the launch of “Dots”\n\nAfter Grok Bot, Instinct, Muse this is another co sign of this emerging category.\n\nOpenAI just gave ChatGPT an always on agent that keeps working toward your goals around the clock. Each dot runs on GPT‑6 Astra with its own cloud computer, its own browser, and the apps you connect, so it can take a project and run with it between conversations.\n\nThe proactive part is what stood out for me. Your dot learns how you work from your feedback, spots what needs attention, and brings you finished work to review. OpenAI shared that one early tester's dot noticed he had forgotten to invoice a publication, prepared the invoice, and sent it once he approved.\n\nYou can reach it where you already work, in ChatGPT on desktop, web, and mobile, or in Slack and Teams, and you can hop on a voice call when you want to talk something through. Custom Rules and Activity View keep you in charge of what it does on its own. It's rolling out now for Pro and Business Premium 🙌\n\nCreate your dot here:\n\nhttps://chatgpt.com/dots\n\nOpenAI's launch video walks through it:\n\nGive it a spin and let the team know what you create with Dots 🚀",
+     "kr": "Product Hunt 커뮤니티 여러분 안녕하세요 👋\n\n오늘 Dots를 소개하게 되어 매우 기쁩니다. ChatGPT가 'Dots' 출시와 함께 개인용 AI 에이전트 경쟁에 본격적으로 합류했습니다.\n\nGrok Bot, Instinct, Muse에 이어 이번 출시는 새롭게 떠오르는 이 카테고리의 잠재력을 다시 한번 확인시켜 줍니다.\n\nOpenAI는 ChatGPT에 사용자의 목표를 향해 24시간 내내 쉬지 않고 작동하는 올웨이즈온 에이전트를 부여했습니다. 각 dot은 GPT-6 Astra를 기반으로 자체 클라우드 컴퓨터, 브라우저, 연동된 앱들을 갖추고 있어 대화 사이사이에도 프로젝트를 맡아 주도적으로 진행합니다.\n\n특히 제 눈을 사로잡은 것은 '선제성(proactive)'이었습니다. dot은 사용자의 피드백을 통해 작업 방식을 학습하고, 주의가 필요한 부분을 스스로 포착하여 검토할 수 있는 완성본을 가져옵니다. 초기 테스터 중 한 명의 dot은 발행을 깜빡한 원고료 청구서를 스스로 감지하여 청구서를 작성한 뒤 승인을 받아 발송했다고 OpenAI는 밝혔습니다.\n\n데스크톱, 웹, 모바일 ChatGPT뿐만 아니라 Slack과 Teams 등 평소 일하는 공간에서 언제든 호출할 수 있으며, 이야기를 나누고 싶을 때는 음성 통화로도 연결됩니다. 커스텀 규칙(Custom Rules)과 활동 보기(Activity View)를 통해 에이전트의 단독 작업 범위를 직접 통제할 수 있습니다. 현재 Pro 및 Business Premium 사용자에게 순차적으로 배포 중입니다 🙌\n\n이곳에서 dot을 만들어 보세요:\nhttps://chatgpt.com/dots\n\nOpenAI의 런칭 영상도 함께 확인해 보세요.\n직접 사용해 보시고 Dots로 무엇을 만드셨는지 팀에 공유해 주세요 🚀"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@thisiskp_ The proactive part sounds really useful having an agent notice things before i do could save a lot of time",
+     "kr": "@thisiskp_ 선제적으로 대응하는 기능이 정말 유용해 보입니다. 에이전트가 저보다 먼저 상황을 감지해 준다면 시간을 정말 많이 아낄 수 있겠네요."
+    },
+    {
+     "author": "Matheus Paranhos",
+     "is_maker": false,
+     "text": "Looking great, haven't tested it yet, but will give it a try! How does it differ from the ChatGPT app?",
+     "kr": "정말 멋져 보이네요, 아직 써보진 못했지만 꼭 사용해 보겠습니다! 기존 ChatGPT 앱과는 어떤 점이 다른가요?"
+    },
+    {
+     "author": "KP",
+     "is_maker": false,
+     "text": "@matheus_paranhos1 this is dramatically different as it’s an always on agent with a virtual machine / cloud computer dedicated to you",
+     "kr": "@matheus_paranhos1 사용자 전용 가상 머신/클라우드 컴퓨터를 갖춘 상시 가동형 에이전트라는 점에서 완전히 다릅니다."
+    },
+    {
+     "author": "Kamil Mosciszko",
+     "is_maker": false,
+     "text": "Amazing idea, but on plan x5 I don't have access to it.",
+     "kr": "놀라운 아이디어인데, x5 플랜에서는 아직 접근 권한이 없네요."
+    },
+    {
+     "author": "Mark Dellemann",
+     "is_maker": false,
+     "text": "cool concept. having a dedicated VM per agent is pretty nice. Congrats !",
+     "kr": "멋진 콘셉트입니다. 에이전트마다 전용 VM이 할당된다는 점이 참 좋네요. 축하드립니다!"
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Giving each agent its own cloud computer and browser is the detail that makes always on work actually plausible. The proactive example of spotting an uninvoiced project and drafting it is a good sign of where this is heading. Nice to see the activity view for keeping an eye on what runs on its own.",
+     "kr": "각 에이전트에게 전용 클라우드 컴퓨터와 브라우저를 제공한 점이야말로 올웨이즈온 작업이 실제로 구현 가능하게 만드는 핵심 디테일입니다. 미청구 프로젝트를 감지하고 초안을 작성한 선제적 사례는 이 기술이 나아갈 올바른 방향을 보여줍니다. 알아서 동작하는 작업을 상시 확인할 수 있는 활동 보기 기능도 반갑네요."
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "the invoice example in the maker comment is the interesting part - it prepared the invoice then waited for approval before sending. is that approval gate hardcoded for certain action types (payments, outbound emails) or is it something the dot decides for itself based on confidence? with 4,000 app connections and its own browser running 24/7, the failure mode that worries me isn't a bad suggestion, it's a correct-looking action taken on bad context that nobody reviews until after the fact.",
+     "kr": "메이커 댓글의 청구서 사례가 특히 흥미롭습니다. 청구서를 준비한 뒤 발송 전에 승인을 기다렸다는 부분 말이죠. 이러한 승인 절차가 특정 작업 유형(결제, 외부 이메일 등)에 하드코딩되어 있는 것인지, 아니면 신뢰도에 따라 dot이 스스로 결정하는 것인지 궁금합니다. 4,000개 앱 연동과 브라우저가 24시간 돌아가는 환경에서 가장 우려되는 실패 모드는 엉뚱한 제안이 아니라, 잘못된 맥락에서 그럴듯하게 실행되어 사후에야 발견되는 작업이기 때문입니다."
+    }
+   ],
+   "slug": "dots-by-openai",
+   "website": "https://chatgpt.com/dots"
+  },
+  {
+   "name": "Omnia Agent",
+   "tagline_en": "The AI Agent that does 95% of your GEO work",
+   "tagline_kr": "AI 검색 엔진에서 브랜드 추천과 인용을 극대화하는 GEO 최적화 작업의 95%를 자율 수행하는 마케팅 에이전트",
+   "image": "https://ph-files.imgix.net/610d1190-669b-4647-841e-0fdf0221497a.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Marketing",
+    "SEO",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 194,
+   "comments_count": 21,
+   "maker": "Daniel Espejo(@danimirror), Miguel Fernández(@miguelff), Ivan Malagon(@hacheka)",
+   "price_model": "무료 체험 및 유료 할인 (Free Options / 30% Off)",
+   "price_detail": "14일 무료 체험(14 days free trial)을 제공하며, 런칭 기념으로 3개월간 30% 할인(3 months 30% off) 프로모션을 진행합니다.",
+   "desc_kr": "Omnia Agent는 기업이 별도의 전문 인력을 채용하지 않고도 생성형 AI 검색(GEO, Generative Engine Optimization) 노출을 극대화할 수 있도록 지원하는 자율형 마케팅 AI 에이전트입니다. 잠재 고객들이 AI 검색 엔진에 실제로 입력하는 프롬프트를 추적하고, 자사 대신 경쟁 브랜드가 인용되는 격차 영역을 자동으로 분석해 냅니다. 기존 웹페이지가 경쟁사에 밀릴 경우 인용률을 높이도록 문안을 재작성하고, 답변이 없는 경우 비교 페이지나 추천 가이드 등 신규 콘텐츠를 제작하며, 차트와 이미지 등 AI가 선호하는 포맷으로 에셋을 생성합니다. 또한 AI 엔진이 신뢰하는 권위 있는 서드파티 미디어에 대한 아웃리치 및 PR 피치를 대행하고 G2, Crunchbase, LinkedIn의 왜곡된 브랜드 정보를 바로잡습니다. Google Search Console, Google Analytics, Webflow 등 기존 도구와 원활하게 연동되어 변경 사항을 직접 발행하고 실제 가시성 상승 지표를 정밀하게 측정합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/omnia-2",
+   "comment_summary": "실제 검색 프롬프트 점유를 위한 실행 방식과 Webflow 등 기존 CMS 연동 지원 여부에 질문이 집중되었습니다. 메이커 측은 기존 페이지 재작성, 신규 답변 페이지 및 시각 자료 생성, 서드파티 아웃리치를 모두 수행하며 사람의 최종 승인을 거쳐 발행되므로 안전하다고 강조했습니다. 마케팅 담당자가 다른 업무와 병행하기 힘들었던 지루한 95%의 실행 작업을 자동화해 준다는 점에서 GTM 담당자들의 뜨거운 호응을 얻었습니다.",
+   "warnings": "수치(업보트 194·댓글 21)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Daniel Espejo",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 🧶\n\nDaniel here, co-founder of Omnia. Our first launch here made #3 of the day, and we came back in May with Insights.\n\nThe same thing kept coming up with customers: the GEO work doesn't get done. Usually one person owns AI visibility on top of a full job.\n\nSo we built Omnia Agent, an AI agent that does the GEO work itself.\n\nIt discovers the prompts your customers ask AI, shows you where competitors get cited instead of you, and then fixes the gaps: it rewrites the pages to be more cited, creates the content you're missing, and drafts outreach to the third-party sites AI engines already trust, among other things.\n\nIt works from your real AI visibility data, not guesses, and connects to the tools you already use, like Search Console, Google Analytics and Webflow, to publish changes and measure whether your visibility actually moved.\n\n**TLDR:** Omnia Agent does 95% of the GEO work, and you orchestrate the other 5%.\n\nThis is a big launch for us, thanks to the whole team for building this!!\n\nI'll be here all day. Ask me whatever you want about GEO!",
+     "kr": "Product Hunt 여러분 안녕하세요! 🧶\n\nOmnia의 공동 창업자 Daniel입니다. 지난 첫 런칭 당시 일일 3위를 기록했고, 지난 5월 Insights 기능과 함께 다시 찾아온 바 있습니다.\n\n고객들과 대화하면서 늘 반복되던 문제가 있었습니다. 바로 'GEO(생성형 엔진 최적화) 작업이 실행되지 못하고 방치된다'는 점이었습니다. 대개 한 명의 담당자가 본업 외에 추가로 AI 가시성 업무를 떠안고 있었기 때문입니다.\n\n그래서 저희는 GEO 작업을 스스로 처리하는 AI 에이전트인 Omnia Agent를 만들었습니다.\n\n고객이 AI에게 질문하는 실제 프롬프트를 발굴하고, 자사 대신 경쟁사가 인용되는 지점을 찾아내며, 그 격차를 해결합니다. 더 많이 인용되도록 웹페이지를 재작성하고, 부족한 콘텐츠를 새롭게 제작하며, AI 엔진이 이미 신뢰하고 있는 서드파티 사이트에 대한 아웃리치 초안을 작성합니다.\n\n추측이 아닌 실제 AI 가시성 데이터를 바탕으로 동작하며, Search Console, Google Analytics, Webflow 등 이미 사용 중인 도구들과 연동되어 변경 사항을 직접 발행하고 가시성이 실제로 개선되었는지를 측정합니다.\n\n요약하자면: Omnia Agent가 GEO 작업의 95%를 처리하고, 여러분은 나머지 5%의 조율만 담당하시면 됩니다.\n\n저희에게 매우 뜻깊은 출시입니다. 멋진 제품을 만들어 준 팀 전체에 감사를 전합니다!!\n\n오늘 하루 종일 머물 예정입니다. GEO에 대해 무엇이든 편하게 물어보세요!"
+    },
+    {
+     "author": "Grayson Bass",
+     "is_maker": false,
+     "text": "@danimirror Automating everything from prompt tracking to publishing site updates kills that tedious 95% execution grind!",
+     "kr": "@danimirror 프롬프트 추적부터 사이트 업데이트 발행까지 모든 것을 자동화해 주니 지루한 95%의 실행 노가다를 완전히 없애주네요!"
+    },
+    {
+     "author": "Man Hei Lou",
+     "is_maker": false,
+     "text": "Congrats on the launch! Do you sync with webflow?",
+     "kr": "출시를 축하드립니다! Webflow와 동기화가 지원되나요?"
+    },
+    {
+     "author": "Daniel Espejo",
+     "is_maker": true,
+     "text": "@manhei Yes! it is integrated in Omnia Agent.",
+     "kr": "@manhei 네! Omnia Agent에 기본 연동되어 있습니다."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "Love the \"no GEO expert required\" angle. How does \"winning a prompt\" work in reality - producing new material, modifying existing pages, or getting mentioned elsewhere?  \nBtw, Congratulations @danimirror and team Omnia Agent 🎊✌️",
+     "kr": "\"GEO 전문가가 필요 없다\"는 관점이 정말 마음에 듭니다. 실제로 '프롬프트를 이긴다(점유한다)'는 것은 구체적으로 어떻게 이루어지나요? 신규 자료 제작인가요, 기존 페이지 수정인가요, 아니면 외부 사이트 언급 유도인가요?  \n아울러 @danimirror 님과 Omnia Agent 팀 모두 출시 축하드립니다 🎊✌️"
+    },
+    {
+     "author": "Daniel Espejo",
+     "is_maker": true,
+     "text": "@aymi_malik Thanks! In practice it's all three. Which one depends on what your monitoring data shows for that specific prompt: which sources the AI engines pull from, and what kind of content they cite.\n\n*   Your page exists but loses to a competitor's: it rewrites that page so it gets quoted instead.\n    \n*   Nothing of yours answers the prompt: it writes a new answer page, or a comparison or \"best X\" page. If the answer engines prefer a chart, video or image over an article, it makes that instead.\n    \n*   The engines cite third-party sites: it writes outreach and PR pitches aimed at the articles AI already quotes. It also corrects wrong facts about you on G2, Crunchbase and LinkedIn.\n    \n\nIt then does the work itself: publishing to your CMS, submitting pages for indexing, sending the outreach. Anything that goes public waits for your approval first.",
+     "kr": "@aymi_malik 감사합니다! 실제로는 세 가지 모두에 해당합니다. 해당 프롬프트에 대한 모니터링 데이터가 보여주는 바, 즉 AI 엔진이 어떤 소스에서 정보를 가져오고 어떤 유형의 콘텐츠를 인용하는지에 따라 결정됩니다.\n\n* 페이지가 존재하지만 경쟁사에 밀리는 경우: 자사 페이지가 대신 인용되도록 내용을 재작성합니다.\n* 프롬프트에 답변할 자사 콘텐츠가 없는 경우: 새로운 답변 페이지, 비교 페이지 또는 '최고의 X' 페이지를 작성합니다. 검색 엔진이 텍스트보다 차트, 영상, 이미지를 선호한다면 해당 에셋을 제작합니다.\n* AI가 서드파티 사이트를 인용하는 경우: AI가 이미 인용 중인 기사를 타깃으로 아웃리치 및 PR 피치를 작성합니다. 또한 G2, Crunchbase, LinkedIn의 잘못된 브랜드 정보도 수정합니다.\n\n그런 다음 CMS에 콘텐츠를 발행하고, 색인을 요청하며, 아웃리치를 발송하는 등 실제 작업을 직접 수행합니다. 외부에 공개되는 모든 작업은 반드시 관리자의 사전 승인을 거칩니다."
+    },
+    {
+     "author": "Jacin",
+     "is_maker": false,
+     "text": "Oh, this looks really good. I’m quite interested in GEO and this looks like something I’ll definitely give a try. Congrats on the launch!",
+     "kr": "오, 정말 훌륭해 보이네요. GEO에 관심이 많은데 꼭 한번 써보고 싶은 제품입니다. 출시 축하드려요!"
+    },
+    {
+     "author": "Daniel Espejo",
+     "is_maker": true,
+     "text": "@jacinto_fleta Thanks Jacinto!  \n  \nyou can start a 14 days free trial to try Omnia Agent!",
+     "kr": "@jacinto_fleta 감사합니다 Jacinto 님!  \n  \n14일 무료 체험을 통해 Omnia Agent를 바로 사용해 보실 수 있습니다!"
+    },
+    {
+     "author": "Jesús Vivas",
+     "is_maker": false,
+     "text": "\"No GEO expert required\" is the key for me. I'm focused on A LOT of things across the GTM space, and GEO isn't my area of expertise, so I need a tool like this one. I'll definitely take a look, definitely worth a shot",
+     "kr": "\"GEO 전문가가 필요 없다\"는 점이 저에게는 핵심이네요. 저는 GTM 영역 전반에서 너무나 많은 일에 집중하고 있고 GEO는 제 전문 분야가 아니다 보니 이런 도구가 꼭 필요합니다. 꼭 살펴보겠습니다, 시도해 볼 가치가 충분하네요."
+    },
+    {
+     "author": "Daniel Espejo",
+     "is_maker": true,
+     "text": "@jesusvivas11 Yes! the agent is made for people like you!",
+     "kr": "@jesusvivas11 맞습니다! 바로 당신과 같은 분들을 위해 만들어진 에이전트입니다!"
+    },
+    {
+     "author": "Víctor Perdiguer",
+     "is_maker": false,
+     "text": "oh that's a way more useful way to interact with your app, love it! congrats on the launch!",
+     "kr": "앱과 상호작용하는 훨씬 더 유용한 방식이네요, 마음에 듭니다! 출시 축하드립니다!"
+    },
+    {
+     "author": "Ramón Rodrigáñez",
+     "is_maker": false,
+     "text": "Amazing product and great team - definitely worth trying! We are happy customers",
+     "kr": "놀라운 제품과 훌륭한 팀입니다. 꼭 써볼 가치가 있습니다! 저희는 매우 만족하고 있는 고객입니다."
+    }
+   ],
+   "slug": "omnia-2",
+   "website": "https://useomnia.com/"
+  },
+  {
+   "name": "Polylane",
+   "tagline_en": "AI agents that fix production before you wake up",
+   "tagline_kr": "엔지니어가 잠든 사이 프로덕션 장애와 CI/CD 문제를 조사하고 PR로 자동 수정하는 자율 안정성 AI 에이전트",
+   "image": "https://ph-files.imgix.net/c075783c-865f-4406-9c23-40dedff1fb16.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Developer Tools",
+    "Artificial Intelligence",
+    "Tech"
+   ],
+   "upvotes": 172,
+   "comments_count": 30,
+   "maker": "Boris Tane(@boristane), Matanya Loewenthal(@matanya), Aleksandr Diamond(@aleksandr_diamond)",
+   "price_model": "무료 플랜 제공 (Free Options)",
+   "price_detail": "기본 무료 플랜(Free plan)을 제공하여 주요 인프라 및 도구를 연결해 즉시 테스트해 볼 수 있습니다.",
+   "desc_kr": "Polylane은 개발자가 당직(on-call) 호출로 밤잠을 설치지 않도록 프로덕션 환경의 이상 징후를 스스로 조사하고 해결책을 제시하는 자율형 안정성 AI 에이전트입니다. 코드베이스, 클라우드 인프라, 원격 측정(telemetry) 및 관측성 데이터를 한데 연결하여 애플리케이션의 실제 런타임 동작을 심층적으로 파악합니다. 장애가 감지되면 인시던트의 원인을 추적 조사한 뒤 코드 수준에서 해결 가능한 경우 팀이 검토할 수 있도록 수정 사항이 담긴 깃허브 풀 리퀘스트(PR)를 자동으로 오픈합니다. 또한 불안정한 테스트(Flaky tests)와 간헐적 빌드 오류를 감지하여 CI 파이프라인을 견고하게 개선하고, 위험한 코드 변경이 프로덕션에 배포되기 전에 선제적으로 방지합니다. 모든 프로덕션 적용은 팀의 최종 승인과 CI 테스트 통과를 필수로 요구하며, Slack 대화나 CLI 및 MCP 연동을 통해 코딩 에이전트에게 풍부한 프로덕션 컨텍스트를 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/polylane",
+   "comment_summary": "에이전트가 자동 수정을 결정하는 안전 기준과 반복되는 알림 노이즈 필터링 메커니즘, 그리고 CI/CD 파이프라인 개선 능력에 대한 질문이 집중되었습니다. 메이커 측은 인시던트 조사 근거와 디버깅 과정을 타임라인으로 투명하게 제공하며 실제 코드 반영은 인간의 코드 리뷰 및 CI 승인을 필수로 거친다고 강조했습니다. 온콜 부담과 정신적 피로를 줄여주고 설정 5분 만에 불안정한 테스트를 고쳐내는 실질적인 효과에 대해 현직 개발자와 신뢰성 엔지니어들의 극찬이 쏟아졌습니다.",
+   "warnings": "수치(업보트 172·댓글 30)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Boris Tane",
+     "is_maker": true,
+     "text": "Hi Product Hunt, I'm Boris, founder of Polylane.\n\nI built Baselime, an observability startup that was acquired by Cloudflare where I then led the Workers observability team. I have been advocating observability best practices for years, helping developers understand their app better. It was still not enough, I've lived and seen the pain of on-call way too much.\n\nI'm now building Polylane, so you don't have to be on-call, a fleet of agents can do that for you.\n\nPolylane connects your code, cloud infrastructure and observability data, and many other signals, to understand how your application actually runs. When something goes wrong, it investigates the incident and opens a pull request with a proposed fix for your team to review.\n\nThat same production context helps you:\n\n- Catch risky code changes before they reach production.\n- Get answers to production questions in Slack.\n- Give your coding agents access to production context through MCP and the CLI.\n\nProduction changes require your approval, and code fixes go through your review and CI.\n\nYou can try Polylane today with the free plan. Connect your tools, and tell us where it helps or falls short.\n\nWhat part of investigating an incident would you most want to hand off, and what evidence would you need to trust the result?\n\nThe team and I will be here answering questions.",
+     "kr": "Product Hunt 여러분 안녕하세요, Polylane의 창업자 Boris입니다.\n\n저는 Cloudflare에 인수된 관측성 스타트업 Baselime을 설립했고, 이후 Cloudflare에서 Workers 관측성 팀을 이끌었습니다. 개발자들이 앱을 더 깊이 이해할 수 있도록 수년간 관측성 모범 사례를 전파해 왔지만 그것만으로는 충분하지 않았습니다. 온콜(on-call)의 고통을 너무나도 뼈저리게 겪고 목격했기 때문입니다.\n\n이제 저는 여러분이 밤샘 당직을 서지 않아도 되도록, 에이전트 군단이 그 역할을 대신해 주는 Polylane을 만들고 있습니다.\n\nPolylane은 코드, 클라우드 인프라, 관측성 데이터 등 수많은 신호를 연결하여 애플리케이션의 실제 작동 방식을 이해합니다. 문제가 발생하면 인시던트를 조사하고 팀이 검토할 수 있도록 해결책을 담은 풀 리퀘스트(PR)를 자동으로 오픈합니다.\n\n동일한 프로덕션 컨텍스트는 다음과 같은 작업도 지원합니다:\n\n- 프로덕션에 도달하기 전 위험한 코드 변경 사항 포착\n- Slack에서 프로덕션 관련 질문에 대한 답변 제공\n- MCP 및 CLI를 통해 코딩 에이전트에 프로덕션 컨텍스트 제공\n\n프로덕션 변경에는 사용자의 승인이 반드시 필요하며, 코드 수정은 팀의 리뷰와 CI 과정을 거치게 됩니다.\n\n오늘 무료 플랜으로 Polylane을 바로 체험해 보세요. 사용 중인 도구를 연결하고 유용한 점이나 부족한 점을 알려주시기 바랍니다.\n\n인시던트 조사 과정 중 가장 맡기고 싶은 부분은 무엇이며, 결과를 신뢰하기 위해 어떤 근거가 필요하신가요?\n\n저와 팀이 댓글 창에서 질문에 답변해 드리겠습니다."
+    },
+    {
+     "author": "Abinashi singh",
+     "is_maker": false,
+     "text": "@boristane I'd hand off the triage: correlate the deploy, config change, or dependency bump that lines up with the alert, and rule out the obvious before waking me up. I'd trust the diagnosis if it shows the evidence chain and what it eliminated, not just the conclusion. An audit trail of every read-only action it took would get me there.",
+     "kr": "@boristane 저는 초기 트리아지(triage)를 맡기고 싶습니다. 알림과 일치하는 배포 내역, 설정 변경, 의존성 업데이트를 연관 분석하고 명백한 원인들을 미리 배제하여 저를 깨우지 않는 것이죠. 단순한 결론뿐만 아니라 증거 사슬과 배제된 가설들을 보여준다면 그 진단을 신뢰할 수 있을 것입니다. 에이전트가 수행한 모든 읽기 전용 작업의 감사 추적(audit trail)이 있다면 충분히 신뢰할 수 있겠네요."
+    },
+    {
+     "author": "Jowanza Joseph",
+     "is_maker": false,
+     "text": "Can it figure out issues that happen with CI/CD? With so much code beign pushed a lot of bad habits get introduced into CI/CD and would love to triage overtime.",
+     "kr": "CI/CD에서 발생하는 문제도 파악할 수 있나요? 너무 많은 코드가 푸시되다 보니 CI/CD에 나쁜 습관들이 많이 생기는데, 이를 지속적으로 선별해 주면 좋겠습니다."
+    },
+    {
+     "author": "Boris Tane",
+     "is_maker": true,
+     "text": "@jowanza Yes! CI is one of the places it shines. @vitor_balocco mentioned it right above, Polylane picks up flaky tests and transient failures and opens PRs to harden them. It also remembers recurring patterns about your setup, so those bad habits get caught and cleaned up over time rather than one by one. Would love to see what it finds in yours Jowanza 🙌",
+     "kr": "@jowanza 네! CI는 Polylane이 가장 빛을 발하는 영역 중 하나입니다. 바로 윗글에서 @vitor_balocco 님이 언급하셨듯이, Polylane은 불안정한 테스트(flaky tests)와 일시적인 오류를 포착하여 이를 강화하는 PR을 오픈합니다. 또한 설정에 대한 반복 패턴을 기억하므로, 이러한 나쁜 습관들이 하나씩 방치되지 않고 시간이 지남에 따라 정리됩니다. Jowanza 님의 시스템에서 어떤 것들을 발견해낼지 무척 기대되네요 🙌"
+    },
+    {
+     "author": "Derek Reynolds",
+     "is_maker": false,
+     "text": "We've been really impressed with the quality of proactive investigations and PRs @Polylane is landing. As soon as we had enough connectors setup (S-tier onboarding experience btw) and context was flowing it got to work. It's the first agent that feels like I had another dev on the team that cared about what I do: reliability, observability and ops. Some of the first PRs were things I had on my radar, but not the time or room to prioritize and manage my own agents to fix. Was able to remove a lot of my bespoke skills/agents.md instructions for nudging other agents to add proper observability instrumentation which never resulted in as effective outcomes as Polylane.\n\n@boristane and the team are goated in this space. They've got the secret sauce and are rapidly improving the product. Every day they're landing improvements. I can finally take a lot of the mental load off of making sure our systems remain reliable and when things do fail and the alerts roll in I am not the one having to drop everything and triage. You should have signed up yesterday!",
+     "kr": "저희는 @Polylane이 생성하는 선제적 조사와 PR의 품질에 정말 깊은 인상을 받았습니다. 충분한 커넥터를 설정하자마자(참고로 온보딩 경험이 S급이었습니다) 컨텍스트가 유입되며 곧바로 작업에 착수하더군요. 제가 하는 일, 즉 신뢰성, 관측성, 운영에 관심을 가져주는 또 한 명의 팀원이 생긴 듯한 느낌을 주는 최초의 에이전트입니다. 처음에 생성된 몇몇 PR은 제가 신경 쓰고는 있었지만 우선순위를 두거나 직접 에이전트를 관리해 고칠 여유가 없던 항목들이었습니다. 다른 에이전트들에게 적절한 관측성 계측을 추가하도록 유도하기 위해 작성했던 복잡한 맞춤형 skills/agents.md 지침들을 대거 정리할 수 있었는데, 그 지침들은 결코 Polylane만큼 효과적이지 못했죠.\n\n@boristane 님과 팀은 이 분야의 독보적인 장인들입니다. 핵심 비결을 쥐고 있으며 매일 개선 사항을 배포하고 있습니다. 이제 시스템 안정성을 유지해야 한다는 정신적 부담을 크게 덜 수 있게 되었고, 장애가 발생해 알림이 쏟아져도 제가 모든 일을 제쳐두고 트리아지에 매달릴 필요가 없어졌습니다. 어제 바로 가입했어야 할 서비스입니다!"
+    },
+    {
+     "author": "Boris Tane",
+     "is_maker": true,
+     "text": "@drk Derek, you nailed the thesis. Coding agents optimize for shipping features, and nobody on the team is optimizing for reliability. Reliability shouldn't be something you remember to nudge into an agents md file. It should be someone's job, and now it's Polylane's.\n\nYou're also right that context is everything. The agent is only as good as what it can see in production, which is why we obsessed over the connectors and onboarding. Glad that came through.\n\nAnd \"PRs for things on my radar that I didn't have time for\" is the backlog every team has. Thanks for trusting us with Basedash 🫡",
+     "kr": "@drk Derek, 저희의 핵심 명제를 정확히 짚어주셨습니다. 코딩 에이전트는 기능 배포에만 최적화되어 있고, 팀 내 누구도 안정성에 최적화되어 있지 않죠. 안정성은 에이전트 md 파일에 번거롭게 힌트를 주어야 하는 작업이 되어서는 안 됩니다. 그것은 누군가의 전담 업무여야 하며, 이제 그것이 바로 Polylane의 역할입니다.\n\n또한 컨텍스트가 전부라는 말씀도 맞습니다. 에이전트의 역량은 프로덕션에서 볼 수 있는 정보의 양에 비례하기 때문에, 저희는 커넥터와 온보딩에 집착했습니다. 그 진심이 전해져 기쁩니다.\n\n그리고 '신경은 쓰고 있었지만 여유가 없었던 백로그'는 모든 팀이 안고 있는 문제입니다. Basedash를 믿고 맡겨주셔서 감사합니다 🫡"
+    },
+    {
+     "author": "Ryan Keller",
+     "is_maker": false,
+     "text": "How does it decide when an issue is safe to fix automatically?",
+     "kr": "문제를 자동으로 수정해도 안전한지 여부를 어떻게 판단하나요?"
+    },
+    {
+     "author": "Matanya Loewenthal",
+     "is_maker": true,
+     "text": "@ryankeller you keep control over what reaches production. Polylane investigates the incident, traces the cause through your telemetry and code, and opens a pull request when a code change can address it. That fix goes through your team’s review and CI, and production changes require your approval. If it can’t establish the cause or needs a decision from you, it brings back the evidence and the next action. Thanks for checking us out!",
+     "kr": "@ryankeller 프로덕션에 적용되는 모든 변경에 대한 통제권은 사용자가 갖습니다. Polylane은 인시던트를 조사하고 원격 측정 데이터와 코드를 통해 원인을 추적한 뒤, 코드 변경으로 해결 가능한 경우 풀 리퀘스트를 오픈합니다. 해당 수정본은 팀의 코드 리뷰와 CI를 거치며 프로덕션 변경에는 반드시 사용자의 승인이 필요합니다. 원인을 규명할 수 없거나 사람의 결정이 필요한 경우 수집된 증거와 다음 권장 조치를 제시합니다. 제품을 살펴봐 주셔서 감사합니다!"
+    },
+    {
+     "author": "Marius Holm",
+     "is_maker": false,
+     "text": "How it handles noisy alerts. Does the agent learn which signals are actually important for a specific application?",
+     "kr": "알림 노이즈는 어떻게 처리하나요? 특정 애플리케이션에서 실제로 중요한 신호가 무엇인지 에이전트가 학습하나요?"
+    },
+    {
+     "author": "Matanya Loewenthal",
+     "is_maker": true,
+     "text": "@mariusholm repeated alerts for the same problem are grouped into one incident, and the agent checks the underlying telemetry and code to distinguish a real problem from expected behavior. It also saves confirmed findings and recurring patterns about your application, then uses those memories in future investigations. That gives it application-specific context over time, while recurring or worsening signals can trigger another look at an earlier dismissal. Thanks for checking us out!",
+     "kr": "@mariusholm 동일한 문제로 인해 반복 발생하는 알림은 하나의 인시던트로 그룹화되며, 에이전트가 기저의 원격 측정 데이터와 코드를 확인하여 실제 문제인지 정상적인 동작인지 구분합니다. 또한 확인된 조사 결과와 반복되는 패턴을 저장하여 향후 조사 시 해당 기억을 활용합니다. 이를 통해 점진적으로 앱 고유의 컨텍스트를 학습하게 되며, 반복되거나 악화되는 신호가 감지되면 이전에 무시했던 항목도 다시 검토하도록 트리거합니다. 확인해 주셔서 감사합니다!"
+    },
+    {
+     "author": "Tao Ma",
+     "is_maker": false,
+     "text": "Is there an audit trail showing the diagnosis and the action taken?",
+     "kr": "진단 내용과 취해진 조치를 보여주는 감사 추적(audit trail)이 제공되나요?"
+    },
+    {
+     "author": "Matanya Loewenthal",
+     "is_maker": true,
+     "text": "@taoma17 Yup! You can open the investigation thread to see the evidence the agent gathered, its diagnosis, the tools it used, and the outcome. The incident also has an activity timeline connecting detections, findings, and the proposed fix or request for human action. If there’s a code fix, the pull request gives you the diff and validation results to review.",
+     "kr": "@taoma17 네! 조사 스레드를 열어 에이전트가 수집한 증거, 진단 내용, 사용한 도구 및 최종 결과를 모두 확인할 수 있습니다. 인시던트에는 감지된 내용, 발견점, 제안된 수정 사항 또는 관리자 승인 요청을 연결하는 활동 타임라인도 포함됩니다. 코드 수정이 있는 경우 풀 리퀘스트를 통해 diff와 검증 결과를 직접 검토하실 수 있습니다."
+    }
+   ],
+   "slug": "polylane",
+   "website": "https://polylane.com/"
+  }
+ ]
+}
