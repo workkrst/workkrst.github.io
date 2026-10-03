@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@ad.zerocket - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">전자책 · AI 부업 · 지식창업 교육 | 스레드스파이</span>
+                    
+                    <a href="https://www.threads.net/@ad.zerocket" target="_blank" rel="noopener" class="username">@ad.zerocket</a>
+                </div>
+                <span class="post-date">2026-10-01 18:16</span>
+            </div>
+            <div class="post-text">사주 좋아하시면<br>직접 사주, 타로 서비스 만드세요.<br><br>코딩 한 줄 안 쓰고<br>Claude Code만 써서 3일 만에<br>사주 웹사이트 런칭했고,<br>스레드 자동화 마케팅까지 돌려<br>오늘도 40정도 벌었습니다.<br><br>사주 타로로 수익화 세팅 프롬프트 6개:<br>(저장해두고 이번 주 연차내고 바로 써먹으세요)</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 25</span>
+                    <span>💬 2</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@ad.zerocket/post/Dd8kTI3CX-M" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (6개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-01 18:16</span>
+                    <span class="reply-likes">❤️ 3</span>
+                </div>
+                <div class="reply-text">1/ 사주 만세력 엔진 빌드 및 원페이지 서비스 제작<br>생년월일시만 넣으면<br>사주 원국과 풀이가 즉시 출력되는<br>핵심 웹서비스를 통째로 완성합니다.<br><br>&quot;너는 30년 차 명리학자이자 풀스택 웹 개발자야.<br>Next.js와 Tailwind CSS로 원페이지 사주 웹사이트를 만들어줘.<br><br>만세력은 lunar-javascript 라이브러리로 계산하고, 월주는 절기 기준으로 잡아.<br>입력은 양력/음력, 생년월일, 태어난 시간(모름 포함), 성별.<br><br>결과로 사주 원국, 오행 분포, 십성, 신살, 용신을 뽑고<br>Claude API로 성향·연애·이직·재물운 리포트를 생성해서 카드로 보여줘.<br>다 만들면 직접 실행해서 테스트까지 해줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-01 18:16</span>
+                    
+                </div>
+                <div class="reply-text">2/ 기술적 구글 SEO 최적화 한 방에 끝내기<br>사이트만 만들어놓고 방치하면 검색에 안 걸립니다.<br>검증된 SEO 스킬을 붙여<br>구글 1페이지 구조로 세팅합니다.<br><br>&quot;AgriciDaniel/claude-seo 스킬을 설치하고, 그 스킬에 따라 SEO 최적화를 진행해.<br><br>내 사주 웹사이트의 메타 태그, Open Graph, 시맨틱 태그 구조를 점검해줘.<br>Next.js의 app/sitemap.ts와 app/robots.ts로 sitemap.xml과 robots.txt를 생성해줘.<br><br>&#x27;2026년 신년운세&#x27;, &#x27;사주 궁합&#x27;, &#x27;이직운&#x27; 같은 고단가 키워드가<br>페이지 헤더와 본문 JSON-LD 구조화 데이터에 빈틈없이 들어가도록 코드를 리팩토링해줘.<br>키워드별 랜딩 페이지도 /fortune/2026, /fortune/match, /fortune/job으로 따로 만들어줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-01 18:16</span>
+                    
+                </div>
+                <div class="reply-text">3/ 타로 기능 붙여서 체류시간 2배 늘리기<br>사주만 있으면 한 번 보고 나갑니다.<br>타로를 붙이면 매일 다시 들어옵니다.<br><br>&quot;메이저 22장과 마이너 56장, 총 78장 타로 카드 데이터를<br>정방향/역방향 의미까지 포함해서 data/tarot.json으로 만들어줘.<br><br>원카드(오늘의 운세), 쓰리카드(과거·현재·미래), 연애 스프레드 3가지 모드를 만들어.<br>셔플 → 카드 선택 → 뒤집기 애니메이션 → Claude API 해석 순서로 동작하게 해줘.<br><br>카드 이미지는 저작권 문제 없게 CSS와 SVG로 직접 디자인해줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-01 18:16</span>
+                    
+                </div>
+                <div class="reply-text">4/ 무료 맛보기 + 유료 상세 리포트 결제 세팅<br>다 무료로 풀면 돈이 안 됩니다.<br>요약은 무료, 상세는 결제하게 막아야<br>수익이 납니다.<br><br>&quot;사주 결과 페이지를 무료 요약(성향 3줄)과 유료 상세 리포트로 나눠줘.<br>유료 부분은 블러 처리하고 &#x27;상세 리포트 보기&#x27; 버튼을 달아.<br><br>토스페이먼츠 결제위젯 SDK를 연동하고, 테스트 키로 결제 성공/실패 흐름부터 완성해줘.<br>결제 승인은 반드시 서버 라우트에서 처리하고, 성공하면 리포트 잠금이 풀리게 해.<br><br>결제 내역은 Supabase에 저장해서 같은 사람이 다시 와도 결과를 볼 수 있게 해줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-01 18:17</span>
+                    
+                </div>
+                <div class="reply-text">5/ 스레드 자동화 마케팅으로 트래픽 끌어오기<br>만들어도 아무도 모르면 0원입니다.<br>사람들이 결과를 공유하게 만들고<br>스레드로 매일 유입시킵니다.<br><br>&quot;사주 결과를 1080x1350 공유용 이미지 카드로 저장하는 기능을 만들어줘.<br>일간 오행 색상으로 배경이 바뀌고, &#x27;나는 OO 일주&#x27; 문구가 크게 들어가게 해줘.<br><br>그리고 스레드에 올릴 게시글 30개를 만들어서 posts.md로 저장해줘.<br>소재는 일주별 성향, 2026년 띠별 운세, 연애 궁합으로 하고, 후킹 첫 줄은 전부 다르게 써줘.<br>마지막 줄에는 &#x27;내 일주 확인하기&#x27; 링크 유도 문구를 넣어줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-01 18:17</span>
+                    
+                </div>
+                <div class="reply-text">6/ 배포하고 매출 확인까지 끝내기<br>로컬에서만 돌아가면 의미 없습니다.<br>오늘 바로 실제 주소로 띄웁니다.<br><br>&quot;이 프로젝트를 GitHub에 올리고 Vercel로 배포할 수 있게 전부 세팅해줘.<br>환경변수 목록과 도메인 연결 순서는 README.md에 정리해줘.<br><br>GA4를 연동해서 결과 조회 수, 결제 버튼 클릭, 결제 완료를 이벤트로 추적해줘.<br>배포 전에 npm run build를 돌려서 에러가 0개 될 때까지 고쳐줘.&quot;</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (2개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@homekoo_note</span>
+            <span class="reply-date">2026-10-01 21:47</span>
+            
+        </div>
+        <div class="reply-text">결제연동응어떻게해요? 거기서막히단데</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ad.zerocket</span>
+            <span class="reply-date">2026-10-02 11:58</span>
+            
+        </div>
+        <div class="reply-text">결제는 보통 두 군데서 막혀요!<br><br>1/ 테스트 단계에서 막힌 경우<br>토스페이먼츠 개발자센터 가입하면 테스트 키가 바로 나와요.<br>그 키를 .env.local에 넣고 Claude Code한테 이렇게만 말하세요.<br><br>&quot;토스페이먼츠 테스트 키를 .env.local에 넣었어. 결제위젯 연동해서 결제 성공하면 상세 리포트 잠금이 풀리게 해줘. 결제 승인은 서버 라우트에서 처리하고, 에러 나면 로그 보고 직접 고쳐줘.&quot;<br><br>2/ 실제 결제 받으려다 막힌 경우<br>라이브 키는 사업자등록 + 토스 심사가 있어야 나와요.<br>사업자 없으시면 개인도 쓸 수 있는 결제 서비스나<br>판매 플랫폼에 링크를 거는 방식으로 먼저 시작하는 걸 추천드려요.<br><br>어디서 에러 났는지 알려주시면 더 정확하게 봐드릴게요!</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
