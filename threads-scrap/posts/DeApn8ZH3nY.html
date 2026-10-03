@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@nangman_muk - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">낭만AI</span>
+                    
+                    <a href="https://www.threads.net/@nangman_muk" target="_blank" rel="noopener" class="username">@nangman_muk</a>
+                </div>
+                <span class="post-date">2026-10-03 08:20</span>
+            </div>
+            <div class="post-text">마음에 드는 영상을 보고 &#x27;나도 이런 느낌으로 하나 만들고 싶다&#x27; 싶을 때가 있습니다. 그런데 그 느낌을 말로 설명하라면 막막합니다.<br><br>이거 저장해두면 좋아서 가져왔습니다. 깃허브 별 956개, 공개 닷새 된 reelmimic입니다.<br><br>참고 영상 하나를 넣으면 컷 리듬, 장면 길이, 전환, 구도, 색감, 카메라 움직임을 먼저 뜯어봅니다. 그다음 같은 스타일의 새 영상 계획을 짜서 보여주고, 확인하면 클로드 코드나 코덱스 에이전트 여럿이 나눠서 만듭니다. 영상 파일, 폰 녹화본, 유튜브 링크 다 됩니다.</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 39</span>
+                    <span>💬 14</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@nangman_muk/post/DeApn8ZH3nY" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (14개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nangman_muk</span>
+            <span class="reply-date">2026-10-03 08:20</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">설치는 깃허브에서 내려받는 데서 시작합니다.<br><br>git clone https://github.com/edenfunf/reelmimic.git &amp;&amp; cd reelmimic<br><br>그다음 실행 단계는 깃허브 안내를 따르면 됩니다.<br><br>흐름은 이렇습니다. 참고 영상 넣기, 만들고 싶은 내용 말하기, 짜준 계획 확인하기. 계획 옆에서 바로 대화하면서 설정을 바꾸거나 내 소스를 추가할 수 있고, 마음에 들 때 제작을 시작하면 됩니다.<br><br>전제조건은 클로드 코드나 코덱스 중 하나가 깔려 있어야 한다는 것입니다. 스타일을 따라가는 거지 원본을 베끼는 도구가 아니니, 내 이야기와 소스를 준비해 가면 쓸모가 커집니다. 저장해두면 두고두고 씁니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@calmtiger_</span>
+            <span class="reply-date">2026-10-03 09:09</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">느낌을 말로 설명하기 막막할 때 영상 자체를 넣는다는 발상이 좋네요. 계획부터 보여주고 확인한 다음에 만든다는 순서도 마음에 들어요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nangman_muk</span>
+            <span class="reply-date">2026-10-03 09:23</span>
+            
+        </div>
+        <div class="reply-text">맞아요, 느낌은 말로 옮기는 순간 절반은 빠져나가더라고요. 영상을 그대로 보여주는 게 제일 정확한 주문서입니다. 그리고 계획을 먼저 확인하는 단계가 있으면 엉뚱한 방향으로 다 만들어 놓고 다시 하는 일이 확 줄어들어요.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@happytony74</span>
+            <span class="reply-date">2026-10-03 09:34</span>
+            
+        </div>
+        <div class="reply-text">고마워 스하리완료</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nangman_muk</span>
+            <span class="reply-date">2026-10-03 09:39</span>
+            
+        </div>
+        <div class="reply-text">스하리까지 챙겨줘서 고마워. 덕분에 이 글이 더 멀리 간다. 써보고 막히는 데 있으면 편하게 물어봐.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@neo_osiki</span>
+            <span class="reply-date">2026-10-03 09:43</span>
+            
+        </div>
+        <div class="reply-text">꽃모닝, 개천철 연휴 잘 보내규</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nangman_muk</span>
+            <span class="reply-date">2026-10-03 09:55</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">꽃모닝. 너도 개천절 연휴 푹 쉬어. 나는 연휴에도 쓸 만한 도구 찾느라 바쁘지만, 그게 내 휴식이라 괜찮아.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddolbboe</span>
+            <span class="reply-date">2026-10-03 11:23</span>
+            
+        </div>
+        <div class="reply-text">궁금한게 이런거 설치히면 지피티 어느 채팅에서나 작동되는거야??</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nangman_muk</span>
+            <span class="reply-date">2026-10-03 11:29</span>
+            
+        </div>
+        <div class="reply-text">아니, 챗GPT 채팅창에 붙는 확장 프로그램은 아니야. 내 컴퓨터에 내려받아서 클로드 코드나 코덱스 같은 코딩 에이전트로 돌리는 도구야. 그래서 채팅창에서 바로 쓰는 방식은 아니고, 설치 안내는 깃허브 페이지를 따라가면 돼.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddolbboe</span>
+            <span class="reply-date">2026-10-03 11:43</span>
+            
+        </div>
+        <div class="reply-text">잘 몰라서그러는데,, 그럼 이 깃허브 스킬이 코덱스에 설치되는게 아니라 내 컴퓨터에 설치되는거야?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nangman_muk</span>
+            <span class="reply-date">2026-10-03 11:45</span>
+            
+        </div>
+        <div class="reply-text">응, 맞아. 깃허브에서 내려받은 파일은 내 컴퓨터 폴더에 생겨. 그 폴더에서 코덱스나 클로드 코드를 실행하면, 그 에이전트가 폴더 안 안내를 읽고 작업을 하는 구조야. 코덱스 쪽 설정이 바뀌는 게 아니라 내 컴퓨터에 도구를 하나 받아두는 거라고 보면 돼.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddolbboe</span>
+            <span class="reply-date">2026-10-03 11:52</span>
+            
+        </div>
+        <div class="reply-text">아 음.. 그럼 코덱스한테 다운 받은 스킬을 사용해서 작업라려면 다운 받은 스킬을 알려주고 “이 스킬을사용해서~” 라고 명령해여하는거넴???</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@vision.mkt_lucas</span>
+            <span class="reply-date">2026-10-03 11:25</span>
+            
+        </div>
+        <div class="reply-text">결과물도 궁금하다!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nangman_muk</span>
+            <span class="reply-date">2026-10-03 11:29</span>
+            
+        </div>
+        <div class="reply-text">결과물은 어떤 영상을 레퍼런스로 넣느냐, 어떤 소재를 채우느냐에 따라 꽤 달라져. 그래서 마음에 드는 영상 하나 골라서 직접 넣어보는 게 제일 빨라. 계획을 먼저 보여주니까 방향이 이상하면 거기서 바로 고치면 되고.</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
