@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@dietthatgirl - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">이슬기</span>
+                    <span class="verified-badge" title="인증 계정">✓</span>
+                    <a href="https://www.threads.net/@dietthatgirl" target="_blank" rel="noopener" class="username">@dietthatgirl</a>
+                </div>
+                <span class="post-date">2026-10-02 18:36</span>
+            </div>
+            <div class="post-text">뭐라도 하는법<br><br>1. aside를 깐다<br>2. 실시간 뉴스 기반으로 블로글 써달라한다. 잘되는갈 공통점 찾아서 써달라한다<br>3. 이미지는 구글플로우를 이용하라한다. 로그인해둔다.<br>4. 조회수가 적당히는다. <br>5. 쇼핑커넥트를 붙이라한다.<br>6. 개찔끔이라도 돈을 벌게된다.<br><br>성과를 맛본다. 재밋다. 다음스텝으로 간다.</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 314</span>
+                    <span>💬 52</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@dietthatgirl/post/Dd_LU9UEwfn" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (1개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@dietthatgirl</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 21:22</span>
+                    <span class="reply-likes">❤️ 12</span>
+                </div>
+                <div class="reply-text">나는 안다 어차피 며칠해보다 안할꺼라는걸, 나는 안다 며칠하다가 뭐여 안되네 하고 접을거라는걸, 그리고 너도 안다 무료에 혹하는넌 끈기가 ㅈㄴ없다는걸 <br><br>이걸 봤다묜 오기로라도 해봐라 <br>그냥 노는컴 켜두기만 하면된다.</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (52개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 23:26</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">https://www.latpeed.com/products/NMG7D <br>못알아들으면 이걸로 입문해라<br>9,900원 250페이지 <br>백날 스레드보고 포기반복하지말고 <br>이거라도 봐라</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@sandokkebbi</span>
+            <span class="reply-date">2026-10-02 19:05</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">숟가락들 힘없는 노친네들을 위해 숟가락까지 들어주시고.. 어서 틀니끼고 딱딱 씹어먹어 보개씀다 틀니딱딱</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 19:05</span>
+            
+        </div>
+        <div class="reply-text">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ커피보내라 ㅅㅂ꺼</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ai.rusk</span>
+            <span class="reply-date">2026-10-02 20:10</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">1 냅다 맥스요금제를 지른다<br>2 이 계정에서 매일 올려주는 팁마다 3개씩의 채널을 만들어서 실행하라고 한다<br>3 이게 자동으로 된다고? 를 찔끔 맛본다<br>4 이 계정에 올라오는 팁들을 5개 채널로 실행하라고 한다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@arsene.94</span>
+            <span class="reply-date">2026-10-02 20:20</span>
+            
+        </div>
+        <div class="reply-text">아 비밀인데 강의팔이 다 죽겠네</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 20:30</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">야</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@arsene.94</span>
+            <span class="reply-date">2026-10-02 20:40</span>
+            
+        </div>
+        <div class="reply-text">?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 20:46</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">그냥</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@arsene.94</span>
+            <span class="reply-date">2026-10-02 20:47</span>
+            
+        </div>
+        <div class="reply-text">그래ㅋㅋㅋㅋㅋ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@succize_00</span>
+            <span class="reply-date">2026-10-02 20:41</span>
+            
+        </div>
+        <div class="reply-text">감솨~~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 20:46</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">돈냐라</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@mr._g.d.c</span>
+            <span class="reply-date">2026-10-02 21:06</span>
+            
+        </div>
+        <div class="reply-text">이런게 있다는걸 처음알았어요.<br>신문물 알려줘서 감사😭</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 21:10</span>
+            
+        </div>
+        <div class="reply-text">주여</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@noru1511</span>
+            <span class="reply-date">2026-10-02 21:24</span>
+            
+        </div>
+        <div class="reply-text">이미지는 왜 구글플로우로 하나요?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 21:24</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">돈이 안드니까</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@applemang_</span>
+            <span class="reply-date">2026-10-02 21:30</span>
+            <span class="reply-likes">❤️ 3</span>
+        </div>
+        <div class="reply-text">신세계!!군요🤩</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 21:32</span>
+            
+        </div>
+        <div class="reply-text">드루와 드루와</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@applemang_</span>
+            <span class="reply-date">2026-10-02 21:32</span>
+            
+        </div>
+        <div class="reply-text">드루가고싶다🧐</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 21:33</span>
+            
+        </div>
+        <div class="reply-text">커피챗은 언제나 환영이나 나 스벅만마심</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@applemang_</span>
+            <span class="reply-date">2026-10-02 21:34</span>
+            
+        </div>
+        <div class="reply-text">스벅벅 좋은데 시간만 내주신다묜🏃‍♂️‍➡️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@zzuri_mom</span>
+            <span class="reply-date">2026-10-02 22:00</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">어사이드에 클로드와 지피티 연결 해뒀는데<br>1~6 의 과정을 하면 프로 등급으로도 하루 세개 발행 가능? 궁금해요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 22:02</span>
+            
+        </div>
+        <div class="reply-text">커피조공해라</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@zzuri_mom</span>
+            <span class="reply-date">2026-10-02 22:03</span>
+            
+        </div>
+        <div class="reply-text">일단 해볼게요 ㅋㅋㅋㅋㅋ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 22:04</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">아깝냐 커피가</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nyani0000</span>
+            <span class="reply-date">2026-10-02 22:35</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">이런글 조하~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gas3480</span>
+            <span class="reply-date">2026-10-02 22:48</span>
+            
+        </div>
+        <div class="reply-text">비싸서....</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-02 22:49</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">뭐가?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gas3480</span>
+            <span class="reply-date">2026-10-02 22:51</span>
+            
+        </div>
+        <div class="reply-text">어사이드 비싸던데</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@minyoung_dean</span>
+            <span class="reply-date">2026-10-02 22:50</span>
+            
+        </div>
+        <div class="reply-text">이거 안돼</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@humanssss_min</span>
+            <span class="reply-date">2026-10-02 23:34</span>
+            
+        </div>
+        <div class="reply-text">??? : aside가 뭐에요<br>??? : 네이버계정이 없어요<br>???: 구글 flow는 뭔가요?<br>??? : 크롬켜요? <br>??? : 힉스필드는 안써도 되나요?<br><br>하지마 샤갈</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dddzip05</span>
+            <span class="reply-date">2026-10-03 00:01</span>
+            
+        </div>
+        <div class="reply-text">블로그 쓸때마다 이미지때매 골아프고 시간제일 오래 잡아먹었는데 구글플로우 뭐지 오늘부터 공부(?)한다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-03 00:03</span>
+            
+        </div>
+        <div class="reply-text">주여</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@askphonebro</span>
+            <span class="reply-date">2026-10-03 00:01</span>
+            
+        </div>
+        <div class="reply-text">일단 스하리</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-03 00:04</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">머야</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@askphonebro</span>
+            <span class="reply-date">2026-10-03 00:05</span>
+            
+        </div>
+        <div class="reply-text">나도 해보려고!ㅋ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-03 00:05</span>
+            
+        </div>
+        <div class="reply-text">그래해라</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@somethingmaker</span>
+            <span class="reply-date">2026-10-03 00:34</span>
+            
+        </div>
+        <div class="reply-text">무료라 그런가 글 한개 올리기도 전에 사용량 끝나네? ㅋㅋㅋ 이거 하루에 하나라도 올리려면 프로 구독 정도면 됨?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-03 00:34</span>
+            
+        </div>
+        <div class="reply-text">클로드프러</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@somethingmaker</span>
+            <span class="reply-date">2026-10-03 00:36</span>
+            
+        </div>
+        <div class="reply-text">아 클로드 구독 연결할 수 있구나~~~ 개꿀팁 ㄱㅅ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hyun.ai.log</span>
+            <span class="reply-date">2026-10-03 00:35</span>
+            
+        </div>
+        <div class="reply-text">프로구독하러갑니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-03 00:35</span>
+            
+        </div>
+        <div class="reply-text">나 커피마시게 책하나 사줘라</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hyun.ai.log</span>
+            <span class="reply-date">2026-10-03 00:36</span>
+            
+        </div>
+        <div class="reply-text">그러지요  좋은 정보 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jepdori_</span>
+            <span class="reply-date">2026-10-03 00:59</span>
+            
+        </div>
+        <div class="reply-text">토큰은 조상님이 내주나?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-03 01:01</span>
+            
+        </div>
+        <div class="reply-text">29000웜짜리 클로드프로도 안쓰고 날먹하려는 마인드면 그냥 안하는게 나음</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@6abomb</span>
+            <span class="reply-date">2026-10-03 01:48</span>
+            
+        </div>
+        <div class="reply-text">폐지줍기 대신 해 보겠읍니다. 감사합니다. <br>(Sonnet 5.5 로 해도 충분하것쬬? 첫 수익은 커피 쏘겠읍니다.)</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-03 01:49</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">전자책하나사줘라</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ai_fighting</span>
+            <span class="reply-date">2026-10-03 06:15</span>
+            
+        </div>
+        <div class="reply-text">못알아 들은걸 보니 책사라는 얘기구나~~~~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-03 09:15</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">ㅋㅋㅋㅋㅋㅋㅇㅇ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@neo_osiki</span>
+            <span class="reply-date">2026-10-03 07:53</span>
+            
+        </div>
+        <div class="reply-text">꽃모닝. 연휴 잘 보내고</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-03 09:14</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">유튜</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@best_value_home_essentials</span>
+            <span class="reply-date">2026-10-03 09:03</span>
+            
+        </div>
+        <div class="reply-text">응원해 스하리 반하리와~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dietthatgirl</span>
+            <span class="reply-date">2026-10-03 09:14</span>
+            
+        </div>
+        <div class="reply-text">안키음</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
