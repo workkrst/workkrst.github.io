@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@ad.zerocket - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">전자책 · AI 부업 · 지식창업 교육 | 스레드스파이</span>
+                    
+                    <a href="https://www.threads.net/@ad.zerocket" target="_blank" rel="noopener" class="username">@ad.zerocket</a>
+                </div>
+                <span class="post-date">2026-10-02 18:22</span>
+            </div>
+            <div class="post-text">연애 콘텐츠 좋아하시면<br>직접 궁합 테스트 서비스 만드세요.<br><br>코딩 한 줄 안 쓰고<br>Claude Code만 써서 3일 만에<br>커플 궁합 웹사이트 런칭했고,<br>스레드 자동화 마케팅까지 돌려<br>오늘도 80정도 벌었습니다.<br><br>궁합 테스트로 수익화 세팅 프롬프트 6개:<br>(저장해두고 이번 주 연차내고 바로 써먹으세요)</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 27</span>
+                    <span>💬 1</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@ad.zerocket/post/Dd_JsyHia-Z" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (6개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:22</span>
+                    
+                </div>
+                <div class="reply-text">1/ 궁합 분석 엔진 빌드 및 원페이지 서비스 제작<br>두 사람 정보만 넣으면<br>궁합 점수와 연애 분석이 즉시 나오는<br>핵심 웹서비스를 통째로 완성합니다.<br><br>&quot;너는 20년 차 연애 상담가이자 풀스택 웹 개발자야.<br>Next.js와 Tailwind CSS로 원페이지 커플 궁합 웹사이트를 만들어줘.<br><br>두 사람의 이름, 생년월일, MBTI를 입력받아.<br>생년월일은 lunar-javascript 라이브러리로 띠와 일주를 계산하고<br>일주 궁합, 띠 궁합, MBTI 궁합을 합쳐 100점 만점 궁합 점수를 산출해.<br><br>Claude API로 성격 궁합, 싸우는 포인트, 오래 가는 비결 리포트를 생성해서 카드로 보여줘.<br>다 만들면 직접 실행해서 테스트까지 해줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:22</span>
+                    
+                </div>
+                <div class="reply-text">2/ 기술적 구글 SEO 최적화 한 방에 끝내기<br>사이트만 만들어놓고 방치하면 검색에 안 걸립니다.<br>검증된 SEO 스킬을 붙여<br>구글 1페이지 구조로 세팅합니다.<br><br>&quot;AgriciDaniel/claude-seo 스킬을 설치하고, 그 스킬에 따라 SEO 최적화를 진행해.<br><br>내 궁합 웹사이트의 메타 태그, Open Graph, 시맨틱 태그 구조를 점검해줘.<br>sitemap.xml과 robots.txt도 생성해줘.<br><br>&#x27;커플 궁합 테스트&#x27;, &#x27;MBTI 궁합&#x27;, &#x27;띠별 궁합&#x27; 같은 키워드가<br>페이지 헤더와 JSON-LD 구조화 데이터에 빈틈없이 들어가도록 리팩토링해줘.<br>MBTI 16개 유형별 궁합 랜딩 페이지도 따로 만들어줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:22</span>
+                    
+                </div>
+                <div class="reply-text">3/ 상대방 초대 기능 붙여서 바이럴 터뜨리기<br>혼자 하는 테스트는 한 번 하고 끝납니다.<br>상대방을 불러야 하는 구조면 알아서 퍼집니다.<br><br>&quot;&#x27;우리 연애 스타일 테스트&#x27; 기능을 추가해줘.<br>연락 빈도, 데이트 취향, 싸울 때 반응 같은 질문 10개를 만들고<br>내가 먼저 답하면 상대방에게 보낼 초대 링크가 생성되게 해줘.<br><br>상대방이 링크로 들어와 같은 질문에 답하면<br>두 사람 답변을 비교해서 일치율과 서로 다른 부분을 보여줘.<br>카카오톡 공유 버튼도 달아줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:22</span>
+                    
+                </div>
+                <div class="reply-text">4/ 무료 점수 + 유료 상세 리포트 결제 세팅<br>다 무료로 풀면 돈이 안 됩니다.<br>점수는 무료, 상세 분석은 결제하게 막아야<br>수익이 납니다.<br><br>&quot;결과 페이지를 무료 궁합 점수와 한 줄 요약, 유료 상세 리포트로 나눠줘.<br>유료 부분은 블러 처리하고 &#x27;우리 궁합 자세히 보기&#x27; 버튼을 달아.<br><br>토스페이먼츠 결제위젯을 테스트 키로 연동하고, 결제 승인은 서버 라우트에서 처리해.<br>결제 성공하면 연애 흐름, 결혼 궁합, 조심할 시기까지 담은 상세 리포트를 열어주고<br>결제 내역은 Supabase에 저장해줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:22</span>
+                    
+                </div>
+                <div class="reply-text">5/ 스레드 자동화 마케팅으로 트래픽 끌어오기<br>만들어도 아무도 모르면 0원입니다.<br>사람들이 결과를 공유하게 만들고<br>스레드로 매일 유입시킵니다.<br><br>&quot;궁합 결과를 1080x1350 공유용 이미지 카드로 저장하는 기능을 만들어줘.<br>&#x27;우리 궁합 92점&#x27; 문구가 크게 들어가고, 점수대별로 배경색이 바뀌게 해줘.<br><br>그리고 스레드에 올릴 게시글 30개를 만들어서 posts.md로 저장해줘.<br>소재는 MBTI 조합별 연애 특징, 띠별 찰떡 궁합, 커플 싸움 유형으로 하고<br>후킹 첫 줄은 전부 다르게 써줘.<br>마지막 줄에는 &#x27;우리 궁합 확인하기&#x27; 링크 유도 문구를 넣어줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:22</span>
+                    
+                </div>
+                <div class="reply-text">6/ 배포하고 매출 확인까지 끝내기<br>로컬에서만 돌아가면 의미 없습니다.<br>오늘 바로 실제 주소로 띄웁니다.<br><br>&quot;이 프로젝트를 GitHub에 올리고 Vercel로 배포할 수 있게 전부 세팅해줘.<br>환경변수 목록과 도메인 연결 순서는 README.md에 정리해줘.<br><br>GA4를 연동해서 궁합 결과 조회, 초대 링크 공유, 결제 버튼 클릭, 결제 완료를 이벤트로 추적해줘.<br>배포 전에 npm run build를 돌려서 에러가 0개 될 때까지 고쳐줘.&quot;</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (1개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@guidehun</span>
+            <span class="reply-date">2026-10-03 00:36</span>
+            
+        </div>
+        <div class="reply-text">어디서 많이 본 프롬프트인디..</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
