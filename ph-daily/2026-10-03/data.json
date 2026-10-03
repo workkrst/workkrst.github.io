@@ -1,0 +1,479 @@
+{
+ "date": "2026-10-03",
+ "collected_at": "2026-10-03 12:30 KST",
+ "summary": "오늘 차트는 교육(Education) 분야의 인터랙티브 AI 튜터 2종이 상위권에 포진한 가운데, 이커머스 비즈니스 진단과 옴니채널 음성 상담, 데스크톱 기술 문서 플랫폼까지 다양한 실무 도메인에 특화된 AI 제품들이 고르게 주목받았습니다. 커뮤니티 댓글에서는 단순한 텍스트 답변이나 수동형 대시보드를 넘어, 학습자의 단계별 추론을 유도하는 힌트 조절 메커니즘과 비즈니스 기회를 선제 발굴하는 능동형 코파일럿의 효용성이 집중 조명되었습니다. 아울러 실전 배포 전 음성 사전 시뮬레이션의 신뢰성이나 로컬 오프라인 편집 시 동기화 충돌 해결 방식 등 실제 워크플로우에 도입하기 위한 실무적 안정 장치가 공통 핵심 쟁점으로 다뤄졌습니다.",
+ "notable": [
+  {
+   "slug": "gauth-ai-course",
+   "why": "선형적인 채팅창 대신 무한한 디지털 캔버스 위에서 필기와 음성이 실시간 동기화되며, 문제 풀이 단계 바로 옆에 질의응답이 고정되는 시각적 학습 환경에 사용자들의 큰 찬사가 이어졌습니다. 댓글에서는 시험 전 복습 시 맥락을 놓치지 않고 취약 단계를 되짚어볼 수 있다는 점과 쉬는 시간 3분 레슨의 실용성이 호평을 받았으며, 학부모·교사용 진도 대시보드 추가에 대한 메이커와의 활발한 피드백이 주목을 받았습니다."
+  },
+  {
+   "slug": "mintlify",
+   "why": "수많은 브라우저 탭에 흩어지기 쉬운 대내외 기술 문서를 로컬 마크다운 기반의 독립 데스크톱 작업 공간으로 통합하고 전용 AI 에이전트를 내장한 점이 개발자들의 높은 관심을 모았습니다. 특히 댓글에서는 인터넷이 없는 환경에서도 작업 가능한 오프라인 퍼스트 접근에 찬사를 보내면서도, 재연결 시 팀원이나 AI 에이전트 간의 로컬 편집 충돌을 해결하는 머지 뷰(merge view) 제공 여부에 대해 날카로운 기술적 검증 질문이 이어졌습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Gauth Unlimited Digital Canvas",
+   "tagline_en": "An AI tutor on an infinite whiteboard, not a chat thread",
+   "tagline_kr": "선형적인 채팅창 대신 무한한 화이트보드 캔버스 위에서 시각적으로 전개되는 AI 튜터 학습 플랫폼",
+   "image": "https://ph-files.imgix.net/c40a9ac0-f14a-46b2-841a-cefeeb9b65fe.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Education",
+    "Artificial Intelligence",
+    "Online Learning"
+   ],
+   "upvotes": 423,
+   "comments_count": 147,
+   "maker": "Alan Wang(@alan_wang13), Clara Bennett(@sy_jin_3) (헌터: Aleksandar Blazhev(@byalexai))",
+   "price_model": "무료 (Free)",
+   "price_detail": "별도의 유료 구독이나 카드 등록 없이 무한 디지털 캔버스 기반 인터랙티브 학습, 실시간 질의응답, PDF 내보내기 및 링크 공유 기능을 무료로 이용할 수 있습니다.",
+   "desc_kr": "Gauth Unlimited Digital Canvas는 단편적인 대화형 채팅이나 일방적인 슬라이드 방식에서 벗어나 하나의 거대한 무한 화이트보드 위에서 학습이 시각적 공간으로 펼쳐지는 AI 교육 플랫폼입니다. AI 내레이션 음성에 맞춰 필기 노트가 실시간으로 동기화되어 화면에 작성되며, 학습 챕터들이 좌우로 나란히 확장되어 개념 간의 유기적인 연결 구조를 한눈에 조망할 수 있습니다. 전체적인 개념 지도(Concept Map) 조망부터 세부 공식 하나에 이르기까지 자유롭게 줌인과 줌아웃하며 학습할 수 있어 맥락을 잃지 않고 깊이 있는 이해가 가능합니다. 학습 도중 언제든지 일시정지하여 AI 튜터에게 질문하면 캔버스 위 해당 문제 풀이 단계 바로 아래에 맞춤형 설명이 즉각 생성됩니다. 모든 주제에 대해 맞춤형 캔버스 강의를 자유롭게 생성할 수 있으며 완성된 학습 보드는 PDF로 내보내거나 고유 링크로 공유하여 복습할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/gauth-ai-course",
+   "comment_summary": "기존의 선형적 텍스트 채팅과 달리 전체 개념을 캔버스 위에서 조망하고 필기와 음성이 실시간 동기화되는 시각적 학습 방식에 찬사가 쏟아졌습니다. 사용자가 막히는 특정 문제 풀이 단계 바로 옆에 AI 튜터의 설명이 영구 보존되어 시험 직전 복습에 유용하다는 점과 수업 사이 짧은 자투리 시간에 학습하기 편리하다는 점이 큰 호평을 받았습니다. 메이커 측은 향후 학부모 및 교사를 위한 진도 추적 대시보드 추가 등 커뮤니티의 다양한 기능 제안을 적극 검토하겠다고 밝혔습니다.",
+   "warnings": "수치(업보트 423·댓글 147)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Aleksandar Blazhev",
+     "is_maker": false,
+     "text": "Excited to hunt Gauth Unlimited Digital Canvas today. I hunted Gauth AI Course last month, and this update takes it in a much more visual direction. Instead of another linear chat or slide deck, the whole lesson now unfolds on one continuous canvas. What stood out: - Chapters expand side by side - Notes, visuals, and AI narration stay in sync - Ask the AI Tutor directly inside the lesson - Zoom from the full concept map down to a single formula - Generate, share, or export your own canvas lessons My favorite part is the in-context tutoring: answers stay attached to the exact step you’re working on instead of disappearing into a long chat thread. Worth checking out if you learn better by seeing how ideas connect.",
+     "kr": "오늘 Gauth Unlimited Digital Canvas를 헌팅하게 되어 정말 기쁩니다. 지난달 Gauth AI Course를 헌팅했었는데, 이번 업데이트는 훨씬 더 시각적인 방향으로 발전했습니다. 또 다른 선형적인 채팅이나 슬라이드 자료 대신 전체 수업이 하나의 연속된 캔버스 위에서 펼쳐집니다. 특히 눈에 띄는 점은 다음과 같습니다: - 챕터가 나란히 확장됨 - 노트, 시각 자료, AI 내레이션의 실시간 동기화 - 수업 도중 캔버스 내에서 AI 튜터에게 직접 질문 가능 - 전체 개념 지도에서 개별 공식까지 자유로운 줌 조절 - 나만의 캔버스 수업 생성, 공유 및 내보내기 지원. 제가 가장 마음에 드는 부분은 문맥 기반 튜터링입니다. 답변이 긴 채팅창 속으로 사라지지 않고 현재 작업 중인 바로 그 문제 단계에 고정됩니다. 아이디어들이 어떻게 연결되는지 보면서 더 잘 학습하는 분들이라면 꼭 확인해 볼 가치가 있습니다."
+    },
+    {
+     "author": "Alan Wang",
+     "is_maker": true,
+     "text": "@byalexai Thanks Alex! Love having you be a part of the journey. More updates to come...",
+     "kr": "@byalexai 고마워요 Alex! 저희 여정에 함께해 주셔서 정말 기쁩니다. 앞으로 더 많은 업데이트가 이어질 예정입니다..."
+    },
+    {
+     "author": "Matthew Baker",
+     "is_maker": false,
+     "text": "Do Quick Checks catch that '' I understood the video, but can't solve the issue'' moment?",
+     "kr": "간단 퀴즈(Quick Checks)가 '영상은 이해했지만 실제 문제는 풀지 못하는' 그런 순간을 제대로 잡아내 주나요?"
+    },
+    {
+     "author": "Alan Wang",
+     "is_maker": true,
+     "text": "@matthewbaker They sure do! Miss one and you can ask the AI Tutor right there on the board. Which subject does that hit you hardest in?",
+     "kr": "@matthewbaker 물론입니다! 문제를 틀리면 보드에서 바로 AI 튜터에게 질문할 수 있습니다. 어떤 과목에서 그런 현상을 가장 크게 겪으시나요?"
+    },
+    {
+     "author": "Iris Carr",
+     "is_maker": false,
+     "text": "When narration and drawing happen together does the board highlight the exact part being discussed? I’m often searching a finished diagram for the thing an instructor is talking about especially when there’s a lot of notation.",
+     "kr": "내레이션과 판서가 동시에 진행될 때 보드에서 현재 설명 중인 부분을 정확하게 강조 표시해 주나요? 수식이나 표기가 많을 때 강사가 설명하는 부분을 완성된 다이어그램에서 찾아 헤매는 경우가 종종 있어서요."
+    },
+    {
+     "author": "Alan Wang",
+     "is_maker": true,
+     "text": "@iris_carr Yep, that was a big one for us! Nothing shows up as a finished diagram, it writes out as the narration goes, so whatever's being explained is what's appearing right then. No more hunting through notation 🙂",
+     "kr": "@iris_carr 네, 그 부분은 저희에게도 정말 중요했던 과제였습니다! 다이어그램이 완성된 형태로 한꺼번에 나타나지 않고 내레이션이 진행됨에 따라 실시간으로 필기되므로, 지금 설명 중인 내용이 바로 화면에 나타납니다. 이제 복잡한 표기 속을 헤맬 필요가 없습니다 🙂"
+    },
+    {
+     "author": "Jackson Reed",
+     "is_maker": false,
+     "text": "Is there support for setting up parent or teacher dashboards to track learning progress over time?",
+     "kr": "시간에 따른 학습 진도를 추적할 수 있도록 학부모나 교사를 위한 대시보드 설정도 지원되나요?"
+    },
+    {
+     "author": "Alan Wang",
+     "is_maker": true,
+     "text": "@jackson_reed90 Great question! Right now, students can share a lesson link or export the full lesson as a PDF, which is an easy way for a parent or teacher to see what they've worked through. Passing the dashboard idea to the team. Thanks Jackson!",
+     "kr": "@jackson_reed90 좋은 질문입니다! 현재는 학생들이 수업 링크를 공유하거나 전체 수업을 PDF로 내보낼 수 있어 학부모나 교사가 어떤 내용을 공부했는지 손쉽게 확인할 수 있습니다. 대시보드 아이디어는 팀에 전달하도록 하겠습니다. 감사합니다 Jackson!"
+    },
+    {
+     "author": "Umair Javed",
+     "is_maker": false,
+     "text": "A three-mintue lesson is easier to start between classes than another full-length video",
+     "kr": "수업 쉬는 시간에 또 다른 긴 전체 영상을 보는 것보다 3분짜리 레슨으로 시작하는 편이 훨씬 부담이 적네요."
+    },
+    {
+     "author": "Alan Wang",
+     "is_maker": true,
+     "text": "@_umairjaved 💯 that's exactly how we want people to use it! And since it reopens right where you left off, a few minutes between classes actually adds up.",
+     "kr": "@_umairjaved 💯 바로 그것이 저희가 유저들에게 바라는 사용 방식입니다! 학습을 중단했던 바로 그 지점에서 다시 열리기 때문에 쉬는 시간의 짧은 몇 분들이 쌓여 큰 학습 효과를 만들어냅니다."
+    },
+    {
+     "author": "Elsa Jonathan",
+     "is_maker": false,
+     "text": "Can students bookmark one confusing step and return to it before an exam?",
+     "kr": "학생들이 헷갈렸던 특정 단계를 북마크해 두었다가 시험 전에 다시 복습할 수 있나요?"
+    },
+    {
+     "author": "Alan Wang",
+     "is_maker": true,
+     "text": "@elsajonathan Great question! Any question you ask the Tutor stays on the board right next to that step, so the tricky parts are easy to find when you come back. You can also export the whole lesson as a PDF for exam review 🙂",
+     "kr": "@elsajonathan 훌륭한 질문입니다! 튜터에게 질문한 모든 내용은 해당 풀이 단계 바로 옆의 보드에 유지되므로, 나중에 돌아왔을 때 까다로웠던 부분을 쉽게 찾을 수 있습니다. 또한 시험 복습을 위해 수업 전체를 PDF로 내보낼 수도 있습니다 🙂"
+    }
+   ],
+   "slug": "gauth-ai-course",
+   "website": "https://www.gauth.com/"
+  },
+  {
+   "name": "Veltrix AI for E-commerce",
+   "tagline_en": "Find how your e-commerce business could earn more",
+   "tagline_kr": "이커머스 비즈니스의 데이터와 툴을 연결해 수익 개선 기회와 실행 방안을 능동적으로 찾아주는 AI 코파일럿",
+   "image": "https://ph-files.imgix.net/00754c3c-732d-4226-ad58-1196546bb224.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Artificial Intelligence",
+    "E-Commerce",
+    "Business"
+   ],
+   "upvotes": 263,
+   "comments_count": 47,
+   "maker": "Manfred Swarovski(@veltrixms), Bohdan Sitarskyi(@bohdan_sitar), Jonno Riekwel(@jonnotie)",
+   "price_model": "무료 진단 및 프로모션 (Free Check / 2 Months Free)",
+   "price_detail": "신용카드 등록 없이 첫 번째 비즈니스 건전성 진단(Health Check)을 무료로 제공하며, 프로모션 코드(HUNTCHECK26) 적용 시 월 $49 상당의 유료 플랜을 2개월간 무료로 이용할 수 있습니다.",
+   "desc_kr": "Veltrix AI for E-commerce는 이커머스 창업자가 비즈니스 수익성을 극대화할 수 있도록 지원하는 대화형 AI 비즈니스 헬스 플랫폼입니다. 쇼피파이(Shopify), 퀵북스(QuickBooks), 허브스팟(HubSpot) 등 다양한 커머스·회계·결제·마케팅 도구와 비즈니스 파일을 단 몇 초 만에 연동하여 회사의 모든 데이터를 한곳에 통합합니다. 단순한 수동형 차트 대시보드와 달리, AI가 매출, 원가, 고객 행동, 마케팅 효율을 종합 분석하여 재고 회전율 저하, 반품율 급증 상품, 마진 누수 지점 등 구체적인 개선 기회를 자동으로 포착합니다. 무엇을 질문해야 할지 모르는 창업자라도 일상적인 자연어 질문을 통해 추천 조치 사항을 탐색하고, 구체적인 수치 검증 및 시나리오 시뮬레이션을 수행할 수 있습니다. 자동화된 비즈니스 헬스 체크(Business Health Check)를 통해 어떤 프로모션에 집중하고 어디서 비용을 절감해야 하는지 실질적인 실행 계획을 선제적으로 제시합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/veltrix-ai",
+   "comment_summary": "기존 CRM이나 BI 도구의 단순 지표 시각화와 차별화되는 Veltrix의 선제적 진단 기능과 자연어 질의 방식의 효용성에 대해 심도 있는 토론이 이루어졌습니다. 메이커 측은 차트나 숫자만으로는 비즈니스에서 무엇을 개선해야 할지 알기 어렵기 때문에, 질문하지 않아도 문제점과 개선 기회를 먼저 찾아주는 능동형 코파일럿을 구축했다고 강조했습니다. 첫 비즈니스 진단 무료 제공과 2개월 무료 프로모션 코드(HUNTCHECK26)에 힘입어 실무 적용을 기대하는 이커머스 운영자들의 호평이 이어졌습니다.",
+   "warnings": "수치(업보트 263·댓글 47)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Manfred Swarovski",
+     "is_maker": true,
+     "text": "Hi Product Hunt, Manfred here, founder of Veltrix.  \n  \nVeltrix is an AI-powered business health platform for e-commerce founders that connects your store, accounting, payments, marketing data, and files to surface profit-improving actions.  \n\n**The problem → solution**  \nE-commerce founders often know there are opportunities to improve profit, but don’t know which changes will actually move the needle. Veltrix automatically analyzes your business and highlights opportunities like slow-moving inventory, high-return products, margin leaks, and underperforming campaigns.  \n\n**What makes it different?**  \nInstead of another dashboard, Veltrix is action-oriented and conversational. You don’t need to know what questions to ask, you can explore recommendations, ask follow-ups, validate the numbers, and plan actions in one place.  \n\n**Key features & use cases:**  \n• Connect store, accounting, payments & marketing tools  \n• Upload additional business files  \n• Automated Business Health Check  \n• Inventory & purchase planning  \n• Assortment and promotion decisions  \n• Returns & margin optimization  \n• Cash-flow and working-capital insights  \n• Interactive Q&A and scenario exploration  \n\n**Who is it for?**  \nE-commerce founders looking to save time, reduce waste, improve marketing ROI, and make more profitable decisions using their own business data.  \n\nThe first **Business Health Check is free**, and Product Hunt users get **2 months FREE** with code **HUNTCHECK26**.\n\n![👉](https://fonts.gstatic.com/s/e/notoemoji/17.0/1f449/72.png)\n\nCheck out [Veltrix](https://www.producthunt.com/products/veltrix-ai) and see what your business data can uncover.",
+     "kr": "Product Hunt 여러분 안녕하세요, Veltrix의 창업자 Manfred입니다.  \n  \nVeltrix는 쇼핑몰, 회계, 결제, 마케팅 데이터 및 문서를 연결하여 수익 개선 조치를 찾아내는 이커머스 창업자용 AI 비즈니스 헬스 플랫폼입니다.  \n\n**문제점 → 해결책**  \n이커머스 창업자들은 수익을 개선할 기회가 있다는 점은 알지만, 어떤 변화가 실제로 실질적인 성과를 낼지 알지 못하는 경우가 많습니다. Veltrix는 비즈니스를 자동으로 분석하여 악성 재고, 반품율이 높은 상품, 마진 누수, 성과가 저조한 캠페인 등의 기회 요소를 자동으로 짚어냅니다.  \n\n**차별점은 무엇인가요?**  \n또 하나의 단순 대시보드가 아닌, Veltrix는 실행 중심적이며 대화형입니다. 무엇을 물어봐야 할지 미리 알 필요 없이 한곳에서 추천 조치 사항을 살펴보고 후속 질문을 던지며 수치를 검증하고 실행 계획을 세울 수 있습니다.  \n\n**주요 기능 및 활용 사례:**  \n• 스토어, 회계, 결제 및 마케팅 도구 연동  \n• 추가 비즈니스 파일 업로드  \n• 자동화된 비즈니스 헬스 체크  \n• 재고 및 구매 계획 수립  \n• 상품 구색 및 프로모션 결정  \n• 반품률 및 마진 최적화  \n• 현금 흐름 및 운전자본 인사이트  \n• 대화형 질의응답 및 시나리오 시뮬레이션  \n\n**누구를 위한 제품인가요?**  \n자체 비즈니스 데이터를 활용해 시간을 절약하고 낭비를 줄이며 마케팅 ROI를 높이고 더 수익성 높은 결정을 내리고자 하는 이커머스 창업자들을 위한 도구입니다.  \n\n첫 번째 **비즈니스 헬스 체크는 무료**이며, Product Hunt 사용자분들은 **HUNTCHECK26** 코드를 통해 **2개월 무료** 혜택을 받으실 수 있습니다.\n\n[Veltrix](https://www.producthunt.com/products/veltrix-ai)를 확인하시고 비즈니스 데이터가 어떤 기회를 밝혀낼 수 있는지 직접 경험해 보세요."
+    },
+    {
+     "author": "Alex O.",
+     "is_maker": false,
+     "text": "Nice project! Are you integrating directly only with Shopify? What about other engines?\n\nAnd more importantly. What about online marketplaces- Amazon, eBay, Kaufland, Walmart? Could your product could be used here as well?",
+     "kr": "멋진 프로젝트네요! Shopify하고만 직접 연동되나요? 다른 엔진들은 어떤가요?\n\n그리고 더 중요한 점으로, Amazon, eBay, Kaufland, Walmart 같은 온라인 마켓플레이스는 어떤가요? 해당 마켓플레이스에서도 이 제품을 활용할 수 있나요?"
+    },
+    {
+     "author": "Manfred Swarovski",
+     "is_maker": true,
+     "text": "@spiri7 Thank you so much Alex! We also have Square and Amazon (will be added in the next release). eBay, Etsy and more are currently being developed. So, yes!",
+     "kr": "@spiri7 Alex, 정말 감사합니다! 저희는 Square도 지원하며 Amazon은 다음 릴리스에 추가될 예정입니다. eBay, Etsy 등도 현재 개발 중입니다. 따라서 답변은 '네, 가능합니다!'입니다."
+    },
+    {
+     "author": "James Wilson",
+     "is_maker": false,
+     "text": "The plain English questions are a really useful feature. It’s much easier than digging through multiple reports.",
+     "kr": "자연어 영어로 질문할 수 있는 점이 정말 유용한 기능이네요. 여러 복잡한 보고서를 일일이 뒤지는 것보다 훨씬 수월합니다."
+    },
+    {
+     "author": "Manfred Swarovski",
+     "is_maker": true,
+     "text": "@james_wilson60 Thank you for the support, James!",
+     "kr": "@james_wilson60 응원해 주셔서 감사합니다, James!"
+    },
+    {
+     "author": "Sam John",
+     "is_maker": false,
+     "text": "The current pricing tier of $49 per month depends heavily on the idea that using text, for querying will save a lot of administrative time.. Most native CRM systems already provide automated metric visualization. They do this without needing another app that requires database read access.",
+     "kr": "현재 월 49달러의 가격 책정은 텍스트 질의를 통해 관리 시간을 크게 절약할 수 있다는 가설에 크게 의존하는 것 같습니다. 대부분의 기본 CRM 시스템은 이미 데이터베이스 읽기 권한을 요구하는 추가 앱 없이도 자동화된 지표 시각화를 제공하고 있거든요."
+    },
+    {
+     "author": "Manfred Swarovski",
+     "is_maker": true,
+     "text": "@sam_john10 Thank you so much for the comment and support! Metric visualization is just a part of reporting. It's great to have it, but it's not what makes Veltrix valuable. Veltrix is a proactive AI copilot. You do not need even ask a question to find problems, issues, and opportunities how to make your business better. Our business health check does it all for you, and then you can just simply get practical solutions what to change and improve - proactively. Most of business owners we spoken to confirm that having reports is good, but charts and numbers do not clearly communicate - what is going in the business and how to make it even better. This is why we build Veltrix. Give it a try, and let us know what you think. I'd really appreciate your feedback!",
+     "kr": "@sam_john10 소중한 댓글과 관심 감사드립니다! 지표 시각화는 리포팅의 일부분일 뿐입니다. 시각화도 좋지만 그것이 Veltrix의 핵심 가치는 아닙니다. Veltrix는 '능동적인(proactive) AI 코파일럿'입니다. 비즈니스를 어떻게 개선할지 문제점, 이슈, 기회를 찾기 위해 질문조차 던질 필요가 없습니다. 저희의 비즈니스 헬스 체크가 모든 것을 알아서 수행하며, 무엇을 바꾸고 개선해야 할지 실질적인 솔루션을 선제적으로 제시해 줍니다. 저희가 대화를 나눈 대부분의 사업가들은 보고서가 유용하긴 하지만 차트와 숫자만으로는 비즈니스에서 무슨 일이 일어나고 있고 어떻게 개선해야 하는지 명확히 알 수 없다고 말했습니다. 이것이 저희가 Veltrix를 만든 이유입니다. 한번 사용해 보시고 의견을 남겨주시면 큰 도움이 되겠습니다!"
+    },
+    {
+     "author": "Bohdan Sitarskyi",
+     "is_maker": true,
+     "text": "@sam_john10 Thank you, Sam! Good question!",
+     "kr": "@sam_john10 감사합니다, Sam! 좋은 질문이었습니다!"
+    },
+    {
+     "author": "Mykola Svystun",
+     "is_maker": false,
+     "text": "The Business Health Check is a smart starting point. Most owners don’t know what question to ask first.",
+     "kr": "비즈니스 헬스 체크는 아주 똑똑한 출발점이네요. 대부분의 사업자들은 처음에 무슨 질문을 던져야 할지조차 모르는 경우가 많거든요."
+    },
+    {
+     "author": "Bohdan Sitarskyi",
+     "is_maker": true,
+     "text": "@mykola_svystun Absolutely!",
+     "kr": "@mykola_svystun 전적으로 동감합니다!"
+    },
+    {
+     "author": "Nata S",
+     "is_maker": false,
+     "text": "Nice to see an AI product focused on actual business numbers rather than generic advice.",
+     "kr": "두루뭉술한 일반적인 조언 대신 실제 비즈니스 수치에 집중하는 AI 제품을 보게 되어 참 좋네요."
+    },
+    {
+     "author": "Bohdan Sitarskyi",
+     "is_maker": true,
+     "text": "@nata_sv Thank you so much, Nata!",
+     "kr": "@nata_sv 정말 감사합니다, Nata!"
+    }
+   ],
+   "slug": "veltrix-ai",
+   "website": "https://veltrix.com/"
+  },
+  {
+   "name": "Teachoo",
+   "tagline_en": "AI that helps you learn anything and everything.",
+   "tagline_kr": "정답만 알려주지 않고 학생 스스로 원리를 깨우치도록 한 단계씩 대화로 유도하는 무료 AI 튜터",
+   "image": "https://ph-files.imgix.net/d9094751-1c32-41f0-b9db-16163150603b.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Education",
+    "Artificial Intelligence",
+    "Online Learning"
+   ],
+   "upvotes": 224,
+   "comments_count": 14,
+   "maker": "Phillip DeRenzo(@phillipderenzo), Ben Lang(@benln), Haylli Weintraub(@haylli_weintraub)",
+   "price_model": "무료 (Free)",
+   "price_detail": "별도 유료 결제 없이 텍스트 입력 및 손글씨 사진 업로드를 통한 단계별 인터랙티브 AI 튜터링, 간격 반복 플래시카드, 학습 대시보드를 무료로 이용할 수 있습니다.",
+   "desc_kr": "Teachoo는 약 10억 건의 검색을 처리한 iAsk.ai 팀이 개발한 무료 교육용 대화형 AI 튜터 서비스입니다. 학생들이 해설을 읽고 '이해했다'고 생각하면서도 다음 문제에서는 손도 대지 못하는 교육 현장의 고질적인 한계를 해결하기 위해 탄생했습니다. 문제를 직접 텍스트로 입력하거나 숙제 공책의 손글씨 사진을 업로드하면, 즉시 정답을 주는 대신 한 단계씩 소크라테스식 유도 질문을 던지며 학생 스스로 논리적 추론을 펼치도록 돕습니다. 학생의 오답이나 시도에 맞춰 맞춤형 피드백을 제공하며, 추가적인 도움이 필요할 때는 '더 큰 힌트(Bigger hint)'나 해당 단계의 상세 해설인 '막혔어요(I'm Stuck)' 버튼을 통해 학생이 주도적으로 힌트 강도를 조절할 수 있습니다. 시각적 개념 설명, 망각 곡선을 고려한 간격 반복(spaced repetition) 플래시카드, 그리고 학습 진행 상황을 추적할 수 있는 직관적인 대시보드를 함께 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/teachoo-2",
+   "comment_summary": "단순히 정답을 복사하게 하지 않고 힌트와 유도 질문을 통해 학생이 스스로 생각하게 만드는 교육적 접근 방식에 찬사가 이어졌습니다. 수학 공식 포맷팅 오류 제보와 손글씨 공책 사진 인식 성능에 대한 질의에 대해, 메이커 측은 iAsk의 검증된 기술을 접목하고 있으며 학생의 시도 내용에 맞춰 단계별 힌트 강도를 유연하게 조율한다고 답변했습니다. 학생들이 힌트 버튼을 연타해 답만 알아내는 부작용을 방지하는 안전장치와 난이도 조절 밸런스에 대해서도 활발한 의견 교환이 이루어졌습니다.",
+   "warnings": "수치(업보트 224·댓글 14)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Phillip DeRenzo",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 I’m Phillip, one of the makers of Teachoo.\n\nTeachoo comes from the team behind [iAsk.ai](http://iask.ai/), which has handled nearly 1 billion searches since launch. With Teachoo, we’re bringing that experience to helping students work through problems and understand how to solve them.\n\nEver read a perfectly clear explanation, thought “got it,” then had no idea where to start on the next problem?\n\nThat’s the gap we’re working on.\n\nTeachoo is a free AI tutor that helps students work through problems one question at a time. Type a question or upload a photo of your homework, and it guides you through the reasoning.\n\nHere’s an example from our demo. A student asks:\n\n“Solve x² − 5x + 6 = 0.”\n\nTeachoo starts by asking which two numbers multiply to 6 and add up to −5. The student tries an answer, gets feedback, and works toward the solution through a conversation.\n\nThose attempts matter. They give Teachoo something to respond to and the student a chance to figure out the next step.\n\nWhen you need more support, “Bigger hint” gives you another nudge, and “I’m Stuck” helps explain the step. There are also visual explanations, flashcards with spaced repetition, and a dashboard to follow your progress.\n\nWe want students to leave a session feeling more ready to tackle the next problem themselves.\n\nEven if your homework days are behind you, try a problem you haven’t solved in years on [**Teachoo**](https://teachoo.ai/). It’s free to use.\n\nI’d love to hear where the guidance felt helpful and where you wanted it to get to the point faster.\n\nThanks for giving Teachoo a try!",
+     "kr": "Product Hunt 여러분 안녕하세요 👋 Teachoo의 메이커 중 한 명인 Phillip입니다.\n\nTeachoo는 출시 이후 약 10억 건의 검색을 처리한 iAsk.ai 개발팀이 만들었습니다. Teachoo를 통해 저희는 학생들이 문제를 단계별로 풀어나가며 원리를 온전히 이해할 수 있도록 그 경험을 접목했습니다.\n\n완벽하게 명확한 설명을 읽고 '다 이해했다'고 생각했는데, 막상 다음 문제에서는 어디서부터 시작해야 할지 몰라 막막했던 적이 있으신가요?\n\n그것이 바로 저희가 해결하고자 하는 격차입니다.\n\nTeachoo는 학생들이 문제를 한 번에 한 단계씩 풀 수 있도록 돕는 무료 AI 튜터입니다. 질문을 입력하거나 숙제 사진을 업로드하면 논리적 사고 과정을 유도해 줍니다.\n\n저희 데모의 예시를 소개합니다. 학생이 묻습니다:\n\n“x² − 5x + 6 = 0 을 풀어줘.”\n\nTeachoo는 곧바로 답을 주지 않고 곱해서 6이 되고 더해서 -5가 되는 두 숫자가 무엇인지 질문하며 시작합니다. 학생이 답을 시도하면 피드백을 받고 대화를 통해 해답을 향해 나아갑니다.\n\n학생의 이러한 시도가 매우 중요합니다. 시도를 통해 Teachoo가 반응할 거리가 생기고, 학생은 다음 단계를 스스로 파악할 기회를 얻게 됩니다.\n\n더 많은 도움이 필요할 때 '더 큰 힌트(Bigger hint)'를 누르면 한 번 더 힌트를 주고, '막혔어요(I'm Stuck)'를 누르면 해당 단계를 설명해 줍니다. 시각적 설명, 간격 반복 플래시카드, 진도를 확인할 수 있는 대시보드도 제공됩니다.\n\n저희는 학생들이 학습 세션을 마쳤을 때 다음 문제를 스스로 해결할 준비가 되었다고 느끼길 바랍니다.\n\n숙제를 하던 학창 시절이 이미 지났더라도, 몇 년 동안 풀지 않았던 문제를 [Teachoo](https://teachoo.ai/)에서 풀어보세요. 무료로 이용할 수 있습니다.\n\n어떤 부분에서 안내가 유용했는지, 어떤 부분에서 더 빠르게 핵심으로 넘어가길 원하시는지 피드백을 기다립니다.\n\nTeachoo를 사용해 주셔서 감사합니다!"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@phillipderenzo I like this approach a lot it helps students actually understand the problem instead of just copying the answer",
+     "kr": "@phillipderenzo 이 접근 방식이 정말 마음에 듭니다. 학생들이 단순히 답을 베끼는 대신 문제를 실제로 이해하는 데 큰 도움이 됩니다."
+    },
+    {
+     "author": "Phillip DeRenzo",
+     "is_maker": true,
+     "text": "exactly! we've been seeing this with [**iAsk**](https://iask.ai/) too. students are asking how to work through a problem, not just what the answer is. that's what we're trying to build on with teachoo. appreciate you checking it out!",
+     "kr": "정확합니다! 저희는 iAsk에서도 같은 현상을 보아왔습니다. 학생들은 단지 정답이 무엇인지뿐만 아니라 문제를 어떻게 풀어가는지 과정을 묻고 있습니다. Teachoo는 바로 그 점을 바탕으로 발전시키고자 했습니다. 살펴봐 주셔서 감사합니다!"
+    },
+    {
+     "author": "Nick Hall",
+     "is_maker": false,
+     "text": "@phillipderenzo Nice work! I forced it to remind me how to use the chain rule, and thought it worked well.\n\nI did encounter what might be a bug - several times, parts of its output were surrounded by unnecessary dollar signs. As in: \"Notice how the $du$'s visually cancel out!\" But it was a cosmetic problem only, it handled the actual problem very well.",
+     "kr": "@phillipderenzo 멋진 작업이네요! 연쇄 법칙(chain rule)을 어떻게 쓰는지 다시 알려달라고 테스트해 보았는데 아주 잘 동작했습니다.\n\n다만 버그로 보이는 현상을 발견했습니다. 몇 차례 출력 내용 일부가 불필요한 달러 기호($)로 둘러싸여 있었습니다. 예를 들어 \"Notice how the $du$'s visually cancel out!\"처럼요. 하지만 시각적인 문제일 뿐 실제 문제 풀이는 훌륭하게 처리했습니다."
+    },
+    {
+     "author": "Phillip DeRenzo",
+     "is_maker": true,
+     "text": "@nicholasghall thanks for trying it out! glad it helped with the chain rule. those dollar signs look like math formatting that isn't displaying properly. appreciate you flagging it, we'll take a look!",
+     "kr": "@nicholasghall 직접 사용해 봐 주셔서 감사합니다! 연쇄 법칙 이해에 도움이 되었다니 기쁩니다. 말씀하신 달러 기호는 수학 포맷팅이 제대로 렌더링되지 않은 것 같네요. 알려주셔서 감사드리며 바로 확인해 보겠습니다!"
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "@phillipderenzo I like that Teachoo focuses on the guiding students instead of immediately giving them the answers.  \nhow do you decide the how much help to give at each steps???",
+     "kr": "@phillipderenzo Teachoo가 즉시 정답을 주는 대신 학생들을 단계별로 유도하는 데 중점을 둔 점이 마음에 듭니다. 각 단계마다 도움을 어느 정도 제공할지는 어떻게 결정하시나요???"
+    },
+    {
+     "author": "Phillip DeRenzo",
+     "is_maker": true,
+     "text": "@amrita_prajapati2 thanks! it starts with a small prompt and responds to what the student tries. if they get part of it right, the next question can focus on where they're getting stuck. the student also has control: 'bigger hint' breaks it down further, and \"I'm stuck\" explains the step. we're still refining that balance, so feedback from people trying it is really helpful.",
+     "kr": "@amrita_prajapati2 감사합니다! 먼저 간단한 질문으로 시작하여 학생이 시도한 답변에 반응합니다. 일부분을 맞혔다면 다음 질문은 막힌 부분에 초점을 맞춥니다. 또한 학생이 주도권을 갖습니다. '더 큰 힌트'는 문제를 더 잘게 쪼개어 주고, '막혔어요'는 해당 단계를 설명해 줍니다. 저희는 여전히 그 균형점을 다듬고 있어 직접 사용해 본 분들의 피드백이 큰 도움이 됩니다."
+    },
+    {
+     "author": "Rohit Kushwaha",
+     "is_maker": false,
+     "text": "@phillipderenzo The photo upload featured looks helpful. Can it understand questions from a notebook photo?",
+     "kr": "@phillipderenzo 사진 업로드 기능이 아주 유용해 보이네요. 공책에 적힌 손글씨 사진의 문제도 잘 이해할 수 있나요?"
+    },
+    {
+     "author": "Phillip DeRenzo",
+     "is_maker": true,
+     "text": "@rohit62661 yep! you can upload a notebook photo and work through the question from there. clear handwriting and a well-lit photo will give it the best shot at reading everything correctly. give it a try!\n\nbtw our [**iAsk iOS App**](https://apps.apple.com/us/app/iask-ai-ask-ai-unlimited/id6449653022) has a great Snap and Solve feature that we will be integrating into Teachoo.",
+     "kr": "@rohit62661 네! 공책 사진을 업로드하여 거기서부터 문제를 풀어나갈 수 있습니다. 글씨가 또렷하고 조명이 밝은 사진일수록 정확하게 인식하는 데 가장 좋습니다. 꼭 한번 사용해 보세요!\n\n참고로 저희 [iAsk iOS 앱](https://apps.apple.com/us/app/iask-ai-ask-ai-unlimited/id6449653022)에 훌륭한 Snap and Solve 기능이 있는데, 이를 곧 Teachoo에도 통합할 예정입니다."
+    },
+    {
+     "author": "Prakash Nikam",
+     "is_maker": false,
+     "text": "Looks clean UI. Kudos 🎉 . is there any option to upload handwritten notes ?",
+     "kr": "UI가 정말 깔끔해 보이네요. 축하드립니다 🎉. 손글씨 노트를 업로드하는 옵션도 있나요?"
+    },
+    {
+     "author": "Phillip DeRenzo",
+     "is_maker": true,
+     "text": "@prakash_nikam911 thank you! yep, use 'upload photo' to add a picture of a handwritten question from your notes. clear handwriting and good lighting help it read the question correctly. curious how it does with yours if you give it a try!",
+     "kr": "@prakash_nikam911 감사합니다! 네, '사진 업로드' 기능을 사용하여 노트에 손글씨로 적은 문제 사진을 등록하실 수 있습니다. 또렷한 글씨체와 충분한 조명이 질문을 정확히 인식하는 데 도움이 됩니다. 직접 사용해 보시고 어떤 결과가 나오는지 알려주시면 궁금하네요!"
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Guiding students toward the answer with hints instead of just handing it over is the right call for actual learning, and free access makes it easy to try. The option to ask for a bigger hint versus a full step explanation is a nice bit of control. Does it adapt the hint difficulty based on how the student is doing?",
+     "kr": "단순히 답을 쥐여주지 않고 힌트를 통해 정답으로 이끄는 것은 실질적인 학습을 위한 올바른 선택이며, 무료로 접근할 수 있어 누구나 쉽게 시도해 볼 수 있네요. 더 큰 힌트를 요청하는 것과 전체 단계 설명을 듣는 옵션이 있어 통제하기 좋습니다. 학생의 수행 수준에 따라 힌트의 난이도도 유연하게 조절되나요?"
+    }
+   ],
+   "slug": "teachoo-2",
+   "website": "https://teachoo.ai/"
+  },
+  {
+   "name": "Famulor",
+   "tagline_en": "Your agent to answer calls and follow ups on WhatsApp",
+   "tagline_kr": "인바운드 전화 응대부터 왓츠앱·이메일 사후 관리까지 단일 AI 에이전트로 통합 처리하는 업무용 전화 플랫폼",
+   "image": "https://ph-files.imgix.net/544c90f5-eeeb-4be7-b917-035bd16bcb1a.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "AI Voice Agents",
+    "AI Voice Agent Infrastructure",
+    "Messaging"
+   ],
+   "upvotes": 200,
+   "comments_count": 37,
+   "maker": "Iman Koma(@ikoma), Germán Merlo(@german_merlo1)",
+   "price_model": "무료 체험 및 분당 과금 (Free Options / 30 mins free)",
+   "price_detail": "Product Hunt 런칭 기념으로 30분 무료 통화 크레딧을 제공하며, 이후 분당 $0.05부터 시작하는 노코드 기반 사용량 종량제로 과금됩니다.",
+   "desc_kr": "Famulor는 전화 미수신으로 인한 고객 이탈과 채널 파편화 문제를 해결하기 위해 구축된 AI 네이티브 비즈니스 전화 플랫폼입니다. 기존 전화 시스템에 AI 기능을 덧붙인 방식이 아니라 자율 AI 음성 에이전트를 핵심 엔진으로 삼아 전화 시스템, 통합 수신함, 자동화 워크플로우를 유기적으로 결합했습니다. 단 하나의 에이전트가 동일한 스크립트와 통합 지식 베이스를 바탕으로 120개 언어로 자연스럽게 전화를 응대하고, 아웃바운드 캠페인을 진행하며, 왓츠앱과 이메일로 대화를 단절 없이 이어갑니다. 내선 번호, 대기열, 착신 그룹(Ring groups) 등 엔터프라이즈급 기업 전화망(Loop)을 완벽 지원하여 기존 통신 인프라를 변경하지 않고도 부재중 전화를 완벽히 커버합니다. 독일 현지 호스팅 기반의 철저한 GDPR 규정 준수와 함께, 실제 고객 응대 전 통화를 시뮬레이션할 수 있는 사전 음성 검증 도구와 노코드 자동화 코파일럿을 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/famulor-telephony-ai",
+   "comment_summary": "전화 통화에서 WhatsApp으로 대화 맥락이 끊기지 않고 자연스럽게 이어지는 옴니채널 연동과 실전 배포 전 음성 시뮬레이션 기능에 많은 관심이 집중되었습니다. 메이커 측은 120개 언어 지원 및 분당 과금 방식, SIP 트렁크 및 기존 통신사(Twilio, Telnyx, Vonage) 원클릭 번호 가져오기 기능을 상세히 안내했습니다. 기존 Retell, Vapi, Synthflow 에이전트를 손쉽게 가져와 무료로 테스트해 볼 수 있다는 점과 내선·그룹 콜 연동의 실용성에 호평이 이어졌습니다.",
+   "warnings": "수치(업보트 200·댓글 37)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Iman Koma",
+     "is_maker": true,
+     "text": "Hi Product Makers & Hunters! 🚀  \n  \nEvery business we talked to had the same problem: calls go unanswered, leads go cold overnight, and every channel lives in a different tool.  \n\nSo we built Famulor, the AI-native business phone platform. One agent. Everywhere.  \n\nOne AI agent answers your calls, runs outbound campaigns and keeps the same conversation going on WhatsApp, email and your website. Same script, same knowledge base, one contact record.  \n\nWhat's inside:\n\n\\- Inbound and outbound calls that sound human, in 120 languages\n\n\\- 21 channels: phone, WhatsApp, email, web widget, Slack, Teams, Telegram and more\n\n\\- Loop: a full business phone system (extensions, queues, ring groups) with the agent built in\n\n\\- Milian, our AI copilot: it builds, connects and tests your automations for you\n\n\\- Voice simulations: test your agent with a real call before it goes live\n\n\\- Made in Germany, GDPR-ready, no code, from $0.05/min  \n\nWhy \"AI-native\" ? We didn't bolt AI onto a phone system. The agent is the core, and the phone system, inbox and automations are built around it.  \n\nWe also integrated [@Jev](https://www.producthunt.com/products/jev) to help our agents make decisions during calls. And we ship every day: [https://docs.famulor.io/changelog](https://docs.famulor.io/changelog)  \n\n```\n🎁 For the Product Hunt community: 30 free calling minutes. Build your AI agent for free and test it on a real call.\n```\n\n  \nOne question for you: which channel do your customers actually reply on, and which one does your team never get to?",
+     "kr": "Product Makers & Hunters 여러분 안녕하세요! 🚀  \n  \n저희가 만난 모든 기업은 늘 같은 문제를 겪고 있었습니다. 전화는 받지 못하고 방치되며, 잠재 고객은 밤새 식어버리고, 모든 채널은 서로 다른 도구로 흩어져 있다는 점이었습니다.  \n\n그래서 저희는 AI 네이티브 비즈니스 전화 플랫폼인 Famulor를 만들었습니다. 단 하나의 에이전트가 모든 곳에서 동작합니다.  \n\n하나의 AI 에이전트가 전화를 받고 아웃바운드 캠페인을 실행하며 WhatsApp, 이메일, 웹사이트 전반에서 동일한 대화를 이어갑니다. 동일한 스크립트, 동일한 지식 베이스, 단 하나의 고객 기록으로 관리됩니다.  \n\n주요 기능:\n\n- 120개 언어로 사람처럼 자연스러운 인바운드 및 아웃바운드 통화\n- 21개 채널 지원: 전화, WhatsApp, 이메일, 웹 위젯, Slack, Teams, Telegram 등\n- Loop: 에이전트가 내장된 완전한 비즈니스 전화 시스템 (내선, 대기열, 착신 그룹)\n- Milian: 자동화 구축, 연결 및 테스트를 대신 수행해 주는 AI 코파일럿\n- 음성 시뮬레이션: 에이전트를 실전에 투입하기 전 실제 통화로 사전 테스트\n- 독일 제작, GDPR 준수, 노코드 환경, 분당 $0.05부터 시작  \n\n왜 'AI 네이티브'일까요? 저희는 기존 전화 시스템에 AI를 억지로 덧붙이지 않았습니다. 에이전트가 핵심이며 전화 시스템, 수신함 및 자동화가 에이전트를 중심으로 구축되었습니다.  \n\n또한 통화 중 에이전트의 현명한 의사결정을 돕기 위해 Jev를 통합했습니다. 저희는 매일 새로운 기능을 배포하고 있습니다: https://docs.famulor.io/changelog  \n\n🎁 Product Hunt 커뮤니티를 위한 혜택: 30분 무료 통화 크레딧. AI 에이전트를 무료로 구축하고 실제 통화로 테스트해 보세요.\n\n한 가지 질문을 드립니다: 고객들이 실제로 가장 활발하게 응답하는 채널은 어디이며, 여러분의 팀이 미처 챙기지 못하는 채널은 어디인가요?"
+    },
+    {
+     "author": "Camille Messer",
+     "is_maker": false,
+     "text": "@ikoma The voice simulation feature caught my attention. Being able to actually test a conversation before going live is a game changer for voice AI.",
+     "kr": "@ikoma 음성 시뮬레이션 기능이 눈에 띄네요. 실전에 배포하기 전에 대화를 실제로 테스트해 볼 수 있다는 점은 음성 AI 분야에서 큰 혁신입니다."
+    },
+    {
+     "author": "David Turner",
+     "is_maker": false,
+     "text": "@ikoma Voice simulations before going live are a really useful addition. Testing conversations first can make a big difference.",
+     "kr": "@ikoma 실전에 투입하기 전 음성 시뮬레이션을 거치는 것은 정말 유용한 기능입니다. 대화를 먼저 테스트해 보는 것은 큰 차이를 만듭니다."
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@ikoma Having one of the agent across WhatsApp, calls and email is a really useful approach.",
+     "kr": "@ikoma WhatsApp, 전화, 이메일 전반을 하나의 에이전트로 아우르는 것은 정말 유용한 접근 방식입니다."
+    },
+    {
+     "author": "Davit Svanidze",
+     "is_maker": false,
+     "text": "Sounds as one of few products from Product Hunt, I would really use. It would be great to hear the voice of the agent in the video though, there is huge difference between good and bad voice agents. Good once almost are indistinguishable. Is it priced per minute? What languages are covered? Good luck today!",
+     "kr": "Product Hunt에서 발견한 제품 중 제가 실제로 꼭 쓸 것 같은 몇 안 되는 제품 중 하나네요. 비디오에서 에이전트의 목소리를 직접 들을 수 있다면 더 좋을 것 같습니다. 음성 에이전트는 뛰어난 것과 그렇지 않은 것의 차이가 엄청나고, 훌륭한 에이전트는 사람과 거의 구분이 안 되니까요. 분당 요금제로 책정되나요? 어떤 언어들이 지원되나요? 오늘 런칭 성공을 기원합니다!"
+    },
+    {
+     "author": "Iman Koma",
+     "is_maker": true,
+     "text": "@davitausberlin Yes, it’s billed per minute. We support 120 languages. Fair point about the voice, you can hear the agent here:",
+     "kr": "@davitausberlin 네, 분당 요금제로 과금됩니다. 120개 언어를 지원하고 있습니다. 음성에 대해 지적해 주신 부분은 타당하며, 다음 링크에서 에이전트의 음성을 직접 들어보실 수 있습니다:"
+    },
+    {
+     "author": "Haozhe Li",
+     "is_maker": false,
+     "text": "Being able to move from a phone call to WhatsApp without starting the conversation again is a nice detail.",
+     "kr": "대화를 처음부터 다시 시작하지 않고도 전화 통화에서 WhatsApp으로 매끄럽게 넘어갈 수 있다는 점이 참 훌륭한 디테일이네요."
+    },
+    {
+     "author": "Iman Koma",
+     "is_maker": true,
+     "text": "@haozhe_li Yes, and if you already have an agent in Retell, Vapi, or Synthflow, you can import it into Famulor and try it for free.",
+     "kr": "@haozhe_li 네 맞습니다. 그리고 이미 Retell, Vapi 또는 Synthflow에 에이전트를 보유하고 계시다면 Famulor로 손쉽게 가져와 무료로 테스트해 보실 수 있습니다."
+    },
+    {
+     "author": "Hezhuang (Leo) Tian",
+     "is_maker": false,
+     "text": "I noticed the extensions and ring groups Small thing, but that could make a difference for teams.",
+     "kr": "내선 번호와 착신 그룹 기능이 눈에 띄네요. 사소해 보일 수 있지만 팀 운영에는 큰 차이를 만들어낼 수 있는 부분입니다."
+    },
+    {
+     "author": "Iman Koma",
+     "is_maker": true,
+     "text": "@hezhuang_l Thanks, Leo! Extensions and ring groups let teams keep their existing call setup while the AI agent handles the calls they can’t pick up.",
+     "kr": "@hezhuang_l 감사합니다, Leo! 내선 번호와 착신 그룹 덕분에 팀은 기존 통화 환경을 그대로 유지하면서 팀원이 받을 수 없는 전화를 AI 에이전트가 처리하도록 할 수 있습니다."
+    },
+    {
+     "author": "Markus Buhl",
+     "is_maker": false,
+     "text": "Can I Connect with my sip trunk ?",
+     "kr": "저희가 사용하는 SIP 트렁크와도 연동할 수 있나요?"
+    },
+    {
+     "author": "Iman Koma",
+     "is_maker": true,
+     "text": "@markus_buhl Yes, you can connect your SIP trunk to Famulor. Here’s the setup guide: [https://docs.famulor.io/telephony/sip-trunks](https://docs.famulor.io/telephony/sip-trunks)\n\nIf you use Twilio, Telnyx or Vonage, you can also import your numbers directly ( One Click ) [https://docs.famulor.io/telephony/carrier-import](https://docs.famulor.io/telephony/carrier-import)",
+     "kr": "@markus_buhl 네, 사용 중이신 SIP 트렁크를 Famulor에 연결하실 수 있습니다. 설정 가이드는 다음을 참조하세요: https://docs.famulor.io/telephony/sip-trunks\n\nTwilio, Telnyx, Vonage를 사용 중이시라면 번호를 원클릭으로 직접 가져올 수도 있습니다: https://docs.famulor.io/telephony/carrier-import"
+    }
+   ],
+   "slug": "famulor-telephony-ai",
+   "website": "https://www.famulor.io/"
+  },
+  {
+   "name": "Mintlify Desktop",
+   "tagline_en": "An AI-native app for writing documentation and knowledge",
+   "tagline_kr": "브라우저 탭을 벗어나 로컬 오프라인 작업과 전용 내장 AI 에이전트를 결합한 데스크톱 기술 문서 플랫폼",
+   "image": "https://ph-files.imgix.net/5daa9b0c-dec8-45be-856c-36a7e4957c32.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Writing",
+    "SaaS",
+    "Developer Tools"
+   ],
+   "upvotes": 152,
+   "comments_count": 9,
+   "maker": "Han Wang(@han_wang6), Justin Torre(@justintorre), Garry Tan(@garrytan)",
+   "price_model": "무료 (Free Beta)",
+   "price_detail": "Mintlify Desktop 앱은 현재 Mac, Windows, Linux 환경에서 오픈 베타로 누구나 무료로 다운로드하여 사용할 수 있습니다.",
+   "desc_kr": "Mintlify Desktop은 수많은 브라우저 탭 사이에 묻히기 쉬운 제품 문서와 내부 지식 관리를 전용 작업 공간으로 독립시킨 AI 네이티브 데스크톱 애플리케이션입니다. 모든 페이지를 사용자가 직접 소유하는 표준 마크다운(Markdown) 파일로 로컬에 저장하여, 인터넷 연결이 끊긴 오프라인 환경에서도 자유롭게 문서를 작성하고 재연결 시 자동으로 동기화할 수 있습니다. 열려 있는 문서 바로 옆에서 문맥을 이해하고 동작하는 전용 AI 에이전트가 내장되어 있어 별도의 복사·붙여넣기 없이도 지식을 검색하고 문서를 즉시 갱신할 수 있습니다. 고객에게 공개되는 외부 제품 문서뿐 아니라 내부 런북, 온보딩 가이드, 장애 대응 기록 등 내부 지식까지 한 앱에서 나란히 관리할 수 있어 지식의 파편화와 노후화를 방지합니다. 데스크톱에서 시각적으로 위지윅 편집을 진행하는 동시에 웹이나 마크다운으로 협업하는 동료와도 실시간으로 원활하게 협업할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/mintlify",
+   "comment_summary": "브라우저 탭 과부하를 줄여주고 오프라인 환경에서도 문서를 로컬 저장하며 작성할 수 있다는 데스크톱 앱 본연의 장점에 실사용자들의 환호가 이어졌습니다. 오프라인 로컬 편집 중 팀원이나 AI 에이전트가 동일한 섹션을 수정했을 때 발생할 수 있는 동기화 충돌(Conflict) 해결 방식에 대한 기술적인 질의가 제기되었습니다. 메이커 측은 현재 Mac, Windows, Linux 전 플랫폼에서 오픈 베타를 무료로 진행 중이며 실시간 피드백을 적극 수렴해 완성도를 높이겠다고 응답했습니다.",
+   "warnings": "수치(업보트 152·댓글 9)는 수집 시점 참고치. 수집된 9개 댓글 전수 수집 완료.",
+   "comments": [
+    {
+     "author": "Michal Rachtan",
+     "is_maker": false,
+     "text": "Having the docs saved locally and being able to work offline is really useful. Especially when the internet decides to disappear",
+     "kr": "문서를 로컬에 저장하고 오프라인에서도 작업할 수 있다는 점이 정말 유용하네요. 특히 인터넷 연결이 갑자기 끊겼을 때 아주 요긴합니다."
+    },
+    {
+     "author": "Justin Torre",
+     "is_maker": true,
+     "text": "Hey Product Hunt, Justin here, Engineering Manager at Mintlify 👋\n\n  \nWe've spent the last few years making documentation easier to create, maintain, and collaborate on. One thing kept becoming obvious as we used Mintlify ourselves: docs had outgrown the browser tab.  \n  \nSo we built Mintlify Desktop: an agent-native home for your docs and internal knowledge.  \n  \n**What does \"agent-native\" mean here?**  \nEvery page is structured Markdown in files you own. Agents can read, search, and update your knowledge as easily as your team can, and there's an agent built right into the app, working next to the page you have open. No copying context into another tool to get help.  \n  \n**Why a desktop app?**  \nA normal day might involve updating an internal runbook, launching new customer-facing docs, drafting messaging on an upcoming launch, and a pull request changing something else entirely.  \n  \nIn the browser, all of that info gets buried between Slack, Linear, Gmail, and fifteen other tabs (or more if it's my browser ). Mintlify Desktop gives all of your documentation a home of its own.  \n  \n**What's different from the web editor?**  \nYou can keep pages open in tabs, and run different projects or Mintlify organizations side by side.  \nClose the app and everything is still there when you come back.  \n  \nYour files also live locally, so you can keep working offline and sync once you reconnect.  \n  \n**Is this only for public docs?**  \nNo. A lot of what teams write never ships publicly: runbooks, onboarding guides, internal processes, notes from the last incident. That knowledge usually ends up scattered across wikis and shared drives, where it's easy for it to go stale.  \n  \nDesktop puts internal knowledge and public docs in the same app, so the pages your team uses to do the work sit right next to the pages your customers read.  \n  \n**Is collaboration different?**  \nNo. Someone can be editing visually in Desktop while someone else works directly in Markdown or from the web.  \n  \nIt's the same collaborative workflow, built for people who spend a lot of their day in docs.  \n  \n**Why now?**  \nDocs are becoming core infrastructure for engineering, product, support, and agents. That's just as true for the internal knowledge your team relies on as it is for your public docs.  \n  \nThe web editor made Mintlify accessible to everyone on a team. Desktop is for the people who live in it.  \n  \nWe're launching in beta today on Mac, Windows, and Linux. It's still early, and we'd love to hear what you think about its performance, interface, sign-in, or what would make this useful for you.  \n  \nRead more about it on our blog: [https://www.mintlify.com/blog/mintlify-desktop](https://www.mintlify.com/blog/mintlify-desktop)",
+     "kr": "Product Hunt 여러분 안녕하세요, Mintlify의 엔지니어링 매니저 Justin입니다 👋\n\n저희는 지난 수년간 문서를 더 쉽게 만들고 유지 관리하며 협업할 수 있도록 노력해 왔습니다. Mintlify를 직접 사용하면서 한 가지 사실이 분명해졌습니다. 문서는 이미 브라우저 탭의 한계를 넘어섰다는 점이었습니다.\n\n그래서 저희는 기술 문서와 사내 지식을 위한 에이전트 네이티브 전용 공간인 Mintlify Desktop을 구축했습니다.\n\n**여기서 '에이전트 네이티브'란 무엇을 의미할까요?**\n모든 페이지는 사용자가 직접 소유하는 파일 내의 구조화된 마크다운입니다. 팀원들이 문서를 다루는 것만큼이나 에이전트도 지식을 쉽게 읽고 검색하고 업데이트할 수 있으며, 현재 열어둔 페이지 바로 옆에서 동작하는 전용 에이전트가 앱에 내장되어 있습니다. 도움을 받기 위해 다른 도구로 문맥을 일일이 복사할 필요가 없습니다.\n\n**왜 데스크톱 앱인가요?**\n평범한 하루에도 사내 런북 업데이트, 신규 고객용 문서 발행, 출시 공지 초안 작성, 완전히 다른 내용을 변경하는 풀 리퀘스트 작업 등이 동시에 일어납니다.\n\n브라우저에서는 이 모든 정보가 Slack, Linear, Gmail 그리고 수십 개의 다른 탭들 사이에 묻혀버립니다. Mintlify Desktop은 모든 기술 문서에 독립된 전용 공간을 제공합니다.\n\n**웹 에디터와 무엇이 다른가요?**\n여러 페이지를 탭으로 계속 열어둘 수 있으며 서로 다른 프로젝트나 Mintlify 워크스페이스를 나란히 실행할 수 있습니다. 앱을 닫았다가 다시 열어도 모든 작업 내용이 그대로 유지됩니다.\n\n또한 파일이 로컬에 저장되므로 오프라인에서도 작업을 계속할 수 있고 다시 연결되면 자동으로 동기화됩니다.\n\n**공개 문서만을 위한 앱인가요?**\n아닙니다. 팀이 작성하는 많은 내용(런북, 온보딩 가이드, 사내 프로세스, 지난 장애 대응 기록 등)은 대외적으로 공개되지 않습니다. 이러한 지식은 대개 위키나 공유 드라이브에 파편화되어 쉽게 방치되곤 합니다.\n\nDesktop은 사내 지식과 공개 문서를 같은 앱에 모아주므로, 팀이 업무를 위해 사용하는 페이지가 고객이 읽는 페이지 바로 옆에 자리하게 됩니다.\n\n**협업 방식에 차이가 있나요?**\n아닙니다. 한 사람이 Desktop에서 위지윅으로 시각적 편집을 하는 동안 다른 사람은 마크다운으로 직접 작업하거나 웹에서 편집할 수 있습니다. 하루의 많은 시간을 문서 작업에 쏟는 분들을 위해 설계된 동일한 협업 워크플로우입니다.\n\n**왜 지금인가요?**\n문서는 엔지니어링, 프로덕트, 고객 지원, 그리고 AI 에이전트를 위한 핵심 인프라가 되고 있습니다. 이는 공개 문서뿐 아니라 팀이 의존하는 내부 지식에도 똑같이 적용됩니다.\n\n웹 에디터가 팀 내 모든 사람에게 Mintlify의 문턱을 낮추었다면, Desktop은 문서 안에서 살아가는 사람들을 위한 것입니다.\n\n오늘 Mac, Windows, Linux 환경에서 오픈 베타로 출시합니다. 아직 초기 단계인 만큼 성능, 인터페이스, 로그인 환경 등 여러분의 피드백을 기다립니다.\n\n자세한 내용은 공식 블로그를 확인해 주세요: https://www.mintlify.com/blog/mintlify-desktop"
+    },
+    {
+     "author": "Ryan Yannelli",
+     "is_maker": false,
+     "text": "@justintorre epic",
+     "kr": "@justintorre 대박이네요 멋집니다"
+    },
+    {
+     "author": "Justin Torre",
+     "is_maker": true,
+     "text": "@ryanyannelli Thank Ryan! You da best, you gotta give it a shot genuinely",
+     "kr": "@ryanyannelli 고마워요 Ryan! 최고예요, 꼭 한번 직접 써보세요"
+    },
+    {
+     "author": "Marco Dewey",
+     "is_maker": false,
+     "text": "@justintorre is desktop included in existing plans? is there a free tier where I can use the desktop app?",
+     "kr": "@justintorre 데스크톱은 기존 플랜에 포함되어 있나요? 데스크톱 앱을 사용할 수 있는 무료 플랜도 제공되나요?"
+    },
+    {
+     "author": "patrick mccarthy",
+     "is_maker": false,
+     "text": "Love this for my own use case (fewer Chrome tabs to navigate) and for the team alignment piece. Excited to put it through its paces and see how it evolves.",
+     "kr": "크롬 탭을 덜 찾아다녀도 되는 개인적인 활용 측면에서도 좋고 팀 차원의 일관성 확보에도 아주 마음에 듭니다. 직접 꼼꼼히 사용해 보며 어떻게 발전해 나갈지 기대가 큽니다."
+    },
+    {
+     "author": "Anis Bennaceur",
+     "is_maker": false,
+     "text": "Incredible!  \nWe can't live without Mintlify, and this is such a great addition to their product suite.",
+     "kr": "믿을 수 없을 만큼 훌륭하네요!  \n저희는 Mintlify 없이는 일할 수 없을 정도인데, 전체 제품군에 정말 멋진 추가 기능이 생겼습니다."
+    },
+    {
+     "author": "Justin Torre",
+     "is_maker": true,
+     "text": "@abennaceur Thanks Anis! Glad to hear you like it. Please let me know if you have any feedback",
+     "kr": "@abennaceur 감사합니다 Anis! 마음에 드셨다니 기쁩니다. 피드백이 있으시면 언제든 편하게 알려주세요"
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "the \"write offline, sync when you reconnect\" plus \"agent works alongside you on the page\" combination is the part I'd want to pressure test. if I'm offline editing a page locally and the agent (or a teammate) also touched that same section before I reconnect, what happens on sync - do I get a merge view to resolve it, or is it last-write-wins and I just lose whichever version didn't make it? offline-first is great until two edits collide, and that's usually where these tools go quiet.",
+     "kr": "\"오프라인에서 작성하고 재연결 시 동기화\"와 \"페이지에서 함께 작업하는 에이전트\"의 조합이야말로 제가 철저히 검증해 보고 싶은 부분입니다. 만약 제가 오프라인 상태에서 로컬 페이지를 편집하고 있는데 재연결하기 전에 에이전트(또는 동료)가 동일한 섹션을 수정했다면, 동기화 시 어떤 일이 발생하나요? 충돌을 해결할 수 있는 머지 뷰(merge view)가 제공되나요, 아니면 마지막 작성자 우선(last-write-wins) 방식으로 밀려서 반영되지 못한 버전은 그냥 유실되나요? 오프라인 퍼스트는 두 편집이 충돌하기 전까지는 훌륭하지만, 보통 이런 도구들이 침묵하는 지점이 바로 거기입니다."
+    }
+   ],
+   "slug": "mintlify",
+   "website": "https://mintlify.com/"
+  }
+ ]
+}

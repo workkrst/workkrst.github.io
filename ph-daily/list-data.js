@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-03",
+    "url": "2026-10-03/",
+    "top_product": "Gauth Unlimited Digital Canvas",
+    "count": 5,
+    "upvotes_total": 1262,
+    "comments_total": 57
+  },
+  {
     "date": "2026-10-02",
     "url": "2026-10-02/",
     "top_product": "Monospace from Directus",
