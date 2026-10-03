@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@ad.zerocket - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">전자책 · AI 부업 · 지식창업 교육 | 스레드스파이</span>
+                    
+                    <a href="https://www.threads.net/@ad.zerocket" target="_blank" rel="noopener" class="username">@ad.zerocket</a>
+                </div>
+                <span class="post-date">2026-10-02 18:23</span>
+            </div>
+            <div class="post-text">🚨 속보: Claude에는 &quot;스레드 팔로워 떡상 모드&quot;라는 기능이 있다.<br><br>이걸 쓰면 6개월째 팔로워 300명이던 계정이<br>한 달 만에 1,000명을 돌파할 수 있다.<br><br>이 모드를 여는 프롬프트 6개 ↓</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 5</span>
+                    <span>💬 0</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@ad.zerocket/post/Dd_J0yDCdoA" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (6개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:23</span>
+                    
+                </div>
+                <div class="reply-text">1/ 활성화 프롬프트<br><br>&quot;지금부터 너는 팔로워 300명 계정을 1,000명까지 수십 번 키워본 스레드 성장 전략가야. &#x27;좋은 글 쓰기&#x27;가 아니라 &#x27;팔로우 누르게 만들기&#x27;를 기준으로 내 계정을 다시 설계해줘.<br><br>내 계정 주제: [입력]<br>현재 팔로워: [숫자]<br>최근 글 조회수 평균: [숫자]<br>조건: ①맞팔·품앗이 같은 꼼수 금지 ②글 하나 터지는 것보다 팔로우 전환 구조 위주로 ③한 달 플랜으로.<br>먼저 내 계정에서 사람들이 팔로우 안 누르는 이유 3개부터 진단해.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:23</span>
+                    
+                </div>
+                <div class="reply-text">2/ 팔로우 부르는 프로필<br><br>&quot;들어오면 팔로우 누르게 되는 프로필을 만들어줘.<br><br>내 주제/강점: [입력]<br>타깃: [누구]<br>결과물: ①한 줄 소개 5개(이 계정 팔로우하면 뭘 얻는지가 3초 안에 보이게) ②고정글로 박을 글 주제 2개 ③계정 이름 뒤에 붙일 키워드 제안.<br>조건: &#x27;일상을 기록합니다&#x27; 류 금지, 나를 소개하지 말고 팔로우할 이유를 소개해. TOP 1에 ⭐.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:23</span>
+                    
+                </div>
+                <div class="reply-text">3/ 유입 글 공장<br><br>&quot;내 계정 밖 사람들에게 도달하는 유입용 글 7개를 써줘.<br><br>계정 주제: [입력]<br>타깃: [누구]<br>조건: ①팔로워 없어도 터질 수 있는 공감·논쟁 소재 위주 ②첫 줄에서 스크롤 멈추게 ③글 끝에 의견 묻는 질문으로 댓글 유도 ④각 글 500자 이내.<br>각 글이 노린 심리(공감/반박욕구/정보욕심)를 표시하고, 제일 터질 각 TOP 2에 ⭐.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:23</span>
+                    
+                </div>
+                <div class="reply-text">4/ 댓글로 팔로워 캐기<br><br>&quot;남의 글에 댓글 달아서 팔로워를 데려오는 전략을 짜줘.<br><br>내 계정 주제: [입력]<br>결과물: ①댓글 달러 갈 계정 유형(나보다 크고 타깃 겹치는 곳) ②눈에 띄는 댓글 공식 3개 — 동의+경험 추가 / 정중한 반박 / 한 줄 요약 ③각 공식별 예시 댓글 ④하루 댓글 루틴(몇 개, 언제).<br>조건: &#x27;좋은 글이네요&#x27; 류 영혼 없는 댓글 금지, 내 글 보러 오고 싶게 만드는 댓글만.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:23</span>
+                    
+                </div>
+                <div class="reply-text">5/ 터진 글 2차 수확<br><br>&quot;글 하나가 평소보다 터졌어. 이 기회로 팔로워를 최대한 수확하는 플랜을 짜줘.<br><br>터진 글: [붙여넣기]<br>조회수/반응: [숫자]<br>결과물: ①24시간 안에 올릴 후속 글 2개(터진 글 보고 온 사람들이 또 보고 싶을 내용) ②터진 글에 셀프 댓글로 달 추가 내용 ③프로필 타고 들어온 사람 잡을 고정글 점검 ④같은 소재의 변형 글 3개.<br>조건: 터진 날 아무것도 안 올리는 게 제일 큰 손해다, 시간 순서대로 할 일 정리해.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ad.zerocket</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-02 18:23</span>
+                    
+                </div>
+                <div class="reply-text">6/ 주간 성장 리포트<br><br>&quot;이번 주 계정 성장을 분석하고 다음 주 전략을 짜줘.<br><br>이번 주 올린 글과 반응: [간단히 정리]<br>팔로워 증감: [+숫자]<br>제일 터진 글 / 제일 죽은 글: [붙여넣기]<br>결과물: ①팔로우로 이어진 글의 공통점 ②조회수는 나왔는데 팔로우로 안 이어진 글의 문제 ③다음 주 늘릴 것 1개, 버릴 것 1개 ④다음 주 글감 7개.<br>조건: 위로 금지. 조회수 말고 &#x27;팔로워 전환&#x27; 기준으로만 판단해.&quot;<br><br>여기까지 읽었으면 이미 상위 10%다.<br>대부분은 스크롤만 내리고 지나가니까.<br><br>나는 이런 프롬프트를<br>직접 써보고, 뜯어보고, 되는 것만 골라서<br>매주 공유하고 있다.<br><br>다음 것도 놓치기 싫으면 팔로우.</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (0)</h3>
+            <p class="empty-replies">등록된 댓글이 없습니다.</p>
+        </div>
+        
+    </div>
+</body>
+</html>
