@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-10-04</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-10-04 · Top 5 · 수집 댓글 40개 · 수집 2026-10-04 12:31 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-10-04",
+ "collected_at": "2026-10-04 12:31 KST",
+ "summary": "오늘 차트는 노코드 에이전트 배포 플랫폼과 메신저 기반 여행 에이전트, AEO 실행 레이어 등 실무 실행형 AI 도구들이 상위권을 차지한 가운데, 메타의 오픈소스 하드웨어 키트와 아마존의 신형 킨들 등 피지컬 디바이스 제품군이 고르게 주목받았습니다. 커뮤니티 댓글에서는 단순한 대시보드 조회나 일방적 자동화를 넘어, 고객사별 데이터 격리와 사용자의 최종 승인 권한, 지속적 루프를 통한 측정 등 실제 운영 환경에서의 제어권과 신뢰성 확보가 핵심 화두로 떠올랐습니다. 아울러 보유 중인 부품을 활용한 피지컬 AI 제작의 실용성과 하드웨어 보급형 모델의 스펙 구성에 대해서도 활발한 의견이 교환되었습니다.",
+ "notable": [
+  {
+   "slug": "zoowork",
+   "why": "코딩 없이 대화로 업무 에이전트를 구축해 팀과 고객에게 안전하게 전달(Delivery)할 수 있는 실무 중심 플랫폼이라는 점에서 큰 호응을 얻었습니다. 댓글에서는 고객사 간 데이터 혼입을 막는 독립 샌드박스 격리 구조와 워크플로우 재생성 없는 지식 갱신 편의성에 찬사가 이어졌으며, 메이커가 관리형 API 기반의 실행 궤적(Trajectory) 추적과 향후 자동화된 평가 모드 지원 계획을 구체적으로 밝혀 높은 신뢰를 받았습니다."
+  },
+  {
+   "slug": "muse-22",
+   "why": "메타의 개인 AI 에이전트를 현실의 물리적 인터페이스로 확장할 수 있도록 하드웨어 부문을 오픈소스로 전격 공개하여 메이커 커뮤니티의 뜨거운 반응을 이끌어냈습니다. 댓글에서는 대다수 개발자가 이미 보유한 ESP32나 라즈베리 파이로 전자잉크 모닝 브리핑이나 포켓 컴패니언 같은 실용적 기기를 직접 완성할 수 있다는 높은 접근성에 호평이 집중되었습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "ZooWork",
+   "tagline_en": "The AI agent delivery platform for FDEs and domain experts",
+   "tagline_kr": "FDE(Forward Deployed Engineer) 및 도메인 전문가를 위한 AI 에이전트 구축·배포·전달 플랫폼",
+   "image": "https://ph-files.imgix.net/3c946e25-562b-4df5-9c91-5a2d881fb80a.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Productivity",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 292,
+   "comments_count": 43,
+   "maker": "David Lu(@david_srp), Ning Hu(@ninghu), Anna W(@anna_w6) (헌터: Fabrizio Merian(@fmerian))",
+   "price_model": "무료 (Free Options)",
+   "price_detail": "전문가를 위한 Builder UI와 개발자를 위한 Managed Agent API를 기본 무료 옵션으로 제공하며, 한시적으로 지식 베이스(Knowledge Base) 기능을 무료로 이용할 수 있습니다.",
+   "desc_kr": "ZooWork는 현장 배치 엔지니어(FDE)와 분야별 도메인 전문가가 실제 비즈니스 운영에 투입할 AI 에이전트를 손쉽게 제작하고 배포하며 전달할 수 있도록 지원하는 플랫폼입니다. 도메인 전문가는 코딩 없이 대화형 빌더 UI를 통해 비즈니스 로직과 수행 절차를 자연어로 설명하여 맞춤형 에이전트를 구축할 수 있으며, 개발자는 관리형 에이전트 API(Managed Agent API)를 통해 기존 시스템과 매끄럽게 연동할 수 있습니다. 각 에이전트마다 독립된 샌드박스를 제공하여 동일한 워크플로우를 활용하더라도 고객사 간의 파일이나 대화 기록이 섞이지 않도록 완벽하게 격리합니다. 실행 과정 전반의 궤적(Trajectory)을 API를 통해 확인할 수 있어 에이전트의 작업 수행 방식을 면밀히 검토하고 평가 모드를 통해 지속적으로 성능을 고도화할 수 있습니다. 또한 빌더에서 단일 지식을 갱신하는 것만으로 전체 워크플로우를 다시 만들 필요 없이 에이전트의 지식을 즉시 업데이트하고 팀 및 고객과 손쉽게 공유할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/zoowork",
+   "comment_summary": "코딩 없이 대화로 에이전트를 구축하고 팀 및 고객에게 샌드박스로 안전하게 공유·전달하는 실무 중심 워크플로우에 긍정적인 반응이 이어졌습니다. 특히 고객사 간 데이터 분리 방식과 API를 통한 실행 궤적(Trajectory) 추적 및 장기적 성능 평가 지원 여부에 대한 구체적인 기술 질의가 집중되었습니다. 메이커 측은 고객사별 독립 샌드박스 제공 원칙과 타입스크립트 및 파이썬 SDK 지원, 그리고 실행 궤적 기반의 자동화된 평가 모드 출시 계획을 상세히 설명했습니다.",
+   "warnings": "수치(업보트 292·댓글 43)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Justin Jincaid",
+     "is_maker": false,
+     "text": "I love the product concept.\n\nImagine a founder could build an agent that drafts investor updates from approved company notes, then share it with teammates for review, that will be very helpful.",
+     "kr": "제품 콘셉트가 정말 마음에 듭니다.\n\n창업자가 승인된 사내 노트를 바탕으로 투자자 업데이트 초안을 작성하는 에이전트를 만든 뒤, 팀원들과 검토할 수 있도록 공유할 수 있다면 큰 도움이 될 것 같습니다."
+    },
+    {
+     "author": "David Lu",
+     "is_maker": true,
+     "text": "@justin2025 The approved notes are what make this work, since an update is only as good as what the founder has already signed off on. You'd load those notes into the Agent's knowledge base, write the update format and tone into its job description, and set it to run on a monthly schedule. The draft then goes to your teammates through a share link or Slack, and they review it before anything reaches investors. The knowledge base is free on ZooWork for a limited time, so it's a good moment to try it with last month's notes and see whether the draft sticks to them.",
+     "kr": "@justin2025 승인된 노트야말로 이 작업의 핵심입니다. 업데이트의 품질은 결국 창업자가 이미 검토하고 승인한 내용에 달려있기 때문입니다. 해당 노트들을 에이전트의 지식 베이스에 로드하고, 업데이트 양식과 톤앤매너를 직무 기술서에 작성한 뒤, 월간 일정으로 실행되도록 설정하시면 됩니다. 이후 초안이 공유 링크나 슬랙을 통해 팀원들에게 전달되며, 투자자에게 전달되기 전에 팀원들이 검토할 수 있습니다. ZooWork에서는 한시적으로 지식 베이스를 무료로 제공하고 있으니, 지난달 노트로 테스트해 보시면서 초안이 의도대로 잘 나오는지 확인해 보기에 좋은 시기입니다."
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "Can an expert update the agents knowledge without rebuilding the entire workflow ?",
+     "kr": "전체 워크플로우를 처음부터 다시 만들지 않고도 전문가가 에이전트의 지식을 업데이트할 수 있나요?"
+    },
+    {
+     "author": "David Lu",
+     "is_maker": true,
+     "text": "@dipanshu_kushwaha5 Your Agent can learn a new trick without you rebuilding the whole workflow. Try updating one piece of knowledge in the Builder, then ask about it in a fresh chat session and see for yourself. We don't charge extra for the knowledge base, either.",
+     "kr": "@dipanshu_kushwaha5 전체 워크플로우를 다시 빌드하지 않아도 에이전트가 새로운 지식을 학습할 수 있습니다. 빌더에서 지식 하나를 수정한 다음 새로운 채팅 세션에서 질문하여 직접 확인해 보세요. 또한 지식 베이스에 대해 추가 요금을 청구하지도 않습니다."
+    },
+    {
+     "author": "Rohit Kushwaha",
+     "is_maker": false,
+     "text": "@ninghu The proposal Deck agent sounds useful. Can users build their own custom agents without coding?",
+     "kr": "@ninghu 제안서 덱(Proposal Deck) 에이전트가 유용해 보이네요. 사용자가 코딩 없이도 자신만의 맞춤형 에이전트를 구축할 수 있나요?"
+    },
+    {
+     "author": "David Lu",
+     "is_maker": true,
+     "text": "@ninghu  @rohit62661 You can. In ZooWork's Agent Builder, you describe how the work should be done in plain language, and the Agent is built from that conversation, no code needed. Building it isn't really the key part, though. What matters is that you can share it with your team or other users, so they get to use it too, not just you. You could try it with your own proposal workflow and share it with one teammate.",
+     "kr": "@ninghu @rohit62661 가능합니다. ZooWork의 에이전트 빌더에서는 업무가 어떻게 수행되어야 하는지 일상적인 언어로 설명하기만 하면 해당 대화를 바탕으로 에이전트가 구축되며 코딩은 전혀 필요하지 않습니다. 하지만 단순히 만드는 것만이 핵심은 아닙니다. 나 혼자뿐만 아니라 팀원이나 다른 사용자들과 공유하여 함께 활용할 수 있다는 점이 진짜 중요합니다. 자신만의 제안서 워크플로우로 테스트해 보고 동료 한 명에게 공유해 보세요."
+    },
+    {
+     "author": "Rohit Kushwaha",
+     "is_maker": false,
+     "text": "@ninghu  @david_srp Got it.\n\nNo code setup and easy team sharing sound really useful",
+     "kr": "@ninghu @david_srp 이해했습니다.\n\n노코드 설정과 손쉬운 팀 공유 기능이 정말 유용해 보이네요."
+    },
+    {
+     "author": "David Lu",
+     "is_maker": true,
+     "text": "@rohit62661 Thanks, Rohit! That's the part we care about most: making an Agent useful to the rest of your team too.",
+     "kr": "@rohit62661 감사합니다, Rohit님! 그 점이 바로 저희가 가장 신경 쓰는 부분입니다. 즉, 에이전트가 팀의 나머지 동료들에게도 실질적인 도움이 되도록 만드는 것이죠."
+    },
+    {
+     "author": "Jeetendra Kumar",
+     "is_maker": false,
+     "text": "the delivery part is what most agent builders miss. when the same agent is shared with two clients, how do you keep their files and conversation history separate?",
+     "kr": "전달(delivery)이야말로 대부분의 에이전트 빌더들이 놓치는 부분입니다. 동일한 에이전트를 두 고객사와 공유할 때, 파일과 대화 내역은 어떻게 서로 분리되어 보관되나요?"
+    },
+    {
+     "author": "David Lu",
+     "is_maker": true,
+     "text": "@jeetendra_kumar2 If you give each client its own Agent, each gets an independent sandbox. If clients share one Agent, they share its sandbox too. Chat histories are separate for different sessions. For your two-client setup, I'd create one Agent per client and try each with a sample file.",
+     "kr": "@jeetendra_kumar2 각 고객사마다 개별 에이전트를 배정하면 각각 독립된 샌드박스를 부여받게 됩니다. 고객사들이 하나의 에이전트를 공유한다면 샌드박스도 공유하게 됩니다. 대화 기록은 세션별로 분리됩니다. 두 고객사를 운영하는 환경이라면 고객사당 에이전트를 하나씩 생성하여 샘플 파일로 테스트해 보시길 권장합니다."
+    },
+    {
+     "author": "Khalid Khair",
+     "is_maker": false,
+     "text": "Great idea! Is there a way for me to track/review the agent’s performance over time?",
+     "kr": "멋진 아이디어네요! 시간이 지남에 따라 에이전트의 성능을 추적하거나 검토할 수 있는 방법이 있나요?"
+    },
+    {
+     "author": "David Lu",
+     "is_maker": true,
+     "text": "@khalidkhairx10 Our Managed Agent API gives you the trajectory of each run, so you can review how the Agent approached the task. I'd keep a few representative tasks and rerun them after changes to compare its behavior over time. We're also rolling out an evaluation mode to make that review and iteration more automated. Try one task you know well through the API and use its trajectory to spot something you'd improve.",
+     "kr": "@khalidkhairx10 저희의 관리형 에이전트 API는 각 실행의 궤적(trajectory)을 제공하므로 에이전트가 작업에 어떻게 접근했는지 검토할 수 있습니다. 몇 가지 대표적인 작업을 설정해 두고 변경 사항이 있을 때마다 다시 실행하여 시간에 따른 행동 변화를 비교해 보시길 추천합니다. 또한 이러한 검토와 반복 개선을 더욱 자동화하기 위해 평가 모드를 출시하고 있습니다. API를 통해 익숙한 작업 하나를 실행해 보시고 그 궤적을 확인하여 개선할 부분을 찾아보세요."
+    }
+   ],
+   "slug": "zoowork",
+   "website": "https://zoowork.ai/"
+  },
+  {
+   "name": "miso.com",
+   "tagline_en": "Book flights and hotels through iMessage",
+   "tagline_kr": "iMessage 대화만으로 항공권과 호텔을 검색·예약하고 24시간 케어받는 개인 AI 여행 에이전트",
+   "image": "https://ph-files.imgix.net/3a768d0b-89ac-4465-af20-91611a045de6.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Messaging",
+    "Artificial Intelligence",
+    "iMessage Apps"
+   ],
+   "upvotes": 222,
+   "comments_count": 25,
+   "maker": "Martin Mrozowski(@martin_mrozowski2), Spencer Wu(@spencer_wu3), Aaron Li(@aaron_li7) (헌터: Chris Messina(@chrismessina))",
+   "price_model": "무료 (Free)",
+   "price_detail": "별도의 앱 설치나 구독료 없이 iMessage를 통해 무료로 여행 상담 및 실시간 예약을 진행할 수 있으며 항공권 및 호텔 결제 비용만 부담합니다.",
+   "desc_kr": "miso.com은 수십 개의 웹 브라우저 탭을 오가며 항공권과 숙소를 비교해야 했던 번거로움을 없애고 iMessage 대화창 안에서 여행의 모든 과정을 해결해 주는 AI 여행 에이전트입니다. 사용자가 가고 싶은 목적지와 일정을 메시지로 전송하면 실시간 항공편 및 호텔 옵션을 즉시 검색하고 사용자의 여행 선호도를 반영한 맞춤형 일정을 제안합니다. 여권 정보, 사전 입국 심사 번호(KTN), 항공사 및 호텔 마일리지·로열티 멤버십을 기억하여 현금 및 마일리지 최적 조합과 전용 할인 요금 및 업그레이드 혜택까지 고려해 줍니다. AI가 추천하는 모든 일정은 사용자가 직접 수정하거나 거절할 수 있는 제안 형태이며 사용자의 명시적 승인 없이는 어떠한 예약이나 결제도 진행되지 않습니다. 또한 전담 컨시어지 팀이 24시간 연중무휴 대기하여 여행 도중 발생하는 일정 변경이나 항공편 취소 등 돌발 상황에도 즉각적인 지원을 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/miso-com",
+   "comment_summary": "메신저 텍스트 대화만으로 여행 계획부터 항공 및 호텔 예약, 일정 변경까지 한곳에서 관리할 수 있다는 높은 편의성에 큰 관심이 쏠렸습니다. AI의 자동 제안과 사용자의 최종 결정 권한 사이의 균형, 그리고 동행자와의 일정 공유 기능 및 예산 기반 맞춤 검색 지원 여부에 대한 질문이 다수 제기되었습니다. 메이커 측은 사용자의 최종 승인 없이 예약이 실행되지 않는 안전장치와 24시간 컨시어지 지원을 강조하며, 온보딩 단계의 개인화 설정과 추후 출시될 여행 일정 공유 기능을 소개했습니다.",
+   "warnings": "수치(업보트 222·댓글 25)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Martin Mrozowski",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 I’m Martin, co-founder of miso.com.\n\nOver the past year, startups and frontier models have tried to make travel easier. But travel is more than finding a flight or hotel. It’s navigating points, preferences, loyalty status, and the details that make each trip different. And when plans change, the real complexity begins: travelers need someone immediately who can understand the situation and help get it resolved.\n\nWhat if you could plan a trip by simply texting someone who knew your preferences, and have real support when plans changed?\n\nSo we built miso.com, your personal AI travel agent on iMessage:\n\n* **Text to Book Flights and Hotels:** Compare cash and points options, and access exclusive hotel rates and perks.\n* **Personalization at Scale:** Miso remembers details like your passport, Known Traveler Number, loyalty programs, and preferences. We can also factor your status into upgrade options.\n* **24/7 Support:** Our concierge team is available 24/7 to help with changes, cancellations, and anything that comes up during your trip.\n\n**Product Hunt Launch Special**\n\nWe’re inviting a large handful of Product Hunt users to try miso.com. **Let us know if you travel frequently, we’d love to get you started.**",
+     "kr": "Product Hunt 여러분 안녕하세요 👋 miso.com의 공동 창업자 Martin입니다.\n\n지난 한 해 동안 수많은 스타트업과 프론티어 AI 모델들이 여행을 더 쉽게 만들기 위해 시도했습니다. 하지만 여행은 단순히 비행기표나 호텔을 찾는 것 그 이상입니다. 포인트 활용, 개인 취향, 로열티 등급, 그리고 매 여행마다 달라지는 세부 조건들을 모두 고려해야 합니다. 그리고 계획이 변경될 때 진짜 복잡한 문제가 시작됩니다. 여행자에게는 상황을 즉시 이해하고 해결을 도와줄 누군가가 절실히 필요합니다.\n\n내 취향을 잘 아는 누군가에게 가볍게 문자를 보내는 것만으로 여행을 계획하고, 일정이 변경되었을 때 실질적인 지원을 받을 수 있다면 어떨까요?\n\n그래서 저희는 iMessage 기반의 개인 AI 여행 에이전트인 miso.com을 구축했습니다:\n\n* **문자로 항공권 및 호텔 예약:** 현금 결제와 마일리지 포인트를 비교하고, 단독 호텔 특가 및 혜택을 이용할 수 있습니다.\n* **대규모 개인화:** Miso는 여권 정보, Known Traveler Number(KTN), 로열티 프로그램, 개인 취향 등의 세부 정보를 기억합니다. 회원 등급을 반영한 룸 업그레이드 옵션도 제공합니다.\n* **24/7 연중무휴 지원:** 전담 컨시어지 팀이 24시간 대기하여 일정 변경, 취소 및 여행 중 발생하는 모든 문제를 해결해 드립니다.\n\n**Product Hunt 출시 특별 혜택**\n\n많은 Product Hunt 사용자분들을 miso.com에 초대하고자 합니다. **자주 여행을 다니신다면 꼭 알려주세요. 바로 이용하실 수 있도록 도와드리겠습니다.**"
+    },
+    {
+     "author": "Devin Stone",
+     "is_maker": false,
+     "text": "How you balance AI suggestions with giving users enough control over final choices.",
+     "kr": "AI의 추천과 최종 선택에 대한 사용자의 통제권 사이의 균형을 어떻게 맞추고 계신가요?"
+    },
+    {
+     "author": "Martin Mrozowski",
+     "is_maker": true,
+     "text": "@devinstone Great question. Miso suggests and you decide what is the best fit. Every flight, hotel, and itinerary is a proposal you can swap, edit, or reject before anything is booked over text, and nothing gets booked without your explicit go ahead. Our AI does the legwork of finding the best options and you keep the final call. If you want more control, you can tell it your preferences up front, like airline, seat, or hotel style, and it will stick to them on the search. I.e biz class only needs to be window seat and non stop etc. You can get very granular.",
+     "kr": "@devinstone 좋은 질문입니다. Miso가 제안하면 무엇이 최선인지 사용자가 직접 결정합니다. 모든 항공편, 호텔, 여행 일정은 문자로 예약되기 전에 교체, 수정, 거절할 수 있는 '제안' 형태이며, 사용자의 명시적인 승인 없이는 아무것도 예약되지 않습니다. 저희 AI는 최적의 옵션을 찾는 발품을 대신 팔고, 최종 결정권은 온전히 사용자가 갖습니다. 더 세밀한 통제를 원하신다면 항공사, 좌석, 호텔 스타일 등 선호 사항을 미리 전달할 수 있으며 검색 시 이를 철저히 준수합니다. 예를 들어 '비즈니스석만, 창가 자리, 직항 필수'처럼 매우 구체적으로 설정할 수 있습니다."
+    },
+    {
+     "author": "Eriberto Puppypound",
+     "is_maker": false,
+     "text": "Can it help organize options that are easy to share with others before making a final booking?",
+     "kr": "최종 예약을 진행하기 전에 다른 동행자들과 쉽게 공유할 수 있도록 옵션들을 정리해 주는 기능도 있나요?"
+    },
+    {
+     "author": "Martin Mrozowski",
+     "is_maker": true,
+     "text": "@eriberto_puppypound Great question. Trip sharing is something we're building and plan to ship soon, but it isn't live yet. Would love to hear how you'd want it to work, since that helps us shape it.",
+     "kr": "@eriberto_puppypound 좋은 질문입니다. 여행 일정 공유 기능은 현재 개발 중이며 곧 출시할 예정이지만 아직 라이브되지는 않았습니다. 기능 구현에 큰 도움이 되므로 원하시는 작동 방식이 있다면 편하게 의견을 들려주세요."
+    },
+    {
+     "author": "Amelia",
+     "is_maker": false,
+     "text": "Can Miso also suggest different flight and hotel combinations based on a specific budget or preferred travel time?",
+     "kr": "Miso가 특정 예산이나 선호하는 이동 시간대를 바탕으로 다양한 항공편과 호텔 조합을 제안해 줄 수도 있나요?"
+    },
+    {
+     "author": "Martin Mrozowski",
+     "is_maker": true,
+     "text": "@awesome_america Yep, absolutely. You can give Miso a budget, preferred times, hotel preferences, points, etc. and it can work through different combinations for you",
+     "kr": "@awesome_america 네, 물론입니다. Miso에게 예산, 선호 시간대, 호텔 선호도, 포인트 등을 알려주시면 다양한 조합을 계산하여 맞춰 제안해 줄 수 있습니다."
+    },
+    {
+     "author": "Advin Jadis",
+     "is_maker": false,
+     "text": "Does it remember preferences like airlines or hotel types for future trips?",
+     "kr": "다음 여행을 위해 선호하는 항공사나 호텔 유형 같은 취향을 기억해 두나요?"
+    },
+    {
+     "author": "Martin Mrozowski",
+     "is_maker": true,
+     "text": "@advin_jadis absolutely and it's part of our onboarding. If you download the app I will approve your account so you can see for yourself!",
+     "kr": "@advin_jadis 네 물론이며 온보딩 과정의 일부로 포함되어 있습니다. 앱을 다운로드하시면 직접 확인해 보실 수 있도록 계정을 바로 승인해 드리겠습니다!"
+    },
+    {
+     "author": "Amy Benson",
+     "is_maker": false,
+     "text": "Having everything in the same conversation could make managing a trip much less messy especially when plans change.",
+     "kr": "하나의 동일한 대화창에서 모든 것을 처리할 수 있다면, 특히 계획이 변경되었을 때 여행 관리가 훨씬 덜 복잡해지겠네요."
+    },
+    {
+     "author": "Martin Mrozowski",
+     "is_maker": true,
+     "text": "@ben_d3 100%. Especially when things go wrong or plans change. We want Miso to be the one place you can just text and get the entire trip handled.",
+     "kr": "@ben_d3 100% 동감합니다. 특히 돌발 상황이 생기거나 계획이 틀어졌을 때 더욱 그렇습니다. 저희는 Miso가 문자 하나만 보내면 여행 전체를 해결할 수 있는 단 하나의 창구가 되길 바랍니다."
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "This is a wet dream for all globetrotters. I have travelled a lot in the last 3 years.\n\nCan you set up the maximum budget you want to spend, and does it customise your options as well?",
+     "kr": "자주 여행하는 사람들에게는 꿈만 같은 서비스네요. 저도 지난 3년 동안 여행을 정말 많이 다녔거든요.\n\n지출하고 싶은 최대 예산을 설정할 수 있는지, 그리고 그에 맞춰 옵션들도 맞춤형으로 제공되는지 궁금합니다."
+    }
+   ],
+   "slug": "miso-com",
+   "website": "https://www.miso.com/"
+  },
+  {
+   "name": "Prefer",
+   "tagline_en": "The execution layer for AEO",
+   "tagline_kr": "단순 대시보드 조회를 넘어 AI 검색 엔진 내 브랜드 노출을 개선하고 실행하는 AEO(AI 엔진 최적화) 실행 레이어",
+   "image": "https://ph-files.imgix.net/483e53ba-0bc7-4120-9e86-3ba498fd832f.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Marketing",
+    "SEO",
+    "Search"
+   ],
+   "upvotes": 169,
+   "comments_count": 8,
+   "maker": "Javed Khatri(@javed_khatri1), Mandar Sawant(@mandar_sawant)",
+   "price_model": "무료 체험 / 프리미엄 (Free Options)",
+   "price_detail": "셀프 서브 플랜을 통한 무료 체험 옵션을 제공하며, 엔터프라이즈 플랜에서는 API 기반 Claude Sonnet 4 연동 등 고급 AEO 추적 및 실행 기능을 지원합니다.",
+   "desc_kr": "Prefer는 ChatGPT, Claude, Gemini, Perplexity 등 주요 생성형 AI 검색 엔진에서 자사 브랜드가 어떻게 언급되고 있는지 분석하고 가시성을 개선해 주는 AEO(AI 엔진 최적화) 실행 레이어 플랫폼입니다. 단순히 인용 횟수나 점수만 나열하는 기존 대시보드와 달리, 자율 에이전트를 통해 온페이지(on-page) 콘텐츠 개선과 오프페이지(off-page) 작업을 직접 실행하여 AI 인용을 확보하도록 돕습니다. 구매자가 웹사이트에 방문하기 전에 AI 모델이 먼저 의사결정을 내리는 시장 변화에 맞춰 브랜드가 누락된 검색 쿼리와 선호 출처를 정확히 식별합니다. 단일 실행 결과에 의존하지 않고 주요 프롬프트를 지속적으로 재실행하여 출처 변화와 경쟁사의 가시성 변동을 추적하는 지속적 루프를 가동합니다. 모델의 선호 소스가 지속적으로 변하는 AI 검색 환경에서 일회성 가시성 증대에 그치지 않고 장기적으로 브랜드의 우위를 유지하고 보호할 수 있도록 설계되었습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/prefer-2",
+   "comment_summary": "단순히 AI 가시성 점수만 보여주는 대시보드에서 벗어나 실제 인용 획득을 위한 온·오프페이지 실행을 직접 지원하는 접근법에 호평이 이어졌습니다. 모델 응답의 가변성 속에서 실제 성과를 노이즈와 분리하여 측정하는 방법과 셀프 서브 티어의 Claude 지원 계획에 대한 기술적 질의가 제기되었습니다. 메이커 측은 지속적인 루프 재실행을 통한 베이스라인 추적 방식과 엔터프라이즈 API 중심에서 셀프 서브 티어로의 Claude 모델 확장 계획을 설명했습니다.",
+   "warnings": "수치(업보트 169·댓글 8)는 수집 시점 참고치. 수집된 8개 댓글 전수 수집 완료.",
+   "comments": [
+    {
+     "author": "Javed Khatri",
+     "is_maker": true,
+     "text": "We built Prefer because we realized brands have two users now. There is the human who buys, and the model that recommends. For 25 years, we learned how to market to the first one. Now ChatGPT, Gemini, Perplexity and other AI engines are making decisions before a buyer ever reaches your website. We went looking for a tool that could show us what these models were saying about a brand and then actually help change it. It did not exist. So we built Prefer. The idea is simple: measuring the gap is the easy half. Closing it is the product. Prefer does not just tell you where you are missing. It helps do the on-page, content and off-page work needed to win the citation. Less dashboards. More action. We are early, bootstrapped, and building this with our users. Would love to hear what you think.",
+     "kr": "저희가 Prefer를 만든 이유는 브랜드에 이제 두 종류의 사용자가 존재한다는 사실을 깨달았기 때문입니다. 구매하는 '사람'과 추천하는 'AI 모델'입니다. 지난 25년 동안 우리는 전자에게 마케팅하는 법을 배웠습니다. 하지만 이제는 구매자가 웹사이트에 도달하기도 전에 ChatGPT, Gemini, Perplexity 등 다양한 AI 엔진들이 결정을 내립니다. 저희는 이러한 모델들이 브랜드에 대해 무엇이라 말하는지 보여주고 이를 실제로 바꿀 수 있도록 돕는 도구를 찾아보았지만 존재하지 않았습니다. 그래서 Prefer를 만들었습니다. 콘셉트는 단순합니다. 격차를 측정하는 것은 쉬운 절반에 불과하며, 그 격차를 메우는 것이야말로 진정한 프로덕트입니다. Prefer는 단순히 어디에서 누락되었는지만 알려주는 것이 아니라, 인용을 확보하는 데 필요한 온페이지, 콘텐츠, 오프페이지 작업을 직접 수행하도록 돕습니다. 대시보드는 줄이고 실행에 집중했습니다. 저희는 초기 부트스트랩 단계이며 유저들과 함께 만들어가고 있습니다. 여러분의 생각을 들려주세요."
+    },
+    {
+     "author": "Jordan Gibbs",
+     "is_maker": false,
+     "text": "Hey, just want to let you know my account is in softlock (can't get to a page without a failure). Your support email doesn't work either.  \n\naccount email is jordan@jordangibbs.xyz",
+     "kr": "계정이 소프트록 상태에 걸려서(어떤 페이지로 이동해도 오류가 발생합니다) 알려드리려고 글 남깁니다. 고객지원 이메일도 작동하지 않네요. 계정 이메일은 jordan@jordangibbs.xyz 입니다."
+    },
+    {
+     "author": "Sahil Kathpal",
+     "is_maker": false,
+     "text": "Congrats on the launch! How do you tell if an action actually moved a brand's visibility? Model answers change a lot between runs, so I'm curious how you separate real lift from noise.",
+     "kr": "출시를 축하합니다! 특정 조치가 브랜드의 가시성을 실제로 높였는지 어떻게 판단하시나요? 모델의 응답은 실행할 때마다 크게 달라지곤 하는데 실제 개선과 노이즈를 어떻게 구분하시는지 궁금합니다."
+    },
+    {
+     "author": "Javed Khatri",
+     "is_maker": true,
+     "text": "@sahil_kathpal1 That’s exactly why we don’t treat a single model response as the metric.  \n\nPrefer continuously runs the loop, tracking how each model changes its preferred sources, taking action, and measuring the impact over time.  \n\nAnd it doesn’t stop once you get the citation or recommendation.  \n  \nIt keeps monitoring and taking action to help you retain that visibility as the models and their sources change.",
+     "kr": "@sahil_kathpal1 바로 그렇기 때문에 저희는 단일 모델 응답을 지표로 삼지 않습니다. Prefer는 루프를 지속적으로 실행하여 각 모델이 선호하는 출처를 어떻게 바꾸는지 추적하고, 필요한 조치를 취하며 시간에 따른 영향을 측정합니다. 또한 한 번 인용이나 추천을 받았다고 해서 멈추지 않습니다. 모델과 그 출처가 변경됨에 따라 해당 가시성을 계속 유지할 수 있도록 모니터링과 실행을 이어갑니다."
+    },
+    {
+     "author": "Gene Dai",
+     "is_maker": false,
+     "text": "Congrats on the launch, Javed and the Prefer team. Tying each Action Center fix to the prompts it should move is the right shape. The launch copy leads with Claude, but the pricing page only lists Claude Sonnet 4 via API on Enterprise, so is Claude tracking coming to self-serve tiers? Lots of B2B buyers research vendors in Claude, and API answers can differ from what people see in the app.",
+     "kr": "Javed님과 Prefer 팀의 출시를 축하합니다. 액션 센터의 각 수정 사항을 개선 대상 프롬프트와 연결한 것은 아주 적절한 방향입니다. 출시 소개글에서는 Claude를 전면에 내세웠지만 요금제 페이지에는 Enterprise 플랜에서 API를 통한 Claude Sonnet 4만 명시되어 있던데, 셀프 서브 티어에도 Claude 추적 기능이 도입될 예정인가요? 많은 B2B 바이어들이 Claude에서 공급업체를 조사하고 있으며, API 응답은 앱에서 사람들이 보는 화면과 다를 수 있습니다."
+    },
+    {
+     "author": "Mandar Sawant",
+     "is_maker": true,
+     "text": "Hey @genedai thanks for the wishes and support. Yes we are working towards adding Claude models to the self serve tiers. We have kept it to enterprise customers over api for exactly the reason you mentioned.",
+     "kr": "@genedai 축하와 응원에 감사드립니다. 네, 셀프 서브 티어에 Claude 모델을 추가하기 위해 작업 중입니다. 언급하신 바로 그 이유 때문에 우선은 API를 통해 엔터프라이즈 고객에게만 제공하고 있었습니다."
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Treating AEO as something you act on rather than another dashboard to read is the right instinct, since most brands know they are invisible in AI answers but not what to do about it. Checking how ChatGPT, Claude, Gemini and Perplexity each describe a brand is a practical angle. Curious how you measure whether the actions actually moved visibility.",
+     "kr": "대부분의 브랜드가 AI 답변에서 자신이 누락되어 있다는 점은 알지만 무엇을 해야 할지 모르는 상황에서, AEO를 단순히 읽는 대시보드가 아니라 직접 실행하는 대상으로 다룬 것은 매우 적절한 직관입니다. ChatGPT, Claude, Gemini, Perplexity가 각각 브랜드를 어떻게 묘사하는지 확인하는 것은 실용적인 관점입니다. 조치들이 실제로 가시성을 높였는지 어떻게 측정하시는지 궁금합니다."
+    },
+    {
+     "author": "Javed Khatri",
+     "is_maker": true,
+     "text": "@karimbenkeroum   \n  \nYes, this is exactly where the loop becomes important.  \n\nWe do not measure an action in isolation.  \nWe establish a baseline for the prompts and queries that matter, then continuously re-run them across ChatGPT, Claude, Gemini and Perplexity.  \n\nWhen we take an action, we track what changes afterwards:\n\n\\- Whether the brand gets mentioned or recommended\n\n\\- Which sources start getting cited\n\n\\- Which competitors are gaining or losing visibility\n\n\\- Whether the model changes its preferred sources\n\n\\- Whether the improvement persists over multiple runs  \n\nIf we see movement, we can connect it back to the actions taken. If we do not see movement, the system goes back into the loop and identifies what is still missing.  \n\nAnd this matters because AI search is not static.  \nA source that gets cited today may not be preferred a few weeks from now.  \n\nSo for us, the goal is not simply to increase visibility once.  \nIt is to continuously improve it, measure the impact, and then protect the gains we have made.  \n\nThat is the part we think is fundamentally different from another AEO reporting dashboard.",
+     "kr": "@karimbenkeroum 네, 바로 그 지점에서 지속적인 루프가 중요해집니다. 저희는 어떤 조치를 단편적으로 측정하지 않습니다. 중요한 프롬프트와 쿼리에 대한 기준선(baseline)을 설정한 다음, ChatGPT, Claude, Gemini, Perplexity에서 지속적으로 재실행합니다. 특정 조치를 취한 후에는 다음과 같은 변화를 추적합니다: - 브랜드가 언급되거나 추천되는지 여부 - 어떤 출처가 새로 인용되기 시작하는지 - 어떤 경쟁사의 가시성이 상승하거나 하락하는지 - 모델이 선호하는 출처를 바꾸는지 - 개선된 결과가 여러 번의 실행에 걸쳐 유지되는지 여부. 변화가 감지되면 취해진 조치와 연계하여 분석합니다. 변화가 보이지 않으면 시스템은 다시 루프로 돌아가 여전히 부족한 부분이 무엇인지 파악합니다. AI 검색은 고정되어 있지 않기 때문에 이는 매우 중요합니다. 오늘 인용된 출처가 몇 주 뒤에는 선호되지 않을 수도 있습니다. 따라서 저희 목표는 단순히 가시성을 한 번 높이는 것이 아닙니다. 지속적으로 개선하고, 영향을 측정하며, 달성한 성과를 보호하는 것입니다. 이 점이 또 다른 AEO 보고용 대시보드와 근본적으로 다른 차별점이라고 생각합니다."
+    }
+   ],
+   "slug": "prefer-2",
+   "website": "https://tryprefer.com/"
+  },
+  {
+   "name": "Muse Gadgets",
+   "tagline_en": "Meta's open-source kit for building your own AI gadgets",
+   "tagline_kr": "ESP32와 라즈베리 파이로 나만의 맞춤형 피지컬 AI 기기를 제작할 수 있는 메타의 오픈소스 하드웨어 툴킷",
+   "image": "https://ph-files.imgix.net/f79f1415-f9d1-4073-bbb2-3cf23acc7e13.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Open Source",
+    "Hardware",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 158,
+   "comments_count": 6,
+   "maker": "Meta Team (헌터: Justin Jincaid(@justin2025))",
+   "price_model": "무료 (Free / Open Source)",
+   "price_detail": "소프트웨어 SDK 및 펌웨어는 Apache 2.0 라이선스 하에 오픈소스로 무료 제공되며, 하드웨어 부품(ESP32, 라즈베리 파이, 디스플레이 등)은 별도 구매가 필요합니다.",
+   "desc_kr": "Muse Gadgets는 메타(Meta)가 개발한 개인용 AI 에이전트 '뮤즈(Muse)'를 물리적인 현실 세계로 확장할 수 있도록 지원하는 오픈소스 하드웨어 툴킷입니다. 메이커와 개발자는 ESP32, 라즈베리 파이(Raspberry Pi), 리눅스 기기 등에 디스플레이, 마이크, 스피커, 버튼, 센서 등을 연결하여 자신만의 피지컬 AI 기기를 손쉽게 조립하고 제어할 수 있습니다. 전자잉크(E-ink) 모닝 브리핑 디스플레이, 주머니 크기의 포켓 AI 컴패니언, 스마트홈 컨트롤러, TV 인터페이스 등 일상에 밀착된 다양한 기기 제작 예제를 제공합니다. 메타는 가정 내 다양한 가전제품 및 사물과 뮤즈를 연동할 수 있는 소형 전용 기기인 '홈 링크(Home Link)'도 함께 선보였습니다. 모든 SDK와 펌웨어는 Apache 2.0 오픈소스 라이선스로 공개되어 있어 누구나 자유롭게 소스코드를 수정하고 자신만의 하드웨어를 구축할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/muse-22",
+   "comment_summary": "메타의 개인 AI 에이전트를 실물 하드웨어와 연결할 수 있도록 오픈소스로 공개한 점에 메이커 커뮤니티의 큰 환호가 이어졌습니다. 이미 대다수 개발자가 보유한 ESP32나 라즈베리 파이 등 친숙한 부품으로 전자잉크 브리핑 디스플레이나 포켓 컴패니언 같은 실용적 기기를 손쉽게 만들 수 있다는 점이 높은 평가를 받았습니다. 향후 개인용 AI 기기부터 스마트홈 연동 및 새로운 하드웨어 카테고리 창출에 이르기까지 무궁무진한 확장 가능성에 대한 기대감이 표출되었습니다.",
+   "warnings": "수치(업보트 158·댓글 6)는 수집 시점 참고치. 수집된 6개 댓글 전수 수집 완료.",
+   "comments": [
+    {
+     "author": "Justin Jincaid",
+     "is_maker": false,
+     "text": "Meta just open-sourced the hardware side of @Muse by Meta , and this looks like a lot of fun.  \n  \nMuse Gadgets lets you take an ESP32, Raspberry Pi, or Linux device and basically build your own physical interface for Muse — add a screen, mic, speaker, buttons, sensors, whatever you want.  \n  \nThey've already got examples like an e-ink morning briefing display, pocket-size Muse, TV stick, and Home Assistant setup.  \n  \nMeta also made its own little Home Link device for connecting Muse to things around your house.  \n  \nVery curious to see what hardware people build with this.",
+     "kr": "메타가 방금 Muse의 하드웨어 부문을 오픈소스로 공개했는데, 정말 흥미진진해 보입니다.\n\nMuse Gadgets를 사용하면 ESP32, 라즈베리 파이, 또는 리눅스 기기를 활용해 뮤즈를 위한 나만의 물리적 인터페이스를 기본적으로 구축할 수 있습니다. 화면, 마이크, 스피커, 버튼, 센서 등 원하는 것은 무엇이든 추가할 수 있습니다.\n\n이미 전자잉크 모닝 브리핑 디스플레이, 주머니 크기의 포켓 뮤즈, TV 스틱, 홈 어시스턴트(Home Assistant) 연동 등의 예제가 마련되어 있습니다.\n\n또한 메타는 집안 곳곳의 사물들과 뮤즈를 연결하기 위한 자체 소형 홈 링크(Home Link) 기기도 제작했습니다.\n\n사람들이 이것으로 어떤 하드웨어를 만들어낼지 무척 기대됩니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@justin2025 The hardware side looks really fun especially the idea of building your own physical interface with ESP32 or Raspberry Pi",
+     "kr": "@justin2025 하드웨어 부문이 정말 재미있어 보이네요. 특히 ESP32나 라즈베리 파이로 나만의 물리적 인터페이스를 직접 구축한다는 콘셉트가 매력적입니다."
+    },
+    {
+     "author": "Kate Ragotte",
+     "is_maker": false,
+     "text": "Opening up the hardware is a good move, I think. Most of the fun stuff will come from random people with a Pi and too much free time",
+     "kr": "하드웨어를 개방한 것은 정말 훌륭한 선택이라고 생각합니다. 가장 재미있는 결과물들은 라즈베리 파이를 쥐고 시간이 남아도는 개성 있는 개발자들에게서 나올 테니까요."
+    },
+    {
+     "author": "Germán Merlo",
+     "is_maker": false,
+     "text": "👏🏻👏🏻👏🏻",
+     "kr": "👏🏻👏🏻👏🏻"
+    },
+    {
+     "author": "Anatolii Yukhymovych",
+     "is_maker": false,
+     "text": "Where do you see the biggest possible opportunity for this project? Personal AI devices, smart home integrations, or smth more completely new? Maybe like new hardware categories",
+     "kr": "이 프로젝트의 가장 큰 기회 요인은 어디에 있다고 보시나요? 개인용 AI 기기, 스마트홈 연동, 아니면 완전히 새로운 하드웨어 카테고리 같은 것일까요?"
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "An open hardware kit for ESP32 and Raspberry Pi that lets Muse talk through real displays, mics, and sensors is a genuinely fun idea. Pocket companions and e-ink briefing displays are exactly the kind of small projects people will actually finish. Nice that it starts from parts most makers already own.",
+     "kr": "뮤즈가 실제 디스플레이, 마이크, 센서를 통해 상호작용할 수 있도록 해주는 ESP32 및 라즈베리 파이용 오픈 하드웨어 키트는 진정으로 재미있는 아이디어입니다. 포켓 컴패니언이나 전자잉크 브리핑 디스플레이는 사람들이 실제로 끝까지 완성해 볼 만한 딱 알맞은 크기의 프로젝트입니다. 대부분의 메이커들이 이미 가지고 있는 부품들로 시작할 수 있다는 점도 참 좋습니다."
+    }
+   ],
+   "slug": "muse-22",
+   "website": "https://muse.ai/"
+  },
+  {
+   "name": "Kindle 2026",
+   "tagline_en": "A smaller, faster Kindle with a flush-front display",
+   "tagline_kr": "더 작고 가벼워진 본체와 30% 빠른 책 로딩, 평면 플러시 디스플레이를 적용한 아마존의 2026년형 6인치 킨들",
+   "image": "https://ph-files.imgix.net/0fec436e-2417-4f4c-835f-33986c10e9e6.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "eBook Reader",
+    "Hardware",
+    "Books"
+   ],
+   "upvotes": 140,
+   "comments_count": 2,
+   "maker": "Amazon (헌터: Zac Zuo(@zaczuo))",
+   "price_model": "유료 (Payment Required)",
+   "price_detail": "기본 모델 구매가 필요한 하드웨어 제품이며, 라인업 최초로 32GB 알루미늄 에디션 및 블루투스 킨들 클릭(Kindle Click), 물리 버튼 탑재 페이지 넘김 커버 등의 별도 액세서리를 함께 제공합니다.",
+   "desc_kr": "Kindle 2026은 아마존의 대표적인 6인치 보급형 전자책 리더기를 새롭게 재설계하여 크기와 무게를 줄이고 휴대성을 대폭 강화한 신제품입니다. 책을 여는 속도가 이전 세대 대비 약 30% 빨라졌으며 베젤과 화면 단차가 없는 플러시 프론트(flush-front) 평면 디스플레이를 전격 채택했습니다. 킨들 기본 라인업 최초로 고급스러운 32GB 알루미늄 본체 에디션이 새롭게 추가되어 선택의 폭을 넓혔습니다. 아울러 블루투스 기반 원격 페이지 넘김 리모컨인 '킨들 클릭(Kindle Click)'과 전용 페이지 턴 커버 등 물리 버튼을 선호하는 사용자들을 위한 다양한 액세서리 옵션도 함께 마련되었습니다. 다만 상위 기종과 달리 따뜻한 색온도 조절(Warm light) 기능과 방수 기능은 기본 모델에 여전히 포함되지 않았습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/kindle-2026",
+   "comment_summary": "더 가벼워진 본체와 평면 디스플레이 적용, 30% 빨라진 속도 등 전반적인 기본기 개선에 대한 호평과 함께 별도 블루투스 클릭 리모컨 지원이 영리한 타협점이라는 평가를 받았습니다. 반면 2026년 신제품임에도 보급형 기본 모델에 색온도 조절 조명(Warm light)과 방수 기능이 여전히 빠져 있는 점에 대해서는 아쉬움을 표하는 목소리가 높았습니다. 과거 명기였던 킨들 보이지(Kindle Voyage)의 햅틱 페이지 넘김 센서를 그리워하며 최신 라인업과 비교하는 의견도 오갔습니다.",
+   "warnings": "수치(업보트 140·댓글 2)는 수집 시점 참고치. 수집된 2개 댓글 전수 수집 완료.",
+   "comments": [
+    {
+     "author": "Zac Zuo",
+     "is_maker": false,
+     "text": "Hi everyone!  \n  \nThis is the new 6-inch Kindle for 2026. It is smaller and lighter, opens books 30% faster, and finally gets a flush-front screen. There is also a 32GB aluminum version for the first time.  \n  \nAmazon [refreshed](https://www.aboutamazon.com/news/devices/new-kindle-lineup-2026) the Paperwhite and Colorsoft at the same time, with thinner bodies, updated displays, and more aluminum options across the lineup.  \n  \nAnd page-turn buttons are back... sort of. There is now a Bluetooth Kindle Click, plus a Page-Turn Cover with physical buttons for the Paperwhite Signature Edition and Colorsoft Signature Edition.  \n  \nThe basic Kindle still has no warm light or waterproofing.  \n  \nOh, I really miss the Voyage...",
+     "kr": "여러분 안녕하세요!  \n  \n2026년형 신형 6인치 킨들입니다. 더 작고 가벼워졌으며, 책을 여는 속도가 30% 빨라졌고, 마침내 베젤과 화면이 평평한 플러시 프론트 스크린을 갖추게 되었습니다. 또한 최초로 32GB 알루미늄 버전도 출시되었습니다.  \n  \n아마존은 페이퍼화이트와 컬러소프트도 동시에 리프레시하여 더 얇아진 바디와 업그레이드된 디스플레이, 그리고 전 라인업에 걸쳐 더 많은 알루미늄 옵션을 제공합니다.  \n  \n그리고 페이지 넘김 버튼이 돌아왔습니다... 일종의 복귀인 셈이죠. 이제 블루투스 킨들 클릭(Kindle Click)이 출시되었으며, 페이퍼화이트 시그니처 에디션과 컬러소프트 시그니처 에디션용 물리 버튼 탑재 페이지 턴 커버도 함께 나왔습니다.  \n  \n기본 킨들에는 여전히 따뜻한 색온도 조절 조명이나 방수 기능이 없습니다.  \n  \n아, 예전의 킨들 보이지(Voyage)가 정말 그립네요..."
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "no warm light on the base model in 2026 is a strange corner to still be cutting, that's such a cheap component relative to everything else they upgraded. the separate Bluetooth Click accessory is a clever workaround for page-turn buttons though, since it doesn't force everyone to pay for the Signature Edition cover just to get a physical button back. still holding onto my Voyage too, the haptic zones were genuinely better than anything since.",
+     "kr": "2026년에 나온 기본 모델에 따뜻한 조명(warm light)이 여전히 빠져 있다는 건 참 의아한 원가 절감이네요. 다른 모든 업그레이드 요소에 비하면 정말 저렴한 부품인데 말이죠. 다만 별도의 블루투스 클릭(Click) 액세서리는 페이지 넘김 버튼에 대한 영리한 우회책입니다. 단지 물리 버튼을 되찾기 위해 모든 사람이 값비싼 시그니처 에디션 커버를 강제로 사지 않아도 되니까요. 저 역시 여전히 보이지(Voyage)를 간직하고 있는데, 햅틱 터치 영역은 그 이후 나온 그 어떤 방식보다도 진정으로 뛰어났습니다."
+    }
+   ],
+   "slug": "kindle-2026",
+   "website": "https://www.amazon.com/kindle/"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>

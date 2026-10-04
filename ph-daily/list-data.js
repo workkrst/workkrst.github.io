@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-04",
+    "url": "2026-10-04/",
+    "top_product": "ZooWork",
+    "count": 5,
+    "upvotes_total": 981,
+    "comments_total": 40
+  },
+  {
     "date": "2026-10-03",
     "url": "2026-10-03/",
     "top_product": "Gauth Unlimited Digital Canvas",
