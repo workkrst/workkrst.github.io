@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-05",
+    "url": "2026-10-05/",
+    "top_product": "CoreSpeed",
+    "count": 5,
+    "upvotes_total": 1071,
+    "comments_total": 44
+  },
+  {
     "date": "2026-10-04",
     "url": "2026-10-04/",
     "top_product": "ZooWork",

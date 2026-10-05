@@ -1,0 +1,730 @@
+{
+ "date": "2026-10-05",
+ "collected_at": "2026-10-05 12:30 KST",
+ "summary": "오늘 차트는 MCP(Model Context Protocol) 기반 에이전트 인프라와 헬프센터 연동 도구, 구글의 프론티어 AI 모델이 상위권을 주도한 가운데, 로컬 비디오 검색과 데모 영상 녹화 등 실무 작업용 미디어 도구가 뒤를 이었습니다. 커뮤니티 댓글에서는 에이전트의 쓰기 작업 사전 승인(Smart Approval)과 초안 기반 권한 제어처럼 자율 실행 환경에서의 통제권 확보, 그리고 긴 작업 세션에서의 컨텍스트 일관성 유지가 공통 핵심 논점으로 떠올랐습니다. 더불어 외부 전송 없는 Mac 로컬 온디바이스 처리와 합리적인 일회성 결제 모델처럼 데이터 프라이버시와 예측 가능한 비용 구조를 갖춘 소프트웨어에 대한 호평도 두드러졌습니다.",
+ "notable": [
+  {
+   "slug": "corespeed",
+   "why": "다양한 AI 에이전트에 필요한 앱 연동, 공유 메모리, 도구 레이어를 단일 MCP 엔드포인트로 통합한 운영체제 성격의 플랫폼이라는 점에서 최다 추천을 받았습니다. 댓글에서는 다중 계정 분기 처리와 더불어 쓰기 작업 시 신뢰도 점수를 기반으로 사람의 개입 여부를 판단하는 스마트 승인(Smart Approval)의 안전성에 높은 관심과 질의가 집중되었습니다."
+  },
+  {
+   "slug": "gemini-4-argon",
+   "why": "최대 100만 출력 토큰과 사이버 보안 방어 역량을 갖추고 장시간 지속되는 복잡한 전문 작업을 겨냥한 구글의 차세대 프론티어 모델로 큰 주목을 받았습니다. 댓글에서는 단순한 출력 토큰 한계치보다 긴 호흡의 세션에서 이전 맥락과 결정을 잊지 않는 일관성 유지 역량과 긴 작업 도중 경로 이탈을 방지할 진행 모니터링 기능의 필요성에 대해 심도 있는 토론이 이어졌습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "CoreSpeed",
+   "tagline_en": "One MCP for everything your agents need: apps, memory, tools",
+   "tagline_kr": "에이전트에 필요한 앱, 메모리, 도구를 하나로 통합한 올인원 MCP 플랫폼",
+   "image": "https://ph-files.imgix.net/7edf1ae6-26f4-46ae-9652-9da8e4fb0cb0.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Unified API",
+    "AI Infrastructure Tools",
+    "Productivity",
+    "Marketing",
+    "Developer Tools"
+   ],
+   "upvotes": 291,
+   "comments_count": 60,
+   "maker": "Milton Yan(@miltonheyan), Spencer Zhao(@spencer_zhao), Benji(@benjihuang), Justin Jincaid(@justin2025), Hanzhi Zhang(@hanzhizhang0405)",
+   "price_model": "무료 체험 및 종량제 (Free / Pay-as-you-go)",
+   "price_detail": "기본적인 에이전트 연동 기능은 무료로 제공되며, 웹 검색·소셜 리서치·미디어 생성 등의 도구 레이어는 별도 API 키나 구독 없이 CoreSpeed를 통한 종량제(Pay-as-you-go)로 이용할 수 있습니다. 런칭 기념 30% 할인 혜택을 제공합니다.",
+   "desc_kr": "CoreSpeed는 Claude Code, Codex, Cursor 등 다양한 MCP(Model Context Protocol) 기반 AI 에이전트를 위한 운영체제(OS) 성격의 플랫폼입니다. 한 번의 앱 연결로 개인 및 기업용 다중 계정과 팀 공유 또는 비공개 메모리를 모든 에이전트에서 그대로 활용할 수 있습니다. 별도의 API 키나 프로바이더 구독 없이 웹 검색, 소셜 리서치, 이미지·오디오·비디오 생성 도구를 종량제로 통합 이용할 수 있는 환경을 제공합니다. 앱 자격 증명(크리덴셜)은 에이전트에 직접 노출되지 않고 CoreSpeed가 안전하게 보관하며, 예산 한도 설정과 활동 로그, 자연어 규칙 기반의 스마트 승인(Smart Approval)을 통해 에이전트의 예기치 않은 동작을 통제합니다. 향후 에이전트 드라이브, 메일, 결제, 샌드박스 등의 추가 기능이 단일 MCP 엔드포인트를 통해 지원될 예정입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/corespeed",
+   "comment_summary": "댓글에서는 Slack·Discord 등 협업 툴과의 직접 연동 여부, 복수 계정 사용 시 게시 계정 선택 방식, 그리고 스마트 승인(Smart Approval)의 사람 개입 판단 기준에 대해 많은 질문이 이어졌습니다. 메이커 측은 Slack/Discord 커넥터가 이미 지원되며 자연어 프롬프트나 명시적 선택을 통해 계정을 지정할 수 있고 모호할 경우 임의 판단 대신 사용자에게 확인을 요청한다고 답변했습니다. 또한 환불이나 중요 쓰기 작업에 대한 신뢰도 점수 기반의 스마트 승인 워크플로우 영상과 블로그를 공유하며 에이전트 제어의 안전성을 강조했습니다.",
+   "warnings": "수치(업보트 291·댓글 60)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Milton Yan",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋 We're the founding team of CoreSpeed.\n\nWe kept hitting the same wall: our agents were capable, but getting them to do real work meant wiring up integrations, managing credentials, and rebuilding context. After rebuilding that foundation across three products, we realized the foundation itself was the product.\n\nSo we're building CoreSpeed, an operating system for agents. Set it up once, and every MCP agent you sign in, whether Claude Code, Codex, Cursor or your own, works from the same setup:\n\n- Your connected apps, with multiple accounts per app, like personal and company accounts on X\n\n- Saved memory, shared with your team or kept private\n\n- Built-in web search, social research, and image, audio and video generation. Think of this layer as OpenRouter for agent tools: no separate API keys or provider subscriptions. Just pay as you go through CoreSpeed.\n\n- App credentials held by CoreSpeed, never handed to your agents\n\n- Budgets, activity logs and Smart Approval (beta), where you write in plain English which actions need your OK first\n\nPlanned, not live yet: Agent Drive, Mail, Pay, sandboxes, and more.\n\nEverything your agents need, through one MCP endpoint. Give this to your agent to start for free:\n\nset up https://corespeed.io/SKILL.md",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋 저희는 CoreSpeed 창업 팀입니다.\n\n저희는 끊임없이 동일한 난관에 부딪혔습니다. 에이전트 자체의 성능은 뛰어났지만, 실제 업무를 수행하게 만들려면 연동을 설정하고, 자격 증명을 관리하고, 컨텍스트를 매번 다시 구성해야 했습니다. 세 가지 제품에 걸쳐 그 기초 작업을 반복해서 구축하다 보니, 그 기반 자체가 바로 제품이라는 사실을 깨달았습니다.\n\n그래서 저희는 에이전트를 위한 운영체제인 CoreSpeed를 만들고 있습니다. 한 번만 설정해 두면 Claude Code, Codex, Cursor 또는 자체 에이전트 등 로그인하는 모든 MCP 에이전트가 동일한 환경에서 동작합니다:\n\n- 앱당 여러 계정(예: X의 개인 계정 및 회사 계정)을 지원하는 연결된 앱\n\n- 팀과 공유하거나 비공개로 유지할 수 있는 저장된 메모리\n\n- 웹 검색, 소셜 리서치, 이미지·오디오·비디오 생성 기능 내장. 이 레이어를 에이전트 도구를 위한 OpenRouter라고 생각하시면 됩니다. 별도의 API 키나 프로바이더 구독 없이 CoreSpeed를 통해 종량제로 이용하세요.\n\n- CoreSpeed가 안전하게 보관하며 에이전트에는 절대 직접 전달되지 않는 앱 자격 증명\n\n- 어떤 작업에 사전 승인이 필요한지 일상적인 영어로 규칙을 작성하는 예산, 활동 로그 및 스마트 승인(베타)\n\n출시 예정(현재 미지원): Agent Drive, Mail, Pay, 샌드박스 등.\n\n단 하나의 MCP 엔드포인트를 통해 에이전트에 필요한 모든 것을 제공합니다. 에이전트에게 전달하여 무료로 시작해 보세요:\n\nset up https://corespeed.io/SKILL.md"
+    },
+    {
+     "author": "Priya K",
+     "is_maker": false,
+     "text": "@miltonheyan Really cool, is there any plans to add direct integration with Slack or Discord in the future?",
+     "kr": "@miltonheyan 정말 멋지네요. 향후 Slack이나 Discord와 직접 연동할 계획도 있으신가요?"
+    },
+    {
+     "author": "Spencer Zhao",
+     "is_maker": true,
+     "text": "@miltonheyan  @priya_kushwaha1 Thanks, Priya! Slack and Discord are already available as connectors. You can connect them once in CoreSpeed and use them from your MCP agent.",
+     "kr": "@miltonheyan @priya_kushwaha1 감사합니다, Priya 님! Slack과 Discord는 이미 커넥터로 제공되고 있습니다. CoreSpeed에서 한 번만 연결하면 MCP 에이전트에서 바로 사용하실 수 있습니다."
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "@miltonheyan How does smart Approval decide which actions need human confirmation ?",
+     "kr": "@miltonheyan 스마트 승인(Smart Approval)은 어떤 작업에 사람의 확인이 필요한지 어떻게 판단하나요?"
+    },
+    {
+     "author": "Milton Yan",
+     "is_maker": true,
+     "text": "@dipanshu_kushwaha5 Hi Dipanshu, thanks for comment! Smart Approval checks write actions against rules you set in plain language. If approval is required—or it’s unsure how a rule applies—it pauses and asks you rather than guessing. (Jev evaluates the tool call and your rules, it uses a confidence score. If confidence score falls below the configured threshold, it asks for human confirmation instead of guessing).\n\nMore on how it works: https://corespeed.io/blog/introducing-smart-approval",
+     "kr": "@dipanshu_kushwaha5 안녕하세요 Dipanshu 님, 댓글 감사합니다! 스마트 승인은 일상 언어로 설정하신 규칙에 따라 쓰기(write) 작업을 검사합니다. 승인이 필요하거나 규칙 적용 여부가 불확실한 경우, 임의로 추측하지 않고 일시 정지하여 사용자에게 확인을 요청합니다. (도구 호출과 설정 규칙을 평가할 때 신뢰도 점수를 활용하며, 신뢰도 점수가 설정된 임계값 아래로 떨어지면 추측 대신 사람의 확인을 요청합니다).\n\n자세한 작동 방식: https://corespeed.io/blog/introducing-smart-approval"
+    },
+    {
+     "author": "Benji",
+     "is_maker": true,
+     "text": "@miltonheyan  @dipanshu_kushwaha5 Hi Dipanshu, for example, if you are dealing with a customer complaint involves a small refund, your agents handle the ticket and make a refund without human in the loop when it stays in the \"smart approval\" zone, when a larger amount gated by smart approval rules.  \n  \nCheckout our Smart Approval video here: https://youtu.be/-MOXwSdUSbE?si=PB-PCLYS1KhLjZND",
+     "kr": "@miltonheyan @dipanshu_kushwaha5 안녕하세요 Dipanshu 님, 예를 들어 소액 환불이 포함된 고객 문의를 처리할 때 스마트 승인 범위 내에 있다면 사람이 개입하지 않고 에이전트가 티켓을 처리하고 환불을 진행하지만, 더 큰 금액인 경우에는 스마트 승인 규칙에 의해 승인 절차를 거치게 됩니다.\n\n스마트 승인 시연 영상은 여기서 확인하실 수 있습니다: https://youtu.be/-MOXwSdUSbE?si=PB-PCLYS1KhLjZND"
+    },
+    {
+     "author": "Mishaal Rashid",
+     "is_maker": false,
+     "text": "@miltonheyan If I connect two X accounts, personal and company, how does the agent know which one to post from? Do I pick it each time, or can I set a default....??",
+     "kr": "@miltonheyan 개인용과 회사용으로 두 개의 X 계정을 연결한 경우, 에이전트는 어느 계정에 포스팅할지 어떻게 아나요? 매번 직접 선택해야 하나요, 아니면 기본값을 설정할 수 있나요....??"
+    },
+    {
+     "author": "Spencer Zhao",
+     "is_maker": true,
+     "text": "@miltonheyan  @mishaal_rashid You can name them “personal” and “company,” then tell your agent which one to use. If both are available and it doesn’t specify an account, CoreSpeed returns the choices rather than guessing.",
+     "kr": "@miltonheyan @mishaal_rashid 계정 이름을 '개인'과 '회사'로 지정한 다음, 에이전트에게 어느 것을 사용할지 지시하시면 됩니다. 둘 다 사용 가능하고 계정이 명시되지 않은 경우, CoreSpeed는 임의로 추측하지 않고 선택지를 반환합니다."
+    },
+    {
+     "author": "Benji",
+     "is_maker": true,
+     "text": "@miltonheyan  @mishaal_rashid Hi Mishaal, you don't have to pick each time. Just say \"post this from the company account\" and your agent knows which one you mean. If it's not clear from what you asked, it'll check with you instead of guessing.",
+     "kr": "@miltonheyan @mishaal_rashid 안녕하세요 Mishaal 님, 매번 선택하실 필요는 없습니다. 그저 '회사 계정으로 이거 올려줘'라고 말씀하시면 에이전트가 어느 계정인지 알아듣습니다. 요청 내용에서 명확하지 않은 경우에는 추측하지 않고 사용자에게 확인합니다."
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@miltonheyan Congrats on the launch! The core idea is easy to understand: connect apps once, then make them available to different coding agents.",
+     "kr": "@miltonheyan 출시를 축하드립니다! 한 번 앱을 연결하면 여러 코딩 에이전트에서 그대로 쓸 수 있다는 핵심 콘셉트가 매우 직관적이고 이해하기 쉽네요."
+    },
+    {
+     "author": "Spencer Zhao",
+     "is_maker": true,
+     "text": "@miltonheyan  @vipul_kumar1280 Thanks Vipul! Trying a new agent shouldn't mean reconnecting all your apps and starting its memory from scratch. That's what we're trying to fix with CoreSpeed.",
+     "kr": "@miltonheyan @vipul_kumar1280 감사합니다 Vipul 님! 새로운 에이전트를 써본다고 해서 모든 앱을 다시 연결하고 메모리를 처음부터 다시 구축해야 해서는 안 됩니다. CoreSpeed가 해결하고자 하는 문제가 바로 그것입니다."
+    },
+    {
+     "author": "Jeetendra Kumar",
+     "is_maker": false,
+     "text": "keeping the app credentials away from agents makes sense. if a smart approval rule is ambiguous, does the action wait for me or go through?",
+     "kr": "에이전트에게 앱 자격 증명을 직접 주지 않는 방식은 매우 합리적이네요. 만약 스마트 승인 규칙이 모호한 경우, 작업이 사용자를 기다리나요 아니면 그냥 실행되나요?"
+    }
+   ],
+   "slug": "corespeed",
+   "website": "https://corespeed.io/"
+  },
+  {
+   "name": "Gemini 4 Argon",
+   "tagline_en": "Google's frontier model for careful reasoning & complex work",
+   "tagline_kr": "심층적 추론과 복잡한 전문 작업을 위해 설계된 구글의 최첨단 AI 모델",
+   "image": "https://ph-files.imgix.net/38a34d6c-88d0-4627-b907-435823a7ccb5.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Foundation Models",
+    "Software Engineering",
+    "Legal",
+    "Finance"
+   ],
+   "upvotes": 240,
+   "comments_count": 8,
+   "maker": "Rohan Chaubey(@rohanrecommends)",
+   "price_model": "부분 무료 제공 (Free Options / 유료 API 및 Ultra 구독)",
+   "price_detail": "기본적인 무료 옵션이 제공될 예정이나, 초기 출시는 유료 API 고객 및 Google AI Ultra 구독자를 대상으로 우선 배포됩니다.",
+   "desc_kr": "Gemini 4 Argon은 장시간 지속되는 복잡한 전문 작업을 수행하기 위해 개발된 구글의 차세대 프론티어 AI 모델입니다. 고도화된 추론 능력, 소프트웨어 엔지니어링 및 코딩 역량, 멀티모달 이해력뿐만 아니라 사이버 보안 방어 역량까지 아우르는 강력한 성능을 갖추고 있습니다. 특히 최대 100만(1M) 토큰의 방대한 출력을 지원하여 단순한 일회성 질의응답을 넘어 완성도 높은 대규모 결과물과 솔루션을 생성할 수 있습니다. 소프트웨어 아키텍처 설계, 금융 및 법률 분석, 기업 단위 심층 리서치 등 높은 신뢰성이 요구되는 지식 집약적 다단계 워크플로우에 최적화되어 있습니다. 구글은 신뢰성 검증과 안전 가드레일을 단계적으로 확장하며 유료 API 및 Google AI Ultra 구독자부터 순차적으로 서비스를 제공하고 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/gemini-4-argon",
+   "comment_summary": "댓글에서는 100만 출력 토큰 지원과 장기 컨텍스트 추론 역량에 큰 관심을 보이며 실제 코딩 세션 및 벤치마크에서의 지속적 일관성 유지 여부를 주목했습니다. 긴 작업 진행 중 경로 이탈을 방지하기 위한 진행 상황 모니터링 뷰의 필요성과 타사 모델 대비 가격 및 구독 정책에 대한 토론이 이루어졌습니다. 한편 기존 모델들의 컨텍스트 손실 문제와 잦은 버전 출시에 대한 사용자 불만 섞인 피드백도 함께 제기되었습니다.",
+   "warnings": "수치(업보트 240·댓글 8)는 수집 시점 참고치. 수집된 8개의 댓글 전체를 선별 없이 수집 완료.",
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": true,
+     "text": "**Gemini 4 Argon** is Google’s frontier AI model for complex, long-horizon professional work - essentially Google planting its flag at the bleeding edge of AI capability.  \n  \nMost AI models still struggle when a task requires sustained reasoning across many steps. Gemini 4 Argon is built to handle those marathon-style workflows, not just quick Q&A.  \n  \n**How it’s different**  \n- Supports up to 1 million output tokens.  \n- Includes cybersecurity-defense capabilities.  \n- Designed for sustained, complex work rather than one-off prompts.  \n  \n**Features & benefits**  \n- Advanced reasoning and coding.  \n- Multimodal understanding.  \n- Deep research and long-form generation.  \n- Enables faster, more capable problem-solving for high-stakes work.  \n  \n**Who it’s for & use cases**  \n- Software engineering, from architecture to complex coding.  \n- Finance and legal analysis.  \n- Enterprise research and decision-making.  \n- Any team dealing with multi-step, knowledge-heavy workflows.  \n  \nThe million-token output capability is the headline here... it shifts AI from answering questions to producing and reasoning through substantial work products. Add cybersecurity defense, and this looks aimed squarely at enterprise-grade adoption.  \n  \nThe roll out is starting with paid API customers and Google AI Ultra subscribers.",
+     "kr": "**Gemini 4 Argon**은 복잡하고 긴 호흡이 필요한 전문 작업을 위한 구글의 프론티어 AI 모델로, 본질적으로 구글이 AI 역량의 최전선에 깃발을 꽂은 결과물입니다.\n\n대부분의 AI 모델은 여러 단계에 걸친 지속적인 추론이 필요한 작업에서 여전히 어려움을 겪습니다. Gemini 4 Argon은 단순한 단답형 Q&A가 아닌, 이러한 마라톤 스타일의 워크플로우를 처리하도록 설계되었습니다.\n\n**차별점**\n- 최대 100만(1M) 출력 토큰 지원\n- 사이버 보안 방어 역량 탑재\n- 일회성 프롬프트가 아닌 지속적이고 복잡한 작업을 위해 설계됨\n\n**주요 기능 및 이점**\n- 고도화된 추론 및 코딩 능력\n- 멀티모달 이해력\n- 심층 리서치 및 장문 생성 지원\n- 리스크가 큰 고난도 작업에서 더 빠르고 강력한 문제 해결 가능\n\n**대상 사용자 및 활용 사례**\n- 아키텍처 설계부터 복잡한 코딩까지 아우르는 소프트웨어 엔지니어링\n- 금융 및 법률 분석\n- 기업 단위 리서치 및 의사결정\n- 다단계 지식 집약적 워크플로우를 다루는 모든 팀\n\n100만 출력 토큰 기능이야말로 가장 핵심적인 부분입니다. AI가 질문에 답하는 수준을 넘어 실질적인 작업 결과물을 완성하고 추론할 수 있도록 패러다임을 바꿉니다. 여기에 사이버 보안 방어까지 더해져 엔터프라이즈급 도입을 정조준하고 있습니다.\n\n출시는 유료 API 고객과 Google AI Ultra 구독자를 시작으로 순차 적용됩니다."
+    },
+    {
+     "author": "Amanda Ornellas Gutierres",
+     "is_maker": false,
+     "text": "@rohanrecommends Would be useful to see a progress view during long tasks, so I can check where it is and stop it early if it goes the wrong way",
+     "kr": "@rohanrecommends 긴 작업을 진행하는 동안 진행 상황을 볼 수 있는 프로그레스 뷰가 있다면, 어디까지 진행되었는지 확인하고 잘못된 방향으로 갈 때 일찍 중단할 수 있어서 유용할 것 같습니다."
+    },
+    {
+     "author": "André J",
+     "is_maker": false,
+     "text": "Game on! 1/2 price of fable. better than astra. Full breakdown: https://pub.towardsai.net/gpt-6-astra-vs-gemini-4-argon-vs-claude-fable-5-1-the-benchmark-winner-is-the-one-you-cant-buy-e40c8edf471b ... I wonder if there is a subscription tied to argon tho, like do we subscribe to anti matter max 20x usage for $200 a month Or? thats the real benefit of claude and chagpt. The rebated subscriptions. Right?",
+     "kr": "제대로 붙었네요! Fable의 절반 가격에 Astra보다 뛰어납니다. 상세 분석: https://pub.towardsai.net/gpt-6-astra-vs-gemini-4-argon-vs-claude-fable-5-1-the-benchmark-winner-is-the-one-you-cant-buy-e40c8edf471b ... 다만 Argon과 연계된 구독 모델이 있는지 궁금하네요. 월 200달러에 20배 사용량을 제공하는 구독제 같은 것이 있을까요? 그것이 Claude와 ChatGPT의 진정한 혜택이자 할인 구독 모델이니까요, 맞죠?"
+    },
+    {
+     "author": "Ilyas",
+     "is_maker": false,
+     "text": "It’s thrilling to live in this era. We’re so lucky.\n\nHave you tried the model for vibe coding? How does it compare to other models?",
+     "kr": "이런 시대에 살고 있다는 것이 정말 짜릿하네요. 저희는 정말 운이 좋습니다.\n\n이 모델로 바이브 코딩(vibe coding)을 해보셨나요? 다른 모델들과 비교하면 어떤가요?"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "looks interesting for complex work especially the long context and reasoning side is what stands out to me",
+     "kr": "복잡한 작업에 매우 흥미로워 보이네요. 특히 긴 컨텍스트와 추론 능력이 가장 눈에 띕니다."
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "the 1M output token number gets all the attention but I'd rather see the degradation curve than the ceiling - every long-context model I've used stays sharp for the first chunk and then starts quietly repeating itself or losing track of earlier constraints well before it hits the stated limit. I use Claude Code daily for exactly this kind of long-horizon work and the thing that actually predicts whether a session goes well isn't the max tokens, it's whether the model still remembers a decision from 40 steps ago without me re-stating it. curious if anyone's tested Argon specifically for that kind of mid-session consistency rather than just raw length",
+     "kr": "100만 출력 토큰이라는 숫자가 모든 주목을 받고 있지만, 저는 상한선보다는 성능 저하 곡선(degradation curve)을 확인하고 싶습니다. 제가 사용해 본 모든 긴 컨텍스트 모델은 초반부에는 예리함을 유지하다가 명시된 한계에 도달하기 훨씬 전부터 슬그머니 말을 반복하거나 이전 제약 조건을 잊어버리곤 했습니다. 저는 바로 이런 긴 호흡의 작업을 위해 Claude Code를 매일 사용하는데, 세션이 성공적인지 예측하는 핵심은 최대 토큰 수가 아니라 사용자가 다시 언급하지 않아도 40단계 전의 결정을 여전히 기억하고 있는지 여부입니다. 단순한 길이 측정 외에 세션 중간의 일관성에 대해 Argon을 테스트해 보신 분이 계신지 궁금합니다."
+    },
+    {
+     "author": "Aman Rajput",
+     "is_maker": false,
+     "text": "Your previous models don’t even work properly, and you’re already rushing to launch new ones. I’ve paid ₹20,000 for this, yet the model can’t even properly follow up on its own conversation history. It loses context, fails to continue tasks properly, and often can’t even generate what I ask for. If the existing models aren’t capable of delivering a reliable experience, then why are you charging people this much money? Refund my money instead of continuously launching new versions just to collect comments, praise, and hype. Fix the actual problems with your existing products first. New versions mean nothing if the basic experience still doesn’t work. scammers ..",
+     "kr": "이전 모델들도 제대로 작동하지 않는데 벌써 새로운 모델을 성급하게 출시하고 있군요. 저는 이에 20,000루피나 지불했지만, 이 모델은 자신의 대화 기록조차 제대로 이어가지 못합니다. 맥락을 잃어버리고 작업을 제대로 이어가지 못하며, 요구한 내용을 생성조차 못할 때가 많습니다. 기존 모델이 안정적인 경험을 제공하지 못한다면 왜 사람들에게 이렇게 많은 돈을 청구하는 건가요? 댓글, 칭찬, 입소문만 노리고 끊임없이 새 버전을 출시하지 말고 제 돈을 환불해 주십시오. 기존 제품의 실제 문제부터 먼저 해결하세요. 기본적인 경험이 작동하지 않는다면 새 버전은 아무 의미도 없습니다. 사기꾼들 같으니라고.."
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Support for up to a million output tokens is the detail that stands out, since long horizon work usually breaks down once the context gets big enough. Combining reasoning with cybersecurity defense for enterprise research is an interesting framing. Curious how it holds up on multi step coding tasks over a long session.",
+     "kr": "컨텍스트가 충분히 커지면 긴 호흡의 작업이 무너지기 쉬운데, 최대 100만 출력 토큰을 지원한다는 점이 단연 돋보입니다. 추론과 사이버 보안 방어를 결합하여 기업 리서치에 적용한 구도도 흥미롭습니다. 장시간 세션에 걸친 다단계 코딩 작업에서 얼마나 잘 버텨줄지 궁금하네요."
+    }
+   ],
+   "slug": "gemini-4-argon",
+   "website": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+  },
+  {
+   "name": "Smooth Recorder",
+   "tagline_en": "Mac screen recordings that look edited when you hit stop",
+   "tagline_kr": "녹화를 멈추는 즉시 전문가가 편집한 듯한 영상을 완성해 주는 Mac 화면 녹화 앱",
+   "image": "https://ph-files.imgix.net/7c901896-c2d5-4e1a-bbf6-2d5b68ba40e0.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Screenshots and screen recording apps",
+    "Product demo",
+    "Mac",
+    "Design Tools",
+    "Video"
+   ],
+   "upvotes": 211,
+   "comments_count": 18,
+   "maker": "Mohd Anas(@mdanassaif), Aleksandar Blazhev(@byalexai)",
+   "price_model": "유료 일회성 구매 (One-time $9 / 평생 소장)",
+   "price_detail": "얼리 액세스 기준 1회 9달러 일회성 결제로 평생 이용할 수 있으며, 구독 요금제나 계정 가입 없이 즉시 사용 가능합니다.",
+   "desc_kr": "Smooth Recorder는 제품 데모와 튜토리얼 제작을 위해 개발된 macOS 네이티브 화면 녹화 및 스크린샷 캡처 애플리케이션입니다. 클릭 위치에 맞춘 자동 줌(Auto Zoom)과 흔들림 없는 커서 스무딩, 3D 틸트 앵글 효과를 지원하여 녹화를 종료하는 즉시 편집이 완료된 고품질 영상을 제공합니다. 모든 자막 생성과 OCR, 스마트 가림(Smart Redact) 처리가 Mac 로컬 기기 내에서 처리되어 데이터가 외부로 전송되지 않는 높은 프라이버시를 보장합니다. 음성 녹취록에서 텍스트를 삭제하는 것만으로 손쉽게 불필요한 영상을 잘라내는 트랜스크립트 기반 편집 기능을 제공합니다. 단축키(⌥1)를 통한 즉각적인 스크린샷 캡처와 76종의 세련된 배경 월페이퍼 및 그림자 효과를 기본 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/smooth-recorder",
+   "comment_summary": "댓글에서는 9달러라는 합리적인 일회성 가격 정책과 더불어 보이스오버(마이크 녹음) 지원 여부, 억양에 따른 온디바이스 자막 인식률 및 모델 다운로드 방식에 대한 문의가 있었습니다. 메이커는 보이스오버가 이미 지원되며 첫 실행 시 Apple 음성 모델을 다운로드받아 로컬 오프라인으로 안정적으로 동작하고 필요시 텍스트 클릭으로 손쉽게 수정 가능하다고 설명했습니다. 또한 이메일·API 키를 자동으로 블러 처리해 주는 스마트 가림 기능에 대한 호평과 향후 Windows 지원 계획에 대한 긍정적인 기대감이 나타났습니다.",
+   "warnings": "수치(업보트 211·댓글 18)는 수집 시점 참고치. 수집된 1페이지 댓글 11개를 선별 없이 수집 완료.",
+   "comments": [
+    {
+     "author": "Mohd Anas",
+     "is_maker": true,
+     "text": "👋 Hey Product Hunt! I'm Anas. I made Smooth Recorder because every time I recorded a product demo, recording was the easy part. The editing took an hour: zooming into clicks, hiding a shaky cursor, adding captions, and putting it on a background so it didn't look like a raw screen recording. So I built an app that does all of that for you. ✨ Features: • Auto Zoom – Zooms where you click and follows your cursor, so viewers can easily follow along. • 3D Angles (new in v1.1) – Adds a subtle tilt during zooms for a more cinematic look. • Smooth Cursor, Camera Bubble & Captions – Captions are generated on your Mac, and you can edit your video by simply deleting words from the transcript. • Beautiful Screenshots – Press ⌥1, select an area, and it instantly lands on a wallpaper with a shadow, ready to share. Includes 76 wallpapers. It's a native macOS app (built with SwiftUI, not a web app in a window). 💰 Early access: $9 one-time. ❌ No subscription. ❌ No account required. I'd love to hear what you record with it and what features you'd like to see next. I read every reply. ❤️",
+     "kr": "👋 Product Hunt 여러분 안녕하세요! Anas입니다. 제가 제품 데모를 녹화할 때마다 녹화 자체는 쉬웠지만, 클릭 부위 줌인, 떨리는 커서 보정, 자막 추가, 날것의 화면 녹화처럼 보이지 않게 배경에 얹는 등의 편집 작업에만 한 시간이 걸리곤 했습니다. 그래서 이 모든 것을 자동으로 처리해 주는 앱을 만들었습니다. ✨ 주요 기능: • 오토 줌(Auto Zoom) – 클릭한 위치를 확대하고 커서를 따라가므로 시청자가 쉽게 따라올 수 있습니다. • 3D 앵글 (v1.1 신기능) – 줌 인 시 미세한 기울기를 추가하여 한층 영화 같은 연출을 제공합니다. • 부드러운 커서, 카메라 버블 및 자막 – 자막이 Mac 기기 내에서 로컬로 생성되며, 녹취록에서 단어를 삭제하는 것만으로 영상을 편집할 수 있습니다. • 아름다운 스크린샷 – ⌥1을 누르고 영역을 지정하면 그림자가 적용된 월페이퍼 위에 즉시 배치되어 바로 공유할 수 있습니다. 76종의 월페이퍼가 포함되어 있습니다. SwiftUI로 제작된 네이티브 macOS 앱입니다(웹 앱 래퍼가 아닙니다). 💰 얼리 액세스: 9달러 일회성 결제. ❌ 구독 요금제 없음. ❌ 계정 가입 불필요. 어떤 영상을 녹화하셨는지, 다음에 추가되었으면 하는 기능은 무엇인지 듣고 싶습니다. 모든 답글을 직접 읽고 있습니다. ❤️"
+    },
+    {
+     "author": "Aleksandar Blazhev",
+     "is_maker": true,
+     "text": "Excited to hunt Smooth Recorder today.\n\nLately, I’ve been making more tutorials, so I’ve tried quite a few screen recording tools on Mac, including Screen Studio. Smooth Recorder genuinely holds its own against them and in a few areas, I actually prefer it.\n\nWhat stands out:\n\n• **Automatic zooms + smooth cursor**: Recordings already look edited when you hit stop.  \n• **Transcript editing**: Edit the video by editing the text, and remove filler words or long pauses in one click.  \n• **More than video:** Screenshots, scrolling captures, GIFs, text extraction, and smart redaction are all built in.  \n• **Native + private**: It’s a real macOS app, and captions, OCR, and redaction all happen locally on your Mac.\n\nA seriously polished tool for anyone creating demos, tutorials, or product content on Mac.",
+     "kr": "오늘 Smooth Recorder를 헌트(Hunt)하여 선보이게 되어 매우 기쁩니다.\n\n최근 튜토리얼을 많이 제작하면서 Screen Studio를 비롯해 Mac용 화면 녹화 도구들을 꽤 많이 사용해 보았습니다. Smooth Recorder는 기존 도구들과 비교해도 전혀 뒤지지 않으며, 몇몇 영역에서는 오히려 더 선호할 정도입니다.\n\n돋보이는 점:\n\n• **자동 줌 + 부드러운 커서**: 녹화를 마치는 순간 이미 편집이 끝난 것처럼 보입니다.\n• **녹취록 기반 편집**: 텍스트를 수정하여 영상을 편집하고, 추임새나 긴 공백을 원클릭으로 제거합니다.\n• **영상 그 이상의 기능:** 스크린샷, 스크롤 캡처, GIF, 텍스트 추출, 스마트 가림 기능이 모두 내장되어 있습니다.\n• **네이티브 & 프라이버시**: 진정한 macOS 앱으로 자막, OCR, 정보 가림 처리가 모두 Mac 로컬에서 이루어집니다.\n\nMac에서 데모, 튜토리얼 또는 제품 콘텐츠를 제작하는 모든 분께 진심으로 완성도 높은 도구입니다."
+    },
+    {
+     "author": "Marios",
+     "is_maker": false,
+     "text": "Congrats.. very nice for amazing price .. is it possible to add voice over ?",
+     "kr": "축하합니다.. 놀라운 가격에 정말 멋지네요.. 혹시 보이스오버(음성 더빙) 추가도 가능한가요?"
+    },
+    {
+     "author": "Mohd Anas",
+     "is_maker": true,
+     "text": "@dessignnet  \n  \nWell Marios, Voice-over is already in: when you pick an area to record, click the mic chip on the bar under it and choose your microphone.  \n  \n_Thanks a lot : )_",
+     "kr": "@dessignnet  \n  \nMarios 님, 보이스오버는 이미 들어가 있습니다. 녹화할 영역을 선택할 때 하단 바에 있는 마이크 칩을 클릭하고 마이크를 선택하시면 됩니다.  \n  \n_대단히 감사합니다 : )_"
+    },
+    {
+     "author": "Sagar Deore",
+     "is_maker": false,
+     "text": "How do the on device captions hold up on a long recording with an accent, say Indian English? Does it need a model download first?",
+     "kr": "인도식 영어 같은 억양이 있는 긴 녹화에서 온디바이스 자막 성능은 어떤가요? 먼저 모델을 다운로드해야 하나요?"
+    },
+    {
+     "author": "Mohd Anas",
+     "is_maker": true,
+     "text": "@sagar_deore Hey Sagar,  \n  \nCaptions run on your Mac, nothing gets uploaded. On macOS 26, the first time you make captions it downloads Apple's speech model by itself, and after that it works offline.  \n  \nIt goes by your Mac's language and region, so set  your Mac to English (India) to get the Indian English model, which does better with the accent.  \n  \nLong recordings are fine. If a word comes out wrong, you can just click the caption and fix it.  \n  \nThanks a lot.",
+     "kr": "@sagar_deore 안녕하세요 Sagar 님,  \n  \n자막은 Mac에서 직접 구동되며 외부로 업로드되는 것은 없습니다. macOS 26에서는 처음 자막을 생성할 때 Apple의 음성 모델을 자체적으로 다운로드하며, 그 이후에는 오프라인으로 작동합니다.  \n  \nMac의 언어 및 지역 설정을 따르므로, Mac을 영어(인도)로 설정하시면 해당 억양에 더 잘 맞는 인도식 영어 모델을 받아옵니다.  \n  \n긴 녹화도 문제없습니다. 단어가 잘못 표기된 경우 자막을 클릭하여 바로 수정하실 수 있습니다.  \n  \n대단히 감사합니다."
+    },
+    {
+     "author": "Justin Rockmore",
+     "is_maker": false,
+     "text": "Auto zoom following clicks is right until it lands on a click that didn't matter, and then you're back in the timeline anyway. Can a zoom be moved after the fact?  \n  \nHow does this compare to CleanShot Pro?",
+     "kr": "클릭을 따라가는 자동 줌은 좋지만, 중요하지 않은 클릭까지 확대되면 결국 다시 타임라인에서 손을 대야 하는데요. 사후에 줌 위치를 이동할 수 있나요?  \n  \nCleanShot Pro와 비교하면 어떤가요?"
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "Any plans to include Windows and cover a bigger market? :)",
+     "kr": "더 큰 시장을 공략하기 위해 Windows 버전을 추가할 계획도 있으신가요? :)"
+    },
+    {
+     "author": "Mohd Anas",
+     "is_maker": true,
+     "text": "@busmark_w_nika Thanks Nika. Yes, Windows is on the roadmap : )  \n  \nFor now I am focused on making the Mac version great. I'll share it here when it's ready.",
+     "kr": "@busmark_w_nika Nika 님 감사합니다. 네, Windows도 로드맵에 있습니다 : )  \n  \n지금은 Mac 버전을 훌륭하게 완성하는 데 집중하고 있습니다. 준비되는 대로 이곳에 공유하겠습니다."
+    },
+    {
+     "author": "Rakesh",
+     "is_maker": false,
+     "text": "Great job with this @mdanassaif ! I love the auto detection and blurring of sensitive details feature.",
+     "kr": "@mdanassaif 정말 멋진 결과물이네요! 민감한 세부 정보를 자동으로 감지해서 블러 처리해 주는 기능이 아주 마음에 듭니다."
+    },
+    {
+     "author": "Mohd Anas",
+     "is_maker": true,
+     "text": "@itsrakesh Thanks Rakesh : )  \n  \nGlad you like Smart Redact. No more blurring emails and API keys by hand before sharing a screenshot.",
+     "kr": "@itsrakesh Rakesh 님 감사합니다 : )  \n  \n스마트 가림(Smart Redact) 기능을 마음에 들어 해 주셔서 기쁩니다. 이제 스크린샷을 공유하기 전에 이메일이나 API 키를 일일이 손으로 가릴 필요가 없습니다."
+    }
+   ],
+   "slug": "smooth-recorder",
+   "website": "https://smoothrecorder.com/"
+  },
+  {
+   "name": "Blume 2.0",
+   "tagline_en": "Ctrl+F for raw video. Search Drive without downloading.",
+   "tagline_kr": "다운로드 없이 Google Drive 내 대용량 원본 영상을 키워드로 즉시 검색하는 Ctrl+F 도구",
+   "image": "https://ph-files.imgix.net/ead776aa-1165-4785-8c9a-b9385319d8da.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "AI Workflow Automation",
+    "Artificial Intelligence",
+    "Marketing automation",
+    "Video"
+   ],
+   "upvotes": 182,
+   "comments_count": 6,
+   "maker": "Anuj S(@anuj_siddhpura)",
+   "price_model": "유료 (크레딧 기반) (Payment Required / Credit-based)",
+   "price_detail": "기본 유료 결제가 필요한 크레딧 기반 모델이며, Product Hunt 런칭 기념으로 피드백을 제공하는 사용자에게 100회의 무료 검색 크레딧을 제공합니다.",
+   "desc_kr": "Blume은 클라우드 드라이브에 저장된 대용량 원본 비디오를 단 1바이트도 다운로드하지 않고 내부 내용을 검색할 수 있는 비디오 전용 검색 서비스(Search-as-a-service)입니다. Google Drive 링크를 붙여넣은 뒤 발화된 음성 키워드나 시각적 객체를 입력하면 AI가 해당 장면의 정확한 타임스탬프를 즉시 찾아줍니다. 수십 기가바이트에 달하는 방대한 촬영본을 매번 다운로드하고 타임라인을 일일이 훑어봐야 했던 영상 편집자와 에이전시의 번거로운 작업 병목을 해결합니다. 백엔드 개발 지식 없이 AI 에이전트 도구를 활용한 '바이브 코딩'으로 개발되었으며, 클라우드 영상 파일을 마치 로컬 텍스트 문서처럼 빠르고 직관적으로 검색할 수 있습니다. 수천 개의 영상을 다루는 편집자가 다운로드 부담 없이 원하는 B-roll이나 사운드바이트를 즉시 발굴할 수 있도록 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/blume-2",
+   "comment_summary": "메이커는 50GB에 달하는 영상 다운로드 병목을 해결하기 위해 개발한 배경을 소개하며, 시각 및 오디오 기반 타임스탬프 검색 기능과 100회 무료 크레딧 제공 혜택을 안내했습니다. 제품 출시와 함께 대용량 영상 관리 시 가장 큰 고충과 추가를 원하는 클라우드 플랫폼에 대한 사용자 피드백을 요청했습니다.",
+   "warnings": "수치(업보트 182·댓글 6)는 수집 시점 참고치. 원본 마크다운 페이지에 수집된 메이커 댓글 1개만 포함됨.",
+   "comments": [
+    {
+     "author": "Anuj S",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 🚀 I built Blume because I was tired of the \"downloading tax.\" I’d often find myself downloading a 50GB folder from a client just to find one 10-second soundbite or a specific B-roll shot. It was a massive bottleneck that felt like it should have been solved years ago. As a \"vibe coder\" with 0 backend knowledge, I used agentic tools to build what I actually needed: a way to search inside my cloud files as if they were local text documents. Why try Blume? No Downloads: Search raw footage directly in Google Drive. Visual + Audio: Search for \"red coffee mug\" or \"revenue growth\" and get the exact timestamp. Speed: It's built for editors who handle 1000s of videos and don't have time to scrub. I’m giving away 100 free search credits to everyone from PH today to help me stress-test the bot. I’d love your brutal feedback—what features should I add next?",
+     "kr": "Product Hunt 여러분 안녕하세요! 🚀 저는 '다운로드 세금(비효율)'에 지쳐 Blume을 만들었습니다. 클라이언트로부터 10초짜리 사운드바이트나 특정 B-roll 컷 하나를 찾기 위해 50GB 폴더를 통째로 다운로드해야 하는 경우가 허다했습니다. 몇 년 전에 이미 해결되었어야 할 거대한 병목 현상이었습니다. 백엔드 지식이 전혀 없는 '바이브 코더(vibe coder)'로서, 저는 에이전트 도구를 활용해 제게 실제로 필요했던 것, 즉 클라우드 파일을 로컬 텍스트 문서처럼 검색할 수 있는 방법을 구축했습니다. 왜 Blume을 써봐야 할까요? 무다운로드: Google Drive 내의 원본 푸티지를 직접 검색합니다. 시각 + 오디오: '빨간 커피 머그'나 '매출 성장'을 검색하면 정확한 타임스탬프를 반환합니다. 속도: 수천 개의 비디오를 다루며 타임라인을 일일이 넘겨볼 시간이 없는 편집자들을 위해 제작되었습니다. 오늘 봇 스트레스 테스트를 돕기 위해 PH 유저 모든 분께 100회의 무료 검색 크레딧을 드립니다. 가감 없는 피드백 부탁드립니다. 다음에 어떤 기능을 추가하면 좋을까요?"
+    }
+   ],
+   "slug": "blume-3",
+   "website": "https://search.buildwithblume.com/"
+  },
+  {
+   "name": "DocsAlot MCP Connector",
+   "tagline_en": "Maintain your help-center by asking Claude, Cursor or Codex",
+   "tagline_kr": "Claude, Cursor, Codex 등 MCP 클라이언트에서 자연어로 헬프센터 문서를 바로 유지보수하는 도구",
+   "image": "https://ph-files.imgix.net/54d33972-3eb4-4aba-bb60-3ccac620d569.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Knowledge base software",
+    "API",
+    "Writing",
+    "Developer Tools"
+   ],
+   "upvotes": 147,
+   "comments_count": 34,
+   "maker": "Haya Jawed(@haya_jawed), faizan khan(@new_user_2790a57d4d)",
+   "price_model": "유료 (구독 기반 / 무료 체험 제공) (Payment Required / Freemium)",
+   "price_detail": "기본적인 문서 조회 및 체험 기능 외에 MCP 커넥터를 통한 지식 베이스 실시간 편집 및 호스팅 기능은 유료 플랜을 통해 제공됩니다.",
+   "desc_kr": "DocsAlot MCP Connector는 산재된 헬프센터 아티클, 지식 베이스, 개발자 문서를 인간과 AI 에이전트 모두를 위한 단일 진실 공급원(Single Source of Truth)으로 통합해 주는 도구입니다. Claude, Codex, Cursor 등 호환되는 모든 MCP 클라이언트 환경에서 프롬프트 명령만으로 문서를 추가, 수정, 버전 관리 및 즉각 배포할 수 있습니다. 호스팅형 MCP 엔드포인트와 llms.txt, skill.md를 자체 지원하여 최신 문서가 AI 답변에 바로 반영되고 에이전트가 오래된 맥락을 참조하는 문제를 방지합니다. 사용자가 헬프센터에서 검색하고 질문하는 내역을 분석하여 누락된 문서 주제를 발견하고 서비스 개선 인사이트를 도출할 수 있습니다. 기존 개발 및 작업 워크플로우를 벗어나지 않고도 지식 베이스를 항상 최신 상태로 손쉽게 유지보수할 수 있도록 돕습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/docsalot-2",
+   "comment_summary": "댓글에서는 일반 검색과 AI 검색 모두에서 사용자 질의 데이터가 집계되는지, 웹 사이트 및 기존 Zendesk/Intercom 문서 연동 지원 여부에 대해 문의했습니다. 메이커는 Zendesk 등과 직접 연동되어 티켓을 모니터링하고 문서를 배포할 수 있으며, 소스코드 직접 수정 대신 사이트 및 깃허브 연결 시 문서 불일치(drift)를 무료로 자동 감지한다고 설명했습니다. 또한 에이전트가 임의로 실서버에 발행하지 못하도록 초안 작성 후 승인 배포하는 CMS 권한 제어와 전면적인 버전 관리 기능을 강조했습니다.",
+   "warnings": "수치(업보트 147·댓글 34)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Matei",
+     "is_maker": false,
+     "text": "yo congrats faizan! the reader questions thing is lowkey the best part, do those come from the normal search too or just the ai one?",
+     "kr": "Faizan 님 축하합니다! 독자 질문 기능이 은근히 가장 좋은 부분 같은데, 이 질문들은 일반 검색에서도 수집되나요 아니면 AI 검색에서만 오나요?"
+    },
+    {
+     "author": "faizan khan",
+     "is_maker": true,
+     "text": "@devmatei Both.",
+     "kr": "@devmatei 둘 다에서 수집됩니다."
+    },
+    {
+     "author": "Matheus Paranhos",
+     "is_maker": false,
+     "text": "Looking real good! A lot of good things are coming out in this area, will certainly be trying it out! Does the mcp support creation for web documentations (the ones we would have in a product's site, for example?)",
+     "kr": "정말 좋아 보이네요! 이 분야에 좋은 제품들이 많이 나오고 있어 꼭 사용해 볼 생각입니다! 이 MCP는 웹 문서(예를 들어 제품 웹사이트에 두는 문서들) 작성도 지원하나요?"
+    },
+    {
+     "author": "faizan khan",
+     "is_maker": true,
+     "text": "@matheus_paranhos1 Thanks, do let me know if you run into any friction. Feel free to book a call.  \n  \nhttps://cal.com/faizan-khan-18shuq/30min  \n  \nNo, unfortunately the MCP won't have access to your source-code so it can't modify things. It only has access to the help-center hosted on DocsAlot. It can listen to source-code as a read-only thing but thats about it.  \n  \nWould love to chat about what you have in-mind. Could be a good feature to add.",
+     "kr": "@matheus_paranhos1 감사합니다. 사용 중 불편한 점이 있다면 언제든 알려주세요. 편하게 통화 일정을 잡으셔도 좋습니다.  \n  \nhttps://cal.com/faizan-khan-18shuq/30min  \n  \n아쉽게도 MCP가 소스코드에 대한 쓰기 접근 권한이 없으므로 직접 수정할 수는 없습니다. 오직 DocsAlot에 호스팅된 헬프센터에만 접근할 수 있습니다. 소스코드는 읽기 전용으로만 모니터링할 수 있는 정도입니다.  \n  \n생각하고 계신 아이디어에 대해 이야기 나누고 싶네요. 좋은 추가 기능이 될 수 있을 것 같습니다."
+    },
+    {
+     "author": "Ahmad",
+     "is_maker": false,
+     "text": "congrats on the launch Faizan!  \n  \ncan the MCP key be limited to drafts only? I'm fine with an agent writing drafts all day, but I'd still want a person to be the one who hits publish.",
+     "kr": "Faizan 님 출시 축하드립니다!  \n  \nMCP 키의 권한을 초안(draft) 작성 전용으로 제한할 수 있나요? 에이전트가 하루 종일 초안을 쓰는 것은 좋지만, 최종 발행 버튼을 누르는 것은 여전히 사람이었으면 합니다."
+    },
+    {
+     "author": "faizan khan",
+     "is_maker": true,
+     "text": "@ahmadhajj yes, agent wont publish until you say so. We have a full CMS. So you push a draft to save a version, and then you publish to make it live.  \n  \nYou can also revert versions. and MCP can be limited to roles based on who can publish and who cant",
+     "kr": "@ahmadhajj 네, 에이전트는 사용자가 지시하기 전에는 발행하지 않습니다. 완벽한 CMS가 갖추어져 있어 초안을 푸시하여 버전을 저장한 후, 승인 시 발행하여 라이브에 반영합니다.  \n  \n이전 버전으로 롤백할 수도 있으며, 발행 권한 유무에 따라 MCP 역할을 제한할 수 있습니다."
+    },
+    {
+     "author": "Alheri Murya",
+     "is_maker": false,
+     "text": "Having pone source of truth makes sense when help docs and developer docs start growing separately. Does it also help identify outdated pages?",
+     "kr": "도움말 문서와 개발자 문서가 따로 커지기 시작할 때 단일 진실 공급원을 두는 것은 매우 타당해 보입니다. 혹시 오래되어 방치된 페이지를 식별하는 데도 도움이 되나요?"
+    },
+    {
+     "author": "faizan khan",
+     "is_maker": true,
+     "text": "@alheri_murya Yes, it does. For this, once you connect the main website, github repo, and other things. It will automatically catch drifts.  \n  \nThe good thing about this MCP is, you won't have to pay extra since you are already using your AI. We don't charge per drift detections.",
+     "kr": "@alheri_murya 네, 도움이 됩니다. 메인 웹사이트, GitHub 저장소 등을 연결해 두면 자동으로 내용의 불일치(drift)를 포착합니다.  \n  \n이 MCP의 장점은 이미 자체 AI를 사용하고 계시기 때문에 추가 비용이 발생하지 않는다는 점입니다. 저희는 드리프트 감지당 비용을 청구하지 않습니다."
+    },
+    {
+     "author": "Federico Battistella",
+     "is_maker": false,
+     "text": "Can I bring in my existing help center articles, like from Zendesk or Intercom, or do I have to paste everything in myself?",
+     "kr": "Zendesk나 Intercom 같은 곳의 기존 헬프센터 아티클을 불러올 수 있나요, 아니면 일일이 직접 붙여넣어야 하나요?"
+    },
+    {
+     "author": "faizan khan",
+     "is_maker": true,
+     "text": "@federico_battistella No, we connect directly with your Zendesk, intercom account, so we can listen to tickets and then publish directly to those platforms.  \n  \nwould love to chat more about your use-case. Happy to buy you lunch in return for a call :)  \n  \nhttps://cal.com/faizan-khan-18shuq/30min",
+     "kr": "@federico_battistella 직접 붙여넣으실 필요 없습니다. Zendesk, Intercom 계정과 직접 연동되므로 티켓을 모니터링하고 해당 플랫폼으로 바로 발행할 수 있습니다.  \n  \n사용 사례에 대해 더 이야기 나누고 싶네요. 통화해 주신다면 기꺼이 점심을 대접하겠습니다 :)  \n  \nhttps://cal.com/faizan-khan-18shuq/30min"
+    },
+    {
+     "author": "Shawn Esquivel",
+     "is_maker": false,
+     "text": "This is much needed! Can I onboard through claude?",
+     "kr": "정말 필요했던 서비스입니다! Claude를 통해서 온보딩을 진행할 수 있나요?"
+    },
+    {
+     "author": "faizan khan",
+     "is_maker": true,
+     "text": "@shawn_esquivel you most certainly can. Just point claude to our landing page, it should figure everything out.",
+     "kr": "@shawn_esquivel 물론 가능합니다. Claude에게 저희 랜딩 페이지 주소를 지정해 주기만 하면 알아서 모든 것을 파악할 것입니다."
+    }
+   ],
+   "slug": "docsalot-2",
+   "website": "https://docsalot.dev/"
+  }
+ ],
+ "disquiet": [
+  {
+   "slug": "982fb746-aae2-478e-9863-ecb9b29d0585",
+   "name": "돼동여지도",
+   "tagline": "「풍자의 또간집」에 나온 식당 320곳을 지역별로 모은 지도",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/982fb746-aae2-478e-9863-ecb9b29d0585",
+   "comment": "유튜브 프로그램에 소개된 맛집 320곳의 위치를 지도 인터페이스로 정리해, 방송에 나온 식당을 방문 지역 주변 동선에 맞춰 빠르게 탐색할 수 있습니다."
+  },
+  {
+   "slug": "0f1f7ffc-94cc-47ba-857a-486f78c08e77",
+   "name": "다짐",
+   "tagline": "친구와 함께 무료 포인트를 걸고 습관을 지키는 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/0f1f7ffc-94cc-47ba-857a-486f78c08e77",
+   "comment": "친구 간 상호 인증과 가상 포인트 배팅 방식을 결합하여, 금전적 지출 없이도 목표 달성을 위한 심리적 동기부여를 꾸준히 유지하도록 돕습니다."
+  },
+  {
+   "slug": "357f652d-ef0a-424a-a321-67f406d65502",
+   "name": "하루보고",
+   "tagline": "업무 파일을 올리면 1분 만에 보고서 완성 — 재무담당 20년차가 코딩 없이 만든 직장인 기록 도우미",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/357f652d-ef0a-424a-a321-67f406d65502",
+   "comment": "실무자의 실무 경험을 바탕으로 업무 파일 업로드 즉시 표준 보고서 양식으로 변환해 주어, 반복적인 일일 업무 정리 수고를 덜어줍니다."
+  },
+  {
+   "slug": "dynapse",
+   "name": "디냅스 (Dynapse)",
+   "tagline": "내 AI 구독으로 만드는, AI 티 안 나는 카드뉴스·회사소개서·제안서",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/dynapse",
+   "comment": "개인이 구독 중인 AI 모델을 연동해 시각적 완성도와 문맥을 보정함으로써, 이질감 없는 상업용 문서와 카드뉴스를 경제적으로 제작할 수 있게 돕습니다."
+  },
+  {
+   "slug": "ai-prep-labs",
+   "name": "AI PREP LABS (에이아이프렙랩스)",
+   "tagline": "AI 콘텐츠 제작 전, 비주얼·카메라·사운드 아이디어를 탐색하고 프롬프트로 구체화하는 제작 보조 툴",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/ai-prep-labs",
+   "comment": "영상이나 이미지 생성 전 카메라 앵글과 음향 등 연출 요소를 사전 기획 단계에서 구조화하여, 고품질 프롬프트 생성과 제작 시행착오 축소를 돕습니다."
+  },
+  {
+   "slug": "f3546e84-4549-4bdb-862f-65357bbe0e26",
+   "name": "밤과비",
+   "tagline": "오늘의 운세부터 사주·타로·궁합까지, 내 이야기를 만나는 곳",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/f3546e84-4549-4bdb-862f-65357bbe0e26",
+   "comment": "동양 사주와 서양 타로 분석을 단일 인터페이스로 엮어내어, 개인의 일상적 고민과 성향을 다각도로 손쉽게 점검할 수 있습니다."
+  },
+  {
+   "slug": "ecf88d4d-7583-4bad-a954-0850dc9556fa",
+   "name": "다독",
+   "tagline": "하루의 기분을 적으면 다독이가 짧은 위로의 말을 건네는 감정일기 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/ecf88d4d-7583-4bad-a954-0850dc9556fa",
+   "comment": "짧은 감정 기록에 즉각적인 공감과 위로 피드백을 제공하여, 심리적 안정감과 함께 부담 없는 일상 기록 습관을 형성하도록 돕습니다."
+  },
+  {
+   "slug": "socialwealth-ai",
+   "name": "socialwealth ai",
+   "tagline": "중3 빌더가 주말 동안 만든 유튜브 광고 단가 계산기 (오늘 PH 런칭! 🚀)\"",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/socialwealth-ai",
+   "comment": "유튜브 채널 지표를 기반으로 적정 스폰서십 및 영상 광고 단가를 빠르게 산출해 주어, 크리에이터와 마케터 간의 객관적인 협상 기준점을 마련해 줍니다."
+  },
+  {
+   "slug": "lookddak",
+   "name": "룩딱 (LookDDak)",
+   "tagline": "상황을 말하면 옷을 추천하고, 내 전신 사진으로 가상 피팅까지 해볼 수 있는 AI 쇼핑 도우미",
+   "upvotes": 2,
+   "url": "https://disquiet.io/products/lookddak",
+   "comment": "상황별 의상 추천과 더불어 본인의 실제 사진을 통한 가상 착용 시뮬레이션을 지원하여, 온라인 의류 구매 시 핏 실패율을 낮춰 줍니다."
+  },
+  {
+   "slug": "medad",
+   "name": "medad",
+   "tagline": "AI 검색에 이름이 나오도록 — 글·사이트 제작부터 광고 규정 검수, 매주 측정까지",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/medad",
+   "comment": "까다로운 의료법 규제 가이드라인을 준수하면서 차세대 생성형 AI 검색 엔진 결과에 병원 정보가 정확히 인용되도록 최적화 워크플로우를 제공합니다."
+  },
+  {
+   "slug": "1d73483f-2eb7-4eb5-8cb5-98c829235136",
+   "name": "미리멍",
+   "tagline": "강아지 미용, 미리 보고 동네에서 만나다",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/1d73483f-2eb7-4eb5-8cb5-98c829235136",
+   "comment": "반려견 품종별 미용 스타일을 사전 시뮬레이션으로 확인한 뒤 인근 샵을 탐색할 수 있어, 미용 후 스타일 불일치로 인한 소통 실패를 줄여 줍니다."
+  },
+  {
+   "slug": "alphaflow-cv",
+   "name": "AlphaFlow CV",
+   "tagline": "AI·Software의 ‘완료 주장’과 ‘실제 완료’를 분리해 검증하는 독립 검증 시스템",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/alphaflow-cv",
+   "comment": "AI 에이전트의 작업 완료 주장과 실제 산출물의 정합성을 독립적으로 분리 검증하여, 자율 소프트웨어 도입 시 발생할 수 있는 허위 완료 보고와 오작동 위험을 방지합니다."
+  },
+  {
+   "slug": "jev-model",
+   "name": "Jev Model",
+   "tagline": "Fast, structured decisions with probabilities for software teams.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/jev-model",
+   "comment": "개발팀이 직면하는 복잡한 기술적 갈등과 우선순위를 확률 모델에 기반한 정량 프레임워크로 전환하여, 신속하고 객관적인 합의 형성을 이끌어냅니다."
+  },
+  {
+   "slug": "llm-quota-guard",
+   "name": "llm-quota-guard",
+   "tagline": "LLM 호출의 토큰·비용 한도를 예약→확정/반환 방식으로 관리하는 의존성 없는 TypeScript 오픈소스(MIT). 동시 요청과 실패 호출에서 한도 집계가 어긋나는 문제를 다룹니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/llm-quota-guard",
+   "comment": "동시 다발적인 API 호출 환경에서 쿼터 누수와 한도 초과 문제를 2단계 예약-확정 트랜잭션 방식으로 안전하게 방어하는 실용적인 오픈소스 라이브러리입니다."
+  },
+  {
+   "slug": "petntrip",
+   "name": "petntrip",
+   "tagline": "반려동물 동반 가능 숙소를 쉽게 찾아주는 서비스",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/petntrip",
+   "comment": "숙소별로 상이한 반려동물 입실 규정과 무게 제한 필터를 정밀하게 분류해 제공함으로써, 반려인들의 숙소 예약 실패 경험을 줄여 줍니다."
+  },
+  {
+   "slug": "manjangilchi",
+   "name": "만장일치 (Manjangilchi)",
+   "tagline": "질문 하나를 여러 AI에 동시에 보내, 답이 일치하는 곳과 서로 어긋나는 곳을 나눠 보여주는 서비스",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/manjangilchi",
+   "comment": "다수의 주요 언어모델 결과를 병렬 비교해 공통점과 상충되는 지점을 대조 표시함으로써, 단일 AI의 환각을 방지하고 사실 확인 효율을 극대화합니다."
+  },
+  {
+   "slug": "sairo",
+   "name": "사이로 SAIRO",
+   "tagline": "추천 링크로 서비스를 소개하고 보상받는 ‘사이로’를 만들었습니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/sairo",
+   "comment": "개별 기업이 복잡한 제휴 인프라를 직접 구축할 필요 없이 레퍼럴 링크 생성과 리워드 정산을 중개하여 초기 스타트업의 입소문 마케팅 구축을 돕습니다."
+  },
+  {
+   "slug": "capybara-court",
+   "name": "카피바라 법원 (Capybara Court)",
+   "tagline": "카피바라 판사 카피가 작은 다툼을 다정하게 판결해요. 둘이 와도, 혼자 털어놔도 돼요.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/capybara-court",
+   "comment": "일상적 인간관계의 사소한 갈등을 다정한 캐릭터의 중재 판결문 형식으로 풀어내어, 심리적 스트레스를 덜고 감정을 환기할 수 있는 소통 창구를 제공합니다."
+  },
+  {
+   "slug": "be7a61fa-6a36-4174-b2ea-beebf67f28a9",
+   "name": "브리치랩",
+   "tagline": "실제 크립토 해킹 사고를 재현해서 공격·방어 코드를 무료로 공개하는 학습 프로젝트",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/be7a61fa-6a36-4174-b2ea-beebf67f28a9",
+   "comment": "과거 발생한 온체인 스마트 컨트랙트 취약점과 공격 벡터를 코드로 재현하고 방어책을 공개하여, 웹3 개발자의 실전 보안 역량 강화를 돕습니다."
+  },
+  {
+   "slug": "qwen-image-2-1",
+   "name": "Qwen Image 2.1",
+   "tagline": "모든 아이디어를 생생한 이미지로 바꿔보세요.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/qwen-image-2-1",
+   "comment": "다국어 텍스트 이해도와 복잡한 구도 묘사력이 향상된 최신 Qwen 계열 이미지 모델을 웹에서 간편하게 체험할 수 있도록 구현했습니다."
+  },
+  {
+   "slug": "notch-crew",
+   "name": "Notch Crew",
+   "tagline": "Claude Code, Codex, Gemini CLI, OpenCode, Ollama 세션을 맥 노치에서 한눈에 보고, 답하고, 넘기는 macOS 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/notch-crew",
+   "comment": "여러 터미널 코딩 에이전트 세션을 맥북 상단 노치에 띄워 진행 상태를 확인하고 즉각 인터랙션할 수 있어, 개발 중 빈번한 작업 전환 비용을 줄여 줍니다."
+  },
+  {
+   "slug": "gamehubkorea",
+   "name": "게임허브코리아 (GameHubKorea)",
+   "tagline": "게임 하나 살지 말지 정할 때 필요한 출시일·한국 가격·한국어 지원·PC 사양·공식 영상을 한 페이지에 모은 한국어 게임 정보 사이트",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/gamehubkorea",
+   "comment": "플랫폼별 가격 차이와 공식 한국어 지원 여부 등 국내 이용자의 구매 결정에 필수적인 정보를 단일 화면에 집약해 정보 탐색 수고를 덜어줍니다."
+  },
+  {
+   "slug": "the-someday-post",
+   "name": "The Someday Post",
+   "tagline": "AI 기자가 미래의 나를 인터뷰하고, 그 이야기를 신문 1면 기사로 써 주는 서비스. 날짜를 고르고 네 번의 질문에 답하면 됩니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/the-someday-post",
+   "comment": "미래의 성공 목표를 가상 인터뷰 형식의 신문 1면 기사로 시각화해 줌으로써, 비전보드 작성에 몰입형 스토리텔링을 접목했습니다."
+  },
+  {
+   "slug": "cabe71e3-360e-45eb-ad64-159fc79a0cb7",
+   "name": "점쟁이 여우",
+   "tagline": "생일만 넣으면 여우가 사주를 풀어주는 사이트",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/cabe71e3-360e-45eb-ad64-159fc79a0cb7",
+   "comment": "생년월일 기반의 복잡한 명리학 해석을 친근한 캐릭터와 쉬운 일상 언어로 재해석하여, 사주 콘텐츠에 대한 대중적 접근성을 높였습니다."
+  },
+  {
+   "slug": "donkimu",
+   "name": "Donkimu",
+   "tagline": "일본어 메뉴 학습 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/donkimu",
+   "comment": "현지 식당에서 흔히 마주치는 실제 메뉴판 텍스트와 외식 관련 어휘를 집중 학습할 수 있어, 실전 일본 여행에 즉시 활용하기 좋습니다."
+  },
+  {
+   "slug": "annzcard",
+   "name": "Annzcard",
+   "tagline": "Annzcard는 암기 공부를 혼자 하지 않게 만드는 플래시카드 서비스입니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/annzcard",
+   "comment": "전통적인 플래시카드 반복 학습에 스터디원 간 진도 공유와 상호 피드백 요소를 도입해, 독학 시 겪는 학습 지속성 문제를 보완합니다."
+  },
+  {
+   "slug": "athlete-flow",
+   "name": "Athlete Flow",
+   "tagline": "선수의 컨디션, 코치가 한눈에. 훈련·수면·컨디션을 함께 돌아보는 선수·코치용 훈련일지",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/athlete-flow",
+   "comment": "선수의 신체 피로도와 훈련 데이터를 코치가 대시보드로 실시간 파악할 수 있어, 과훈련 부상을 예방하고 맞춤형 코칭을 가능하게 합니다."
+  },
+  {
+   "slug": "38fdd9f7-ca07-4f64-8fd3-06f406cc803d",
+   "name": "레트로 테트리스",
+   "tagline": "랭킹에 도전하는 레트로 감성 온라인 테트리스",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/38fdd9f7-ca07-4f64-8fd3-06f406cc803d",
+   "comment": "복잡한 설치 없이 브라우저에서 고전 아케이드 감성의 테트리스를 즐기고 실시간 점수 순위를 겨룰 수 있는 가벼운 캐주얼 게임입니다."
+  },
+  {
+   "slug": "mused",
+   "name": "Mused",
+   "tagline": "매일 질문 하나에 답하면 일주일치 답을 모아 짧은 리포트로 돌려주는 일기 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/mused",
+   "comment": "일일 단문 답변을 1주일 단위의 자기 성찰 리포트로 구조화해 줌으로써, 일기 작성 부담을 낮추고 장기적인 자기 관찰을 유도합니다."
+  },
+  {
+   "slug": "itland",
+   "name": "ITLAND",
+   "tagline": "게임 전 30초 손풀기부터 친구와 기록 대결까지, 설치 없이 즐기는 웹 게임 플랫폼",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/itland",
+   "comment": "설치 없이 브라우저에서 30초 내외로 즐길 수 있는 미니게임을 모아두어, 경쟁 게임 시작 전 손풀기나 가벼운 친구 간 기록 경쟁에 유용합니다."
+  },
+  {
+   "slug": "viddir",
+   "name": "viddir",
+   "tagline": "실시간 시청자 상호작용으로 형성되는 AI 생성 라이브스트림을 발견하세요.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/viddir",
+   "comment": "시청자의 실시간 채팅과 선택에 맞춰 AI가 스트리밍 영상 연출을 즉각 변경하는 인터랙티브 방송 구조를 실험적으로 구현했습니다."
+  },
+  {
+   "slug": "fokki",
+   "name": "포끼 (Fokki)",
+   "tagline": "관심종목의 뉴스 감성과 기술 지표를 AI가 최소 1시간에 한 번 분석해, 신호가 바뀔 때만 알려주는 주식 알림 앱. Android 출시, iOS 는 App Store 출시 준비 중.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/fokki",
+   "comment": "뉴스 감성 분석과 기술 지표를 종합 분석해 시장 신호의 변곡점이 발생할 때만 선별 알림을 제공함으로써, 불필요한 시세 감시 피로를 줄여줍니다."
+  },
+  {
+   "slug": "imagetolatex",
+   "name": "imagetolatex",
+   "tagline": "Convert a math screenshot or picture to LaTeX and editable Word equations online. Free to try.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/imagetolatex",
+   "comment": "복잡한 수식이 포함된 캡처 이미지를 즉시 LaTeX 코드나 Word 수식 객체로 변환해 주어, 학술 문서 및 논문 작성 시 타이핑 시간을 절약해 줍니다."
+  },
+  {
+   "slug": "fontgenerator",
+   "name": "FontGenerator",
+   "tagline": "AI font generator and custom font maker: make real, installable fonts from a description, an image or your handwriting.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/fontgenerator",
+   "comment": "손글씨나 텍스트 묘사만으로 PC에 직접 설치 가능한 폰트 파일을 생성해 주어, 고난도 서체 디자인 진입 장벽을 대폭 낮췄습니다."
+  },
+  {
+   "slug": "coloringpagestools",
+   "name": "ColoringPagesTools",
+   "tagline": "Free printable coloring pages and coloring books as A4 or US Letter PDFs, plus an AI coloring page generator.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/coloringpagestools",
+   "comment": "원하는 주제의 색칠 도안을 AI로 즉시 생성하고 인쇄 표준 규격의 PDF로 바로 출력할 수 있어, 교육 현장과 가정에서 간편하게 활용할 수 있습니다."
+  },
+  {
+   "slug": "koreaves",
+   "name": "KoreAves",
+   "tagline": "한국 조류 기록을 분류·지역·출처까지 따라볼 수 있게 엮은 비상업 evidence atlas",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/koreaves",
+   "comment": "국내 조류 관찰 기록을 학술 출처 및 지역별 관측 데이터와 정밀하게 연계 아카이빙하여, 생태 연구자와 탐조 애호가에게 신뢰도 높은 기초 자료를 제공합니다."
+  },
+  {
+   "slug": "90719cfa-4e2e-42a8-a799-61c7b8193f44",
+   "name": "판매계산실",
+   "tagline": "상품 원가를 한 번 넣고 판매 마진·목표 판매가·할인과 무료배송 조건을 비교하는 무료 도구",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/90719cfa-4e2e-42a8-a799-61c7b8193f44",
+   "comment": "상품 원가와 수수료, 배송비 조건을 통합 시뮬레이션하여 실제 정산 마진을 즉시 산출해 줌으로써, 온라인 셀러의 역마진 위험을 방지합니다."
+  },
+  {
+   "slug": "filee",
+   "name": "Filee",
+   "tagline": "키를 누른 채 끌어다 놓으면 끝, 180개 형식을 내 PC에서 바로 바꾸는 무료 오픈소스 파일 변환기",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/filee",
+   "comment": "외부 서버 업로드 없이 180여 종의 파일 포맷을 로컬 PC 내에서 드래그 앤 드롭으로 안전하고 빠르게 변환하는 프라이버시 중심 오픈소스 도구입니다."
+  },
+  {
+   "slug": "getaskai",
+   "name": "GetAskAI",
+   "tagline": "출처를 보여 주고 PDF와 사진도 읽는 무료 AI 어시스턴트, 가입 필요 없음",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/getaskai",
+   "comment": "회원가입 절차 없이 문서와 이미지를 분석하고 명확한 근거 출처를 제시해 주어, 일회성 리서치 작업에 매우 빠르고 간편하게 활용할 수 있습니다."
+  },
+  {
+   "slug": "05c3f395-d76d-423c-87ef-3bbf773f00f8",
+   "name": "런바톤",
+   "tagline": "낯선 사람들과 랜덤 팀을 이뤄 달린 거리로 겨루는 이어달리기 러닝 게임",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/05c3f395-d76d-423c-87ef-3bbf773f00f8",
+   "comment": "무작위로 구성된 팀원들과 각자의 러닝 거리를 합산해 대결하는 방식을 통해, 혼자 달리는 지루함을 덜고 팀워크 기반의 러닝 지속성을 부여합니다."
+  }
+ ]
+}
