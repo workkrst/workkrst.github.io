@@ -13,7 +13,11 @@ header{text-align:center;padding:40px 0 8px}
 h1{font-size:26px;font-weight:800}
 header .sub{color:#8b90a0;font-size:13.5px;margin-top:8px}
 .count{display:inline-block;background:#1c2030;color:#c4b5fd;border:1px solid #2c3150;border-radius:20px;padding:4px 16px;font-size:12.5px;font-weight:600;margin-top:14px}
-.list{margin-top:28px;display:flex;flex-direction:column;gap:12px}
+.list{margin-top:16px;display:flex;flex-direction:column;gap:12px}
+.cats{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.cat{font-size:12.5px;font-weight:600;color:#a9aec0;background:#171a24;border:1px solid #262b3a;border-radius:20px;padding:6px 15px;cursor:pointer;transition:all .15s}
+.cat:hover{border-color:#7c3aed88;color:#e7e9ee}
+.cat.on{background:#2a2140;border-color:#7c3aed;color:#c4b5fd}
 .row{display:flex;gap:16px;align-items:stretch;background:#171a24;border:1px solid #262b3a;border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .15s,background .15s}
 .row:hover{border-color:#7c3aed55;background:#191d29}
 .thumb{position:relative;flex:0 0 168px;aspect-ratio:16/9;background:#0a0c12;align-self:flex-start;margin:12px 0 12px 12px;border-radius:9px;overflow:hidden}
@@ -23,6 +27,7 @@ header .sub{color:#8b90a0;font-size:13.5px;margin-top:8px}
 .body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px;padding:14px 16px 14px 0}
 .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:#8b90a0}
 .badge{font-size:11px;font-weight:600;border-radius:12px;padding:2px 10px;background:#211d33;color:#c4b5fd}
+.badge.cat{background:#14263a;color:#8ec5ff}
 .yt{margin-left:auto;font-size:11.5px;font-weight:700;text-decoration:none;color:#fff;background:#ff000022;border:1px solid #ff000044;border-radius:9px;padding:4px 11px;transition:background .15s;white-space:nowrap}
 .yt:hover{background:#ff000044}
 .title{font-size:15.5px;font-weight:700;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -44,23 +49,24 @@ footer{text-align:center;color:#565b6b;font-size:11.5px;margin-top:52px}
     <div class="sub">행을 클릭해서 분석 요약을 보고, 원본 영상은 버튼으로 이동합니다</div>
     <div class="count" id="count">분석 영상 0편</div>
   </header>
+  <div class="cats" id="cats"></div>
   <div class="list" id="list"></div>
-  <div class="empty" id="empty" style="display:none">아직 분석된 영상이 없습니다.<br>분석이 완료되면 이곳에 목록이 자동으로 쌓입니다.</div>
-  <footer>noindex · 비공개 아카이브 — 무단 공유 금지</footer>
-</div>
 <script>
-fetch('./data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
-  const v=(d.videos||[]).slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-  document.getElementById('count').textContent='분석 영상 '+v.length+'편 · 업데이트 '+(d.updated||'-');
-  if(!v.length){document.getElementById('empty').style.display='block';return;}
+const CATS=['전체','AI','온라인사업','업무효율화','자기계발','건강','마케팅','영상제작','기타'];
+let DATA=[],CUR='전체';
+function render(){
+  const v=DATA.filter(x=>CUR==='전체'||(x.category||'기타')===CUR);
+  document.getElementById('count').textContent=CUR==='전체' ? ('분석 영상 '+DATA.length+'편 · 업데이트 '+(DATA.updated||'-')) : (CUR+' '+v.length+'편');
   const list=document.getElementById('list');
+  if(!v.length){list.innerHTML='';document.getElementById('empty').style.display='block';return;}
+  document.getElementById('empty').style.display='none';
   list.innerHTML=v.map(x=>{
     const thumb=x.videoId?('https://i.ytimg.com/vi/'+x.videoId+'/hqdefault.jpg'):'';
     const ytBtn=x.videoId?'<a class="yt" href="https://www.youtube.com/watch?v='+x.videoId+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">▶ 원본</a>':'';
     return '<a class="row" href="./'+x.slug+'/">'
       +'<div class="thumb">'+(thumb?'<img src="'+thumb+'" alt="" loading="lazy">':'')+'<div class="play"><span>▶</span></div></div>'
       +'<div class="body">'
-      +'<div class="meta"><span class="badge">'+x.date+'</span>'
+      +'<div class="meta"><span class="badge cat">'+(x.category||'기타')+'</span><span class="badge">'+x.date+'</span>'
       +(x.channel?'<span>'+x.channel+'</span>':'')
       +(x.duration?'<span>· '+x.duration+'</span>':'')+ytBtn+'</div>'
       +'<div class="title">'+x.title+'</div>'
@@ -68,6 +74,17 @@ fetch('./data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
       +'<div class="more">요약 보기 →</div>'
       +'</div></a>';
   }).join('');
+}
+function renderCats(){
+  document.getElementById('cats').innerHTML=CATS.map(c=>'<button class="cat'+(c===CUR?' on':'')+'" onclick="CUR=\''+c+'\';renderCats();render()">'+c+'</button>').join('');
+}
+fetch('./data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
+  DATA=(d.videos||[]).slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  DATA.updated=d.updated;
+  renderCats();render();
 }).catch(()=>{document.getElementById('empty').style.display='block';});
 </script>
+  <div class="empty" id="empty" style="display:none">아직 분석된 영상이 없습니다.<br>분석이 완료되면 이곳에 목록이 자동으로 쌓입니다.</div>
+  <footer>noindex · 비공개 아카이브 — 무단 공유 금지</footer>
+</div>
 </body></html>
