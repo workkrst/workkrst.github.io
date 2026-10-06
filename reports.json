@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16",
+  "updated": "2026-10-06",
   "repo": "workkrst/workkrst.github.io",
   "reports": [
     {
@@ -17,6 +17,14 @@
       "path": "ph-daily/",
       "url": "https://workkrst.github.io/ph-daily/",
       "desc": "매일 12:30 PH 오늘의 Top 5 + 댓글 번역 브리핑 (자동 수집·날짜별 누적, 관리모드에서 삭제 요청)"
+    },
+    {
+      "id": "youtube_summary",
+      "title": "YouTube 요약 아카이브",
+      "date": "2026-10-06",
+      "path": "youtube_summary/",
+      "url": "https://workkrst.github.io/youtube_summary/",
+      "desc": "유튜브 영상을 지정 프롬프트로 분석해 카드 형식으로 누적 — 클릭 시 요약 본문, 원본 영상 버튼 제공 (비공개 아카이브, noindex)"
     }
   ]
 }
