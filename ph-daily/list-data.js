@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-06",
+    "url": "2026-10-06/",
+    "top_product": "Spira Maxima",
+    "count": 5,
+    "upvotes_total": 1463,
+    "comments_total": 60
+  },
+  {
     "date": "2026-10-05",
     "url": "2026-10-05/",
     "top_product": "CoreSpeed",

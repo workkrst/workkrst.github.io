@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-10-06</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-10-06 · Top 5 · 수집 댓글 60개 · 수집 2026-10-06 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-10-06",
+ "collected_at": "2026-10-06 12:30 KST",
+ "summary": "2026년 10월 6일 런칭 제품들은 전반적으로 인공지능(AI)을 결합한 개발자 도구 및 AI 인프라(LLM 라우터·문서 파싱 API·에이전트 샌드박스)가 상위권을 주도했으며, 소셜 비디오 생성과 비즈니스 지표 분석 도구가 그 뒤를 이었습니다. 댓글에서는 단순한 생성 기능보다 프로덕션 배포 시의 데이터 보안(초상권 동의·무저장 정책)과 장애 복구(Failover·세션 지속성) 등 실운영 안정성에 대한 기술적 논의가 공통적으로 활발했습니다. 또한 사후 편집 없는 원패스 워크플로우와 영업 미팅을 배제한 셀프서브 전환처럼 도입 장벽과 수작업 공수를 줄여주는 제품들에 호평이 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "spira-ai",
+   "why": "추가 편집 없이 즉시 게시 가능한 바이럴 UGC 영상을 생성하는 완성형 워크플로우로 큰 호평을 받았습니다. 댓글에서는 AI 클론 생성 시 타인 초상권 및 음성 무단 도용 방지 정책과 유료 구독 후 기존 영상의 워터마크 제거 지원 여부에 대해 메이커와 깊이 있는 질의응답이 오갔습니다."
+  },
+  {
+   "slug": "fastrouter-ai",
+   "why": "200개 이상의 LLM을 단일 API로 연결하고 실제 트래픽을 분석해 최적 모델과 캐싱 기회를 제안하는 '라우팅 지능'으로 호응을 얻었습니다. 댓글에서는 스트리밍 도중 장애 발생 시의 failover 처리 구조와 가상 모델 별칭을 통한 맞춤형 라우팅 정책, 그리고 제로 데이터 보존(ZDR) 기반의 프라이버시 보호가 집중 논의되었습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Spira Maxima",
+   "tagline_en": "Video model that turns script into viral social media videos",
+   "tagline_kr": "텍스트 스크립트를 바이럴 소셜 미디어 영상으로 자동 완성하는 AI 비디오 모델",
+   "image": "https://ph-files.imgix.net/94b1ec75-7c2c-4535-b9a3-3ab23f8a61ce.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Social Media",
+    "Marketing",
+    "Artificial Intelligence",
+    "Design & Creative",
+    "AI Agents"
+   ],
+   "upvotes": 360,
+   "comments_count": 50,
+   "maker": "Long Ma(@llma), Chris Kang(@kangchainx), Justin Jincaid(@justin2025), Upasana Pradhan(@upasana_pradhan)",
+   "price_model": "무료 체험 및 유료 구독 (Free Tier / Paid Subscription)",
+   "price_detail": "기본적인 비디오 생성을 무료로 체험해 볼 수 있으며, 워터마크 제거 및 고화질 다운로드를 지원하는 유료 요금제를 운영합니다. 런칭 첫 달 기념으로 50% 할인 혜택을 제공합니다.",
+   "desc_kr": "Spira Maxima는 텍스트 스크립트를 입력하면 발표자 선정부터 트렌디한 B-roll 컷, 자막, 배경음악까지 한 번에 합성하여 즉시 업로드 가능한 소셜 영상을 완성해 주는 AI 비디오 모델입니다. 사용자의 사진 한 장과 음성 샘플만으로 일관된 외모와 목소리를 가진 전용 AI 클론을 만들거나, 소장 중인 제품 샷 및 휴대폰 촬영본을 업로드해 맞춤형 영상을 제작할 수 있습니다. 틱톡, 캡컷, 메타 출신의 전문 팀이 최신 소셜 미디어 성과와 바이럴 트렌드 데이터를 기반으로 모델을 사후 학습시켜 피드에서 반응이 좋은 영상 스타일을 정밀하게 구현합니다. 짧은 영상 클립 생성에 그치지 않고 별도의 영상 편집기 프로그램을 거칠 필요 없이 완성도 높은 UGC(사용자 생성 콘텐츠) 형태의 비디오를 원패스로 산출합니다. 사용자가 업로드한 얼굴과 음성 데이터는 계정 내에서만 비공개로 안전하게 보호되며, 설정에서 언제든지 클론과 원본 소스를 즉시 삭제할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/spira-ai",
+   "comment_summary": "댓글에서는 영상 생성 후 별도의 컷 편집이나 자막 작업을 하지 않고 즉시 게시할 수 있는 완성형 워크플로우에 대해 큰 호평이 이어졌습니다. 사용자들은 타인의 초상권이나 음성을 무단 복제하는 행위를 방지하는 동의 절차와 데이터 프라이버시 보호 정책, 그리고 유료 플랜 결제 후 이전에 생성한 영상의 워터마크 제거 지원 여부에 대해 주로 질문했습니다. 메이커 측은 본인 인증 권한 준수 원칙과 계정 격리 보관 방침을 설명하였으며, 유료 구독자가 이미 제작된 영상의 워터마크도 재생성 없이 바로 제거할 수 있도록 신속히 기능을 업데이트하겠다고 밝혔습니다.",
+   "warnings": "수치(업보트 360·댓글 50)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Long Ma",
+     "is_maker": true,
+     "text": "Hey Product Hunters! 👋 I'm Long, CEO of Spira AI. Third time launching here in the past few months, feeling good to be back again :)\n\nAfter our last two launches here I kept hitting the same wall: AI can generate a clip in seconds, but turning it into something you'd post still means opening an editor. Pick a presenter, cut in B-roll, fix the captions, find music. Generation got cheap. Finishing didn't, and finishing is where everyone quietly gives up and posts slop.\n\nThat's why we trained **Spira Maxima: a social video model that turns plain text into a finished, viral UGC styled video with nothing left to edit and ready to post right away.**\n\nHere's how it works:\n\n*   Paste your script, and it casts a presenter that fits the topic\n\n*   It cuts on-trend B-roll and motion around your words, then adds captions and music\n\n*   Want it to be you? One photo and a voice sample make your AI clone, same face and voice in every video\n\n*   Selling something? Drop in product shots. Already filmed on your phone? Upload it and it builds the edit around you\n\n*   It's post trained on social trending and performance data, so the look follows what's working on the feed this week\n\n50% off for launch month, we hope you enjoy it.\n\nWe'd love your feedback: if a model handed you a finished video every time, would you still want to touch it before posting, or would you let it ship? Paste the script you were going to post anyway and tell me where it nails it and where it embarrasses us.\n\nLooking forward to hearing what you think!! 👇👇👇",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋 Spira AI의 CEO Long입니다. 지난 몇 달 동안 세 번째로 이곳에 런칭하게 되었는데, 다시 돌아오게 되어 매우 기쁩니다 :)\n\n지난 두 번의 런칭 이후 저희는 동일한 한계에 계속 부딪혔습니다. AI가 단 몇 초 만에 클립을 생성할 수는 있지만, 실제로 업로드할 수 있는 결과물을 만들려면 결국 영상 편집기를 켜야 했습니다. 발표자를 선정하고, B-roll 컷을 넣고, 자막을 다듬고, 음악을 찾아야 하죠. 생성 자체는 저렴해졌지만, 완성본을 만드는 작업은 그렇지 않았고, 바로 그 마무리 단계에서 많은 분이 포기하고 조악한 결과물을 올리게 됩니다.\n\n그렇기 때문에 저희는 추가 편집이 전혀 필요 없이 즉시 게시할 수 있는 완성된 바이럴 UGC 스타일 영상을 일반 텍스트로부터 만들어내는 소셜 비디오 모델인 **Spira Maxima**를 훈련시켰습니다.\n\n작동 방식은 다음과 같습니다:\n\n*   스크립트를 붙여넣으면 주제에 어울리는 발표자를 캐스팅합니다.\n\n*   단어에 맞춰 트렌디한 B-roll과 모션을 컷 편집하고 캡션 자막과 음악을 추가합니다.\n\n*   직접 출연하고 싶으신가요? 사진 1장과 음성 샘플로 모든 영상에서 동일한 얼굴과 목소리를 가진 AI 클론을 만듭니다.\n\n*   제품을 판매하시나요? 제품 사진을 넣으시면 됩니다. 이미 휴대폰으로 촬영해 둔 영상이 있으신가요? 업로드하면 여러분을 중심으로 편집을 완성합니다.\n\n*   소셜 트렌드와 성과 데이터를 바탕으로 사후 학습되어, 이번 주 피드에서 반응이 좋은 최신 스타일을 반영합니다.\n\n런칭 첫 달 50% 할인이 적용되니 즐겁게 이용해 주셨으면 좋겠습니다.\n\n여러분의 피드백을 기다립니다. 만약 모델이 매번 완성된 영상을 바로 제공한다면, 게시하기 전에 여전히 손을 대고 싶으신가요, 아니면 바로 게시하시겠습니까? 올리려던 스크립트를 붙여넣어 보시고 잘된 부분과 아쉬운 부분을 알려주세요.\n\n여러분의 의견을 진심으로 기다리겠습니다!! 👇👇👇"
+    },
+    {
+     "author": "Vikram",
+     "is_maker": false,
+     "text": "@llma building consistent feed quality when you're tired of editing is a massive pain point solved, congrats for launch team👏",
+     "kr": "@llma 편집에 지쳤을 때 일관된 피드 퀄리티를 유지하는 것은 엄청난 골칫거리였는데 그 문제를 해결해 주었네요. 런칭 팀 축하드립니다👏"
+    },
+    {
+     "author": "Chris Kang",
+     "is_maker": true,
+     "text": "@llma  @vikramp7470 Thanks, Vikram! That’s exactly the wall we kept hitting ourselves. Making one good video is doable; keeping it up every week is the hard part. Would love for you to try it with a script you’ve been meaning to post and tell us how it turns out :)",
+     "kr": "@llma @vikramp7470 감사합니다, Vikram 님! 그 부분이 바로 저희 자신도 계속 마주쳤던 난관이었습니다. 좋은 영상 하나를 만드는 것은 가능하지만, 매주 꾸준히 이어가는 것이 정말 어려운 일이죠. 올리려던 스크립트로 직접 테스트해 보시고 결과를 공유해 주시면 감사하겠습니다 :)"
+    },
+    {
+     "author": "Liam Peoples",
+     "is_maker": false,
+     "text": "@llma \"Generation got cheap, finishing didn't\" is so true...I have so many clips sitting in my gallery because I never get to editing them. This fixes the right problem.",
+     "kr": "@llma \"생성은 저렴해졌지만 마무리는 그렇지 않았다\"는 말이 정말 공감되네요... 편집할 시간이 없어서 갤러리에 잠들어 있는 영상 클립이 한가득입니다. 정확히 필요한 문제를 해결해 주셨네요."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "Whereas the brand uploads its own face and voice, what is the approach towards consent, privacy, and likeness, and is there an option to delete the clone anytime?  \nBtw, Congratulations @llma , @kangchainx and team Spira Maxima 🎊✌️  \n@justin2025 Keep Hunting cool products 🌟🚀",
+     "kr": "브랜드가 자체 얼굴과 음성을 업로드할 때 동의, 프라이버시, 초상권에 대한 접근 방식은 어떻게 되며, 언제든 클론을 삭제할 수 있는 옵션이 있나요?  \n그나저나 @llma 님, @kangchainx 님 그리고 Spira Maxima 팀 축하드립니다 🎊✌️  \n@justin2025 님 멋진 제품들을 계속해서 발굴해 주세요 🌟🚀"
+    },
+    {
+     "author": "Long Ma",
+     "is_maker": true,
+     "text": "@aymi_malik Thanks Muhammad, the clone is yours, see the few specifics:\n\n*   You upload your own face and voice, and you confirm you have the right to use them. Uploading someone else's likeness without permission is against our terms and we take those down.\n\n*   Your clone is only available inside your account. Nobody else can generate with your face or voice.\n\n*   You can delete the clone and the source photo and voice sample from settings at any time, and that removes them from our systems\n\n*   We don't use your face or voice to train anything for other users.",
+     "kr": "@aymi_malik 감사합니다 Muhammad 님, 클론은 전적으로 사용자의 소유이며 몇 가지 세부 사항은 다음과 같습니다:\n\n*   본인의 얼굴과 음성을 업로드하며 해당 권리를 보유하고 있음을 확인해야 합니다. 허가 없이 타인의 초상권을 업로드하는 것은 서비스 이용 약관에 위배되며 적발 시 삭제 조치됩니다.\n\n*   생성된 클론은 사용자 본인의 계정 내에서만 사용 가능합니다. 다른 사용자가 여러분의 얼굴이나 음성으로 영상을 생성할 수 없습니다.\n\n*   언제든지 설정에서 클론과 원본 사진, 음성 샘플을 삭제할 수 있으며, 삭제 시 저희 시스템에서도 완전히 제거됩니다.\n\n*   다른 사용자를 위한 모델 학습에 여러분의 얼굴이나 음성을 절대 사용하지 않습니다."
+    },
+    {
+     "author": "Lazar Jovanovic",
+     "is_maker": false,
+     "text": "Hey! I tried the free video generation and loved it! The quality and realism are impressive 👍🏼  \n  \nI upgraded to a paid plan so I could download the generated video and use it without the watermark, but it looks like I need to regenerate the video first. Am I missing an option to download the original without it or...?  \n  \nIf that’s not possible yet, being able to remove the watermark from previously generated videos after upgrading would be a great addition.",
+     "kr": "안녕하세요! 무료 비디오 생성을 테스트해 보았는데 정말 마음에 들었습니다! 품질과 현실감이 매우 인상적이네요 👍🏼  \n  \n생성된 영상을 워터마크 없이 다운로드하여 사용하려고 유료 플랜으로 업그레이드했는데, 영상을 처음부터 다시 생성해야 하는 것처럼 보입니다. 워터마크 없이 원본을 다운로드하는 옵션을 제가 놓친 건가요 아니면...?  \n  \n만약 아직 지원되지 않는다면, 업그레이드 후 이전에 생성했던 영상의 워터마크를 제거할 수 있는 기능이 추가되면 정말 좋겠습니다."
+    },
+    {
+     "author": "Chris Kang",
+     "is_maker": true,
+     "text": "@kevgeny23 Thanks, Lazar! Really glad you liked the video, and thanks for upgrading :) We’ll add support for removing the watermark from previously generated videos as soon as possible, so you can keep the video you already love without regenerating it. Appreciate you flagging this!",
+     "kr": "@kevgeny23 감사합니다, Lazar 님! 영상이 마음에 드셨다니 정말 기쁘고 업그레이드해 주셔서 감사합니다 :) 영상을 다시 생성할 필요 없이 마음에 든 영상을 그대로 보존하실 수 있도록 이전에 생성된 영상의 워터마크 제거 기능을 최대한 빠르게 추가하겠습니다. 이 점을 짚어주셔서 감사드립니다!"
+    },
+    {
+     "author": "Yinn1014",
+     "is_maker": false,
+     "text": "The AI clone part makes me nervous, wonder what stops someone from uploading a person who isn’t them, is there any consent check?",
+     "kr": "AI 클론 기능이 조금 우려되는데, 본인이 아닌 타인을 업로드하는 것을 어떻게 막을 수 있나요? 동의 여부를 확인하는 절차가 있나요?"
+    },
+    {
+     "author": "Long Ma",
+     "is_maker": true,
+     "text": "@yinn1014 you confirm you have the right to the face and voice you upload, every clone is locked to the account that made it, and we take down anything reported with the person's likeness.",
+     "kr": "@yinn1014 업로드하는 얼굴과 음성에 대한 권리를 보유하고 있음을 명시적으로 확인받으며, 모든 클론은 생성한 해당 계정에만 잠금 적용됩니다. 또한 타인의 초상권 침해로 신고된 모든 건은 즉시 삭제 조치됩니다."
+    },
+    {
+     "author": "Anthony Cai",
+     "is_maker": false,
+     "text": "what kind of videos are you good at making with this AI video production product? SaaS tools? E-commerce products? I want to know what advantages you have compared with other competitors.",
+     "kr": "이 AI 비디오 제작 도구로 만들기에 가장 적합한 영상 종류는 무엇인가요? SaaS 도구인가요, 아니면 이커머스 제품인가요? 경쟁사 대비 어떤 장점이 있는지 알고 싶습니다."
+    },
+    {
+     "author": "Chris Kang",
+     "is_maker": true,
+     "text": "@anthony_cai Thanks, Anthony! Maxima is a social video model focused on UGC-style videos: a presenter telling the story, with B-roll, captions and music built around your script. For SaaS, that could be a video explaining what your tool does; for e-commerce, you can bring product shots into the video. Our focus is on generating the finished social video in one pass, so you don’t have to assemble those pieces yourself afterward.",
+     "kr": "@anthony_cai 감사합니다, Anthony 님! Maxima는 발표자가 스토리를 풀어나가며 스크립트에 맞춰 B-roll, 자막, 배경음악이 구성되는 UGC 스타일 영상에 특화된 소셜 비디오 모델입니다. SaaS의 경우 툴이 하는 일을 설명하는 영상이 될 수 있고, 이커머스의 경우 제품 사진을 영상 속에 삽입할 수 있습니다. 저희의 핵심은 한 번에 완성된 소셜 영상을 생성하여 이후 사용자가 직접 조각들을 조합할 필요가 없도록 하는 것입니다."
+    }
+   ],
+   "slug": "spira-ai",
+   "website": "https://spira.ai/"
+  },
+  {
+   "name": "FastRouter.ai",
+   "tagline_en": "Route requests to the right LLM for cost, latency & quality",
+   "tagline_kr": "비용·지연시간·품질에 맞춰 최적의 LLM으로 요청을 라우팅하는 통합 AI 게이트웨이",
+   "image": "https://ph-files.imgix.net/998bdc2f-69ab-4024-9d20-630d5c9513b1.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "API",
+    "Developer Tools",
+    "Artificial Intelligence",
+    "AI Infrastructure Tools"
+   ],
+   "upvotes": 318,
+   "comments_count": 54,
+   "maker": "Ritesh Prasad(@ritprasad), Rohan Chaubey(@rohanrecommends), Richie Fredicson(@richie_fredicson)",
+   "price_model": "무료 플랜 및 클라우드 SaaS / 온프레미스 기업 요금제 (Free Tier / SaaS / On-prem)",
+   "price_detail": "기본적인 무료 플랜을 제공하며, 클라우드 SaaS 및 온프레미스(자체 인프라) 엔터프라이즈 요금제를 지원합니다. Product Hunt 런칭 프로모션으로 2개월 무료 혜택(fastrouter.ai/product-hunt)을 제공합니다.",
+   "desc_kr": "FastRouter.ai는 단일 OpenAI 호환 API를 통해 200개 이상의 거대언어모델(LLM)에 요청을 전달하는 개발자 및 엔터프라이즈 팀을 위한 통합 AI 게이트웨이이자 컨트롤 플레인 플랫폼입니다. 비용, 응답 지연시간, 출력 품질, 신뢰성을 종합적으로 분석하여 요청을 가장 적합한 모델과 업스트림 프로바이더로 지능형 라우팅하며 견고한 자동 장애 조치(Failover)를 지원합니다. 단순한 트래픽 차트 모니터링을 넘어 실제 프로덕션 데이터를 분석해 프롬프트 캐싱 기회나 저렴한 대체 모델을 추천하는 능동적 비용 절감 인사이트(Routing Intelligence)를 제공합니다. 텍스트뿐만 아니라 이미지 및 비디오 멀티모달 응답 캐싱, 실시간 오류 알림, 공유 및 버전 관리가 가능한 프롬프트 라이브러리와 커스텀 모델 평가 도구를 갖추고 있습니다. 클라우드 SaaS 및 온프레미스 배포를 지원하며 API 키별 콘텐츠 로깅 비활성화와 제로 데이터 보존(ZDR) 프로바이더 연결을 통해 엄격한 프라이버시와 규제 요건을 충족합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/fastrouter-ai",
+   "comment_summary": "댓글에서는 기존 라우터 대비 차별화된 능동적 라우팅 지능(Routing Intelligence)과 멀티모달 캐싱, 커스텀 모델 평가 기능에 많은 호평과 관심이 이어졌습니다. 스트리밍 전송 도중 장애 발생 시 처리 방식, 가상 모델 별칭(Virtual Model Aliases)을 통한 사용자 정의 라우팅 정책 설정, 그리고 게이트웨이를 경유하는 프롬프트 데이터의 프라이버시 보호 방안에 대한 기술적 질의응답이 활발히 진행되었습니다. 메이커 측은 토큰 출력 개시 전 자동 프로바이더 장애 조치 구조, API 키 단위의 프롬프트 저장 비활성화 및 온프레미스 배포 지원 정책을 설명하며 엔터프라이즈 수준의 보안성과 신뢰성을 강조했습니다.",
+   "warnings": "수치(업보트 318·댓글 54)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Ritesh Prasad",
+     "is_maker": true,
+     "text": "Hey Product Hunt! I’m RP, part of the team behind FastRouter.ai.\n\nWe built FastRouter because running AI in production meant too much plumbing and too much guesswork: multiple SDKs, scattered dashboards, fragile failover, and no clear answer to “How do we make this cheaper without making it worse?” when all the logs are scattered all over the place.\n\n⚡ One integration. Less provider juggling.\n\nFastRouter gives you a unified API across major models and providers, with support for OpenAI, Anthropic Messages, and Gemini-compatible interfaces.\n\nClaude models, for example, are available through Anthropic, Amazon Bedrock, and Google Vertex AI. FastRouter routes requests to healthy upstreams, so you don’t have to maintain separate SDK integrations and failover logic yourself.\n\nRouting is the starting point. Routing Intelligence is what makes FastRouter different.\n\nMost gateways show you traffic and spending. FastRouter helps you figure out what to change:\n\n*   Proactive cost insights: Weekly recommendations based on real traffic. Find cheaper models, prompt caching opportunities, and workloads suited to flex pricing. Model-switching recommendations include evals so you can compare quality before switching.\n\n*   Early warning signs: Spot latency drift, error spikes, and cost anomalies, with alerts delivered to Slack or PagerDuty.\n\n*   Request-level visibility: See which upstream served each request, allocate costs with tags, and inspect logs, including multimodal outputs.\n\n*   Evals beyond text: Evaluate production traffic and datasets, including images and video. A successful API response doesn’t always mean a usable output.\n\n*   Multimodal response caching: Reuse cached image and video responses for matching prompts or cache keys instead of calling the model again.\n\n*   Better prompt management: Keep prompts in a shared, versioned library, with optimization and compression tools to improve them.\n\nOur production customers are already saving $10K+ per month by acting on FastRouter’s recommendations.\n\nAvailable as SaaS or fully on-prem, with budget caps, alerts, and access controls built in.\n\nWe built this to spend less time maintaining integrations and investigating bills, and more time shipping things that work.\n\nClaim 2 months free: https://fastrouter.ai/product-hunt\n\nWhat’s your biggest AI production headache right now: reliability, cost, integrations, or quality? Let us know in your comments.",
+     "kr": "Product Hunt 여러분 안녕하세요! 저는 FastRouter.ai 팀의 RP(Ritesh Prasad)입니다.\n\n저희가 FastRouter를 구축한 이유는 프로덕션 환경에서 AI를 운영하려면 수많은 연결 작업과 추측이 필요했기 때문입니다. 다중 SDK, 흩어진 대시보드, 불안정한 장애 조치, 그리고 모든 로그가 사방에 흩어져 있는 상황에서 \"어떻게 하면 품질 저하 없이 비용을 낮출 수 있을까?\"라는 질문에 명확한 답을 찾기 어려웠습니다.\n\n⚡ 단 한 번의 연동으로 프로바이더 관리 부담을 줄였습니다.\n\nFastRouter는 OpenAI, Anthropic Messages, Gemini 호환 인터페이스를 지원하며 주요 모델 및 프로바이더 전반에 걸친 통합 API를 제공합니다.\n\n예를 들어 Claude 모델은 Anthropic, Amazon Bedrock, Google Vertex AI를 통해 이용할 수 있습니다. FastRouter가 정상 상태의 업스트림으로 요청을 라우팅하므로 개발자가 개별 SDK 연동과 장애 조치 로직을 직접 유지 관리할 필요가 없습니다.\n\n라우팅은 시작일 뿐입니다. FastRouter를 차별화하는 것은 바로 '라우팅 지능(Routing Intelligence)'입니다.\n\n대부분의 게이트웨이는 트래픽과 지출 내역만 보여줍니다. 반면 FastRouter는 무엇을 변경해야 하는지 파악하도록 돕습니다:\n\n*   능동적 비용 인사이트: 실제 트래픽 기반의 주간 추천 리포트를 제공합니다. 더 저렴한 모델, 프롬프트 캐싱 기회, 플렉스 요금제에 적합한 워크로드를 찾아드립니다. 모델 전환 추천에는 사전에 품질을 비교할 수 있도록 평가 결과가 포함됩니다.\n\n*   조기 경보 알림: 지연시간 변화, 에러 급증, 비용 이상 징후를 감지하여 Slack이나 PagerDuty로 알림을 전송합니다.\n\n*   요청 단위 가시성: 각 요청을 처리한 업스트림을 확인하고, 태그로 비용을 할당하며, 멀티모달 출력을 포함한 로그를 점검합니다.\n\n*   텍스트를 넘어선 평가: 이미지와 비디오를 포함한 실제 운영 트래픽과 데이터셋을 평가합니다. API 응답 성공이 항상 쓸모 있는 결과물을 의미하지는 않기 때문입니다.\n\n*   멀티모달 응답 캐싱: 모델을 다시 호출하는 대신 일치하는 프롬프트나 캐시 키에 대해 캐시된 이미지 및 비디오 응답을 재사용합니다.\n\n*   더 나은 프롬프트 관리: 최적화 및 압축 도구를 갖춘 버전 관리 공유 라이브러리에 프롬프트를 보관합니다.\n\n저희 프로덕션 고객들은 FastRouter의 추천을 적용하여 이미 월 10,000달러 이상을 절감하고 있습니다.\n\n예산 한도 설정, 경보, 접근 제어가 내장되어 있으며 SaaS 또는 완전한 온프레미스로 이용할 수 있습니다.\n\n연동 유지보수와 청구서 분석에 드는 시간을 줄이고 제대로 작동하는 제품을 만드는 데 집중할 수 있도록 개발했습니다.\n\n2개월 무료 혜택 받기: https://fastrouter.ai/product-hunt\n\n현재 프로덕션 AI 운영에서 가장 큰 골칫거리는 무엇인가요? 안정성, 비용, 연동, 품질 중 어떤 부분인지 댓글로 알려주세요."
+    },
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "@ritprasad Many congratulations, Ritesh, Andrej and team! 😊\n\nHow I met the makers: Andrej reached out to showcase FastRouter, and I was immediately impressed by the product design, clarity of the mission, and the real developer pain point it addresses. It’s a well-timed solution for teams building AI applications at scale.\n\nWe worked together for polishing their launch assets, product positioning and messaging before the launch.\n\nWhat FastRouter does: FastRouter is a unified AI gateway and control plane that routes requests across 200+ LLMs through one OpenAI-compatible API. It helps teams optimize for cost, latency, quality, and reliability, while providing failover, observability, governance and actionable insights without vendor lock-in.\n\nWhy I endorse it: Teams often struggle with managing multiple model providers, fragile fallback logic, unpredictable costs, and unclear quality trade-offs.\n\nFastRouter turns that complexity into a single intelligent layer, with proactive recommendations, request-level visibility, and evaluation tools that make model choices easier to trust.\n\nI’m confident FastRouter will see strong adoption among developers and enterprises looking to scale AI products more efficiently. ✨",
+     "kr": "@ritprasad Ritesh, Andrej 그리고 팀 여러분 진심으로 축하드립니다! 😊\n\n메이커들과의 인연: Andrej가 FastRouter를 소개하기 위해 연락해 왔을 때 제품 디자인, 명확한 미션, 그리고 해결하고자 하는 실제 개발자의 고충에 즉시 깊은 인상을 받았습니다. 대규모 AI 애플리케이션을 구축하는 팀에게 시의적절한 솔루션입니다.\n\n저희는 런칭 전 에셋을 다듬고 제품 포지셔닝과 메시지를 함께 완성했습니다.\n\nFastRouter의 기능: FastRouter는 하나의 OpenAI 호환 API를 통해 200개 이상의 LLM으로 요청을 라우팅하는 통합 AI 게이트웨이이자 컨트롤 플레인입니다. 벤더 락인 없이 장애 조치, 가시성, 거버넌스, 실질적인 인사이트를 제공하며 비용, 지연시간, 품질, 안정성을 최적화하도록 돕습니다.\n\n추천하는 이유: 팀들은 종종 여러 모델 공급자 관리, 취약한 폴백 로직, 예측하기 어려운 비용, 불명확한 품질 간 트레이드오프 문제로 어려움을 겪습니다.\n\nFastRouter는 이러한 복잡성을 단일 지능형 계층으로 변환하여 능동적인 추천, 요청 단위의 가시성, 모델 선택을 신뢰할 수 있게 해주는 평가 도구를 제공합니다.\n\n더 효율적으로 AI 제품을 확장하고자 하는 개발자와 기업들 사이에서 FastRouter가 널리 채택될 것이라 확신합니다. ✨"
+    },
+    {
+     "author": "Ritesh Prasad",
+     "is_maker": true,
+     "text": "@rohanrecommends Huge thanks, both for hunting FastRouter and for your feedback.\n\nYou’ve captured exactly why we’re building this: teams should spend more time building their AI products and less time managing providers, fallback logic, and cost surprises. What matters is driving meaningful outcomes be it in terms of cost, quality or performance for the AI products we build.  \nGrateful for your support and for hunting us today!",
+     "kr": "@rohanrecommends FastRouter를 헌트해 주신 것과 소중한 피드백 모두 대단히 감사드립니다.\n\n저희가 이 제품을 만드는 이유를 정확하게 짚어주셨습니다. 팀은 프로바이더 관리나 폴백 로직, 예상치 못한 비용 문제에 시간을 낭비하지 않고 AI 제품 개발에 더 집중해야 합니다. 중요한 것은 우리가 만드는 AI 제품에 대해 비용, 품질, 성능 측면에서 의미 있는 결과를 도출하는 것입니다.  \n오늘 헌트해 주시고 응원해 주셔서 진심으로 감사드립니다!"
+    },
+    {
+     "author": "Jeetendra Kumar",
+     "is_maker": false,
+     "text": "grouping retries under the original request is useful. if a stream fails halfway through, can failover continue it or does the user get a new response from scratch?",
+     "kr": "원래 요청 아래에 재시도를 그룹화하는 것은 유용하네요. 만약 스트리밍 중간에 실패할 경우, 장애 조치(failover)를 통해 이어서 진행되나요 아니면 사용자가 처음부터 새 응답을 받게 되나요?"
+    },
+    {
+     "author": "Ritesh Prasad",
+     "is_maker": true,
+     "text": "@jeetendra_kumar2 Great question. Right now failover only kicks in before the first token is sent. If a request fails upfront (connection error, 5xx, rate limit, etc.), we retry/fail over to another provider and the client sees a single, clean response. But if the stream has already started and the provider errors out midway, we don't retry we surface the error on the stream and end it.",
+     "kr": "@jeetendra_kumar2 훌륭한 질문입니다. 현재 장애 조치(failover)는 첫 번째 토큰이 전송되기 전에만 실행됩니다. 요청이 사전에 실패하는 경우(연결 오류, 5xx 응답, 속도 제한 등) 다른 프로바이더로 재시도 및 장애 조치되어 클라이언트는 단일한 정상 응답을 보게 됩니다. 하지만 스트림이 이미 시작된 후 프로바이더에서 중간에 에러가 발생한 경우에는 재시도하지 않고 스트림에 에러를 표시하며 종료합니다."
+    },
+    {
+     "author": "Nishit Chittora",
+     "is_maker": false,
+     "text": "Hey @ritprasad  \n  \nCongrats on the launch.\n\nHow is it any different from OpenRouter? Any key differences you have implemented or plan to implement in the future?",
+     "kr": "안녕하세요 @ritprasad 님  \n  \n런칭을 축하드립니다.\n\nOpenRouter와는 어떻게 다른가요? 구현되었거나 향후 구현할 예정인 주요 차이점이 있나요?"
+    },
+    {
+     "author": "Ritesh Prasad",
+     "is_maker": true,
+     "text": "@nishit_chittora Fair question. While OpenRouter (and perhaps others as well) is a great product, I'd say where FastRouter shines is in the area of Routing Intelligence i.e. beyond being a model marketplace and catering to a host of other features that both platforms offer.  \nBy Routing Intelligence, some of these differentiating features include:  \n1. Proactive Insights: Proactive audits of your production LLM traffic to uncover actionable savings and recommendations through prompt caching, flex-tier usage, model swaps that offer the same quality of output at a cheaper price.  \n2. Real time alerts: Get real time alerts on Slack, PagerDuty, etc. in case of any spikes - be it latency/errors/spend spikes - be it threshold or % based in comparison to previous periods and where metrics are measured per request as that is what matters to your end user.  \n3. Prompt Management & Optimizations: Via prompt optimization, prompt versioning with rollback  \n4. Custom Evaluations: Across text, image, and video outputs to evaluate / compare model outputs side by side.  \n5. Multimodal observability & response caching: Not just log/review your multimodal image / video content in logs but also leverage response caching for such requests.  \nWe have customers who have saved / identified >$10K/month of savings via some of the above recommendations/features and see great traction with customers using AI for multimodal outputs.  \nAnd while we will keep pace on some of the features others offer, we will continue to set pace with more of these differentiators going forward.",
+     "kr": "@nishit_chittora 타당한 질문입니다. OpenRouter를 비롯한 다른 플랫폼도 훌륭한 제품이지만, FastRouter의 진가는 양쪽 플랫폼이 제공하는 단순 모델 마켓플레이스를 넘어선 '라우팅 지능(Routing Intelligence)'에 있습니다.  \n라우팅 지능이란 다음과 같은 차별화된 기능들을 의미합니다:  \n1. 능동적 인사이트: 프로덕션 LLM 트래픽을 선제적으로 감사하여 프롬프트 캐싱, 플렉스 요금제 활용, 동일한 품질을 더 저렴하게 제공하는 모델 전환을 통해 실질적인 절감 효과와 권장 사항을 찾아냅니다.  \n2. 실시간 알림: 지연시간/오류/비용 급증 시 이전 기간 대비 임계값이나 비율(%)을 기준으로 Slack, PagerDuty 등에서 실시간 알림을 받으며, 최종 사용자에게 중요한 지표인 요청 단위로 측정됩니다.  \n3. 프롬프트 관리 및 최적화: 프롬프트 최적화 및 롤백을 지원하는 프롬프트 버전 관리 기능을 제공합니다.  \n4. 커스텀 평가: 텍스트, 이미지, 비디오 출력 전반에 걸쳐 모델 결과물을 나란히 비교 및 평가할 수 있습니다.  \n5. 멀티모달 관측성 및 응답 캐싱: 로그에서 이미지/비디오 콘텐츠를 검토할 뿐만 아니라 해당 요청에 대한 응답 캐싱을 활용할 수 있습니다.  \n이러한 추천과 기능을 통해 이미 월 10,000달러 이상의 절감 효과를 본 고객들이 있으며, 멀티모달 출력을 활용하는 고객들 사이에서 큰 호응을 얻고 있습니다.  \n기존 플랫폼들이 제공하는 기능들을 따라잡는 동시에, 이러한 차별화된 요소들로 시장을 지속적으로 선도해 나갈 것입니다."
+    },
+    {
+     "author": "Anant Gupta",
+     "is_maker": false,
+     "text": "Congrats on the launch. Can I set my own routing policies in settings on top of the default logic?",
+     "kr": "런칭을 축하드립니다. 기본 로직 외에 설정에서 사용자 정의 라우팅 정책을 직접 지정할 수 있나요?"
+    },
+    {
+     "author": "Ritesh Prasad",
+     "is_maker": true,
+     "text": "@iamanantgupta Thanks, Anant! Yes, you can configure your own routing policies using **Virtual Model Aliases**: https://docs.fastrouter.ai/explore-features/virtual-model-aliases\n\nOptions include Random Shuffle, Lowest Latency, Highest Throughput, Lowest Usage, Lowest Price, Priority Routing, and Category-Based Routing. For example, you can prioritize a specific provider and fall back to the next only if a request fails, or choose the lowest-cost option from a selected set of providers.  \nIn the next couple of days, we’re also launching Optimization Settings, through which you’ll be able to assign a setting to individual model choices within an alias - e.g. try the flex tier always for a particular model within an alias; use prompt compression with one of choices; etc. Stay tuned!",
+     "kr": "@iamanantgupta 감사합니다, Anant 님! 네, **가상 모델 별칭(Virtual Model Aliases)**을 사용하여 자체 라우팅 정책을 구성하실 수 있습니다: https://docs.fastrouter.ai/explore-features/virtual-model-aliases\n\n랜덤 셔플, 최저 지연시간, 최고 처리량, 최저 사용량, 최저 가격, 우선순위 라우팅, 카테고리 기반 라우팅 등의 옵션을 제공합니다. 예를 들어 특정 프로바이더를 우선시하고 요청 실패 시에만 다음 프로바이더로 폴백하거나, 선택된 프로바이더 목록 중 가장 저렴한 옵션을 선택하도록 설정할 수 있습니다.  \n앞으로 며칠 내로 별칭 내의 개별 모델 선택에 설정을 지정할 수 있는 최적화 설정(Optimization Settings)도 출시될 예정입니다. (예: 특정 모델에 대해 항상 플렉스 티어 시도, 특정 선택지에 프롬프트 압축 적용 등) 기대해 주세요!"
+    },
+    {
+     "author": "Alira Salu",
+     "is_maker": false,
+     "text": "How do you handle privacy and data logging when prompts pass through the gateway?",
+     "kr": "프롬프트가 게이트웨이를 통과할 때 프라이버시와 데이터 로깅은 어떻게 처리되나요?"
+    },
+    {
+     "author": "Ritesh Prasad",
+     "is_maker": true,
+     "text": "@alira_salu We do not use your logs for training if that is a concern. That said, there are two options with regards to your specific query:\n\n*   **Disable content logging per API key:** FastRouter won’t store the prompts or responses passing through the gateway for that key. The trade-off is that those requests won’t be available for AI Evals / Insights / Prompt Optimizations and more, since those features rely on replaying the original requests or importing logs with the original prompt, taking the user feedback on the responses and using the feedback to improve the original prompt.\n\n*   **Deploy in your own environment:** Our enterprise offering supports running FastRouter on-premises / in your own cloud.\n\n**Sidenote:** Apart from disabling content logging, you can also route to providers with documented zero data retention (ZDR). Our ZDR documentation has more details on the same.",
+     "kr": "@alira_salu 우려하시는 점에 대해 말씀드리면, 저희는 고객의 로그를 모델 학습에 사용하지 않습니다. 질문하신 내용과 관련하여 두 가지 선택지가 있습니다:\n\n*   **API 키별 콘텐츠 로깅 비활성화:** FastRouter는 해당 키로 게이트웨이를 통과하는 프롬프트나 응답을 저장하지 않습니다. 다만 원래 프롬프트가 포함된 로그를 가져와 응답에 대한 피드백을 반영해 프롬프트를 개선하거나 요청을 재생하는 AI 평가(AI Evals), 인사이트, 프롬프트 최적화 등의 기능을 활용할 수 없다는 트레이드오프가 있습니다.\n\n*   **자체 환경에 배포:** 엔터프라이즈 요금제를 통해 온프레미스 또는 자체 클라우드 환경에서 FastRouter를 직접 구동할 수 있습니다.\n\n**참고:** 콘텐츠 로깅을 비활성화하는 것 외에도 제로 데이터 보존(ZDR)이 보장된 프로바이더로만 라우팅할 수도 있습니다. ZDR 설명서에서 자세한 내용을 확인하실 수 있습니다."
+    },
+    {
+     "author": "Kate Ragotte",
+     "is_maker": false,
+     "text": "@ritprasad I think the real pain in production AI isn't calling the models, it's knowing what to change afterward. Most dashboards just show charts and leave you guessing. Recommendations based on real traffic feels like the right direction.",
+     "kr": "@ritprasad 프로덕션 AI에서 겪는 진정한 고통은 단순히 모델을 호출하는 것이 아니라, 호출 이후에 무엇을 수정해야 할지 파악하는 것이라고 생각합니다. 대부분의 대시보드는 차트만 보여줄 뿐 추측에 맡겨두는데, 실제 트래픽에 기반한 추천은 매우 올바른 방향인 것 같습니다."
+    }
+   ],
+   "slug": "fastrouter-ai",
+   "website": "https://fastrouter.ai/?utm_source=producthunt&utm_medium=referral&utm_campaign=ph-launch"
+  },
+  {
+   "name": "Invofox Self Serve",
+   "tagline_en": "99% accurate document extraction, SLA guaranteed",
+   "tagline_kr": "99% 이상의 추출 정확도와 SLA 보증을 제공하는 개발자용 문서 파싱 API",
+   "image": "https://ph-files.imgix.net/f9b532e4-4dd2-479c-9077-d9cd897f7aed.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "API",
+    "Developer Tools",
+    "Artificial Intelligence",
+    "Automation tools"
+   ],
+   "upvotes": 296,
+   "comments_count": 27,
+   "maker": "Alberto Gimeno(@alberto_gimeno), Nacho Gabaldón(@nachogabaldon), Ben Lang(@benln)",
+   "price_model": "페이지당 종량제 및 무료 체험 (Pay-per-page / 1,500 Free Pages)",
+   "price_detail": "복잡한 크레딧 체계 없이 처리된 페이지당 요금이 부과되며 사용량 증가에 따라 단가가 인하됩니다. 파싱 오류 발생 시 해당 문서 비용은 100% 무료 처리되는 SLA를 보증합니다. 카드 등록 없이 500페이지를 기본 제공하며, Product Hunt 런칭 프로모션으로 1,000페이지가 추가되어 총 1,500페이지를 무료로 체험할 수 있습니다.",
+   "desc_kr": "Invofox Self Serve는 복잡하고 변형이 심한 실제 문서를 정밀한 구조화 JSON 데이터로 변환해 주는 개발자용 문서 파싱 API입니다. 단일 엔드포인트에 파일을 POST하는 것만으로 이중 패스 OCR, 문서 분할, 분류, 필드 추출, 상호 유효성 검사, 신뢰도 점수 부여까지 전 과정을 자동으로 수행합니다. 99% 이상의 정확도를 SLA로 보증하며, 시스템이 추출 오류를 범할 경우 해당 문서에 대해 일체의 비용을 청구하지 않는 파격적인 정책을 운영합니다. 기존 대기업 위주의 영업 미팅 방식에서 벗어나 셀프서브 가입을 도입함으로써 청구서, 영수증, 은행 명세서 등 사전 구축된 서식은 물론 커스텀 스키마를 즉시 테스트할 수 있습니다. 엔터프라이즈 환경을 위한 데이터 제로 보존(ZDR)과 온프레미스 자체 인프라 배포를 지원하여 금융 및 민감 정보를 다루는 기업도 안전하게 도입할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/invofox",
+   "comment_summary": "댓글에서는 복잡한 영업 미팅 절차와 신용카드 등록 없이 즉시 1,500페이지를 무료로 테스트할 수 있도록 셀프서브로 전환된 점에 큰 호응이 쏟아졌습니다. 해상도가 낮거나 기울어진 저품질 스캔 문서에 대한 파싱 정확도, 기본 서식 외 맞춤형 커스텀 스키마 정의 기능, 그리고 민감 데이터 처리를 위한 온프레미스 배포 지원 여부에 관한 질문들이 주를 이뤘습니다. 메이커 측은 전처리 필터와 다중 OCR 엔진 라우팅 기술을 적용해 스캔 품질 한계를 극복하고 있으며 데이터 제로 보존(ZDR) 및 자체 환경 온프레미스 배포가 완비되어 있다고 답변했습니다.",
+   "warnings": "수치(업보트 296·댓글 27)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Alberto Gimeno",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋\n\nWe started Invofox because we kept watching good engineering teams lose entire quarters to document processing. The weekend prototype always works. Then come the scanned faxes, the multi-document PDFs, the tables that span three pages, the tax IDs that only appear in the footer, and suddenly two engineers are maintaining an OCR pipeline instead of building the product.\n\nSo we built the pipeline once, properly: intake, dual-pass OCR, splitting, classification, extraction, cross-field validation, confidence scoring, provenance, and a feedback loop that keeps improving on your specific documents. You POST a file to one endpoint and get validated JSON back.\n\nFor the last few years that only existed behind an enterprise contract. We were heads-down serving some of the largest tech companies and enterprises in Europe and the US, and honestly, we never built a way for a small team to just try it.\n\nThat always felt wrong.\n\nToday that changes. Invofox Self-Serve is the same pipeline and the same accuracy bar, available with a signup form instead of a sales call. Two things we care about most: accuracy is part of our SLAs, and any document where we make a mistake is completely free. Pricing is per page, it goes down with volume, and there are no credit systems to decode.\n\nFor Product Hunt: the free tier is 500 pages with no credit card, and we're adding 1,000 extra pages on top for anyone who signs up from here.\n\nBring us your worst document. The one that broke your last parser. We'd genuinely like to see it, and we'll be in the comments all day.",
+     "kr": "Product Hunt 여러분 안녕하세요 👋\n\n저희가 Invofox를 시작한 이유는 훌륭한 엔지니어링 팀들이 문서 처리 때문에 몇 분기씩 시간을 낭비하는 모습을 계속 보아왔기 때문입니다. 주말에 만든 프로토타입은 항상 잘 동작합니다. 하지만 스캔된 팩스, 여러 문서가 합쳐진 PDF, 3페이지에 걸친 표, 바닥글에만 나타나는 사업자 번호가 들어오기 시작하면, 어느새 두 명의 엔지니어가 본 제품 개발 대신 OCR 파이프라인 유지보수에 매달리게 됩니다.\n\n그래서 저희는 수집, 이중 패스 OCR, 문서 분할, 분류, 추출, 교차 필드 유효성 검사, 신뢰도 점수, 출처 추적, 그리고 고객 고유의 문서에 맞춰 지속적으로 개선되는 피드백 루프를 갖춘 완전한 파이프라인을 제대로 구축했습니다. 단 하나의 엔드포인트에 파일을 POST하면 검증된 JSON을 반환받습니다.\n\n지난 몇 년간 이 기능은 엔터프라이즈 계약을 통해서만 제공되었습니다. 유럽과 미국의 대형 기술 기업 및 엔터프라이즈 고객들을 지원하느라 바빴고, 솔직히 작은 팀이 쉽게 체험해 볼 수 있는 방법을 마련하지 못했습니다.\n\n그 점이 항상 마음에 걸렸습니다.\n\n오늘 그 방식이 바뀝니다. Invofox Self-Serve는 영업 통화 대신 회원가입 폼 하나로 동일한 파이프라인과 높은 정확도를 제공합니다. 저희가 가장 중요하게 생각하는 두 가지는 정확도가 SLA의 일부라는 점과, 추출 오류가 발생한 모든 문서는 완전 무료라는 점입니다. 요금은 페이지당 부과되며 사용량이 늘어날수록 단가가 내려가고, 복잡한 크레딧 체계를 이해할 필요가 없습니다.\n\nProduct Hunt 회원을 위해 신용카드 등록 없이 500페이지를 기본 제공하며, 이곳을 통해 가입하시는 모든 분께 1,000페이지를 추가로 드립니다.\n\n이전 파서를 망가뜨렸던 가장 까다로운 문서를 가져와 보세요. 직접 확인해 드리고 싶으며, 오늘 온종일 댓글에 머무르겠습니다."
+    },
+    {
+     "author": "Priya K",
+     "is_maker": false,
+     "text": "@alberto_gimeno getting clean JSON straight from a POST request saves so much boilerplate",
+     "kr": "@alberto_gimeno POST 요청 한 번으로 깔끔한 JSON을 바로 얻을 수 있으니 보일러플레이트 코드가 정말 많이 절약되네요"
+    },
+    {
+     "author": "Nacho Gabaldón",
+     "is_maker": true,
+     "text": "@alberto_gimeno  @priya_kushwaha1 Thanks Priya. Invofox's goal is to make document extraction so simple for technical teams that they can focus on their product roadmap and core features.",
+     "kr": "@alberto_gimeno @priya_kushwaha1 감사합니다 Priya 님. Invofox의 목표는 개발 팀이 제품 로드맵과 핵심 기능에만 집중할 수 있도록 문서 추출 과정을 극도로 단순하게 만드는 것입니다."
+    },
+    {
+     "author": "James Kerr",
+     "is_maker": false,
+     "text": "@alberto_gimeno Thanks for being honest that it was only for big companies before, and for opening it up, team! The 500 free pages with no card makes it easy to test",
+     "kr": "@alberto_gimeno 이전에는 대기업 전용이었다는 점을 솔직하게 밝히고 작은 팀에도 공개해 주셔서 감사합니다! 카드 등록 없이 500페이지를 무료로 제공해 주니 테스트하기 정말 수월하네요"
+    },
+    {
+     "author": "Anastasiia",
+     "is_maker": false,
+     "text": "Great idea :) Can I use it locally for sensitive information?",
+     "kr": "멋진 아이디어네요 :) 민감한 정보를 위해 로컬 환경에서 사용할 수 있나요?"
+    },
+    {
+     "author": "Alberto Gimeno",
+     "is_maker": true,
+     "text": "@alieksia yes, we support zero data retention and on premise deployments! Talk to our team and we'll be happy to help you with it",
+     "kr": "@alieksia 네, 데이터 제로 보존(ZDR)과 온프레미스 배포를 지원합니다! 저희 팀에 문의해 주시면 성심껏 도와드리겠습니다"
+    },
+    {
+     "author": "Greg Démogé",
+     "is_maker": false,
+     "text": "Thanks for opening this up to small teams, haha... Booking a sales call just to try something is annoying, so 500 free pages with no card is an easy way to start.",
+     "kr": "작은 팀에도 열어주셔서 감사합니다, ㅎㅎ... 테스트 한 번 해보려고 영업 미팅을 예약하는 건 꽤 번거로운 일인데, 카드 없이 500페이지 무료는 시작하기에 정말 편하네요."
+    },
+    {
+     "author": "Alberto Gimeno",
+     "is_maker": true,
+     "text": "@new_usergreg3 thanks Greg!  \nIt's actually 1,500 pages during the launch. I'd love to hear your feedback when you try it!",
+     "kr": "@new_usergreg3 감사합니다 Greg 님!  \n런칭 기간 동안 실제로는 1,500페이지가 제공됩니다. 사용해 보시고 피드백을 들려주시면 감사하겠습니다!"
+    },
+    {
+     "author": "Rohit Kushwaha",
+     "is_maker": false,
+     "text": "@alberto_gimeno How well does Invofox handle Messy or low quality scanned documents, that's usually where document parsing gets really difficult.",
+     "kr": "@alberto_gimeno 문서 파싱이 가장 까다로운 부분이 바로 지저분하거나 품질이 낮은 스캔 문서인데, Invofox는 이런 문서를 얼마나 잘 처리하나요?"
+    },
+    {
+     "author": "Nacho Gabaldón",
+     "is_maker": true,
+     "text": "@alberto_gimeno  @rohit62661 Hey Rohit! Totally agree, clean PDFs in tests never reflect real-world production. To tackle messy scans, we run a pre-processing pipeline first (orientation, deskewing, noise reduction and contrast enhancement) and then route the document through different OCR engines depending on its quality. We also use feedback from each client to fine-tune extraction over time. And to keep things fair, if we can't accurately extract the data you need, we don't charge for that document.",
+     "kr": "@alberto_gimeno @rohit62661 안녕하세요 Rohit 님! 전적으로 동의합니다. 테스트에서의 깔끔한 PDF는 실제 운영 환경을 전혀 반영하지 못하죠. 지저분한 스캔을 처리하기 위해 저희는 먼저 전처리 파이프라인(방향 조정, 기울기 보정, 노이즈 감소, 대비 향상)을 실행한 다음 품질에 따라 문서를 각기 다른 OCR 엔진으로 라우팅합니다. 또한 고객의 피드백을 활용하여 시간이 지남에 따라 추출 정확도를 미세 조정합니다. 그리고 공정성을 위해 필요한 데이터를 정확히 추출하지 못할 경우 해당 문서에 대해서는 비용을 청구하지 않습니다."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "Great idea! Am I allowed to create my own schema for different types of documents or select predefined schemas such as invoices, receipts, and bank statements?  \nAdditionally, Congratulations @nachogabaldon , @alberto_gimeno & team Invofox Self Serve ✌️🚀",
+     "kr": "훌륭한 아이디어입니다! 다양한 문서 유형에 대해 커스텀 스키마를 직접 생성할 수 있나요, 아니면 청구서, 영수증, 은행 명세서처럼 미리 정의된 스키마만 선택 가능한가요?  \n더불어 @nachogabaldon 님, @alberto_gimeno 님 그리고 Invofox Self Serve 팀 모두 축하드립니다 ✌️🚀"
+    },
+    {
+     "author": "Nacho Gabaldón",
+     "is_maker": true,
+     "text": "@alberto_gimeno  @aymi_malik Thanks a lot for the support! Yes to both! You can use our pre-built schemas for standard documents like invoices, receipts, and bank statements out of the box.\n\nIf you have custom layouts or specific fields you need to extract, you can also define your own custom schemas to fit your workflow.",
+     "kr": "@alberto_gimeno @aymi_malik 응원해 주셔서 대단히 감사합니다! 둘 다 가능합니다! 청구서, 영수증, 은행 명세서 같은 표준 문서에 대해서는 사전 구축된 스키마를 바로 사용하실 수 있습니다.\n\n사용자 정의 레이아웃이나 추출해야 할 특정 필드가 있는 경우, 워크플로우에 맞게 커스텀 스키마를 직접 정의하여 사용하실 수도 있습니다."
+    }
+   ],
+   "slug": "invofox",
+   "website": "https://www.invofox.com/"
+  },
+  {
+   "name": "Opengeni",
+   "tagline_en": "Ship AI agents within minutes. Infrastructure for Agents",
+   "tagline_kr": "몇 분 만에 AI 에이전트를 프로덕션에 배포할 수 있는 오픈소스 에이전트 인프라",
+   "image": "https://ph-files.imgix.net/ae9b99f8-88c1-4613-af41-eb50db9e16c0.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Open Source",
+    "Developer Tools",
+    "Artificial Intelligence",
+    "AI Infrastructure Tools",
+    "LLM Developer Tools"
+   ],
+   "upvotes": 279,
+   "comments_count": 46,
+   "maker": "Davlet Dzhakishev(@davletdz), André J(@alchemist_studio), Jørgen Sandhaug(@jorgensandhaug), Bendik Nyheim(@benyhh), Zac Zuo(@zaczuo), Iuliia Petryshyn Thuen(@iuliia_petryshyn_thuen)",
+   "price_model": "오픈소스 무료 셀프호스팅 및 매니지드 클라우드 종량제 (Open Source Apache-2.0 / Cloud Usage-based)",
+   "price_detail": "Apache-2.0 라이선스로 완전 무료 셀프 호스팅이 가능하며, 매니지드 클라우드는 플랫폼 비용이나 좌석당 요금 없이 모델 원가에 5% 마진만 부과됩니다. 런칭 기념 선착순 100명에게 100달러 상당의 클라우드 크레딧(프로모션 코드: PRODUCTHUNT100)을 제공합니다.",
+   "desc_kr": "Opengeni는 개발자가 AI 에이전트를 몇 시간 만에 프로덕션 환경에 배포할 수 있도록 세션 관리와 실행 샌드박스를 제공하는 오픈소스 인프라 플랫폼입니다. 시스템 오류나 워커 재시작 시에도 이전 상태를 완벽히 복원하는 세션 복구 기능과 메모리 및 자격 증명이 격리된 보안 샌드박스 환경을 기본 지원합니다. OpenAPI, GraphQL 규격 및 MCP 서버를 연결할 수 있으며 내장 OAuth를 통해 100개 이상의 외부 앱 및 API 연동을 즉시 설정할 수 있습니다. 위험한 작업을 실행하기 전 사람의 승인을 받는 휴먼인더루프(Human-in-the-loop) 안전장치와 토큰 및 비용 소모를 추적하는 투명한 관측성 대시보드를 갖추고 있습니다. Apache-2.0 라이선스로 자유롭게 무료 자체 호스팅이 가능하며, 별도의 플랫폼 수수료나 좌석 요금 없이 모델 비용 기반으로 운영되는 매니지드 클라우드를 이용할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/opengeni",
+   "comment_summary": "댓글에서는 기존 프레임워크나 자체 인프라를 구축하느라 겪던 번거로움을 해결해 주는 오픈소스 세션·샌드박스 플랫폼이라는 점에 큰 관심과 찬사가 쏟아졌습니다. 수천 개의 활성 세션 구동 시 Postgres 데이터베이스 성능 관리 방식, 장시간 실행되는 멀티 에이전트의 서버리스 및 비동기 스트리밍 연결 아키텍처에 대한 심도 있는 기술 문의가 이어졌습니다. 메이커 측은 배치 토큰 기록과 NATS 기반의 수평 확장 구조, 스트림이 끊겨도 백그라운드 워커에서 지속 처리되는 복원력 높은 설계를 설명하며 활발한 오픈소스 참여를 독려했습니다.",
+   "warnings": "수치(업보트 279·댓글 46)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "André J",
+     "is_maker": true,
+     "text": "Hi Product Hunt.  \n  \nFor the past two years, we’ve been running AI agents against real production cloud infrastructure at CloudGeni. We learned the hard way that getting an agent to work once is only the beginning. Keeping it running, giving it somewhere safe to execute, connecting users’ accounts, getting human approval, and understanding what happened—and what it cost—is where the work adds up.  \n  \nWe kept rebuilding that infrastructure. So we pulled it out and open-sourced it.\n\n**That’s Opengeni: agents in your product, infrastructure out of the box.**  \n\nIt gives developers the pieces they need to ship agents, already wired together:\n\n*   🔄 **Sessions that survive errors**, with a replayable history so you can reconnect and pick up where you left off.\n    \n*   🖥️ **Sandboxes for agents to do the work**, with credentials handled and memory built in.\n    \n*   🔌 **Your APIs and your users’ apps, connected.** Bring an OpenAPI or GraphQL spec, or an MCP server, plus 100+ integrations with built-in OAuth.\n    \n*   ✋ **Human approvals before risky actions**, so people stay in control.\n    \n*   🔍 **Visibility into every step, token, and dollar**, with built-in dashboards and run traces.\n    \n*   🧩 **A workspace for each customer** and the freedom to choose your models.\n    \n\nGetting it into your product takes three steps: add your API key on the server, mount a handler using your existing authentication, and show the agent in your app—with your own UI or our React components.\n\nYou can also try the same sessions in the Opengeni app before embedding them in yours.\n\n**Run it on our cloud or yours.** Opengeni is Apache-2.0 and free to self-host. Our managed cloud is model cost + 5%, with no platform or seat fees. For this launch, the first 100 users get $100 in cloud credit.\n\nWe’re in early public preview, and we’d love your feedback: **what’s the first task you’d want an agent to handle inside your product—and what would you need to trust it with that task?**\n\n[Try the cloud](https://app.opengeni.ai/) · [Read the docs](https://docs.opengeni.ai/) · [Self-host on GitHub](https://github.com/Cloudgeni-ai/opengeni)\n\nWe’ll be in the comments all day. Thanks for checking us out!",
+     "kr": "Product Hunt 여러분 안녕하세요.  \n  \n지난 2년 동안 저희는 CloudGeni에서 실제 프로덕션 클라우드 인프라를 대상으로 AI 에이전트를 운영해 왔습니다. 에이전트를 한 번 작동시키는 것은 시작에 불과하다는 점을 뼈저리게 배웠습니다. 에이전트를 계속 안정적으로 실행하고, 안전한 실행 환경을 제공하고, 사용자의 계정을 연결하고, 사람의 승인을 받고, 무슨 일이 일어났는지와 비용이 얼마나 들었는지를 추적하는 데 엄청난 작업이 누적됩니다.  \n  \n저희는 그 인프라를 끊임없이 재구축해 왔고, 결국 이를 추출하여 오픈소스로 공개했습니다.\n\n**그것이 바로 Opengeni입니다. 여러분의 제품 속에 에이전트를, 인프라는 상자에서 꺼내 바로 사용하세요.**  \n\n에이전트를 출시하는 데 필요한 모든 구성 요소가 이미 서로 연결된 상태로 개발자에게 제공됩니다:\n\n*   🔄 **오류 발생 시에도 복구되는 세션**: 재생 가능한 히스토리를 통해 다시 연결하고 중단된 지점부터 이어서 작업할 수 있습니다.\n    \n*   🖥️ **에이전트 작업을 위한 샌드박스**: 자격 증명이 안전하게 처리되며 메모리가 내장되어 있습니다.\n    \n*   🔌 **자체 API 및 사용자 앱 연결**: OpenAPI 또는 GraphQL 규격, MCP 서버뿐만 아니라 OAuth가 내장된 100개 이상의 연동을 지원합니다.\n    \n*   ✋ **위험한 작업 전 사람의 승인**: 사람이 항상 제어권을 유지할 수 있습니다.\n    \n*   🔍 **모든 단계, 토큰, 비용에 대한 가시성**: 내장된 대시보드와 실행 추적 로그를 제공합니다.\n    \n*   🧩 **고객별 독립 워크스페이스** 및 원하는 모델을 자유롭게 선택할 수 있습니다.\n    \n\n제품에 적용하는 과정은 단 세 단계입니다: 서버에 API 키를 추가하고, 기존 인증 체계를 사용하는 핸들러를 마운트한 뒤, 자체 UI나 저희 React 컴포넌트를 사용해 앱에 에이전트를 띄우면 됩니다.\n\n앱에 직접 임베드하기 전에 Opengeni 앱에서 동일한 세션을 먼저 테스트해 보실 수도 있습니다.\n\n**자체 클라우드 또는 저희 클라우드에서 실행하세요.** Opengeni는 Apache-2.0 라이선스로 완전 무료 자체 호스팅이 가능합니다. 매니지드 클라우드는 플랫폼 비용이나 좌석당 요금 없이 모델 원가에 5% 마진만 부과됩니다. 이번 런칭을 기념하여 선착순 100명에게 100달러 상당의 클라우드 크레딧을 제공합니다.\n\n현재 얼리 퍼블릭 프리뷰 단계이며 피드백을 환영합니다. **제품 내에서 에이전트가 가장 먼저 처리해 주었으면 하는 작업은 무엇인가요? 그리고 그 작업을 믿고 맡기기 위해 무엇이 필요하신가요?**\n\n[클라우드 체험하기](https://app.opengeni.ai/) · [문서 읽기](https://docs.opengeni.ai/) · [GitHub에서 셀프호스팅하기](https://github.com/Cloudgeni-ai/opengeni)\n\n오늘 온종일 댓글에서 여러분을 맞이하겠습니다. 확인해 주셔서 감사합니다!"
+    },
+    {
+     "author": "Priya K",
+     "is_maker": false,
+     "text": "@alchemist_studio what kind of performance impact do you notice on Postgres when scaling up to thousands of active sessions?",
+     "kr": "@alchemist_studio 활성 세션을 수천 개 규모로 확장할 때 Postgres에서 어떤 성능 영향을 체감하시나요?"
+    },
+    {
+     "author": "Davlet Dzhakishev",
+     "is_maker": true,
+     "text": "@alchemist_studio  @priya_kushwaha1 Hey Priya! Here is how we handle it: idle sessions are basically free. No workflow stays open and nothing polls Postgres for them, they're just rows sitting there.  \n\nThe real work happens when a turn is actively streaming. We batch token writes (every 33 ms or 50 events), and those batches don't touch the main session row, so busy streams don't all fight over it. Live viewers get a NATS nudge and read from Postgres, and the API is stateless, so you can just add more replicas.  \n\nIf you're planning something big, open an issue and we'll dig in with you: https://github.com/Cloudgeni-ai/opengeni/issues",
+     "kr": "@alchemist_studio @priya_kushwaha1 안녕하세요 Priya 님! 저희가 처리하는 방식은 다음과 같습니다: 유휴(idle) 세션은 사실상 리소스가 거의 들지 않습니다. 열려 있는 워크플로우가 없고 Postgres를 폴링하지도 않으며 데이터베이스의 단순한 행으로만 존재합니다.  \n\n실제 부하는 턴이 활발히 스트리밍될 때 발생합니다. 저희는 토큰 쓰기를 배치 처리(매 33ms 또는 50개 이벤트 단위)하며, 이 배치 작업은 메인 세션 행을 직접 건드리지 않으므로 활성 스트림들이 서로 경합하지 않습니다. 실시간 뷰어는 NATS 넛지 신호를 받아 Postgres에서 읽어오며, API 자체는 무상태(stateless)이므로 레플리카를 자유롭게 증설할 수 있습니다.  \n\n대규모 확장을 계획하고 계시다면 이슈를 열어주세요. 함께 깊이 있게 논의해 드리겠습니다: https://github.com/Cloudgeni-ai/opengeni/issues"
+    },
+    {
+     "author": "savan kharod",
+     "is_maker": false,
+     "text": "@alchemist_studio congratulations on launch buddy",
+     "kr": "@alchemist_studio 친구, 런칭을 진심으로 축하해"
+    },
+    {
+     "author": "André J",
+     "is_maker": true,
+     "text": "@savan_kharod1 Thanks a bunch! @jorgensandhaug was the originator of the product almost 4 months ago. Kudos also to @benyhh another lead dev on the product and to the rest of the team as well. 🚀",
+     "kr": "@savan_kharod1 정말 고마워! 거의 4개월 전에 @jorgensandhaug가 이 제품을 처음 구상했어. 제품의 또 다른 리드 개발자인 @benyhh와 나머지 팀원들에게도 큰 박수를 보낸다. 🚀"
+    },
+    {
+     "author": "Prastik Gyawali",
+     "is_maker": false,
+     "text": "Congratulations on the launch team!\n\nWas curious if Open Geni is suitable for serverless deployment, because as I can see it currently supports SSE, and for long running multi agents, I would prefer an efficient streamable connection to avoid extra cloud costs. Is that already worked upon or any open tickets for the same?  \n  \nRegardless, I think Open Geni being model agnostic and open sourced helps a lot!",
+     "kr": "팀의 런칭을 축하드립니다!\n\nOpen Geni가 서버리스 배포에 적합한지 궁금합니다. 현재 SSE를 지원하는 것으로 보이는데, 장시간 실행되는 멀티 에이전트의 경우 추가 클라우드 비용을 피하기 위해 효율적인 스트리밍 연결을 선호합니다. 이와 관련해 이미 작업 중이거나 열려 있는 티켓이 있나요?  \n  \n그럼에도 불구하고 Open Geni가 모델에 구애받지 않고 오픈소스로 제공된다는 점은 큰 장점인 것 같습니다!"
+    },
+    {
+     "author": "Davlet Dzhakishev",
+     "is_maker": true,
+     "text": "@prastik Thanks Prastik, appreciate it!\n\nGood news: long multi-agent runs don't need an open connection at all. You send a message, get a 202 back, and the agent keeps working on a background worker. Close the stream whenever you want, nothing gets cancelled. Sub-agents report back through Postgres, not through your connection.  \n\nIf you don't want to stream, use our webhooks (turn.completed, session.requiresAction, etc.) and fetch the events when you need them. If you do stream, it picks up where you left off. And if you meant MCP, our MCP endpoints already use Streamable HTTP.  \n\nOn serverless: the core itself doesn't scale to zero today. The workers are long-running and we deploy on Kubernetes or Native Cloud. Your own backend can totally be serverless though, since the SDK runs on edge runtimes. One tip: don't proxy the SSE stream through a function, it'll stay open and cost you. Webhooks are the cheaper way to go.  \n  \nMore here: https://docs.opengeni.ai/integrate/background-agents\n\nNo public issue on this yet, feel free to open one! https://github.com/Cloudgeni-ai/opengeni/issues",
+     "kr": "@prastik 감사합니다 Prastik 님, 응원해 주셔서 감사합니다!\n\n반가운 소식은 장시간 구동되는 멀티 에이전트 실행에 연결을 계속 열어둘 필요가 전혀 없다는 점입니다. 메시지를 전송하면 202 응답을 받고, 에이전트는 백그라운드 워커에서 작업을 계속 진행합니다. 원하실 때 언제든 스트림을 닫으셔도 작업이 취소되지 않습니다. 서브 에이전트는 연결 세션이 아니라 Postgres를 통해 상태를 보고합니다.  \n\n스트리밍을 원하지 않으시면 웹훅(turn.completed, session.requiresAction 등)을 사용해 필요할 때 이벤트를 가져오실 수 있습니다. 스트리밍을 사용하시더라도 중단된 지점부터 다시 이어받습니다. MCP를 말씀하신 것이라면 저희 MCP 엔드포인트는 이미 Streamable HTTP를 사용하고 있습니다.  \n\n서버리스의 경우, 코어 자체는 현재 제로 스케일(scale to zero)을 지원하지 않습니다. 워커는 장시간 실행되며 Kubernetes나 네이티브 클라우드에 배포됩니다. 하지만 SDK가 엣지 런타임에서 실행되므로 사용자 자체 백엔드는 완전한 서버리스로 구성하실 수 있습니다. 한 가지 팁을 드리자면 함수를 통해 SSE 스트림을 프록시하지 마세요. 연결이 계속 열려 있어 비용이 발생합니다. 웹훅이 훨씬 경제적인 방식입니다.  \n  \n자세한 내용: https://docs.opengeni.ai/integrate/background-agents\n\n아직 이에 대한 공개 이슈는 없으니 편하게 등록해 주세요! https://github.com/Cloudgeni-ai/opengeni/issues"
+    },
+    {
+     "author": "Håkon Høgetveit",
+     "is_maker": false,
+     "text": "Congrats! Looks interesting! How do you see Opengeni being different from teams building their agent infrastructure directly with frameworks like LangGraph or the cloud providers?",
+     "kr": "축하드립니다! 흥미로워 보이네요! LangGraph 같은 프레임워크나 클라우드 제공업체를 통해 자체적으로 에이전트 인프라를 직접 구축하는 팀과 비교할 때 Opengeni의 차별점은 무엇이라고 보시나요?"
+    },
+    {
+     "author": "Bendik Nyheim",
+     "is_maker": true,
+     "text": "@hakon_hogetveit1 Hey Håkon, and thanks! Teams can absolutely build this themselves, but from our own experience, building AI infrastructure is hard, and there are lots of considerations that only become apparent once you get started.\n\nWith Opengeni, teams can use infrastructure that’s already in place and focus on their actual products. Since it’s open source, they can also self-host it and adapt it however they like, saving a lot of time along the way!",
+     "kr": "@hakon_hogetveit1 안녕하세요 Håkon 님, 감사드립니다! 팀들이 직접 구축하는 것도 전적으로 가능하지만, 저희 경험상 AI 인프라 구축은 매우 까다로우며 실제로 시작해 보기 전에는 알 수 없는 수많은 고려 사항들이 존재합니다.\n\nOpengeni를 사용하면 이미 완비된 인프라를 활용하여 본 제품에 집중할 수 있습니다. 오픈소스이므로 원하는 방식으로 자체 호스팅하고 자유롭게 수정할 수 있어 개발 과정에서 막대한 시간을 절약할 수 있습니다!"
+    },
+    {
+     "author": "André J",
+     "is_maker": true,
+     "text": "@hakon_hogetveit1 4600 commits in 4ish months. 300 PRs just last night 😅. And this is just the start. I think Opengeni is at 10% of its potential, and what it can become in the future, even tho it has feature parity or beyond its competitors. Last time I checked. 1.5 Million lines of code was added just the last 30 days. And it was already 1m loc. I would not build or manage this my self. \"Benny\" and \"Jorge\" are going Rainman mode on this, and its perplexingly hard stuff to get right. Use this and focus on your end product instead. Its opensource so you can shape it to your need over time as well. Also the team ships feature requests really fast. You can also switchout the harness for other harnesses pretty easily, if needs change. Upwards and onwards. 🚀 Love vouch!",
+     "kr": "@hakon_hogetveit1 약 4개월 동안 4,600개의 커밋이 있었고, 어젯밤에만 300개의 PR이 처리되었습니다 😅. 그리고 이것은 시작에 불과합니다. 경쟁사들과 기능적 동등성 이상을 갖추었음에도 불구하고 저는 Opengeni가 미래에 도달할 잠재력의 10% 수준에 와 있다고 생각합니다. 최근 확인했을 때 지난 30일 동안에만 150만 줄의 코드가 추가되었고, 이미 기존에도 100만 줄 규모였습니다. 저라면 이 인프라를 직접 만들거나 관리하지 않을 것입니다. 개발진이 엄청난 집중력으로 매달리고 있으며 제대로 완성하기가 극도로 어려운 영역입니다. 이 인프라를 활용하시고 최종 제품에 집중하세요. 오픈소스이므로 시간이 지남에 따라 요구사항에 맞춰 커스텀할 수도 있습니다. 또한 팀에서 기능 요청을 매우 신속하게 반영해 줍니다. 필요에 따라 하네스를 다른 구조로 교체하는 것도 매우 쉽습니다. 앞으로 계속 전진하겠습니다. 🚀"
+    },
+    {
+     "author": "Simona O'Neill",
+     "is_maker": false,
+     "text": "Seems like you’ve got it all covered. Nice work and congrats! Do you have a specific type of a company/product you believe Opengeni would benefit the most ?",
+     "kr": "모든 것을 잘 갖추신 것 같네요. 멋진 작업 축하드립니다! Opengeni를 통해 가장 큰 혜택을 볼 수 있는 특정 기업이나 제품 유형이 있나요?"
+    },
+    {
+     "author": "Davlet Dzhakishev",
+     "is_maker": true,
+     "text": "@simona_o_neill3 Thank you! We've seen teams that already have existing saas product, struggling with how to think about architecting and introducing capable agents, without breaking existing boundaries between users, organizations and what is possible to do in the product. Our solution helped them to start very simple and at the same time have full capability for scaling it beyond POC",
+     "kr": "@simona_o_neill3 감사합니다! 기존 SaaS 제품을 보유하고 있으면서 사용자, 조직, 제품 내 권한 경계를 훼손하지 않고 역량 있는 에이전트를 어떻게 아키텍처링하고 도입해야 할지 고민하는 팀들을 많이 보았습니다. 저희 솔루션은 이러한 팀들이 매우 단순하게 시작하면서도 POC(개념 증명) 단계를 넘어 원활하게 확장할 수 있는 완전한 역량을 제공합니다."
+    }
+   ],
+   "slug": "opengeni",
+   "website": "https://opengeni.ai/"
+  },
+  {
+   "name": "DailyHelm",
+   "tagline_en": "Turn analytics into daily revenue-boosting fixes",
+   "tagline_kr": "분산된 비즈니스 지표를 분석해 매출 개선 조치 목록을 매일 아침 제공하는 AI 비즈니스 리뷰어",
+   "image": "https://ph-files.imgix.net/75768996-691b-4bc1-bad5-fcc415ad227a.gif?auto=compress&codec=mozjpeg&cs=strip&dpr=2&fit=max&fm=webp&frame=1&h=64&w=64",
+   "categories": [
+    "Analytics",
+    "Artificial Intelligence",
+    "Business Intelligence",
+    "AI Workflow Automation"
+   ],
+   "upvotes": 210,
+   "comments_count": 65,
+   "maker": "Brandon Dennis(@bdennis11907), Rohan Chaubey(@rohanrecommends)",
+   "price_model": "7일 무료 체험 후 구독 유료 플랜 (7-day Free Trial / Paid Subscription)",
+   "price_detail": "모든 기능과 전문 분석 에이전트를 제한 없이 이용할 수 있는 7일 무료 평가판을 제공하며, 이후 비즈니스(스토어) 단위의 유료 구독 요금제로 전환됩니다. 단일 로그인 계정에서 여러 비즈니스를 등록해 사이드바에서 손쉽게 전환하며 관리할 수 있습니다.",
+   "desc_kr": "DailyHelm은 흩어져 있는 데이터 대시보드를 대신 점검하여 매일 아침 매출 증대에 직결되는 우선순위 조치 목록을 제시하는 온라인 비즈니스용 AI 리뷰어입니다. 구글 애널리틱스(GA4), 구글 광고, 서치 콘솔, 쇼피파이, 스트라이프, 깃허브 등 주요 플랫폼과 읽기 전용으로 연동되어 밤사이 비즈니스 전반의 지표를 자동 모니터링합니다. 차트만 나열하는 기존 대시보드와 달리 발견된 모든 문제에 대해 구체적인 데이터 근거, 신뢰도 점수, 예상 매출 영향도 및 해결 권장 조치를 명확히 제시합니다. 전환 추적 누락, 낭비되는 광고비 지출, SEO 및 웹사이트 성능 저하, 결제 실패 급증 등 즉시 대응해야 할 핵심 매출 누수 문제를 신속하게 포착합니다. 대화형 전문 에이전트 'Aria'를 통해 세부 지표에 대해 심층 질의응답을 나눌 수 있으며 단 10분 만에 모든 커넥터를 손쉽게 연동할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/dailyhelm",
+   "comment_summary": "댓글에서는 복잡한 분석 대시보드와 구글 시트를 매일 일일이 확인하느라 시간을 허비하던 창업자들의 피로를 덜어준다는 점에 호평이 집중되었습니다. GA4 대시보드를 완전히 대체하는지 여부, 복수의 스토어나 브랜드를 운영할 때 단일 계정 관리 및 요금 청구 방식, 그리고 페이스북 광고 커넥터 출시 일정에 대한 실무적인 질문들이 이어졌습니다. 메이커 측은 GA4를 수시로 확인하는 번거로움을 덜어주는 보완적 솔루션이며 단일 계정 내 다중 비즈니스 전환이 가능하고 페이스북 광고 연동도 곧 지원될 예정이라고 상세히 답변했습니다.",
+   "warnings": "수치(업보트 210·댓글 65)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Brandon Dennis",
+     "is_maker": true,
+     "text": "Hey everyone!\n\nBrandon here, founder of DailyHelm.  \n  \nWhat is DailyHelm  \n\nDailyHelm is an agentic AI business reviewer for online businesses. It turns scattered analytics, ads, SEO, and store data into a prioritized daily action list.\n\nMost founders waste time checking multiple dashboards and still miss revenue leaks. DailyHelm reviews your business overnight and tells you what needs attention today, ranked by revenue impact.\n\nHow it Works\n\nStep 1: Tell us about your business - A short setup covering what you sell, who buys it, and what success looks like. This anchors every recommendation.\n\nStep 2: Connect your platforms - Link GA4, Google Ads, Search Console, Shopify, GitHub, GCP billing, and your site; DailyHelm opens the approval page for you to confirm each connection with one click.  \n  \nStep 3: Get a daily AI business review - Wake up to a prioritized punch list every morning, and chat with agent Aria anytime to dig deeper.  \n  \nWhy It’s Different\n\nIt’s not just another analytics dashboard. Every finding includes evidence, confidence, a recommended fix, and an impact score... like broken GA4 tracking, wasted ad spend, SEO regressions, or failed-payment spikes.\n\nFeatures\n\n*   Daily morning brief with prioritized action items.\n    \n*   Aria chat for deeper investigation and answers.\n    \n*   Specialist agents for analytics, ads, SEO, code, cloud cost, and site UX.\n    \n*   Read-only integrations with GA4, Google Ads, Search Console, Shopify, Stripe, GitHub, Meta Ads, and more.\n\nWho It’s For\n\n*   DTC and Shopify founders.\n    \n*   Dropshippers, SaaS operators, and solo founders.\n    \n*   Agencies and anyone wearing multiple hats in a growing business.\n\nUse Cases\n\n*   Spot broken conversion tracking.\n    \n*   Find wasted or inefficient ad spend.\n    \n*   Catch SEO and site-performance regressions.\n    \n*   Monitor failed payments and checkout issues.\n    \n*   Review cloud costs and developer/code changes.\n\nTry it!\n\nGet a 7-day free trial and see what it catches in your first 24 hours https://dailyhelm.com/Any feedback or feature requests are welcome.  \n  \nThanks so much!",
+     "kr": "여러분 안녕하세요!\n\nDailyHelm의 창립자 Brandon입니다.  \n  \nDailyHelm이란 무엇인가요?  \n\nDailyHelm은 온라인 비즈니스를 위한 에이전틱 AI 비즈니스 리뷰어입니다. 흩어져 있는 분석, 광고, SEO, 스토어 데이터를 우선순위화된 일일 실행 목록으로 변환합니다.\n\n대부분의 창업자는 여러 대시보드를 확인하느라 시간을 낭비하면서도 정작 매출 누수를 놓치곤 합니다. DailyHelm은 밤사이 비즈니스를 검토하고 매출 영향도 순으로 오늘 즉시 조치해야 할 항목을 알려줍니다.\n\n작동 방식\n\n1단계: 비즈니스 정보 입력 - 무엇을 판매하고, 주 고객이 누구이며, 목표 성공 지표가 무엇인지 간단히 설정합니다. 이는 모든 권장 사항의 기준이 됩니다.\n\n2단계: 플랫폼 연결 - GA4, 구글 광고, 서치 콘솔, 쇼피파이, 깃허브, GCP 결제, 웹사이트를 연결합니다. DailyHelm이 승인 페이지를 띄워 원클릭으로 각 연결을 확인할 수 있도록 지원합니다.  \n  \n3단계: 일일 AI 비즈니스 리뷰 수신 - 매일 아침 우선순위 조치 목록을 확인하고, 필요할 때 언제든 에이전트 Aria와 대화하여 더 깊이 분석할 수 있습니다.  \n  \n차별점\n\n단순한 또 하나의 분석 대시보드가 아닙니다. GA4 전환 추적 누락, 낭비되는 광고비, SEO 순위 하락, 결제 실패 급증 등 모든 발견 사항에는 데이터 근거, 신뢰도, 권장 조치, 영향도 점수가 포함됩니다.\n\n주요 기능\n\n*   우선순위 실행 항목이 포함된 일일 모닝 브리핑\n    \n*   심층 조사 및 질의응답을 위한 Aria 채팅\n    \n*   분석, 광고, SEO, 코드, 클라우드 비용, 사이트 UX 전담 전문 에이전트\n    \n*   GA4, 구글 광고, 서치 콘솔, 쇼피파이, 스트라이프, 깃허브, 메타 광고 등과의 읽기 전용 연동\n\n추천 대상\n\n*   DTC 및 쇼피파이 창업자\n    \n*   드롭쉬핑, SaaS 운영자 및 1인 창업자\n    \n*   에이전시 및 성장하는 비즈니스에서 1인 다역을 수행하는 분들\n\n주요 활용 사례\n\n*   깨진 전환 추적 발견\n    \n*   낭비되거나 비효율적인 광고 지출 포착\n    \n*   SEO 및 사이트 성능 저하 감지\n    \n*   결제 실패 및 체크아웃 문제 모니터링\n    \n*   클라우드 비용 및 개발자/코드 변경 사항 검토\n\n체험해 보세요!\n\n7일 무료 평가판을 통해 첫 24시간 동안 어떤 문제를 발견하는지 직접 확인해 보세요 https://dailyhelm.com/ 어떤 피드백이나 기능 요청도 언제든 환영합니다.  \n  \n대단히 감사합니다!"
+    },
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "@bdennis11907 Many congratulations on the launch, Brandon! :)\n\nHow I met the maker?\n\nI met the maker through a PH friend of mine. The moment I saw the product and Brandon’s past experience, I knew I had to support the product launch. We worked together on the product messaging and making it launch ready.\n\nWhat does the product do?\n\nDailyHelm is an AI business reviewer for founders and growth teams. It monitors analytics, ads, SEO, and store data overnight, then turns scattered signals into a prioritized daily action list... complete with evidence, confidence, recommended fixes, and likely revenue impact.\n\nWhy I endorse it?\n\nI endorse DailyHelm because it solves a real, expensive problem: founders often have plenty of dashboards but not enough clarity on what to fix first.\n\nInstead of asking teams to interpret charts, it surfaces revenue leaks, such as broken tracking, wasted ad spend, SEO regressions, or checkout issues, and tells them what deserves attention today.\n\nI am a growth consultant to many startups. While the growth teams focus too much on the marketing tactics, they miss learning from analytics and fixing critical issues on time.\n\nBrandon has built this with a clear operator-first mindset: actionable recommendations over vanity metrics, prioritization by impact, and specialist agents that make the daily review feel genuinely useful rather than noisy.\n\nIf you run a DTC brand, SaaS, agency, or a lean online business, this is worth trying, especially if you want to start each morning knowing exactly where to focus. :)",
+     "kr": "@bdennis11907 Brandon 님, 런칭을 진심으로 축하드립니다! :)\n\n메이커와의 인연:\n\nProduct Hunt 친구를 통해 메이커를 알게 되었습니다. 제품과 Brandon의 과거 경험을 본 순간, 이 제품의 런칭을 꼭 지원해야겠다고 생각했습니다. 저희는 런칭 전 제품 메시지와 출시 준비를 함께 진행했습니다.\n\n제품의 기능:\n\nDailyHelm은 창업자와 그로스 팀을 위한 AI 비즈니스 리뷰어입니다. 밤사이에 분석, 광고, SEO, 스토어 데이터를 모니터링한 뒤 분산된 신호들을 근거, 신뢰도, 권장 조치, 예상 매출 영향도가 완비된 우선순위 일일 실행 목록으로 변환합니다.\n\n추천하는 이유:\n\nDailyHelm이 실질적이고 값비싼 문제를 해결하기 때문에 추천합니다. 창업자들에게는 수많은 대시보드가 있지만 정작 무엇을 먼저 고쳐야 할지에 대한 명확성이 부족한 경우가 많습니다.\n\n팀에게 차트를 직접 해석하도록 요구하는 대신, 깨진 추적, 낭비되는 광고비, SEO 하락, 결제 문제와 같은 매출 누수를 드러내고 오늘 당장 주목해야 할 부분을 알려줍니다.\n\n저는 많은 스타트업의 그로스 컨설턴트로 일하고 있습니다. 그로스 팀들이 마케팅 전술에만 너무 집중하다 보면 분석에서 교훈을 얻고 중요한 문제를 제때 해결하는 것을 놓치기 쉽습니다.\n\nBrandon은 허영 지표보다 실행 가능한 권장 사항, 영향도에 따른 우선순위 지정, 노이즈가 아닌 진정으로 유용한 일일 리뷰를 만드는 전문 에이전트 등 명확한 실무자 우선 마인드로 이 제품을 구축했습니다.\n\nDTC 브랜드, SaaS, 에이전시, 또는 린(lean) 온라인 비즈니스를 운영하고 계시다면, 특히 매일 아침 어디에 집중해야 할지 정확히 알고 시작하고 싶다면 꼭 사용해 볼 가치가 있습니다. :)"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@bdennis11907 this looks useful for tracking broken conversions and wasted ad spend what's the setup time like for the integrations?",
+     "kr": "@bdennis11907 깨진 전환과 낭비되는 광고비를 추적하는 데 아주 유용해 보이네요. 연동을 설정하는 데 소요되는 시간은 얼마나 걸리나요?"
+    },
+    {
+     "author": "Brandon Dennis",
+     "is_maker": true,
+     "text": "@shivam_kushwaha16 Integrations are only a few button clicks. You can have all connectors setup within 10 minutes.",
+     "kr": "@shivam_kushwaha16 연동은 단 몇 번의 버튼 클릭으로 가능합니다. 10분 이내에 모든 커넥터를 설정하실 수 있습니다."
+    },
+    {
+     "author": "Lesya Pishchevskaya",
+     "is_maker": false,
+     "text": "@bdennis11907 Thanks for sharing this, Brandon! I like that every finding comes with evidence and a confidence level, so I know how much to trust it ..",
+     "kr": "@bdennis11907 공유해 주셔서 감사합니다, Brandon 님! 모든 발견 사항에 근거와 신뢰도 수준이 함께 제공되어 얼마나 신뢰할 수 있는지 알 수 있다는 점이 마음에 드네요 .."
+    },
+    {
+     "author": "Brandon Dennis",
+     "is_maker": true,
+     "text": "@lesya_pishchevskaya 100% It needs to be fact checked before its pushed up to ensure its actionable.",
+     "kr": "@lesya_pishchevskaya 100% 동감합니다. 실제로 조치를 취할 수 있도록 전달되기 전에 철저히 팩트 체크가 이루어져야 합니다."
+    },
+    {
+     "author": "Charan Tej Kammara",
+     "is_maker": false,
+     "text": "Hey! Congratulations on the launch.\n\nOne question - Does this replace my Google Analytics dashboard or do I still need to check that separately?",
+     "kr": "안녕하세요! 런칭 축하드립니다.\n\n한 가지 질문이 있습니다. 이 제품이 구글 애널리틱스 대시보드를 완전히 대체하나요, 아니면 GA를 여전히 별도로 확인해야 하나요?"
+    },
+    {
+     "author": "Brandon Dennis",
+     "is_maker": true,
+     "text": "@charan_tej_kammara Thanks for your support and your question! It's not meant to replace GA4 outright, it's meant to save you from having to check it constantly. Iris reads your GA4 data and tells you what actually matters instead of you scrolling through reports looking for something worth acting on. If you want to dig into raw numbers yourself, GA4 is still there.",
+     "kr": "@charan_tej_kammara 응원과 질문 감사드립니다! GA4를 완전히 대체하기 위한 것이 아니라, GA4를 끊임없이 확인해야 하는 수고를 덜어드리기 위한 것입니다. 조치할 만한 내용을 찾으려고 리포트를 일일이 스크롤하는 대신, 에이전트가 GA4 데이터를 읽고 실제로 중요한 내용이 무엇인지 알려줍니다. 원시 데이터를 직접 자세히 살펴보고 싶으시다면 GA4는 그대로 이용하실 수 있습니다."
+    },
+    {
+     "author": "Jitendra Bhatt",
+     "is_maker": false,
+     "text": "If I have two different stores, do I need two separate accounts or can I manage both from one login?",
+     "kr": "서로 다른 스토어를 2개 운영하는 경우, 별도의 2개 계정이 필요한가요 아니면 하나의 로그인으로 둘 다 관리할 수 있나요?"
+    },
+    {
+     "author": "Brandon Dennis",
+     "is_maker": true,
+     "text": "@jitendra_bhatt Thanks for your question! Sure, one login, two businesses. You can add a second business under the same account and switch between them from the sidebar. Each business has its own connections, findings, and its own subscription, since it's genuinely separate billing (we charge the card already on file, so you don't have to re-enter payment info for the second one).",
+     "kr": "@jitendra_bhatt 질문 감사드립니다! 물론 하나의 로그인으로 두 비즈니스를 모두 관리할 수 있습니다. 동일한 계정 아래에 두 번째 비즈니스를 추가하고 사이드바에서 두 비즈니스 간을 전환할 수 있습니다. 완전히 별개의 청구가 이루어지므로 각 비즈니스는 고유한 연동, 분석 결과, 구독 요금제를 갖습니다 (이미 등록된 카드로 청구되므로 두 번째 비즈니스를 위해 결제 정보를 다시 입력할 필요는 없습니다)."
+    },
+    {
+     "author": "Saksham Dhanawat",
+     "is_maker": false,
+     "text": "Does adding a second business cost extra on top of my current plan?",
+     "kr": "두 번째 비즈니스를 추가하면 현재 요금제 외에 추가 비용이 발생하나요?"
+    },
+    {
+     "author": "Brandon Dennis",
+     "is_maker": true,
+     "text": "@saksham_dhanawat1 Thank you! Yes, a second business is its own subscription at full price, not an add-on discount. It uses the card you already have on file, so there's no new checkout to go through, but it is billed as its own plan.",
+     "kr": "@saksham_dhanawat1 감사합니다! 네, 두 번째 비즈니스는 추가 할인이 적용되는 부가 옵션이 아니라 정가로 청구되는 자체 구독입니다. 이미 등록된 카드를 사용하므로 새로 결제 과정을 거칠 필요는 없지만, 개별 요금제로 청구됩니다."
+    }
+   ],
+   "slug": "dailyhelm",
+   "website": "https://dailyhelm.com/"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
