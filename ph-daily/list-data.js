@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-07",
+    "url": "2026-10-07/",
+    "top_product": "Rill Browser",
+    "count": 5,
+    "upvotes_total": 1467,
+    "comments_total": 40
+  },
+  {
     "date": "2026-10-06",
     "url": "2026-10-06/",
     "top_product": "Spira Maxima",
