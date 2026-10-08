@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-08",
+    "url": "2026-10-08/",
+    "top_product": "IrisGo for Solopreneurs",
+    "count": 5,
+    "upvotes_total": 1703,
+    "comments_total": 47
+  },
+  {
     "date": "2026-10-07",
     "url": "2026-10-07/",
     "top_product": "Rill Browser",

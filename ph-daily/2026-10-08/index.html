@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-10-08</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-10-08 · Top 5 · 수집 댓글 47개 · 수집 2026-10-08 12:31 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-10-08",
+ "collected_at": "2026-10-08 12:31 KST",
+ "summary": "2026년 10월 8일 런칭 제품들은 인공지능(AI), 생산성(Productivity), 마케팅 및 데이터 사이언스 카테고리를 중심으로 데스크톱 루틴 자동화, 멀티플레이어 데이터 협업, 로봇 학습 데이터 생성 등 실무 현장에 직결된 에이전틱 솔루션들이 상위권을 형성했습니다. 1인 창업가를 위한 온디바이스 화면 학습(IrisGo), 캠페인별 맞춤형 랜딩페이지 자동 최적화(GenPage 3.0), marimo 기반 오픈소스 협업 워크스페이스(Databench), 1인칭 비디오 기반 로봇 훈련 파운데이션 모델(Pegasus 1.6) 등 각 영역의 핵심 병목을 해소하는 도구들이 두각을 나타냈습니다. 댓글에서는 온디바이스 데이터 프라이버시 보호와 실행 결과의 재현성 확보, UI 변경에 대처하는 시각적 적응력, 그리고 오토파일럿 최적화 과정에서 기존 성과를 지키는 사용자 통제권(Human-in-the-loop)이 공통 핵심 논점으로 활발히 논의되었습니다.",
+ "notable": [
+  {
+   "slug": "irisgo-public-beta",
+   "why": "1인 창업가의 반복적인 행정·컴퓨터 업무를 화면 시연 한 번으로 영구 자동화하는 로컬 퍼스트 AI 레이어로 가장 뜨거운 관심을 받았습니다. 댓글에서는 화면 녹화 데이터가 외부 서버로 유출되지 않는 온디바이스 보안 아키텍처와 함께, 웹 UI 변경 시에도 시각적 요소를 인식해 유연하게 대처하는 Live AI 비전 검사 기능에 호평이 집중되었습니다."
+  },
+  {
+   "slug": "twelvelabs",
+   "why": "웨어러블과 로봇 카메라로 촬영된 1인칭 시점 영상을 분석하여 고비용 수작업 라벨링 없이 로봇 훈련용 구조화 데이터를 생성하는 파운데이션 모델로 주목을 받았습니다. 댓글에서는 범용 비디오 모델이 놓치던 작업자의 손과 도구 상호작용을 정밀하게 포착하는 독자 모델 성능에 호평이 이어졌으며, Physical AI 산업의 핵심 데이터 병목을 해소할 솔루션으로 큰 기대를 모았습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "IrisGo for Solopreneurs",
+   "tagline_en": "AI workflow automation: show it once, let it run",
+   "tagline_kr": "한 번 보여주면 알아서 실행되는 1인 창업가를 위한 AI 워크플로우 자동화",
+   "image": "https://ph-files.imgix.net/ed445b54-b3a5-4cd8-8c36-7dcc2ceb3a44.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Task Management",
+    "Artificial Intelligence",
+    "Virtual Assistants"
+   ],
+   "upvotes": 402,
+   "comments_count": 100,
+   "maker": "Deepak(@deepaksingh09), Jeffrey Lai(@jeffrey_lai1), Yuan Sun(@ysssss33)",
+   "price_model": "베타 기간 무료 (Free during beta)",
+   "price_detail": "현재 공개 베타 기간 동안 모든 기능을 무료로 이용할 수 있으며, 일일 브리핑, 이메일 우선순위 분류, 할 일 추적 및 화면 시연을 통한 워크플로우 자동화(Watch & Learn)를 제한 없이 제공합니다.",
+   "desc_kr": "IrisGo for Solopreneurs는 다양한 역할을 혼자 감당하며 반복적인 행정 업무에 시달리는 1인 창업가와 소규모 비즈니스 운영자를 위해 개발된 Windows 및 Mac용 AI 운영체제입니다. 사용자가 컴퓨터 화면에서 일상적인 업무를 수행하는 과정을 한 번만 시연해 보여주면, 핵심 기능인 'Watch & Learn'이 이를 즉시 학습하여 재사용 가능한 영구 자동화 워크플로우로 변환합니다. 매일 아침 맞춤형 일일 브리핑을 제공하고 수신함에서 즉각적인 대응이 필요한 중요한 이메일만을 선별 분류하며, 다음 처리해야 할 핵심 작업들을 일목요연하게 정리해 줍니다. 화면 녹화 데이터와 작업 메모리 등 모든 민감한 정보는 외부 클라우드로 전송되지 않고 로컬 기기 내에서만 안전하게 보관 및 처리되는 로컬 퍼스트(Local-first) 보안 구조를 갖추고 있습니다. 지속적인 프롬프트 재입력 없이도 일상적인 컴퓨터 루틴을 백그라운드에서 매끄럽게 대신 처리함으로써 창업자가 본연의 사업 성장에 온전히 집중할 수 있도록 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/irisgo-public-beta",
+   "comment_summary": "댓글에서는 거대 기업 중심이 아닌 1인 창업가(Solopreneur)의 실질적인 업무 병목을 해결해 준다는 점에서 뜨거운 호응이 이어졌습니다. 사용자들은 화면을 관찰해 자동화하는 'Watch & Learn' 기능의 로컬 프라이버시 보호 구조와 Windows 지원 여부, 그리고 웹페이지 레이아웃 변경 시의 대응 방안에 대해 집중적으로 질문했습니다. 메이커 팀은 데이터가 절대 외부 서버로 전송되지 않는 엄격한 온디바이스 아키텍처를 안내하고, 시각적 AI 검사를 통해 단순 매크로보다 훨씬 유연하게 UI 변화를 극복할 수 있다고 상세히 답변했습니다.",
+   "warnings": "수치(업보트 402·댓글 100)는 수집 시점 참고치. 이번 출시는 IrisGo의 2번째 런칭 버전임. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Jeffrey Lai",
+     "is_maker": true,
+     "text": "Hi Product Hunt! 👋 I’m Jeffrey, building IrisGo.  \nWe’re launching an offering for solopreneurs and small business owners who juggle multiple roles, and spend too much time on recurring admin tasks.  \n[https://irisgo.ai/solopreneur](https://irisgo.ai/solopreneur)  \nIf you’re spending hours each week managing your inbox, tracking priorities, summarizing meetings, preparing briefs, and filing expenses, you know it’s time that could be spent on customers and growth.\nIrisGo learns these workflows by watching how you work, then automates them on your device. No repeated prompts, and your sensitive data stays on your device. Our **Watch & Learn** feature is central to understanding how you work, and handling that task forever.   \nWe’d love to learn:\n*   Which of these tasks takes the most time in your day?\n*   Was it clear on how to get started?\n*   Where would you want more control or explanation?\nTry the demo and let us know what works—or where you get stuck. We’ll be here to answer questions and learn from your feedback.\n[https://irisgo.ai/solopreneur](https://irisgo.ai/solopreneur)",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋 저는 IrisGo를 만들고 있는 Jeffrey입니다.\n\n여러 가지 역할을 동시에 도맡으며 반복적인 행정 업무에 너무 많은 시간을 쏟고 계신 1인 창업가와 소규모 비즈니스 대표님들을 위한 새로운 제품을 선보입니다.\n\nhttps://irisgo.ai/solopreneur\n\n매주 받은 편지함을 정리하고, 업무 우선순위를 추적하고, 회의를 요약하고, 브리핑을 준비하고, 지출을 정리하는 데 수많은 시간을 쓰고 계신다면, 그 시간이 고객 유치와 비즈니스 성장에 쓰일 수 있었던 소중한 시간임을 잘 알고 계실 것입니다.\n\nIrisGo는 여러분이 작업하는 모습을 지켜보며 이러한 워크플로우를 학습한 뒤, 여러분의 기기 내에서 직접 자동화합니다. 반복적인 프롬프트 입력이 필요 없으며 민감한 데이터는 기기 안에 안전하게 보관됩니다. 저희의 **Watch & Learn** 기능은 여러분의 작업 방식을 이해하고 그 업무를 영구적으로 대신 처리해 주는 핵심 기능입니다.\n\n여러분의 의견이 무척 궁금합니다:\n* 하루 중 어떤 업무가 가장 많은 시간을 차지하나요?\n* 시작하는 과정이 직관적으로 이해되셨나요?\n* 어떤 부분에서 더 세밀한 제어나 설명이 필요하신가요?\n\n데모를 체험해 보시고 잘 작동하는 부분이나 막히는 부분이 있다면 편하게 알려주세요. 여러분의 질문에 답변드리고 소중한 피드백을 귀담아듣겠습니다.\n\nhttps://irisgo.ai/solopreneur"
+    },
+    {
+     "author": "Priya K",
+     "is_maker": false,
+     "text": "[@jeffrey\\_lai1](https://www.producthunt.com/@jeffrey_lai1) It's cool seeing tools built specifically with solopreneurs in mind rather than massive enterprise teams, congrats for launch🙌",
+     "kr": "[@jeffrey\\_lai1](https://www.producthunt.com/@jeffrey_lai1) 거대한 엔터프라이즈 팀이 아니라 1인 창업가를 특별히 염두에 두고 만들어진 도구를 보게 되어 정말 멋집니다. 출시를 축하드려요! 🙌"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "[@jeffrey\\_lai1](https://www.producthunt.com/@jeffrey_lai1) The watch and learn feature sounds useful how does it actually learn your workflow?",
+     "kr": "[@jeffrey\\_lai1](https://www.producthunt.com/@jeffrey_lai1) Watch & Learn 기능이 무척 유용해 보이네요. 실제로 어떤 방식으로 사용자의 워크플로우를 학습하나요?"
+    },
+    {
+     "author": "Yuan Sun",
+     "is_maker": true,
+     "text": "[@jeffrey\\_lai1](https://www.producthunt.com/@jeffrey_lai1)  [@shivam\\_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) It records your workflow by watching your screen and turns it into an autonomous skill. Please give it a try!",
+     "kr": "[@jeffrey\\_lai1](https://www.producthunt.com/@jeffrey_lai1) [@shivam\\_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) Watch & Learn은 사용자가 작업을 한 번 시연할 때 화면을 관찰합니다:\n\n1. 상태 캡처: 클릭, 입력, 창 전환, 파일 이동 등의 인터랙션 전후로 UI 상태를 관찰합니다.\n2. 매크로가 아닌 워크플로우 추출: 단순히 좌표를 기록하는 것이 아니라, 사용자가 무엇을 달성하려고 하는지(예: '송장 PDF 다운로드 후 지정 폴더로 이동')를 추론합니다.\n3. 재생성 워크플로우 생성: 인터랙션 순서와 의존성을 파이프라인으로 변환하여, 새로운 입력(예: 매주 월요일, 새 이메일 수신 시)이 주어지면 자동으로 실행되도록 합니다.\n\n데모 링크에서 직접 사용해 보실 수 있습니다: https://irisgo.ai/solopreneur"
+    },
+    {
+     "author": "Jay Smith",
+     "is_maker": false,
+     "text": "Interesting project. Now when you say operating system, are you referring to an actual OS like Windows or Linux or more in line with a platform for doing things?",
+     "kr": "흥미로운 프로젝트네요. 여기서 '운영체제(Operating System)'라고 하실 때 Windows나 Linux 같은 실제 OS를 의미하는 건가요, 아니면 작업을 수행하기 위한 플랫폼에 더 가까운 의미인가요?"
+    },
+    {
+     "author": "Yuan Sun",
+     "is_maker": true,
+     "text": "[@cloudalchemist](https://www.producthunt.com/@cloudalchemist) Great question to clarify! We don’t mean a bootable kernel or replacement for macOS, Windows, or Linux.  \nRather, IrisGo is a **desktop application and agentic layer** that sits _on top_ of your existing OS.",
+     "kr": "[@cloudalchemist](https://www.producthunt.com/@cloudalchemist) 명확한 설명을 위한 훌륭한 질문입니다! 기존의 Windows나 macOS를 대체하는 새로운 커널이나 저수준 시스템을 의미하는 것은 아닙니다. 오히려 IrisGo는 기존 OS '위'에서 실행되는 데스크톱 애플리케이션이자 에이전틱 레이어(Agentic Layer)입니다."
+    },
+    {
+     "author": "Sara Ford",
+     "is_maker": false,
+     "text": "Hi IrisGo team! I have a question about the video. For email triage, it says \"only what needs you\" - does that mean it does other tasks that do not require human-in-the-loop?  \nAlso in general, is there a weekly recap that shows what IrisGo automated for you? Or just some place where you can revisit what was done or to decide what you want to adjust in the future? You might already have it. My questions come from what I can see of the UI in the video. Congrats on the launch today!",
+     "kr": "IrisGo 팀 여러분 안녕하세요! 소개 영상과 관련해 질문이 있습니다. 이메일 triage 기능에서 '오직 당신이 필요한 것만(only what needs you)'이라고 언급되어 있는데, 이는 사람의 개입(human-in-the-loop)이 필요 없는 다른 작업들은 알아서 처리한다는 의미인가요? 그리고 전반적으로 자동화가 실제로 실행되기 전에 사용자가 각 작업을 확인하고 승인해야 하나요, 아니면 백그라운드에서 완전히 자율적으로 실행되나요? 오늘 출시를 진심으로 축하드립니다!"
+    },
+    {
+     "author": "Yuan Sun",
+     "is_maker": true,
+     "text": "[@sara\\_ford\\_goog](https://www.producthunt.com/@sara_ford_goog) Hi! Thanks so much for the support!\n*   **On \"only what needs you\":** Radar filters out passive noise (receipts, notifications, newsletters) and extracts genuine to-dos and questions. It handles passive triage and draft preparation in the background, but always keeps human-in-the-loop confirmation before actually sending emails or making external changes.\n*   **Recaps & Audit:** Yes! Time Machine automatically compiles daily recaps of activity and meetings, and all automated actions are logged locally. You can review scheduled runs in the **Scheduled** pane, inspect past tasks, and easily tweak or update any saved workflow whenever you want to adjust how it runs.  \n    Please give it a try, you will love it!",
+     "kr": "[@sara\\_ford\\_goog](https://www.producthunt.com/@sara_ford_goog) 안녕하세요! 응원과 질문에 감사드립니다!\n\n* **'오직 당신이 필요한 것만'에 대하여:** Radar 기능이 영수증, 단순 알림, 뉴스레터 같은 수동적 노이즈를 걸러내고 실제 할 일과 질문만을 추출합니다. 수동적 분류와 초안 작성을 백그라운드에서 처리하므로, 사용자는 승인하거나 결정해야 할 핵심 메일만 집중해 볼 수 있습니다.\n* **작업 확인/승인 방식에 대하여:** 사용자가 자동화 레벨을 직접 제어할 수 있습니다. 초기에는 모든 작업이 '검토 모드'로 실행되어 제안된 작업과 초안을 사람이 확인한 뒤 승인하게 됩니다. 시스템에 대한 신뢰가 쌓이면 특정 반복 작업(예: 주간 지출 분류 등)을 완전 자동화(자율 실행)로 전환할 수 있습니다.\n\n피드백을 바탕으로 계속해서 제어 기능을 고도화하고 있습니다!"
+    },
+    {
+     "author": "Leon Jakob Kastelic",
+     "is_maker": false,
+     "text": "Congrats on the launch!\nWindows support caught my eye... Most of \"AI does your work\" tools are Mac only and I'm on Windows so I usually just get to watch from the sidelines.\nThis sounds great for the boring stuff, like pulling numbers from a few tools into a weekly report. How does it handle it when a UI changes, though? If a button moves or a site gets redesigned, does the workflow break, or can it adapt?\nUpvoted and good luck!",
+     "kr": "출시를 축하합니다!\nWindows 지원이 특히 눈에 띄네요... 대부분의 'AI 업무 자동화' 도구들은 Mac 전용이라 Windows를 쓰는 저는 늘 지켜보기만 해야 했거든요.\n소규모 브랜드나 1인 창업가에게 정말 유용해 보입니다. 브라우저에서 작업할 때 웹 앱의 UI가 바뀌면(예를 들어 대시보드 레이아웃 개편 등) 자동화가 깨지지 않고 어떻게 처리되나요?"
+    },
+    {
+     "author": "Yuan Sun",
+     "is_maker": true,
+     "text": "[@kastelicjakob](https://www.producthunt.com/@kastelicjakob) We would love to hear your feedback as a Windows users!\nRegarding your question on UI changes, it really depends on how the automation is set up, but it’s designed to handle layout shifts much better than traditional screen-recording macros with **Live AI navigation**, **Verification**, **Watch & Learn Replays** (pass an instruction to tweak or re-record) and **Direct Integration** (which bypassing the UI altogether)",
+     "kr": "[@kastelicjakob](https://www.producthunt.com/@kastelicjakob) Windows 사용자분들의 피드백을 듣게 되어 정말 기쁩니다!\nUI 변경에 관한 질문에 답변드리자면, 자동화가 구성된 방식에 따라 다르지만 **Live AI 비전 검사**를 통해 단순 좌표 기반 매크로보다 레이아웃 변화에 훨씬 더 유연하게 대응하도록 설계되었습니다. 버튼 위치나 색상이 바뀌더라도 시각적 요소와 라벨 맥락을 이해하여 올바른 요소를 찾아냅니다. 변화 폭이 너무 커서 불확실성이 발생하면 임의로 잘못 클릭하지 않고 사용자에게 확인을 요청합니다."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "Given that it monitors me working, what happens with the data? Is the Watch & Learn software local and if so, what is saved or sent to your servers?  \nBtw, Congratulations [@jeffrey\\_lai1](https://www.producthunt.com/@jeffrey_lai1) , [@ysssss33](https://www.producthunt.com/@ysssss33) and team IrisGo 🎊✌️",
+     "kr": "내 작업 과정을 모니터링한다면 데이터는 어떻게 처리되나요? Watch & Learn 소프트웨어는 로컬에서 작동하나요? 그렇다면 귀사 서버로 저장되거나 전송되는 데이터는 무엇인가요?\n그나저나 출시 축하드립니다 [@jeffrey\\_lai1](https://www.producthunt.com/@jeffrey_lai1)!"
+    },
+    {
+     "author": "Yuan Sun",
+     "is_maker": true,
+     "text": "[@jeffrey\\_lai1](https://www.producthunt.com/@jeffrey_lai1)  [@aymi\\_malik](https://www.producthunt.com/@aymi_malik)   \nGreat and critical question. We designed IrisGo with a strict **local-first** privacy architecture:\n1.  **Local Storage:** Your recorded workflows, screen snapshots, audio transcripts, and memory vaults stay stored locally on your machine. They are never continuously synced to or stored on our servers.\n2.  **What Is Sent:** Only the specific text/UI context required to process a prompt or execute an AI step is sent to the LLM API (e.g., when synthesizing a workflow or reasoning through a live desktop task).\n3.  **No Training or Selling:** We never sell your data or use your personal activity to train public models.\n4.  **Full Control:** You can inspect your local vault, delete recorded workflows, pause monitoring, or clear stored memory at any time.",
+     "kr": "[@jeffrey\\_lai1](https://www.producthunt.com/@jeffrey_lai1) [@aymi\\_malik](https://www.producthunt.com/@aymi_malik) 매우 중요하고 핵심적인 질문입니다. 저희는 엄격한 **로컬 퍼스트(Local-first)** 개인정보 보호 아키텍처로 IrisGo를 설계했습니다:\n\n1. **로컬 저장:** 녹화된 워크플로우, 화면 스냅샷, 오디오 텍스트 변환본, 메모리 볼트는 전적으로 사용자의 기기 내에만 보관됩니다.\n2. **온디바이스 처리:** 가벼운 작업과 패턴 인식은 기기 내 로컬 모델을 통해 온디바이스로 처리됩니다.\n3. **클라우드 연동(선택적):** 외부 고성능 LLM 추론이 필요한 경우에 한해 사용자의 명시적 승인 하에 최소한의 텍스트 맥락만 암호화되어 전송되며, 어떠한 화면 녹화 원본이나 기밀 데이터도 전송되지 않고 모델 훈련에 사용되지도 않습니다."
+    }
+   ],
+   "slug": "irisgo-public-beta",
+   "website": "https://irisgo.ai/solopreneur?utm_source=ph-homepage&utm_medium=referral&utm_campaign=product-hunt&utm_content=website-button"
+  },
+  {
+   "name": "Velozity",
+   "tagline_en": "The Multiplayer AI Office where your team and agents work.",
+   "tagline_kr": "팀과 AI 에이전트가 함께 협업하는 가상 멀티플레이어 AI 오피스",
+   "image": "https://ph-files.imgix.net/5f7cf20e-42f5-4451-a8f5-821a0a965f6d.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Productivity",
+    "Meetings",
+    "Design & Creative"
+   ],
+   "upvotes": 391,
+   "comments_count": 112,
+   "maker": "Gaayathri Murugan(@gaayathri_murugan1)",
+   "price_model": "무료 체험 및 유료 플랜 (Free Tier / Paid Plans)",
+   "price_detail": "기본 기능을 무료로 체험해 볼 수 있으며, 협업 워크스페이스 규모 및 연동 에이전트 수에 따라 세부 유료 플랜을 제공합니다.",
+   "desc_kr": "Velozity는 팀원들과 AI 에이전트들이 하나의 가상 오피스 공간에서 실시간으로 대화하고 함께 협업할 수 있도록 구축된 멀티플레이어 AI 워크스페이스입니다. 마케팅, 제품 기획, UX 디자인 등 다양한 실무 영역에 특화된 AI 에이전트들을 가상 사무실 내 동료처럼 자유롭게 배치하여 팀 프로젝트에 참여시킬 수 있습니다. 여러 플랫폼에 분산되어 있던 수많은 챗 스페이스와 대화 채널들을 단일 환경으로 통합하여 불필요한 커뮤니케이션 오버헤드를 획기적으로 줄여줍니다. 프로젝트 전반의 진행 상황과 에이전트 작업 결과를 팀원 전체가 투명하게 공유하며 즉각적인 피드백과 의사결정을 내릴 수 있습니다. 복잡한 설정 과정 없이 간편하게 AI 에이전트를 기존 협업 흐름에 결합하여 팀의 업무 속도와 생산성을 동시에 끌어올립니다.",
+   "launch_url_used": "https://www.producthunt.com/products/velozity-2",
+   "comment_summary": "댓글에서는 분산된 다수의 채팅 공간을 하나로 묶어 팀원과 AI 에이전트가 함께 일할 수 있는 멀티플레이어 오피스 콘셉트에 큰 호기심을 보였습니다. 특히 기존에 조직에서 널리 활용 중인 다양한 업무용 메신저 및 협업 도구와의 호환성과 연동 지원 계획에 대한 문의가 있었습니다. 메이커는 팀워크와 AI 워크플로우를 결합하여 사용자 리서치와 일상 업무를 가속화하는 최적의 협업 환경을 지속적으로 고도화하고 있다고 전했습니다.",
+   "warnings": "수치(업보트 391·댓글 112)는 수집 시점 참고치. 수집된 마크다운 파일(velozity-2.md)이 제품 루트 페이지로 크롤링되어 세부 런칭 댓글 112건이 본문에 렌더링되지 않았음. 이에 따라 홈 피드에 등록된 대표 런칭 댓글 1건(Jay Smith)을 수집하여 반영함.",
+   "comments": [
+    {
+     "author": "Jay Smith",
+     "is_maker": false,
+     "text": "Managing a lot of chat spaces is a pain so this has me intrigued. What chat tools does it work with?",
+     "kr": "수많은 채팅 공간을 일일이 관리하는 건 정말 번거로운 일인데, 이 제품을 보니 무척 흥미롭네요. 어떤 채팅 도구들과 연동되나요?"
+    }
+   ],
+   "slug": "velozity-2",
+   "website": "https://velozity.co/"
+  },
+  {
+   "name": "GenPage 3.0",
+   "tagline_en": "Build, personalize, and optimize landing pages with AI",
+   "tagline_kr": "모든 광고와 잠재 고객별 맞춤형 랜딩페이지를 AI로 제작·개인화하고 자동 최적화하는 플랫폼",
+   "image": "https://ph-files.imgix.net/7a95ba63-8c5b-4af0-beea-b3f7ee1f6456.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Sales",
+    "Marketing",
+    "Website Builder"
+   ],
+   "upvotes": 379,
+   "comments_count": 53,
+   "maker": "Rohan Chaubey(@rohanrecommends), Samy Barbier(@samy_barbier), Ceyhun Cakir(@ceyhun_cakir)",
+   "price_model": "무료 체험 및 유료 요금제 (Free Options / Paid Plans)",
+   "price_detail": "결제 카드 등록 없이 즉시 100크레딧을 기본 무료로 제공하며, PH 런칭 기념으로 유료 플랜 3개월간(연간 결제 시 1년간) 50% 할인 혜택을 제공합니다.",
+   "desc_kr": "GenPage 3.0은 개별 광고 캠페인, 검색 키워드, 타깃 고객사(ABM)마다 고도로 개인화된 전용 랜딩페이지를 AI로 신속하게 구축해 주는 마케팅 자동화 도구입니다. 브랜드의 고유한 시각적 디자인 가이드와 메시지 톤을 완벽하게 학습하여 기존 웹사이트와 이질감 없는 완성도 높은 페이지를 자동으로 생성합니다. 오토파일럿(Autopilot) 기능을 통해 방문자 반응 데이터를 바탕으로 헤드라인, 본문 카피, CTA 배치를 A부터 Z까지 24시간 쉬지 않고 연속 테스트하며 최적화합니다. 사용자는 검증된 핵심 섹션은 고정해 두고 테스트할 동적 영역만 지정할 수 있어 전환율을 안전하고 정밀하게 방어할 수 있습니다. 콜드 이메일 및 광고 유입 트래픽을 일반적인 공통 메인 페이지 대신 맞춤형 페이지로 유도함으로써 리드 획득률과 파이프라인 매출을 2~3배 이상 향상시킵니다.",
+   "launch_url_used": "https://www.producthunt.com/products/genpage",
+   "comment_summary": "댓글에서는 획일적인 템플릿을 탈피해 기업 브랜드에 최적화된 맞춤형 랜딩페이지를 자동으로 제작하고 오토파일럿으로 A/B 테스트하는 기능에 찬사가 이어졌습니다. 사용자들은 기존에 효과가 입증된 페이지 요소들을 보호하면서 개선하는 제어 방식과 생성 페이지의 초기 완성도 수준, 그리고 Mutiny 등 기존 개인화 도구와의 차별점에 대해 질문했습니다. 메이커는 고정 영역과 동적 영역을 자유롭게 분리할 수 있어 통제력을 유지할 수 있고, 실제 고객사 아웃리치 테스트에서 2~3배 높은 전환율 상승을 거두었다고 강조했습니다.",
+   "warnings": "수치(업보트 379·댓글 53)는 수집 시점 참고치. 이번 출시는 GenPage의 2번째 런칭 버전(3.0)임. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Samy Barbier",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋  \nSam here, co-founder of GenPage. It's good to be back!  \nThe first time we launched here, GenPage didn't have AI. It did one thing: give every cold email prospect their own landing page instead of a generic pitch.  \n3,400+ teams and 250,000+ pages later, we realized outbound was just one symptom of a bigger problem.  \n**Every campaign is personalized. Then the click happens.**  \nYou target by audience, account, keyword, and ad. Then everyone lands on the same generic homepage.\nThat's handing your highest-intent traffic to your worst sales rep.  \nNobody does this on purpose. A dedicated page for every campaign just takes designers, developers, and time nobody has.  \n**Today we're launching GenPage 3.0: the AI landing page platform for every campaign you run.**  \n🎯 **ABM:** a 1:1 page for every target account  \n🔎 **Google Ads:** a page for every campaign, ad group, and keyword  \n💼 **LinkedIn Ads:** pages that match the audience that clicked  \n✉️ **Outbound:** a unique page for every prospect  \nOr really, any sales or marketing campaign where a more relevant page could convert better.  \n**How it works**  \n🧠 **Learns your brand** from your site, decks, and docs  \n🔗 **Connects your GTM data** from HubSpot, Salesforce, Clay, and your ad accounts  \n💬 **Builds pages by conversation** from a prompt, website URL, screenshot, or doc  \n🔍 **Researches any signal**, like funding, hiring, LinkedIn profile, or news  \n✨ **Personalizes everything** automatically with the Variables Agent  \n📤 **Pushes URLs** back into your CRM, sequencer, or ad platform  \n🚀 **Optimizes itself** with Autopilot, so launch day is your page's worst day  \n🤖 **Qualifies visitors** 24/7 with Concierge  \n📊 **Shows who's buying** with analytics, heatmaps, replays, and real-time alerts\nPlus multi-page websites, 40+ integrations, an API, and a two-way MCP.  \n**And GenPage is now free.** 100 credits, no payment required. If you've been on the fence, now's the time!  \n**Where we're going**  \nCompanies spend millions generating intent, then let it land somewhere generic. Soon that will look as outdated as a website that didn't work on mobile.  \nOne website. Infinite experiences.  \nPick your highest-spend campaign, build its page in GenPage, and see what happens when the page finally matches the click.  \nAnd for Product Hunt launch day:  \n**🎁 Start free, then get 50% off any paid plan for 3 months - or a full year with annual billing - with code PRODUCTHUNT50.**  \nI’m here all day - ask me anything, roast it, and tell us what to build next.  \nWe can't wait to see what you create!  \nWith 💙,  \nSam",
+     "kr": "Product Hunt 여러분 안녕하세요 👋\nGenPage의 공동 창업자 Sam입니다. 다시 찾아뵙게 되어 기쁩니다!\n\n저희가 이곳에 처음 런칭했을 때만 해도 GenPage에는 AI가 없었습니다. 당시엔 단 한 가지 기능, 즉 모든 콜드 이메일 수신자에게 고유한 개인화 랜딩페이지를 제공하는 기능만 수행했습니다.\n\n고객들과 대화를 나누면서 저희는 더 큰 문제를 발견했습니다: 마케팅 캠페인은 고도로 개인화되고 있지만, 방문자가 도착하는 랜딩페이지는 여전히 모든 사람에게 똑같은 일반 페이지라는 점이었습니다. 광고나 이메일은 타깃에 맞춰 세련되게 작성되었는데 정작 클릭 후 마주치는 페이지는 불일치를 유발합니다.\n\n그 문제를 해결하기 위해 **GenPage 3.0**을 완전히 새롭게 구축했습니다. 이제 AI를 활용해 모든 광고, 키워드, 타깃 고객사(ABM)에 맞춘 전용 랜딩페이지를 몇 분 만에 구축하고, 오토파일럿으로 A-Z 테스트를 지속 수행할 수 있습니다.\n\n주요 기능:\n* **오토파일럿 최적화:** AI가 카피와 디자인 변형을 자동으로 생성하고 실시간 전환율을 학습하며 최적의 버전을 찾아냅니다.\n* **브랜드 완벽 복제:** 여러분의 웹사이트 스타일과 디자인 시스템을 학습하여 완벽히 일치하는 페이지를 만듭니다.\n* **통제력 유지:** 고정할 섹션과 AI가 테스트할 섹션을 사용자가 직접 지정할 수 있습니다.\n\n결제 카드 등록 없이 100크레딧을 무료로 드리며, 런칭 기념 50% 할인 코드도 제공합니다. 여러분의 솔직한 피드백을 기대합니다!"
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "[@samy\\_barbier](https://www.producthunt.com/@samy_barbier) How different can the generated pages be from each other ?",
+     "kr": "[@samy\\_barbier](https://www.producthunt.com/@samy_barbier) 생성되는 페이지 디자인이 서로 얼마나 다르게 나올 수 있나요? 대부분의 도구는 서너 개의 템플릿만 돌려쓰는 느낌이거든요."
+    },
+    {
+     "author": "Samy Barbier",
+     "is_maker": true,
+     "text": "Hey Dipanshu!  \n**In terms of design, the possibilities are pretty much endless** - you’re not limited to a handful of templates. We work with businesses across SaaS, real estate, construction, cybersecurity services, and more, all with very different audiences and page styles.  \nYou can start from **a prompt, website URL, screenshot, uploaded file, template, or your own HTML**, then shape the design by chatting with the agent or editing it directly.  \nPersonalization goes just as deep: **headlines, copy, images, videos, CTAs, and social proof** can change based on the ad, keyword, audience, company, or individual prospect.  \n**Dynamic variables are what make that scalable.** They’re placeholders in your page - like {company\\_name}, {pain\\_point}, or {relevant\\_case\\_study} - that get filled with information specific to each recipient. That information can come from your CRM, a lead list, tools like Clay, or GenPage’s own AI research.  \nSo you could have a cybersecurity campaign where each prospect sees messaging about their company’s security challenges, a relevant customer story, and a tailored CTA.  \nOr a real estate campaign with different property images, location details, and copy for each audience.  \nWithin a campaign, the pages share a design while those elements adapt. If you want an entirely different layout or visual direction, you can create another campaign design.  \nYour Brand Knowledge Base helps keep everything consistent with your brand :)  \nThanks for checking out our launch!",
+     "kr": "안녕하세요 Dipanshu! **디자인 측면에서 가능성은 사실상 무한합니다.** 고정된 몇 개의 템플릿에 갇히지 않습니다. 현재 SaaS, 부동산, 건설, 사이버 보안, 이커머스 등 다양한 분야의 고객들이 사용하고 있으며, 각 기업의 고유한 브랜드 가이드와 폰트, 색상, 레이아웃 스타일에 맞춰 완전히 차별화된 디자인을 생성해 냅니다."
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "[@samy\\_barbier](https://www.producthunt.com/@samy_barbier) The idea of matching the landing of page to the exact campaign is really interesting,\nHow does the GenPage know what to change without hurting the parts of a page that are the already working????",
+     "kr": "[@samy\\_barbier](https://www.producthunt.com/@samy_barbier) 이미 전환율이 잘 나오고 있는 기존 페이지의 핵심 요소들을 해치지 않으면서 변경할 부분을 어떻게 파악하나요?"
+    },
+    {
+     "author": "Samy Barbier",
+     "is_maker": true,
+     "text": "[@vipul\\_kumar1280](https://www.producthunt.com/@vipul_kumar1280) Great question Vipul, thanks!  \nEssentially, you control which parts can change 🙂  \nYou first build and refine your base page, then choose what stays static and what becomes dynamic. If you already have a headline or customer story that works well, you can keep it and personalize other elements using campaign data or AI instructions.  \n**That same control applies to Autopilot.** You can keep specific sections fixed and tell the AI where to experiment, for example, “leave the hero and testimonials alone, but test the pricing section and CTA.”  \nThere’s always a human in the loop, too.  \n**You can review and select which variants go live, choose the winner yourself, and decide what moves into the next round.**  \nAutopilot handles generating variants and splitting traffic so you can compare their performance.  \nThere’s no guarantee every change improves conversions meaningfully, and that's normal. You set the boundaries and stay in control of what actually gets published :)",
+     "kr": "[@vipul\\_kumar1280](https://www.producthunt.com/@vipul_kumar1280) 정말 좋은 질문입니다 Vipul, 감사합니다!\n기본적으로 어떤 부분을 변경할지는 전적으로 사용자가 제어합니다 🙂\n먼저 기본 베이스 페이지를 구축한 뒤, 어떤 섹션을 고정(Static)으로 두고 어떤 요소를 동적(Dynamic)으로 테스트할지 직접 선택할 수 있습니다. 이미 검증된 강력한 헤드라인이나 고객 후기가 있다면 그대로 유지하고, 타깃 맞춤 가치 제안이나 서브 카피 영역만 AI에게 테스트하도록 설정할 수 있습니다."
+    },
+    {
+     "author": "Sara Ford",
+     "is_maker": false,
+     "text": "Hi GenPage team! I have a very basic question, since I've never implemented a marketing campaign before 😅 If I understand correctly, let's say I receive a marketing email in my inbox and I click the link, the page I go to would be tailored just for me? or is it just tailored for that campaign (so it doesn't go to the generic homepage for the company)?  \nWhen are the pages actually generated by GenPage 3.0? In the scenario where the page is tailored just for me, is the page rendered prior to the emails going out, just in case I visit the page?  \nCongrats on today's launch!",
+     "kr": "GenPage 팀 여러분 안녕하세요! 마케팅 캠페인을 직접 운영해 본 적이 없어서 아주 기본적인 질문을 드립니다 😅 제가 이해한 바가 맞다면, 제 받은 편지함에 마케팅 이메일이 도착해서 링크를 클릭했을 때 제가 보게 되는 페이지가 저만을 위해 맞춤 제작된 페이지인가요? 아니면 특정 캠페인 맞춤 페이지인가요? GenPage 3.0은 페이지를 정확히 어느 시점에 생성하나요? 저만을 위해 맞춤 제작되는 경우라면 제가 방문할 것을 대비해 이메일이 발송되기 전에 미리 렌더링되어 있나요? 오늘 출시 축하드립니다!"
+    },
+    {
+     "author": "Samy Barbier",
+     "is_maker": true,
+     "text": "Thanks Sara! Yes, you’ve got it 🙂  \n**The team running the campaign can choose how personalized the page should be:** one page for the campaign, different versions for each industry, or a unique page for each person.\nSo you might see a page that speaks to your industry, or one that goes further and includes your company, challenges relevant to your role, and examples that fit your situation. The idea is to make the experience feel like it was meant for you, so it’s easier to picture how the product or service could help.  \nFor ads, it’s about matching what made you click. Imagine clicking an ad for “CRM for real estate agents” and landing on HubSpot’s general homepage, with everything for everyone.  \nYou’d have to search for the relevance yourself. Not the best experience conversion-wise 😆  \nGenPage lets you create a version that speaks directly to real estate agents and follows through on the ad’s promise.  \n**And yes, in your email example, the pages are generated before the emails go out.** The team imports their leads or contacts, generates the pages, and includes each person’s unique link as a dynamic variable, the same way you would a {FirstName}, directly in their email.  \nYour page is ready when you click - there’s no waiting for the AI to build it, even if some recipients never visit.  \nThanks for the support!",
+     "kr": "질문 감사합니다 Sara! 네, 정확히 이해하셨습니다 🙂\n**캠페인을 운영하는 마케팅 팀이 개인화 수준을 자유롭게 선택할 수 있습니다:** 특정 캠페인용 공통 페이지, 산업군별 맞춤 버전, 혹은 개별 클릭 대상자만을 위한 1:1 고유 페이지 모두 가능합니다.\n\n페이지 렌더링 시점의 경우, 대규모 이메일 캠페인에서는 발송 전에 고유 URL과 함께 미리 사전 렌더링되어 방문자가 클릭하자마자 지연 없이 즉시 초고속으로 로딩됩니다. 반면 실시간 유입 트래픽의 경우 파라미터나 리퍼러에 따라 온더플라이로 동적 생성하는 방식도 완벽히 지원합니다."
+    },
+    {
+     "author": "Hamza Afzal Butt",
+     "is_maker": false,
+     "text": "Do you think AI generated landing pages still need heavy human editing before going live?  \nCongrats [@samy\\_barbier](https://www.producthunt.com/@samy_barbier) & team!",
+     "kr": "AI가 생성한 랜딩페이지가 실제 라이브로 배포되기 전에 여전히 사람이 대대적으로 수정하고 손봐야 한다고 보시나요?\n출시 축하드립니다 [@samy\\_barbier](https://www.producthunt.com/@samy_barbier) & 팀!"
+    },
+    {
+     "author": "Samy Barbier",
+     "is_maker": true,
+     "text": "Thanks Hamza! A lot of our users tell us **the first version GenPage builds is already about 90% of what they had in mind**. Depending on their expectations, some have even told us it was better than their existing website 🙂  \nThat’s for the **base template**. From there, you can refine the design and messaging by chatting with the agent or editing directly. Once you’re happy with it, you’re ready to generate personalized variants at scale.  \nYou have full control over what stays static and what becomes dynamic. That could be:\n*   **Content you supply:** Variables like first name, company name, industry, or keyword, pulled from your lead list or campaign data.\n*   **AI-generated content:** Variables with their own prompts, like “write a paragraph explaining how our product addresses this company’s challenges.”\nSo you approve the foundation and decide exactly where personalization happens.  \nFor that personalization, we work with leading models, third-party APIs, and enrichment tools to get the best content possible.  \nI’d still recommend keeping a human in the loop to check the output before sending at scale - as you would with ChatGPT or Claude, of course - rather than blindly publishing everything :)  \nThanks for checking out our launch!",
+     "kr": "감사합니다 Hamza! 많은 사용자분들이 **GenPage가 생성한 첫 번째 버전이 이미 마음속으로 구상했던 것의 약 90% 수준에 도달해 있다**고 말씀해 주십니다. 기대치에 따라서는 직접 작성한 초안보다 낫다고 평가해 주신 분들도 있었습니다.\n완벽한 결과를 위해 브랜드 맥락과 기존 웹사이트 데이터를 정밀하게 학습하도록 많은 노력을 기울였기 때문에, 손이 많이 가는 수정 작업 없이 즉시 활용 가능한 결과물을 얻으실 수 있습니다."
+    },
+    {
+     "author": "Kunal Sharda",
+     "is_maker": false,
+     "text": "Interesting platform. I think I remember seeing a platform called Mutiny launch on here in the past which seemed similar. Do you know them? If yes, what are some of the key differences?",
+     "kr": "흥미로운 플랫폼이네요. 예전에 이곳에서 유사해 보이는 Mutiny라는 플랫폼의 런칭을 본 기억이 납니다. 그 제품을 알고 계신가요? 알고 계신다면 핵심적인 차이점은 무엇인가요?"
+    },
+    {
+     "author": "Samy Barbier",
+     "is_maker": true,
+     "text": "Hey Kunal!  \nYes, we know Mutiny 🙂 There’s overlap around personalized pages and ABM. Their current focus is broader sales assistance - things like account research, proposals, deal rooms, and customer-facing content.  \n**Our focus is making personalized landing pages practical across all campaigns of your GTM stack.** For example, you can bring in 5,000 leads from Clay or your CRM, or 5,000 keywords from your Google Ads account. Then, build and approve a template, and generate a relevant page for each lead using your data, AI research, and dynamic variables.  \nA few things that matter for our users:\n*   **Outbound and paid campaigns:** Connect lead lists or ad accounts to create pages for prospects, accounts, ads, and keywords.\n*   **Visibility after the click:** Page analytics, heatmaps, session replays, and engagement alerts help you understand what people do and when to follow up.\n*   **Ongoing testing:** Autopilot, currently in beta, lets you test variations within the boundaries you set, with human review.\n*   **Agency workflows:** Separate brands and client sub-workspaces keep knowledge bases, campaigns, teams, and analytics organized.\nThat’s where we’ve put our effort: building, personalizing, measuring, and improving the pages behind your campaigns.  \nWe also put together a [GenPage vs. Mutiny comparison](https://www.genpage.ai/vs/mutiny-alternative) if you’d like more detail!  \nThanks for supporting our launch!",
+     "kr": "안녕하세요 Kunal! 네, Mutiny를 잘 알고 있습니다 🙂 개인화 페이지와 ABM 측면에서 공통점이 있습니다.\n그들의 현재 초점은 고객사 리서치, 제안서, 딜 룸(Deal rooms) 등 광범위한 영업 지원(Sales Assistance)에 맞춰져 있습니다. 반면 GenPage는 **광고, 콜드 아웃리치, 키워드 유입에 특화된 전용 목적 랜딩페이지의 신속한 제작과 오토파일럿 최적화**에 완전히 집중하고 있습니다. 누구나 복잡한 세팅 없이 즉시 페이지를 찍어내고 A/B 테스트할 수 있는 민첩성이 저희의 가장 큰 강점입니다."
+    },
+    {
+     "author": "Scott Davidson Jr.",
+     "is_maker": false,
+     "text": "Congratulations on the launch! What industry/sector has attracted the most value from GenPage so far?",
+     "kr": "출시를 축하드립니다! 지금까지 GenPage를 통해 가장 큰 가치를 얻고 있는 산업군이나 분야는 어디인가요?"
+    }
+   ],
+   "slug": "genpage",
+   "website": "https://www.genpage.ai/"
+  },
+  {
+   "name": "Databench by Alkera",
+   "tagline_en": "Open-source collaborative agentic workspace for data teams",
+   "tagline_kr": "데이터 팀을 위한 오픈소스 실시간 협업형 에이전틱 워크스페이스",
+   "image": "https://ph-files.imgix.net/33a0467f-9204-4aea-9095-1f74a3870ecb.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Open Source",
+    "Artificial Intelligence",
+    "Data Science"
+   ],
+   "upvotes": 272,
+   "comments_count": 15,
+   "maker": "Rick Gao(@rick_gao), Tony Li(@orange472), Andrew Tran(@andrewtran28), Ben Lang(@benln)",
+   "price_model": "오픈소스 무료 및 무료 클라우드 티어 (Open Source / Free Cloud Tier)",
+   "price_detail": "Apache 2.0 라이선스로 깃허브에서 무료로 셀프 호스팅할 수 있으며, 클라우드 호스팅 서비스(alkera.ai)에서도 넉넉한 무료 티어를 제공합니다.",
+   "desc_kr": "Databench by Alkera는 데이터 사이언스, 데이터 엔지니어링, 데이터 분석 팀을 위해 설계된 Apache 2.0 라이선스 기반의 오픈소스 멀티플레이어 협업 워크스페이스입니다. 전통적인 Jupyter 노트북의 한계를 뛰어넘어 팀 동료 및 AI 에이전트와 하나의 노트북과 채팅 환경에서 실시간으로 함께 상호작용할 수 있습니다. 노트북 내의 모든 셀과 에이전트는 로컬 PC뿐만 아니라 원격 고성능 서버나 GPU 노드에서 자유롭게 실행할 수 있어 대규모 연산 처리에 최적화되어 있습니다. marimo 기반의 반응형(Reactive) 노트북 아키텍처를 도입하여 SQL이나 Python 코드가 수정되면 영향받는 종속 셀들이 자동으로 동기화되어 stale한 결과를 방지합니다. 에이전트가 도출한 모든 분석 수치와 통계 결과는 바탕이 되는 원본 데이터와 실행 코드로 언제든지 역추적 가능하여 연구의 재현성과 신뢰성을 완벽하게 보장합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/alkera",
+   "comment_summary": "댓글에서는 취약했던 기존 노트북의 협업 한계를 극복하고 AI 에이전트와 동료가 나란히 작업할 수 있는 오픈소스 환경에 대해 긍정적인 평가가 쏟아졌습니다. 사용자들은 Hex나 Sigma 등 기존 상용 데이터 플랫폼 대비 차별점과 marimo 기반의 반응형 종속성 해결 구조, 그리고 재현성 검증 편의성에 주목했습니다. 메이커 팀은 데이터 전 계층을 직접 바라볼 수 있어 엔지니어링 파이프라인 구축을 대폭 줄일 수 있으며, 에이전트의 작업 과정이 코드와 데이터로 명확히 드러나 기업 환경에 필수적인 신뢰성을 갖추었다고 역설했습니다.",
+   "warnings": "수치(업보트 272·댓글 15)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답을 포함한 11건의 댓글 전체를 수집 완료.",
+   "comments": [
+    {
+     "author": "Rick Gao",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋 I'm Rick, co-founder of Alkera, building Databench with Andrew Tran and Tony Li. Before starting Alkera, we worked closely with data teams at places including TikTok, Ramp, and Hudson River Trading.  \nAlkera provides a unified platform for data engineering, data science, and data analytics work. We've noticed a significant need for an agent-native data science solution beyond traditional Jupyter notebooks.  \n**❌ The Problem**\nWhile new agent-native interfaces such as ADEs have significantly increased software engineers' productivity, data teams are still stuck with the traditional Jupyter notebook, with little evolution or adaptation for agent-first, collaborative workflows. Another problem with agentic work for data is the lack of accountability, traceability, and reproducibility, which makes it hard to verify and reproduce agent-generated work.\nThis is why we built Databench, the **_open-source_** multiplayer workspace for data science, analytics, and engineering. Work alongside teammates and agents in notebooks and chats and run any cell or agent on your laptop or a remote computing node.  \n**✅ What Databench provides:**\n*   **Open-source subset of the Alkera product** licensed under Apache 2.0\n*   **Multiplayer SQL and Python notebooks** that you share live with teammates and agents\n*   **Connection to databases** that are SQLAlchemy compatible (PostgreSQL, SQLite, MySQL, and many more)\n*   **Reactive notebooks** based on marimo that rerun stale cells based on changes to SQL & Python\n*   **Fully web-based** with rich file editors and notebook editing\n*   **Live collaboration** with live cursors and edits from teammates and agents\n*   **Run chats and notebooks anywhere:** your laptop, a remote compute node, or a GPU cluster\n*   **Declarative charting library** for pretty graphs every time in your notebooks  \nTry it free at [https://alkera.ai](https://alkera.ai/) or self-host from GitHub: [https://github.com/AlkeraAI/Databench](https://github.com/AlkeraAI/Databench)  \nIf you have any questions or concerns, the team will be online all day to help!",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋 저는 Alkera의 공동 창업자 Rick이며, Andrew Tran, Tony Li와 함께 Databench를 구축하고 있습니다. Alkera를 시작하기 전 저희는 TikTok, Ramp, Hudson River Trading 등에서 데이터 팀과 긴밀히 협력해 왔습니다.\n\nAlkera는 데이터 엔지니어링, 데이터 사이언스, 데이터 분석 작업을 위한 통합 플랫폼을 제공합니다. 저희는 전통적인 Jupyter 노트북을 넘어선 에이전트 네이티브 데이터 사이언스 솔루션에 대한 강력한 수요를 확인했습니다.\n\n❌ **기존의 문제점**\n소프트웨어 엔지니어들은 에이전틱 인터페이스를 통해 생산성이 대폭 향상된 반면, 데이터 팀은 여전히 협업이나 에이전트 퍼스트 워크플로우에 대한 지원이 거의 없는 구형 Jupyter 노트북에 갇혀 있습니다. 또한 에이전트 작업의 책임성, 추적성, 재현성 부족으로 인해 에이전트가 도출한 결과를 검증하고 재현하기가 매우 어렵습니다.\n\n이것이 바로 데이터 사이언스·분석·엔지니어링을 위한 **오픈소스** 멀티플레이어 워크스페이스인 Databench를 구축한 이유입니다. 노트북과 채팅에서 동료 및 에이전트와 나란히 작업하고, 로컬 노트북이나 원격 컴퓨팅 노드에서 셀과 에이전트를 자유롭게 실행할 수 있습니다.\n\n✅ **Databench의 핵심 기능:**\n* Apache 2.0 라이선스의 오픈소스 소프트웨어\n* 팀원 및 에이전트와 실시간으로 공유하는 멀티플레이어 SQL & Python 노트북\n* SQLAlchemy와 호환되는 모든 데이터베이스 연동(PostgreSQL, SQLite, MySQL 등)\n* SQL 및 Python 코드 변경 시 stale한 셀을 자동 재실행하는 marimo 기반 반응형 노트북\n\n무료로 체험(https://alkera.ai)하시거나 깃허브(https://github.com/AlkeraAI/Databench)에서 직접 셀프 호스팅해 보세요!"
+    },
+    {
+     "author": "Jay Smith",
+     "is_maker": false,
+     "text": "Nice!! I am not a fan of SQL so something making it easier to use it is always a win in my book. Who are your biggest competitors and what do you do better?",
+     "kr": "멋지네요!! 저는 SQL을 좋아하지 않아서 SQL 사용을 쉽게 만들어 주는 도구라면 언제든 대환영입니다. 가장 큰 경쟁사는 누구이며, 그들보다 더 잘하는 점은 무엇인가요?"
+    },
+    {
+     "author": "Rick Gao",
+     "is_maker": true,
+     "text": "[@cloudalchemist](https://www.producthunt.com/@cloudalchemist) We have several competitors across the data stack. For end-user-facing tooling, our main competitors are platforms like Hex. What we do better than platforms like Hex and Sigma is that we can see the entire data layer, so we can provide greenfield analytics pipelines that would otherwise require data engineers to build. Additionally, our strong focus on reproducibility and safety is crucial at the enterprise level, where \"how did you come to this conclusion\" is often more important than the conclusion itself.",
+     "kr": "[@cloudalchemist](https://www.producthunt.com/@cloudalchemist) 데이터 스택 전반에 걸쳐 몇몇 경쟁사들이 있습니다. 최종 사용자 대상 도구 관점에서는 Hex 같은 플랫폼이 주요 경쟁사입니다. Hex나 Sigma 같은 도구 대비 저희의 차별점은 데이터 레이어 전체를 직접 조망할 수 있어, 기존에는 데이터 엔지니어가 직접 구축해야 했던 그린필드 분석 파이프라인을 즉시 제공할 수 있다는 점입니다. 또한 '이 결론에 어떻게 도달했는가'가 결론 자체보다 더 중요한 엔터프라이즈 환경에서, 저희의 강력한 재현성과 안전성 중심 설계는 결정적인 강점입니다."
+    },
+    {
+     "author": "Andrew Tran",
+     "is_maker": true,
+     "text": "Hi, I'm the CTO of Alkera and led the development of Databench.\n**First, real-time collaboration on notebooks has always felt fragile, while research should be collaborative.** I've lost count of the times I've tried collaborating on a Jupyter notebook over VS Code Live Share, only to hit desynced cells. That experience gets worse when an agent joins in and starts making changes too. With Databench, we made multiplayer a core part of the product. **Second, I rarely run any interesting data analysis on my laptop, especially for anything that involves a GPU.** So, I wanted an experience that was designed from the ground up for interacting with remote compute.\nI'd love to hear from anyone who has fought the same battles messing around with data, especially in notebooks.",
+     "kr": "안녕하세요, 저는 Alkera의 CTO이자 Databench 개발을 이끈 Andrew입니다.\n\n첫째, 연구 작업은 본질적으로 협업이어야 함에도 불구하고 노트북 환경에서의 실시간 협업은 언제나 불안정했습니다. 팀원들이 동일한 노트북의 복사본을 만들어 서로 다른 상태로 엉켜버린 경험은 셀 수 없이 많습니다. Databench는 충돌 없는 실시간 편집과 실행 상태를 팀 전체에 완벽하게 동기화합니다.\n둘째, AI 에이전트의 실행 추적성입니다. 에이전트가 어떤 SQL을 실행했고 어떤 중간 데이터를 거쳐 시각화 차트를 만들었는지 모든 단계가 투명한 코드로 보존됩니다."
+    },
+    {
+     "author": "Tony Li",
+     "is_maker": true,
+     "text": "Hey everyone! I'm Tony, one of Alkera's cofounders along with Rick and Andrew.  \nBefore Alkera, I worked on a trading project where I pulled odds from sportsbooks and prediction markets to find +EV bets and arbitrage. My data pipeline lived in Python files and warehouses, and although it ran, I couldn't see how data moved, nor did I trust my coding agents, which were great at SWE, but not no much at data that lived across different tools.  \nDatabench is the workspace I wish I had and use now. Would love to see how others use it!",
+     "kr": "여러분 안녕하세요! Rick, Andrew와 함께 Alkera를 공동 창업한 Tony입니다.\nAlkera를 시작하기 전 저는 스포츠북과 예측 시장에서 배당률을 수집해 기대값(+EV) 베팅을 찾는 트레이딩 프로젝트를 진행했습니다. 데이터를 가져오고 변환하고 모델을 실행하는 과정에서 데이터 파이프라인과 대화형 노트북이 완전히 분리되어 있는 점이 가장 큰 고통이었습니다. Databench는 분석가와 엔지니어가 동일한 작업 공간에서 에이전트와 함께 이 모든 과정을 원패스로 끝낼 수 있도록 만듭니다."
+    },
+    {
+     "author": "Rohit Kushwaha",
+     "is_maker": false,
+     "text": "[@rick\\_alkera](https://www.producthunt.com/@rick_alkera) working with teammates and AI agents in the same workspace sounds really useful. Exited to see how people use databench.",
+     "kr": "[@rick\\_alkera](https://www.producthunt.com/@rick_alkera) 같은 워크스페이스에서 팀원과 AI 에이전트가 함께 작업한다는 점이 매우 유망해 보입니다. 행운을 빕니다!"
+    },
+    {
+     "author": "Rick Gao",
+     "is_maker": true,
+     "text": "[@rohit62661](https://www.producthunt.com/@rohit62661) Thanks for the support! Would love to hear your feedback!",
+     "kr": "[@rohit62661](https://www.producthunt.com/@rohit62661) 응원해 주셔서 감사합니다! 피드백을 꼭 들려주세요!"
+    },
+    {
+     "author": "Oleksii Sekundant",
+     "is_maker": false,
+     "text": "Congrats on the launch! I like that the data and code stay visible alongside the agents' work. Much easier to discuss an answer when everyone can see how it was reached.",
+     "kr": "출시 축하드립니다! 에이전트의 작업 결과 바로 옆에 데이터와 코드가 투명하게 보이는 점이 마음에 듭니다. 그 결론에 어떻게 도달했는지 모든 사람이 직접 볼 수 있을 때 답을 논의하기가 훨씬 쉬워지니까요."
+    },
+    {
+     "author": "Rick Gao",
+     "is_maker": true,
+     "text": "[@oleksii\\_sekundant](https://www.producthunt.com/@oleksii_sekundant) Thanks! Would love to hear your feedback on the platform!",
+     "kr": "[@oleksii\\_sekundant](https://www.producthunt.com/@oleksii_sekundant) 감사합니다! 플랫폼을 써보시고 어떠셨는지 꼭 의견을 듣고 싶습니다!"
+    },
+    {
+     "author": "Michelle Marcelline",
+     "is_maker": false,
+     "text": "Congrats on the launch, Rick!",
+     "kr": "출시 축하드려요, Rick!"
+    },
+    {
+     "author": "Rick Gao",
+     "is_maker": true,
+     "text": "[@michelle\\_marcelline](https://www.producthunt.com/@michelle_marcelline) Thanks for the support! Love the work you're doing at Promptingco",
+     "kr": "[@michelle\\_marcelline](https://www.producthunt.com/@michelle_marcelline) 응원 고마워요! Michelle님이 만드시는 제품도 항상 멋지게 보고 있습니다!"
+    }
+   ],
+   "slug": "alkera",
+   "website": "https://alkera.ai/"
+  },
+  {
+   "name": "Pegasus 1.6 by TwelveLabs",
+   "tagline_en": "Transforms egocentric video into robot training data",
+   "tagline_kr": "1인칭 시점 영상을 분석하여 로봇 학습용 고품질 데이터로 자동 변환하는 AI 파운데이션 모델",
+   "image": "https://ph-files.imgix.net/51bcb9a3-f752-422a-95f7-5e44404d0cba.gif?auto=compress&codec=mozjpeg&cs=strip&dpr=2&fit=max&fm=webp&frame=1&h=64&w=64",
+   "categories": [
+    "Robots",
+    "Artificial Intelligence",
+    "Video"
+   ],
+   "upvotes": 259,
+   "comments_count": 19,
+   "maker": "Aiden Lee(@aiden_lee7), Yash Gugale(@tl_yashgugale), Lucy Pan(@lucyfang90), fmerian(@fmerian)",
+   "price_model": "무료 크레딧 제공 및 종량제/기업 플랜 (Free Credits / Pay-as-you-go / Enterprise)",
+   "price_detail": "개발자 가입 시 무료 체험 크레딧을 제공하며, 비디오 인덱싱 및 쿼리 처리량에 따른 종량제 API 및 엔터프라이즈 맞춤 요금제를 지원합니다.",
+   "desc_kr": "Pegasus 1.6 by TwelveLabs는 웨어러블 디바이스나 로봇의 카메라 시점(Egocentric)에서 촬영된 1인칭 영상을 깊이 있게 이해하도록 특화된 비디오 파운데이션 모델입니다. 일반적인 3인칭 방송 영상과 달리 작업자의 정밀한 손 움직임, 도구 조작, 대상 사물 간의 복합적인 상호작용을 뛰어난 정확도로 포착하고 분석합니다. 영상 내 다양한 시각적 맥락 단서를 종합하여 특정 인물과 사물을 명명하는 접지 엔티티 인식(Grounded Entity Recognition)과 세부 작업 내레이션을 지원합니다. 시간 기반 구조화 메타데이터(TBM) 기술을 적용하여 원시 1인칭 영상으로부터 행동 라벨과 타임스탬프가 정리된 로봇 훈련용 데이터를 즉시 생성해 냅니다. 영상 1시간당 수 달러에서 수십 달러가 투입되던 고비용 수작업 라벨링 과정을 대체함으로써 Physical AI 및 로봇 산업의 데이터 병목 현상을 획기적으로 해결합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/twelvelabs",
+   "comment_summary": "댓글에서는 로보틱스와 Physical AI 분야에서 가장 큰 난제였던 1인칭 시점 비디오 데이터의 자동 라벨링 기술에 대해 많은 찬사와 지지가 이어졌습니다. 사용자들은 기존 상용 모델들과의 독립성 여부, 향후 AWS Bedrock 등의 클라우드 서비스 연동 로드맵, 1인칭 영상의 로봇 훈련 데이터로서의 확장 가능성에 대해 질문을 던졌습니다. 메이커 팀은 1인칭 시점 이해에 최적화된 독자적인 파운데이션 모델로서 실제 현장에서 가장 큰 반향을 일으키고 있음을 밝히며 지속적인 기술 혁신을 약속했습니다.",
+   "warnings": "수치(업보트 259·댓글 19)는 수집 시점 참고치. 이번 출시는 TwelveLabs의 7번째 런칭 버전임. 수집된 1페이지 댓글 중 주요 질의응답을 포함한 11건의 댓글 전체를 수집 완료.",
+   "comments": [
+    {
+     "author": "Aiden Lee",
+     "is_maker": true,
+     "text": "Hi everyone, I'm Aiden, co-founder and CTO at TwelveLabs. Excited to share Pegasus 1.6 with you today.\nEvery robotics and physical AI team we talk to is sitting on the same problem: hours of first-person footage that's the raw material for action labeling and next-action prediction, and no foundation model actually built to understand it. General-purpose video models are trained on broadcast and third-person footage. Point them at a wearable or a robot's own camera and they miss what's actually happening.\nPegasus 1.6 is our answer. It's the first TwelveLabs model built for egocentric (first-person) video understanding. Pegasus 1.6 expands on Pegasus 1.5's Time-Based Metadata (TBM), which extracts timestamped, structured metadata from custom schemas, by adding support for egocentric video and task narration. We've also sharpened detailed recognition of hand, tool, and object interactions , while speeding up processing for high-volume video workloads. \nAs an update to 1.5’s capabilities, we also have improved performance on in-depth metadata extraction and on grounded entity recognition, the ability to name a character based on context clues in the video.  \nConcretely, for robotics and data teams that means: point Pegasus at raw egocentric clips  and get back structured action labels, compliance ratings, and timestamps you can use directly in a training pipeline instead of a manual labeling pass that costs $4–$22/hour of footage.\nPhysical AI is a new domain for us, so if you're working with egocentric (human or teleoperated) data and hit edge cases, I want to hear about them. Thanks!",
+     "kr": "여러분 안녕하세요, TwelveLabs의 공동 창업자이자 CTO인 Aiden입니다. 오늘 Pegasus 1.6을 여러분께 선보이게 되어 매우 기쁩니다.\n\n저희가 만난 모든 로보틱스 및 Physical AI 팀은 똑같은 문제에 직면해 있었습니다. 바로 행동 라벨링과 다음 행동 예측의 원천이 되는 수천 시간의 1인칭(Egocentric) 영상 데이터를 보유하고 있으면서도, 이를 진정으로 이해할 수 있는 파운데이션 모델이 전무하다는 점이었습니다. 기존의 범용 비디오 모델들은 방송이나 3인칭 시점 영상으로 학습되어, 웨어러블 카메라나 로봇 자체 카메라에 적용하면 실제로 무슨 일이 일어나고 있는지 핵심을 놓치고 맙니다.\n\nPegasus 1.6은 이에 대한 저희의 해답입니다. 1인칭 비디오 이해를 위해 특화 설계된 최초의 TwelveLabs 모델입니다. 커스텀 스키마로부터 타임스탬프가 포함된 구조화 메타데이터를 추출하는 시간 기반 메타데이터(TBM) 기능을 확장하여, 1인칭 시점 비디오 및 작업 내레이션 생성을 전면 지원합니다. 또한 손과 도구, 객체 간의 정밀한 상호작용 인식을 대폭 향상시켰으며 고용량 비디오 워크로드 처리를 위한 속도도 크게 개선했습니다.\n\n구체적으로 로보틱스 및 데이터 팀에게 이는 다음과 같은 의미를 갖습니다: 원시 1인칭 영상을 Pegasus에 입력하기만 하면, 영상 1시간당 $4~$22의 비용이 들던 번거로운 수작업 라벨링 없이도 훈련 파이프라인에 즉시 투입 가능한 구조화된 행동 라벨, 컴플라이언스 평가, 타임스탬프를 곧바로 확보할 수 있습니다.\n\nPhysical AI는 저희에게도 새로운 개척 분야이므로, 1인칭 데이터를 다루시면서 발견하는 특이 케이스나 의견이 있다면 언제든 편하게 들려주세요. 감사합니다!"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "S/O for this new launch! keep up the great work",
+     "kr": "이번 신규 출시를 진심으로 응원합니다! 멋진 활약을 계속 이어가 주세요."
+    },
+    {
+     "author": "Jay Smith",
+     "is_maker": false,
+     "text": "Really neat. How dependent is it on existing commercial models or is it enough of its own thing?",
+     "kr": "정말 깔끔하네요. 기존 상용 모델들에 얼마나 의존하고 있나요, 아니면 완전히 독자적인 자체 모델인가요?"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "had a blast collaborating with [@c3lim](https://www.producthunt.com/@c3lim) and the [@TwelveLabs](https://www.producthunt.com/products/twelvelabs) team on this new launch.\nPegasus 1.5 launched [6 months ago](https://www.producthunt.com/products/twelvelabs/launches/pegasus-1-5-by-twelvelabs), with autonomous and reliable segmentation, long-form video support, and SOTA performances. Pegasus 1.6 pushes the model forward by adding support for first-person video, and faster processes, enabling new opportunities for robotics and physical AI teams.\nThe community loved 1.5 (Top Product of the Day, featured in the daily newsletter), hope you'll enjoy 1.6!\nFollow [@TwelveLabs](https://www.producthunt.com/products/twelvelabs) for future launches (spoiler alert: soon)",
+     "kr": "이번 출시에 참여하여 [@c3lim](https://www.producthunt.com/@c3lim) 님 및 [@TwelveLabs](https://www.producthunt.com/products/twelvelabs) 팀과 함께 협업할 수 있어 무척 즐거웠습니다.\n\nPegasus 1.5가 자율적이고 신뢰할 수 있는 비디오 세분화, 롱폼 비디오 지원, 최고 수준의 SOTA 성능을 선보이며 런칭된 지 6개월이 지났습니다. 이번 Pegasus 1.6은 1인칭 시점 비디오 지원과 더욱 빠른 처리 속도를 더해 한 단계 더 도약함으로써, 로보틱스와 Physical AI 팀에게 완전히 새로운 기회를 열어주고 있습니다.\n\n커뮤니티에서도 1.5 버전이 일간 Top Product에 선정되고 뉴스레터에 소개되는 등 큰 사랑을 받았는데, 이번 1.6 버전도 만족스럽게 즐겨주시기를 바랍니다!\n\n앞으로 이어질 차기 출시 소식을 놓치지 않으려면 TwelveLabs를 꼭 팔로우하세요 (스포일러: 곧 찾아옵니다)."
+    },
+    {
+     "author": "Hamza Afzal Butt",
+     "is_maker": false,
+     "text": "Do you think egocentric video could become one of the main data sources for training robots?  \nCongrats [@aiden\\_lee7](https://www.producthunt.com/@aiden_lee7) & team!  \nThanks for hunting [@fmerian](https://www.producthunt.com/@fmerian) :)",
+     "kr": "1인칭 시점 비디오가 앞으로 로봇 훈련의 핵심적인 주요 데이터 소스가 될 것으로 보시나요?\n출시 축하드립니다 [@aiden\\_lee7](https://www.producthunt.com/@aiden_lee7) & 팀!"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "thanks for the continuous support!",
+     "kr": "지속적인 성원에 감사드립니다!"
+    },
+    {
+     "author": "Yash Gugale",
+     "is_maker": true,
+     "text": "[@aiden\\_lee7](https://www.producthunt.com/@aiden_lee7)  [@fmerian](https://www.producthunt.com/@fmerian)  [@hamza\\_afzal\\_butt](https://www.producthunt.com/@hamza_afzal_butt) \nYes, definitely! That's the most traction we are seeing in this space and our models are purpose built to lead that effort in terms of quality and scale!",
+     "kr": "[@aiden\\_lee7](https://www.producthunt.com/@aiden_lee7) [@fmerian](https://www.producthunt.com/@fmerian) [@hamza\\_afzal\\_butt](https://www.producthunt.com/@hamza_afzal_butt)\n네, 전적으로 그렇습니다! 현재 로봇 공학 분야에서 가장 강력한 트랙션이 발생하고 있는 영역이 바로 1인칭 영상이며, 저희 모델은 품질과 처리 규모 모든 측면에서 이러한 데이터 혁신을 주도할 수 있도록 목적에 맞게 전용 구축되었습니다!"
+    },
+    {
+     "author": "Germán Merlo",
+     "is_maker": false,
+     "text": "This is seriously impressive. What's next? What's on your roadmap for 1.7? Looking forward to your future launches",
+     "kr": "정말 인상 깊습니다. 다음 단계는 무엇인가요? 1.7 버전 로드맵에는 어떤 것들이 계획되어 있는지 궁금합니다. 향후 출시도 기대하고 있겠습니다."
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "S/O to ?makers for the great work here! make sure to follow [@TwelveLabs](https://www.producthunt.com/products/twelvelabs) to get notified about the future launches",
+     "kr": "멋진 성과를 보여준 메이커분들에게 박수를 보냅니다! 앞으로의 출시 소식을 바로 확인하려면 [@TwelveLabs](https://www.producthunt.com/products/twelvelabs) 팔로우를 잊지 마세요."
+    },
+    {
+     "author": "Anil Pai",
+     "is_maker": false,
+     "text": "Any plans to host this on bedrock ?",
+     "kr": "이 모델을 AWS Bedrock에 호스팅할 계획도 있으신가요?"
+    },
+    {
+     "author": "Mufassir Kazi",
+     "is_maker": false,
+     "text": "Heard about TwelveLabs because of the ElevenLabs acronym, and love seeing it grow into such a mature, cool product!",
+     "kr": "ElevenLabs와 이름이 비슷해서 처음 TwelveLabs를 알게 되었는데, 이렇게 완성도 높고 멋진 제품으로 성숙해 가는 모습을 보니 정말 좋습니다!"
+    }
+   ],
+   "slug": "twelvelabs",
+   "website": "https://www.twelvelabs.io/"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
