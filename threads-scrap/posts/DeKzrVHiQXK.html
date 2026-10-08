@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@ddalggak.boss - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">​딸깍보스 | 식품위탁판매 수익화 전문가</span>
+                    
+                    <a href="https://www.threads.net/@ddalggak.boss" target="_blank" rel="noopener" class="username">@ddalggak.boss</a>
+                </div>
+                <span class="post-date">2026-10-07 07:00</span>
+            </div>
+            <div class="post-text">퇴사하고 1년반 만에 매출 83억 달성했어<br><br>불과 작년 초까지 <br>나는 월 300만원 받던 직장인이었거든<br><br>작년 4월부터 12월까지는 43억 매출냈고<br>순수익은 6억 정도 나왔어<br><br>올해도 벌써 작년 만큼의 매출이 나왔고<br>9월에는 90억 정도에 1.6억 순수익<br><br>나는 위탁판매로만 만든 매출이고<br>요즘 흔한 과일 위탁판매 ❌ 아니야<br><br>주로 농산물 수산물로 만든 매출이야<br><br>매년 시장이 조단위로 성장하기 때문에<br>경쟁자가 있다해도 내 파이가 전혀 안줄어들어<br><br>오히려 열심히 할 수록 우상향하는 구조야<br>먹는 음식은 재주문율이 높아서 계속 쌓여<br><br>블로그, 유튜브, 쿠파스 이런거는 <br>수익화까지 정말 꽤 오랜 시간이 걸리거든<br><br>근데 식품위탁판매는 수익화도 빠르고<br>예를들어 똑같은 고기도 다 가격이 다르잖아?<br><br>공산품처럼 가격경쟁 안하니까 스트레스도 적어<br><br>게다가 위탁판매라서 택배도 직접 안보내거든<br>리스크도 0이니까 부담없이 시작할 수 있어!!<br><br>다들 한 번 도전해봤으면 좋겠다!</div>
+            <div class="media-grid"><div class="media-item"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.82787-15/833882379_18123517069925906_539771399273975511_n.jpg?stp=cp6_dst-jpg_e35_tt6&amp;_nc_cat=108&amp;ig_cache_key=NDAwMjIzODQ5Njg1NjY3MTY5MA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMjE4Ni5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=btBuEgKxfjYQ7kNvwGFwINs&amp;_nc_oc=AdqoXiL1t0U-Y8T6w_ZEiXOHbz8Gc-5I2ZGIV7nX8yNc_Mroz07BlT8FpX6VrUbicQVqg04ynXX-PrHC9Sl8PwgJ&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;_nc_gid=dSNJOkX6Q9_uUCxDUcsHMQ&amp;_nc_ss=7e289&amp;oh=00_AQPoQmoHL6CkDva4ItrwNFh9e0gMIgYT4WagrAh3GV0qsA&amp;oe=6ACCC0CC" alt="Post media" loading="lazy"></div></div>
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 159</span>
+                    <span>💬 114</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@ddalggak.boss/post/DeKzrVHiQXK" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (1개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@ddalggak.boss</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-07 07:00</span>
+                    <span class="reply-likes">❤️ 19</span>
+                </div>
+                <div class="reply-text">전자책 소싱의 정석도 뿌리는 중이니까<br>좋아요 팔로우 리포하고 댓글에 이메일도남겨줘!</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (114개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddalggak.boss</span>
+            <span class="reply-date">2026-10-07 23:01</span>
+            
+        </div>
+        <div class="reply-text">오픈톡방 200명 정원마감 되었습니다..팔로우 해두시고 좋은 정보 많이 받아가세요!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddalggak.boss</span>
+            <span class="reply-date">2026-10-07 10:36</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">9월에 90아니고 9억이야!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bbakse57</span>
+            <span class="reply-date">2026-10-07 07:27</span>
+            
+        </div>
+        <div class="reply-text">bbakse57@gmail.com 부탁해!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nolk.ing</span>
+            <span class="reply-date">2026-10-07 07:30</span>
+            
+        </div>
+        <div class="reply-text">choloksaga@naver.com 완료했어 잘볼게~!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@honeys_ingyeo</span>
+            <span class="reply-date">2026-10-07 07:39</span>
+            
+        </div>
+        <div class="reply-text">banpart@gmail.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dittobongbong</span>
+            <span class="reply-date">2026-10-07 07:46</span>
+            
+        </div>
+        <div class="reply-text">100you3690@naver.com부탁해</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@stckjs</span>
+            <span class="reply-date">2026-10-07 07:51</span>
+            
+        </div>
+        <div class="reply-text">nalucky77@naver.com  부탁합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@lawyer_people</span>
+            <span class="reply-date">2026-10-07 07:51</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">limhokwun@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kyung_kwang_lee</span>
+            <span class="reply-date">2026-10-07 07:52</span>
+            
+        </div>
+        <div class="reply-text">kk0327@daum.net</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@woosinsaa</span>
+            <span class="reply-date">2026-10-07 07:52</span>
+            
+        </div>
+        <div class="reply-text">kuranum@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jeradcho</span>
+            <span class="reply-date">2026-10-07 07:55</span>
+            
+        </div>
+        <div class="reply-text">jerad2989@gmail.com 부탁해요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@toppointkim</span>
+            <span class="reply-date">2026-10-07 07:55</span>
+            
+        </div>
+        <div class="reply-text">taeyeongtnp@naver.com 부탁할께</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@lkw6270_bee</span>
+            <span class="reply-date">2026-10-07 07:56</span>
+            
+        </div>
+        <div class="reply-text">lkw6270@naver.com 부탁해~~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@semin_gwon</span>
+            <span class="reply-date">2026-10-07 08:03</span>
+            
+        </div>
+        <div class="reply-text">0163933786@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@wafago34</span>
+            <span class="reply-date">2026-10-07 08:11</span>
+            
+        </div>
+        <div class="reply-text">eureka1@naver.com  부탁해</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@lawyerchj</span>
+            <span class="reply-date">2026-10-07 08:11</span>
+            
+        </div>
+        <div class="reply-text">Chj9302@naver.com 메일 부탁해</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@j2this</span>
+            <span class="reply-date">2026-10-07 08:12</span>
+            
+        </div>
+        <div class="reply-text">onlyonejenny@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@elbro_daniel</span>
+            <span class="reply-date">2026-10-07 08:15</span>
+            
+        </div>
+        <div class="reply-text">guy209@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@zero_to_one_ai</span>
+            <span class="reply-date">2026-10-07 08:21</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">리스펙. 에너지얻고감</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@by_khuni</span>
+            <span class="reply-date">2026-10-07 08:21</span>
+            
+        </div>
+        <div class="reply-text">zz2401@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ni_ce2833</span>
+            <span class="reply-date">2026-10-07 08:22</span>
+            
+        </div>
+        <div class="reply-text">swk6404s@naver.com 부탁해</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@1004jeil</span>
+            <span class="reply-date">2026-10-07 08:23</span>
+            
+        </div>
+        <div class="reply-text">christjaeil@naver.com입니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@haha_anggo</span>
+            <span class="reply-date">2026-10-07 08:25</span>
+            
+        </div>
+        <div class="reply-text">singndancing@naver.com  고마워!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dayoon1225</span>
+            <span class="reply-date">2026-10-07 08:25</span>
+            
+        </div>
+        <div class="reply-text">ms831225@naver.com 나도 완료했어 부탁해!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@7607kos</span>
+            <span class="reply-date">2026-10-07 08:30</span>
+            
+        </div>
+        <div class="reply-text">76dhtjd@naver.com 부탁해</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gwyeom</span>
+            <span class="reply-date">2026-10-07 08:32</span>
+            
+        </div>
+        <div class="reply-text">rgoreo@naver.com 고마워!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@aarrr7788</span>
+            <span class="reply-date">2026-10-07 08:34</span>
+            
+        </div>
+        <div class="reply-text">나도 전부 완료 eldgheld@naver.com<br>고마워!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@wldmsfkdla</span>
+            <span class="reply-date">2026-10-07 08:39</span>
+            
+        </div>
+        <div class="reply-text">baejigu@naver.com 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kjk17072026</span>
+            <span class="reply-date">2026-10-07 08:40</span>
+            
+        </div>
+        <div class="reply-text">kth1707@naver.com  감사합니다~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@elonne1983</span>
+            <span class="reply-date">2026-10-07 08:41</span>
+            
+        </div>
+        <div class="reply-text">soyun2140@naver.com<br>저두 궁금해요!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dlwns_l</span>
+            <span class="reply-date">2026-10-07 08:45</span>
+            
+        </div>
+        <div class="reply-text">lovejun6496@naver.com<br>고마워!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@minseop369</span>
+            <span class="reply-date">2026-10-07 08:45</span>
+            
+        </div>
+        <div class="reply-text">minseop369@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@yoonha.mom</span>
+            <span class="reply-date">2026-10-07 08:47</span>
+            
+        </div>
+        <div class="reply-text">upupuplife@naver.com 입니다. 감사합니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@birdofdodo</span>
+            <span class="reply-date">2026-10-07 08:49</span>
+            
+        </div>
+        <div class="reply-text">fliesdc26@gmail.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sunny_sweet</span>
+            <span class="reply-date">2026-10-07 08:50</span>
+            
+        </div>
+        <div class="reply-text">motormedical@naver.com. 감사합니다 좋은하루되세요!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@moong___4419</span>
+            <span class="reply-date">2026-10-07 08:57</span>
+            
+        </div>
+        <div class="reply-text">nana2774@naver.com 미리감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jin_30111</span>
+            <span class="reply-date">2026-10-07 09:01</span>
+            
+        </div>
+        <div class="reply-text">vivian301@naver.com고마워요!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@pponyo_baby</span>
+            <span class="reply-date">2026-10-07 09:03</span>
+            
+        </div>
+        <div class="reply-text">gib95@naver.com 모두 완료🥰🥰🥰🥰🥰🥰</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@taetae0207_</span>
+            <span class="reply-date">2026-10-07 09:04</span>
+            
+        </div>
+        <div class="reply-text">pinkpicture@hanmail.net 고마워~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@cskjjang</span>
+            <span class="reply-date">2026-10-07 09:05</span>
+            
+        </div>
+        <div class="reply-text">sunkyu81@naver.com 부탁해~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@zunus777</span>
+            <span class="reply-date">2026-10-07 09:11</span>
+            
+        </div>
+        <div class="reply-text">zunus2525@gmail.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gogwihannongjang</span>
+            <span class="reply-date">2026-10-07 09:12</span>
+            
+        </div>
+        <div class="reply-text">jejudobox@naver.com 거마워</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@prs017017</span>
+            <span class="reply-date">2026-10-07 09:12</span>
+            
+        </div>
+        <div class="reply-text">y2a99@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@zeroskin.co.kr</span>
+            <span class="reply-date">2026-10-07 09:12</span>
+            
+        </div>
+        <div class="reply-text">Enmshop@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ggultipcogi</span>
+            <span class="reply-date">2026-10-07 09:18</span>
+            
+        </div>
+        <div class="reply-text">qhrjordan@gmail.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gijang_chonnom</span>
+            <span class="reply-date">2026-10-07 09:27</span>
+            
+        </div>
+        <div class="reply-text">powerloding@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@cho._.coj</span>
+            <span class="reply-date">2026-10-07 09:29</span>
+            
+        </div>
+        <div class="reply-text">taksongyj@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bless.eunseo</span>
+            <span class="reply-date">2026-10-07 09:32</span>
+            
+        </div>
+        <div class="reply-text">완료  tnrl012@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@seodo_music</span>
+            <span class="reply-date">2026-10-07 09:37</span>
+            
+        </div>
+        <div class="reply-text">oak0602@hanmail.net<br>고마워  완료</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@skytiger_hansangwoo</span>
+            <span class="reply-date">2026-10-07 09:37</span>
+            
+        </div>
+        <div class="reply-text">chinggu2000@hanmail.net</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@il_s_ha</span>
+            <span class="reply-date">2026-10-07 09:41</span>
+            
+        </div>
+        <div class="reply-text">ylee215@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@long_sub0226</span>
+            <span class="reply-date">2026-10-07 09:45</span>
+            
+        </div>
+        <div class="reply-text">cnup@kakao.com 복받을껴</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ehd_ju</span>
+            <span class="reply-date">2026-10-07 09:46</span>
+            
+        </div>
+        <div class="reply-text">infodj26@gmail.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gulnuhamziblog</span>
+            <span class="reply-date">2026-10-07 09:47</span>
+            
+        </div>
+        <div class="reply-text">sjhsjh915@naver.com 축하합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@swjyjh</span>
+            <span class="reply-date">2026-10-07 09:48</span>
+            
+        </div>
+        <div class="reply-text">mds0128@hanmail.net</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@h__jeong1923</span>
+            <span class="reply-date">2026-10-07 09:49</span>
+            
+        </div>
+        <div class="reply-text">wooe40811@gmail.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@farmers_steps</span>
+            <span class="reply-date">2026-10-07 09:49</span>
+            
+        </div>
+        <div class="reply-text">hdn80@daum.net<br>고마워</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hayounheart</span>
+            <span class="reply-date">2026-10-07 10:01</span>
+            
+        </div>
+        <div class="reply-text">15896323@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ho_ya0916</span>
+            <span class="reply-date">2026-10-07 10:02</span>
+            
+        </div>
+        <div class="reply-text">catrabbit@naver.com  좋아요/리포완료!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@imjaenuary</span>
+            <span class="reply-date">2026-10-07 10:07</span>
+            
+        </div>
+        <div class="reply-text">your_bling@naver.com 완료!!! 고마어!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jj_sohocenter4ever</span>
+            <span class="reply-date">2026-10-07 10:08</span>
+            
+        </div>
+        <div class="reply-text">lej103@daum.net부탁해~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@digo.kr</span>
+            <span class="reply-date">2026-10-07 10:14</span>
+            
+        </div>
+        <div class="reply-text">궁금해요<br>designgoja@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@haneulkong_books</span>
+            <span class="reply-date">2026-10-07 10:22</span>
+            
+        </div>
+        <div class="reply-text">francis31@nate.com<br><br>부탁드립니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@uhm.sangyun</span>
+            <span class="reply-date">2026-10-07 10:25</span>
+            
+        </div>
+        <div class="reply-text">대단하세요.<br>ericuhm@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@my.angel.honeyy</span>
+            <span class="reply-date">2026-10-07 10:29</span>
+            
+        </div>
+        <div class="reply-text">gracekana@gmail.com<br>부탁해! (스하리 완료 :D )</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@eun.____.woo</span>
+            <span class="reply-date">2026-10-07 10:34</span>
+            
+        </div>
+        <div class="reply-text">9월에 90억?</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddalggak.boss</span>
+            <span class="reply-date">2026-10-07 10:36</span>
+            
+        </div>
+        <div class="reply-text">오타났다! 9억인데 ㅜ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@eun.____.woo</span>
+            <span class="reply-date">2026-10-07 10:36</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">ㅎㅎ 그럴수 있지 위탁으로 이정도매출이면 진짜 대단해</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@crtdbyoung</span>
+            <span class="reply-date">2026-10-07 10:36</span>
+            
+        </div>
+        <div class="reply-text">hengjoo@daum.net 감사합니다!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@pro1fit_pt</span>
+            <span class="reply-date">2026-10-07 10:53</span>
+            
+        </div>
+        <div class="reply-text">onenmall5465@naver.com 완료입니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hecbob_amsa</span>
+            <span class="reply-date">2026-10-07 10:55</span>
+            
+        </div>
+        <div class="reply-text">dlwlgks01@gmail.com<br>배워보고싶다! 대단하네</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@sunyoungminimee</span>
+            <span class="reply-date">2026-10-07 10:56</span>
+            
+        </div>
+        <div class="reply-text">sunyounga901@naver.com<br>부탁드려요!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@damabom__</span>
+            <span class="reply-date">2026-10-07 11:16</span>
+            
+        </div>
+        <div class="reply-text">전부 완료!<br>chzh0212@kakao.com 고마워!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jasmine.p_muel</span>
+            <span class="reply-date">2026-10-07 11:19</span>
+            
+        </div>
+        <div class="reply-text">simchong82@naver.com<br>배우고싶어요. 감사합니다~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jeongsuni673</span>
+            <span class="reply-date">2026-10-07 11:24</span>
+            
+        </div>
+        <div class="reply-text">대단대단!! Jjson1217@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@yogiman.store</span>
+            <span class="reply-date">2026-10-07 11:30</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">jusasu740@naver.com 완료요~~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@antonio_insu_park</span>
+            <span class="reply-date">2026-10-07 11:33</span>
+            
+        </div>
+        <div class="reply-text">parkinsu0496@naver.com <br>고마워</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@edwin015b</span>
+            <span class="reply-date">2026-10-07 11:34</span>
+            
+        </div>
+        <div class="reply-text">위탁이라 ㅋ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddalggak.boss</span>
+            <span class="reply-date">2026-10-07 11:36</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">위탁이 진짜 개꿀이야ㅋㅋ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@man.with.noname</span>
+            <span class="reply-date">2026-10-07 11:47</span>
+            
+        </div>
+        <div class="reply-text">w1seview@naver.com 고마워요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@baenaon_ajossi</span>
+            <span class="reply-date">2026-10-07 11:49</span>
+            
+        </div>
+        <div class="reply-text">qhsan6@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hyen._.y</span>
+            <span class="reply-date">2026-10-07 12:34</span>
+            
+        </div>
+        <div class="reply-text">냐도ㅠ부탁해  purpleholic21@gmail.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@poff1022</span>
+            <span class="reply-date">2026-10-07 12:35</span>
+            
+        </div>
+        <div class="reply-text">ehznfl@naver.com 감사해여</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@allthatstarz</span>
+            <span class="reply-date">2026-10-07 12:46</span>
+            
+        </div>
+        <div class="reply-text">sj2750@naver.com 감사합니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@choi._top</span>
+            <span class="reply-date">2026-10-07 13:15</span>
+            
+        </div>
+        <div class="reply-text">eumbnt@naver.com  저두요~!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@rhbeuk</span>
+            <span class="reply-date">2026-10-07 13:19</span>
+            
+        </div>
+        <div class="reply-text">211daniel@naver.com 부탁해~!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@only_daily_log</span>
+            <span class="reply-date">2026-10-07 14:00</span>
+            
+        </div>
+        <div class="reply-text">나두 알려줘! <br><br>mkk1830@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ryeong.kwon</span>
+            <span class="reply-date">2026-10-07 14:07</span>
+            
+        </div>
+        <div class="reply-text">maro0806@naver.com <br>부탁해</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@deepeetlabs</span>
+            <span class="reply-date">2026-10-07 14:57</span>
+            
+        </div>
+        <div class="reply-text">deepeetlabs@gmail.com 축하드립니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@m00ngchilove</span>
+            <span class="reply-date">2026-10-07 14:57</span>
+            
+        </div>
+        <div class="reply-text">chloelikes@naver.com 나도 부탁해~! 고마워</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@sua_essay</span>
+            <span class="reply-date">2026-10-07 15:05</span>
+            
+        </div>
+        <div class="reply-text">정말 이런거 배우고싶다 ㅎㅎ<br>존경쓰 박수 👏🙌😎😄<br>스하리</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@iamtoohot80</span>
+            <span class="reply-date">2026-10-07 15:34</span>
+            
+        </div>
+        <div class="reply-text">skyroundme5280@gmail.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hothanbloger</span>
+            <span class="reply-date">2026-10-07 15:39</span>
+            
+        </div>
+        <div class="reply-text">myjalove@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@stellay2012</span>
+            <span class="reply-date">2026-10-07 15:45</span>
+            
+        </div>
+        <div class="reply-text">bokdol12@gmail.com 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@aceofjeter</span>
+            <span class="reply-date">2026-10-07 16:09</span>
+            
+        </div>
+        <div class="reply-text">Aceofjeter@naver.com 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddalggak.boss</span>
+            <span class="reply-date">2026-10-07 17:46</span>
+            
+        </div>
+        <div class="reply-text">프로필 링크 누르시고 무료로보세요~~~~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jl.inc00</span>
+            <span class="reply-date">2026-10-07 16:19</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">aprilroze@naver.com 고마워!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@toursun1032026</span>
+            <span class="reply-date">2026-10-07 17:43</span>
+            
+        </div>
+        <div class="reply-text">toursun@naver.com🙏</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@alsalo45</span>
+            <span class="reply-date">2026-10-07 18:07</span>
+            
+        </div>
+        <div class="reply-text">alsalo@naver.com 나도 자료 부탁해!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddalggak.boss</span>
+            <span class="reply-date">2026-10-07 18:12</span>
+            
+        </div>
+        <div class="reply-text">프로필 링크 누르고 전자책 무료로 확인해봐~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@_shoy12</span>
+            <span class="reply-date">2026-10-07 20:42</span>
+            
+        </div>
+        <div class="reply-text">ashoy25@naver.com<br>감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ddalggak.boss</span>
+            <span class="reply-date">2026-10-07 20:43</span>
+            
+        </div>
+        <div class="reply-text">프로필 링크타시고 무료자료 확인하세요~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@purepoise_info</span>
+            <span class="reply-date">2026-10-07 20:54</span>
+            
+        </div>
+        <div class="reply-text">dallim6888@naver.com 완료요~~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@aron_aiconbia</span>
+            <span class="reply-date">2026-10-07 20:56</span>
+            
+        </div>
+        <div class="reply-text">와우~~대단하십니다. lsgi2001@hanmail.net</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kelley.kim.7564</span>
+            <span class="reply-date">2026-10-07 21:09</span>
+            
+        </div>
+        <div class="reply-text">airmykim@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ssorry_choi</span>
+            <span class="reply-date">2026-10-07 21:22</span>
+            
+        </div>
+        <div class="reply-text">zzaesung93@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@sunhyungpak</span>
+            <span class="reply-date">2026-10-07 22:38</span>
+            
+        </div>
+        <div class="reply-text">sunhyungpark123@gmail.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ks_hyeonni</span>
+            <span class="reply-date">2026-10-07 22:57</span>
+            
+        </div>
+        <div class="reply-text">varita123@naver.com 고마워!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@lys79u</span>
+            <span class="reply-date">2026-10-07 23:24</span>
+            
+        </div>
+        <div class="reply-text">lm8017@hanmail.net</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@petermoon319</span>
+            <span class="reply-date">2026-10-07 23:30</span>
+            
+        </div>
+        <div class="reply-text">dnhyd21@naver.com 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@k.beenbeen</span>
+            <span class="reply-date">2026-10-07 23:33</span>
+            
+        </div>
+        <div class="reply-text">minoo04@naver.com<br><br>부탁해!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@h_da_he</span>
+            <span class="reply-date">2026-10-08 00:22</span>
+            
+        </div>
+        <div class="reply-text">dfc4567@gmail.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@midaskim1472</span>
+            <span class="reply-date">2026-10-08 06:15</span>
+            
+        </div>
+        <div class="reply-text">kth9140@naver.com</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@aendy_pja</span>
+            <span class="reply-date">2026-10-08 06:52</span>
+            
+        </div>
+        <div class="reply-text">aendy1@naver.com<br><br>부탁해</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
