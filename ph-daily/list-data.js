@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-09",
+    "url": "2026-10-09/",
+    "top_product": "OpenSwarm",
+    "count": 5,
+    "upvotes_total": 1171,
+    "comments_total": 48
+  },
+  {
     "date": "2026-10-08",
     "url": "2026-10-08/",
     "top_product": "IrisGo for Solopreneurs",
