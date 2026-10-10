@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-10-10</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-10-10 · Top 5 · 수집 댓글 37개 · 수집 2026-10-10 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-10-10",
+ "collected_at": "2026-10-10 12:30 KST",
+ "summary": "2026년 10월 10일 프로덕트 헌트에서는 개발자 도구(Developer Tools)와 인공지능(AI) 카테고리가 최상위권을 주도한 가운데, 자율 에이전트의 마케팅 집행 인프라와 단일 진실 공급원 데이터베이스 등 에이전틱 실무 연동 도구들이 상위권을 형성했습니다. 복잡한 API 연동을 통합한 에이전트 마케팅 레이어(Zernio), 다중 에이전트 간 컨텍스트 공유 및 거버넌스를 지원하는 오픈소스 베이스(Busabase), 기존 코딩 하네스를 유지하는 오픈 모델 라우터(Together Link), 대화형 AI 게임 제작 플랫폼(Playground by Google Labs) 등이 두각을 나타냈습니다. 댓글에서는 에이전트의 실제 비즈니스 데이터 수정 전 변경 제안(Proposal) 검토 체계와 대규모 계정 연동 시 속도 제한·OAuth 권한 관리, 기존 도구 변경 없이 토큰 비용을 낮추는 실용성, 그리고 코딩 장벽을 없앤 대화형 창작의 완성도가 공통 핵심 논점으로 활발히 논의되었습니다.",
+ "notable": [
+  {
+   "slug": "zernio",
+   "why": "소셜 미디어와 7대 광고 네트워크, 메시징 및 통화까지 단일 API로 통합하고 MCP 서버를 통해 AI 에이전트의 마케팅 자율 집행을 지원하며 일일 1위로 가장 뜨거운 관심을 받았습니다. 댓글에서는 플랫폼별 개발자 앱 승인 절차를 대행하는 편의성과 팀 단위 속도 제한 및 프로필별 OAuth 스코프 제어 체계, 그리고 오랜 기간 안정적으로 진화해 온 플랫폼 신뢰성에 호평이 집중되었습니다."
+  },
+  {
+   "slug": "busabase",
+   "why": "에이전트를 무상태(Stateless)로 유지하면서 비즈니스 지식과 지침을 단일 진실 공급원에 영구 보관해 Claude Code와 Codex 등 다중 에이전트 간 컨텍스트를 공유하는 아키텍처로 주목받았습니다. 댓글에서는 단순 대화 기록 저장이 아닌 M:N:1 구조의 명시적 비즈니스 플레이북 공유 방식과, 에이전트가 실제 기업 데이터를 임의 수정하기 전 변경 제안(Proposal)을 승인받도록 한 안전 거버넌스 모델에 호평이 이어졌습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Zernio",
+   "tagline_en": "Marketing infrastructure for products and agents",
+   "tagline_kr": "제품과 AI 에이전트를 위한 통합 마케팅 인프라",
+   "image": "https://ph-files.imgix.net/7033501b-37ca-471a-a281-b2f7013bf1de.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "API",
+    "Marketing",
+    "Developer Tools"
+   ],
+   "upvotes": 300,
+   "comments_count": 51,
+   "maker": "Miquel Palet(@paletmiki), Darya(@dasha_nazarova1), fmerian(@fmerian), Carlos Morales(@carlosmoralesgar)",
+   "price_model": "무료 체험 및 유료 플랜 (Free Options)",
+   "price_detail": "기본적인 무료 테스트 플랜(Free Plan)을 제공하여 부담 없이 연동을 테스트할 수 있으며, 팀 단위의 API 키 발급 및 소셜·광고·메시징·통화 등 기능별 확장 요금제를 제공합니다.",
+   "desc_kr": "Zernio는 소셜 미디어, 온라인 광고, 메시징 및 전화 통화 기능을 단 하나의 API로 통합 제공하는 차세대 마케팅 인프라 플랫폼입니다. 기존에는 플랫폼마다 개별 API 연동, 인증 체계 구축, 승인 심사 과정을 거쳐야 했으나, Zernio는 공식 플랫폼 API를 바탕으로 이러한 복잡성을 모두 흡수하여 당일 즉시 런칭을 지원합니다. 단일 REST API를 통해 16개 소셜 플랫폼, 7개 광고 네트워크, WhatsApp, iMessage 연동은 물론 57개국의 전화번호 구매와 SMS 및 음성 통화까지 완벽히 지원합니다. 특히 호스팅형 MCP(Model Context Protocol) 서버와 CLI를 기본 제공하여, Claude, ChatGPT, Cursor 등의 AI 코딩 에이전트가 직접 계정을 연결하고 캠페인을 집행하거나 메시지를 발송할 수 있도록 돕습니다. 현재 20만 명 이상의 개발자가 Zernio 인프라 위에서 제품을 구축하고 있으며, 단순 소셜 미디어 API를 넘어 에이전트와 소프트웨어가 고객에게 도달하기 위한 핵심 마케팅 레이어로 진화했습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/zernio",
+   "comment_summary": "커뮤니티에서는 단일 API로 여러 소셜 광고와 메시징, 분석을 일괄 설정하는 방법 및 대규모 최종 사용자 계정 연동 시 속도 제한(Rate Limit)과 권한 관리 방식에 대해 질의했습니다. 메이커 팀은 팀별 한도 증가 구조와 개별 프로필 기반의 OAuth 스코프 제어를 설명하며, 인스타그램 및 페이스북용 개발자 앱을 별도 생성할 필요 없이 Zernio가 승인 절차를 대행한다고 밝혔습니다. 또한 MCP 연동을 통해 AI 에이전트가 마케팅 캠페인을 자율 집행하는 기능과 과거 'Late' 시절부터 이어진 플랫폼의 안정적인 진화에 대해 오랜 사용자들의 호평이 이어졌습니다.",
+   "warnings": "수치(업보트 300·댓글 51)는 수집 시점 참고치. 이번 출시는 Zernio의 4번째 공식 런칭 버전임. 수집된 1페이지 댓글 중 주요 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Miquel Palet",
+     "is_maker": true,
+     "text": "Hey everyone! Excited to be back on Product Hunt with Zernio :)\n\nWhen we first launched here in March, Zernio was a social media API. Developers came to us so they didn’t have to build and maintain an integration for every platform, and social is still the biggest part of what we do.\n\nThen you kept asking for more. Since then we’ve added ads across 7 platforms, WhatsApp, iMessage, and phone numbers with calls and SMS, all on the same API. Today 200,000 developers build on Zernio, and we’re finally ready to grow from a social media API into marketing infrastructure that you and your agents build on.\n\nConnect our MCP server, and your agent can post, run ads, text and call. We have plenty of ideas for what comes next, but we’d love to hear yours.\n\nUse this launch to tell us what you still can’t build on Zernio. Thank you all for the support!",
+     "kr": "여러분 안녕하세요! Product Hunt에 Zernio로 다시 찾아뵙게 되어 기쁩니다 :)\n\n지난 3월 처음 출시했을 때 Zernio는 소셜 미디어 API였습니다. 개발자들은 모든 플랫폼의 연동을 일일이 구축하고 유지보수할 필요가 없도록 저희를 찾았고, 소셜은 여전히 저희 업무의 가장 큰 부분입니다.\n\n이후 여러분은 더 많은 기능을 요청하셨습니다. 그 결과 7개 플랫폼의 광고, WhatsApp, iMessage, 그리고 단일 API로 통화 및 SMS가 지원되는 전화번호까지 추가했습니다. 오늘날 20만 명의 개발자가 Zernio 위에서 제품을 구축하고 있으며, 드디어 단순한 소셜 미디어 API에서 여러분과 AI 에이전트가 함께 사용하는 마케팅 인프라로 성장할 준비를 마쳤습니다.\n\n저희 MCP 서버를 연결하면 에이전트가 직접 포스팅하고, 광고를 집행하며, 문자를 보내고 전화를 걸 수 있습니다. 다음 단계에 대한 많은 아이디어가 있지만, 여러분의 의견도 꼭 듣고 싶습니다.\n\n이번 출시를 통해 Zernio에서 아직 구현하지 못하는 기능이 무엇인지 알려주세요. 응원해 주셔서 감사합니다!"
+    },
+    {
+     "author": "Dmitry Kirillov",
+     "is_maker": false,
+     "text": "[@paletmiki](https://www.producthunt.com/@paletmiki) thanks for an amazing product - we used it for communication, but would love to integrate ads as well",
+     "kr": "@paletmiki 멋진 제품 감사합니다 - 저희는 커뮤니케이션 용도로 사용해 왔는데, 광고 기능도 꼭 연동해 보고 싶네요."
+    },
+    {
+     "author": "Darya",
+     "is_maker": true,
+     "text": "[@dmitrek](https://www.producthunt.com/@dmitrek) thank you for support, Dmitry! Would love to hear what you build with ads later on",
+     "kr": "@dmitrek 응원해 주셔서 감사합니다, Dmitry님! 나중에 광고 기능으로 어떤 것을 만드실지 꼭 듣고 싶네요."
+    },
+    {
+     "author": "swati paliwal",
+     "is_maker": false,
+     "text": "[@paletmiki](https://www.producthunt.com/@paletmiki) Congrats. How does the set-up work with all social ads and analytics with one api?",
+     "kr": "@paletmiki 축하드립니다. 단 하나의 API로 모든 소셜 광고와 분석 설정을 어떻게 구성하는 방식인가요?"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "[@dasha_nazarova1](https://www.producthunt.com/@dasha_nazarova1) Having one api for social ads messaging and analytics could make managing multiple chanels much easier how does the setup work?",
+     "kr": "@dasha_nazarova1 소셜 광고, 메시징, 분석을 하나의 API로 처리하면 여러 채널 관리가 훨씬 수월해질 것 같은데 설정은 어떻게 이루어지나요?"
+    },
+    {
+     "author": "Darya",
+     "is_maker": true,
+     "text": "[@shivam_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) Zernio is the infrastructure layer, so setup depends on how you use it.\n\nIf you’re building a product, use the REST API: create a key, connect accounts / numbers and use that same key for posting, inbox, ads, and analytics. and if you’re working with an AI agents, use MCP: connect Claude, ChatGPT, or Cursor to [mcp.zernio.com/mcp](http://mcp.zernio.com/mcp).",
+     "kr": "@shivam_kushwaha16 Zernio는 인프라 레이어이므로 사용 목적에 따라 설정 방식이 다릅니다.\n\n제품을 개발 중이시라면 REST API를 사용하세요. 키를 생성하고 계정이나 전화번호를 연결하면, 동일한 키로 포스팅, 인박스, 광고, 분석에 사용할 수 있습니다. AI 에이전트와 작업하신다면 MCP를 사용하여 Claude, ChatGPT, Cursor 등을 mcp.zernio.com/mcp 에 연결하시면 됩니다."
+    },
+    {
+     "author": "Nick Launches",
+     "is_maker": false,
+     "text": "Huge congrats on the launch!\n\nWould love to try it out. To use Instagram, Facebook does App needs to be created?",
+     "kr": "출시를 진심으로 축하드립니다!\n\n직접 사용해 보고 싶네요. 인스타그램이나 페이스북을 사용하려면 개발자 앱을 따로 생성해야 하나요?"
+    },
+    {
+     "author": "Darya",
+     "is_maker": true,
+     "text": "[@nicklaunches](https://www.producthunt.com/@nicklaunches) thank you! No need to create a developer app, Zernio absorbs that for you ☺️",
+     "kr": "@nicklaunches 감사합니다! 개발자 앱을 생성하실 필요가 없습니다. Zernio가 그 과정을 대신 처리해 드립니다 ☺️"
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "Because everything operates using official APIs, how does rate limiting and account-level permissions operate when I am dealing with a large number of end user accounts?\nBtw, Congratulations [@paletmiki](https://www.producthunt.com/@paletmiki) , [@dasha_nazarova1](https://www.producthunt.com/@dasha_nazarova1) , [@pauguirao](https://www.producthunt.com/@pauguirao) & team Zernio ✌️",
+     "kr": "모든 것이 공식 API로 동작하는데, 대규모의 최종 사용자 계정을 다룰 때 속도 제한(Rate limiting)과 계정 수준의 권한 관리는 어떻게 작동하나요?\n그나저나 @paletmiki, @dasha_nazarova1, @pauguirao 및 Zernio 팀 모두 출시 축하드립니다 ✌️"
+    },
+    {
+     "author": "Darya",
+     "is_maker": true,
+     "text": "[@aymi_malik](https://www.producthunt.com/@aymi_malik) thank you! ☺️ Happy to explain! Rate limits are per team and grow as you connect more accounts, and each account has its own posting caps, so one user’s volume never affects another’s. as for permissions, every end user gets their own profile. You can scope API keys to specific profiles and request only the OAuth scopes you need.",
+     "kr": "@aymi_malik 감사합니다! ☺️ 설명해 드리게 되어 기쁩니다! 속도 제한은 팀 단위로 적용되며 더 많은 계정을 연결할수록 상한이 늘어납니다. 또한 계정마다 고유한 포스팅 상한이 있어 한 사용자의 트래픽이 다른 사용자에게 영향을 주지 않습니다. 권한의 경우 모든 최종 사용자가 각자의 프로필을 갖게 됩니다. 특정 프로필로 API 키 범위를 제한할 수 있으며 필요한 OAuth 스코프만 요청할 수 있습니다."
+    },
+    {
+     "author": "Carlos Morales",
+     "is_maker": true,
+     "text": "Hi PH 🤗\n\nI am Carlos, Growth at Zernio.\n\nOur company is not what it was when I joined. Now the scope got much bigger - and basically, because our customers didn't stop asking for new features. And we are here to listen to them.\n\nZernio has become the infrastructure every agent needs to reach their customers. Our obssesion has always been to enhance communications from a company/project (social media, messaging, calls...) and this delivery goes in that way.\n\nToday's launch is to demonstrate that Zernio is now a new layer inside your stack. And that is much more than needed.\n\nTell us what you miss in our product and we will read you all. And do not forget of upvoting and commenting! Thank you for the support 🫡",
+     "kr": "PH 커뮤니티 여러분 안녕하세요 🤗\n\n저는 Zernio의 성장을 담당하고 있는 Carlos입니다.\n\n저희 회사는 제가 처음 합류했을 때와 비교할 수 없을 정도로 발전했습니다. 고객분들이 끊임없이 새로운 기능을 요청해 주셨고 저희가 그 목소리에 귀 기울인 덕분에 범위가 훨씬 넓어졌습니다.\n\n이제 Zernio는 모든 에이전트가 고객에게 도달하기 위해 필수적으로 갖춰야 할 인프라가 되었습니다. 기업이나 프로젝트의 커뮤니케이션(소셜 미디어, 메시징, 전화 등)을 강화하는 것이 언제나 저희의 핵심 목표였으며, 이번 출시 역시 그 방향성에 부합합니다.\n\n오늘 출시는 Zernio가 이제 여러분의 스택 내에서 새로운 핵심 레이어로 자리 잡았음을 보여주기 위함입니다. 부족한 점이 있다면 언제든 말씀해 주세요. 지속적인 응원에 감사드립니다 🫡"
+    },
+    {
+     "author": "Sedale Turbovsky",
+     "is_maker": false,
+     "text": "Zernio is amazing, we have made it a core part of our offerings to customers. An incredible offering, we leverage the platform to quickly generate MCPs and company brains for our clients.\n\nKeep up the awesome work team, been along for this ride since you were late...incredible evolution. Wishlist item is a way to fully configure ad accounts or manage spend/billing methods via Zernio.",
+     "kr": "Zernio는 정말 놀랍습니다. 저희 고객 제공 서비스의 핵심 요소로 활용하고 있습니다. 고객을 위한 MCP와 사내 브레인을 신속하게 구축하는 데 이 플랫폼을 적극 활용 중입니다.\n\n멋진 작업 계속 이어가시길 바랍니다. Late 시절부터 함께해 왔는데 믿기지 않을 정도의 진화네요. 희망 사항이 있다면 Zernio를 통해 광고 계정을 완전히 구성하거나 지출 및 결제 방식을 관리할 수 있는 기능입니다."
+    }
+   ],
+   "slug": "zernio",
+   "website": "https://zernio.com/"
+  },
+  {
+   "name": "Busabase",
+   "tagline_en": "The general system of record for AI agents",
+   "tagline_kr": "AI 에이전트를 위한 범용 단일 진실 공급원(System of Record) 데이터베이스",
+   "image": "https://ph-files.imgix.net/27868ffa-a004-487a-8861-71e60914cbd6.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Productivity",
+    "Developer Tools",
+    "Database"
+   ],
+   "upvotes": 289,
+   "comments_count": 72,
+   "maker": "Kelly Chan(@mrkelly), Seeyou Chan(@seey), Kelvin Poon(@kelvinpoon), Kevin William David(@kevin)",
+   "price_model": "오픈소스 무료 및 클라우드 옵션 (Free / Open Source)",
+   "price_detail": "완전한 오픈소스 소프트웨어로 자체 호스팅(Self-hosting) 및 로컬 개인 데스크톱(Personal Desktop) 버전을 무료로 이용할 수 있으며, 팀 협업을 위한 클라우드(Cloud) 관리형 옵션도 함께 제공됩니다.",
+   "desc_kr": "Busabase는 사람과 다양한 AI 에이전트가 함께 비즈니스 데이터와 작업 컨텍스트를 유지·관리할 수 있도록 설계된 오픈소스 범용 데이터베이스 및 공유 작업 공간입니다. 기존에는 Claude Code, Codex 등 사용하는 에이전트나 세션이 바뀔 때마다 프로젝트 배경과 코딩 지침을 처음부터 다시 주입해야 했으나, Busabase는 기업의 문서, 작업 기록, 스킬, 프롬프트를 단일 공간에 영구 보존하여 연속성을 보장합니다. 에이전트 자체는 무상태(Stateless)로 유지하면서 모든 핵심 지식을 공유 베이스에 저장하므로, 소프트웨어 개발, SEO 콘텐츠 발행, CRM 고객 관리 등 다단계 비즈니스 워크플로우를 에이전트 간 끊김 없이 자동화할 수 있습니다. 팀 관리자는 에이전트별 세부 읽기·수정 권한을 설정할 수 있으며, 에이전트가 실제 데이터에 변경을 가하기 전에 변경 요청(Proposal)을 검토하고 승인하는 안전장치를 제공합니다. 또한 공유 플레이북(Shared Playbooks), 팀 기여 분석(Team Insights), 대시보드 즉시 생성(Instant AirApps) 기능을 갖추고 있어 개인 데스크톱부터 자체 호스팅 및 클라우드 환경까지 폭넓게 활용할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/busabase",
+   "comment_summary": "커뮤니티에서는 여러 에이전트(Codex, Claude Code 등)가 동일한 비즈니스 지침과 데이터베이스를 공유하는 방식 및 기존 에이전트 메모리 솔루션과의 차별점에 대해 집중적으로 논의했습니다. 메이커 팀은 비공개 대화 기록을 단순히 넘기는 것이 아니라 M:N:1 구조로 팀이 명시적으로 저장한 진실 공급원(Doc, Playbook)을 공유하며, AGENTS.md 및 CLAUDE.md와 CLI를 연동해 세션마다 컨텍스트를 자동 인출할 수 있다고 설명했습니다. 또한 에이전트가 직접 비즈니스 데이터를 임의 수정하지 못하도록 변경 제안(Proposal) 승인 단계를 두고 차이점을 검토할 수 있는 안전한 거버넌스 모델에 큰 호응이 모였습니다.",
+   "warnings": "수치(업보트 289·댓글 72)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Kelly Chan",
+     "is_maker": true,
+     "text": "Hey Product Hunt — Kelly here.  \n  \nWe kept seeing this with customers: a new project or a different agent often meant rebuilding context and instructions from scratch. Business users were juggling local files and agent setups, sometimes having to learn tools like Git just to keep things organized.  \n  \nWe believe agents should be stateless, with company knowledge and work kept in a shared base. Business users should be able to share that context across agents without becoming AI experts.  \n  \nThat's why we built Busabase — The Base for Agents — a shared workspace for data, docs, skills, and apps that people can see and manage.  \n  \nConnect agents like Claude Code, Grok Bot, Muse, OpenClaw, Manus, Hermes, Buda or Codex via MCP, OpenAPI, or CLI. You decide what each agent can read or change, and which updates need review. You can also see what changed and who changed it.  \n  \nWith your agents and tools connected, you can automate workflows like:  \n  \n• Software development — agents turn support feedback into tasks, write and test the code, deploy updates, and use new feedback to start the next cycle.  \n• SEO — agents monitor traffic and search trends, use the results to improve the content plan, write the next article in a shared CMS, and repeat.  \n• CRM — agents use product knowledge and shared business data to find relevant prospects, reach out, and follow up, keeping customer records, visit notes, and tasks up to date.  \n  \nOne customer keeps its company materials and project updates in Busabase. Now a manager can ask an agent for the latest status instead of going from teammate to teammate.  \n  \nTry it with one project: add its updates and instructions, connect an agent, and ask, “What changed this week?”  \n  \nBusabase is open source. You can self-host it, use Personal Desktop, or get started with Cloud.  \n  \nIf your team uses several agents, I'd love your feedback: what would Busabase need to handle for you to use it every day?",
+     "kr": "Product Hunt 여러분 안녕하세요, Kelly입니다.\n\n고객들과 대화하면서 반복적으로 목격한 문제가 있었습니다. 새로운 프로젝트를 시작하거나 다른 에이전트로 전환할 때마다 컨텍스트와 작업 지침을 처음부터 다시 만들어야 한다는 점이었습니다. 비즈니스 사용자들은 로컬 파일과 에이전트 설정을 오가며 고군분투해야 했고, 단순히 파일 정리를 위해 Git 같은 도구를 배워야 하는 경우도 있었습니다.\n\n저희는 에이전트가 무상태(Stateless)여야 하며, 회사의 지식과 작업 결과물은 하나의 공유 베이스에 보관되어야 한다고 믿습니다. 비즈니스 사용자는 AI 전문가가 되지 않고도 여러 에이전트 간에 이러한 컨텍스트를 쉽게 공유할 수 있어야 합니다.\n\n이것이 바로 저희가 사람과 에이전트가 함께 보고 관리할 수 있는 데이터, 문서, 스킬, 앱 공유 작업 공간인 Busabase를 구축한 이유입니다.\n\nMCP, OpenAPI, CLI를 통해 Claude Code, Grok Bot, Muse, OpenClaw, Manus, Hermes, Buda, Codex 등의 에이전트를 연결할 수 있습니다. 각 에이전트가 무엇을 읽고 수정할 수 있는지, 어떤 업데이트에 검토가 필요한지 사용자가 직접 결정할 수 있으며 무엇이 누구에 의해 변경되었는지도 투명하게 확인할 수 있습니다.\n\n에이전트와 도구를 연결하면 다음과 같은 워크플로우를 자동화할 수 있습니다:\n• 소프트웨어 개발 — 고객 지원 피드백을 작업으로 전환하고, 코드를 작성 및 테스트하며, 업데이트를 배포하고 새 피드백으로 다음 사이클을 시작합니다.\n• SEO — 트래픽과 검색 트렌드를 모니터링하여 콘텐츠 계획을 개선하고 공유 CMS에 다음 기사를 작성하는 과정을 반복합니다.\n• CRM — 제품 지식과 비즈니스 데이터를 기반으로 잠재 고객을 발굴하고 연락 및 후속 조치를 취하며 고객 기록과 미팅 노트를 최신 상태로 유지합니다.\n\nBusabase는 오픈소스입니다. 자체 호스팅하거나 개인 데스크톱 버전을 쓰거나 클라우드로 시작할 수 있습니다. 팀에서 여러 에이전트를 사용 중이시라면 매일 사용하기 위해 Busabase에 어떤 기능이 더 필요할지 여러분의 피드백을 듣고 싶습니다."
+    },
+    {
+     "author": "Gene Dai",
+     "is_maker": false,
+     "text": "Congrats on Launch Do Shared Playbooks hold both Skills and custom prompts? How would a teammate reuse the same working instructions with another supported agent?",
+     "kr": "출시 축하드립니다! 공유 플레이북(Shared Playbooks)에는 스킬(Skills)과 커스텀 프롬프트가 모두 포함되나요? 팀원이 지원되는 다른 에이전트에서 동일한 작업 지침을 재사용하려면 어떻게 해야 하나요?"
+    },
+    {
+     "author": "Seeyou Chan",
+     "is_maker": true,
+     "text": "Thanks, [@genedai](https://www.producthunt.com/@genedai) Gene!\n\nYes, Shared Playbooks give your team's Skills and custom prompts a shared home.\n\nA teammate can connect another supported agent to the same space, give it access to the relevant material, and ask it to consult that Playbook before starting a task. T**hey can also copy saved prompts from the UI** into their agent. For example, keeping a content review process and its prompts together lets a different agent read the same working instructions.",
+     "kr": "감사합니다, @genedai Gene님!\n\n네, 공유 플레이북은 팀의 스킬과 커스텀 프롬프트를 함께 보관할 수 있는 공유 공간을 제공합니다.\n\n팀원은 지원되는 다른 에이전트를 동일한 공간에 연결하고 관련 자료에 대한 접근 권한을 부여한 뒤 작업을 시작하기 전에 해당 플레이북을 참조하도록 할 수 있습니다. 또한 UI에서 저장된 프롬프트를 복사하여 에이전트에 직접 넣을 수도 있습니다. 예를 들어 콘텐츠 검토 프로세스와 프롬프트를 함께 보관하면 서로 다른 에이전트가 동일한 작업 지침을 읽고 실행할 수 있습니다."
+    },
+    {
+     "author": "Kate Ragotte",
+     "is_maker": false,
+     "text": "  [@seey](https://www.producthunt.com/@seey) Review changes before they go live is a good one. I’d want that if an agent is touching real business data.",
+     "kr": "@seey 실제 적용 전에 변경 사항을 검토할 수 있다는 점이 정말 좋네요. 에이전트가 실제 비즈니스 데이터를 다룬다면 반드시 필요한 기능입니다."
+    },
+    {
+     "author": "Seeyou Chan",
+     "is_maker": true,
+     "text": "[@kate_ragotte19](https://www.producthunt.com/@kate_ragotte19) Yes, Kate. With real business data, being able to see what an agent changed before accepting it makes a difference.\n\n_Thanks for the comment!_",
+     "kr": "@kate_ragotte19 맞습니다, Kate님. 실제 비즈니스 데이터의 경우 에이전트가 무엇을 변경했는지 수락하기 전에 미리 확인할 수 있다는 점이 큰 차이를 만듭니다. 의견 감사합니다!"
+    },
+    {
+     "author": "Kelly Chan",
+     "is_maker": true,
+     "text": "[@genedai](https://www.producthunt.com/@genedai) Yes. A Playbook can be a Skill with its instruction file and references, or a custom prompt saved under a node’s Agent prompts. Both appear in the workspace’s Playbooks view. Once another supported agent is connected to that workspace, it can find and read the relevant Playbook, subject to its access permissions.\n\nFor example, I’d save a repeatable code-review procedure as a Skill and a shorter “prepare this week’s launch post” instruction as a custom prompt. The team maintains each once instead of rewriting it for Codex, Claude Code, and the next agent. Here’s the Playbooks guide: [https://busabase.com/docs/agent-playbooks](https://busabase.com/docs/agent-playbooks)",
+     "kr": "@genedai 네, 플레이북은 지침 파일 및 참조가 포함된 스킬(Skill)일 수도 있고 노드의 에이전트 프롬프트 아래 저장된 커스텀 프롬프트일 수도 있습니다. 둘 다 작업 공간의 플레이북 뷰에 나타납니다. 지원되는 다른 에이전트가 해당 작업 공간에 연결되면 접근 권한에 따라 관련 플레이북을 찾아 읽을 수 있습니다. 예를 들어 반복 가능한 코드 리뷰 절차는 스킬로 저장하고 짧은 출시 글 작성 지침은 커스텀 프롬프트로 저장하여 Codex나 Claude Code 등 여러 에이전트용으로 매번 다시 작성할 필요 없이 한 번만 유지관리하면 됩니다."
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "🧐 Good find\n\n[@seey](https://www.producthunt.com/@seey) [@mrkelly](https://www.producthunt.com/@mrkelly) Curious how this compares with existing databases and agent memory solutions ?",
+     "kr": "좋은 발견이네요. 기존 데이터베이스나 에이전트 메모리 솔루션들과 비교했을 때 어떤 차별점이 있는지 궁금합니다."
+    },
+    {
+     "author": "Seeyou Chan",
+     "is_maker": true,
+     "text": "Busabase focuses on multiple people and multiple agents maintaining the same shared data.\n\nThink of it as: 【**People : Agents : Data = M : N : 1】  \n\n**_Compared with a database_**, our focus extends beyond storage and queries to how people and agents maintain data together.\n\n**_Compared with agent memory_**, our focus is on business records, docs, and working instructions that a team maintains as shared context for multiple agents. It doesn't automatically import or remember every agent conversation; it holds what you or your agent explicitly save.\n\n[@dipanshu_kushwaha5](https://www.producthunt.com/@dipanshu_kushwaha5) Thanks for the comment!",
+     "kr": "Busabase는 여러 사람과 여러 에이전트가 동일한 공유 데이터를 함께 유지·관리하는 데 초점을 맞추고 있습니다.\n\n【사람 : 에이전트 : 데이터 = M : N : 1】 구조로 이해하시면 됩니다.\n\n데이터베이스와 비교하면 단순한 저장 및 조회를 넘어 사람과 에이전트가 데이터를 어떻게 협업하여 유지관리하는가로 초점이 확장됩니다.\n\n에이전트 메모리와 비교하면 모든 에이전트 대화를 자동으로 가져와 기억하는 것이 아니라 팀이 여러 에이전트를 위한 공유 컨텍스트로 유지하는 비즈니스 기록, 문서, 작업 지침 등 명시적으로 저장한 내용을 보관하는 데 집중합니다."
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "[@mrkelly](https://www.producthunt.com/@mrkelly)  How do AI agents share the data with each other???",
+     "kr": "@mrkelly AI 에이전트들은 서로 데이터를 어떻게 공유하나요???"
+    },
+    {
+     "author": "Kelly Chan",
+     "is_maker": true,
+     "text": "[@vipul_kumar1280](https://www.producthunt.com/@vipul_kumar1280)  Vipul, the agents don’t pass their private chat histories to each other. They connect to the same Busabase Space and read the project records, docs, and working instructions your team chooses to keep there. For example, Codex can propose a task update; once it’s approved, Claude Code can read that updated record on its next task. Each agent still needs to fetch the context and write back useful results. What would you want your agents to hand off first?",
+     "kr": "@vipul_kumar1280 에이전트들이 개인 채팅 기록을 서로에게 직접 전달하는 것이 아닙니다. 동일한 Busabase Space에 연결되어 팀이 보관하기로 선택한 프로젝트 기록, 문서, 작업 지침을 읽는 방식입니다. 예를 들어 Codex가 작업 업데이트를 제안하면 승인 후 Claude Code가 다음 작업 시 그 업데이트된 기록을 읽을 수 있습니다. 각 에이전트는 여전히 컨텍스트를 가져오고 유용한 결과를 다시 기록해야 합니다."
+    },
+    {
+     "author": "Matthewwei",
+     "is_maker": false,
+     "text": "Our team uses both Codex and Claude Code. What's the simplest way to give them the same project brief and coding conventions without copying everything into each chat?",
+     "kr": "저희 팀은 Codex와 Claude Code를 둘 다 사용합니다. 각 채팅창에 모든 내용을 복사해 넣지 않고 동일한 프로젝트 개요와 코딩 규칙을 전달할 수 있는 가장 간단한 방법은 무엇인가요?"
+    },
+    {
+     "author": "Kelvin Poon",
+     "is_maker": true,
+     "text": "[@matthewwei](https://www.producthunt.com/@matthewwei) Personally, I think [AGENTS.md](http://agents.md/) for Codex and [CLAUDE.md](http://claude.md/) for Claude Code are great ways to avoid repeating the same instructions or explaining business context every time you start a new session.\n\nYou can also include instructions that tell the agents when to pull relevant business context from Busabase.\n\nFor example:\n\n> If you're working on GSC keyword analysis or optimization, use busabase-cli to fetch last week's GSC performance report from the xxxx folder in Busabase. Use that report as the baseline to identify keyword opportunities, analyze performance changes, and recommend optimizations.\n\nThis way, both agents know when to retrieve business context, where to find it, and how to use it — without you having to repeat yourself in every session.",
+     "kr": "@matthewwei 개인적으로 Codex용 AGENTS.md와 Claude Code용 CLAUDE.md를 활용하면 새 세션을 시작할 때마다 동일한 지침을 반복하거나 비즈니스 컨텍스트를 설명하는 수고를 덜 수 있는 좋은 방법이라고 생각합니다. 또한 에이전트에게 Busabase에서 관련 비즈니스 컨텍스트를 가져오는 시점을 알려주는 지침을 포함할 수도 있습니다. 예를 들어 'GSC 키워드 분석 시 busabase-cli로 지난주 보고서를 가져와 최적화 추천에 활용하라'는 지침을 두면 두 에이전트 모두 언제 어디서 비즈니스 맥락을 가져와야 할지 알게 됩니다."
+    }
+   ],
+   "slug": "busabase",
+   "website": "https://busabase.com/"
+  },
+  {
+   "name": "Playground by Google Labs",
+   "tagline_en": "Create, play, and share your own games with Google AI",
+   "tagline_kr": "구글 AI와 함께 코딩 없이 게임을 직접 만들고 플레이하며 공유하는 플랫폼",
+   "image": "https://ph-files.imgix.net/fcbec6fb-5d33-4e45-a16d-cca93261381c.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Artificial Intelligence",
+    "Games"
+   ],
+   "upvotes": 197,
+   "comments_count": 10,
+   "maker": "Google Labs, Justin Jincaid(@justin2025)",
+   "price_model": "무료 체험 옵션 (Free Options)",
+   "price_detail": "기본적인 실험 기능은 무료로 제공되며, 구글 계정을 통해 브라우저에서 직접 게임을 생성하고 공유할 수 있습니다.",
+   "desc_kr": "Playground by Google Labs는 사용자가 전문적인 프로그래밍 지식 없이도 자연어 대화만으로 자신만의 게임을 직접 제작하고 즐기며 공유할 수 있는 실험적 AI 게임 개발 플랫폼입니다. 사용자가 아이디어를 일상 언어로 설명하고 장르를 선택하면, AI가 단 몇 분 만에 브라우저에서 즉시 플레이 가능한 게임을 자동으로 구축합니다. 게임의 규칙, 캐릭터의 외형 및 동작, 물리 법칙, 시각 효과 등 모든 요소를 채팅 인터페이스를 통해 실시간으로 수정하고 다듬을 수 있습니다. 완성된 게임은 링크를 통해 친구들과 공유하거나 커뮤니티 갤러리에 게시하여 멀티플레이를 즐길 수 있으며, 다른 창작자들의 독창적인 게임들도 자유롭게 탐색할 수 있습니다. 구글의 최첨단 멀티모달 및 생성 모델인 Gemini, Nano Banana, Lyria 오디오 모델을 기반으로 구동되며, 향후 더욱 고도화된 게임 제작을 위해 Unity 엔진과의 협업도 진행 중입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/google-labs",
+   "comment_summary": "커뮤니티에서는 자연어 대화만으로 물리 법칙과 게임 규칙을 손쉽게 변경할 수 있어 게임 디자인의 진입 장벽을 완전히 허물었다는 점에 호평이 이어졌습니다. 한편 보드게임의 디지털 프로토타입 제작이나 친구들과의 게임 제작 밤(Game Night) 문화 변화 등 창의적인 활용 기대와 함께, 코어 게이머의 눈높이를 맞추는 지속적인 품질 유지가 관건이라는 의견도 제시되었습니다. 또한 일부 국가에서는 지역 제한으로 인해 바로 접속할 수 없다는 아쉬움이 보고되기도 했습니다.",
+   "warnings": "수치(업보트 197·댓글 10)는 수집 시점 참고치. 이번 출시는 Google Labs의 16번째 공식 런칭 버전임. 수집된 1페이지 마크다운에 존재하는 8개의 댓글을 모두 수집 완료함.",
+   "comments": [
+    {
+     "author": "Justin Jincaid",
+     "is_maker": false,
+     "text": "Google just launched Playground, and this looks pretty fun. You can describe a game idea in plain English, and Google's AI turns it into something you can actually play in your browser. Want to change the rules, characters, or physics? Just ask. You can also share your games, publish them for others to play, and even create multiplayer experiences. The interesting part is that Google is also working with Unity to bring more advanced game creation into Playground. Curious to see what people come up with when making a game becomes this easy.",
+     "kr": "구글이 방금 Playground를 출시했는데 정말 재미있어 보입니다. 일반 영어로 게임 아이디어를 설명하면 구글 AI가 브라우저에서 실제로 플레이할 수 있는 게임으로 만들어 줍니다. 규칙, 캐릭터, 물리 법칙을 바꾸고 싶으신가요? 그냥 대화로 요청하면 됩니다. 게임을 공유하거나 다른 사람들이 플레이할 수 있도록 게시하고 멀티플레이어 환경을 만들 수도 있습니다. 흥미로운 점은 구글이 Playground에 더욱 발전된 게임 제작 기능을 도입하기 위해 Unity와 협력하고 있다는 것입니다. 게임 제작이 이렇게 쉬워졌을 때 사람들이 어떤 결과물을 만들어낼지 무척 기대됩니다."
+    },
+    {
+     "author": "Nick V",
+     "is_maker": false,
+     "text": "I think mostly the point of games is the time spent by real humans curating a very specific experience. This seems like a fun distraction but I wouldn't expect it to see long term adoption from the core gaming community who have always cared more about quality than quantity.",
+     "kr": "게임의 본질은 실제 사람이 매우 구체적인 경험을 큐레이션하는 데 쏟는 시간에 있다고 생각합니다. 이것은 재미있는 기분 전환 거리는 될 수 있겠지만, 언제나 양보다 질을 중시해 온 코어 게이밍 커뮤니티에서 장기적으로 채택되기는 어려울 것 같습니다."
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "I was looking forward to this, but not available in my country. 🙈",
+     "kr": "정말 기대하고 있었는데, 제가 있는 국가에서는 아직 지원되지 않네요. 🙈"
+    },
+    {
+     "author": "Varidhi Jain",
+     "is_maker": false,
+     "text": "[@busmark_w_nika](https://www.producthunt.com/@busmark_w_nika) It is suc a unique idea!\n\nEven I was looking forward to this but it is not available in my country.",
+     "kr": "@busmark_w_nika 정말 독특한 아이디어네요! 저 역시 많이 기대하고 있었는데 제 국가에서는 이용할 수가 없습니다."
+    },
+    {
+     "author": "Emma Pugsley",
+     "is_maker": false,
+     "text": "This is fun. My partner creates tabletop games, and there's one that I think deserves to be digital! This might be good for a trial.",
+     "kr": "재미있네요. 제 파트너가 테이블탑(보드) 게임을 만드는데, 디지털로 구현해 볼 만한 게임이 하나 있습니다! 시험 삼아 테스트해 보기에 좋을 것 같아요."
+    },
+    {
+     "author": "André J",
+     "is_maker": false,
+     "text": "I feel game night is totally changed after this. Now its not about playing games anymore, game night is now about making games 😸",
+     "kr": "이로 인해 게임의 밤(Game night) 풍경이 완전히 바뀔 것 같네요. 이제는 단순히 게임을 플레이하는 것을 넘어, 게임을 직접 만드는 밤이 될 것 같습니다 😸"
+    },
+    {
+     "author": "Ilko Kacharov",
+     "is_maker": false,
+     "text": "Love that changing the rules, physics, or characters is just a conversation, it turns game design into play itself rather than a coding barrier.",
+     "kr": "규칙이나 물리 법칙, 캐릭터를 바꾸는 과정이 단순한 대화로 이루어진다는 점이 마음에 듭니다. 코딩이라는 장벽 대신 게임 디자인 자체를 하나의 놀이로 바꿔주네요."
+    },
+    {
+     "author": "Khushboo Gupta Kushwaha",
+     "is_maker": false,
+     "text": "Love that Google is making its AI experiments accessible instead of keeping them behind the scenes. The interesting part will be seeing which experiments actually stick.",
+     "kr": "구글이 AI 실험들을 물밑에만 두지 않고 대중이 접근할 수 있도록 공개하는 점이 좋습니다. 이러한 실험들 중 실제로 살아남아 정착하는 것이 무엇일지 지켜보는 것이 흥미로울 것 같습니다."
+    }
+   ],
+   "slug": "google-labs",
+   "website": "https://labs.google/"
+  },
+  {
+   "name": "Together Link",
+   "tagline_en": "Use open models in your harness",
+   "tagline_kr": "기존 코딩 환경을 유지하면서 오픈소스 모델을 연동하는 프록시 도구",
+   "image": "https://ph-files.imgix.net/fba6d631-1a74-4f8b-9255-7666ba3ee4e0.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Open Source",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 174,
+   "comments_count": 2,
+   "maker": "Together AI, Rohan Chaubey(@rohanrecommends)",
+   "price_model": "무료 오픈소스 및 모델 종량제 과금 (Free & Open Source / Pay-per-token)",
+   "price_detail": "Together Link 소프트웨어 자체는 무료 오픈소스로 제공되며, 프록시를 통해 호출되는 오픈소스 AI 모델 사용량에 대해서만 Together AI의 토큰당 종량제 요금이 부과됩니다.",
+   "desc_kr": "Together Link는 개발자가 현재 사용 중인 코딩 에이전트 도구를 그대로 유지하면서 Together AI가 호스팅하는 다양한 오픈소스 언어 모델을 간편하게 연결할 수 있도록 지원하는 브릿지 도구입니다. 단 한 줄의 명령어로 설치가 완료되며, 복잡한 에이전트 설정 파일을 수동으로 수정할 필요 없이 즉시 기존 워크플로우에 통합됩니다. Claude Code, Claude Desktop, Codex, ChatGPT Desktop, OpenCode, Pi 등 업계의 대표적인 코딩 도구들을 폭넓게 지원합니다. 개별 오픈 모델을 직접 선택하거나 최적의 모델로 세션을 자동 라우팅해 주는 오토 라우터(Auto Router)를 활용할 수 있으며, Kimi K3, GLM 5.3, DeepSeek V4.1 Flash, MiniMax M3 등의 고성능 오픈 모델을 즉시 호출할 수 있습니다. 프록시 세션별로 상세한 비용 영수증을 발급하고 세션 전반의 사용량 및 지출을 투명하게 추적할 수 있어 모델 비용을 획기적으로 절감할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/together-ai",
+   "comment_summary": "커뮤니티에서는 기존에 익숙해진 코딩 환경(하네스)을 변경하지 않고도 오픈 모델로 라우팅하여 모델 비용을 낮출 수 있는 실용적인 접근법에 높은 관심을 보였습니다. 특히 도구 전환에 따른 마찰을 없앤 점이 큰 장점으로 꼽혔으며, 실제 긴 코딩 작업에서 오픈 모델이 상용 폐쇄형 모델의 성능을 얼마나 잘 따라갈 수 있는지에 대한 실전 성능 질의가 제기되었습니다. 헌터 측은 간편한 1회성 명령어 설치와 투명한 세션별 비용 영수증 제공 기능을 핵심 강점으로 제시했습니다.",
+   "warnings": "수치(업보트 174·댓글 2)는 수집 시점 참고치. 수집된 마크다운 페이지에 존재하는 총 2개의 댓글을 모두 수집 완료함.",
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "**Together Link** connects the coding agents to open models on Together AI through a one-command setup.\n\n**What makes it different:** You keep your existing agent, login, settings, history, and workflow while Together Link routes sessions to open models and shows what each session costs.\n\nTogether Link is free and open source, model usage is billed through Together AI.\n\n**Key features:**\n\n• Works with Claude Code, Claude Desktop, Codex, ChatGPT Desktop, OpenCode, and Pi  \n• Choose individual open models or use Auto Router to route tasks automatically  \n• Access models including Kimi K3, GLM 5.3, DeepSeek V4.1 Flash, and MiniMax M3  \n• Keep your existing agent settings and switch back to your normal setup anytime  \n• Get a cost receipt for each proxied session  \n• Track usage and spending across sessions  \n• Use Together AI's per-token pricing for model usage  \n• Install with a single command without manually editing your agent configuration\n\nTogether Link is built for developers and engineering teams that want to use open models without changing the coding tools they already work with.\n\nTry [Together Link](https://www.together.ai/link)\n\nP.S. I hunt the latest and greatest launches in tech, SaaS and AI, follow to be notified **→** [@rohanrecommends](https://www.producthunt.com/@rohanrecommends)",
+     "kr": "**Together Link**는 단 한 번의 명령어 설정으로 코딩 에이전트를 Together AI의 오픈 모델과 연결해 줍니다.\n\n**차별점:** 사용 중인 기존 에이전트, 로그인, 설정, 히스토리, 워크플로우를 그대로 유지하면서 Together Link가 세션을 오픈 모델로 라우팅하고 각 세션의 발생 비용을 투명하게 보여줍니다.\n\nTogether Link는 무료 오픈소스이며, 모델 사용량은 Together AI를 통해 청구됩니다.\n\n**주요 기능:**\n• Claude Code, Claude Desktop, Codex, ChatGPT Desktop, OpenCode, Pi 지원\n• 개별 오픈 모델 직접 선택 또는 태스크 자동 라우팅(Auto Router) 지원\n• Kimi K3, GLM 5.3, DeepSeek V4.1 Flash, MiniMax M3 등 주요 모델 제공\n• 기존 에이전트 설정 유지 및 언제든 기본 설정으로 원복 가능\n• 프록시 세션별 비용 영수증 제공\n• 세션 전반의 사용량 및 지출 추적\n• Together AI의 토큰당 가격 정책 적용\n• 설정 파일 수동 편집 없이 1줄 명령어로 설치\n\n이미 사용 중인 코딩 도구를 바꾸지 않고 오픈 모델을 도입하려는 개발자와 엔지니어링 팀을 위해 제작되었습니다."
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Letting coding agents use open models without changing your existing tools and workflow is the practical path people want, since switching harnesses is the real friction. Cutting model costs while keeping the same setup is a straightforward win. How much do the open models lag behind the closed ones on long coding tasks in practice?",
+     "kr": "하네스(개발 환경)를 바꾸는 것이야말로 진정한 마찰 요인이기 때문에, 기존 도구와 워크플로우를 바꾸지 않고 코딩 에이전트가 오픈 모델을 사용하게 하는 것은 많은 사람들이 원하던 실용적인 방향입니다. 동일한 설정을 유지하면서 모델 비용을 절감하는 것은 확실한 이점입니다. 다만 실제 긴 코딩 작업에서 오픈 모델이 폐쇄형 모델에 비해 실무적으로 얼마나 뒤처지나요?"
+    }
+   ],
+   "slug": "together-ai",
+   "website": "https://www.together.ai/link"
+  },
+  {
+   "name": "Odyssey 3",
+   "tagline_en": "A world model that simulates physics in real time",
+   "tagline_kr": "실시간으로 물리 법칙을 시뮬레이션하는 세계 모델(World Model)",
+   "image": "https://ph-files.imgix.net/9dd18d81-1127-442e-80a3-b790418ff66c.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Artificial Intelligence"
+   ],
+   "upvotes": 148,
+   "comments_count": 4,
+   "maker": "Rena(@notionium)",
+   "price_model": "유료 구매 (Payment Required)",
+   "price_detail": "Gumroad를 통한 유료 구매 형태로 제공됩니다. (수집된 페이지 기준 구체적인 가격 액수는 미표기)",
+   "desc_kr": "Odyssey 3는 현실 세계의 물리 법칙과 상호작용을 실시간으로 시뮬레이션하도록 설계된 차세대 AI 세계 모델(World Model) 플랫폼입니다. 텍스트나 사용자 입력을 바탕으로 일관된 3D 물리 환경과 객체 간의 역학적 반응을 동적으로 생성하고 연산할 수 있습니다. 디지털 트윈 구축, 로보틱스 시뮬레이션, 실시간 인터랙티브 환경 등 다양한 고도화된 AI 연구 및 산업 분야에 응용될 수 있는 잠재력을 지니고 있습니다. 한편 수집된 세부 페이지(odyssey-3.md)에는 노션 템플릿(Ultimate template for digital nomads) 정보가 매핑되어 있는 데이터 불일치가 확인되나, 리더보드 상에서는 인공지능 기반의 실시간 물리 시뮬레이션 월드 모델로 당일 5위에 올랐습니다. 복잡한 환경 내에서 물리 법칙을 현실감 있게 재현함으로써 가상 세계와 인공지능의 물리적 이해도를 한 단계 끌어올리는 것을 목표로 합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/odyssey-3",
+   "comment_summary": "수집된 세부 페이지 기준 댓글 섹션에서는 디지털 노마드 라이프스타일을 위한 워크스페이스 정리와 목표 관리 경험에 대해 메이커인 Rena와 커뮤니티 간의 피드백이 오갔습니다. 메이커는 여행 버킷리스트와 비즈니스 목표를 단일 작업 공간에서 통합 관리할 수 있는 이점을 강조했습니다. 다만 해당 댓글들은 수년 전 작성된 노션 템플릿 관련 내용으로, 당일 출시된 인공지능 월드 모델 Odyssey 3의 기술적 논의와는 차이가 있습니다.",
+   "warnings": "수치(업보트 148·댓글 4)는 당일 리더보드(top5.json 및 home.md) 수집 시점 참고치. 수집된 제품 상세 마크다운(odyssey-3.md)의 경우 슬러그 매핑 혹은 리다이렉트로 인해 과거 노션 템플릿 'Odyssey'(Payment Required, 카테고리 Productivity/Travel, 4년 전 댓글 3건) 페이지가 수집되는 데이터 불일치가 확인됨. 따라서 이름, 태그라인, 대표 이미지, 카테고리 등은 리더보드(Odyssey 3, AI 월드 모델)의 공식 정보를 반영하고, 상세 마크다운에 존재하는 메이커(Rena) 및 3개의 댓글을 그대로 수록함.",
+   "comments": [
+    {
+     "author": "Rena",
+     "is_maker": true,
+     "text": "Hey Product Hunt community! I'm sure many of you are either already living a digital nomad lifestyle, or planning to, or have a work arrangement that allows you to be location-independent if/when you choose to. While this type of lifestyle comes with a great level of freedom, it can be a hassle to manage planning for your next location, staying on top of your work commitments, AND pursing your goals all at the same time. I've created this template for people like you and me - who want to make everything happen and have the best in all aspects of life 😉 Using this planner for a short while, I'm already feeling its tremendous effects. I feel much more organized, confident, and at ease about my travel bucket list, business goals, and all the hobbies I want to start with, just to name a few. The best part is that I can keep all of them in one workspace. I really hope it will help you just as much it has helped me. I would love to hear your thoughts and feedback so I can serve more people, better! 🔽 Download from: [https://gum.co/xaebg](https://gum.co/xaebg) 💻 Website: [https://notionium.co/](https://notionium.co/)",
+     "kr": "Product Hunt 커뮤니티 여러분 안녕하세요! 많은 분들이 이미 디지털 노마드 라이프스타일을 살고 계시거나, 계획 중이시거나, 원할 때 위치에 구애받지 않고 일할 수 있는 환경에 계실 것입니다. 이런 라이프스타일은 큰 자유를 주지만 다음 목적지를 계획하고, 업무 약속을 지키며, 목표를 동시에 추구하는 일은 꽤나 번거로울 수 있습니다. 저는 모든 것을 해내고 삶의 모든 영역에서 최선을 다하고 싶은 여러분과 저 같은 분들을 위해 이 템플릿을 만들었습니다. 여행 버킷리스트, 비즈니스 목표, 취미 등을 하나의 워크스페이스에서 관리할 수 있습니다. 피드백을 남겨주시면 감사하겠습니다!"
+    },
+    {
+     "author": "Ben Lang",
+     "is_maker": false,
+     "text": "🙌",
+     "kr": "🙌"
+    },
+    {
+     "author": "Rena",
+     "is_maker": true,
+     "text": "[@benln](https://www.producthunt.com/@benln) 🥰",
+     "kr": "@benln 🥰"
+    }
+   ],
+   "slug": "odyssey-3",
+   "website": "https://notionium.gumroad.com/l/xaebg"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
