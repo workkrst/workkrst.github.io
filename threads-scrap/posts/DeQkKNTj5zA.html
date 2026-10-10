@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@quitting_time_lab - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">QT_Lab_ai | Ai, 부업</span>
+                    
+                    <a href="https://www.threads.net/@quitting_time_lab" target="_blank" rel="noopener" class="username">@quitting_time_lab</a>
+                </div>
+                <span class="post-date">2026-10-09 12:40</span>
+            </div>
+            <div class="post-text">GPT-6 Astra 한 달째, 금단의 영역까지 돌려봤습니다.<br>&quot;쇼핑 숏폼 만들어&quot;라고 시킨 건데요,<br>선을 많이 넘은 느낌입니다.<br><br>Astra로 쇼핑 숏폼 제대로 돌리는 활용 프롬프트 8개:<br>(저장 및 복사해서 바로 써보세요)</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 114</span>
+                    <span>💬 1</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@quitting_time_lab/post/DeQkKNTj5zA" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (6개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@quitting_time_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-09 12:40</span>
+                    <span class="reply-likes">❤️ 9</span>
+                </div>
+                <div class="reply-text">1. 상품 하나만 던지면 후킹 스크립트부터<br>촬영 구도까지 알아서 끝냅니다.<br><br>&quot;너는 쇼핑 숏폼 전문 카피라이터이자 영상 PD야.<br>내 상품은 [상품명 한 줄]이야.<br><br>먼저 쿠팡, 네이버쇼핑, 알리익스프레스에서<br>경쟁 상품 숏폼을 직접 서치해서<br>조회수 높은 후킹 패턴 5개를 뽑아 정리해.<br><br>그다음 3초 후킹 - 문제제기 - 해결 - 할인코드 구조로<br>15초 스크립트를 작성하고,<br>컷마다 카메라 구도와 자막 타이밍까지 지정해줘.<br><br>톤은 과장 없이 신뢰감 있게,<br>후킹 멘트는 숫자와 비교를 활용해줘.&quot;<br><br>*아래는 전부 AI가 진행하는 작업입니다.<br>업로드 반응을 감지하고 다시 썸네일을 교체합니다.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@quitting_time_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-09 12:40</span>
+                    <span class="reply-likes">❤️ 4</span>
+                </div>
+                <div class="reply-text">2. 상품 이미지 자동 합성 후 플랫폼 규격으로 리사이즈.<br>업로드용 썸네일을 사람 손 없이 뽑아냅니다.<br><br>&quot;너는 숏폼 썸네일 CTR을 극대화하는 자동화 엔지니어야.<br>내 상품 [상품명]의 이미지 3장을<br>배경 제거 후 할인 문구와 합성해서 썸네일 5종을 만들어.<br><br>유튜브 쇼츠(1080x1920), 릴스, 틱톡 규격에 맞게<br>각각 자동 리사이즈하고,<br>파일명은 상품명_버전번호로 자동 리네이밍하는<br>파이썬 스크립트도 함께 작성해.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@quitting_time_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-09 12:40</span>
+                    <span class="reply-likes">❤️ 3</span>
+                </div>
+                <div class="reply-text">3. 계정이 알아서 쿠팡파트너스 링크 발급.<br>브라우저를 직접 조작해서 제휴 링크 세팅까지 자동화합니다.<br><br>&quot;너는 macOS 자동화 전문가야.<br>내가 쿠팡파트너스에 로그인한 상태라고 가정하고,<br>Playwright를 사용해서 브라우저를 자동 조작해.<br><br>상품 검색 → 링크 생성 → 추적코드 추출 →<br>단축 URL 생성까지의 전 과정을 자동화하는<br>파이썬 스크립트를 작성해줘.<br><br>2단계 인증 입력이 필요한 지점에서는<br>콘솔에서 입력받도록 처리하고,<br>생성된 링크는 로컬 시트에 자동 저장해줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@quitting_time_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-09 12:40</span>
+                    <span class="reply-likes">❤️ 5</span>
+                </div>
+                <div class="reply-text">4. 조회수 cron으로 감시하고 저조회면 자동 재업로드.<br>잠들어 있는 동안에도 채널은 돌아갑니다.<br><br>&quot;너는 쇼핑 숏폼 채널 자동화 봇을 만드는 백엔드 엔지니어야.<br>내 채널 [채널명]의 유튜브 API 키는 [키 저장 경로]에 있어.<br><br>이 키로 업로드된 영상의 조회수와 CTR을<br>30분마다 체크하는 cron 스크립트를 작성해.<br><br>CTR이 기준치 이하로 떨어지면<br>1) 썸네일을 미리 만든 예비 버전으로 자동 교체하고,<br>2) 24시간 뒤에도 반응 없으면 텔레그램으로 알려줘.<br><br>전체 파이프라인을 감싸서<br>맥미니에서 백그라운드로 항상 돌아가게 세팅해줘.&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@quitting_time_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-09 12:41</span>
+                    <span class="reply-likes">❤️ 1</span>
+                </div>
+                <div class="reply-text">사용 방식에 따라 다릅니다.<br>하나의 AI로 전부 돌리면 비용이 많이 나갈 거고,<br>작업을 서브 단위로 쪼개서 시키고<br>기획만 직접 하면 훨씬 저렴합니다.<br><br>일을 시키는 방식과 분담하는 방식이 중요합니다</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@quitting_time_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-09 15:45</span>
+                    <span class="reply-likes">❤️ 2</span>
+                </div>
+                <div class="reply-text">궁금하신 분들 여기에 전자책 링크 열어둘게요.<br>관심 있으면 지금 보고 가세요 🙂<br><br>https://jino7957.crekit.io/l/deals/3jqe3ojx</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (1개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@creomorrow</span>
+            <span class="reply-date">2026-10-10 11:48</span>
+            
+        </div>
+        <div class="reply-text">결국 광고</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
