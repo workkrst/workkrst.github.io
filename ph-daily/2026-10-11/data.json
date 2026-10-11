@@ -1,0 +1,357 @@
+{
+ "date": "2026-10-11",
+ "collected_at": "2026-10-11 12:31 KST",
+ "summary": "2026년 10월 11일 프로덕트 헌트에서는 인공지능(AI)과 개발자 도구(Developer Tools) 카테고리가 강세를 보인 가운데, 검색 패러다임 변화에 대응하는 생성형 엔진 최적화(GEO)와 음성 후가공 품질 검증, 실시간 BI 대시보드 및 고속 의사결정 모델 등 AI 실무 파이프라인의 구체적 병목을 해결하는 전문 도구들이 상위권을 차지했습니다. 생성형 AI 추천 점유율을 높이는 ReSO AI, 고유명사 발음 오류를 단어 단위로 즉각 수정하는 Onepin, 실시간 쿼리 투명성을 갖춘 Claude Dashboards & Motion, 초고속 구조화 의사결정에 특화된 Microsoft-Decision-1과 함께 에어팟 착용을 물리적 집중 스위치로 전환하는 Mac 유틸리티 Cue가 주목을 받았습니다. 수집된 댓글에서는 단순한 생성 기능을 넘어 실제 프로덕션 워크플로와의 직접 연동(Premiere·DaVinci 플러그인, GA4 연동), 전체 재렌더링 없는 부분 수정 및 데이터 드리프트 감지 등 실무 적용 시의 신뢰성과 정밀 제어 가능성, 그리고 초기 스타트업을 위한 경량 요금제 지원 여부가 공통 핵심 화두로 다루어졌습니다.",
+ "notable": [
+  {
+   "slug": "reso",
+   "why": "기존 SEO를 넘어 ChatGPT와 Perplexity 등 생성형 AI 검색 답변에서 브랜드가 추천되도록 돕는 생성형 엔진 최적화(GEO) 솔루션으로 당일 최다 추천을 기록했습니다. 댓글에서는 400여 개 매개변수를 기반으로 한 우선순위 수정 과제 도출 로직과 함께, 초기 스타트업을 위한 가벼운 요금제 도입 일정 및 GA4 연동 지원 계획에 대한 실질적인 질의응답이 집중되었습니다."
+  },
+  {
+   "slug": "onepin",
+   "why": "30개 이상의 기존 음성 모델을 활용하면서 전체 음성을 재렌더링하지 않고 오발음된 고유명사나 숫자만 동일 음색으로 보정하는 독창적인 후가공 워크플로로 큰 호응을 얻었습니다. 댓글에서는 단어 수정 시의 크레딧 차감 로직과 Premiere·DaVinci 플러그인 개발 일정이 다루어졌으며, 100명 이상의 현업 인터뷰를 거치며 실무 제작 비용을 80% 절감했다는 창업자의 답변이 높은 공감을 이끌어냈습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "ReSO AI",
+   "tagline_en": "Get discovered & recommended when customers ask AI",
+   "tagline_kr": "고객이 AI에게 물어볼 때 발견되고 추천받을 수 있는 AI 엔진 최적화(GEO) 플랫폼",
+   "image": "https://ph-files.imgix.net/33f42573-56e1-48c0-af57-9a5f9a969a06.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Marketing automation platforms",
+    "SEO tools",
+    "GEO Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 366,
+   "comments_count": 26,
+   "maker": "Swati Paliwal(@swati_paliwal) 공동창업자, Mohit Gupta(@mohit_gupta138), Jonno Riekwel(@jonnotie)",
+   "price_model": "무료 체험 / 유료 구독 (Free / Paid)",
+   "price_detail": "기본 브랜드 AI 가시성 진단은 무료로 제공되며, 런칭 주간 가입자에게는 월 599달러 상당의 1개월 무료 이용 혜택이 제공됩니다. 이후 기업 규모 및 요구사항에 맞춘 유료 플랜이 적용되며 소규모 팀을 위한 라이트 플랜도 준비 중입니다.",
+   "desc_kr": "ReSO는 브랜드가 ChatGPT, Perplexity, Google AI Overviews 등 생성형 AI 검색 결과에서 추천 및 인용되도록 돕는 생성형 엔진 최적화(GEO) 플랫폼입니다. 기존 검색 엔진 최적화(SEO)에서 높은 순위를 차지하더라도 AI 추천 답변에서는 누락되는 기업들의 문제를 해결하기 위해 설계되었습니다. 단순 순위 모니터링을 넘어 구매자 질문 의도 분석, 경쟁사 가시성 비교, 240개 이상의 기술·콘텐츠 적격성 진단을 종합적으로 수행합니다. 이를 바탕으로 매주 우선순위가 지정된 사이트 기술 수정 과제와 AI 검색에 최적화된 연구 기반 콘텐츠를 자동으로 도출하여 실행을 지원합니다. 주간 단위 재검증을 통해 실제 추천 및 인용 점유율 개선 과정을 측정하며, 유기적 검색 채널을 통한 실질적인 고객 획득과 매출 성장을 견인합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/reso",
+   "comment_summary": "댓글에서는 AI 가시성 진단 후 실제 사이트 수정 작업의 자동화 수준과 우선순위 결정 로직, 초기 스타트업을 위한 활용 가능성 및 가격 정책에 대한 질문이 집중되었습니다. 메이커 측은 400개 이상의 매개변수를 기반으로 영향도 높은 수정안을 주간 단위로 추천하며 격주 사용자 미팅으로 가이드를 제공한다고 설명했습니다. 또한 스타트업에게도 AI 검색 노출 기회가 열려 있으며 GA4 및 서치 콘솔 연동, 소규모 기업을 위한 가벼운 요금제를 순차 출시할 예정이라고 덧붙였습니다.",
+   "warnings": "수치(업보트 366·댓글 26)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 및 토의 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Swati Paliwal",
+     "is_maker": true,
+     "text": "👋 Hey Product Hunt!\n\nI'm Swati, Co-founder of ReSO!\n\nHaving led marketing across B2B, B2C for 2 decades, organic has been my favorite revenue growth channel. Somewhere in the last two years I noticed my own buying behaviour change; every serious purchase started with a question to ChatGPT or Google AI. \n\nAnd when buyers ask AI \"which one should I choose?\" only 3-5 brands exist in the answer. In that moment every brand which is not in the answer loses a potential customer.\n\nThe problem: When we started auditing brands, we kept finding the same thing; companies ranking on page 1 of Google that were near-invisible in AI answers, losing recommendations to smaller competitors. And the tools out there mostly tell you that you're invisible. Very few tell you why. Almost none tell you what to do about it today.\n\nSo we built ReSO a custom agentic employee to own organic search growth channel, acquire customers & drive revenue:\n\n1️⃣ Discover: Find real questions your buyers ask AI, across every intent & funnel stage (discovery, comparisons, alternatives, \"best X for Y\"…).\n\n2️⃣ Measure: Runs the queries across ChatGPT, Perplexity & Google AI Overviews, and shows exactly where you're mentioned, cited, and recommended and where competitors beat you.\n\n3️⃣ Diagnose: Pinpoints the AI trust gaps behind every loss: a 240+ check audit of your technical eligibility, content readiness, and authority signals.\n\n4️⃣ Fix + Create: Turns those gaps into a prioritized weekly action plan & helps you execute it: technical fixes, page improvements, and new research-backed content engineered from real citation data.\n\n5️⃣ Track: Re-verifies every fix and tracks your visibility vs competitors week over week, so progress is measured, not assumed.\n\nWhat makes ReSO different: Most AI visibility tools stop at monitoring. We treat measurement as step one, not the product. The product is the movement from unmentioned, to cited, to recommended. ReSO is your company’s employee who takes ownership of results.\n\nWho its for: Founders, SEO & content teams, and agencies who can see search shifting and want a system & not another report to win it.\n\n🎁 For the PH community: Free AI visibility audit of your brand & 100% off one month access for launch-week signups worth USD 599\n\n🙏 Our ask: Honest feedback over upvotes. Tell me when your buyers ask AI about your category, do you know if you show up? Drop your site in the comments and I'll share what we find. I'll be here all day.\n\nBig shout-out to my small but relentless team who turned this from a spreadsheet obsession into a product and thank you @jonnotie, the PH team, and this community for the platform to share it.\n\n@shubhangi_goyal @aanchal_dahiya @dayal_punjabi",
+     "kr": "👋 Product Hunt 여러분 안녕하세요!\n\nReSO의 공동창업자 Swati입니다!\n\n지난 20년 동안 B2B와 B2C 분야의 마케팅을 이끌어오며 오가닉(유기적) 검색은 제가 가장 선호하는 매출 성장 채널이었습니다. 그런데 최근 2년 사이에 저 자신의 구매 행동이 바뀌고 있음을 깨달았습니다. 모든 진지한 구매가 ChatGPT나 Google AI에 질문하는 것으로 시작되더군요.\n\n그리고 구매자가 AI에게 \"어떤 제품을 선택해야 할까요?\"라고 물을 때, 답변에는 단 3~5개의 브랜드만 등장합니다. 그 순간 답변에 들지 못한 모든 브랜드는 잠재 고객을 잃게 됩니다.\n\n문제점: 기업 브랜드들을 진단하기 시작했을 때, 저희는 늘 같은 상황을 목격했습니다. Google 1페이지에 올라와 있는 회사들이 AI 답변에서는 거의 보이지 않고, 더 작은 경쟁사들에 추천 순위를 빼앗기고 있었습니다. 그리고 시중의 도구들은 대개 당신의 브랜드가 보이지 않는다는 '사실'만 알려줍니다. '왜' 그런지는 거의 알려주지 않으며, 오늘 당장 '무엇을 해야 하는지' 알려주는 도구는 사실상 없습니다.\n\n그래서 저희는 오가닉 검색 성장 채널을 주도하고 고객을 확보하며 매출을 창출하는 맞춤형 에이전트 직원인 ReSO를 구축했습니다:\n\n1️⃣ 발견(Discover): 탐색, 비교, 대안, \"Y를 위한 최고의 X\" 등 모든 의도와 퍼널 단계에서 구매자가 AI에게 묻는 실제 질문을 찾아냅니다.\n\n2️⃣ 측정(Measure): ChatGPT, Perplexity, Google AI Overviews에서 해당 쿼리를 실행하여 브랜드가 어디서 언급·인용·추천되고 있으며 경쟁사가 어디서 앞서고 있는지 정확히 보여줍니다.\n\n3️⃣ 진단(Diagnose): 추천에서 제외된 원인인 AI 신뢰 격차를 240가지 이상의 기술적 적격성, 콘텐츠 준비도, 권위 신호 감사를 통해 정확히 짚어냅니다.\n\n4️⃣ 수정 및 제작(Fix + Create): 이러한 격차를 우선순위가 지정된 주간 실행 계획으로 전환하고, 기술 수정·페이지 개선·실제 인용 데이터 기반의 연구 콘텐츠 제작 등 실행을 지원합니다.\n\n5️⃣ 추적(Track): 모든 개선 사항을 재검증하고 경쟁사 대비 가시성을 매주 추적하여 가정이 아닌 실제 측정된 성과를 보여줍니다.\n\nReSO만의 차별점: 대부분의 AI 가시성 도구는 모니터링에서 멈춥니다. 저희는 측정을 제품의 전부가 아닌 첫 단계로 봅니다. 진정한 제품 가치는 미언급 상태에서 인용, 그리고 '추천'으로의 도약에 있습니다. ReSO는 결과에 책임을 지는 귀사의 전담 직원입니다.\n\n대상: 검색 환경의 변화를 감지하고 단순한 보고서가 아니라 승리할 수 있는 시스템을 원하는 창업자, SEO 및 콘텐츠 팀, 대행사.\n\n🎁 PH 커뮤니티 전용 혜택: 브랜드 무료 AI 가시성 감사 제공 및 런칭 주간 가입자 대상 599달러 상당의 1개월 100% 무료 이용권 제공\n\n🙏 부탁드리는 점: 업보트보다는 솔직한 피드백을 원합니다. 고객이 해당 카테고리에 대해 AI에게 질문할 때 귀사 브랜드가 노출되고 있는지 알고 계신가요? 댓글로 사이트 주소를 남겨주시면 저희가 찾은 분석 결과를 공유해 드리겠습니다. 오늘 하루 종일 머물겠습니다.\n\n스프레드시트에 대한 집착을 멋진 제품으로 탄생시켜 준 작지만 끈기 있는 팀원들에게 감사하며, 제품을 알릴 기회를 준 @jonnotie와 PH 팀, 커뮤니티에 감사드립니다.\n\n@shubhangi_goyal @aanchal_dahiya @dayal_punjabi"
+    },
+    {
+     "author": "smitesh gambhir",
+     "is_maker": false,
+     "text": "@swati_paliwal congrats. many tools can identify visibility gaps. ReSo also promises to fix them. how does it decide which actions to prioritize and how much of the execution can happen without human intervention?",
+     "kr": "@swati_paliwal 축하합니다. 가시성 격차를 식별하는 도구는 많지만, ReSo는 이를 해결해 주겠다고 약속하고 있네요. 어떤 작업을 우선 처리할지 어떻게 결정하며, 사람의 개입 없이 실행 가능한 부분은 어느 정도인가요?"
+    },
+    {
+     "author": "Swati Paliwal",
+     "is_maker": true,
+     "text": "@smits_gambhir We have a list of >400 parameters, which have attributed priority and severity. So on a case to case basis ReSO recommends the fixes.\n\nHuman intervention is required to make the recommended changes on site. What ReSO does is tell you which issues to fix (week by week basis), why and how to fix them.\n\nAs a team we also have biweekly meetings with all our users to guide them through the process",
+     "kr": "@smits_gambhir 저희는 우선순위와 심각도가 지정된 400개 이상의 매개변수 목록을 보유하고 있습니다. 따라서 사례별 상황에 따라 ReSO가 맞춤 수정 사항을 추천합니다.\n\n사이트에 추천 변경 사항을 적용하는 데는 사람의 개입이 필요합니다. ReSO가 하는 일은 매주 어떤 문제를 왜, 어떻게 수정해야 하는지 알려주는 것입니다.\n\n또한 저희 팀은 모든 사용자를 위해 격주 미팅을 열어 전체 프로세스를 안내해 드리고 있습니다."
+    },
+    {
+     "author": "Emma Pugsley",
+     "is_maker": false,
+     "text": "Congratulations on the launch. ReSO AI sounds very comprehensive, and is being launched at a great time. I read some stats recently (from Adobe) that found e-commerce shoppers who start in AI search convert 23% more, stay on site 20% longer, and return fewer items. Who are you targeting? I think there’s a great opportunity for small brands to compete in AI search like they can’t with SEO, but your pricing seems more aimed at larger brands.",
+     "kr": "출시를 축하합니다. ReSO AI는 매우 종합적으로 보이며 정말 시의적절하게 출시되었네요. 최근 읽은 통계(Adobe 자료)에 따르면 AI 검색으로 유입된 이커머스 구매자는 전환율이 23% 더 높고, 사이트 체류 시간이 20% 더 길며, 반품률도 낮다고 합니다. 어떤 고객층을 타깃으로 하시나요? 소규모 브랜드가 기존 SEO에서는 불가능했던 방식으로 AI 검색에서 경쟁할 큰 기회가 있다고 보는데, 가격 정책은 대기업을 겨냥한 것처럼 보입니다."
+    },
+    {
+     "author": "Swati Paliwal",
+     "is_maker": true,
+     "text": "@you_x_you_i I agree to the heart of the stats. The traffic that converts via AI search is high intent. And yes, AI search has made it possible for realtively smaller brands to make their mark.\n\nAs for the pricing, we aim to come with lighter plans for small scale companies as well. Stay tuned for same.",
+     "kr": "@you_x_you_i 통계의 핵심에 전적으로 동의합니다. AI 검색을 통해 전환되는 트래픽은 구매 의도가 매우 높습니다. 그리고 말씀하신 대로 AI 검색 덕분에 상대적으로 작은 브랜드도 충분히 존재감을 드러낼 수 있게 되었습니다.\n\n가격 책정과 관련해서는, 소규모 기업을 위한 더 가벼운 요금제 플랜도 선보일 예정입니다. 기대해 주세요."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "💡 Bright idea\n\nIs there integration between ReSO and GA4/ Search Console where traffic that is driven by AI appears alongside other traffic?  \nBtw, Congratulations @swati_paliwal , @mohit_gupta138 and team ReSO AI 🎊🔼✌️",
+     "kr": "💡 훌륭한 아이디어네요\n\nAI를 통해 유입된 트래픽이 다른 일반 트래픽과 함께 표시될 수 있도록 ReSO와 GA4 및 Search Console 간의 연동이 지원되나요?  \n그나저나 @swati_paliwal 님, @mohit_gupta138 님, 그리고 ReSO AI 팀 모두 축하드립니다 🎊🔼✌️"
+    },
+    {
+     "author": "Swati Paliwal",
+     "is_maker": true,
+     "text": "@mohit_gupta138   Yes. The feature is not live yet though. Expect the same next month.",
+     "kr": "@mohit_gupta138 네 맞습니다. 해당 기능은 아직 라이브되지는 않았지만, 다음 달 중으로 제공될 예정입니다."
+    },
+    {
+     "author": "Abhishek Jha",
+     "is_maker": false,
+     "text": "This looks promising. Kudos!\n\nJust a question for the makers: is ReSO primarily designed for brands with existing SEO presence, or can early stage startups use it to build visibility from scratch?",
+     "kr": "전망이 밝아 보이네요. 응원합니다!\n\n메이커분들께 질문이 하나 있습니다. ReSO는 주로 기존에 SEO 입지를 갖춘 브랜드를 위해 설계되었나요, 아니면 초기 스타트업도 맨 처음부터 가시성을 구축하는 데 활용할 수 있나요?"
+    },
+    {
+     "author": "Mohit Gupta",
+     "is_maker": true,
+     "text": "@abhishek_jha2 AI search has in fact given startups a better chance of being visible to their prospective users.  \nSo yes, ReSO is built for startups as well (though they will have to move fast in fixes and content) as they have a lower crawl budget from the search crawlers",
+     "kr": "@abhishek_jha2 AI 검색은 실제로 스타트업이 잠재 사용자에게 노출될 수 있는 더 좋은 기회를 열어주었습니다.  \n따라서 네, ReSO는 스타트업을 위해서도 구축되었습니다(다만 검색 크롤러의 크롤링 예산이 적기 때문에 수정과 콘텐츠 제작을 빠르게 진행해야 합니다)."
+    },
+    {
+     "author": "Owais Khan",
+     "is_maker": false,
+     "text": "Congrats @swati_paliwal on the launch, for most of the AI visibility tools I noticed they share lot of data and thesis but lacks in specific actions. How you guys are solving it?",
+     "kr": "출시를 축하합니다 @swati_paliwal 님. 대부분의 AI 가시성 도구들을 보면 방대한 데이터와 이론만 늘어놓고 구체적인 실행 방안이 부족하던데, 여러분은 이 문제를 어떻게 해결하고 계신가요?"
+    },
+    {
+     "author": "Swati Paliwal",
+     "is_maker": true,
+     "text": "@owais_khan22 That's our core. The data and all is the base of the actual actions. ReSO gives you 8 onsite fixes every week, week on week and 2 ready-to-publish content pieces.\n\nThe fixes are sorted by priority as for most impact and the content is based on the gaps as cited by the 'data’ and based on fresh secondary research and are fully AI search optimised.",
+     "kr": "@owais_khan22 그것이 바로 저희의 핵심입니다. 데이터는 실제 행동을 위한 기반일 뿐입니다. ReSO는 매주 지속적으로 8가지 사이트 내 수정 과제와 즉시 발행 가능한 콘텐츠 2편을 제공합니다.\n\n수정 사항은 영향도가 가장 큰 순서로 정렬되며, 콘텐츠는 '데이터'에 나타난 공백과 새로운 2차 조사를 바탕으로 AI 검색에 완벽히 최적화되어 제작됩니다."
+    },
+    {
+     "author": "Mohit Gupta",
+     "is_maker": true,
+     "text": "@bengeekly ReSO has a list of >400 parameters that are marked by priority and severity and it is not decided by AI arbitrarily. A lot of it is through the team's experience in the field since years.  \nSo seeing the specific or in many cases a combination of factors that might be broken, ReSO decides the priority",
+     "kr": "@bengeekly ReSO에는 우선순위와 심각도가 매겨진 400개 이상의 매개변수 목록이 있으며, 이는 AI가 임의로 결정하는 것이 아닙니다. 상당 부분은 수년간 현장에서 쌓은 저희 팀의 경험을 반영하고 있습니다.  \n따라서 문제가 발생한 특정 요소 또는 복합 요인을 파악하여 ReSO가 우선순위를 결정하게 됩니다."
+    }
+   ],
+   "slug": "reso",
+   "website": "https://www.resollm.ai/"
+  },
+  {
+   "name": "Onepin",
+   "tagline_en": "AI voiceover with every name, price and date said right",
+   "tagline_kr": "이름, 가격, 날짜까지 정확하게 발음하는 고품질 AI 보이스오버",
+   "image": "https://ph-files.imgix.net/25268265-e582-4351-8a6e-1f94e6959d71.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Voice AI Tools",
+    "Developer Tools",
+    "Artificial Intelligence",
+    "Audio"
+   ],
+   "upvotes": 353,
+   "comments_count": 47,
+   "maker": "Soohyun Bae(@soohyun, 창업자) · 헌터: Rohan Chaubey(@rohanrecommends)",
+   "price_model": "무료 체험 옵션 (Free Options) / 20% 할인 프로모션",
+   "price_detail": "신용카드 등록 없이 홈페이지에서 무료로 1개 문장을 테스트해볼 수 있으며, 10월 31일까지 Product Hunt 런칭 기념 20% 할인 코드가 제공됩니다. 세부 플랜은 onepin.ai/pricing에서 제공됩니다.",
+   "desc_kr": "Onepin은 텍스트 음성 변환(TTS) 이후 단계에서 고유명사, 숫자, 날짜 등의 발음 오류를 정밀 검증하고 보정해 주는 AI 보이스오버 후가공 플랫폼입니다. ElevenLabs, OpenAI, Google 등 기존에 사용 중인 30개 이상의 AI 음성 모델을 그대로 활용하면서 스크립트의 발음 정확도를 극대화합니다. 400만 단어 규모의 발음 사전을 기반으로 브랜드명, 의약품 명칭, 외래어 발음을 사전 점검하고 자연스러움과 명료도를 자동 채점합니다. 오발음된 단어만을 감지하여 전체 음성을 다시 렌더링하지 않고 동일한 음색으로 틀린 단어만 즉각 교체하는 고유 수정 기능을 지원합니다. 다국어 제품 비디오, 광고, 오디오북, 온라인 강좌 등 대규모 보이스오버 제작 시 작업 시간을 대폭 단축하고 제작 비용을 최대 80% 절감합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/onepin",
+   "comment_summary": "댓글에서는 영상 편집 도구인 Premiere나 DaVinci Resolve 플러그인 지원 여부, 수정 작업 시 크레딧 차감 방식, 다국어 지원 범위 및 발음 사전 커스텀 기능에 대한 질문이 집중되었습니다. 창업자 Soohyun Bae는 단어 재렌더링 대신 오류 부분만 직접 수정하는 모델 구조를 강조하며 현재 10개 언어를 지원하고 곧 30개로 확장할 계획이라고 설명했습니다. 또한 영상 제작사들과의 실제 협업 사례를 언급하며 편집기 연동 플러그인과 성능 벤치마크 공개 일정을 발표해 호응을 얻었습니다.",
+   "warnings": "수치(업보트 353·댓글 47)는 수집 시점 참고치. 수집된 1페이지 댓글 중 주요 질의응답 12개를 선별하여 수집 완료.",
+   "comments": [
+    {
+     "author": "Soohyun Bae",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 SB here, founder of Onepin. Thanks @rohanrecommends for hunting us.  \n  \nA great AI voice reads \"Porsche Taycan\" as TAY-can. Porsche says TIE-kahn. It guessed from the spelling, and nobody caught it, because nobody listens to line 1,200.  \n  \nWe spent two years at Podonos measuring how AI voices sound, with 150,000 human listeners doing the rating. The models solved delivery. What kept failing was names, prices and dates, and the only check most teams run is a person with headphones.  \n  \nToday we're launching Onepin, the production step after text-to-speech. It runs on the voices you already use, ElevenLabs, OpenAI, Google and 30+ more, and checks every line before it ships.  \n  \nHere is what it does to every script:  \n🔢 Spells out prices, dates and abbreviations before the voice reads them.  \n📖 Checks names, brands and drug terms against a 4-million-word pronunciation dictionary.  \n📊 Scores every line for naturalness, clarity, word accuracy and pronunciation, against a bar you set.  \n🔧 Fixes the one wrong word in the same voice, without re-rendering the take.  \n  \nTwo decisions we made on purpose. Onepin checks how a name was said, not just what the transcript spells. And there is no box where you type phonetic spellings: the dictionary and the fix do that work, so your script stays as written.  \n  \nBuilt for anyone shipping AI voiceover at volume: product videos, ads, explainers, dubbing, audiobooks, courses, and platforms that put a voice in front of millions of users. API, SDK and MCP from day one. SOC 2 Type II.  \n  \nYou keep your voice. Onepin makes sure it says the right words.  \n  \nFree to start, no card: onepin.ai. You can run one line on the homepage without an account.  \n  \nTry it and tell me what's missing, here or at sb@onepin.ai. We'll be in the comments all day, answering questions and running your lines. 🚀  \n  \n🎁 LAUNCH SPECIAL: 20% off for Product Hunt users through October 31. The code is under the 20% off badge above.  \n  \nOne question for you: what's the word your AI voice keeps getting wrong? Run it on onepin.ai (free, no card), switch the run to shareable, and paste the link below so everyone can hear the before and after. I'll reply to every one. No time to sign up? Drop the word and I'll run a few today.",
+     "kr": "Product Hunt 여러분 안녕하세요 👋 Onepin의 창업자 SB(Soohyun Bae)입니다. 저희를 헌팅해 주신 @rohanrecommends 님께 감사드립니다.  \n  \n아무리 뛰어난 AI 음성이라도 \"Porsche Taycan\"을 '테이칸'으로 잘못 읽곤 합니다. 포르쉐는 '타이칸'이라고 발음하죠. 철자만 보고 추측했기 때문인데, 1,200번째 줄까지 귀로 일일이 듣는 사람이 없어서 아무도 잡아내지 못합니다.  \n  \n저희는 Podonos에서 15만 명의 사람 평가단과 함께 2년 동안 AI 음성의 소리를 측정했습니다. 모델들은 음성 전달력은 해결했습니다. 하지만 끊임없이 실패했던 것은 이름, 가격, 날짜였고, 대부분의 팀이 수행하는 유일한 검수는 헤드폰을 쓴 사람 한 명이 전부였습니다.  \n  \n오늘 저희는 텍스트 음성 변환(TTS) 이후의 제작 단계인 Onepin을 출시합니다. ElevenLabs, OpenAI, Google 및 30개 이상의 기존에 사용 중인 음성 모델 위에서 구동되며, 배포 전 모든 문장을 검사합니다.  \n  \n모든 스크립트에 대해 수행하는 작업은 다음과 같습니다:  \n🔢 음성이 읽기 전에 가격, 날짜 및 약어를 명확하게 풀어씁니다.  \n📖 400만 단어 규모의 발음 사전을 기반으로 인명, 브랜드 및 의약품 용어를 검증합니다.  \n📊 사용자가 설정한 기준에 맞춰 각 줄의 자연스러움, 명료도, 단어 정확도 및 발음을 채점합니다.  \n🔧 전체를 다시 렌더링하지 않고 동일한 음색으로 틀린 단어 하나만 수정합니다.  \n  \n저희가 의도적으로 내린 두 가지 결정이 있습니다. Onepin은 스크립트 철자뿐만 아니라 이름이 '어떻게 발음되었는지'를 확인합니다. 그리고 발음 기호를 직접 입력하는 입력창이 없습니다. 사전과 수정 기능이 이를 대신 처리하므로 원본 스크립트를 그대로 유지할 수 있습니다.  \n  \n제품 영상, 광고, 설명 영상, 더빙, 오디오북, 온라인 강좌 등 대규모 AI 보이스오버를 제작하거나 수백만 사용자에게 음성을 제공하는 플랫폼을 위해 제작되었습니다. 첫날부터 API, SDK, MCP를 지원하며 SOC 2 Type II 인증을 받았습니다.  \n  \n기존 음성은 그대로 유지하세요. Onepin이 올바른 단어를 말하도록 보장합니다.  \n  \n카드 등록 없이 무료로 시작하세요: onepin.ai. 계정 없이도 홈페이지에서 한 줄을 바로 테스트해 볼 수 있습니다.  \n  \n사용해 보시고 부족한 점이 있다면 여기 댓글이나 sb@onepin.ai로 알려주세요. 오늘 하루 종일 머물며 질문에 답변하고 여러분의 스크립트를 테스트해 드리겠습니다. 🚀  \n  \n🎁 런칭 스페셜: 10월 31일까지 Product Hunt 사용자에게 20% 할인 혜택을 드립니다. 코드는 위 20% 할인 배지 아래에서 확인할 수 있습니다.  \n  \n여러분께 한 가지 여쭙고 싶습니다: 여러분의 AI 음성이 계속 틀리게 발음하는 단어는 무엇인가요? onepin.ai(무료, 카드 불필요)에서 테스트하고 공유 링크로 전환한 뒤 아래에 붙여넣어 전후 비교를 들려주세요. 모든 댓글에 답변드리겠습니다. 가입할 시간이 없으신가요? 단어만 남겨주시면 오늘 몇 가지 직접 테스트해 드리겠습니다."
+    },
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "@soohyun Many congratulations Soohyun on the Onepin launch! 😊\n\nHow I met the maker: I met the maker through a Product Hunt friend, who asked whether I’d be interested in checking out and hunting the product. The moment I saw Onepin’s landing page, I knew I wanted to hunt it, it was addressing a very real and often overlooked pain point.\n\nWhat is Onepin: Onepin is a production layer for AI text-to-speech. It works with voices you already use, including ElevenLabs, OpenAI, Google, and 30+ others, and reviews every line before you ship it.\n\nIt spells out prices, dates, and abbreviations correctly, checks names, brands, and specialized terms, scores each line, and fixes mistakes in the same voice without leaving the page or re-rendering the entire take. That combination is what makes it unique.\n\nWhy I endorse it: AI voices can sound great, but one mispronounced name, price, or date can undermine an otherwise polished video, course, ad, or voice agent. Onepin turns that manual, error-prone review process into a scalable quality check.\n\nThe product is clearly already getting attention, one friend even told me I should hunt it after seeing it on social media, not realizing I already had. 😄",
+     "kr": "@soohyun 수현 님, Onepin 출시를 진심으로 축하드립니다! 😊\n\n메이커를 알게 된 계기: Product Hunt 친구를 통해 제품을 살펴보고 헌팅할 관심이 있는지 소개받았습니다. Onepin의 랜딩 페이지를 본 순간, 매우 현실적이면서도 자주 간과되는 문제점을 해결하고 있어 바로 헌팅하고 싶다는 확신이 들었습니다.\n\nOnepin 소개: Onepin은 AI 텍스트 음성 변환을 위한 프로덕션 레이어입니다. ElevenLabs, OpenAI, Google 및 기타 30개 이상의 기존 음성과 호환되며 배포 전 모든 문장을 검토합니다.\n\n가격, 날짜 및 약어를 올바르게 풀어쓰고, 이름, 브랜드, 전문 용어를 검증하며 각 문장을 채점하고 페이지를 벗어나거나 전체를 재렌더링하지 않고 동일한 음색으로 오류를 바로잡습니다. 이러한 조합이 차별점입니다.\n\n추천하는 이유: AI 음성은 훌륭하게 들릴 수 있지만 잘못 발음된 이름, 가격, 날짜 하나가 잘 다듬어진 비디오, 강좌, 광고, 음성 에이전트의 완성도를 해칠 수 있습니다. Onepin은 오류가 발생하기 쉬운 수동 검수 과정을 확장 가능한 품질 검사로 바꿔줍니다.\n\n소셜 미디어에서 제품을 본 친구가 제가 이미 헌팅한 줄도 모르고 헌팅을 추천할 정도로 이미 많은 관심을 받고 있습니다. 😄"
+    },
+    {
+     "author": "Soohyun Bae",
+     "is_maker": true,
+     "text": "@rohanrecommends Awesome. Thank you for hunting Onepin. It is a real problem in the industry, we are solving this in a practical way, saves 80% of voice AI cost in production.",
+     "kr": "@rohanrecommends 멋집니다. Onepin을 헌팅해 주셔서 감사합니다. 이는 업계의 실질적인 문제이며, 저희는 이를 실용적으로 해결하여 프로덕션 음성 AI 비용을 80% 절감하고 있습니다."
+    },
+    {
+     "author": "Aryan Thakor",
+     "is_maker": false,
+     "text": "@rohanrecommends  @soohyun I tried it out, as was looking for voice models for my product. Can I preview the voice by entering my script on the platform itself? or it's available for APIs only as of now?  \nsecond, does it detect the expressions like [breath],[pause], and so on.  \n  \nCongrats for the launch!",
+     "kr": "@rohanrecommends @soohyun 제 제품에 사용할 음성 모델을 찾고 있어서 직접 사용해 보았습니다. 플랫폼 자체에서 스크립트를 입력하여 음성을 미리 들어볼 수 있나요, 아니면 현재는 API로만 사용 가능한가요?  \n두 번째로, [숨소리], [일시정지] 같은 감정 표현도 감지할 수 있나요?  \n  \n출시 축하드립니다!"
+    },
+    {
+     "author": "Soohyun Bae",
+     "is_maker": true,
+     "text": "@rohanrecommends  @aryan_thakore Under Voice tab, you can type \"best voice for <YOUR PRODUCT>\", or ask Quincy \"Find the best voice for <YOUR PRODUCT> here is my script: ...\", you can see the relevant voices. Once you find the voice, build a template of the workflow, and you can reuse the workflow via API.\n\nCurrently it doesn't detect paralinguistics yet, it is under our roadmap. We have been focusing on pronunciations. Paralinguistics are on our roadmap.",
+     "kr": "@rohanrecommends @aryan_thakore Voice 탭에서 \"best voice for <귀하의 제품>\"을 입력하거나, Quincy에게 \"내 스크립트는 다음과 같으니 제품에 가장 적합한 음성을 찾아줘: ...\"라고 요청하면 관련 음성을 확인할 수 있습니다. 음성을 찾은 후 워크플로 템플릿을 생성하면 API를 통해 해당 워크플로를 재사용할 수 있습니다.\n\n현재는 준언어적 표현(paralinguistics)까지는 감지하지 않지만 로드맵에 포함되어 있습니다. 지금까지는 발음에 집중해 왔으며 준언어적 표현 감지는 차후 추가될 예정입니다."
+    },
+    {
+     "author": "Sandy Diao",
+     "is_maker": false,
+     "text": "​does it integrate directly into Premiere or DaVinci via a plugin or is it web dashboard only for now?",
+     "kr": "Premiere나 DaVinci에 플러그인 형태로 직접 연동되나요, 아니면 현재는 웹 대시보드로만 지원되나요?"
+    },
+    {
+     "author": "Soohyun Bae",
+     "is_maker": true,
+     "text": "@sandy_leventh Amazing question. We support API, SDK, and MCP, but Onepin is not integrated with them yet. We are in the development of the plugins for Premiere and DaVinci, so you can soon enjoy the benefits of Onepin without an hassle.",
+     "kr": "@sandy_leventh 훌륭한 질문입니다. 현재 API, SDK, MCP를 지원하지만 해당 편집기들과 직접 연동되지는 않았습니다. 현재 Premiere 및 DaVinci 전용 플러그인을 개발 중이므로 곧 번거로움 없이 Onepin의 기능을 활용하실 수 있을 것입니다."
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "Which experience inspired you to create this tool: some particular name that got mispronounced during an actual project? It would be great to know the backstory!  \nBtw, Congratulations @soohyun and @rohanrecommends ✌️",
+     "kr": "어떤 경험에서 영감을 받아 이 도구를 만들게 되셨나요? 실제 프로젝트에서 특정 이름이 잘못 발음되었던 경험 때문인가요? 비하인드 스토리가 궁금합니다!  \n그나저나 @soohyun 님과 @rohanrecommends 님 축하드립니다 ✌️"
+    },
+    {
+     "author": "Soohyun Bae",
+     "is_maker": true,
+     "text": "@rohanrecommends  @aymi_malik First of all, my name :-) I have never seen any AI speaks my name correctly. Maybe an exception. Tried tones of names including well-known brand, product, musicians, addresses, medications, treatments etc, many of them failed. It is not just an exception, it is a blocker for the industry to use AI voice in practice. Talked with 100+ users, >92% of them experienced issues, re-generate 2x-9x, or bring human voice actor to fix. For ads, movies, and marketing contents, it is even more serious. So we built Onepin.",
+     "kr": "@rohanrecommends @aymi_malik 우선 제 이름 때문입니다 :-) 제 이름을 제대로 발음하는 AI를 본 적이 없습니다. 예외일 수도 있겠지만요. 유명 브랜드, 제품, 음악가, 주소, 의약품, 치료법 등 수많은 이름을 테스트해 보았는데 대부분 실패했습니다. 이는 단순한 예외가 아니라 업계에서 AI 음성을 실무에 도입하는 데 큰 걸림돌입니다. 100명 이상의 사용자와 대화해 본 결과 92% 이상이 문제를 겪었고 2~9번씩 재생성하거나 성우를 섭외해 수정하고 있었습니다. 광고, 영화, 마케팅 콘텐츠에서는 문제가 훨씬 심각합니다. 그래서 저희가 Onepin을 만들었습니다."
+    },
+    {
+     "author": "Rohit Kushwaha",
+     "is_maker": false,
+     "text": "@soohyun Great to see a tool that focuses on accuracy, not just voice quality. Does it support multiple languages?",
+     "kr": "@soohyun 음질뿐만 아니라 정확도에 초점을 맞춘 도구를 보게 되어 반갑습니다. 다국어도 지원하나요?"
+    },
+    {
+     "author": "Soohyun Bae",
+     "is_maker": true,
+     "text": "@rohit62661 You are right, many of them are natural with minimal noise. Onepin supports 10 locales now, will expand to 30. Which languages are critical for your use case?",
+     "kr": "@rohit62661 맞습니다. 대부분 노이즈 없이 자연스럽게 들리죠. Onepin은 현재 10개 언어권을 지원하며 곧 30개로 확장할 예정입니다. 어떤 언어가 귀하의 활용 사례에 가장 중요하신가요?"
+    },
+    {
+     "author": "Adams Parker",
+     "is_maker": false,
+     "text": "​am super curious about the pricing logic,does fixing one word count as a full re render credit or just a fraction?",
+     "kr": "가격 책정 로직이 정말 궁금합니다. 단어 하나를 수정할 때 전체 재렌더링 크레딧으로 차감되나요, 아니면 일부만 차감되나요?"
+    }
+   ],
+   "slug": "onepin",
+   "website": "https://onepin.ai/"
+  },
+  {
+   "name": "Claude Dashboards & Motion",
+   "tagline_en": "Ask Claude for live dashboards and animated explainers",
+   "tagline_kr": "Claude에게 실시간 대시보드와 애니메이션 설명 영상 생성을 요청하세요",
+   "image": "https://ph-files.imgix.net/a2c58e1b-b795-4efd-9d7e-f35bdacd2a8a.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Video editing",
+    "Business intelligence software",
+    "Analytics",
+    "Artificial Intelligence",
+    "Animation"
+   ],
+   "upvotes": 212,
+   "comments_count": 4,
+   "maker": "Mike Krieger(@mike_krieger), Kevin Garcia(@kevin_garcia1) (팀: Anthropic) · 헌터: KP(@thisiskp_)",
+   "price_model": "유료 플랜 필요 (Payment Required)",
+   "price_detail": "Dashboards는 Claude 유료 플랜(Pro 등)에서 이용 가능하며, Motion 기능은 Team 및 Enterprise 플랜에서 제공됩니다.",
+   "desc_kr": "Claude Dashboards와 Claude Motion은 Anthropic이 Claude에 새롭게 추가한 인터랙티브 베타 아티팩트(Artifacts) 기능입니다. Dashboards는 BigQuery, Snowflake, Databricks, Redshift, ClickHouse, Salesforce 등의 데이터 웨어하우스와 연동하여 일상 언어로 질문하면 실시간 데이터가 반영되는 라이브 대시보드를 생성합니다. 모든 차트와 수치 뒤에 실제 실행 쿼리가 투명하게 공개되어 데이터 팀의 별도 지원 없이도 신뢰성 있는 비즈니스 분석이 가능합니다. Motion은 분석 보고서나 설명 자료를 코드로 작성된 짧은 애니메이션으로 변환해 주며 단어, 수치, 타이밍을 자유롭게 수정한 뒤 MP4 파일로 내보낼 수 있습니다. 대시보드는 Hex, PostHog, Sigma 등으로 전송할 수 있고 애니메이션은 Runway, Descript, Adobe 등 외부 편집 도구로 손쉽게 내보낼 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/claude-dashboards-motion",
+   "comment_summary": "댓글에서는 일반적인 비디오 생성 모델과 달리 코드를 기반으로 텍스트와 타이밍을 직접 수정할 수 있는 Motion 기능의 유연성에 관심이 모였습니다. 외부에 소스코드를 직접 노출하여 편집할 수 있는지에 대한 질문에 헌터 KP는 현재는 지원하지 않는 것으로 보인다고 답변했습니다. 또한 별도의 BI 도구 없이 거대 데이터 웨어하우스에 직접 연결해 쿼리를 검증할 수 있는 직관성과 스키마 변경 시의 대응 방식에 대한 문의가 이어졌습니다.",
+   "warnings": "수치(업보트 212·댓글 4)는 수집 시점 참고치. 수집된 마크다운 내 등록된 댓글 전체 수집 완료.",
+   "comments": [
+    {
+     "author": "KP",
+     "is_maker": false,
+     "text": "Hey PH community 👋  \n  \nExcited to hunt Claude Dashboards and Claude Motion today.  \n  \nAnthropic just added two new beta artifacts to Claude. Dashboards turns your company data into live dashboards, and Motion turns your reports and ideas into short animated explainers you can export as an MP4. Anthropic says every chart shows the query behind it and every animation is built as code you can edit. Claude posted a short look at both on X here.  \n  \nHere's some examples from the community:  \nhttps://x.com/drewfallon12/status/2108335303102537835  \nhttps://x.com/adilinthewild/status/2108311819660177652  \nhttps://x.com/robertiuoras/status/2108435489619415500  \n  \nLive dashboards are the part I'm most excited about. You connect a data platform like BigQuery, Snowflake or Databricks, ask a question in plain language, and Claude builds a dashboard that stays current as the data changes. You can click any number to see the query behind it, so a quick question about this week's signups doesn't have to wait on a ticket to the data team.  \n  \nCode based animation is the other one I'd test first. Motion doesn't use a video generation model. Claude writes code that animates your own text, charts, shapes and images, so you can change a single word, number or timing and the rest of the animation stays as it was.  \n  \nWhen you need more, you can send a dashboard to tools like Hex, PostHog or Sigma, or open an animation in Runway, Descript or Adobe.  \n  \nYou can try it in Claude right now: https://claude.ai  \nGive it a spin and let the team know what you create with Claude Dashboards and Claude Motion 🚀  \n  \nPS: Tagging @mike_krieger and @kevin_garcia1",
+     "kr": "PH 커뮤니티 여러분 안녕하세요 👋  \n  \n오늘 Claude Dashboards와 Claude Motion을 헌팅하게 되어 정말 기쁩니다.  \n  \nAnthropic이 Claude에 두 가지 새로운 베타 아티팩트를 추가했습니다. Dashboards는 회사 데이터를 실시간 대시보드로 변환해 주며, Motion은 보고서와 아이디어를 MP4로 내보낼 수 있는 짧은 애니메이션 설명 영상으로 만들어 줍니다. Anthropic에 따르면 모든 차트 뒤에는 실행 쿼리가 표시되고 모든 애니메이션은 직접 편집할 수 있는 코드로 생성됩니다. Claude의 공식 X 계정에서도 둘의 소개 영상을 확인할 수 있습니다.  \n  \n커뮤니티의 몇 가지 활용 예시입니다:  \nhttps://x.com/drewfallon12/status/2108335303102537835  \nhttps://x.com/adilinthewild/status/2108311819660177652  \nhttps://x.com/robertiuoras/status/2108435489619415500  \n  \n실시간 대시보드는 제가 가장 기대하는 부분입니다. BigQuery, Snowflake, Databricks와 같은 데이터 플랫폼을 연결하고 일상 언어로 질문하면 Claude가 데이터 변경에 따라 최신 상태를 유지하는 대시보드를 만들어 줍니다. 숫자를 클릭하면 그 뒤에 있는 쿼리를 확인할 수 있어, 이번 주 가입자 수에 대한 간단한 질문 때문에 데이터 팀에 티켓을 넣고 기다릴 필요가 없습니다.  \n  \n코드 기반 애니메이션도 가장 먼저 테스트해 보고 싶은 기능입니다. Motion은 비디오 생성 모델을 사용하지 않습니다. Claude가 사용자의 텍스트, 차트, 도형, 이미지를 애니메이션화하는 코드를 작성하므로, 단어 하나나 숫자, 타이밍을 바꾸더라도 나머지 애니메이션은 그대로 유지됩니다.  \n  \n더 많은 기능이 필요할 때는 대시보드를 Hex, PostHog, Sigma 같은 도구로 내보내거나 애니메이션을 Runway, Descript, Adobe에서 열어 작업할 수 있습니다.  \n  \n지금 바로 Claude에서 체험해 보실 수 있습니다: https://claude.ai  \n직접 사용해 보시고 Claude Dashboards와 Motion으로 만든 멋진 작업물들을 공유해 주세요 🚀  \n  \n추신: @mike_krieger 님과 @kevin_garcia1 님을 태그합니다."
+    },
+    {
+     "author": "Nick Launches",
+     "is_maker": false,
+     "text": "Congrats on the launch KP!  \n  \nCurious whether Motion exposes the source so you can keep editing outside Claude?",
+     "kr": "KP 님, 출시를 축하합니다!  \n  \nMotion에서 소스 코드를 공개하여 Claude 외부에서도 계속 편집할 수 있는지 궁금합니다."
+    },
+    {
+     "author": "KP",
+     "is_maker": false,
+     "text": "@nicklaunches I don’t think so!",
+     "kr": "@nicklaunches 현재는 그렇지 않은 것으로 알고 있습니다!"
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Turning a plain language question into a live dashboard that refreshes as the data changes, with the query visible behind every number, is what makes this trustworthy for real analysis. Connecting to BigQuery, Snowflake and the rest without a separate BI tool is a nice simplification. How do you handle a dashboard when someone changes the underlying table schema?",
+     "kr": "일상적인 자연어 질문을 실시간으로 갱신되는 라이브 대시보드로 변환하고 모든 수치 뒤에 쿼리를 확인할 수 있다는 점이 실제 데이터 분석에서 높은 신뢰를 주는 부분입니다. 별도의 BI 도구 없이 BigQuery, Snowflake 등에 바로 연결되는 것도 훌륭한 단순화네요. 기본 테이블 스키마가 변경될 경우 대시보드는 어떻게 처리되나요?"
+    }
+   ],
+   "slug": "claude-dashboards-motion",
+   "website": "https://claude.com/resources/articles/dashboards-and-motion"
+  },
+  {
+   "name": "Microsoft-Decision-1",
+   "tagline_en": "Microsoft’s decision model for agents and workflows",
+   "tagline_kr": "에이전트 및 자동화 워크플로를 위한 마이크로소프트의 의사결정 특화 모델",
+   "image": "https://ph-files.imgix.net/9c943c9c-4130-4fab-9f3c-12ff51556463.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Foundation Models",
+    "LLM Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 145,
+   "comments_count": 3,
+   "maker": "Microsoft (헌터: Rohan Chaubey(@rohanrecommends))",
+   "price_model": "무료 옵션 제공 (Free Options) / 종량제 과금 (Usage-based)",
+   "price_detail": "Microsoft Foundry에서 입력 토큰 100만 개당 $0.042의 요금으로 이용 가능하며, 출력 토큰은 무료로 제공됩니다. 향후 OpenRouter에서도 지원될 예정입니다.",
+   "desc_kr": "Microsoft-Decision-1은 긴 텍스트 생성 대신 라우팅, 분류, 우선순위 지정, 검증 등 명확한 의사결정에 특화된 마이크로소프트의 경량 파운데이션 모델입니다. 상황과 선택지가 주어지면 단 한 번의 패스로 보정된 확률값(Calibrated Probability)을 구조화된 출력으로 반환하여 소프트웨어가 즉시 다음 동작을 실행할 수 있도록 합니다. Qwen3.5-9B를 기반으로 사후 학습되었으며, 중앙값 지연 시간 기준 GPT-6 Sol 대비 약 35배 빠른 속도와 압도적인 비용 절감을 실현했습니다. 입력 문구의 패러프레이징이나 선택지 순서 셔플에도 1.3% 미만의 일관된 결정을 유지하며 5,250건 이상의 안전성 벤치마크를 통과했습니다. 에이전트 제어, 모델 라우팅, 데이터 라벨링, 인시던트 분류, 코드 스캔 등 다양한 고속 자동화 시스템의 제어 계층으로 활용 가능합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/microsoft-decision-1",
+   "comment_summary": "댓글에서는 TypeSafe AI의 Jev 모델과 동일한 100만 토큰당 $0.042라는 파격적인 가격 책정과 약 2.8배 빠른 연산 속도에 주목했습니다. 한편 프로덕션 환경의 데이터 분포 변화에 따른 확률 보정값 왜곡 현상(Calibration Drift)을 실시간으로 감지하고 모니터링할 수 있는 방안에 대한 심도 있는 우려와 질문이 제기되었습니다.",
+   "warnings": "수치(업보트 145·댓글 3)는 수집 시점 참고치. 수집된 마크다운 내 등록된 댓글 전체 수집 완료.",
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "Meet Microsoft-Decision-1 from Microsoft: a model built for fast, structured decisions, not text generation. You give it a situation and fixed options, and it returns a calibrated probability for each one in a single pass, so your software can act on the answer directly.\n\nYou now get:\n\n*   Probabilities for yes/no, multiple-choice and rating options, with no text to parse\n    \n*   Rubric-based grading of AI responses and agent actions, through a structured API call\n    \n*   A small, fast model post-trained from Qwen3.5-9B for decision scoring, which Microsoft says it will rebase on other models, including Microsoft AI (MAI) and OpenAI models\n    \n\nWhat’s new?\n\n1.  Built for decisions, not chat: LLMs generate text or reason through complex problems. Decision-1 handles routing, classification, prioritization, verification and workflow control, where the answer is a choice among known options.\n    \n2.  Speed that adds up: Microsoft’s example is that 100 ms added to each of 20 sequential decisions adds two seconds to a workflow. In its tests, Decision-1 is 4.5x faster than the runner-up (Quyet-1.0-Large) and about 35x faster than GPT-6 Sol at median latency.\n    \n3.  Accuracy and generalization: Microsoft reports the highest accuracy in a 36-benchmark comparison covering nearly 150,000 questions kept blind from training, and the best results on JevBench across 36 additional public and private benchmarks.\n    \n4.  Consistent decisions: Across eight types of input changes, it changes its decision on 1.3% of cases on average, and never when option descriptions are paraphrased or options are reversed or shuffled.\n    \n5.  Safety: It was tested on 5,250 requests across 11 benchmarks (harmful content, jailbreaks, prompt injection), and Microsoft says it refused harmful behavior while keeping high utility.\n    \n\nWhere Microsoft is already using it:\n\n*   Xbox Research labeled more than 10,000 pieces of feedback at quality competitive with GPT-6 Sol, over 14x faster and 200x cheaper\n    \n*   The Copilot team saw quality competitive with GPT-5.6 Luna at 100x the speed\n    \n*   Microsoft Discovery got scores 46x more consistent than the LLM-based version, at three times the speed\n    \n\nListed use cases: agent controls, model routing, data labeling, AI judging, intent analysis, incident routing, data validation, search relevance, content filtering, code scanning, safety screening, computer use, robotics and scientific discovery.\n\nPricing and availability:\n\n*   Available now in Microsoft Foundry\n    \n*   OpenRouter is coming soon\n    \n*   $0.042 per million input tokens, and output tokens are free\n    \n\nTry it: Microsoft Foundry · Launch post",
+     "kr": "Microsoft의 Microsoft-Decision-1을 소개합니다. 텍스트 생성이 아닌 빠르고 구조화된 의사결정을 위해 설계된 모델입니다. 상황과 고정된 선택지를 제공하면 단 한 번의 패스로 각 선택지에 대한 보정된 확률값을 반환하여 소프트웨어가 결과에 따라 즉시 후속 작업을 수행할 수 있습니다.\n\n주요 기능:\n\n* 텍스트 파싱 없이 예/아니오, 다지선다, 평점 옵션에 대한 정확한 확률값 제공\n* 구조화된 API 호출을 통한 AI 응답 및 에이전트 행동의 루브릭 기반 평가 채점\n* 의사결정 채점을 위해 Qwen3.5-9B 기반으로 사후 학습된 작고 빠른 모델로, 향후 Microsoft AI(MAI) 및 OpenAI 모델 기반 버전도 제공 예정\n\n새로운 점:\n\n1. 대화가 아닌 의사결정에 특화: 기존 LLM이 텍스트 생성이나 복잡한 추론을 담당한다면, Decision-1은 알려진 선택지 중 하나를 고르는 라우팅, 분류, 우선순위 지정, 검증 및 워크플로 제어를 처리합니다.\n2. 누적되는 속도의 차이: Microsoft의 예시에 따르면 20번의 순차적 결정에서 각각 100ms씩 지연되면 전체 워크플로가 2초 늘어납니다. 벤치마크 테스트에서 Decision-1은 차순위 모델(Quyet-1.0-Large)보다 4.5배 빠르며 중앙값 지연 시간 기준 GPT-6 Sol보다 약 35배 빠릅니다.\n3. 정확도 및 일반화 성능: 학습에 포함되지 않은 약 15만 개 질문을 대상으로 한 36개 벤치마크 비교에서 최고 정확도를 기록했으며, 36개 추가 공개/비공개 벤치마크를 망라한 JevBench에서도 최고 성적을 거두었습니다.\n4. 일관된 결정 능력: 8가지 유형의 입력 변형 테스트에서 평균 1.3%의 사례에서만 결정이 바뀌었으며, 선택지 설명이 패러프레이징되거나 선택지 순서가 바뀌고 셔플되어도 전혀 결정이 흔들리지 않았습니다.\n5. 안전성: 유해 콘텐츠, 탈옥, 프롬프트 인젝션 등 11개 벤치마크 5,250개 요청에 대해 테스트를 거쳤으며, 높은 유용성을 유지하면서도 유해한 동작을 철저히 거부했습니다.\n\nMicrosoft 내부 활용 사례:\n\n* Xbox Research: GPT-6 Sol과 대등한 품질로 10,000개 이상의 피드백을 14배 이상 빠르고 200배 저렴하게 라벨링\n* Copilot 팀: GPT-5.6 Luna에 필적하는 품질을 100배 빠른 속도로 구현\n* Microsoft Discovery: 기존 LLM 기반 버전보다 3배 빠른 속도에서 46배 더 일관된 점수 확보\n\n주요 사용 사례: 에이전트 제어, 모델 라우팅, 데이터 라벨링, AI 평가 판정, 의도 분석, 인시던트 라우팅, 데이터 검증, 검색 관련성, 콘텐츠 필터링, 코드 스캔, 보안 스크리닝, 컴퓨터 유즈(Computer Use), 로보틱스, 과학적 탐구.\n\n가격 및 출시 정보:\n\n* 현재 Microsoft Foundry에서 이용 가능\n* OpenRouter 출시 예정\n* 입력 토큰 100만 개당 $0.042, 출력 토큰은 무료\n\n체험해 보기: Microsoft Foundry · 런칭 포스트"
+    },
+    {
+     "author": "André J",
+     "is_maker": false,
+     "text": "Interesting price point there m$ 😸 Exactly the same as JEV. Both at $0.042. And boasting 1.2 points higher accuracy and running roughly 2.8 times faster than TypeSafe AI's Jev model. Your move @Jev",
+     "kr": "흥미로운 가격 책정이네요 MS 😸 JEV 모델과 정확히 동일한 $0.042입니다. 게다가 TypeSafe AI의 Jev 모델보다 정확도는 1.2포인트 더 높고 약 2.8배 더 빠르다고 자랑하고 있군요. 다음 수는 당신 차례입니다 @Jev"
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "the part that worries me is \"calibrated\" becoming a permanent label instead of a measurement. calibration is true against the distribution you tested it on, and production traffic drifts from that distribution constantly. if my code is acting directly on the probability with no human reading the text first, I have no way to notice the moment the calibration quietly stops holding, I just get confidently wrong numbers that look exactly like confidently right ones. is there a way to monitor calibration drift in production, or is re-validating against a fresh labeled sample something teams are expected to build themselves",
+     "kr": "제가 우려되는 부분은 '보정됨(calibrated)'이라는 단어가 실시간 측정이 아니라 고정된 라벨처럼 여겨지는 점입니다. 보정은 테스트한 특정 데이터 분포에서만 유효하며, 프로덕션 트래픽은 그 분포에서 끊임없이 벗어납니다(Drift). 만약 사람이 텍스트를 먼저 읽어보지 않고 코드가 확률값에 기반해 직접 동작한다면 보정이 조용히 깨지는 순간을 알아챌 방법이 없으며, 마치 확실하게 맞는 것처럼 보이는 확신에 찬 오답을 받게 될 뿐입니다. 프로덕션 환경에서 이러한 보정 드리프트를 모니터링할 방법이 제공되나요, 아니면 신규 라벨링 샘플을 통해 재검증하는 시스템을 팀들이 자체 구축해야 하나요?"
+    }
+   ],
+   "slug": "microsoft-decision-1",
+   "website": "https://commandline.microsoft.com/microsoft-decision-1-model-foundry/"
+  },
+  {
+   "name": "Cue",
+   "tagline_en": "Put your AirPods in, your Mac starts focusing",
+   "tagline_kr": "에어팟을 착용하는 즉시 Mac의 집중 모드가 시작됩니다",
+   "image": "https://ph-files.imgix.net/d3c9571f-6f1a-4927-8885-b029acf81321.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Mac",
+    "Productivity",
+    "Menu Bar Apps"
+   ],
+   "upvotes": 131,
+   "comments_count": 5,
+   "maker": "Brandon Ta(@brandon35, 1인 개발)",
+   "price_model": "무료 (Free)",
+   "price_detail": "계정 가입이나 유료 결제 없이 완전 무료로 제공되며 macOS 14 이상의 Apple Silicon Mac에서 사용 가능합니다.",
+   "desc_kr": "Cue는 에어팟 착용 동작을 감지하여 Mac을 자동으로 집중 모드로 전환해 주는 1인 개발 경량 생산성 도구입니다. 에어팟을 귀에 꽂으면 Mac의 방해금지 모드가 켜지고 주의를 분산시키는 사이트가 차단되며 맥북 노치 영역에 타이머가 실행됩니다. 이어폰을 빼면 자동으로 휴식 시간이 시작되며 차단된 사이트가 복원되는 등 수동 조작 없는 직관적인 워크플로를 제공합니다. 노치 인터페이스에서는 현재 재생 중인 미디어, 볼륨, 밝기 조절 및 사용자의 활동에 반응하는 아기자기한 캐릭터 애니메이션을 함께 지원합니다. 계정 가입이나 텔레메트리 전송이 일체 없는 강력한 로컬 프라이버시를 지향하며, 노치가 없는 화면 환경에서는 작은 플로팅 바 형태로 구동됩니다.",
+   "launch_url_used": "https://www.producthunt.com/products/cue-26",
+   "comment_summary": "수동 조작 없이 에어팟 착용 자체를 물리적 트리거로 활용한 콘셉트가 기존 집중 앱의 번거로움을 획기적으로 없앴다는 찬사가 이어졌습니다. 댓글에서는 에어팟 외 일반 블루투스 헤드폰의 지원 여부와 대화를 위해 한쪽 이어폰을 잠시 뺐을 때의 세션 유지 유예 시간(Grace Window)에 대한 실질적인 문의가 있었습니다. 또한 글로벌 시장 확대를 위해 영문 웹사이트에 데모 영상을 추가하면 좋겠다는 제안도 함께 나왔습니다.",
+   "warnings": "수치(업보트 131·댓글 5)는 수집 시점 참고치. 수집된 마크다운 내 등록된 댓글 전체 수집 완료.",
+   "comments": [
+    {
+     "author": "Brandon Ta",
+     "is_maker": true,
+     "text": "Hi PH 👋 Honest intro: I vibe-coded Cue with Claude. I had free tokens and a habit of opening YouTube \"for one second\", so this happened. The idea is small: your headphones are the focus switch. - Put your AirPods in → Cue turns on your Focus mode (Do Not Disturb by default), blocks the sites you picked and starts a timer in the notch. - Take them out → break. The sites come back and the buddies take a nap. Other stuff that crept in: now playing, volume and brightness in the notch, your own notch colors, a session history, and two little buddies that react to pretty much everything. No notch? Cue draws a small floating pill instead. Limits, so nobody is surprised: - Apple Silicon, macOS 14+. - Wear detection needs AirPods Pro, AirPods 3/4 or AirPods Max. Other headphones work on connect/disconnect instead. - It is not notarized (that needs a paid developer account), so macOS asks you to click \"Open Anyway\" once. The site shows the steps. - Free, closed source, made by one person plus an AI. Bugs are possible, feedback is very welcome. Privacy: no accounts, no analytics. Cue only goes online for the feedback button and two one-time anonymous setup pings (\"opened\", \"ready\") so I know if anyone got it working. Nothing else leaves your Mac. Would love to hear what breaks 🙏",
+     "kr": "PH 여러분 안녕하세요 👋 솔직하게 소개해 드리자면, 저는 Claude를 활용해 '바이브 코딩(vibe-coding)'으로 Cue를 만들었습니다. 무료 토큰이 좀 있었고 \"딱 1초만 봐야지\" 하고 유튜브를 켜는 습관이 있어서 이 앱을 개발하게 되었습니다. 아이디어는 단순합니다. 헤드폰이 바로 집중 스위치가 되는 것입니다. - 에어팟을 귀에 꽂으면 → Cue가 집중 모드(기본값은 방해금지 모드)를 켜고, 설정해 둔 사이트들을 차단하며, 맥북 노치에서 타이머를 시작합니다. - 에어팟을 빼면 → 휴식 시간입니다. 사이트 차단이 해제되고 노치의 캐릭터 친구들이 낮잠을 잡니다. 그 외에 덧붙여진 기능들: 노치에서의 미디어 재생 정보 표시, 볼륨 및 밝기 조절, 노치 색상 커스텀, 세션 기록, 그리고 거의 모든 동작에 반응하는 두 마리의 귀여운 캐릭터 친구들입니다. 화면에 노치가 없다고요? Cue가 대신 화면에 작은 플로팅 알약 모양의 UI를 띄워줍니다. 당황하시지 않도록 미리 한계점을 말씀드립니다: - Apple Silicon, macOS 14 이상 지원. - 착용 감지는 AirPods Pro, AirPods 3/4, AirPods Max에서 작동합니다. 기타 헤드폰은 연결/연결 해제 시 작동합니다. - 아직 공증(notarization)을 받지 않아(유료 개발자 계정이 필요함) macOS에서 처음에 \"어쨌든 열기(Open Anyway)\"를 클릭해야 합니다. 사이트에 방법이 안내되어 있습니다. - 무료, 클로즈드 소스, 1인 개발자+AI 제작. 버그가 있을 수 있으며 피드백을 환영합니다. 개인정보 보호: 계정 가입 없음, 분석 툴 없음. Cue는 피드백 버튼과 앱이 정상 작동했는지 확인하기 위한 2개의 1회성 익명 핑(\"opened\", \"ready\")을 제외하고는 인터넷에 연결되지 않습니다. 그 외 어떤 데이터도 Mac을 떠나지 않습니다. 어떤 문제든 편하게 알려주시면 감사하겠습니다 🙏"
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "I would recommend to upload also EN demo video for EN version of the website. There is a higher chance to cover bigger market :)",
+     "kr": "웹사이트 영문 버전에 영어 데모 비디오도 함께 업로드하시는 것을 추천합니다. 더 큰 시장을 확보할 가능성이 훨씬 높아질 것입니다 :)"
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Using your AirPods as a focus switch is such a natural trigger that I am surprised it is not everywhere, since putting them in is already the cue that work is starting. Blocking sites and starting the timer automatically removes the friction of setting it up each time. The little buddies in the notch are a fun touch. Does it work with other Bluetooth headphones or just AirPods?",
+     "kr": "에어팟 착용을 집중 스위치로 활용하는 것은 매우 자연스러운 계기여서 이런 앱이 아직 흔하지 않았다는 게 놀라울 정도입니다. 귀에 꽂는 행위 자체가 이미 업무 시작의 신호니까요. 매번 설정해야 하는 번거로움 없이 사이트를 차단하고 타이머를 자동 시작해 마찰을 없앴네요. 노치에 있는 귀여운 캐릭터들도 재미있는 요소입니다. 에어팟 외의 다른 블루투스 헤드폰과도 작동하나요?"
+    },
+    {
+     "author": "Ill Robyn",
+     "is_maker": false,
+     "text": "Love the idea of making focus time this simple. No need to keep turning things on and off manually.",
+     "kr": "집중 시간을 이렇게 간단하게 만들어 주는 아이디어가 정말 마음에 듭니다. 매번 수동으로 껐다 켤 필요가 없겠네요."
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "the wear detection being the trigger instead of a button is the whole product honestly, that's the part that makes it actually stick versus just another focus app you forget exists. how does it handle the case where you take one AirPod out to talk to someone for 20 seconds, does that count as \"break\" and kill the focus session, or is there a grace window before it decides you've actually left",
+     "kr": "버튼 대신 착용 감지 자체가 트리거가 된다는 점이 사실상 이 제품의 전부라고 봅니다. 존재하는지도 잊어버리는 흔한 집중 앱들과 달리 실제로 계속 쓰게 만드는 핵심이죠. 만약 누군가와 20초 정도 대화하려고 에어팟 한쪽을 뺐을 때는 어떻게 처리되나요? '휴식'으로 간주되어 집중 세션이 종료되나요, 아니면 실제로 자리를 비웠다고 판단하기 전까지 유예 시간(grace window)이 주어지나요?"
+    }
+   ],
+   "slug": "cue-26",
+   "website": "https://wearcue.top/"
+  }
+ ]
+}
