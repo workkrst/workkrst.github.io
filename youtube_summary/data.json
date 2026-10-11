@@ -1,6 +1,16 @@
 {
-  "updated": "2026-10-07",
+  "updated": "2026-10-11",
   "videos": [
+    {
+      "slug": "2026-10-11-NsHTK2kC5iw",
+      "videoId": "NsHTK2kC5iw",
+      "title": "혼자서 수백억을 번 1인 개발자들은 어떻게 성공했나? - 2편",
+      "channel": "WeekdayCode",
+      "date": "2026-10-11",
+      "duration": "15:17",
+      "summary": "투자·조직 없이 월수억 버는 1인 개발자 5인 — TypingMind·발라트로·포토피아 등 제품·기술스택·서버비 통제·B2B 전략 분석",
+      "category": "온라인사업"
+    },
     {
       "slug": "2026-10-07-dwBUYuqX_Pk",
       "videoId": "dwBUYuqX_Pk",
