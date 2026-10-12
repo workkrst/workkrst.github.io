@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-12",
+    "url": "2026-10-12/",
+    "top_product": "HireKey",
+    "count": 5,
+    "upvotes_total": 925,
+    "comments_total": 42
+  },
+  {
     "date": "2026-10-11",
     "url": "2026-10-11/",
     "top_product": "ReSO AI",
