@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-13",
+    "url": "2026-10-13/",
+    "top_product": "Google EmbeddingGemma 2",
+    "count": 5,
+    "upvotes_total": 1028,
+    "comments_total": 30
+  },
+  {
     "date": "2026-10-12",
     "url": "2026-10-12/",
     "top_product": "HireKey",
