@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-14",
+    "url": "2026-10-14/",
+    "top_product": "Articos MCP",
+    "count": 5,
+    "upvotes_total": 1159,
+    "comments_total": 45
+  },
+  {
     "date": "2026-10-13",
     "url": "2026-10-13/",
     "top_product": "Google EmbeddingGemma 2",
