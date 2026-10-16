@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-10-16</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-10-16 · Top 5 · 수집 댓글 30개 · 수집 2026-10-16 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-10-16",
+ "collected_at": "2026-10-16 12:30 KST",
+ "summary": "오늘 Product Hunt 상위권은 AI 인프라·에이전트 도구 3종과 이메일 생산성 앱, 스마트홈 솔루션이 포진하며 실무 워크플로 자동화와 커뮤니케이션 환경 혁신이 주를 이루었습니다. 특히 에이전트 실행 비용을 실시간으로 통제하거나 법률 특화 모델 및 셀프 호스팅 환경을 통해 AI 에이전트를 업무 현장에 안전하고 경제적으로 배포하려는 흐름이 두드러졌습니다. 수집된 댓글에서는 온디바이스·셀프 호스팅 구동 시의 시스템 성능과 프라이버시 보장, 경량 모델 라우팅 및 도메인 특화 AI의 결과물 신뢰도 유지 방식, 그리고 기존 에이전트 생태계(MCP, Claude Code 등)와의 연동성을 검증하려는 실무적인 질문이 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "talanoa-2",
+   "why": "복잡한 이메일 스레드를 메신저 같은 대화형 UI로 재구성하고 모든 이메일 데이터와 AI 모델을 로컬 기기에서 처리해 프라이버시와 오프라인 사용성을 동시에 잡으며 오늘 1위(283표)를 차지했습니다. 댓글에서는 수 기가바이트 규모 대용량 메일함의 초기 인덱싱 속도, 완전 오프라인 AI 작동 여부, 자체 에이전트 연동을 위한 MCP 지원 계획에 대한 질문이 이어졌으며, 메이커는 실제 발신자 메일을 우선 인덱싱해 속도 저하를 막고 내부 MCP 지원도 로드맵에 포함되어 있다고 답해 큰 호응을 얻었습니다."
+  },
+  {
+   "slug": "navige",
+   "why": "작업 난이도에 맞춰 경량 모델로 호출을 라우팅하고 실패 시 상위 모델로 자동 복구하는 '충분성 인텔리전스'로 AI 에이전트의 과도한 운영 비용을 통제해 높은 관심을 받았습니다. 댓글에서는 저렴한 모델 전환에 따른 답변 품질 저하 우려와 Claude Code 호환성, 유료 검색·스크래핑 API 최적화 범위 및 요금제 구조(월 최소 9달러 또는 측정 절감액의 20% 중 큰 금액 부과)를 둘러싼 실무자들의 구체적인 질의응답이 활발히 오갔습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Talanoa",
+   "tagline_en": "Email that feels like chat",
+   "tagline_kr": "채팅처럼 느껴지는 대화형 이메일 메신저",
+   "image": "https://ph-files.imgix.net/93560827-b239-46fc-964b-b3e4414dc2bb.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Email clients",
+    "Email",
+    "Productivity",
+    "Task Management"
+   ],
+   "upvotes": 283,
+   "comments_count": 22,
+   "maker": "BetterCallJohn, Serge P, Kevin William David",
+   "price_model": "Free Options",
+   "price_detail": "무료 옵션 제공 (Free Options), 연간 결제 시 50% 할인 (50% OFF on yearly)",
+   "desc_kr": "Talanoa는 반복되는 인용문, 서명, 불필요한 헤더 등을 제거하여 복잡한 이메일 스레드를 깔끔한 채팅 형태의 대화로 바꿔주는 이메일 메신저입니다. 이메일을 다음 단계와 마감일이 포함된 실행 가능한 할 일(Todo)로 즉시 전환할 수 있으며, 받은편지함을 벗어나지 않고도 캘린더 일정을 함께 관리할 수 있습니다. 온디바이스(On-device) AI를 탑재하여 인터넷 연결 없이도 기기 내에서 안전하게 이메일 검색, 요약, 답장 작성 및 번역을 수행합니다. Gmail, Outlook, iCloud 및 모든 IMAP 계정을 하나의 통합 받은편지함으로 연결해 관리할 수 있으며, 오프라인 상태에서도 이메일 열람·검색·작성이 가능합니다. 별도의 클라우드 동기화나 추적 없이 모든 이메일 데이터와 AI 모델이 사용자의 컴퓨터 로컬 환경에만 저장되어 강력한 프라이버시를 보장합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/talanoa-2",
+   "comment_summary": "댓글에서는 온디바이스 AI의 오프라인 작동 여부, 수 기가바이트 규모의 대용량 메일함 초기 인덱싱 성능, 그리고 모바일 앱 지원 및 자체 에이전트 연동을 위한 MCP 지원 계획에 대한 질문이 이어졌습니다. 메이커인 John(BetterCallJohn)은 AI 모델을 한 번 다운로드하면 검색·요약·번역 등 모든 기능과 이메일 열람이 완전 오프라인으로 작동하며, 초기 인덱싱은 실제 사람이 보낸 이메일을 우선 처리한 뒤 뉴스레터·알림을 백그라운드에서 순차 처리해 앱 속도 저하가 없다고 설명했습니다. 또한 현재 iOS(TestFlight) 및 Android 베타 테스트가 진행 중이며, 외부 에이전트 워크플로 연동을 위한 내부 MCP 지원도 로드맵에 포함되어 있다고 밝혔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "BetterCallJohn",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 I’m John, the solo maker behind Talanoa. Funny enough, Talanoa was never supposed to become a product. I originally built it just for myself. I spend a huge part of my day in email, but I never really liked using traditional email clients. So instead of looking for yet another one, I started building the inbox I wanted for myself. Then I showed it to a few friends. They loved it. They started using it. And eventually, they put enough pressure on me to turn my little personal project into a real product. So… here we are. Along the way, one idea became increasingly obvious to me: Email is a conversation that forgot it was one. A thread between two people is basically a chat. A message, a reply, a reply to the reply. Yet email clients still show repeated quotes, signatures, headers, footers and years of clutter. So I rebuilt Talanoa around a different idea: what if email felt more like a messenger? Today, Talanoa turns your inbox into clean, chat-like conversations, while keeping everything that makes email, email. But it goes further: 💬 Emails become actual conversations ✅ Any email can become a todo with a next step and due date 📅 Your calendar lives alongside your conversations ✨ AI helps you search, summarize and write, entirely on-device 📥 Gmail, Outlook, iCloud and IMAP accounts can live in one inbox 🔒 No cloud sync, no tracking. Your emails stay on your computer. I’ve been building Talanoa independently, talking to users, breaking things, rebuilding them, and questioning quite a few assumptions we’ve had about email for the last 30 years. What started as a tool I built for myself has slowly become something much bigger, and this version finally feels like the Talanoa I always wanted to use. I’d genuinely love your feedback, especially on one thing: Does the “email as a conversation” approach change the way you feel about your inbox? And if there’s one thing your current email client does that you couldn’t live without, tell me. I’m listening 👇 Thanks for checking out Talanoa ❤️ John",
+     "kr": "안녕하세요 Product Hunt 여러분 👋 저는 Talanoa를 혼자 개발한 메이커 John입니다. 재미있게도 Talanoa는 원래 정식 제품으로 출시할 계획이 아니었습니다. 처음에는 순전히 저 자신을 위해 만들었거든요. 하루 중 엄청난 시간을 이메일에서 보내지만 기존 이메일 클라이언트들이 마음에 들지 않았고, 또 다른 클라이언트를 찾아 헤매는 대신 제가 직접 쓰고 싶은 받은편지함을 만들기 시작했습니다. 그러다 몇몇 친구들에게 보여주었는데 반응이 아주 좋았고, 직접 써보더니 이 작은 개인 프로젝트를 실제 제품으로 출시하라고 성화를 부렸습니다. 그렇게 오늘 이 자리까지 오게 되었네요. 개발 과정에서 한 가지 아이디어가 점점 더 명확해졌습니다. 바로 '이메일은 자신이 대화라는 사실을 잊어버린 대화'라는 점입니다. 두 사람 사이의 이메일 스레드는 본질적으로 채팅과 같습니다. 메시지를 보내고, 답장하고, 다시 답장하는 구조죠. 하지만 이메일 클라이언트는 여전히 반복되는 인용문, 서명, 헤더, 푸터 등 수년간 쌓인 군더더기를 그대로 보여줍니다. 그래서 '이메일이 메신저처럼 느껴진다면 어떨까?'라는 발상으로 Talanoa를 재구축했습니다. 오늘 선보이는 Talanoa는 이메일의 본질은 그대로 유지하면서 받은편지함을 깔끔한 채팅형 대화로 바꿔줍니다. 나아가 다음 기능들을 제공합니다: 💬 이메일을 실제 대화창처럼 전환 ✅ 모든 이메일을 다음 단계와 마감일이 있는 할 일(Todo)로 전환 📅 대화창 바로 옆에서 함께 관리하는 캘린더 ✨ 검색, 요약, 작성을 전적으로 기기 내에서(on-device) 돕는 AI 📥 Gmail, Outlook, iCloud, IMAP 계정을 하나의 받은편지함으로 통합 🔒 클라우드 동기화 및 추적 없음 — 모든 이메일은 사용자의 컴퓨터에 보관됩니다. 지난 30년간 이메일에 대해 당연하게 여겨왔던 가정들에 의문을 던지며 독립적으로 개발해 왔습니다. 대화형 이메일 접근 방식이 받은편지함에 대한 인식을 어떻게 바꾸는지, 그리고 현재 쓰는 이메일 클라이언트에서 절대 포기할 수 없는 기능은 무엇인지 피드백을 들려주시면 감사하겠습니다 👇 확인해주셔서 감사합니다 ❤️ John"
+    },
+    {
+     "author": "Mads Østergaard",
+     "is_maker": false,
+     "text": "@bettercallj0hn this looks like what Slack probably should have been",
+     "kr": "@bettercallj0hn 이건 아마도 Slack이 원래 지향했어야 할 모습처럼 보이네요."
+    },
+    {
+     "author": "Anastasiia",
+     "is_maker": false,
+     "text": "I like the privacy angle of it: on-device, no cloud sync. The clean chat view is a nice bonus too. Does the on-device AI work offline?",
+     "kr": "클라우드 동기화 없이 온디바이스로 작동한다는 프라이버시 측면이 마음에 듭니다. 깔끔한 채팅 뷰도 훌륭한 보너스네요. 온디바이스 AI는 오프라인에서도 작동하나요?"
+    },
+    {
+     "author": "BetterCallJohn",
+     "is_maker": true,
+     "text": "@alieksia Thanks! 🙏 Yes, fully. You download the AI model once from the settings, and from then on everything runs on your machine: search, summaries, replies, translations. No internet needed, nothing ever leaves your computer.\n\nAnd it's not just the AI: your emails are stored locally too, so you can read, search and write offline. Anything you send gets queued and goes out as soon as you're back online.",
+     "kr": "@alieksia 감사합니다! 🙏 네, 완전히 오프라인으로 작동합니다. 설정에서 AI 모델을 한 번 다운로드하면 그 이후로는 검색, 요약, 답장, 번역 등 모든 작업이 사용자의 기기에서 실행됩니다. 인터넷이 필요 없으며 어떤 데이터도 컴퓨터 밖으로 나가지 않습니다.\n\nAI뿐만 아니라 이메일 자체도 로컬에 저장되므로 오프라인 상태에서 읽고, 검색하고, 작성할 수 있습니다. 보낸 메일은 대기열에 저장되었다가 다시 온라인 상태가 되면 즉시 발송됩니다."
+    },
+    {
+     "author": "Yann Espana",
+     "is_maker": false,
+     "text": "@bettercallj0hn Congrats on the launch! Love your approach and fresh take on emails / conversations! Do you have a mobile app?",
+     "kr": "@bettercallj0hn 런칭을 축하합니다! 이메일과 대화를 바라보는 신선한 시각과 접근 방식이 정말 마음에 듭니다! 모바일 앱도 있나요?"
+    },
+    {
+     "author": "BetterCallJohn",
+     "is_maker": true,
+     "text": "@yespana Thank you so much! 🙏\n\nYes! The mobile app (iOS & Android) is currently in review with Apple and Google, but you can already try the beta today:\n\n📱 **iOS**: join the TestFlight here 👉 https://testflight.apple.com/join/WMxWemSj  \n🤖 **Android**: send me an email at john@talanoa.email with your Play Store email address and I'll send you an invite link\n\nWould love to hear what you think of it!",
+     "kr": "@yespana 정말 감사합니다! 🙏\n\n네! 현재 모바일 앱(iOS 및 Android)이 Apple 및 Google의 심사를 받고 있으며, 오늘 바로 베타 버전을 사용해 보실 수 있습니다:\n\n📱 **iOS**: 이곳에서 TestFlight에 참여하세요 👉 https://testflight.apple.com/join/WMxWemSj\n🤖 **Android**: Play 스토어 이메일 주소를 적어 john@talanoa.email로 메일을 보내주시면 초대 링크를 보내드리겠습니다.\n\n사용해 보시고 어떤지 의견 들려주시면 좋겠습니다!"
+    },
+    {
+     "author": "Paul Koch",
+     "is_maker": false,
+     "text": "@bettercallj0hn Congrats and happy launch! I like the idea and support the local & offline approach. Maybe mcp would be a great feature for those who have their own agents running for managing mail.",
+     "kr": "@bettercallj0hn 런칭을 축하합니다! 아이디어가 좋고 로컬 및 오프라인 방식을 지지합니다. 메일 관리를 위해 자체 에이전트를 운영하는 사용자들을 위해 MCP 기능을 지원하면 정말 좋을 것 같습니다."
+    },
+    {
+     "author": "BetterCallJohn",
+     "is_maker": true,
+     "text": "@paul_koch2 thanks Paul. Yes internal MCP is definitively on the roadmap to allow more complex workflows with your own agents 👍",
+     "kr": "@paul_koch2 감사합니다 Paul. 네, 자체 에이전트와 연동해 더 복잡한 워크플로를 구현할 수 있도록 내부 MCP 지원이 로드맵에 확실히 포함되어 있습니다 👍"
+    },
+    {
+     "author": "Kevin William David",
+     "is_maker": false,
+     "text": "Congrats on the launch @bettercallj0hn!. Re-framing email as pure chat while keeping everything local and on-device without cloud sync is a huge win for privacy.  \n\n**Question:** How does on-device AI perform with massive, multi-gigabyte mailboxes when indexing or searching past threads for the first time?",
+     "kr": "런칭을 축하합니다 @bettercallj0hn! 클라우드 동기화 없이 모든 것을 로컬 및 온디바이스로 유지하면서 이메일을 순수한 채팅으로 재구성한 것은 프라이버시 측면에서 엄청난 장점입니다.\n\n**질문:** 수 기가바이트에 달하는 대용량 메일함에서 과거 스레드를 처음 인덱싱하거나 검색할 때 온디바이스 AI의 성능은 어떠한가요?"
+    },
+    {
+     "author": "BetterCallJohn",
+     "is_maker": true,
+     "text": "@kevin Thanks for your message. Great question.  \n  \nThe first indexing happens entirely on your machine, in the background, so it never slows the app down. It’s split in two steps:\n\n*   Emails from real people first.  \n    That part is usually fairly quick, and AI search unlocks as soon as it’s done.\n    \n*   Notifications and newsletters next.  \n    These keep indexing quietly in the background, and on a big mailbox that can take several hours.\n    \n\nIn the meantime, regular keyword search works right away. Once the first pass is done, new emails are indexed as they arrive.",
+     "kr": "@kevin 메시지 감사합니다. 좋은 질문입니다.\n\n초기 인덱싱은 전적으로 사용자 기기의 백그라운드에서 진행되므로 앱 속도를 늦추지 않으며, 두 단계로 나뉘어 처리됩니다:\n\n* 실제 사람이 보낸 이메일 우선 처리:\n  이 부분은 보통 꽤 빠르게 끝나며, 완료되는 즉시 AI 검색이 활성화됩니다.\n\n* 알림 및 뉴스레터 후속 처리:\n  백그라운드에서 조용히 인덱싱을 이어가며, 대용량 메일함의 경우 몇 시간이 걸릴 수 있습니다.\n\n그동안에도 일반 키워드 검색은 즉시 작동합니다. 첫 번째 전체 인덱싱이 끝나면 새로 도착하는 이메일은 수신 즉시 인덱싱됩니다."
+    },
+    {
+     "author": "Clément Janssens",
+     "is_maker": false,
+     "text": "i've known talanoa since the very beginning, i was one of the early beta testers\n\nand it's been crazy to watch it grow from that first version to what's launching today\n\nhonestly this kind of tool is an absolute banger\n\nthere's nothing more boring than an inbox, and john somehow made it fun\n\nthat changes your day to day more than you'd think\n\nit's just a pleasure to use, and i really think it has huge potential\n\ncongrats on the launch john",
+     "kr": "저는 초기 베타 테스터 중 한 명으로 아주 처음부터 Talanoa를 봐왔습니다.\n\n첫 버전에서 오늘 출시되는 모습까지 성장하는 과정을 지켜보는 건 정말 놀라운 경험이었습니다.\n\n솔직히 이런 도구는 진짜 역작(banger)입니다.\n\n세상에 받은편지함보다 지루한 게 없는데, John은 어떻게든 그걸 재미있게 만들었습니다.\n\n그게 생각보다 일상을 훨씬 많이 바꿔놓습니다.\n\n쓰는 것 자체가 즐거움이고 잠재력이 엄청나다고 생각합니다.\n\n런칭 축하해요 John."
+    },
+    {
+     "author": "Alexandre BOREL",
+     "is_maker": false,
+     "text": "Hello @bettercallj0hn , glad to see you launching the app on PH !\n\nI'm following Talanoa since the beginning and it's awesome how the app is growing fast. So many killer features that help me to keep my emails clean.\n\nSince I'm using it, impossible to get back to the original Gmail inbox !\n\nOh and I really appreciate receiving the \"new in talanoa\" email and I'm always excited to see what's new.\n\nExcited for the future ! Keep going ! :)",
+     "kr": "안녕하세요 @bettercallj0hn, Product Hunt에 앱을 런칭하신 것을 보니 기쁩니다!\n\n처음부터 Talanoa를 지켜봐 왔는데 앱이 빠르게 성장하는 모습이 정말 멋집니다. 이메일을 깔끔하게 유지하는 데 도움이 되는 킬러 기능들이 아주 많아요.\n\n이 앱을 사용한 이후로는 원래의 Gmail 받은편지함으로 도저히 돌아갈 수가 없습니다!\n\n아, 그리고 'New in Talanoa' 이메일도 정말 잘 받아보고 있고 매번 어떤 새로운 기능이 추가되었는지 보는 것이 기대됩니다.\n\n앞으로의 행보도 기대됩니다! 계속 화이팅하세요! :)"
+    }
+   ],
+   "slug": "talanoa-2",
+   "website": "https://talanoa.email/"
+  },
+  {
+   "name": "Navige",
+   "tagline_en": "Cut AI agent costs and control runaway spending",
+   "tagline_kr": "AI 에이전트 비용 절감 및 폭주하는 지출 통제 솔루션",
+   "image": "https://ph-files.imgix.net/535c70e8-d55c-4a69-8d90-9766143f306f.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "AI Infrastructure Tools",
+    "SaaS",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 218,
+   "comments_count": 52,
+   "maker": "Soji Joseph, Akhil Shajahan, Shameeh Rahman, Kate Ramakaieva",
+   "price_model": "Free Options",
+   "price_detail": "Watchtower 영구 무료 제공 (Free forever), 유료 플랜은 측정된 절감액의 20%(절감액 중 4/5는 고객 유지, 1/5은 수수료) 또는 월 최소 $9 중 더 높은 금액 과금",
+   "desc_kr": "Navige는 '충분성 인텔리전스(Sufficiency Intelligence)'를 활용해 AI 에이전트 작업이 실행되는 동안 실시간으로 비용을 절감하고 지출을 통제하는 AI 인프라 도구입니다. 각 요청의 난이도를 평가하여 단순한 작업은 더 작은 모델로 라우팅하고 반복 조회를 캐싱하며 불필요하게 큰 도구 결과값을 압축하되, 판단이 불확실하거나 작은 모델이 도구 호출에 실패하면 원래의 상위 모델로 안전하게 유지·재실행합니다. 팀 및 작업별 예산 설정, 무한 루프 감지 및 차단(Kill switch), 민감한 작업에 대한 승인 보류, 감사 로그(Audit trail) 기능을 제공해 예상치 못한 비용 폭주를 방지합니다. 영구 무료로 제공되는 'Watchtower' 모드를 통해 실제 제어 기능을 켜기 전에 에이전트의 모델 사용 현황과 예상 절감 효과를 먼저 시뮬레이션하고 주간 리포트로 확인할 수 있습니다. Anthropic(Claude Code 프록시 포함)이나 AWS Bedrock 계정을 연동해 실제 청구서와 작업별 측정 절감액 및 추정치를 투명하게 비교할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/navige",
+   "comment_summary": "댓글에서는 동일한 질문 반복 시 중복 과금 여부, 저렴한 모델 라우팅으로 인한 답변 품질 저하 우려, Claude Code 및 외부 유료 검색·스크래핑 API 지원 여부, 그리고 요금제 산정 방식에 대한 질문이 활발히 오갔습니다. 메이커 팀은 이전 답변을 안전하게 재사용할 수 있는 경우 캐싱을 통해 중복 호출을 방지하고, 작업 수준에 맞는 모델만 선별해 품질 저하를 막으며, LLM 토큰뿐만 아니라 연동된 유료 검색·스크래핑 API의 불필요한 중복 호출까지 최적화한다고 답변했습니다. 또한 요금제는 무료인 Watchtower 외에 유료 전환 시 월 최소 9달러와 측정된 비용 절감액의 20% 중 더 큰 금액 하나만 부과되는 구조라고 명확히 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Soji Joseph",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋\n\n**Why we built Navige**\n\nMost of what an AI agent does isn’t hard - sorting an email, pulling a date out of a document, picking the next step. But often, it all runs on the most expensive model, because that’s the one written into the code and nobody went back to change it.\n\nThen the bill arrives as one number, and nobody can say which agent spent what.\n\nNavige sits in front of calls routed through it and acts before they run, while the cost can still change. We call this **Sufficiency Intelligence**: give each task exactly the intelligence it needs.\n\n**How it works**\n\n1.  It assesses each request and sends suitable ones to a smaller model. Your model is the ceiling: Navige only moves calls down, never up, and keeps yours whenever it’s unsure.\n    \n2.  If the smaller model fumbles a tool call, the call re-runs on your original model, and your agent only sees that answer.\n    \n3.  It records every job: what it cost, what the controls changed and what made the difference. Measured savings and estimates are clearly separated.\n    \n\nOn top of that, you get budgets per team and per job, approval holds for risky actions, a kill switch and an audit trail.\n\n**Two things we did on purpose**\n\n*   Watchtower is the starting point. Navige watches and shows what it would have done, but changes nothing until you say so.\n    \n*   Connect your Anthropic or AWS Bedrock account and put your real bill next to Navige’s figures, so you can check the numbers instead of trusting a savings claim.\n    \n\n**Pricing**\n\nWatchtower is free forever. On paid plans, of the measured savings Navige can show, you keep four parts and we keep one, subject to a $9/month minimum.\n\n**Give it a week**\n\nWatch your agents for a week. Nothing changes until you decide.\n\nWhich of your agents’ jobs do you suspect is running on a much bigger model than it needs? 👇",
+     "kr": "안녕하세요 Product Hunt 여러분 👋\n\n**Navige를 만든 이유**\n\nAI 에이전트가 하는 일의 대부분은 이메일 분류, 문서에서 날짜 추출, 다음 단계 선택처럼 어렵지 않은 작업입니다. 하지만 대개 코드에 처음 작성된 가장 비싼 모델로 모든 작업이 실행되고, 아무도 이를 다시 수정하지 않습니다.\n\n그러다 청구서에 총액 하나만 찍혀 나오면 어느 에이전트가 얼마를 썼는지 아무도 알 수 없습니다.\n\nNavige는 라우팅되는 호출 앞단에 위치하여 실행되기 전, 즉 비용을 바꿀 수 있는 시점에 작동합니다. 저희는 이를 각 작업에 필요한 만큼의 지능만 부여하는 **충분성 인텔리전스(Sufficiency Intelligence)**라고 부릅니다.\n\n**작동 방식**\n\n1. 각 요청을 평가하여 적합한 요청은 더 작은 모델로 보냅니다. 사용자가 설정한 모델이 상한선(ceiling)이 되며, Navige는 호출 모델을 낮출 뿐 절대 높이지 않고 불확실할 때는 원래 모델을 유지합니다.\n2. 만약 작은 모델이 도구 호출(tool call)에 실패하면 원래 모델로 다시 실행하며, 에이전트는 그 정상 결과만 전달받습니다.\n3. 모든 작업의 비용, 제어 기능으로 변경된 사항, 비용 절감 요인을 기록하며 측정된 실제 절감액과 추정치를 명확히 구분합니다.\n\n여기에 더해 팀별·작업별 예산 설정, 위험한 작업에 대한 승인 보류, 킬 스위치(강제 중단), 감사 로그를 제공합니다.\n\n**의도적으로 설계한 두 가지**\n\n* Watchtower가 출발점입니다. Navige가 상황을 관찰하며 어떻게 최적화했을지 보여주지만, 사용자가 승인하기 전까지는 아무것도 임의로 바꾸지 않습니다.\n* Anthropic이나 AWS Bedrock 계정을 연결해 실제 청구서와 Navige의 수치를 나란히 비교하여 절감 주장을 맹신하는 대신 직접 숫자를 검증할 수 있습니다.\n\n**요금제**\n\nWatchtower는 영구 무료입니다. 유료 플랜에서는 Navige가 입증한 측정 절감액 중 4/5는 고객이 가져가고 1/5을 저희가 수수료로 받으며, 월 최소 요금은 $9입니다.\n\n**일주일만 지켜보세요**\n\n일주일 동안 에이전트를 관찰해 보세요. 여러분이 결정하기 전까지는 아무것도 바뀌지 않습니다.\n\n현재 운영 중인 에이전트 작업 중 필요 이상으로 큰 모델에서 돌아가고 있다고 의심되는 작업은 무엇인가요? 👇"
+    },
+    {
+     "author": "Dounia Boughalem",
+     "is_maker": false,
+     "text": "@sojimathewj The project sounds amazing; Quick question on my end: What if my agent asks the same question twice? Does Navige charge for both calls?",
+     "kr": "@sojimathewj 프로젝트가 정말 멋지네요. 간단한 질문이 있습니다: 만약 제 에이전트가 동일한 질문을 두 번 물어보면 어떻게 되나요? Navige는 두 호출 모두에 대해 과금하나요?"
+    },
+    {
+     "author": "Soji Joseph",
+     "is_maker": true,
+     "text": "@dounia_boughalem Not necessarily! If Navige can safely reuse the earlier answer, there is no need to call the model again and pay twice for the same work.",
+     "kr": "@dounia_boughalem 꼭 그렇지는 않습니다! Navige가 이전 답변을 안전하게 재사용할 수 있는 경우, 동일한 작업을 위해 모델을 다시 호출하고 두 번 비용을 지불할 필요가 없습니다."
+    },
+    {
+     "author": "Mohsin Ali",
+     "is_maker": false,
+     "text": "@sojimathewj Big congrats on the launch! Can I use it with claude code or is it only for agents I have built myself?",
+     "kr": "@sojimathewj 런칭을 진심으로 축하합니다! Claude Code와 함께 사용할 수 있나요, 아니면 직접 구축한 에이전트에만 사용할 수 있나요?"
+    },
+    {
+     "author": "Shameeh Rahman",
+     "is_maker": true,
+     "text": "@sojimathewj  @mohsinproduct Yes, of course. Our Anthropic proxy supports Claude code. Navige will be able to observe the use of models and control it using compatible measures without creating another agent. Some optimisations for Claude Code, however, are restricted, since the last thing we want to do is interfere with its functioning.",
+     "kr": "@sojimathewj @mohsinproduct 네, 물론입니다. 저희 Anthropic 프록시가 Claude Code를 지원합니다. 별도의 에이전트를 새로 만들지 않고도 Navige가 모델 사용 현황을 관찰하고 호환 가능한 방식으로 제어할 수 있습니다. 다만 Claude Code의 정상적인 작동을 방해하지 않기 위해 일부 최적화 기능은 제한적으로 적용됩니다."
+    },
+    {
+     "author": "Galymzhan Makashev",
+     "is_maker": false,
+     "text": "I am confused about the pricing. Is it $9 a month or 20% of the savings?",
+     "kr": "요금제가 조금 헷갈립니다. 월 9달러인가요, 아니면 절감액의 20%인가요?"
+    },
+    {
+     "author": "Akhil Shajahan",
+     "is_maker": true,
+     "text": "@vehsakam It is whichever amount is higher not both added together. So if your measured savings are less than $45 in a month, you pay $9. If Navige saves you $200 our fee would be $40. The $9 minimum is already included in that $40 so you are not paying $49.  \n  \nWe wanted pricing that makes sense for smaller users but also reflects the value when we help someone save a lot more.",
+     "kr": "@vehsakam 두 금액을 합산하는 것이 아니라 둘 중 더 높은 금액이 청구됩니다. 즉, 한 달 동안 측정된 절감액이 45달러 미만이면 월 9달러만 지불하시면 됩니다. 만약 Navige를 통해 200달러를 절감했다면 수수료는 40달러가 되며, 최소 요금 9달러는 이미 그 40달러에 포함되어 있으므로 49달러를 내는 것이 아닙니다.\n\n소규모 사용자에게도 합리적이면서, 훨씬 더 많은 비용을 절감한 고객에게는 그 가치를 반영할 수 있는 요금제를 만들고자 했습니다."
+    },
+    {
+     "author": "Vlad Popov",
+     "is_maker": false,
+     "text": "I like the idea! But what happens if Navige chooses a cheaper model and the answer is worse? That's a risk I see here",
+     "kr": "아이디어가 좋네요! 하지만 Navige가 더 저렴한 모델을 선택했다가 답변 품질이 떨어지면 어떻게 되나요? 그 부분이 리스크로 보입니다."
+    },
+    {
+     "author": "Soji Joseph",
+     "is_maker": true,
+     "text": "@vlad_popov3 That is a fair point, and something we have thought a lot about. The idea is not to just switch to a cheaper model to save money. If a task needs a powerful model, then it should absolutely use one. But not every task needs that level of intelligence. The tricky part is knowing where to draw that line without affecting the quality. That is exactly what we are trying to solve with Navige. No point saving a few dollars if you end up with a rubbish answer!",
+     "kr": "@vlad_popov3 타당한 지적이며 저희도 깊이 고민한 부분입니다. 핵심은 단순히 돈을 아끼려고 무조건 저렴한 모델로 바꾸는 것이 아닙니다. 작업에 강력한 모델이 필요하다면 당연히 그 모델을 써야 하지만, 모든 작업에 그 정도 수준의 지능이 필요한 것은 아닙니다. 가장 까다로운 점은 품질에 영향을 주지 않으면서 그 경계선을 어디에 그을지 판단하는 것이며, 바로 그것이 Navige가 해결하려는 핵심 과제입니다. 형편없는 답변을 얻게 된다면 몇 달러를 아끼는 것은 아무 의미가 없으니까요!"
+    },
+    {
+     "author": "Akhil Shajahan",
+     "is_maker": true,
+     "text": "Hi all, Akhil here, co-founder and CCO. Soji’s covered how Navige works, so I’ll talk about the **money side**.  \n  \nIf you sell an AI product on a flat monthly price, you don’t really control what each customer costs you. Someone paying $30 a month can burn through more than that in model calls, and you won’t know until the invoice comes in. A lot of that spend is simple stuff, all running on a model that’s far bigger than the job.  \n  \nNavige shows you what each agent and each job is actually costing you, and where a smaller model would have done fine. You can also set a budget, so a loop that goes wrong gets stopped before it shows up on your bill.  \n  \nWe start everyone on Watchtower for that reason. You see the real numbers first and nothing changes until you decide.  \n  \nGenuinely curious...... if you are running agents in production, do you know what a single job costs you? Or is it a surprise at the end of the month?",
+     "kr": "안녕하세요 여러분, 공동창업자이자 CCO인 Akhil입니다. Soji가 Navige의 작동 방식을 설명했으니 저는 **비용 측면**을 말씀드리겠습니다.\n\n월 정액제로 AI 제품을 판매하다 보면 각 고객에게 실제로 얼마의 비용이 들어가는지 통제하기 어렵습니다. 월 30달러를 내는 고객이 모델 호출로 그 이상의 비용을 소모할 수도 있는데, 청구서가 나올 때까지 이를 알지 못합니다. 게다가 그 지출의 상당수는 작업 난이도에 비해 훨씬 큰 모델에서 실행되는 단순 작업들입니다.\n\nNavige는 각 에이전트와 작업에 실제로 드는 비용과 더 작은 모델로도 충분했던 구간을 보여줍니다. 또한 예산을 설정해 잘못된 무한 루프가 청구서에 찍히기 전에 중단시킬 수 있습니다.\n\n바로 이런 이유로 모든 분이 Watchtower부터 시작하도록 했습니다. 실제 수치를 먼저 확인하실 수 있고, 결정하기 전까지는 아무것도 변경되지 않습니다.\n\n프로덕션에서 에이전트를 운영 중이시라면 단일 작업당 비용을 파악하고 계신가요, 아니면 월말에 청구서를 보고 놀라시나요?"
+    },
+    {
+     "author": "mishal muneer",
+     "is_maker": false,
+     "text": "Does Navige only optimise LLM tokens, or can it help with paid search and scraping APIs too?",
+     "kr": "Navige는 LLM 토큰만 최적화하나요, 아니면 유료 검색이나 스크래핑 API 비용 절감에도 도움을 줄 수 있나요?"
+    },
+    {
+     "author": "Shameeh Rahman",
+     "is_maker": true,
+     "text": "@mishal_muneer Actually, more than LLM tokens! The costs of paid searches and scraping APIs can be high as well. Navige considers the bigger picture when it comes to agent costs and finds out about unnecessary or duplicate calls, including paid tools integrated via Navige.",
+     "kr": "@mishal_muneer 실제로 LLM 토큰 이상을 다룹니다! 유료 검색 및 스크래핑 API 비용 역시 상당히 높을 수 있습니다. Navige는 에이전트 비용의 전체적인 그림을 고려하며, Navige를 통해 연동된 유료 도구들을 포함해 불필요하거나 중복된 호출을 찾아내 최적화합니다."
+    }
+   ],
+   "slug": "navige",
+   "website": "https://navige.ai/"
+  },
+  {
+   "name": "GLM-Legal",
+   "tagline_en": "Z.ai’s legal AI model for contract review and compliance",
+   "tagline_kr": "계약서 검토 및 컴플라이언스를 위한 Z.ai의 법률 특화 AI 모델",
+   "image": "https://ph-files.imgix.net/88cbb6bb-611a-48fe-95c2-0c5345ba95ce.svg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "LLMs",
+    "AI Infrastructure Tools",
+    "Legal",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 176,
+   "comments_count": 2,
+   "maker": "Z.ai, Rohan Chaubey",
+   "price_model": "Free Options",
+   "price_detail": "신청 기반 API 베타 제공 (Application-only API beta, 공식 가격 미공개 — Vals AI의 Harvey LAB 벤치마크 실행 기준 테스트당 약 $0.15 수준)",
+   "desc_kr": "GLM-Legal은 Z.ai가 GLM-5.3-Flash를 기반으로 계약서 검토, 증거 분석, 컴플라이언스 리서치 등 다단계 에이전트형 법률 업무를 수행하도록 훈련한 법률 특화 AI 모델입니다. 대규모 법률 코퍼스를 활용한 중간 학습(Mid-training)을 거친 뒤, 수만 개의 법률 작업 환경에서 강화학습(RL)을 진행하고 모델과 에이전트 하네스를 함께 최적화했습니다. Vals AI가 측정한 Harvey의 법률 에이전트 벤치마크(Legal Agent Benchmark)에서 기존 베이스 모델의 6.67% 대비 크게 향상된 19.17%의 작업 통과율을 기록했습니다. 또한 LegalBench에서는 86.23%를 기록해 주요 프론티어 모델에 근접한 성능을 보이면서도 테스트당 약 0.15달러 수준의 낮은 비용 효율성을 입증했습니다. 현재 로펌, 사내 법무팀, 컴플라이언스 팀 등 법률 전문가의 워크플로 지원을 위해 신청 기반(Application-only) API 베타 형태로 제공되며 향후 AutoClaw 데스크톱 에이전트 앱에도 탑재될 예정입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/z-ai",
+   "comment_summary": "헌터인 Rohan Chaubey가 GLM-Legal의 학습 방식과 Harvey 법률 에이전트 벤치마크(19.17%) 및 LegalBench(86.23%) 성과, 그리고 신청제 API 베타 등 접근 방식을 상세히 정리해 공유했습니다. 이에 한 사용자는 모든 세부 기준을 완전히 충족해야만 통과로 인정되는 엄격한 평가 방식을 긍정적으로 평가하면서, 법률 전문가가 결과물을 신뢰할 수 있도록 각 판단의 출처와 근거 논리를 명확히 제시해주는지 질문했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "**GLM-Legal** is Z.ai’s legal AI model, built on GLM-5.3-Flash and trained for agentic legal work. That means multi-step tasks like contract review, evidence analysis and compliance research. It’s in an application-only API beta.\n\n**Problem:** Legal work is long, detailed and unforgiving. A contract review or compliance check has many steps, and one missed point can sink the result. General-purpose models often fall short on that kind of multi-step legal work.\n\n**Solution:** Z.ai took its GLM-5.3-Flash model and trained it for legal tasks. Per Z.ai, that meant legal mid-training on a larger corpus, then reinforcement learning across tens of thousands of legal task environments. It built the agent harness alongside the model, so the two were improved together.\n\n**How it performs:**\n\n*   Harvey’s Legal Agent Benchmark: 19.17% of tasks passed, up from 6.67% for the base model. A task only passes if every one of its criteria passes, so even the top scores are low in absolute terms.\n    \n*   LegalBench: 86.23%, versus 88.56% for Claude Fable 5. Z.ai says it matches frontier models here, but its numbers show it slightly behind.\n    \n*   Cost: about $0.15 per Harvey LAB test on Vals AI’s runs, much lower than the other models compared. The price Vals used isn’t a published GLM-Legal price.\n    \n\n**Access:**\n\n*   API: It’s an application-only beta, with no published price\n    \n*   Weights: no public weights reported, and no Hugging Face repo yet\n    \n*   Desktop: Z.ai says it’s coming to its AutoClaw desktop agent app, with no date given\n    \n\n**Who it’s for:** law firms, in-house counsel and compliance teams exploring AI for legal workflows. This is a tool for professionals and doesn’t replace legal advice or a lawyer.\n\nRead Z.ai’s announcement · See the Vals AI results · Apply for API access",
+     "kr": "**GLM-Legal**은 GLM-5.3-Flash를 기반으로 에이전트형 법률 업무를 위해 훈련된 Z.ai의 법률 AI 모델입니다. 계약서 검토, 증거 분석, 컴플라이언스 리서치와 같은 다단계 작업을 수행하며 현재 신청 기반(application-only) API 베타로 제공됩니다.\n\n**문제점:** 법률 업무는 길고 세부적이며 작은 실수도 용납되지 않습니다. 계약서 검토나 컴플라이언스 확인에는 수많은 단계가 포함되며, 단 하나의 논점만 놓쳐도 전체 결과가 무너질 수 있습니다. 범용 모델은 이러한 다단계 법률 업무에서 종종 한계를 보입니다.\n\n**해결책:** Z.ai는 GLM-5.3-Flash 모델을 기반으로 더 큰 코퍼스에 대한 법률 중간 학습(mid-training)을 진행한 뒤, 수만 개의 법률 작업 환경에서 강화학습을 수행했습니다. 또한 모델과 함께 에이전트 하네스를 구축하여 두 요소를 동시에 개선했습니다.\n\n**성능 지표:**\n* Harvey의 Legal Agent Benchmark: 베이스 모델의 6.67%에서 상승한 19.17%의 작업 통과율을 기록했습니다. 모든 세부 기준을 통과해야만 작업 통과로 인정되므로 최상위권 모델들도 절대적인 점수는 낮은 편입니다.\n* LegalBench: 86.23%를 기록했습니다(Claude Fable 5는 88.56%). Z.ai는 프론티어 모델에 필적한다고 설명하지만 수치상으로는 근소하게 뒤처집니다.\n* 비용: Vals AI 실행 기준 Harvey LAB 테스트당 약 $0.15로, 비교 대상 모델들보다 훨씬 저렴합니다(Vals가 사용한 단가는 공식 발표 가격은 아닙니다).\n\n**이용 방법:**\n* API: 신청 기반 베타이며 공개된 가격표는 없습니다.\n* 가중치(Weights): 공개된 가중치나 Hugging Face 저장소는 아직 없습니다.\n* 데스크톱: 향후 AutoClaw 데스크톱 에이전트 앱에 탑재될 예정이나 구체적인 일정은 미정입니다.\n\n**추천 대상:** 법률 워크플로에 AI 도입을 모색하는 로펌, 사내 법무팀 및 컴플라이언스 팀. 전문가용 보조 도구이며 법률 자문이나 변호사를 대체하지 않습니다.\n\nZ.ai 발표 전문 읽기 · Vals AI 결과 보기 · API 액세스 신청하기"
+    },
+    {
+     "author": "E. P. Johnson",
+     "is_maker": false,
+     "text": "@rohanrecommends Interesting man! I love the fact that a task only passes if all criteria passes fully.  \n  \nDoes GLM-Legal point to the source/ root arguments behind each finding/ decision?  \n  \nThat would decide if a legal professional trusts the output or no",
+     "kr": "@rohanrecommends 흥미롭네요! 모든 기준을 완전히 충족해야만 작업 통과로 인정된다는 점이 정말 마음에 듭니다.\n\nGLM-Legal은 각 분석 결과나 판단의 바탕이 되는 출처나 핵심 근거 논리를 명확히 짚어주나요?\n\n그 부분이 법률 전문가가 결과물을 신뢰할지 여부를 결정짓는 핵심이 될 것 같습니다."
+    }
+   ],
+   "slug": "z-ai",
+   "website": "https://z.ai/"
+  },
+  {
+   "name": "Apple HomeView",
+   "tagline_en": "A new way to stay connected, and manage the home",
+   "tagline_kr": "연결을 유지하고 집안을 관리하는 새로운 방법",
+   "image": "https://ph-files.imgix.net/ce9c1435-64d9-4963-b5ea-e8c369ac2239.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=48&w=48",
+   "categories": [
+    "Home",
+    "Apple"
+   ],
+   "upvotes": 175,
+   "comments_count": 3,
+   "maker": null,
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Apple HomeView는 가족 및 지인들과 긴밀하게 연결을 유지하면서 집안의 다양한 스마트홈 환경을 통합 관리할 수 있도록 지원하는 새로운 홈 허브 솔루션입니다. 일상적인 커뮤니케이션 기능과 가정 내 기기 제어 및 관리 기능을 결합하여 한층 직관적인 스마트홈 사용자 경험을 제공합니다. Apple 생태계와 자연스럽게 연동되어 집안 곳곳의 상태를 한눈에 파악하고 편리하게 제어할 수 있도록 설계되었습니다. 당일 Product Hunt 리더보드에서 'Home' 및 'Apple' 카테고리 주요 제품으로 이름을 올리며 175개의 업보트를 기록했습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/apple",
+   "comment_summary": null,
+   "warnings": "수치(업보트 175·댓글 3)는 당일 리더보드(top5.json 및 home.md) 수집 시점 참고치. 수집된 상세 마크다운(apple.md)의 경우 리다이렉트 또는 슬러그 매핑 오류로 인해 'Teespring' 페이지가 수집되는 데이터 불일치가 확인됨. 따라서 이름, 태그라인, 대표 이미지, 카테고리 등은 리더보드(home.md)의 Apple HomeView 공식 정보를 반영하였으며, 상세 마크다운 내에 유효한 댓글 및 메이커·가격 정보가 없어 해당 필드는 null 및 빈 배열([])로 처리함.",
+   "comments": [],
+   "slug": "apple",
+   "website": "http://teespring.com/"
+  },
+  {
+   "name": "OpenMuse",
+   "tagline_en": "Opensource, self hostable personal assistant for any harness",
+   "tagline_kr": "모든 에이전트 하네스와 호환되는 오픈소스 셀프 호스팅 개인 비서",
+   "image": "https://ph-files.imgix.net/b0b98301-186b-49b8-bf9c-10a3f864b211.x-icon?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "AI Infrastructure Tools",
+    "LLM Developer Tools",
+    "Open Source",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 161,
+   "comments_count": 4,
+   "maker": "CopilotKit, Eli Berman, Rohan Chaubey",
+   "price_model": "Free",
+   "price_detail": "MIT 라이선스 오픈소스 프로젝트로 무료 제공 (셀프 호스팅 및 자유로운 커스터마이징 지원)",
+   "desc_kr": "OpenMuse는 CopilotKit에서 선보인 오픈소스 셀프 호스팅 개인 AI 에이전트로, 전용 브라우저와 터미널, 파일 시스템 및 지속적인 작업(Persistent work) 환경을 갖추고 있습니다. 사용자가 원하는 결과물을 요청하면 에이전트가 영구적인 Chromium 브라우저와 선택적 Linux 터미널 워크스페이스에서 작업을 수행하며, 사용자는 진행 과정을 지켜보다가 필요할 때 동일한 브라우저 세션의 제어권을 직접 넘겨받을 수 있습니다. 진행 상황 추적과 승인 절차, 작업 영수증이 포함된 지속형 작업 계획을 지원하며, 작업의 일시 중지·재개·취소·재시도는 물론 파일 및 PDF 처리, 목표 및 마일스톤 반복 추적 기능을 제공합니다. Gmail 및 캘린더 연동을 지원하되 메일 발송이나 일정 변경과 같은 중요한 작업 전에는 반드시 사용자의 사전 검토 및 승인을 거치도록 설계되었습니다. AG-UI를 통해 어떤 에이전트 하네스나 프레임워크와도 호환되며, iOS·Android·웹 앱을 지원하고 MIT 라이선스로 공개되어 누구나 자유롭게 복제 및 자체 호스팅하여 맞춤형 개인 비서로 구축할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/copilotkit",
+   "comment_summary": "헌터인 Rohan Chaubey가 영구 브라우저 세션 제어권 전환(Takeover), 이메일·캘린더 승인 기반 연동, AG-UI 호환성 등 OpenMuse의 핵심 기능을 소개했으며, CopilotKit 팀의 Eli Berman은 어떤 에이전트 프레임워크와도 연동 가능한 Meta Muse의 최고 수준 오픈소스 대안이라고 강조했습니다. 사용자들은 에이전트가 이메일이나 답장 초안을 작성할 때 사용자 고유의 문체와 톤앤매너를 개인화할 수 있는지, 그리고 셀프 호스팅을 위한 시스템 요구 사항은 무엇인지에 대해 관심을 보였습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "**OpenMuse** is an open-source personal agent with its own browser, terminal, files, and persistent work.\n\nAsk it for an outcome, follow its plan, review important actions, and come back to the result. Its persistent browser lets you watch the agent work and take control of the same session when you need to.\n\n**What you get:**\n\n*   Persistent Chromium browser with takeover\n    \n*   Optional Linux terminal and workspace\n    \n*   Durable task plans with progress, approvals, and receipts\n    \n*   Pause, resume, cancel, and retry tasks\n    \n*   Work with files and PDFs\n    \n*   Gmail and Calendar integrations with review required for sends and changes\n    \n*   Goals, milestones, and recurring tracking\n    \n*   iOS, Android, and web apps\n    \n*   Compatible with any agent harness through AG-UI\n    \n\nOpenMuse is currently an alpha, MIT-licensed project designed for self-hosting and building on.\n\nTry it via OpenMuse website or clone it on GitHub and make it your own personal agent.\n\nP.S. I hunt the latest and greatest launches in tech, SaaS and AI, follow to be notified **→** @rohanrecommends",
+     "kr": "**OpenMuse**는 자체 브라우저, 터미널, 파일 시스템 및 지속적인 작업 환경을 갖춘 오픈소스 개인 에이전트입니다.\n\n원하는 결과물을 요청하고 계획을 따라가며 중요한 작업을 검토한 뒤 완성된 결과를 확인하세요. 영구 브라우저를 통해 에이전트가 일하는 모습을 지켜보다가 필요할 때 동일한 세션의 제어권을 직접 넘겨받을 수 있습니다.\n\n**제공 기능:**\n* 제어권 전환(takeover)을 지원하는 영구 Chromium 브라우저\n* 선택적 Linux 터미널 및 워크스페이스\n* 진행 상황, 승인, 영수증이 포함된 지속형 작업 계획\n* 작업 일시 중지, 재개, 취소 및 재시도\n* 파일 및 PDF 작업 지원\n* 발송 및 변경 전 검토가 요구되는 Gmail 및 캘린더 연동\n* 목표, 마일스톤 및 반복 작업 추적\n* iOS, Android 및 웹 앱 지원\n* AG-UI를 통해 모든 에이전트 하네스와 호환\n\nOpenMuse는 현재 셀프 호스팅 및 확장 개발을 위해 설계된 알파 단계의 MIT 라이선스 프로젝트입니다.\n\nOpenMuse 웹사이트에서 체험해보거나 GitHub에서 클론하여 나만의 개인 에이전트로 만들어보세요.\n\nP.S. 저는 테크, SaaS, AI 분야의 최신 우수 런칭 제품들을 발굴하고 있습니다. 소식을 받아보시려면 팔로우해 주세요 **→** @rohanrecommends"
+    },
+    {
+     "author": "Amartya Gaur",
+     "is_maker": false,
+     "text": "I think this would be useful considering every provider is now offering their own versions of sandboxes for giving an agent more control, If OpenMuse drafts replies, email messages, does it have a way to personalise the style of writing, tonality, voice etc ? so that it sounds more like me ?",
+     "kr": "요즘 모든 제공업체가 에이전트에 더 많은 제어권을 부여하기 위해 자체 샌드박스를 내놓고 있는 상황에서 매우 유용할 것 같습니다. 만약 OpenMuse가 답장이나 이메일 메시지 초안을 작성할 때, 제 말투처럼 들리도록 문체나 어조, 보이스 등을 개인화하는 기능이 있나요?"
+    },
+    {
+     "author": "Anna Wu",
+     "is_maker": false,
+     "text": "very cool! what's the requirement to self host?",
+     "kr": "정말 멋지네요! 셀프 호스팅을 위한 요구 사항은 어떻게 되나요?"
+    },
+    {
+     "author": "Eli Berman",
+     "is_maker": true,
+     "text": "OpenMuse is the best open source version of Meta Muse.  \nAnyone can clone it, customize it, and make it their own.  \n  \nWorks also with any agent framework which is super cool.  \n  \nYou can find our viral launch post here: https://x.com/ataiiam/status/2102400431519592581?s=20",
+     "kr": "OpenMuse는 Meta Muse의 가장 뛰어난 오픈소스 버전입니다.\n누구나 클론하고 커스터마이징하여 자신만의 에이전트로 만들 수 있습니다.\n\n또한 어떤 에이전트 프레임워크와도 함께 작동한다는 점이 정말 멋집니다.\n\n화제가 된 저희 런칭 게시물은 여기에서 확인하실 수 있습니다: https://x.com/ataiiam/status/2102400431519592581?s=20"
+    }
+   ],
+   "slug": "copilotkit",
+   "website": "https://www.copilotkit.ai/"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
