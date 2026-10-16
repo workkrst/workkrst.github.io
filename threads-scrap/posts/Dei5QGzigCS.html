@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@native_jeong - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">정 | 0 to 1 실행하는 사람</span>
+                    
+                    <a href="https://www.threads.net/@native_jeong" target="_blank" rel="noopener" class="username">@native_jeong</a>
+                </div>
+                <span class="post-date">2026-10-16 15:30</span>
+            </div>
+            <div class="post-text">당장 설치해야 할 클로드 사기 플러그인 TOP 4<br><br>1. Remotion &amp; Hyperframes<br>역할: React 기반 프로그래밍을 통한 고품질 동영상 및 모션그래픽 자동 생성<br><br>개념: 리액트 코드로 비디오를 렌더링하는 Remotion과 AI를 결합하여, 숏폼 영상이나 모션그래픽을 코드 및 AI 프롬프트 기반으로 빠르고 정교하게 대량 제작할 수 있는 도구 세트입니다.<br><br>사용법: 개발 환경에서 Remotion 프로젝트 구조 내에 컴포넌트를 구성하고, AI에게 애니메이션 프레임 및 타이포그래피 전환 효과를 코드로 작성하도록 요청합니다.<br><br>실전 예시: Remotion과 Hyperframes를 활용해서 앱 소개 15초짜리 숏폼 비디오 만들어줘. 타이포그래피가 부드럽게 페이드인되고, 배경에 미니멀한 다크 모드 카드 UI가 슬라이드인되는 애니메이션 코드를 작성해줘.</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 92</span>
+                    <span>💬 0</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@native_jeong/post/Dei5QGzigCS" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (3개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@native_jeong</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-16 15:31</span>
+                    <span class="reply-likes">❤️ 4</span>
+                </div>
+                <div class="reply-text">2. Impeccable &amp; Taste<br>역할: AI가 사람처럼 미적으로 뛰어난 고품질 웹사이트 및 UI 디자인 자동 구축<br><br>개념: 흔히 볼 수 있는 엉성하거나 뻔한 AI 생성 웹사이트의 한계를 뛰어넘어, 세련된 타이포그래피, 완벽한 여백, 트렌디한 디자인 시스템을 갖춘 웹사이트를 만들 수 있도록 돕는 프레임워크/지침입니다.<br><br>사용법: AI 코딩 도구의 시스템 프롬프트나 프로젝트 규칙 파일에 디자인 퀄리티 기준과 가이드를 등록하여 활용합니다.<br><br>실전 예시: Impeccable과 Taste 가이드를 적용해서 미니멀한 개인 블로그 메인 페이지를 Next.js와 Tailwind로 만들어줘. 애플 뮤직 스타일의 글래스모피즘과 정갈한 여백, 완벽한 반응형 그리드를 적용해줘.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@native_jeong</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-16 15:31</span>
+                    <span class="reply-likes">❤️ 5</span>
+                </div>
+                <div class="reply-text">3. MarkItDown<br>역할: 다양한 파일 형식(PDF, Word, Excel, 이미지 등)을 깔끔한 Markdown 형식으로 변환하여 LLM 토큰 효율 극대화<br><br>개념: 마이크로소프트가 오픈소스로 공개한 유틸리티로, 복잡한 바이너리 문서나 오피스 파일을 LLM이 가장 잘 이해하고 적은 토큰으로 처리할 수 있는 마크다운 텍스트로 변환해 줍니다.<br><br>사용법: CLI 명령어(markitdown input.pdf &gt; output. md)로 실행하거나, 파이썬 스크립트에 연동하여 AI 에이전트가 문서를 읽기 전 전처리 단계로 사용합니다.<br><br>실전 예시: 대형 PDF 기획서 파일을 MarkItDown 도구로 마크다운으로 변환한 뒤, Claude Code에게 전달해서 핵심 요구사항 분석 및 기능 명세서 작성해줘.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@native_jeong</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-16 15:31</span>
+                    <span class="reply-likes">❤️ 10</span>
+                </div>
+                <div class="reply-text">4. Agent Reach<br>역할: SNS 및 대형 플랫폼의 데이터를 AI 에이전트가 쉽게 수집할 수 있도록 지원하는 크롤링 솔루션<br><br>개념: 인스타그램, 유튜브 등 안티봇 시스템이 강력한 플랫폼에서도 AI 에이전트가 필요한 데이터를 안정적으로 수집·추출할 수 있게 최적화된 크롤링 도구입니다.<br><br>사용법: API나 CLI 환경에서 타겟 플랫폼의 URL과 수집할 데이터 키워드를 설정하고, AI 에이전트 워크플로우에 연동하여 실행합니다.<br><br>실전 예시: Agent Reach를 활용해서 특정 유튜브 채널의 최근 영상 댓글 데이터를 크롤링하고, 사용자 피드백을 분석해서 키워드별로 트렌드를 정리해줘.</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (0)</h3>
+            <p class="empty-replies">등록된 댓글이 없습니다.</p>
+        </div>
+        
+    </div>
+</body>
+</html>
