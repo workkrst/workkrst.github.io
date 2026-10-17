@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@binx_lab - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">돈버는 빈이형 | 경제·돈의 흐름</span>
+                    <span class="verified-badge" title="인증 계정">✓</span>
+                    <a href="https://www.threads.net/@binx_lab" target="_blank" rel="noopener" class="username">@binx_lab</a>
+                </div>
+                <span class="post-date">2026-10-18 00:46</span>
+            </div>
+            <div class="post-text">얼굴부터 움직임까지, <br>AI 인플루언서를 직접 만드는 7가지 방법<br><br>들어가보자.<br><br>1. 힉스필드에서 AI 캐릭터 만들기</div>
+            <div class="media-grid"><div class="media-item"><img src="https://scontent-nrt6-1.cdninstagram.com/v/t51.82787-15/852693477_17950474419442912_79927244479443865_n.webp?_nc_cat=106&amp;ig_cache_key=NDAxMDAyMzAwNDg4MTMwODEyOQ%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTkyMC5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=-zuBWB6BVSEQ7kNvwFGDxjq&amp;_nc_oc=Adr8y3hsMnL2xVlZgr_xY9i7M8wDgtyWtyhWff6CR_kbILQIEw0B5GHKpfHTpwRp_559ZUunI_PvV507mpzMF49e&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt6-1.cdninstagram.com&amp;_nc_gid=7NNvNAvVC9_MOF7ALzhNLQ&amp;_nc_ss=7e289&amp;oh=00_AQP9kc8H_NDDXEjoiNsjEF7Yjtr97s1Ir8NKMCfs5kSn8Q&amp;oe=6AD9B709" alt="Post media" loading="lazy"></div><div class="media-item"><img src="https://scontent-nrt6-1.cdninstagram.com/v/t51.82787-15/850319433_17950474404442912_7536211133622399849_n.webp?_nc_cat=106&amp;ig_cache_key=NDAxMDAyMzAwNTA0MDY3NDYyMA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTkxOC5zZHIucmVndWxhcl9waG90by5DMyJ9&amp;_nc_ohc=rXFK3xYcvosQ7kNvwHHJ5fQ&amp;_nc_oc=AdqvbyVrlpW5SvDvqygL6l6oFOTWD_-8_3-GzjBxxoyz0paaPFKICGC3EqycBoPLbayiBVYsjxes1geWtGBtbLWa&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt6-1.cdninstagram.com&amp;_nc_gid=7NNvNAvVC9_MOF7ALzhNLQ&amp;_nc_ss=7e289&amp;oh=00_AQOz-_VJv29kmF5171ytzH8yYXPItHxY1TusygxGSNUeIA&amp;oe=6AD99618" alt="Post media" loading="lazy"></div></div>
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 19</span>
+                    <span>💬 0</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@binx_lab/post/Demdq-hGLKx" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (16개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">힉스필드 (Higgsfield)의 <br>AI Influencer Studio에 들어가 <br><br>&#x27;Influencer builder&#x27;를 선택하면 됨.<br><br>캐릭터 유형은 일반적인 외모의 Average, 개성이 두드러지는 Bold, <br><br>과장된 외모의 Extreme 중에서 고를수 있음.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">기존에 만든 인물을 참고하거나 <br><br>처음부터 새로운 캐릭터를 <br>만드는 것도 가능함.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">2. 얼굴과 체형 등 외모 설정하기<br><br>캐릭터 유형을 골랐다면 <br>세부적인 외모를 정할 차례임. <br><br>성별, 나이대, 피부색, <br>얼굴형, 눈 모양, <br><br>헤어스타일, 체형 등 <br>총 19가지 항목을 설정할 수 있음.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">주근깨나 수염, <br>액세서리 같은 특징도 선택 가능함.<br><br>일일이 고르기 어렵다면 <br><br>&#x27;Randomize&#x27; 버튼으로 <br>설정을 무작위로 조합해볼 수도 있음.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">3. 설정한 캐릭터의 사진 생성하기<br><br>원하는 외모를 설정했다면 <br>&#x27;Generate&#x27; 버튼을 누르면 됨. <br><br>선택한 특징을 바탕으로 <br><br>얼굴을 가까이서 보여주는 사진과 <br>전신사진이 만들어짐.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">결과가 마음에 들지 않으면 <br>&#x27;Recreate&#x27; 기능으로 다시 생성할 수 있으며, <br><br>필요한 크레딧도 생성 전에 확인할수 있음.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">4. 만든 캐릭터를 저장해 다시 사용하기<br><br>사진이 완성됐다면 <br>캐릭터를 저장해두는 것도 가능함.<br><br>&#x27;Create element&#x27; 기능을 이용하면 <br><br>만든 인물을 다른 이미지나 <br>영상에도 활용할 수 있음.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">힉스필드의 Cinema Studio에서도 <br>&#x27;AI Influencer&#x27; 탭을 통해 <br><br>기존 캐릭터를 불러와 <br>새로운 장면을 제작할 수 있음.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">5. AI 캐릭터에게 적용할 움직임 촬영하기<br><br>이제 캐릭터를 움직이게 할 차례임. <br><br>먼저 참고할 영상이 필요한데,<br><br>휴대전화로 손을 흔들거나 <br>고개를 끄덕이는 모습을 직접 촬영해도 됨.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">힉스필드의 <br>AI Influencer 제작 가이드에 따르면 <br><br>Genjutsu에는 4~30초 길이의 <br>참고 영상을 사용할수 있음.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">6. 촬영한 움직임을 AI 캐릭터에 입히기<br><br>영상을 준비했다면 <br>캐릭터 결과 화면에서<br><br> &#x27;Turn to motion with Genjutsu&#x27;를 선택하거나 &#x27;Motion&#x27; 탭으로 이동하면 됨.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">&#x27;Motion transfer&#x27;에 <br>캐릭터 이미지와 촬영한 영상을 넣으면 <br><br>영상 속 움직임을 AI 캐릭터에 적용할 수 있음.<br><br>출력 해상도는 <br>480p, 720p, 1080p로 안내돼 있으며, <br><br>영상 생성에 필요한 크레딧도 <br>미리 확인할수 있음.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">7. 목소리를 넣어 말하는 영상 만들기<br><br>움직임뿐 아니라 <br>말하는 모습도 만들수 있음. <br><br>힉스필드의 &#x27;Video&#x27; 메뉴에서 <br>&#x27;Lipsync Studio&#x27;를 열면 됨. <br><br>사진으로 시작한다면 <br>사진을 영상으로 만드는 모델을, <br><br>이미 만든 영상이 있다면 <br>영상 입력을 지원하는 모델을 선택하는 방식임.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">여기에 대사를 입력하거나 <br>녹음한 음성을 추가하면 <br><br>입술 움직임을 맞춘 영상이 생성됨. <br><br>완성된 결과를 확인한 뒤 다운로드하면 됨.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">💡 빈이형의 핵심 정리<br><br>AI 인플루언서는 처음부터 <br>움직임과 목소리까지 <br><br>한 번에 완성할 필요가 없음. <br><br>얼굴을 먼저 만들고, <br><br>이후 영상에 필요한 동작이나 대사를 <br>따로 추가하는 식으로 작업을 나눌 수 있음.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@binx_lab</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-18 00:46</span>
+                    
+                </div>
+                <div class="reply-text">이 방식에서 눈여겨볼 부분은 <br><br>처음 만든 캐릭터를<br>계속 활용할수 있다는 점임. <br><br>인물은 그대로 두고 <br>장면마다 움직임과 대사를 바꾸면,<br><br>매번 새로운 얼굴을 만들지 않고도 <br>여러 영상을 제작할 수 있음🤖</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (0)</h3>
+            <p class="empty-replies">등록된 댓글이 없습니다.</p>
+        </div>
+        
+    </div>
+</body>
+</html>
