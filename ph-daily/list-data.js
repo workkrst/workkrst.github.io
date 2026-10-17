@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-17",
+    "url": "2026-10-17/",
+    "top_product": "Jockey by TwelveLabs",
+    "count": 5,
+    "upvotes_total": 1256,
+    "comments_total": 55
+  },
+  {
     "date": "2026-10-16",
     "url": "2026-10-16/",
     "top_product": "Talanoa",

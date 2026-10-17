@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-10-17</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-10-17 · Top 5 · 수집 댓글 55개 · 수집 2026-10-17 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-10-17",
+ "collected_at": "2026-10-17 12:30 KST",
+ "summary": "오늘 Product Hunt 상위권은 비디오 분석·멀티 에이전트 관리·브라우저 자동화 등 AI 에이전트 인프라 및 개발자 도구 3종과 문서당 결제형 전자서명 SaaS, 차세대 전기 하이퍼카가 나란히 이름을 올렸습니다. 특히 MCP와 전용 커맨드 센터를 통해 영상 라이브러리, 일반 웹사이트, 전자서명 및 원격 코딩 환경을 Claude·ChatGPT 등 AI 에이전트 워크플로에 직접 연결하려는 흐름이 두드러졌습니다. 수집된 댓글에서는 대용량 데이터 처리 시 지연 시간(Latency)과 원격 종단간 암호화 보안, 웹사이트 레이아웃 변경에 대응하는 자가 치유(Self-healing) 안정성, 그리고 구독 피로도를 낮춘 과금 모델의 실효성을 검증하려는 실무적인 질문이 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "twelvelabs",
+   "why": "수천 시간 분량의 비디오 라이브러리를 가로질러 특정 순간을 타임스탬프와 함께 찾아내고, Claude·ChatGPT용 MCP 연동과 소셜 미디어 바이럴 영상 분석 기능까지 결합해 오늘 1위(378표)를 차지했습니다. 댓글에서는 10GB급 장시간 영상에서의 미세 장면 검색 정확도와 대규모 라이브러리 연결 시 지연 시간(Latency) 증가 여부에 대한 질문이 이어졌으며, 메이커는 대사·행동 등 구체적 단서 기반의 정확한 클립 인용과 라이브러리 크기에 비례하지 않는 일정한 쿼리 속도를 설명해 호응을 얻었습니다."
+  },
+  {
+   "slug": "harness-by-autonomous",
+   "why": "여러 머신과 클라우드에서 개별 실행되는 Claude Code, Codex, Cursor 등 다양한 코딩 에이전트를 하나의 네이티브 앱과 모바일 화면에서 통합 제어할 수 있는 오픈소스 커맨드 센터로 2위(300표)에 올랐습니다. 댓글에서는 원격 기기 연동 방식과 기기 간 통신의 기본 암호화 여부에 대한 질문이 집중되었고, 메이커는 SSH·VPN 없는 WebRTC 직접 연결과 X25519·ChaCha20-Poly1305 기반 종단간 암호화가 기본 활성화되어 릴레이 서버조차 데이터를 읽을 수 없다고 밝혀 주목받았습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Jockey by TwelveLabs",
+   "tagline_en": "Your entire video library: organized, searchable, understood",
+   "tagline_kr": "전체 비디오 라이브러리를 체계화하고 검색하며 이해하는 AI 에이전트",
+   "image": "https://ph-files.imgix.net/4ad9e370-d353-4eca-a339-a783eaf4d5af.gif?auto=compress&codec=mozjpeg&cs=strip&dpr=2&fit=max&fm=webp&frame=1&h=56&w=56",
+   "categories": [
+    "Data analysis tools",
+    "AI Infrastructure Tools",
+    "Productivity",
+    "Artificial Intelligence",
+    "Video"
+   ],
+   "upvotes": 378,
+   "comments_count": 26,
+   "maker": "Aiden Lee, Jae Lee, Yeonhoo Park, fmerian",
+   "price_model": "Free Options",
+   "price_detail": "플레이그라운드(playground.twelvelabs.io)를 통한 무료 체험 제공 (상세 유료 요금제는 페이지 내 미기재)",
+   "desc_kr": "Jockey by TwelveLabs는 사진과 비디오를 아우르는 전체 미디어 라이브러리를 깊이 있게 이해하고 분석하는 비디오 AI 에이전트입니다. 수천 시간 분량의 영상을 분석하여 여러 비디오에 걸친 특정 인물, 순간, 맥락을 찾아 연결해주며, 답변마다 시작 및 종료 타임스탬프가 포함된 근거 클립을 함께 제시합니다. MCP 연동을 통해 Claude나 ChatGPT 같은 채팅 인터페이스에서 바로 라이브러리를 쿼리하거나 API 및 SDK를 활용해 자체 애플리케이션에 통합할 수 있습니다. YouTube, TikTok, Instagram Reels 링크를 직접 수집해 영상 훅(Hook)과 시청 지속 요인, 시각·오디오 호흡 등 바이럴 성과를 분석하는 소셜 인텔리전스 기능을 제공합니다. 또한 추출된 클립들을 MP4 파일로 병합하거나 재생 가능한 클립이 담긴 영구 아티팩트(Artifact) 및 타임스탬프 기반 JSON 형태로 저장·공유·제어할 수 있으며, TwelveLabs의 기반 모델(Marengo, Pegasus)이 업그레이드될 때마다 별도의 재통합 없이 성능이 자동으로 향상됩니다.",
+   "launch_url_used": "https://www.producthunt.com/products/twelvelabs",
+   "comment_summary": "댓글에서는 수 기가바이트 규모의 장시간 영상 내 특정 순간 검색 정확도와 수천 시간 규모의 대규모 라이브러리에서 Claude·ChatGPT 연동 시 검색 지연 시간(Latency) 증가 여부에 대한 질문이 이어졌습니다. 메이커 팀(Aiden Lee, Yeonhoo Park)은 대사·행동·화면 속 객체 등 구체적인 단서가 있을 때 수 시간 분량의 대용량 영상에서도 시작·종료 타임스탬프와 함께 정확한 장면을 찾아내며, 라이브러리 크기가 커져도 기본 검색 지연 시간은 늘어나지 않고 질문의 추론 복잡도에만 영향을 받는다고 답변했습니다. 또한 리서치 프리뷰 피드백을 반영해 이번 정식 출시(GA)에서 ChatGPT 및 MCP 연동성을 강화하고, 개발자가 제어 가능한 아티팩트·JSON 출력과 소셜 미디어 URL 기반 바이럴 영상 분석 기능을 추가했다고 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Aiden Lee",
+     "is_maker": true,
+     "text": "We're launching the general availability of Jockey today, and it's shaped by what we learned during the research preview. We heard three things loud and clear:\n\n1.  People needed the connectors to work better. The strongest reactions came through Claude and ChatGPT. So we prioritized ChatGPT support for GA and made the MCP experience seamless. If you want to query your library, your chat interface should be the last friction point, not the first.\n    \n2.  Builders needed output they could control. Developers told us a black-box \"final edit\" wasn't what they wanted. They needed structured clips, JSON, artifacts they could manipulate. So we built durable artifacts that can be saved, shared, revoked, or deleted and ensured the API gives you timestamped, actionable output you own, not a render you're stuck with.\n    \n3.  Users wanted deep social intelligence, not just basic video search. Creators and marketers kept asking us: \"Why is this video trending? What specific hooks are holding attention? What common patterns make these reels go viral?\" We listened, and built social intelligence features that analyze video hooks, breakdown visual and audio pacing, and explain what actually works across trending content. We also added social ingestion of URL links from YouTube, TikTok, and Instagram Reels, so users can analyze what's working in the wild and search performance alongside content without having to upload videos. It's a whole new way to deconstruct viral video performance.\n    \n\nLibrary-level understanding is the point. You point Jockey at thousands of videos and images, and it reasons across all of them, not just one. That's why we built it this way, and why every model upgrade makes it better without you lifting a finger.\n\nIf you're building a video app, organizing footage, or trying to find something in thousands of hours of content, Jockey is for you. Try Jockey and let us know you feedback and we will fix it!",
+     "kr": "오늘 Jockey의 정식 버전(GA)을 출시합니다. 이번 버전은 리서치 프리뷰 기간 동안 얻은 교훈을 바탕으로 완성되었으며, 저희가 명확하게 들은 세 가지 핵심 피드백은 다음과 같습니다:\n\n1. 더 나은 커넥터 연동이 필요했습니다. 가장 뜨거운 반응은 Claude와 ChatGPT를 통해 나왔습니다. 그래서 정식 출시를 위해 ChatGPT 지원을 최우선으로 구현하고 MCP 경험을 매끄럽게 다듬었습니다. 라이브러리를 쿼리할 때 채팅 인터페이스가 첫 번째 장벽이 아니라 가장 마지막에 신경 써야 할 부분이 되어야 하기 때문입니다.\n\n2. 빌더들에게는 직접 제어할 수 있는 출력물이 필요했습니다. 개발자들은 블랙박스 형태의 '최종 편집본'이 아니라 직접 조작할 수 있는 구조화된 클립, JSON, 아티팩트를 원했습니다. 이에 따라 저장, 공유, 권한 회수, 삭제가 가능한 영구적인 아티팩트를 구축했고, 단순 렌더링 결과물이 아니라 타임스탬프가 포함된 실행 가능한 출력물을 API로 온전히 소유할 수 있도록 보장했습니다.\n\n3. 사용자들은 단순한 비디오 검색을 넘어 깊이 있는 소셜 인텔리전스를 원했습니다. 크리에이터와 마케터들은 계속해서 \"이 영상은 왜 뜨고 있을까? 어떤 특정 훅(hook)이 시선을 사로잡는 걸까? 이 릴스들이 바이럴되는 공통 패턴은 무엇일까?\"라고 물었습니다. 저희는 이에 귀를 기울여 비디오 훅을 분석하고, 시각 및 오디오 템포를 분해하며, 트렌딩 콘텐츠 전반에서 실제로 통하는 요소를 설명해주는 소셜 인텔리전스 기능을 구축했습니다. 또한 YouTube, TikTok, Instagram Reels의 URL 링크 수집 기능을 추가하여 영상을 직접 업로드하지 않고도 실제 야생에서 통하는 콘텐츠와 성과를 함께 검색하고 분석할 수 있도록 했습니다. 바이럴 비디오 성과를 해부하는 완전히 새로운 방식입니다.\n\n핵심은 라이브러리 단위의 이해입니다. 수천 개의 비디오와 이미지에 Jockey를 연결하면 단일 영상이 아닌 전체 미디어를 가로질러 추론합니다. 바로 이러한 이유로 Jockey를 설계했으며, 덕분에 사용자가 손 하나 까딱하지 않아도 기반 모델이 업그레이드될 때마다 성능이 더욱 좋아집니다.\n\n비디오 앱을 개발 중이거나, 촬영 원본을 정리하거나, 수천 시간 분량의 콘텐츠에서 무언가를 찾고 계신다면 Jockey가 정답입니다. Jockey를 사용해 보시고 피드백을 남겨주시면 반영하여 개선하겠습니다!"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "S/O for this new launch! keep up the great work, and keep launching",
+     "kr": "새로운 런칭에 박수를 보냅니다! 앞으로도 멋진 활약과 지속적인 런칭을 응원합니다."
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "> \"Marengo finds it, Pegasus describes it, and Jockey turns raw footage into something you can query.\"\n\nThis new launch by @TwelveLabs connects the dots.\n\nMarengo (3.0) launched 10 months ago, ranked among the Top Products of the Day. Pegasus launched 6 months ago (1.5) and 1 week ago (1.6), and again, both ranked among the Top Products of the Day.\n\nS/O to ?makers for their consistency. It pays off. Keep launching.",
+     "kr": "> \"Marengo가 찾고, Pegasus가 묘사하며, Jockey는 원본 영상을 쿼리 가능한 데이터로 바꿉니다.\"\n\n@TwelveLabs의 이번 신규 런칭은 그동안의 점들을 하나로 연결해 줍니다.\n\n10개월 전 출시된 Marengo(3.0)가 오늘의 상위 제품에 올랐고, 6개월 전(1.5)과 1주일 전(1.6) 출시된 Pegasus 역시 모두 오늘의 상위 제품에 선정되었습니다.\n\n꾸준함을 보여준 메이커 팀에 박수를 보냅니다. 그 노력이 결실을 맺고 있네요. 계속해서 런칭을 이어가세요."
+    },
+    {
+     "author": "Hamza Afzal Butt",
+     "is_maker": false,
+     "text": "How well does the search handle really specific moments in longer videos? Congrats @aiden_lee7 & team! Thanks for sharing @fmerian 🙌🏻",
+     "kr": "길이가 긴 영상에서 아주 구체적인 순간을 검색할 때 얼마나 잘 처리하나요? @aiden_lee7 님과 팀원분들 축하드립니다! 공유해주신 @fmerian 님도 감사합니다 🙌🏻"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "thanks for the continuous support!",
+     "kr": "꾸준한 응원과 지지에 감사드립니다!"
+    },
+    {
+     "author": "Yeonhoo Park",
+     "is_maker": true,
+     "text": "@hamza_afzal_butt Great question! Long videos are what we built Jockey for.\n\nAsk about a specific moment and Jockey finds it, even in a video that runs for hours (~10GB per video) and in a library spanning thousands hours of videos. Every answer cites the clips it used with start and end times, so you can jump straight to the moment and check it.\n\nSpeaking of search specificity, it works best when the moment has something concrete to find, like a line of dialogue, an action, or an object on screen.",
+     "kr": "@hamza_afzal_butt 좋은 질문입니다! 장시간 영상이야말로 저희가 Jockey를 만든 핵심 이유입니다.\n\n수 시간 동안 이어지는 대용량 영상(영상당 약 10GB)이나 수천 시간 분량에 달하는 라이브러리에서도 특정 순간에 대해 질문하면 Jockey가 이를 정확히 찾아냅니다. 모든 답변에는 참조한 클립의 시작 시간과 종료 시간이 함께 인용되므로 해당 순간으로 바로 이동해 직접 확인할 수 있습니다.\n\n검색의 구체성 측면에서는 대사 한 줄, 특정 행동, 화면 속 사물처럼 찾을 수 있는 구체적인 대상이 있을 때 가장 뛰어난 성능을 발휘합니다."
+    },
+    {
+     "author": "Irene Chan",
+     "is_maker": false,
+     "text": "Congrats on the launch! I've always wanted videos to be searchable! Although currently my footage as scattered all over the place. Time to get organized.",
+     "kr": "런칭을 축하합니다! 비디오도 검색할 수 있기를 항상 바랐습니다! 지금은 제 영상 원본들이 여기저기 흩어져 있지만, 이제 체계적으로 정리할 때가 되었네요."
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "@heyitsirenechan time to get organized, exactly! try for free here: playground.twelvelabs.io/get-started",
+     "kr": "@heyitsirenechan 맞습니다, 이제 정리할 시간입니다! 여기에서 무료로 체험해 보세요: playground.twelvelabs.io/get-started"
+    },
+    {
+     "author": "Muhammad Ahmed",
+     "is_maker": false,
+     "text": "What is the workflow of a standard Claude or ChatGPT, and how big a library does it take before searches become slow?  \nAdditionally, Congratulations @jaelee_ , @aiden_lee7 and team Jockey by TwelveLabs 🚀✌️",
+     "kr": "표준 Claude나 ChatGPT 연동 시 워크플로는 어떻게 되며, 라이브러리 규모가 어느 정도 커져야 검색 속도가 느려지나요?\n아울러 @jaelee_, @aiden_lee7 님과 Jockey by TwelveLabs 팀의 런칭을 진심으로 축하합니다 🚀✌️"
+    },
+    {
+     "author": "Yeonhoo Park",
+     "is_maker": true,
+     "text": "@aymi_malik excellent questions. Typical workflow starts with\n\n1.  creating a knowledge store and adding media\n    \n2.  asking jockey for what you want from that knowledge store\n    \n3.  saving the output as an artifact or downloading the mp4 file that stitches together the cited clips.\n    \n\nPlease check out\n\nif you have not!\n\nFor your second question: \"how big a library does it take before searches become slow\", the search and query latency does not grow with the library's size. However the query may take longer depending on the complexity of the ask that requires more reasoning steps and tool calls along the route.\n\nLet me know if you have any other questions!",
+     "kr": "@aymi_malik 훌륭한 질문입니다. 일반적인 워크플로는 다음과 같은 순서로 진행됩니다:\n\n1. 지식 저장소(knowledge store)를 생성하고 미디어를 추가합니다.\n2. 해당 지식 저장소에서 원하는 내용을 Jockey에게 질문합니다.\n3. 결과물을 아티팩트로 저장하거나 인용된 클립들을 하나로 이어 붙인 MP4 파일을 다운로드합니다.\n\n아직 확인하지 않으셨다면 꼭 한번 체험해 보세요!\n\n두 번째 질문인 \"라이브러리 규모가 얼마나 커져야 검색이 느려지는가\"에 대해 답변드리면, 검색 및 쿼리 지연 시간(latency)은 라이브러리 크기에 비례해 증가하지 않습니다. 다만 경로상 더 많은 추론 단계와 도구 호출(tool calls)이 필요한 복잡한 질문일수록 쿼리 처리 시간이 더 걸릴 수 있습니다.\n\n추가로 궁금한 점이 있다면 언제든 알려주세요!"
+    },
+    {
+     "author": "Sohan Patil",
+     "is_maker": false,
+     "text": "Congrats on the launch! Being able to find specific people and moments across thousands of hours of footage and turn them into shareable clips sounds really useful.",
+     "kr": "런칭을 축하합니다! 수천 시간 분량의 영상에서 특정 인물과 순간을 찾아내고 이를 공유 가능한 클립으로 바꿀 수 있다는 점이 정말 유용해 보입니다."
+    },
+    {
+     "author": "Sumit Saurabh",
+     "is_maker": false,
+     "text": "Video is the one area that I feel AI hasn't yet reached its potential in and this tool seems to go in that direction.  \n  \nCongrats on the launch team!",
+     "kr": "비디오는 AI가 아직 잠재력을 완전히 발휘하지 못한 분야라고 생각하는데, 이 도구가 바로 그 방향으로 나아가고 있는 것 같습니다.\n\n팀 여러분, 런칭을 축하합니다!"
+    }
+   ],
+   "slug": "twelvelabs",
+   "website": "https://www.twelvelabs.io/"
+  },
+  {
+   "name": "Harness by Autonomous",
+   "tagline_en": "Every coding agent, every machine, one command center.",
+   "tagline_kr": "모든 머신의 모든 코딩 에이전트를 하나로 통합하는 커맨드 센터",
+   "image": "https://ph-files.imgix.net/8dd4ace8-4774-4e1c-9f3d-9ce6674a82db.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "AI Coding Agents",
+    "Open Source",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 300,
+   "comments_count": 26,
+   "maker": "Dee, Nancy Le, Hiten Shah",
+   "price_model": "Free",
+   "price_detail": "무료 및 오픈소스 제공 (Mac·Linux 데스크톱 앱, 터미널 CLI, iOS·Android 모바일 앱 무료 / 프로모션 코드 PRODUCTHUNT 입력 시 전용 하드웨어 디스플레이 'Harness 디바이스' 1주일간 20% 할인)",
+   "desc_kr": "Harness by Autonomous는 여러 기기와 클라우드 환경에서 실행 중인 다양한 코딩 에이전트를 하나의 화면에서 나란히 관리할 수 있는 오픈소스 커맨드 센터입니다. 직장의 Claude Code, 집의 Codex, 클라우드의 Hermes를 비롯해 Cursor, OpenCode, Pi 등 기존 계정과 에이전트 CLI를 그대로 연결해 각각의 독립된 패널과 브랜치에서 동시에 실행하고 비교할 수 있습니다. Mac 및 Linux용 네이티브 데스크톱 앱과 터미널 CLI(hn)는 물론, iOS 및 Android 모바일 앱을 지원해 이동 중에도 음성이나 텍스트로 에이전트의 질문에 답하거나 새로운 작업을 지시할 수 있습니다. 별도의 SSH 키나 VPN 설정 없이도 WebRTC 직접 연결과 기본 활성화된 종단간 암호화(X25519 세션 키, ChaCha20-Poly1305 프레임 암호화, Ed25519 머신 신원 고정)를 통해 원격 머신의 에이전트를 로컬처럼 안전하게 제어합니다. 나아가 코딩 외에도 CAD, 회로 설계, 로보틱스, 게임, 음악 등 49개의 다양한 도메인 하네스로 확장하여 활용할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/harness-by-autonomous",
+   "comment_summary": "댓글에서는 원격 기기에서 실행 중인 에이전트와의 연동 방식, 기기 간 통신의 종단간 암호화(E2E) 기본 적용 여부, 모바일 앱을 통한 새 작업 지시 가능 여부 및 초기 온보딩 과정에 대한 질문과 피드백이 오갔습니다. 메이커인 Dee는 SSH나 VPN 없이 WebRTC를 통해 원격 머신을 로컬처럼 연결할 수 있으며, X25519 세션 키와 ChaCha20-Poly1305 암호화 및 Ed25519 신원 고정을 통해 모든 통신 경로가 기본으로 종단간 암호화되어 릴레이 서버조차 데이터를 읽을 수 없다고 설명했습니다. 또한 iOS 및 Android 앱에서 음성이나 텍스트로 즉시 새 하네스와 작업을 시작할 수 있으며, 사용자 피드백을 바탕으로 초기 온보딩 UI도 이번 주 내로 개선하겠다고 밝혔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Dee",
+     "is_maker": true,
+     "text": "Hey Product Hunters! 🖐️ I'm Dee, Head of AI & Robotics at Autonomous. We're excited to launch Harness on Product Hunt today and show you what we built. We run a lot of coding agents. Claude Code at work, Codex at home, Hermes in the cloud. One thing bothered us: every agent sits in its own window on its own machine, stops to ask something, and just waits. We decided to change this. What if all of them lived in one command center? 🖥️ Every agent, every machine, side by side in a native app for Mac and Linux 🌿 Each agent on its own branch. Close the app and your agents keep working 🔒 End-to-end encrypted. Free and open source 🧠 Works with Claude Code, Codex, Cursor, OpenCode, Pi, Hermes and more 📱 Answer your agents on the go with the Harness app, available now on both the Apple App Store and Google Play Store. Talk instead of typing. 🎁 Exclusive to the Product Hunt community: 20% off Harness devices, the always-on display by your keyboard, for one week only with code PRODUCTHUNT. We'd love to hear your honest feedback. What's your setup? It will help us improve and build more for everyone. 🙌 🙌 🙌",
+     "kr": "안녕하세요 Product Hunt 여러분! 🖐️ 저는 Autonomous의 AI 및 로보틱스 총괄 Dee입니다. 오늘 Product Hunt에 Harness를 출시하고 저희가 만든 결과물을 보여드리게 되어 기쁩니다. 저희는 직장에서는 Claude Code, 집에서는 Codex, 클라우드에서는 Hermes 등 수많은 코딩 에이전트를 실행합니다. 그런데 한 가지 불편한 점이 있었습니다. 모든 에이전트가 각자의 머신 내 개별 창에 갇혀서, 무언가 질문할 것이 있으면 작업을 멈추고 하염없이 기다리기만 한다는 점이었습니다. 저희는 이를 바꾸기로 했습니다. 모든 에이전트가 하나의 커맨드 센터에 모여 있다면 어떨까요? 🖥️ 모든 에이전트, 모든 머신을 Mac 및 Linux용 네이티브 앱에서 나란히 관리 🌿 각 에이전트가 고유한 브랜치에서 작업하며, 앱을 닫아도 에이전트는 계속 작동 🔒 종단간 암호화 적용, 무료 및 오픈소스 🧠 Claude Code, Codex, Cursor, OpenCode, Pi, Hermes 등과 호환 📱 현재 Apple App Store와 Google Play Store에서 제공되는 Harness 앱으로 이동 중에도 타이핑 대신 음성으로 에이전트에 응답 🎁 Product Hunt 커뮤니티 단독 혜택: 키보드 옆에 두는 상시 켜짐(always-on) 디스플레이인 Harness 디바이스를 코드 PRODUCTHUNT로 단 일주일간 20% 할인된 가격에 만나보세요. 여러분의 솔직한 피드백을 듣고 싶습니다. 현재 어떤 환경(setup)을 쓰고 계신가요? 여러분의 의견이 모두를 위해 더 나은 제품을 만드는 데 큰 도움이 됩니다. 🙌 🙌 🙌"
+    },
+    {
+     "author": "Christian Ruink",
+     "is_maker": false,
+     "text": "💎 Pixel perfection\n\nI was confused at first but I extracted this \"onboarding\" from the main page without adding the harness and my agent almost bought a key (cute)",
+     "kr": "💎 픽셀 단위의 완벽함이네요\n\n처음에는 조금 헷갈렸지만 하네스를 추가하지 않고 메인 페이지에서 이 '온보딩'을 추출했는데, 제 에이전트가 하마터면 키를 구매할 뻔했네요(귀엽군요)."
+    },
+    {
+     "author": "Dee",
+     "is_maker": true,
+     "text": "@christianruink  Thanks, Christian, and sorry for the confusion. That's on us, not you. Love that your agent almost bought a key though 😄.\n\nQuick version:\n\n*   Harness runs the agents you already have, with your own accounts. So install the agent CLI first (Claude Code, Codex…).\n    \n*   ⌘N, pick your agent and a folder, type the task, hit New Harness.\n    \n*   The pane opens with that agent running. If it isn't signed in yet, it shows the agent's own login right there.\n    \n\nSign in once and you're set.\n\nWhere did it first feel confusing? We're fixing onboarding this week and your answer helps a lot.",
+     "kr": "@christianruink 감사합니다 Christian, 그리고 혼란을 드려 죄송합니다. 그건 전적으로 저희 불찰입니다. 그래도 에이전트가 거의 키를 살 뻔했다니 재밌네요 😄.\n\n간단히 요약하자면:\n\n* Harness는 사용자가 이미 보유한 계정으로 기존 에이전트를 실행합니다. 따라서 먼저 에이전트 CLI(Claude Code, Codex 등)를 설치해 주세요.\n* ⌘N을 누르고 에이전트와 폴더를 선택한 뒤, 작업을 입력하고 'New Harness'를 누르세요.\n* 해당 에이전트가 실행되는 패널이 열립니다. 아직 로그인되어 있지 않다면 그 자리에서 바로 에이전트 자체 로그인 화면을 보여줍니다.\n\n한 번만 로그인하면 모든 준비가 끝납니다.\n\n어느 부분에서 처음 헷갈리셨나요? 이번 주에 온보딩을 개선할 예정이라 알려주시면 큰 도움이 됩니다."
+    },
+    {
+     "author": "Kinjal Goswami",
+     "is_maker": false,
+     "text": "I'm a CS student and I bounce between a couple of coding agents depending on the task, so one place to see all of them side by side sounds really useful....",
+     "kr": "컴퓨터공학을 전공하는 학생인데 작업에 따라 여러 코딩 에이전트를 번갈아 사용하고 있어서, 한곳에서 모든 에이전트를 나란히 볼 수 있다는 점이 정말 유용하게 들립니다...."
+    },
+    {
+     "author": "Dee",
+     "is_maker": true,
+     "text": "@kinjal_goswami1 Thanks Kinjal! That's exactly who we built it for. Harness is free and open source, so it fits a student budget. Each agent gets its own pane and its own branch, so you can even give the same task to two agents and compare the results side by side. Which agents do you switch between?",
+     "kr": "@kinjal_goswami1 감사합니다 Kinjal! 바로 그런 분들을 위해 만들었습니다. Harness는 무료이자 오픈소스이므로 학생 예산에도 딱 맞습니다. 각 에이전트가 독립된 패널과 브랜치를 할당받기 때문에 두 에이전트에게 동일한 작업을 지시하고 결과를 나란히 비교할 수도 있습니다. 주로 어떤 에이전트들을 번갈아 사용하시나요?"
+    },
+    {
+     "author": "Sig Eternal",
+     "is_maker": false,
+     "text": "this looks pretty interesting! I have a question pls, does it work good with agents running on remote devices?",
+     "kr": "상당히 흥미로워 보이네요! 질문이 하나 있습니다. 원격 기기에서 실행 중인 에이전트들과도 잘 작동하나요?"
+    },
+    {
+     "author": "Dee",
+     "is_maker": true,
+     "text": "@sig_eternal Yes, that's the main use case. Install Harness on the remote machine and sign in, and its agents show up next to your local ones. No SSH keys or VPN to set up. Harness connects your machines directly over WebRTC when it can, so typing in a remote pane feels local, and everything is end-to-end encrypted.",
+     "kr": "@sig_eternal 네, 그것이 바로 주요 사용 사례입니다. 원격 머신에 Harness를 설치하고 로그인하면 해당 머신의 에이전트들이 로컬 에이전트 바로 옆에 나타납니다. SSH 키나 VPN을 설정할 필요가 없습니다. 가능한 경우 WebRTC를 통해 머신들을 직접 연결하므로 원격 패널에 타이핑할 때도 로컬처럼 빠르며, 모든 통신은 종단간 암호화됩니다."
+    },
+    {
+     "author": "Dee",
+     "is_maker": true,
+     "text": "@sig_eternal One more detail: on the remote machine, run the 4 lines from our README (install, harness login, harness remote-password set, harness start), then go to Machines → Link Machine in the app.\n\ngithub.com/autonomous-ai/openharness",
+     "kr": "@sig_eternal 한 가지 세부 사항을 덧붙이자면, 원격 머신에서 README에 있는 4줄의 명령어(설치, harness login, harness remote-password set, harness start)를 실행한 뒤 앱에서 Machines → Link Machine으로 이동하시면 됩니다.\n\ngithub.com/autonomous-ai/openharness"
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": false,
+     "text": "Can I give new tasks directly from my phone?",
+     "kr": "스마트폰에서 직접 새로운 작업을 지시할 수도 있나요?"
+    },
+    {
+     "author": "Dee",
+     "is_maker": true,
+     "text": "@bengeekly Yes! Open the Harness app on iOS or Android and type or just say the next task in any agent's pane, and it runs on that agent's machine. You can also start a brand-new harness right from your phone with + New Harness.",
+     "kr": "@bengeekly 네! iOS나 Android에서 Harness 앱을 열고 원하는 에이전트 패널에 다음 작업을 타이핑하거나 음성으로 말하면 해당 에이전트의 머신에서 바로 실행됩니다. 또한 스마트폰에서 '+ New Harness'를 눌러 완전히 새로운 하네스를 시작할 수도 있습니다."
+    },
+    {
+     "author": "Kate Ramakaieva",
+     "is_maker": false,
+     "text": "Congrats, team! 🙌🏻 How does the end-to-end encryption work when agents are running across different machines? Is all communication encrypted by default?",
+     "kr": "팀 여러분 축하합니다! 🙌🏻 서로 다른 머신에서 에이전트가 실행될 때 종단간 암호화는 어떻게 작동하나요? 모든 통신이 기본적으로 암호화되나요?"
+    },
+    {
+     "author": "Dee",
+     "is_maker": true,
+     "text": "@kate_ramakaieva Thanks Kate! Yes, it's on by default, nothing to turn on. Every path between your machines and devices is sealed end to end: each connection gets fresh X25519 session keys, every frame is encrypted with ChaCha20-Poly1305, and each machine has a pinned Ed25519 identity.\n\nYour code, keys and keystrokes are sealed on your machine, and when traffic goes through our relay, it only forwards bytes it can't read. The crypto core is open source if you want to dig in: github.com/autonomous-ai/openharness",
+     "kr": "@kate_ramakaieva 감사합니다 Kate! 네, 별도로 켤 필요 없이 기본으로 활성화되어 있습니다. 사용자의 머신과 기기 사이의 모든 경로는 종단간 봉인됩니다. 각 연결마다 새로운 X25519 세션 키가 생성되고, 모든 프레임은 ChaCha20-Poly1305로 암호화되며, 각 머신은 고정된(pinned) Ed25519 신원을 갖습니다.\n\n코드, 키, 키보드 입력은 모두 사용자의 머신에서 안전하게 봉인되며, 트래픽이 저희 릴레이를 경유할 때도 서버는 해독할 수 없는 바이트 데이터만 전달할 뿐입니다. 암호화 코어는 오픈소스로 공개되어 있으니 자세히 살펴보실 수 있습니다: github.com/autonomous-ai/openharness"
+    }
+   ],
+   "slug": "harness-by-autonomous",
+   "website": "https://www.autonomous.ai/harness"
+  },
+  {
+   "name": "Tesla Roadster",
+   "tagline_en": "The hypercar that flies",
+   "tagline_kr": "하늘을 나는 차세대 전기 하이퍼카",
+   "image": "https://ph-files.imgix.net/106cfeac-850f-4567-ac42-0a51998ee2f1.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Travel",
+    "Outdoors platforms",
+    "Physical Products",
+    "Electric Cars"
+   ],
+   "upvotes": 219,
+   "comments_count": 7,
+   "maker": "Zac Zuo",
+   "price_model": "Payment Required",
+   "price_detail": "유료 (Payment Required — Performance 트림 현재 예약 가능, 비행 기능이 포함된 최상위 Rocket 트림은 초청 전용(Invite-only)으로 운영되며 구체적인 판매 가격은 미공개)",
+   "desc_kr": "Tesla Roadster는 기존 양산차의 한계를 뛰어넘는 가속력과 주행거리, 공기역학적 엔지니어링을 결합한 차세대 순수 전기 하이퍼카입니다. Plaid 모델을 넘어서는 새로운 차원의 주행 성능을 제공하며, 가벼운 탈착식 글래스 루프를 트렁크에 수납해 오픈카(컨버터블) 주행 경험도 즐길 수 있습니다. 현재 예약 가능한 Performance 트림을 포함한 모든 트림에 흡착 팬(Suction fans)이 기본 장착되어 벽면을 타고 올라가거나 천장에 거꾸로 매달릴 수 있을 정도의 강력한 접지력을 발휘합니다. 상위 Thrust 트림에는 후방 추진기가 추가되어 정지 상태에서 시속 60마일(0-60mph)까지 1초 미만에 도달하며, 초청 전용(Invite-only)인 최상위 Rocket 트림은 냉가스 추진기(Cold-gas thrusters) 풀 세트를 탑재해 공중 부양 및 비행과 공중 회전 착지가 가능합니다. 단, 비행 기능이 포함된 Rocket 트림은 일반 공공 도로 주행 승인을 받지 않은 특수 모델로, 물리학과 엔지니어링의 한계에 도전하는 상징적인 수동 주행 차량으로 설계되었습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/tesla-roadster",
+   "comment_summary": "헌터인 Zac Zuo가 흡착 팬을 통한 벽면 주행과 냉가스 추진기를 활용한 공중 회전 착지, Tesla Semi 트럭 점프 시연 및 트림별 구성(Performance, Thrust, 초청 전용 Rocket)을 상세히 소개했습니다. 댓글에서는 비현실적일 만큼 놀라운 데모 퍼포먼스와 과감한 디자인에 대한 감탄이 이어진 반면, 이전 세대 로드스터 디자인이 더 낫다는 의견과 함께 구체적인 가격 및 일반 도로 주행 가능 여부에 대한 질문이 제기되었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Zac Zuo",
+     "is_maker": false,
+     "text": "Hi everyone!  \n\nTesla once put a Roadster in a rocket. Now there's a rocket in the Roadster.  \n\nAt the reveal, it drove up a wall and held itself upside down with fan suction, then left the ramp, rolled in midair with cold-gas thrusters and landed on its wheels. Later it hopped over a Tesla Semi.  \n\nThe suction fans come on every trim, including the Performance version you can reserve now. Thrust adds rear thrusters for 0-60 in under a second. Only the invite-only Rocket gets the full set, and that's the one that flies. It isn't approved for public roads.  \n\nMusk calls it the last Tesla meant to be driven by hand, and \"not necessarily a safety-optimized car\" !🫨",
+     "kr": "안녕하세요 여러분!\n\n과거 Tesla는 로켓에 Roadster를 실어 보낸 적이 있습니다. 이제는 Roadster 안에 로켓이 들어갔습니다.\n\n공개 행사에서 이 차량은 벽을 타고 올라가 팬 흡착력으로 천장에 거꾸로 매달린 뒤, 램프를 떠나 냉가스 추진기(cold-gas thrusters)로 공중에서 한 바퀴 회전하고 바퀴로 착지했습니다. 이어서 Tesla Semi 트럭을 뛰어넘기까지 했습니다.\n\n흡착 팬은 지금 예약 가능한 Performance 버전을 포함해 모든 트림에 기본 탑재됩니다. Thrust 트림은 후방 추진기를 추가해 정지 상태에서 시속 60마일(0-60mph)까지 1초 미만에 도달합니다. 오직 초청 전용(invite-only)인 Rocket 트림만이 전체 추진기 세트를 탑재하며, 실제로 하늘을 나는 모델입니다. 이 모델은 일반 공공 도로 주행 승인을 받지 않았습니다.\n\n일론 머스크는 이 차를 사람이 직접 수동으로 운전하도록 만들어진 마지막 Tesla이자, \"반드시 안전에 최적화된 차는 아니다\"라고 부릅니다! 🫨"
+    },
+    {
+     "author": "Ill Robyn",
+     "is_maker": false,
+     "text": "I love how bold the design is. It really stands out from the usual sports cars.",
+     "kr": "과감한 디자인이 정말 마음에 듭니다. 일반적인 스포츠카들과 확연히 차별화되네요."
+    },
+    {
+     "author": "Justin Lee",
+     "is_maker": false,
+     "text": "Honestly an awesome demo, blew my mind. But I do prefer the previous tesla roadster design. This one looks like a baby lambo but not in a good way",
+     "kr": "솔직히 데모는 정말 경이로웠고 깜짝 놀랐습니다. 하지만 디자인은 이전 세대 Tesla Roadster가 더 마음에 드네요. 이번 모델은 별로 좋지 않은 의미로 축소판 람보르기니처럼 보입니다."
+    },
+    {
+     "author": "Ezzaky Abd",
+     "is_maker": false,
+     "text": "WOW, what the cost? what the price?",
+     "kr": "와우, 비용은 얼마인가요? 가격이 어떻게 되나요?"
+    },
+    {
+     "author": "Maria Anosova 🔥",
+     "is_maker": false,
+     "text": "It seems almost unreal! Yet here it is - it exists, and you can try it out.",
+     "kr": "거의 비현실적으로 느껴질 정도네요! 하지만 실제로 존재하고 직접 만나볼 수 있다니 놀랍습니다."
+    },
+    {
+     "author": "Adana Marukhyan",
+     "is_maker": false,
+     "text": "This car is today’s hottest topic in our team! =D Cool !",
+     "kr": "이 차는 오늘 저희 팀에서 가장 뜨거운 화제입니다! =D 정말 멋지네요!"
+    },
+    {
+     "author": "Gene Dai",
+     "is_maker": false,
+     "text": "Congrats to the Tesla team, and thanks Zac for the hunt. Putting suction fans on every trim while reserving full thrusters for the invite-only Rocket makes the lineup unusually tiered. Since the Rocket is not approved for public roads, is the Performance reserve trim meant as the street-legal path in the US, or is even that package aimed at closed-course use first?",
+     "kr": "Tesla 팀에 축하를 전하며, 제품을 소개해 준 Zac에게도 감사드립니다. 모든 트림에 흡착 팬을 탑재하면서 전체 추진기는 초청 전용인 Rocket 트림에만 제공하는 독특한 등급 구성이 인상적입니다. Rocket 트림은 일반 도로 주행이 승인되지 않았는데, 예약 가능한 Performance 트림은 미국 내 합법적인 일반 도로 주행용인지, 아니면 그 패키지조차도 우선 폐쇄 트랙 주행을 겨냥한 것인가요?"
+    }
+   ],
+   "slug": "tesla-roadster",
+   "website": "https://www.tesla.com/roadster"
+  },
+  {
+   "name": "SignWith",
+   "tagline_en": "E-signatures without the subscription. Pay per doc.",
+   "tagline_kr": "월 구독 없이 문서당 결제하는 전자서명 솔루션",
+   "image": "https://ph-files.imgix.net/0a009e3c-b630-4961-9873-0f9e10fc13dc.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "E-signature apps",
+    "Productivity",
+    "SaaS",
+    "Legal"
+   ],
+   "upvotes": 194,
+   "comments_count": 32,
+   "maker": "Ayush Garg, Tibo",
+   "price_model": "Free",
+   "price_detail": "매월 문서 3건 무료 서명 제공, 이후 일회성 크레딧 팩($9, $19, $29) 또는 평생 소장 딜(LTD, $199) 구매 가능 (프로모션 코드 SWPH20 입력 시 LTD 포함 전 플랜 20% 할인)",
+   "desc_kr": "SignWith는 매달 몇 건의 문서만 서명하면서도 고정 월 구독료를 지불해야 하는 부담을 없애고, 사용한 문서 단위로 결제할 수 있도록 설계된 전자서명 플랫폼입니다. 모든 계정에 매월 3건의 무료 문서 서명이 기본 제공되며, 추가 사용량이 필요할 때만 $9부터 시작하는 일회성 크레딧 팩이나 평생 이용권(LTD)을 구매하여 약정 없이 이용할 수 있습니다. 추가 비용이나 등급 제한 없이 모든 계정에 서명 순서 지정(Signing order), 서명자 이메일 OTP 인증, 전체 감사 추적(Audit trail) 및 완료 인증서 발급 기능이 기본 포함됩니다. 웹 앱과 API뿐만 아니라 MCP를 통해 Claude, ChatGPT, Cursor 등 AI 어시스턴트에서 직접 계약서를 작성하고 서명 요청을 발송할 수 있습니다. 이미 1,000명 이상의 사용자가 5,000건 이상의 문서를 서명하는 데 활용하고 있으며, 소규모 팀과 프리랜서를 위한 합리적인 DocuSign 대안을 지향합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/signwith",
+   "comment_summary": "댓글에서는 가끔 전자서명이 필요한 소규모 팀과 개인에게 월 구독 대신 문서당 결제(Pay-per-doc) 방식이 매우 합리적이라는 호평과 함께, Claude 등 AI 에이전트에서 바로 계약서를 보내고 알림을 받을 수 있는 MCP 연동에 대한 긍정적인 후기가 이어졌습니다. 또한 한 문서를 여러 명의 서명자에게 보낼 때 크레딧이 문서 단위로 차감되는지 서명자 단위로 차감되는지에 대한 질문이 나왔으며, 메이커인 Ayush Garg는 비싼 구독료 때문에 DocuSign이나 Google Workspace 전자서명에서 SignWith로 전환하는 고객이 많다고 밝혔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Tibo",
+     "is_maker": false,
+     "text": "👋 Hey Product Hunters, thanks for checking this launch ❤️ This is the first time I'm hunting a product for someone else, in fact someone from my team. Today I'm hunting SignWith, built by Ayush (he's the head of growth at TMAKER). When he showed it to me, the idea clicked right away. Most people sign a few documents a month, and they still pay a monthly e-signature plan for it. SignWith flips that: you pay per document, not per month. 🆓 3 documents free every month 💳 After that, one-time credit packs at $9, $19 or $29, or a $199 lifetime deal. No subscription ✍️ Every account gets everything: signing order, email OTP for signers, a full audit trail and a certificate of completion 🤖 Send docs for signature through the API, or straight from Claude, ChatGPT or Cursor 1,000+ people already use it, and 5,000+ documents have been signed 🔥 🎁 Special for PH: 20% off all plans, including the lifetime deal, with code SWPH20 Oh, and today is also Ayush's birthday 🎂 And the best gift you can give him is your honest feedback in the comments 👀 (also wish him please) We would absolutely love to know what you think 🙏🏻",
+     "kr": "👋 안녕하세요 Product Hunt 여러분, 이번 런칭을 확인해 주셔서 감사합니다 ❤️ 제가 다른 사람의 제품, 사실은 저희 팀원의 제품을 헌팅하는 것은 이번이 처음입니다. 오늘 소개할 제품은 TMAKER의 그로스 총괄인 Ayush가 만든 SignWith입니다. 처음 이 제품을 보았을 때 아이디어가 단번에 와닿았습니다. 대부분의 사람들은 한 달에 겨우 몇 건의 문서에만 서명하면서도 매달 전자서명 구독료를 지불합니다. SignWith는 이를 뒤집어 월 단위가 아닌 문서 단위로 결제하도록 만들었습니다. 🆓 매월 문서 3건 무료 제공 💳 이후에는 구독 없이 $9, $19, $29 일회성 크레딧 팩 또는 $199 평생 딜(LTD) 구매 ✍️ 모든 계정에 서명 순서 지정, 서명자용 이메일 OTP, 전체 감사 추적, 완료 인증서 등 모든 기능 기본 제공 🤖 API를 통하거나 Claude, ChatGPT, Cursor에서 직접 서명 문서 발송 이미 1,000명 이상이 사용 중이며 5,000건 이상의 문서가 서명되었습니다 🔥 🎁 Product Hunt 특별 혜택: 코드 SWPH20 입력 시 평생 딜을 포함한 모든 플랜 20% 할인 아, 그리고 오늘은 Ayush의 생일이기도 합니다 🎂 그에게 줄 수 있는 최고의 선물은 댓글로 솔직한 피드백을 남겨주시는 것입니다 👀 (생일 축하 인사와 함께요!) 여러분의 생각을 꼭 들려주세요 🙏🏻"
+    },
+    {
+     "author": "Ayush Garg",
+     "is_maker": true,
+     "text": "@thibaultll Hey, thank you so much for hunting my product. Really appreciate this. ❤️",
+     "kr": "@thibaultll 안녕하세요, 제 제품을 헌팅해 주셔서 정말 감사합니다. 진심으로 감사드려요. ❤️"
+    },
+    {
+     "author": "Aditi Chaturvedi",
+     "is_maker": false,
+     "text": "I have been using Signwith and it has been the most seamless experience.\n\nThe MCP is the best part. I tell my AI agent to draft the agreement and send it out for signature to the right person, and get pinged when it’s signed.\n\nThe per doc pricing is the best model for an esignature tool designed for small businees!!\n\nAmazing work @ayushgarg01 !\n\nForever grateful!",
+     "kr": "그동안 SignWith를 사용해 왔는데 정말 매끄러운 경험이었습니다.\n\n그중에서도 MCP 기능이 최고입니다. AI 에이전트에게 계약서 초안을 작성해 담당자에게 서명 요청을 보내라고 지시하면, 서명이 완료되었을 때 알림을 받습니다.\n\n문서당 과금 모델은 소규모 비즈니스를 위해 설계된 전자서명 도구에 가장 이상적인 방식입니다!!\n\n정말 멋진 결과물입니다 @ayushgarg01!\n\n항상 감사드려요!"
+    },
+    {
+     "author": "Mark Carungay",
+     "is_maker": false,
+     "text": "nice, pay per doc is way better for teams like ours that only need signatures now and then. does one credit cover a doc with multiple signers or is it per signer?",
+     "kr": "좋네요, 저희처럼 가끔씩만 서명이 필요한 팀에게는 문서당 결제 방식이 훨씬 낫습니다. 크레딧 1개로 여러 명의 서명자가 포함된 문서 한 건을 처리할 수 있나요, 아니면 서명자당 차감되나요?"
+    },
+    {
+     "author": "Neel Patel 🦕",
+     "is_maker": false,
+     "text": "Loved the business model - fits the need of many who would have to subscribe to tools just for one off signing tasks. @ayushgarg01 @thibaultll",
+     "kr": "비즈니스 모델이 정말 마음에 듭니다. 일회성 서명 업무 때문에 어쩔 수 없이 구독형 도구를 결제해야 했던 많은 분들의 니즈에 딱 맞네요. @ayushgarg01 @thibaultll"
+    },
+    {
+     "author": "Ayush Garg",
+     "is_maker": true,
+     "text": "yes indeed, that's what our customers tell us as well: they've been shifting from DocuSign and even from Google Workspace signature, and they're using SignWith.",
+     "kr": "맞습니다, 저희 고객분들도 똑같이 말씀하십니다. 많은 분들이 DocuSign은 물론 Google Workspace 전자서명에서 벗어나 SignWith로 넘어오고 계십니다."
+    },
+    {
+     "author": "Arvindh Sundar",
+     "is_maker": false,
+     "text": "I've been using these guys for the longest time to handle the signing stuff at work. The pay as you go model is perfect for me.\n\nGo on folks. Break some legs!",
+     "kr": "업무상 서명 작업을 처리하기 위해 오랫동안 이 서비스를 사용해 왔습니다. 사용한 만큼 지불하는(pay-as-you-go) 모델이 저에게 완벽하게 맞습니다.\n\n계속 화이팅하세요. 대박 나시길 바랍니다!"
+    },
+    {
+     "author": "Ayush Garg",
+     "is_maker": true,
+     "text": "@arvindh_sundar yo yo yo - thank you so much for using SignWith 🙏",
+     "kr": "@arvindh_sundar 반갑습니다 - SignWith를 애용해 주셔서 정말 감사합니다 🙏"
+    },
+    {
+     "author": "Parth Koshti",
+     "is_maker": false,
+     "text": "Down with DocuSign and their excessively expensive model - love it!",
+     "kr": "지나치게 비싼 요금제를 강요하는 DocuSign을 대체할 수 있다니 정말 마음에 듭니다!"
+    },
+    {
+     "author": "Ayush Garg",
+     "is_maker": true,
+     "text": "DocuSign ❌  \nSignWith ✅",
+     "kr": "DocuSign ❌\nSignWith ✅"
+    },
+    {
+     "author": "Hrithik Kaul",
+     "is_maker": false,
+     "text": "Love the business model for my use case where I'm not locked into a subscription for signatures.",
+     "kr": "서명을 위해 구독에 묶이지 않아도 된다는 점에서 제 사용 환경에 딱 맞는 비즈니스 모델입니다."
+    },
+    {
+     "author": "Ayush Garg",
+     "is_maker": true,
+     "text": "@hrithik_kaul1 saw you signed up. lmk how we can do better for your use case  \nand thanks so much 🙏",
+     "kr": "@hrithik_kaul1 가입하신 것을 확인했습니다. 사용하시는 환경에서 어떤 점을 더 개선하면 좋을지 언제든 알려주세요.\n정말 감사합니다 🙏"
+    }
+   ],
+   "slug": "signwith",
+   "website": "https://signwith.co/?utm_source=producthunt&utm_medium=launch&utm_campaign=ph_launch_2026"
+  },
+  {
+   "name": "Pomerado",
+   "tagline_en": "Turn any website into an API; Faster & reliable browser use",
+   "tagline_kr": "모든 웹사이트를 빠르고 안정적인 API 및 MCP 도구로 전환하는 플랫폼",
+   "image": "https://ph-files.imgix.net/ba981b0d-a39a-4b37-af33-c8198697d818.svg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Browser Automation",
+    "API",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 165,
+   "comments_count": 16,
+   "maker": "Alan Ma, Akshay Manglik, Garry Tan",
+   "price_model": "Free",
+   "price_detail": "오픈소스 버전(GitHub) 무료 제공 및 클라우드 플랫폼(pomerado.ai) 무료 티어(Generous free tier) 지원",
+   "desc_kr": "Pomerado는 공식 API를 지원하지 않는 일반 웹사이트나 레거시 포털을 몇 분 만에 AI 에이전트용 맞춤형 API 및 MCP 도구로 변환해주는 브라우저 자동화 플랫폼입니다. 사용자가 대시보드나 MCP를 통해 예약, 항공권 및 숙소 검색, 장보기 등 원하는 작업을 설명하면 Pomerado가 전용 API/MCP를 자동으로 구축, 테스트 및 호스팅해 줍니다. Google Flights, Zillow, Instacart, OpenTable, Delta 등 주요 웹사이트를 위한 사전 구축된 통합 라이브러리를 제공하여 에이전트가 즉시 안정적으로 웹 작업을 수행할 수 있도록 돕습니다. 웹사이트 레이아웃이 변경되더라도 이를 즉시 감지하고 복구하는 자가 치유(Self-healing) 기능과 2FA 인증 및 프록시 기반 캡차(CAPTCHA) 우회 처리를 자체 지원해 유지보수 부담을 덜어줍니다. 핵심 기술이 GitHub에 오픈소스로 공개되어 있어 로컬 환경에서 직접 API를 구축해 사용하거나 클라우드 서비스의 무료 티어를 통해 손쉽게 시작할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/pomerado",
+   "comment_summary": "댓글에서는 웹사이트 UI 변경 시 통합 도구가 깨지는 문제에 대한 대응 방식, 검색 도중 발생하는 까다로운 캡차(CAPTCHA) 및 2FA 처리, 그리고 생성된 통합 도구의 타 팀 재사용 가능 여부에 대한 질문이 이어졌습니다. 메이커인 Alan Ma는 사이트 레이아웃 변경을 즉시 감지해 자동으로 복구하는 자가 치유(Self-healing) 통합 기능이 핵심이며, 자체 브라우저 및 프록시와 보호 대책을 통해 캡차 문제를 해결한다고 설명했습니다. 또한 생성된 API는 일반화(Generalizable)가 가능하도록 설계되어 다른 입력 조건에서도 재사용할 수 있으며, 리버스 엔지니어링과 레거시 포털 연동 시간을 크게 줄여준다는 초기 사용자들의 호평이 있었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Alan Ma",
+     "is_maker": true,
+     "text": "👋 Hi Product Hunt, I’m Alan, co-founder of Pomerado  \n  \nWe built Pomerado because most useful sites aren’t set up for agents.  \n  \nWhether it’s making a reservation, online shopping, or using legacy portals, agents still struggle to complete simple tasks, even with advancements in computer use.  \n  \nInstead of waiting for computer use to catch up with our workflows, we built Pomerado, a platform that builds tools for all the websites we need. Here’s how it works:  \n  \n- 📝 **Describe your task** through our dashboard or MCP - e.g., booking appointments, looking for apartments, shopping  \n- 🛠️ **Get a bespoke API/MCP** that Pomerado builds, tests, and hosts for you  \n- 🤖 **Give it to your agent** and watch it  \n  \nIf a person can use the site, your agents can as well.  \n  \nOur library of integrations helps you get started immediately, with pre-made APIs for common sites like Google Flights, OpenTable, and Delta.  \n  \nAkshay and I use Pomerado in our own lives, and our agents do far more than they could a few months ago. Mine helps me find an apartment on Zillow, discover flights, and order my groceries.  \n  \nPomerado is open-source, so you can see how our tech works and build your own local APIs here: https://github.com/Pomerado/pomerado  \n  \nTry it today and see how much more your agents can do: https://pomerado.ai. We’d love to hear about all the cool things y’all will build!  \n  \nThanks for checking out Pomerado! 😃",
+     "kr": "👋 안녕하세요 Product Hunt 여러분, 저는 Pomerado의 공동창업자 Alan입니다.\n\n저희는 대부분의 유용한 웹사이트가 에이전트용으로 설계되어 있지 않다는 문제를 해결하기 위해 Pomerado를 만들었습니다.\n\n예약하기, 온라인 쇼핑, 레거시 포털 사용 등 컴퓨터 사용(computer use) 기술이 발전했음에도 에이전트들은 여전히 단순한 작업을 완료하는 데 어려움을 겪습니다.\n\n컴퓨터 사용 기술이 저희 워크플로를 따라잡기를 기다리는 대신, 필요한 모든 웹사이트를 위한 도구를 직접 생성해 주는 플랫폼인 Pomerado를 구축했습니다. 작동 방식은 다음과 같습니다:\n\n- 📝 대시보드나 MCP를 통해 예약, 아파트 매물 찾기, 쇼핑 등 **원하는 작업을 설명합니다.**\n- 🛠️ Pomerado가 구축, 테스트 및 호스팅해주는 **맞춤형 API/MCP를 받습니다.**\n- 🤖 **에이전트에게 도구를 부여**하고 작동하는 모습을 지켜봅니다.\n\n사람이 사용할 수 있는 사이트라면 여러분의 에이전트도 사용할 수 있습니다.\n\nGoogle Flights, OpenTable, Delta 등 자주 쓰이는 사이트를 위해 사전 구축된 API가 포함된 통합 라이브러리를 통해 즉시 시작하실 수 있습니다.\n\nAkshay와 저 역시 일상에서 Pomerado를 활용하고 있으며, 저희 에이전트들은 몇 달 전보다 훨씬 더 많은 일을 해내고 있습니다. 제 에이전트는 Zillow에서 아파트를 찾고, 항공편을 검색하며, 식료품을 주문하는 일을 도와줍니다.\n\nPomerado는 오픈소스이므로 다음 링크에서 기술 작동 원리를 확인하고 자체 로컬 API를 구축하실 수 있습니다: https://github.com/Pomerado/pomerado\n\n오늘 바로 체험해 보시고 에이전트가 얼마나 더 많은 일을 할 수 있는지 확인해 보세요: https://pomerado.ai. 여러분이 만드실 멋진 결과물 소식을 기다리겠습니다!\n\nPomerado를 확인해 주셔서 감사합니다! 😃"
+    },
+    {
+     "author": "Mohsin Ali",
+     "is_maker": false,
+     "text": "@alanmrsa 2FA handling is really neat. what happens if a site like airbnb throws a hard captcha midsearch?",
+     "kr": "@alanmrsa 2FA(이중 인증) 처리가 정말 깔끔하네요. 만약 Airbnb 같은 사이트에서 검색 도중 까다로운 캡차(CAPTCHA)를 띄우면 어떻게 처리되나요?"
+    },
+    {
+     "author": "Alan Ma",
+     "is_maker": true,
+     "text": "@mohsinproduct Thanks Mohsin! Our browser / proxies are generally good enough to avoid them, but we have measures in place for harder challenges as needed",
+     "kr": "@mohsinproduct 감사합니다 Mohsin! 저희 브라우저 및 프록시 환경이 일반적으로 캡차 발생을 잘 회피하지만, 필요한 경우 더 까다로운 인증 요구에 대응할 수 있는 별도의 처리 방안도 갖추고 있습니다."
+    },
+    {
+     "author": "Oleksii Sekundant",
+     "is_maker": false,
+     "text": "The testing and maintenance of each generated integration is the bit that caught my eye. I'd want to know when a site change breaks a tool before an agent relies on it for a real booking.",
+     "kr": "생성된 각 통합 도구를 테스트하고 유지보수해 준다는 점이 특히 눈에 띕니다. 에이전트가 실제 예약을 진행하기 전에 사이트 변경으로 인해 도구가 작동하지 않는 상황을 미리 파악하고 싶거든요."
+    },
+    {
+     "author": "Alan Ma",
+     "is_maker": true,
+     "text": "@oleksii_sekundant Hey Oleksii! We agree, the self-healing integrations are core to Pomerado. We catch site changes and repair our integrations immediately to minimize user impact",
+     "kr": "@oleksii_sekundant 안녕하세요 Oleksii! 전적으로 공감합니다. 자가 치유(self-healing) 통합 기능은 Pomerado의 핵심입니다. 저희는 사이트 변경 사항을 즉시 감지하고 통합 도구를 바로 복구하여 사용자에게 미치는 영향을 최소화합니다."
+    },
+    {
+     "author": "Adrian Scott",
+     "is_maker": false,
+     "text": "I like the idea of making legacy portals usable by AI agents . That could save a lot of manual integration work.",
+     "kr": "레거시 포털을 AI 에이전트가 사용할 수 있게 만든다는 아이디어가 마음에 듭니다. 수동 통합 작업에 드는 시간을 엄청나게 절약해 줄 수 있겠네요."
+    },
+    {
+     "author": "Alan Ma",
+     "is_maker": true,
+     "text": "@adrian_scott2 Give us a try! We have a generous free tier at https://pomerado.ai/",
+     "kr": "@adrian_scott2 한번 사용해 보세요! https://pomerado.ai/ 에서 넉넉한 무료 티어를 제공하고 있습니다."
+    },
+    {
+     "author": "Jason Lin",
+     "is_maker": false,
+     "text": "Exciting launch & have had an amazing early experience! Saves a lot of time reverse API engineering.",
+     "kr": "흥미진진한 런칭이며 초기 사용 경험도 정말 훌륭했습니다! API를 리버스 엔지니어링하는 시간을 많이 아껴줍니다."
+    },
+    {
+     "author": "Khaliq Gant",
+     "is_maker": false,
+     "text": "This is a real problem being solved here and just the right team to solve it.",
+     "kr": "실제로 존재하는 중요한 문제를 해결하고 있으며, 이를 풀어내기에 가장 적합한 팀이라고 생각합니다."
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": false,
+     "text": "What happens when a website changes its layout? Does Pomerado automatically adapt?",
+     "kr": "웹사이트의 레이아웃이 변경되면 어떻게 되나요? Pomerado가 자동으로 적응하나요?"
+    },
+    {
+     "author": "Gene Dai",
+     "is_maker": false,
+     "text": "Congrats to Alan and Akshay on launching Pomerado. The Coupa replay, where the builder stops to ask whether to include all three customers, makes building an integration feel closer to scoping a ticket than recording a macro. Once a tool like that is published, can a second team reuse it with different answers to those questions, or does each set of answers become its own integration?",
+     "kr": "Alan과 Akshay의 Pomerado 런칭을 축하합니다. 세 명의 고객을 모두 포함할지 빌더가 잠시 멈춰 질문하는 Coupa 리플레이 예시를 보니, 통합 도구를 만드는 과정이 단순 매크로 기록보다는 티켓 범위를 정의하는 것에 가깝게 느껴집니다. 그러한 도구가 한 번 배포되면 다른 팀에서 질문에 다른 답변(파라미터)을 넣어 재사용할 수 있나요, 아니면 각 답변 조합마다 별도의 통합 도구가 생성되나요?"
+    },
+    {
+     "author": "Alan Ma",
+     "is_maker": true,
+     "text": "@genedai Yup! Our APIs are generalizable and promote reuse",
+     "kr": "@genedai 네, 가능합니다! 저희가 생성하는 API는 일반화(generalizable)가 가능하도록 설계되어 높은 재사용성을 지원합니다."
+    }
+   ],
+   "slug": "pomerado",
+   "website": "https://pomerado.ai/"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
