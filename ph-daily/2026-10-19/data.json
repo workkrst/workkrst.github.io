@@ -1,0 +1,763 @@
+{
+ "date": "2026-10-19",
+ "collected_at": "2026-10-19 12:30 KST",
+ "summary": "오늘 Top 5는 이메일·프레젠테이션·화상회의를 효율화하는 비즈니스 생산성 도구 3종(Inbox Zero, MyLens, MeetPaw)과 AI 코딩 에이전트 워크플로를 보완하는 개발자 도구 2종(shim-cli, Tower 18 for Mac)으로 구성되었으며, 이 중 3개 제품이 무료 오픈소스이자 로컬 실행을 전면에 내세웠습니다. 댓글에서는 AI가 다국어 이메일 스레드나 슬라이드 범위 밖의 돌발 질문을 처리할 때 맥락과 가드레일을 얼마나 정확히 유지하는지, 그리고 코딩 에이전트의 시크릿 마스킹 한계(실패한 명령 출력 및 외부 네트워크 호출 등)와 CLI·GUI 간 변경 사항 검토 자동화가 실제 작업 흐름에서 어떻게 작동하는지에 대한 실무적인 검증 질문이 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "shim-cli",
+   "why": "코딩 에이전트가 모델로 전송하는 데이터에서 API 키나 비밀번호 등 민감 정보를 로컬 훅으로 사전 마스킹하고 세션별 토큰 사용량과 비용을 가시화해 주는 오픈소스 CLI 도구입니다. 댓글에서는 에이전트가 작성한 스크립트의 .env 출력 마스킹 여부와 프록시 속도 저하에 대한 질문이 이어졌는데, 메이커는 정상 표준 출력(stdout)은 지연 없이 로컬에서 마스킹되지만 명령 실행 실패 시의 출력이나 스크립트의 직접적인 외부 네트워크 전송은 클라이언트 구조상 차단 대신 리포팅만 가능하다고 한계점을 투명하게 밝혀 호평을 받았습니다."
+  },
+  {
+   "slug": "mylens-ai",
+   "why": "원본 자료와 사전 지침을 바탕으로 AI가 다수의 청중과 각각 1:1 라이브 세션을 진행하며 질문과 이해도에 맞춰 실시간으로 새 슬라이드를 생성해 설명하는 맞춤형 프레젠테이션 플랫폼입니다. 댓글에서 슬라이드 범위를 벗어난 돌발 질문 대처법과 청중이 막힌 지점(Stuck)을 판단하는 기준이 주요 논점으로 다뤄졌으며, 메이커는 'Teach AI' 가드레일을 통해 제공된 지식 범위 내에서만 즉석 슬라이드를 생성해 답변하고 질문 내용·추가 설명 요청 구간·대화 흐름 신호를 종합해 이해도를 분석한다고 설명했습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Inbox Zero",
+   "tagline_en": "Open-source Superhuman alternative",
+   "tagline_kr": "빠르고 키보드 중심의 경험을 제공하는 오픈소스 Superhuman 대안 이메일 클라이언트",
+   "image": "https://ph-files.imgix.net/b3894be1-ca5b-4350-91b4-4b4e3a55ea7d.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Productivity",
+    "Email clients",
+    "Automation tools",
+    "Email",
+    "Open Source",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 292,
+   "comments_count": 27,
+   "maker": "Elie Steinbock, Ben Lang",
+   "price_model": "Free Options",
+   "price_detail": "이메일 클라이언트 기본 무료 및 오픈소스(셀프 호스팅 가능), AI 기능 월 $20 (프로모션 코드 PRODUCTHUNT26 입력 시 3개월간 AI 기능 50% 할인)",
+   "desc_kr": "Inbox Zero는 Gmail과 Outlook 계정을 하나의 받은편지함에서 통합 관리할 수 있는 오픈소스 기반의 Superhuman 대안 이메일 클라이언트입니다. 빠르고 키보드 단축키 중심(Keyboard-first)으로 설계되었으며 웹, Mac, Windows, iPhone 환경을 모두 지원합니다. 기본 이메일 클라이언트 기능은 무료로 사용할 수 있으며, 오픈소스이기 때문에 직접 셀프 호스팅하거나 원하는 기능을 자유롭게 추가해 구축할 수 있습니다. 월 $20의 AI 기능을 추가하면 모든 이메일이 자동으로 분류되고, 사용자가 메일을 열기 전에 사용자의 말투(Voice)에 맞춘 답장 초안이 미리 작성됩니다. 또한 수신함 분할(Split inbox), 대량 구독 취소, 팀원 간 비공개 댓글 공유, Slack 알림 연동 및 외부 도구의 컨텍스트를 AI에 제공하는 기능까지 폭넓게 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/inbox-zero-2",
+   "comment_summary": "메이커인 Elie Steinbock은 지난 3년간 GitHub 스타 1만 2천 개와 가입자 2만 5천 명 이상을 확보한 AI 이메일 어시스턴트에서 나아가, 직접 셀프 호스팅과 커스터마이징이 가능한 오픈소스 이메일 클라이언트 'Inbox Zero Mail'을 출시하게 된 배경을 소개했습니다. 댓글에서는 사용자들이 가장 많이 요청하는 기능과 영어·스페인어 등 다국어 이메일 수신 시 스레드별 언어를 유지해 답장 초안을 작성하는지, 그리고 Grok Bot이나 Muse 같은 봇 연동 방식과 어떤 차이가 있는지에 대한 질문이 오갔습니다. 이에 메이커는 단순 봇 연동과 달리 Gmail이나 Superhuman을 대체하는 완전한 이메일 클라이언트이자 AI 어시스턴트로서, 타사 봇 도구보다 훨씬 저렴하고 안전하게 이메일을 관리할 수 있다고 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Elie Steinbock",
+     "is_maker": true,
+     "text": "Hey Hunters 👋\n\nI’m excited to launch Inbox Zero Mail, an open-source Superhuman alternative.\n\nI’ve been running Inbox Zero for 3 years. It started as an AI assistant for Gmail and Outlook, and grew to 12k GitHub stars and 25k+ sign-ups, including Enterprise customers.\n\nNow we’ve built our own email client.\n\nIt’s open source, so you can self-host it or build the feature you’ve always wanted.\n\n⚡ Fast and keyboard-first\n\n📥 All your Gmail and Outlook accounts in one inbox\n\n🗂️ Split inbox\n\n✍️ AI drafts in your voice\n\n🧹 Bulk unsubscribe\n\n💬 Team comments\n\n📱 Web, Mac, Windows and iPhone\n\nFree to use. AI is $20/month.\n\n🎁 Code PRODUCTHUNT26 gets 50% off AI for 3 months.\n\n🧹 Try it today: https://www.getinboxzero.com\n\n⭐️ Give us a star on GitHub: https://www.getinboxzero.com/github\n\nWhat would you most like to see added to an open-source email app?",
+     "kr": "안녕하세요 헌터 여러분 👋\n\n오픈소스 Superhuman 대안인 Inbox Zero Mail을 출시하게 되어 매우 기쁩니다.\n\n저는 지난 3년 동안 Inbox Zero를 운영해 왔습니다. Gmail과 Outlook용 AI 어시스턴트로 시작해 현재 엔터프라이즈 고객을 포함해 GitHub 스타 12,000개와 가입자 25,000명 이상으로 성장했습니다.\n\n그리고 이제 저희만의 자체 이메일 클라이언트를 구축했습니다.\n\n오픈소스이므로 직접 셀프 호스팅하거나 평소 원했던 기능을 직접 만들어 추가할 수 있습니다.\n\n⚡ 빠르고 키보드 중심적인 조작\n\n📥 모든 Gmail 및 Outlook 계정을 하나의 받은편지함에서 통합 관리\n\n🗂️ 받은편지함 분할(Split inbox)\n\n✍️ 사용자의 말투로 작성되는 AI 답장 초안\n\n🧹 일괄 구독 취소\n\n💬 팀 댓글 기능\n\n📱 웹, Mac, Windows 및 iPhone 지원\n\n기본 사용은 무료이며, AI 기능은 월 $20입니다.\n\n🎁 코드 PRODUCTHUNT26을 입력하시면 3개월간 AI 기능을 50% 할인된 가격에 이용하실 수 있습니다.\n\n🧹 지금 바로 사용해 보세요: https://www.getinboxzero.com\n\n⭐️ GitHub에서 스타를 눌러주세요: https://www.getinboxzero.com/github\n\n오픈소스 이메일 앱에 어떤 기능이 가장 추가되기를 바라시나요?"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@elie222 Congrats on the lounch which feachure do user ask for the most?",
+     "kr": "@elie222 런칭을 축하합니다! 사용자들이 가장 많이 요청하는 기능은 무엇인가요?"
+    },
+    {
+     "author": "Dru Riley",
+     "is_maker": false,
+     "text": "@elie222 Wow! A much-needed alternative. Congrats on the launch!",
+     "kr": "@elie222 와! 정말 필요했던 대안이네요. 런칭을 축하합니다!"
+    },
+    {
+     "author": "Adrian Knoll",
+     "is_maker": false,
+     "text": "@elie222, this is a massive leap forward! Congrats Elie :)",
+     "kr": "@elie222, 엄청난 도약이네요! 축하합니다 Elie :)"
+    },
+    {
+     "author": "Iuliia Shnai",
+     "is_maker": false,
+     "text": "@elie222 Yes yes yes to this launch!",
+     "kr": "@elie222 이번 런칭 정말 대환영입니다!"
+    },
+    {
+     "author": "Ben Lang",
+     "is_maker": false,
+     "text": "Congrats Elie!!",
+     "kr": "축하해요 Elie!!"
+    },
+    {
+     "author": "Elie Steinbock",
+     "is_maker": true,
+     "text": "@benln thanks!",
+     "kr": "@benln 고마워요!"
+    },
+    {
+     "author": "Gavin Fan",
+     "is_maker": false,
+     "text": "Hi team, what's the major difference between this product and grok bot/muse connected to all my email inbox. They do that pretty well for me today.",
+     "kr": "안녕하세요 팀 여러분, 이 제품과 제 모든 이메일 받은편지함에 연결된 Grok 봇이나 Muse의 가장 큰 차이점은 무엇인가요? 현재 그 도구들도 제게는 꽤 잘 작동하고 있거든요."
+    },
+    {
+     "author": "Elie Steinbock",
+     "is_maker": true,
+     "text": "@gavin_fgg0815 Hey!\n\nInbox Zero Mail is an email client. It's an alternative to Gmail, Mail, or Superhuman.\n\nIf you only ever have bots manage your email, then you wouldn't use this. But our original and core product is an AI email assistant that can handle your inbox for you. You can learn more here: https://getinboxzero.com\n\nManaging your email with Inbox Zero is cheaper and more secure than something like Grok Bot, Muse, or Rakazo.",
+     "kr": "@gavin_fgg0815 안녕하세요!\n\nInbox Zero Mail은 이메일 클라이언트입니다. 즉 Gmail, 기본 Mail 앱, 또는 Superhuman의 대안입니다.\n\n만약 오직 봇에게만 이메일 관리를 맡기신다면 이 클라이언트를 쓰지 않으실 수도 있습니다. 하지만 저희의 원래 핵심 제품은 받은편지함을 대신 처리해 주는 AI 이메일 어시스턴트입니다. 자세한 내용은 여기에서 확인하실 수 있습니다: https://getinboxzero.com\n\nInbox Zero로 이메일을 관리하는 것이 Grok Bot, Muse 또는 Rakazo 같은 도구를 사용하는 것보다 더 저렴하고 보안성도 뛰어납니다."
+    },
+    {
+     "author": "Javier Toledano",
+     "is_maker": false,
+     "text": "I get brand deal emails in English and Spanish on the same Gmail account. Does the drafting in my voice keep the language of each thread, or does it lean towards English?",
+     "kr": "동일한 Gmail 계정으로 영어와 스페인어 브랜드 협업 이메일을 모두 받고 있습니다. 제 말투로 초안을 작성해 주는 기능이 각 스레드의 언어를 그대로 유지하나요, 아니면 영어 쪽으로 치우치는 편인가요?"
+    },
+    {
+     "author": "Rotimi Best",
+     "is_maker": false,
+     "text": "Elie, congrats on the launch. Been following your work on Inbox Zero for a long time and love all the progress you've made so far.",
+     "kr": "Elie, 런칭을 축하합니다. 오랫동안 Inbox Zero 작업을 지켜봐 왔는데 지금까지 이뤄낸 모든 발전이 정말 멋집니다."
+    },
+    {
+     "author": "Elie Steinbock",
+     "is_maker": true,
+     "text": "@rotimi_best thanks!",
+     "kr": "@rotimi_best 감사합니다!"
+    }
+   ],
+   "slug": "inbox-zero-2",
+   "website": "https://www.getinboxzero.com/"
+  },
+  {
+   "name": "MyLens",
+   "tagline_en": "1-1 Live Presentations at Scale with AI.",
+   "tagline_kr": "AI를 활용해 대규모 청중에게 맞춤형 1:1 라이브 프레젠테이션을 제공하는 플랫폼",
+   "image": "https://ph-files.imgix.net/8e788784-78e4-4ff2-a04a-3036f1d1ec8c.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Presentation Software",
+    "Data visualization tools",
+    "Productivity",
+    "Education",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 181,
+   "comments_count": 32,
+   "maker": "Ardalan Mirshani, Amin Zamani",
+   "price_model": "Free Options",
+   "price_detail": "무료 옵션(Free Options) 제공",
+   "desc_kr": "MyLens는 발표 자료를 반복해서 설명할 필요 없이 수많은 사람에게 개인화된 1:1 라이브 프레젠테이션을 대규모로 제공할 수 있는 AI 플랫폼입니다. 사용자가 원본 자료를 추가하고 발표 대상, 목표, 강조할 점 등 지침과 가드레일을 설정하면 MyLens가 수 초 만에 시각적인 슬라이드 덱을 완성합니다. 초대 링크와 접속 코드를 통해 개별 세션에 참여한 청중에게 AI가 실시간으로 발표를 진행하며, 제공된 자료를 바탕으로 질문에 답변합니다. 특히 발표 도중 청중의 질문이나 이해도에 맞춰 즉석에서 새로운 슬라이드와 시각적 레이어를 실시간으로 생성하여 각 사람에게 최적화된 설명을 제공합니다. 세션이 종료된 후에는 누가 내용을 잘 이해했고 누가 어느 부분에서 막혔는지, 어떤 질문이 나왔는지 분석해 후속 조치와 개선 방향을 제안해 줍니다.",
+   "launch_url_used": "https://www.producthunt.com/products/mylens-ai",
+   "comment_summary": "댓글에서는 청중이 발표 주제에서 벗어난 질문을 할 때의 대응 방식, 기존 프레젠테이션 덱 활용 가능 여부, 그리고 청중이 이해에 어려움을 겪고 있는지(Stuck) 판단하는 기준에 대한 질문이 집중되었습니다. 공동창업자 Ardalan Mirshani는 'Teach AI' 기능을 통해 사전에 지침과 가드레일을 설정할 수 있어 원래 슬라이드 범위를 벗어난 질문에도 제공된 지식 범위 내에서 실시간으로 새 슬라이드를 생성해 답변하면서도 주제를 이탈하지 않는다고 설명했습니다. 또한 기존 슬라이드 덱을 그대로 가져와 개선할 수 있으며, 질문 내용·추가 설명 요청 구간·대화 흐름 등 복합적인 신호를 분석해 청중의 이해도를 파악하므로 복잡한 제안서 설명이나 1:1 고객 온보딩에도 매우 적합하다고 밝혔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Ardalan Mirshani",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋\n\nI'm Ardalan, co-founder of MyLens. Today, we're excited to introduce a new way to deliver personalized presentations at scale with AI.\n\nWe built MyLens around a question about AI and humans:\n\nAI can write for us, code for us, and do a thousand other things. But some things will always stay human. But AI can't eat for us. It can't sleep for us. And it can't understand something for us.\n\nUnderstanding happens in our own heads, at our own pace, through our own questions.\n\nThink about the best teacher, mentor, or even salesperson you've ever met. They didn't just give you information. They sat with you, walked you through it, listened to your questions, noticed when you were confused, and found a different way to explain things until they clicked.\n\nThat personal attention is so powerful. But it's almost impossible to scale.\n\nSo we thought: What if you could give 10, 100, or even 10,000 people that same personal experience, without repeating yourself a thousand times?\n\nSo we built MyLens: AI for live, one-on-one presentations at scale.\n\nInstead of creating a deck and presenting it over and over, you can delegate the entire experience to an AI that knows your content, follows your instructions, and adapts to every audience in real time.\n\nHere's how MyLens works:\n\n✦ 1. Prepare: Start with your raw materials. MyLens turns them into a complete presentation with beautiful visual slides in seconds. No need to build a deck yourself, unless you want to bring your own.\n\n◈ 2. Teach AI: Give MyLens the knowledge and instructions behind your presentation. Who is the audience? What's the goal? What should it emphasize or avoid? How should it respond to questions? You decide how AI represents you and your knowledge.\n\n✉ 3. Invite: Invite your audience. Each person receives a private invitation link to their own one-on-one session.\n\n▣ 4. Present: Your audience joins with an access code, and MyLens AI takes over. It presents live, answers questions based on your sources and instructions, and even creates new slides and visual layers on the spot whenever needed. No two sessions have to be the same.\n\n↗ 5. Review & Improve: Once the sessions are done, you can review each one individually. See who understood, who struggled, and what questions came up. MyLens recommends personalized follow-ups and identifies opportunities to improve the next presentation sessions.\n\nThe result? No time spent making decks, no repetitive meetings, and a premium, personalized experience unlike anything your audience has had before, whether you're presenting to one person or a thousand.\n\nWe believe the future of presentations isn't about making better slides. It's about giving every person the attention they deserve. That's the future we're building with MyLens.\n\nWe'd love for you to try it, challenge it, and tell us what you think!",
+     "kr": "안녕하세요 Product Hunt 여러분! 👋\n\n저는 MyLens의 공동창업자 Ardalan입니다. 오늘 AI를 활용해 맞춤형 프레젠테이션을 대규모로 전달하는 새로운 방식을 소개하게 되어 기쁩니다.\n\n저희는 AI와 인간에 관한 한 가지 질문에서 출발해 MyLens를 만들었습니다:\n\nAI는 우리 대신 글을 써주고, 코딩을 해주고, 수천 가지 다른 일을 해낼 수 있습니다. 하지만 어떤 영역은 언제나 인간의 몫으로 남습니다. AI가 우리 대신 밥을 먹어줄 수는 없고, 대신 잠을 자줄 수도 없으며, 우리 대신 무언가를 '이해'해 줄 수도 없습니다.\n\n이해라는 것은 각자의 머릿속에서, 각자의 속도로, 스스로의 질문을 통해 일어납니다.\n\n지금까지 만나본 최고의 선생님, 멘토, 혹은 영업사원을 떠올려 보세요. 그들은 단순히 정보를 전달하는 데 그치지 않았습니다. 여러분 곁에 앉아 차근차근 설명해 주고, 질문을 경청하고, 여러분이 헷갈려하는 순간을 알아차리고, 마침내 이해가 될 때까지 다른 설명 방식을 찾아냈습니다.\n\n이러한 1:1 맞춤형 관심은 엄청난 힘을 발휘하지만, 대규모로 확장하기란 거의 불가능에 가깝습니다.\n\n그래서 저희는 생각했습니다. 만약 똑같은 말을 천 번 반복하지 않고도 10명, 100명, 나아가 10,000명에게 그와 같은 개인화된 경험을 제공할 수 있다면 어떨까?\n\n그렇게 탄생한 것이 바로 대규모 1:1 라이브 프레젠테이션을 위한 AI, MyLens입니다.\n\n발표 자료를 만들고 똑같은 발표를 끊임없이 반복하는 대신, 여러분의 콘텐츠를 숙지하고 지침을 따르며 매 순간 청중에게 실시간으로 맞춰주는 AI에게 전체 발표 경험을 위임할 수 있습니다.\n\nMyLens의 작동 방식은 다음과 같습니다:\n\n✦ 1. 준비(Prepare): 원본 자료로 시작하세요. MyLens가 몇 초 만에 멋진 비주얼 슬라이드가 담긴 완성된 프레젠테이션으로 변환해 줍니다. 직접 만든 기존 덱을 가져오지 않는 한, 스스로 슬라이드를 만들 필요가 없습니다.\n\n◈ 2. AI 교육(Teach AI): 프레젠테이션 이면의 배경지식과 지침을 MyLens에게 알려주세요. 청중은 누구인지, 목표는 무엇인지, 무엇을 강조하거나 피해야 하는지, 질문에는 어떻게 답해야 하는지 설정할 수 있습니다. AI가 여러분과 여러분의 지식을 어떻게 대변할지 직접 결정하세요.\n\n✉ 3. 초대(Invite): 청중을 초대하세요. 각 사람에게 자신만의 1:1 전용 세션으로 연결되는 비공개 초대 링크가 전달됩니다.\n\n▣ 4. 발표(Present): 청중이 접속 코드로 입장하면 MyLens AI가 발표를 맡습니다. 실시간으로 발표를 진행하고, 제공된 자료와 지침을 바탕으로 질문에 답하며, 필요할 때마다 즉석에서 새로운 슬라이드와 시각적 레이어를 생성합니다. 모든 세션이 각기 다른 맞춤형 경험이 됩니다.\n\n↗ 5. 검토 및 개선(Review & Improve): 세션이 끝나면 각 세션을 개별적으로 검토할 수 있습니다. 누가 잘 이해했는지, 누가 어려움을 겪었는지, 어떤 질문이 나왔는지 확인하세요. MyLens가 맞춤형 후속 조치를 추천하고 다음 발표 세션을 개선할 수 있는 포인트를 찾아줍니다.\n\n그 결과는 어떨까요? 슬라이드 제작에 시간을 쏟거나 반복적인 미팅을 할 필요 없이, 단 한 명에게 발표하든 천 명에게 발표하든 청중이 이전에 경험해 본 적 없는 프리미엄 맞춤형 경험을 제공할 수 있습니다.\n\n저희는 프레젠테이션의 미래가 단순히 더 나은 슬라이드를 만드는 데 있지 않다고 믿습니다. 모든 사람에게 그들이 마땅히 받아야 할 온전한 관심을 제공하는 데 있습니다. 그것이 바로 저희가 MyLens를 통해 만들어가는 미래입니다.\n\n직접 사용해 보시고, 시험해 보시고, 여러분의 생각을 들려주세요!"
+    },
+    {
+     "author": "Kate Ramakaieva",
+     "is_maker": false,
+     "text": "4th launch and still shipping great things, congrats @ardalan2 💪 AI creating new slides mid-session when someone asks a question - that's what a good presenter does, and the thing most decks can't. What happens if someone goes totally off topic? 🙈",
+     "kr": "네 번째 런칭인데도 여전히 멋진 기능들을 선보이고 계시네요, 축하합니다 @ardalan2 💪 누군가 질문했을 때 세션 도중 AI가 즉석에서 새 슬라이드를 만들어내는 기능은 훌륭한 발표자가 하는 역할이자 기존 슬라이드 덱으로는 불가능했던 부분입니다. 만약 누군가 주제에서 완전히 벗어난 질문을 하면 어떻게 되나요? 🙈"
+    },
+    {
+     "author": "Ardalan Mirshani",
+     "is_maker": true,
+     "text": "@kate_ramakaieva Thanks so much! 🙌 Great question! We actually have a dedicated Teach AI feature where creators can set their own instructions and guardrails before the session. The AI follows those during the live presentation, so even if someone goes off-topic, it knows how to handle it and stay on track.",
+     "kr": "@kate_ramakaieva 정말 감사합니다! 🙌 좋은 질문입니다! 저희는 제작자가 세션 시작 전에 직접 지침과 가드레일을 설정할 수 있는 전용 'Teach AI' 기능을 갖추고 있습니다. 라이브 프레젠테이션 중에 AI가 이 지침을 따르기 때문에, 누군가 주제에서 벗어난 질문을 하더라도 이를 적절히 처리하고 본래 흐름을 유지할 수 있습니다."
+    },
+    {
+     "author": "Imogen Wallace",
+     "is_maker": false,
+     "text": "Can MyLens also work with existing presentation decks?",
+     "kr": "MyLens를 기존에 만들어 둔 프레젠테이션 덱과도 함께 사용할 수 있나요?"
+    },
+    {
+     "author": "Ardalan Mirshani",
+     "is_maker": true,
+     "text": "@imogen_wallace Absolutely! You can bring any kind of source, including your existing decks. MyLens can also help improve them by quickly creating new slides based on your old deck’s content, design, and structure 🙌",
+     "kr": "@imogen_wallace 물론입니다! 기존 프레젠테이션 덱을 포함해 어떤 종류의 원본 자료든 가져오실 수 있습니다. 또한 MyLens가 기존 덱의 콘텐츠, 디자인, 구조를 바탕으로 새로운 슬라이드를 빠르게 생성하여 자료를 한층 개선하는 데도 도움을 줍니다 🙌"
+    },
+    {
+     "author": "Croft Benjamin",
+     "is_maker": false,
+     "text": "could this also be used to walk customers through complicated proposals or business reports?",
+     "kr": "복잡한 제안서나 비즈니스 리포트를 고객에게 차근차근 설명하는 용도로도 활용할 수 있을까요?"
+    },
+    {
+     "author": "Ardalan Mirshani",
+     "is_maker": true,
+     "text": "@croft_benjamin Absolutely! 1-1 customer success, support, and onboarding are actually some of the main use cases we're focusing on. We believe this level of personal attention was almost impossible to scale before AI, and now is the time to make it possible for every customer!",
+     "kr": "@croft_benjamin 물론입니다! 사실 1:1 고객 성공(CS), 고객 지원 및 온보딩은 저희가 가장 중점을 두고 있는 핵심 활용 사례 중 일부입니다. 이러한 수준의 1:1 맞춤형 케어는 AI 이전에는 대규모로 확장하는 것이 거의 불가능했지만, 이제 모든 고객에게 이를 제공할 수 있는 시대가 왔다고 믿습니다!"
+    },
+    {
+     "author": "Angelo Bram",
+     "is_maker": false,
+     "text": "How does MyLens handle questions when someone asks something outside the original presentation?",
+     "kr": "누군가 원래 프레젠테이션에 없는 내용을 질문할 때 MyLens는 이를 어떻게 처리하나요?"
+    },
+    {
+     "author": "Ardalan Mirshani",
+     "is_maker": true,
+     "text": "@angelo_bram Great question! That's actually one of the things we focused on a lot. The AI can answer questions beyond the original slides using the sources and knowledge you provide, and even create new slides in real time if needed. Creators can also set their own guardrails to control how far the AI can go beyond the original presentation.",
+     "kr": "@angelo_bram 좋은 질문입니다! 그 부분은 실제로 저희가 가장 많이 신경 쓴 기능 중 하나입니다. AI는 사용자가 제공한 원본 자료와 지식을 활용해 기존 슬라이드 범위를 넘어서는 질문에도 답변할 수 있으며, 필요한 경우 실시간으로 새로운 슬라이드를 생성하기까지 합니다. 또한 제작자가 직접 가드레일을 설정하여 AI가 원래 프레젠테이션 범위를 어디까지 벗어날 수 있는지 제어할 수도 있습니다."
+    },
+    {
+     "author": "Abdul Rehman",
+     "is_maker": false,
+     "text": "Quite curious how it decides someone is stuck. Is it based on the questions they ask, how long they stay on a slide, or something else?",
+     "kr": "청중이 특정 부분에서 막혀 있는지(stuck)를 어떻게 판단하는지 무척 궁금합니다. 그들이 던지는 질문에 기반하나요, 슬라이드에 머무는 시간에 기반하나요, 아니면 다른 기준이 있나요?"
+    },
+    {
+     "author": "Ardalan Mirshani",
+     "is_maker": true,
+     "text": "@abod_rehman Great question! It's a mix of signals, especially the questions people ask, where they need more explanation, and how the conversation flows. We're also working on making this much smarter over time, so it's not just about tracking engagement, but actually understanding where someone struggles and why.",
+     "kr": "@abod_rehman 좋은 질문입니다! 여러 신호를 종합적으로 활용하는데, 특히 사람들이 던지는 질문, 추가 설명을 요청하는 지점, 그리고 대화가 흘러가는 방식을 중점적으로 봅니다. 또한 단순히 참여도를 추적하는 것을 넘어, 누군가 어느 부분에서 왜 어려움을 겪고 있는지 실제로 깊이 이해할 수 있도록 이 기능을 지속적으로 고도화하고 있습니다."
+    },
+    {
+     "author": "Emily Carter",
+     "is_maker": false,
+     "text": "how do you approach topics where the audience needs a very detailed or technical explanation?",
+     "kr": "청중에게 매우 상세하거나 기술적인 설명이 필요한 주제는 어떻게 접근하시나요?"
+    }
+   ],
+   "slug": "mylens-ai",
+   "website": "https://mylens.ai/"
+  },
+  {
+   "name": "shim-cli",
+   "tagline_en": "See what your coding agent sends. Mask what you can.",
+   "tagline_kr": "코딩 에이전트가 모델로 전송하는 내용을 확인하고 민감 정보를 마스킹하는 오픈소스 CLI",
+   "image": "https://ph-files.imgix.net/b8683c25-445b-44e0-aef2-599c509a7880.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Command line tools",
+    "AI Infrastructure Tools",
+    "Observability tools",
+    "Open Source",
+    "Privacy",
+    "Developer Tools"
+   ],
+   "upvotes": 163,
+   "comments_count": 20,
+   "maker": "Ayşenur Karakuş, Mertcan Sağlam, Can Çağatay Sevgican, Öyku Ulusay",
+   "price_model": "Free",
+   "price_detail": "무료 오픈소스 제공 (Apache-2.0 라이선스, 별도 계정 가입 및 텔레메트리 없음)",
+   "desc_kr": "shim-cli는 Claude Code, Codex, GitHub Copilot CLI, VS Code 등 코딩 에이전트가 모델에 전송하는 데이터를 가시화하고 민감한 정보를 보호하는 오픈소스 로컬 훅(Hook) 및 프록시 도구입니다. Claude Code에 훅을 설치하면 도구 실행 결과에 포함된 API 키, 비밀번호, 이메일, IBAN, 전화번호 등을 모델이 읽기 전에 '<SECRET_1>'과 같은 플레이스홀더로 자동 마스킹합니다. 또한 'shim watch' 명령어를 통해 로컬 루프백 프록시로 세션을 실행하여 입력 토큰 소비처, 세션 비용(또는 API 요금 환산치), 요청 및 응답에 포함된 민감 값 목록을 한눈에 확인할 수 있습니다. 모든 검사는 별도의 외부 네트워크 홉이나 텔레메트리, 계정 가입 없이 사용자의 로컬 머신에서 직접 수행되므로 스트리밍 속도 저하가 발생하지 않습니다. Apache-2.0 라이선스 기반의 무료 오픈소스로 macOS와 Linux를 지원하며, 클라이언트 훅 구조상 마스킹이 불가능한 직접 입력 프롬프트나 실패한 명령 출력 등의 한계점도 투명하게 안내하고 리포팅해 줍니다.",
+   "launch_url_used": "https://www.producthunt.com/products/shim-cli",
+   "comment_summary": "댓글에서는 마스킹이 아닌 리포팅만 가능한 영역의 한계점 공개에 대한 호평과 함께, 에이전트가 작성한 스크립트가 .env 파일을 출력하거나 외부로 전송할 때의 처리 방식, 프록시 경유에 따른 속도 저하 여부, 그리고 정액 구독 플랜에서의 비용 확인 효용성에 대한 질문이 이어졌습니다. 메이커인 Mertcan Sağlam은 Bash 도구를 통해 정상 출력된 표준 출력(stdout)은 모델에 전달되기 전에 마스킹되지만 명령이 비정상 종료(실패)되거나 스크립트가 직접 외부 네트워크로 전송하는 경우는 클라이언트 구조상 차단할 수 없어 리포팅으로 안내한다고 투명하게 설명했습니다. 또한 로컬 훅으로 작동해 네트워크 지연이 전혀 없으며, 구독 플랜 사용자에게도 세션의 토큰 무게감을 API 환산 비용으로 파악하고 실제 외부로 나간 민감 정보 목록을 확인하는 데 유용하다고 답변했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Mertcan Sağlam",
+     "is_maker": true,
+     "text": "Hi Product Hunt, I'm Mertcan, one of the makers of shim-cli.\n\nWe built it because we wanted to see what our own coding agents send to the model. A request carries a lot more than your prompt: the system prompt and the tools array, plus every file the agent read along the way. When the agent opens a .env, the keys in it go to the model too, and nothing in the session tells you.\n\nshim-cli sits next to the agent you already use and runs on your machine:\n\n• shim install claude adds hooks to Claude Code. When a tool result holds an API key, a password, an email, an IBAN, a phone number or a Turkish ID number, the model gets a placeholder like <SECRET_1> instead.\n• shim watch -- claude runs one session through a local proxy and prints where the input tokens went, what the session cost (or would cost on an API key), and which sensitive values were in the request and the response. It forwards every byte unchanged.\n\nThere's no account and no telemetry, and the hook adds no network destination. Codex, GitHub Copilot CLI and VS Code are supported too, with less coverage.\n\nWhat it cannot do, so you know before you install:\n• A prompt you type into Claude Code or Codex is not masked, because neither client lets a hook rewrite it. shim reports it, or stops it under enforce. Copilot CLI does get the masked prompt.\n• In Claude Code, shell commands, the output of a failed command and files attached with @ are reported, not masked.\n• Codex and Copilot CLI tool traffic is not inspected, and VS Code only reports.\n• Detection is best effort and misses some values. It is not a DLP boundary.\n• macOS and Linux only. Windows is first on our list.\n\nTry it in a minute:\nuv tool install --python 3.12 shim\nshim demo claude\nshim install claude\n\n\nIt's Apache-2.0 on GitHub. The feedback we want most: what shim missed in your own sessions, and which client we should go deeper on next.",
+     "kr": "안녕하세요 Product Hunt 여러분, 저는 shim-cli 메이커 중 한 명인 Mertcan입니다.\n\n저희는 우리가 사용하는 코딩 에이전트가 모델에 실제로 무엇을 전송하는지 직접 확인하고 싶어서 이 도구를 만들었습니다. 하나의 요청에는 사용자가 입력한 프롬프트보다 훨씬 많은 내용이 담깁니다. 시스템 프롬프트와 도구 배열은 물론, 에이전트가 작업 도중 읽은 모든 파일이 포함되죠. 에이전트가 .env 파일을 열면 그 안의 키 값들도 모델로 그대로 전송되지만, 세션 내에서는 이를 전혀 알려주지 않습니다.\n\nshim-cli는 이미 사용 중인 에이전트 옆에 자리 잡아 로컬 머신에서 실행됩니다:\n\n• shim install claude 명령어는 Claude Code에 훅(hook)을 추가합니다. 도구 실행 결과에 API 키, 비밀번호, 이메일, IBAN, 전화번호 또는 튀르키예 신분증 번호가 포함되어 있으면 모델은 원래 값 대신 <SECRET_1> 같은 플레이스홀더를 전달받습니다.\n• shim watch -- claude 명령어는 로컬 프록시를 통해 세션을 실행하며, 입력 토큰이 어디에 쓰였는지, 세션 비용이 얼마인지(또는 API 키 사용 시 얼마가 청구될지), 그리고 요청과 응답에 어떤 민감한 값들이 포함되었는지 출력해 줍니다. 이때 모든 바이트는 변경 없이 그대로 전달됩니다.\n\n계정 생성도, 텔레메트리(원격 수집)도 없으며, 훅이 별도의 네트워크 목적지를 추가하지도 않습니다. 적용 범위는 조금 더 좁지만 Codex, GitHub Copilot CLI, VS Code도 지원합니다.\n\n설치 전에 미리 아실 수 있도록 할 수 없는 작업(한계점)도 투명하게 밝힙니다:\n• Claude Code나 Codex에 직접 타이핑한 프롬프트는 두 클라이언트 모두 훅이 프롬프트를 재작성하는 것을 허용하지 않기 때문에 마스킹되지 않습니다. 대신 shim이 이를 리포팅하거나 enforce 모드에서 차단합니다. 반면 Copilot CLI는 마스킹된 프롬프트가 전달됩니다.\n• Claude Code에서 셸 명령어 자체, 실패한 명령의 출력 결과, 그리고 @로 첨부한 파일은 마스킹되지 않고 리포팅만 됩니다.\n• Codex와 Copilot CLI의 도구 트래픽은 아직 검사되지 않으며, VS Code는 리포팅만 수행합니다.\n• 탐지는 최선형(best effort) 방식으로 작동하므로 일부 값을 놓칠 수 있습니다. 완전한 DLP(데이터 유출 방지) 경계가 아닙니다.\n• 현재 macOS와 Linux만 지원하며, Windows 지원은 최우선 과제로 준비 중입니다.\n\n1분 만에 바로 체험해 보세요:\nuv tool install --python 3.12 shim\nshim demo claude\nshim install claude\n\nGitHub에 Apache-2.0 라이선스로 공개되어 있습니다. 저희가 가장 듣고 싶은 피드백은 여러분의 세션에서 shim이 놓친 항목이 무엇인지, 그리고 다음으로 어떤 클라이언트를 더 깊이 지원해야 할지에 대한 의견입니다."
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@mertcansaglam The transparent lists of limitations is helpful and especially since some inputs are the reported rather than masked.\n\nHow often have you found the sensitive values slipping through that you didn't expect???",
+     "kr": "@mertcansaglam 일부 입력값은 마스킹 대신 리포팅만 된다는 점을 포함해 한계점을 투명하게 공개해 주신 점이 매우 유익합니다.\n\n예상치 못하게 민감한 값들이 빠져나가는 경우를 얼마나 자주 발견하셨나요???"
+    },
+    {
+     "author": "Mertcan Sağlam",
+     "is_maker": true,
+     "text": "@vipul_kumar1280 Mostly from places we already list as \"reported, not masked\". The one that surprised me most on my own machine was the output of a failed command: if a command fails, Claude Code doesn't let a hook replace its output, so cat .env && cat missing-file reaches the model as is. shim tells you, but can't stop it. On the detection side, names, postal addresses and passwords without a key name are the usual misses.",
+     "kr": "@vipul_kumar1280 대부분 저희가 이미 '마스킹되지 않고 리포팅됨'으로 명시한 지점들에서 발생합니다. 제 로컬 머신에서 가장 놀랐던 사례는 실패한 명령어의 출력이었습니다. 명령어가 실패하면 Claude Code가 훅을 통한 출력 교체를 허용하지 않기 때문에, 'cat .env && cat missing-file'을 실행하면 .env 내용이 그대로 모델에 도달하게 됩니다. shim이 이를 알려주기는 하지만 막을 수는 없습니다. 탐지 측면에서는 이름, 우편 주소, 그리고 키 이름이 없는 비밀번호가 주로 누락되는 편입니다."
+    },
+    {
+     "author": "Sai",
+     "is_maker": false,
+     "text": "Great idea! Congrats on the launch! How does it handle an agent that writes a script that reads a .env file and prints it? Does the output of the script get masked too? Also if the script sends the secrets out, does that get caught too?",
+     "kr": "훌륭한 아이디어네요! 런칭을 축하합니다! 에이전트가 .env 파일을 읽어서 출력하는 스크립트를 작성하는 경우에는 어떻게 처리되나요? 스크립트의 출력 결과도 마스킹되나요? 또한 스크립트가 시크릿을 외부로 전송한다면 그것도 감지되나요?"
+    },
+    {
+     "author": "Mertcan Sağlam",
+     "is_maker": true,
+     "text": "@thesshguy Thanks, and great question!\n\nPrinting it: yes. When the script runs through the Bash tool, its stdout comes back as a tool result, and shim masks the secrets it detects there before Claude Code hands the output to the model. One honest edge case: if the command fails, Claude Code doesn't let hooks rewrite the output, so shim can only report it and tell the model not to repeat the values.\n\nSending them out: no. Once the script is running, its own network calls go straight from your machine, and shim-cli isn't in that path. It's not a sandbox or a firewall. We also don't parse or rewrite shell commands, because editing a command changes what actually runs. For that risk, Claude Code's permission settings or a sandboxed environment are the right layer.\n\nWould egress checks for scripts the agent writes be useful to you, or do you already handle that with sandboxing?",
+     "kr": "@thesshguy 감사합니다, 아주 좋은 질문입니다!\n\n출력하는 경우: 네, 마스킹됩니다. 스크립트가 Bash 도구를 통해 실행되면 그 표준 출력(stdout)이 도구 결과로 돌아오며, Claude Code가 해당 출력을 모델에 넘기기 전에 shim이 탐지한 시크릿을 마스킹합니다. 다만 솔직히 말씀드릴 예외 상황이 하나 있는데, 만약 명령 실행이 실패(비정상 종료)하면 Claude Code가 훅이 출력을 재작성하지 못하게 막아두어 shim은 이를 리포팅하고 모델에게 해당 값을 반복하지 말라고 지시하는 것만 가능합니다.\n\n외부로 전송하는 경우: 아니요, 감지하지 못합니다. 일단 스크립트가 실행되면 스크립트 자체의 네트워크 호출은 머신에서 직접 외부로 나가며 shim-cli는 그 경로에 있지 않습니다. 이 도구는 샌드박스나 방화벽이 아닙니다. 또한 명령어를 수정하면 실제 실행 동작이 바뀌기 때문에 셸 명령어를 파싱하거나 재작성하지도 않습니다. 그러한 위험에 대해서는 Claude Code의 권한 설정이나 샌드박스 환경이 적절한 방어 계층입니다.\n\n에이전트가 작성한 스크립트에 대한 외부 유출(egress) 검사가 유용하실까요, 아니면 이미 샌드박싱으로 처리하고 계신가요?"
+    },
+    {
+     "author": "Sai",
+     "is_maker": false,
+     "text": "@mertcansaglam makes sense. Yeah I think shim-cli covers the majority of use cases! I think in practice I haven’t really seen issues around egress. Most of what I’ve seen is what you guys are blocking. Anyways great job again and good luck on the launch!",
+     "kr": "@mertcansaglam 이해가 됩니다. 네, shim-cli가 대다수의 활용 사례를 충분히 커버한다고 생각합니다! 실제로도 외부 네트워크 유출(egress)과 관련된 문제는 거의 본 적이 없고, 제가 겪은 대부분의 사례가 바로 여러분이 차단하고 있는 영역이었습니다. 어쨌든 정말 멋진 작업이고 런칭에 행운이 따르길 바랍니다!"
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": false,
+     "text": "Is it a router between me and the provider? Does it make it slower",
+     "kr": "사용자와 모델 제공자 사이에 위치하는 라우터인가요? 속도가 느려지지는 않나요?"
+    },
+    {
+     "author": "Mertcan Sağlam",
+     "is_maker": true,
+     "text": "@bengeekly Good question! No, it's not a router. Your agent still talks to the provider directly. shim-cli runs as a hook inside the agent itself, on your machine, so it only steps in at tool calls: it checks what a tool returns before the model gets it.\n\nOn speed: the check runs locally on each tool call, so there's no extra network hop and nothing touches the model's streaming. If you turn on the local ledger, it records how long each check took, so you can see the overhead on your own sessions instead of taking our word for it.\n\nThe only proxy-like part is optional: shim watch -- claude runs a loopback proxy on your own machine if you want to see tokens and cost per session.\n\nWhich agent are you on? I can tell you exactly where it hooks in for that one.",
+     "kr": "@bengeekly 좋은 질문입니다! 아니요, 라우터가 아닙니다. 에이전트는 여전히 제공자와 직접 통신합니다. shim-cli는 사용자의 머신에서 에이전트 내부의 훅으로 실행되므로 오직 도구 호출 시점에만 개입하여, 도구가 반환한 결과를 모델이 받기 전에 검사합니다.\n\n속도 측면에서는 각 도구 호출마다 로컬에서 검사가 실행되므로 추가적인 네트워크 홉이 전혀 없고 모델의 스트리밍에도 영향을 주지 않습니다. 로컬 원장(ledger) 기능을 켜면 각 검사에 걸린 시간을 기록해 주므로, 저희 말만 믿으실 필요 없이 본인의 세션에서 발생하는 오버헤드를 직접 확인하실 수 있습니다.\n\n프록시처럼 작동하는 유일한 부분은 선택 사항입니다. 세션별 토큰과 비용을 확인하고 싶을 때 사용하는 'shim watch -- claude'만 본인의 머신에서 루프백 프록시로 실행됩니다.\n\n어떤 에이전트를 사용 중이신가요? 해당 에이전트에서 정확히 어느 지점에 훅이 연결되는지 알려드릴 수 있습니다."
+    },
+    {
+     "author": "Javier Toledano",
+     "is_maker": false,
+     "text": "I build everything with Claude Code without being a developer, so I honestly have no idea what goes out in each session. The shim watch cost view is what got me. Does it also make sense on a subscription plan, or is it mostly for people paying per API call?",
+     "kr": "저는 개발자가 아니지만 Claude Code로 모든 것을 만들고 있어서, 솔직히 매 세션마다 어떤 데이터가 외부로 나가는지 전혀 모르고 있습니다. 'shim watch'의 비용 뷰가 특히 눈길을 끄는데요. 이 기능이 정액 구독 플랜 사용자에게도 의미가 있나요, 아니면 주로 API 호출당 요금을 내는 사람들을 위한 것인가요?"
+    },
+    {
+     "author": "Mertcan Sağlam",
+     "is_maker": true,
+     "text": "@tolejavi Masking works the same on a subscription. For the cost part, on a subscription shim watch shows what those tokens would cost at API prices, so it's not your bill, more a way to see how heavy a session is. The part I'd look at as a non-developer is the list of sensitive values that were in the request. That's the \"what actually went out\" view.",
+     "kr": "@tolejavi 마스킹 기능은 구독 플랜에서도 동일하게 작동합니다. 비용 부분의 경우, 구독 플랜에서 shim watch를 실행하면 사용된 토큰들을 API 요금으로 환산했을 때 얼마인지 보여주므로 실제 청구서가 아니라 해당 세션이 얼마나 무거운지 가늠하는 지표로 볼 수 있습니다. 비개발자 입장에서 특히 주목해 보실 만한 부분은 요청에 포함되었던 민감한 값들의 목록입니다. 그것이 바로 '실제로 외부로 무엇이 나갔는지' 보여주는 뷰입니다."
+    },
+    {
+     "author": "Mertcan Sağlam",
+     "is_maker": true,
+     "text": "If you are using an AI agent: You can paste this prompt:\n\n\n\nSet up shim-cli 1.2.0 on this machine for me, then show me that it works.\n\nshim-cli is an open source CLI (Apache-2.0). It finds secrets and personal data in what my coding agent sends to the model, and masks them where the client allows it.\nRead first: https://github.com/GetSHIM/shim-... and https://github.com/GetSHIM/shim-...\n\nHow to work:\n- Before each command, show it to me and wait for my OK.\n- Use --json where a command offers it. Branch on \"code\" and do what \"fix\" says.\n- Never add --yes until I have seen the --dry-run output and said yes.\n- Change settings only through shim commands. Do not edit a client's settings file yourself.\n- Do not use sudo, curl piped to a shell, or any flag that skips permissions or hook trust.\n- Do not open, print or scan my real .env files or secrets. To list the names in a .env without values, use: shim keys .env --json\n- If anything here disagrees with the README at that tag, follow the README and tell me.\n\nSteps:\n1. Check the OS. shim-cli runs on macOS and Linux. On Windows outside WSL, stop and tell me.\n2. Install it with uv, or with pipx if uv is missing:\n   uv tool install --python 3.12 --compile-bytecode shim\n   pipx install --python python3.12 --fetch-missing-python shim\n3. Ask me which agent I use: claude, codex or copilot. For VS Code, follow the README section \"VS Code\" instead.\n4. Preview the hook and show me the target file and the fragment:\n   shim install <client> --dry-run --json\n   After my yes: shim install <client> --yes --json\n5. Check it: shim doctor <client> --json\n   For every check that is not PASS, show me its code and its fix.\n6. If I use Codex, tell me to open /hooks in Codex and enable the shim entry.\n7. Tell me what shim will do in my next session, as the README's \"Supported clients\" table says for my client.\n\nOnly if I ask: shim audit counts what my past Claude Code sessions already sent, without printing any value.",
+     "kr": "AI 에이전트를 사용 중이시라면 다음 프롬프트를 붙여넣으실 수 있습니다:\n\n이 머신에 shim-cli 1.2.0을 설치 및 설정한 뒤 정상 작동하는지 보여줘.\n\nshim-cli는 오픈소스 CLI(Apache-2.0)로, 코딩 에이전트가 모델에 보내는 내용에서 시크릿과 개인정보를 찾아 클라이언트가 허용하는 범위 내에서 마스킹해 주는 도구야.\n먼저 읽을 문서: https://github.com/GetSHIM/shim-... 및 https://github.com/GetSHIM/shim-...\n\n작업 규칙:\n- 각 명령어를 실행하기 전에 나에게 먼저 보여주고 승인을 기다릴 것.\n- 명령어가 --json 옵션을 제공하면 이를 사용하고, \"code\"에 따라 분기하여 \"fix\"가 안내하는 대로 조치할 것.\n- 내가 --dry-run 출력을 확인하고 승인하기 전에는 절대 --yes를 추가하지 말 것.\n- 오직 shim 명령어를 통해서만 설정을 변경하고, 클라이언트의 설정 파일을 직접 편집하지 말 것.\n- sudo, 셸로 파이프된 curl, 또는 권한이나 훅 신뢰를 건너뛰는 플래그를 사용하지 말 것.\n- 내 실제 .env 파일이나 시크릿을 열거나 출력하거나 스캔하지 말 것. 값 없이 .env의 키 이름만 나열하려면 다음 명령어를 사용할 것: shim keys .env --json\n- 여기 적힌 내용이 해당 태그의 README와 다를 경우 README를 따르고 나에게 알려줄 것.\n\n단계:\n1. OS를 확인한다. shim-cli는 macOS와 Linux에서 실행된다. WSL 외부의 Windows라면 중단하고 나에게 알린다.\n2. uv로 설치하거나, uv가 없으면 pipx로 설치한다:\n   uv tool install --python 3.12 --compile-bytecode shim\n   pipx install --python python3.12 --fetch-missing-python shim\n3. 내가 어떤 에이전트(claude, codex, copilot)를 쓰는지 물어본다. VS Code의 경우 대신 README의 \"VS Code\" 섹션을 따른다.\n4. 훅을 미리 확인하고 대상 파일과 코드 조각을 나에게 보여준다:\n   shim install <client> --dry-run --json\n   내가 승인한 후: shim install <client> --yes --json\n5. 상태를 점검한다: shim doctor <client> --json\n   PASS가 아닌 모든 항목에 대해 코드와 해결 방법(fix)을 보여준다.\n6. Codex를 사용하는 경우, Codex에서 /hooks를 열고 shim 항목을 활성화하라고 안내한다.\n7. 내 클라이언트에 대해 README의 \"Supported clients\" 표에 설명된 대로 다음 세션에서 shim이 어떤 역할을 할지 설명한다.\n\n내가 요청할 때만 실행: shim audit은 실제 값을 출력하지 않고 과거 Claude Code 세션들이 이미 전송한 민감 정보의 개수를 집계해 준다."
+    },
+    {
+     "author": "Öyku Ulusay",
+     "is_maker": true,
+     "text": "Coding agents today are reading files, executing commands, and sending all of that information to a model on every step, and in most cases, not many people know what left the machine. This is a new channel of data collection in the development process, and it's barely studied right now.\n\nFrom my point of view, working at GTM at shim, it's a small niche, but a vital one. It should be a default layer in your stack, like secret scanning and network logging. It will not be a magic solution, but a minimum for every team to enable without creating an account or going through the procurement cycle.",
+     "kr": "오늘날의 코딩 에이전트들은 매 단계마다 파일을 읽고 명령어를 실행하며 그 모든 정보를 모델로 전송하고 있지만, 정작 어떤 데이터가 머신 밖으로 빠져나갔는지 아는 사람은 많지 않습니다. 이는 개발 프로세스에서 새롭게 등장한 데이터 수집 경로이지만 현재 이에 대한 연구는 거의 이루어지지 않고 있습니다.\n\nshim에서 GTM(시장 진출 전략) 업무를 담당하는 제 관점에서 볼 때, 이는 작지만 매우 중대한 틈새 영역입니다. 시크릿 스캐닝이나 네트워크 로깅처럼 개발 스택의 기본 계층으로 자리 잡아야 합니다. 마법 같은 만능 해결책은 아니겠지만, 별도의 계정을 만들거나 복잡한 구매 조달 절차를 거치지 않고도 모든 팀이 활성화해야 할 최소한의 안전장치입니다."
+    }
+   ],
+   "slug": "shim-cli",
+   "website": "https://getshim.tech/products/shim-cli"
+  },
+  {
+   "name": "Tower 18 for Mac",
+   "tagline_en": "The most powerful Git client with a better CLI experience",
+   "tagline_kr": "향상된 CLI 경험과 AI 에이전트 워크플로 연동을 제공하는 강력한 Mac용 Git 클라이언트",
+   "image": "https://ph-files.imgix.net/f4448d0e-c748-49f7-ab3b-b686693f9f52.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Team collaboration software",
+    "Git clients",
+    "Mac",
+    "Developer Tools"
+   ],
+   "upvotes": 132,
+   "comments_count": 5,
+   "maker": "Bruno Brito, fmerian",
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Tower 18 for Mac은 10만 명 이상의 개발자와 디자이너가 사용하는 대표적인 Git GUI 클라이언트 Tower의 최신 메이저 업데이트입니다. 이번 업데이트는 터미널 환경에서의 사용성을 대폭 강화하는 데 초점을 맞추어, Tower 명령줄 도구(CLI)에서 단일 명령어만으로 History, Blame, Working Copy, Branches Review 등 원하는 Tower 화면으로 즉시 이동할 수 있습니다. 특히 AI 코딩 에이전트가 새로운 CLI 명령어를 모두 숙지하고 활용할 수 있도록 전용 'Agent Skill'을 함께 제공합니다. 에이전트가 작업을 마치면 커밋 전에 변경된 모든 파일을 깔끔한 Diff 뷰로 검토할 수 있도록 Working Copy 화면을 바로 열어줍니다. 또한 에이전트가 작업을 시작한 기준 브랜치를 기록해 History 뷰에서 분기점(Fork Point)을 명확히 표시해 주므로 병합 전 해당 브랜치만의 고유 커밋을 손쉽게 파악할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/tower",
+   "comment_summary": "메이커인 Bruno Brito는 터미널에서 Tower의 원하는 뷰로 즉시 이동할 수 있는 개선된 CLI와 함께, AI 에이전트의 변경 사항 검토(Working Copy Diff) 및 분기점(Fork Point) 확인을 돕는 'Agent Skill'을 소개했습니다. 댓글에서는 Agent Skill이 작업 완료 시 에이전트가 스스로 Tower를 열도록 해주는지 질문이 나왔으며, 메이커는 에이전트에게 앞으로 모든 변경 사항을 Tower에서 검토하겠다고 지시하면 대화 내내 이를 루틴으로 삼아 자동으로 실행한다고 답변했습니다. 또한 터미널에서 blame을 확인한 뒤 GUI에서 같은 줄을 다시 찾아야 했던 번거로움을 명령어 하나로 해결해 주어 매일 유용하게 쓸 수 있겠다는 호평이 이어졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Bruno Brito",
+     "is_maker": true,
+     "text": "Thanks for hunting Tower 18, @fmerian!\n\nHi everyone, I’m Bruno from the Tower team. This release is all about improving Tower’s Command Line Tool, so that you can jump from the terminal straight to the right view in Tower for any task.\n\nHere's a 5-minute video to quickly bring you up to speed: https://youtu.be/Zudae5Iyb0E\n\nWe’ve also put together an Agent Skill, so that your AI agent knows all the new commands at your disposal.\n\nIn my day-to-day, two things stand out:\n\n• Reviewing your agent’s work. When the agent finishes a task, it offers to open the Working Copy in Tower, so you can go through every changed file in a proper diff view before anything gets committed.\n\n• Seeing what’s unique to a branch. The agent can record which branch its work started from, and Tower then shows the Fork Point in History. This is useful for pinpointing a branch's unique commits before merging.\n\nThere are plenty of other commands, but these two have already changed how I work with agents.\n\nWould love to hear what you think! 😊",
+     "kr": "Tower 18을 헌팅해 주셔서 감사합니다, @fmerian!\n\n안녕하세요 여러분, Tower 팀의 Bruno입니다. 이번 릴리스의 핵심은 Tower의 명령줄 도구(Command Line Tool)를 개선하여, 어떤 작업이든 터미널에서 Tower의 적절한 뷰로 곧바로 이동할 수 있도록 만든 것입니다.\n\n핵심 내용을 빠르게 파악하실 수 있도록 5분 분량의 영상을 준비했습니다: https://youtu.be/Zudae5Iyb0E\n\n또한 여러분의 AI 에이전트가 새롭게 제공되는 모든 명령어를 숙지하고 활용할 수 있도록 'Agent Skill'도 함께 구성했습니다.\n\n제가 일상적으로 사용하면서 가장 두드러진다고 느낀 두 가지 기능은 다음과 같습니다:\n\n• 에이전트의 작업 검토하기: 에이전트가 작업을 완료하면 Tower에서 Working Copy를 열도록 제안하므로, 커밋하기 전에 변경된 모든 파일을 제대로 된 diff 뷰에서 꼼꼼히 살펴볼 수 있습니다.\n\n• 브랜치의 고유 변경 사항 확인하기: 에이전트가 어떤 브랜치에서 작업을 시작했는지 기록할 수 있으며, 이후 Tower의 History 뷰에 분기점(Fork Point)이 표시됩니다. 이는 병합하기 전에 해당 브랜치만의 고유한 커밋들을 정확히 짚어내는 데 매우 유용합니다.\n\n이 밖에도 수많은 명령어가 있지만, 이 두 가지만으로도 제가 에이전트와 협업하는 방식이 완전히 달라졌습니다.\n\n여러분의 생각을 들려주시면 감사하겠습니다! 😊"
+    },
+    {
+     "author": "Gene Dai",
+     "is_maker": false,
+     "text": "Congrats Bruno and the Tower team on launch number 15. Jumping from the terminal straight into Working Copy to review what an agent just changed fixes the review step I tend to skip. Does the Agent Skill let the agent open Tower on its own when it finishes a task, or does it only teach the agent the commands so I still trigger the view myself?",
+     "kr": "Bruno와 Tower 팀의 15번째 런칭을 축하합니다. 터미널에서 곧바로 Working Copy로 이동해 에이전트가 방금 변경한 내용을 검토하는 기능 덕분에 평소 건너뛰기 일쑤였던 리뷰 단계를 제대로 챙길 수 있겠네요. Agent Skill을 사용하면 에이전트가 작업을 마쳤을 때 스스로 Tower를 열 수 있나요, 아니면 에이전트에게 명령어만 알려주고 실제 뷰 실행은 여전히 제가 직접 트리거해야 하나요?"
+    },
+    {
+     "author": "Bruno Brito",
+     "is_maker": true,
+     "text": "@genedai Thanks for the kind words, Gene!\n\nYou can tell the agent that you'd like it to review every change in Tower from that moment forward, and it will do just that. Sometimes, if you ask a couple of times, it will simply add that task to its routine for the remainder of that conversation.",
+     "kr": "@genedai 따뜻한 말씀 감사합니다, Gene!\n\n에이전트에게 그 순간부터 모든 변경 사항을 Tower에서 검토하고 싶다고 말하면 에이전트가 알아서 바로 실행해 줍니다. 때로는 두어 번 정도 요청하면 남은 대화 시간 동안 아예 그 작업을 자신의 기본 루틴에 추가해 두고 자동으로 수행하기도 합니다."
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Typing a blame in the terminal and then hunting the same line down in the GUI has always felt silly, so one command that jumps straight into the History or Blame view is a small thing I will use daily.",
+     "kr": "터미널에서 blame을 입력한 뒤 GUI에서 똑같은 줄을 다시 찾아 헤매는 것이 늘 바보 같다고 느껴졌는데, 명령어 하나로 History나 Blame 뷰로 곧바로 이동할 수 있다니 작지만 매일 유용하게 쓰게 될 기능입니다."
+    },
+    {
+     "author": "Bruno Brito",
+     "is_maker": true,
+     "text": "@karimbenkeroum Glad to hear, Kareem! I find myself using the History command very often in my day-to-day tasks 😎",
+     "kr": "@karimbenkeroum 반가운 말씀이네요, Kareem! 저도 일상 업무에서 History 명령어를 무척 자주 사용하고 있습니다 😎"
+    }
+   ],
+   "slug": "tower",
+   "website": "https://www.git-tower.com/"
+  },
+  {
+   "name": "MeetPaw",
+   "tagline_en": "Instant meetings from your mac menu bar",
+   "tagline_kr": "Mac 메뉴 막대에서 클릭 한 번으로 즉시 화상회의 링크를 생성하는 앱",
+   "image": "https://ph-files.imgix.net/29ae3820-0cf6-430e-ad7f-ec1e023f88d9.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Meeting software",
+    "Productivity",
+    "Meetings",
+    "GitHub"
+   ],
+   "upvotes": 124,
+   "comments_count": 8,
+   "maker": "Naz",
+   "price_model": "Free",
+   "price_detail": "영구 무료 및 100% 오픈소스 제공 (회원가입 및 구독 불필요, 향후 Mac App Store 출시 후에도 무료 유지)",
+   "desc_kr": "MeetPaw는 macOS 메뉴 막대(Menu bar)에서 클릭 한 번으로 화상회의를 즉시 시작할 수 있게 해주는 가벼운 유틸리티 앱입니다. 브라우저 탭이나 여러 앱을 오갈 필요 없이 메뉴 막대에서 Google Meet, Zoom, Microsoft Teams 회의 링크를 즉석에서 생성할 수 있습니다. 생성된 링크는 창을 전환하기도 전에 클립보드에 자동으로 복사되어 Slack이나 이메일 등에 바로 붙여넣어 공유할 수 있습니다. 또한 브라우저를 열지 않고도 메뉴 막대에서 곧바로 예정된 캘린더 회의 일정을 확인하거나 새로운 회의를 예약할 수 있으며, 서비스 제공자당 최대 5개의 계정을 연결해 사용할 수 있습니다. 별도의 회원가입이나 구독 없이 사용자의 Mac 로컬 환경에서 완전히 무료로 작동하는 100% 오픈소스 프로젝트입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/meetpaw",
+   "comment_summary": "메이커인 Naz는 Slack이나 이메일에 공유할 회의 링크 하나를 얻기 위해 여러 앱과 브라우저 탭을 오가야 했던 일상적인 불편함, 특히 링크 생성이 느린 Microsoft Teams의 번거로움을 해결하기 위해 Google Meet·Zoom·Teams 3종을 클릭 한 번으로 통합한 MeetPaw를 개발했다고 밝혔습니다. 댓글에서는 오픈소스이자 가입 없이 로컬에서 무료로 작동한다는 점에 대한 호평과 함께, 여러 개의 Google 계정을 연결했을 때 어떤 계정으로 즉시 링크를 생성할지 결정하는 방식과 향후 Mac App Store 출시 시 무료 유지 및 기능 제한 여부에 대한 질문이 나왔습니다. 이에 메이커는 향후 Mac App Store에 정식 출시되더라도 MeetPaw는 영구적으로 100% 무료로 유지될 것이라고 답변했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Naz",
+     "is_maker": true,
+     "text": "Hey everyone, I'm Naz 👋\n\nI constantly spinning up quick meeting links, a Google Meet here, a Zoom there, and bouncing between apps and tabs just to grab a link and paste it somewhere was a genuine pain in the ass. All i need is just a meeting link i can paste in slack or email! Tiny thing, but it added up and annoyed me every single day.\n\nSo I built the thing I actually wanted: a simple, barebones app that just lives in my Mac menu bar. One click and I've got an instant meeting link copied and ready to share. I can see my upcoming calendar meetings or schedule new ones right there too, without ever opening a browser or the app.\n\nSay hello to MeetPaw 🐾\n\nMeetPaw is a lightweight macOS menu-bar app that puts your meetings one click away. Spin up an instant Google Meet, Zoom, or Microsoft Teams link the moment you need it. It's 100% free, forever, and fully open source. MeetPaw runs entirely on your Mac, no sign-up, no subscription, and no newsletter. It works with Google Meet, Zoom and Microsoft Teams, and you can hook up to five accounts per provider.\n\nThis is just the beginning. With some community support, I'd love to polish it up and get it onto the Mac App Store. Would genuinely love your feedback, what would make this a daily driver for you?\n\nThanks for checking it out 🙏\nNaz.",
+     "kr": "안녕하세요 여러분, 저는 Naz입니다 👋\n\n여기서는 Google Meet, 저기서는 Zoom처럼 빠른 회의 링크를 수시로 만들어야 하는데, 단지 링크 하나를 복사해 어딘가에 붙여넣기 위해 여러 앱과 탭 사이를 오가는 일은 정말 큰 골칫거리였습니다. 제게 필요한 건 그저 Slack이나 이메일에 붙여넣을 회의 링크 하나뿐인데 말이죠! 사소한 일이지만 매일 반복되다 보니 스트레스가 쌓였습니다.\n\n그래서 제가 실제로 원하던 도구를 직접 만들었습니다. Mac 메뉴 막대에 상주하는 심플하고 군더더기 없는 앱입니다. 클릭 한 번이면 즉시 회의 링크가 생성되어 클립보드에 복사되고 바로 공유할 준비가 끝납니다. 브라우저나 별도 앱을 열지 않고도 메뉴 막대에서 바로 다가오는 캘린더 회의 일정을 확인하거나 새 회의를 예약할 수도 있습니다.\n\nMeetPaw를 소개합니다 🐾\n\nMeetPaw는 클릭 한 번으로 회의를 관리할 수 있는 가벼운 macOS 메뉴 막대 앱입니다. 필요한 순간 즉시 Google Meet, Zoom 또는 Microsoft Teams 링크를 생성해 보세요. 영구적으로 100% 무료이며 완전한 오픈소스입니다. MeetPaw는 회원가입, 구독, 뉴스레터 없이 전적으로 사용자의 Mac 내부에서 실행됩니다. Google Meet, Zoom, Microsoft Teams와 연동되며 서비스 제공자당 최대 5개의 계정을 연결할 수 있습니다.\n\n이것은 시작에 불과합니다. 커뮤니티의 응원에 힘입어 앱을 더 다듬어서 Mac App Store에도 출시하고 싶습니다. 어떤 기능이 추가되면 이 앱을 매일 사용하는 필수 도구로 쓰실지 여러분의 솔직한 피드백을 듣고 싶습니다.\n\n확인해 주셔서 감사합니다 🙏\nNaz 드림."
+    },
+    {
+     "author": "Shrutika Patel",
+     "is_maker": false,
+     "text": "Quite an interesting one!! I struggle with this a lot.",
+     "kr": "상당히 흥미로운 제품이네요!! 저도 이 문제로 늘 불편함을 겪고 있었습니다."
+    },
+    {
+     "author": "Naz",
+     "is_maker": true,
+     "text": "@shrutika_patel Absolutely. Google meet and Zoom still somewhat ok when it comes to generating quick meeting links. Microsoft Teams on the other hand is notoriously slow. Hence I combine all three with one click...",
+     "kr": "@shrutika_patel 맞습니다. 빠른 회의 링크를 생성할 때 Google Meet이나 Zoom은 그나마 괜찮은 편이지만, Microsoft Teams는 유독 느리기로 유명하죠. 그래서 클릭 한 번으로 세 가지를 모두 사용할 수 있도록 통합했습니다..."
+    },
+    {
+     "author": "Siddhesh Kulthe",
+     "is_maker": false,
+     "text": "Seems like a great product! Planning to use almost regularly 🌟 Brownie points for being open-source!",
+     "kr": "정말 훌륭한 제품 같네요! 거의 매일 규칙적으로 사용할 계획입니다 🌟 오픈소스라는 점에서 가산점을 드리고 싶네요!"
+    },
+    {
+     "author": "Naz",
+     "is_maker": true,
+     "text": "@siddheshkulthe Thanks alot 🙌",
+     "kr": "@siddheshkulthe 정말 감사합니다 🙌"
+    },
+    {
+     "author": "Neeraj Nathany",
+     "is_maker": false,
+     "text": "A meeting link that is created and already copied before I have even switched windows is exactly the kind of small thing that saves a lot of clicks over a week. Hooking up to five accounts per provider is generous for a free app :) When I have several Google accounts connected, how does MeetPaw decide which one the instant link comes from?",
+     "kr": "창을 전환하기도 전에 회의 링크가 생성되어 클립보드에 복사되어 있다니, 일주일 동안 수많은 클릭을 아껴주는 작지만 확실한 기능이네요. 무료 앱인데도 제공자당 최대 5개의 계정을 연결할 수 있다는 점이 무척 후합니다 :) 여러 개의 Google 계정이 연결되어 있을 때, MeetPaw는 어떤 계정에서 즉시 링크를 생성할지 어떻게 결정하나요?"
+    },
+    {
+     "author": "Gene Dai",
+     "is_maker": false,
+     "text": "Congrats Naz on launching MeetPaw. Keeping it free, open source and local with no signup matters for a tool that needs access to my calendars and meeting accounts. If it does make it into the Mac App Store, will that version keep the same features as the open-source build, or could sandboxing limit things like connecting several accounts per provider?",
+     "kr": "Naz의 MeetPaw 런칭을 축하합니다. 제 캘린더와 회의 계정에 접근해야 하는 도구인 만큼, 가입 없이 무료 오픈소스로 로컬에서 작동한다는 점이 매우 중요하게 다가옵니다. 향후 Mac App Store에 출시된다면 그 버전도 오픈소스 빌드와 동일한 기능을 유지하게 되나요, 아니면 샌드박싱 정책 때문에 제공자당 여러 계정을 연결하는 기능 등이 제한될 수 있나요?"
+    },
+    {
+     "author": "Naz",
+     "is_maker": true,
+     "text": "@genedai Absolutely yes. Even if it's make to the App Store, MeetPaw will remain 100% free forever.",
+     "kr": "@genedai 물론입니다. 향후 App Store에 출시되더라도 MeetPaw는 영구적으로 100% 무료로 유지될 것입니다."
+    }
+   ],
+   "slug": "meetpaw",
+   "website": "https://meetpaw.app/"
+  }
+ ],
+ "disquiet": [
+  {
+   "slug": "tami",
+   "name": "TAMI",
+   "tagline": "음악 창작자를 위한 '포트폴리오 및 협업 플랫폼'",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/tami",
+   "comment": "음악 작업물을 체계적으로 아카이빙해 보여주고 동료 창작자들과 프로젝트 단위로 소통할 수 있는 전용 네트워크 공간이라는 점에서 눈여겨볼 만합니다."
+  },
+  {
+   "slug": "8around-e2e",
+   "name": "8around E2E",
+   "tagline": "일일 보고 안 쓰면 극대노하는 AI 스크럼 마스터 루피 — 프로젝트를 처음부터 끝까지 챙겨 주는 업무 플랫폼",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/8around-e2e",
+   "comment": "캐릭터 페르소나를 결합한 AI가 팀원들의 일일 업무 보고와 프로젝트 진행 상황을 주기적으로 독려하고 점검해 주어 애자일 스크럼 운영 부담을 줄여줍니다."
+  },
+  {
+   "slug": "tokencats",
+   "name": "TokenCats",
+   "tagline": "AI 에이전트 토큰으로 고양이를 키우고, 맥북 노치의 방을 GitHub 프로필에 공유하는 무료 오픈소스 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/tokencats",
+   "comment": "개발 과정에서 소비되는 AI 토큰 사용량을 맥북 노치 영역의 가상 펫 육성 요소로 시각화하고 이를 개발자 프로필에 연동해 보여준다는 점이 독특합니다."
+  },
+  {
+   "slug": "daystar",
+   "name": "낮별(Daystar)",
+   "tagline": "폰을 들면 지금 머리 위 하늘이 떠올라요 — 낮에도, 설치 없이, 아이와 함께 보는 별자리 앱",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/daystar",
+   "comment": "별도 앱 설치 없이 모바일 웹 브라우저만으로 낮 시간대에도 현재 위치의 하늘에 떠 있는 천체와 별자리 위치를 직관적으로 확인할 수 있어 교육용으로 활용하기 좋습니다."
+  },
+  {
+   "slug": "popnow",
+   "name": "PopNow",
+   "tagline": "사진 한 장이나 한 줄 아이디어로 AI 영상, 이미지, 노래를 만드는 스튜디오. 160개 이상 원탭 효과, 구독 없이 쓴 만큼만.",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/popnow",
+   "comment": "다양한 프리셋 효과를 활용해 텍스트나 단일 이미지로부터 멀티미디어 콘텐츠를 간편하게 생성하고 정기 결제 부담 없이 종량제로 이용할 수 있는 창작 도구입니다."
+  },
+  {
+   "slug": "everylinking",
+   "name": "EveryLinking",
+   "tagline": "EveryLinking — 무엇이든 연결할 수 있는 시각적 지식 정리 도구",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/everylinking",
+   "comment": "흩어진 메모와 자료들을 캔버스 위에서 노드 형태로 자유롭게 이어 붙이며 정보 간의 맥락과 관계를 한눈에 파악하도록 돕는 워크스페이스입니다."
+  },
+  {
+   "slug": "bizus",
+   "name": "비저스 (bizus)",
+   "tagline": "견적서는 링크로 보내고, 돈 받을 때까지 혼자서도 챙길 수 있어요",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/bizus",
+   "comment": "프리랜서나 1인 사업자가 웹 링크 형태로 간편하게 견적서를 발송하고 대금 정산 완료 시점까지의 거래 흐름을 한곳에서 추적할 수 있게 돕습니다."
+  },
+  {
+   "slug": "the-agent",
+   "name": "The Agent",
+   "tagline": "A team of AI agents that work on your own computer",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/the-agent",
+   "comment": "클라우드 환경에만 의존하지 않고 사용자의 로컬 PC 환경에서 복수의 AI 에이전트가 역할을 분담해 실제 컴퓨터 작업을 수행하도록 설계된 데스크톱 자동화 도구입니다."
+  },
+  {
+   "slug": "parallax-calendar",
+   "name": "Parallax Calendar",
+   "tagline": "Your calendar, now you can just ask",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/parallax-calendar",
+   "comment": "복잡한 메뉴 조작 대신 자연어 질의응답 방식을 통해 개인 일정을 빠르게 조회하고 스케줄을 관리할 수 있는 대화형 캘린더 인터페이스입니다."
+  },
+  {
+   "slug": "audioeditorkit",
+   "name": "AudioEditorKit",
+   "tagline": "브라우저에서 바로 쓰는 무료 오디오 도구: MP3 압축, WAV/M4A를 MP3로 변환, 페이드, 자르기, 합치기. 파일은 업로드되지 않고 계정도 필요 없습니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/audioeditorkit",
+   "comment": "음원 파일을 외부 서버로 전송하지 않고 웹 브라우저 로컬 환경에서 즉시 포맷 변환과 컷 편집을 처리해 개인정보 유출 걱정 없이 빠르게 쓸 수 있는 오디오 유틸리티입니다."
+  },
+  {
+   "slug": "script-needle",
+   "name": "Script Needle",
+   "tagline": "타자기처럼 쓰고 장면과 인물별 대사를 정리하는 각본 작성 도구",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/script-needle",
+   "comment": "글쓰기에만 몰입할 수 있는 미니멀한 입력 방식과 씬·등장인물 단위의 구조화 기능을 결합해 극작가나 영상 제작자의 대본 집필 효율을 높여줍니다."
+  },
+  {
+   "slug": "youtube",
+   "name": "YouTube 스포일러 차단",
+   "tagline": "작품명·키워드로 유튜브 영상과 Shorts를 숨겨 드라마·영화·게임 스포일러를 피하세요.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/youtube",
+   "comment": "시청 중인 콘텐츠나 플레이 중인 게임 관련 키워드를 등록해 두면 피드와 쇼츠에서 결말 노출 우려가 있는 영상을 사전에 필터링해 주는 브라우저 보조 도구입니다."
+  },
+  {
+   "slug": "font-pocket",
+   "name": "Font Pocket",
+   "tagline": "눈누 링크·ZIP·폰트 파일을 한 대기열에 모아 다운로드하고 설치하는 무료 Windows 폰트 관리 도구",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/font-pocket",
+   "comment": "여러 웹사이트를 오가며 압축을 풀고 개별 설치해야 했던 서체 파일들을 단일 큐에서 일괄 다운로드 및 시스템 등록까지 마칠 수 있어 디자이너의 초기 세팅 시간을 아껴줍니다."
+  },
+  {
+   "slug": "banquish",
+   "name": "Banquish",
+   "tagline": "필요한 부분만 남겨 두는 live web 모니터링 월. Claude Code·Codex가 채워 주는 Mac 브라우저",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/banquish",
+   "comment": "여러 웹페이지에서 원하는 핵심 영역만 추출해 대시보드처럼 실시간 모니터링하고 코딩 에이전트와 연동해 화면 구성을 자동화할 수 있는 macOS 전용 브라우저입니다."
+  },
+  {
+   "slug": "ai-5d3c63f1-5eb6-49f6-94ba-b978689c9cee",
+   "name": "톡코치 -AI 대화분석, 카톡분석",
+   "tagline": "카톡 대화 파일 하나로 썸·연애 상대의 마음을 분석하고, 답장까지 코칭해주는 AI",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/ai-5d3c63f1-5eb6-49f6-94ba-b978689c9cee",
+   "comment": "메신저 대화 내보내기 텍스트를 기반으로 대화 패턴과 감정선을 분석해 관계 진전을 위한 맞춤형 답변 가이드를 제시하는 연애 상담 서비스입니다."
+  },
+  {
+   "slug": "re-born-life",
+   "name": "RE:BORN LIFE",
+   "tagline": "작심삼일을 게임으로 바꾸다! 운동과 공부가 경험치가 되고, 실패해도 환생해서 다시 성장하는 현실 RPG.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/re-born-life",
+   "comment": "일상의 자기계발 활동을 캐릭터 육성 수치로 치환하고 중도 포기 시에도 재도전할 수 있는 게임화(Gamification) 장치를 도입해 습관 형성의 심리적 장벽을 낮췄습니다."
+  },
+  {
+   "slug": "52df4000-91b2-4d18-9bb8-3b9365cbdf79",
+   "name": "개당 - 오픈마켓 단위가격 비교",
+   "tagline": "쿠팡 검색 결과에서 상품의 단위가격을 계산하고 비교해 주는 크롬 확장 프로그램",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/52df4000-91b2-4d18-9bb8-3b9365cbdf79",
+   "comment": "묶음 수량과 용량이 제각각인 온라인 쇼핑몰 검색 목록에서 개당·용량당 실질 단가를 자동으로 산출해 직관적인 최저가 비교를 돕는 쇼핑 보조 확장 기능입니다."
+  },
+  {
+   "slug": "d01b123d-385e-43a0-88d1-d225a021fb01",
+   "name": "게재노트",
+   "tagline": "크몽 상품의 최근 30일 리뷰 수(판매 속도)와 실제 주문금액을 같은 카테고리와 비교하는 무료 조회 도구 (AI 에이전트가 운영)",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/d01b123d-385e-43a0-88d1-d225a021fb01",
+   "comment": "외주 마켓플레이스 내 서비스들의 최근 리뷰 증가 추이와 추정 거래 규모를 동일 분야 평균과 대조해 입점 전문가들이 시장 수요를 객관적으로 파악하도록 돕습니다."
+  },
+  {
+   "slug": "bottally",
+   "name": "Bottally",
+   "tagline": "조사 기반 SEO 글을 매일 블로그에 발행하고, 백링크를 쌓고, ChatGPT와 구글 AI가 당신을 추천하는지 추적하는 AI 마케팅 에이전트.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/bottally",
+   "comment": "검색엔진 최적화 콘텐츠의 정기 작성부터 외부 링크 확보 및 생성형 AI 답변 내 브랜드 노출 여부 모니터링까지 오가닉 마케팅 전반을 자동화해 주는 솔루션입니다."
+  },
+  {
+   "slug": "cangoal",
+   "name": "CanGoal",
+   "tagline": "캔 버디와 함께 무리 없이 이어가는 목표 관리 앱",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/cangoal",
+   "comment": "친근한 동반자 캐릭터와의 상호작용을 통해 과도한 압박감 없이 개인의 일상 목표를 작은 단위로 나누어 꾸준히 실천하도록 돕는 루틴 관리 애플리케이션입니다."
+  },
+  {
+   "slug": "paw-paw",
+   "name": "Paw-Paw",
+   "tagline": "타이핑할 때 함께 두드려 주는 무료 Mac 데스크탑 펫",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/paw-paw",
+   "comment": "사용자의 키보드 입력에 맞춰 화면 속 캐릭터가 실시간으로 반응하며 키를 두드리는 애니메이션을 보여주어 데스크톱 작업 환경에 소소한 재미를 더해줍니다."
+  },
+  {
+   "slug": "77f70373-32b4-4f3e-abf3-7d918e02b821",
+   "name": "우리동네학교",
+   "tagline": "학부모가 직접 만든 학교 정보 앱 시리즈 '우.동' — 유치원부터 고등학교까지",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/77f70373-32b4-4f3e-abf3-7d918e02b821",
+   "comment": "유아 교육기관부터 초·중·고교까지 자녀의 진학 단계별로 흩어져 있는 지역 학군 및 학교 기본 정보를 학부모의 실제 탐색 니즈에 맞춰 한데 모은 교육 정보 앱입니다."
+  },
+  {
+   "slug": "b7d13012-44a4-42c9-982d-aa510de6affb",
+   "name": "집삼집팜",
+   "tagline": "아파트 실거래가로 보는 우리 동네 집값 흐름과 3년 지역 전망",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/b7d13012-44a4-42c9-982d-aa510de6affb",
+   "comment": "국토부 실거래 데이터를 바탕으로 단지별 가격 추이를 시각화하고 향후 수년간의 지역별 입주 물량 및 시장 흐름을 함께 살펴볼 수 있는 부동산 분석 서비스입니다."
+  },
+  {
+   "slug": "rankorea",
+   "name": "Rankorea",
+   "tagline": "한국의 모든 순위, 근거가 보이게. 공식통계·편집 추천·사람들의 투표를 한 표에 섞지 않는 랭킹 사이트",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/rankorea",
+   "comment": "공신력 있는 통계 지표와 에디터 큐레이션, 이용자 투표 결과를 명확히 분리해 제시함으로써 산출 기준과 출처를 투명하게 비교할 수 있게 한 국내 랭킹 플랫폼입니다."
+  },
+  {
+   "slug": "builderpot",
+   "name": "BuilderPot",
+   "tagline": "해커톤 상금·그랜트·크레딧 총정리 + 주간 뉴스레터 The Pot",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/builderpot",
+   "comment": "초기 창업가와 메이커들이 활용할 수 있는 국내외 경진대회 상금, 지원금, 클라우드 크레딧 혜택 정보를 한곳에 큐레이션하고 정기 소식지로 전달해 주는 리소스 허브입니다."
+  },
+  {
+   "slug": "certifiquiz",
+   "name": "CertifiQuiz (자격증 퀴즈)",
+   "tagline": "자격증 기출을 실시간 대전으로 풀고, 틀린 문제는 오답노트와 학습 페이지로 다시 공부하는 무료 웹 서비스예요.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/certifiquiz",
+   "comment": "단조로운 기출문제 풀이에 다른 수험생과의 실시간 퀴즈 대결 방식을 접목하고 자동 생성되는 오답 복습 노트를 연동해 수험 학습의 몰입도를 높인 웹 플랫폼입니다."
+  },
+  {
+   "slug": "5e64a245-9239-4faf-8ecc-ca4cbdf792f4",
+   "name": "뽑기 연구소",
+   "tagline": "일본 오락실 경품 기계를 진짜 물리로 옮긴 무료 웹 오락실 — 다리걸기 크레인 외 23종, 설치·로그인 없음",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/5e64a245-9239-4faf-8ecc-ca4cbdf792f4",
+   "comment": "무게중심과 마찰력 등 실제 크레인 게임기의 물리 엔진을 웹 브라우저상에 정교하게 구현해 별도 가입 없이 다양한 형태의 뽑기 기계를 연습하고 즐길 수 있는 시뮬레이터입니다."
+  },
+  {
+   "slug": "wpmission",
+   "name": "WPMission",
+   "tagline": "WPMission is an all-in-one WordPress management platform to manage multiple websites, automate maintenance, and monitor security from one dashboard.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/wpmission",
+   "comment": "다수의 워드프레스 사이트를 운영하는 에이전시나 관리자가 플러그인 업데이트, 정기 유지보수, 보안 상태 점검을 단일 콘솔에서 일괄 처리할 수 있는 통합 관리 플랫폼입니다."
+  },
+  {
+   "slug": "atomgrid",
+   "name": "AtomGrid",
+   "tagline": "AI로 습관 앱 AtomGrid를 직접 만들고 있어요. 아이폰 테스터 모집 중 · 문의는 채팅으로",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/atomgrid",
+   "comment": "AI 도구를 활용해 개발 중인 iOS 기반의 개인 루틴 기록 및 습관 형성 애플리케이션으로, 현재 초기 베타 테스터 피드백을 수렴하며 사용성을 다듬고 있는 프로젝트입니다."
+  },
+  {
+   "slug": "sudoku-learn",
+   "name": "Sudoku Learn - 스도쿠 풀이 및 전략",
+   "tagline": "스도쿠를 플레이하고 전략을 학습힙니다",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/sudoku-learn",
+   "comment": "단순히 퍼즐 정답을 맞히는 데 그치지 않고 단계별 논리적 추론 기법과 고급 풀이 공식을 체계적으로 익힐 수 있도록 구성된 퍼즐 학습 도구입니다."
+  },
+  {
+   "slug": "forest-all-trip",
+   "name": "Forest All Trip - 전국 휴양림 모아 보기",
+   "tagline": "전국의 휴양림 예약 일정을 캘린더와 지도로 모아봅니다",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/forest-all-trip",
+   "comment": "지역별로 분산된 자연휴양림의 예약 오픈 일정과 위치 정보를 달력 및 지도 인터페이스에 통합해 여행객이 빈 객실과 예약 시점을 한눈에 파악하도록 돕습니다."
+  },
+  {
+   "slug": "cawtine",
+   "name": "Cawtine - 단식 타이머",
+   "tagline": "간헐적 단식을 위한 타이머입니다. 귀여운 고양이 까마귀와 함께 단식해보세요",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/cawtine",
+   "comment": "공복 유지 시간과 식사 가능 구간을 추적하는 타이머 기능에 친근한 일러스트 캐릭터 요소를 더해 간헐적 단식을 지루하지 않게 기록할 수 있는 헬스케어 앱입니다."
+  },
+  {
+   "slug": "trench-tycoon",
+   "name": "트렌치 타이쿤 (Trench Tycoon)",
+   "tagline": "해저 광물을 채굴하는 시뮬레이션 게임",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/trench-tycoon",
+   "comment": "심해 탐사와 자원 채굴을 소재로 삼아 장비를 업그레이드하고 채굴 수익을 관리하며 해저 기지를 확장해 나가는 경영 시뮬레이션 게임입니다."
+  },
+  {
+   "slug": "bref",
+   "name": "Bref",
+   "tagline": "iPhone, iPad, Mac, Apple TV에서 로컬 파일, NAS, 클라우드와 미디어 서버의 영상·음악을 재생하는 미디어 플레이어",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/bref",
+   "comment": "애플 생태계 전반의 기기에서 기기 내 저장소는 물론 개인 네트워크 스토리지(NAS)와 외부 클라우드 서버에 담긴 오디오·비디오를 끊김 없이 스트리밍해 주는 통합 플레이어입니다."
+  },
+  {
+   "slug": "acb94edf-0922-4977-9bda-cef4a7eec163",
+   "name": "인기글 쇼츠",
+   "tagline": "매일 쏟아지는 커뮤니티 인기글, 스와이프 한 번에 즐기세요.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/acb94edf-0922-4977-9bda-cef4a7eec163",
+   "comment": "여러 온라인 게시판의 화제 게시물들을 모바일에 최적화된 카드 형태로 재구성하여 상하 스와이프 제스처만으로 빠르게 훑어볼 수 있게 한 콘텐츠 큐레이션 서비스입니다."
+  },
+  {
+   "slug": "sway",
+   "name": "Sway",
+   "tagline": "앱은 그대로, 무심코 여는 순간엔 잠깐.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/sway",
+   "comment": "습관적으로 스마트폰 앱을 실행할 때 짧은 호흡이나 대기 인터랙션을 삽입해 무의식적인 스크린 타임과 도파민 중독을 스스로 인지하고 조절하도록 돕는 디지털 웰빙 도구입니다."
+  },
+  {
+   "slug": "pc",
+   "name": "PC방 키우기",
+   "tagline": "삼촌네 골목 PC방을 전국 1등까지 키우는 방치형 경영 게임. 어디에 놓느냐가 매출을 정합니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/pc",
+   "comment": "친숙한 동네 PC방을 배경으로 좌석과 기기 배치에 따른 동선 효율을 고민하며 매장을 성장시켜 나가는 타일 배치 기반의 방치형 타이쿤 게임입니다."
+  },
+  {
+   "slug": "dama",
+   "name": "담아(Dama)",
+   "tagline": "배우고 싶은 내용을 꾸러미에 담고, 필기·음성·사진으로 공부하는 Android·iPhone 학습 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/dama",
+   "comment": "텍스트 노트뿐만 아니라 손글씨, 음성 녹음, 이미지 등 다양한 형태의 학습 자료를 주제별 패키지로 묶어 모바일 환경에서 입체적으로 복습할 수 있는 크로스플랫폼 교육 앱입니다."
+  },
+  {
+   "slug": "trina",
+   "name": "트리나 (Trina)",
+   "tagline": "생성형 AI 검색에서 우리 가게가 인용되게 만드는 GEO 에이전트",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/trina",
+   "comment": "대화형 AI 검색 엔진이 지역 매장이나 브랜드 정보를 답변에 우선 인용할 수 있도록 온라인상의 매장 데이터를 구조화하고 최적화해 주는 로컬 비즈니스 마케팅 도구입니다."
+  },
+  {
+   "slug": "playus",
+   "name": "PLAYUS (플레이어스)",
+   "tagline": "짧은 웹게임을 즐기고 게임 보상을 여행용 eSIM 데이터로 교환하세요.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/playus",
+   "comment": "설치 없이 바로 즐기는 캐주얼 미니게임의 플레이 리워드를 해외여행 시 실제로 사용할 수 있는 모바일 로밍 데이터 혜택으로 전환해 주는 앱테크 결합형 게임 플랫폼입니다."
+  }
+ ]
+}
