@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@jwcha10004 - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">차주완</span>
+                    
+                    <a href="https://www.threads.net/@jwcha10004" target="_blank" rel="noopener" class="username">@jwcha10004</a>
+                </div>
+                <span class="post-date">2026-10-20 18:46</span>
+            </div>
+            <div class="post-text">영상 편집 맡기거나 밤새시던 분들, 이제 Claude한테 시키고 주무시면 됩니다.<br>​Remotion, HyperFrame, OpenMontage 오픈소스 3개 연동해 두면 클로드가 코드 기반으로 영상과 자막, BGM까지 한 번에 다 뽑아줍니다.<br>​🎯 핵심 오픈소스 3종 세트<br>1️⃣ Remotion: 영상의 움직임과 타이밍을 리액트(React) 코드로 변환해 클로드가 정확하게 제어 및 수정<br>2️⃣ HyperFrame: 촬영본 위에 깔끔한 트렌디 자막과 강조 그래픽/도식 추가 (HTML/CSS 기반)<br>3️⃣ OpenMontage: 대본 정리, 나레이션, 스톡 영상, 배경음악, 자막 조합까지 돌리는 쇼폼 공장 파이프라인<br>​💡 토큰 아끼는 개꿀팁:<br>PDF 매뉴얼이나 레퍼런스 코드를 매번 첨부하면 토큰이 미친 듯이 소모됩니다. 로컬 폴더(예: AICOS)에 미리 넣어두고 &quot;폴더 안 문서 확인해&quot;라고 한 줄만 치세요.</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 143</span>
+                    <span>💬 6</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@jwcha10004/post/DetixtzH-zu" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (6개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@calmtiger_</span>
+            <span class="reply-date">2026-10-20 19:13</span>
+            
+        </div>
+        <div class="reply-text">PDF를 매번 붙이지 않고 폴더에 넣어 두고 한 줄만 치면 된다니 훨씬 가볍네요. 영상 편집을 코드로 맡긴다는 발상이 신기합니다ㅎㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@pratyushrungta</span>
+            <span class="reply-date">2026-10-20 20:43</span>
+            
+        </div>
+        <div class="reply-text">깔끔한 정리네요. 하나 더 보태자면, 마음에 드는 레퍼런스 영상 하나의 컷 타이밍(컷 지점, 샷 길이)을 같이 넘겨주면 결과물이 훨씬 덜 AI 같아져요. 로컬 폴더 팁이랑 같이 쓰면 토큰도 아끼고요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jwcha10004</span>
+            <span class="reply-date">2026-10-20 21:18</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">네 감사합니다 😊 😄 😁 👍</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@shortform.prime</span>
+            <span class="reply-date">2026-10-21 05:52</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">엄청난 고수님들이 많으시네요 글 잘봤습니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kang_sojang</span>
+            <span class="reply-date">2026-10-20 21:31</span>
+            
+        </div>
+        <div class="reply-text">리모션과 하이퍼 프레임을 같이 쓰는 건 생각 못했었는데 한번 시도해 봐야겠네요. 감사합니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jwcha10004</span>
+            <span class="reply-date">2026-10-20 22:06</span>
+            
+        </div>
+        <div class="reply-text">네  좋은 작품 만드시면 꼭 자랑 해 주세요 😀😃😄</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
