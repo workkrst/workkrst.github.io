@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-21",
+    "url": "2026-10-21/",
+    "top_product": "/dev/null",
+    "count": 5,
+    "upvotes_total": 1191,
+    "comments_total": 36
+  },
+  {
     "date": "2026-10-20",
     "url": "2026-10-20/",
     "top_product": "Beam.win",
