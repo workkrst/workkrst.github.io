@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-10-22</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-10-22 · Top 5 · 수집 댓글 57개 · 수집 2026-10-22 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-10-22",
+ "collected_at": "2026-10-22 12:30 KST",
+ "summary": "오늘 Top 5는 단순 텍스트·이미지 생성을 넘어 실물 제작, 아웃바운드 세일즈, 개발 협업, 비즈니스 인텔리전스 등 구체적인 실무 영역을 대행하는 '에이전트 네이티브' 도구들이 주류를 이뤘습니다. 멀티 에이전트 간의 직접 조율(BAND)부터 공장 규격 반영 디자인(UseIt Studio), 프롬프트 기반 영업 파이프라인(Needle)까지 에이전트 실행 인프라가 두각을 나타냈습니다. 커뮤니티 댓글에서는 단순 기능 감상을 넘어 실제 제조 사양 일치 여부, 계정 보호 및 응답 지표, 다중 에이전트 인수인계 투명성, 데이터 출처 역추적 등 프로덕션 환경에서의 신뢰성과 검증 가능성이 공통된 핵심 논점으로 다뤄졌습니다.",
+ "notable": [
+  {
+   "slug": "band",
+   "why": "여러 코딩 에이전트를 운용할 때 개발자가 세션 간 컨텍스트를 복사·전달하던 병목을 에이전트 간 공유 룸 협업으로 해소해 높은 관심을 받았습니다. 댓글에서는 개별 세션을 일일이 확인하지 않고도 작업 인수인계 추적 내역과 병목 지점을 투명하게 볼 수 있는 대시보드와 기기 간 원활한 동기화 기능에 호평이 이어졌습니다."
+  },
+  {
+   "slug": "useit-studio-from-idea-to-delivery",
+   "why": "화면 속 평면 이미지 생성에 그치지 않고 실제 치수와 재단선이 완벽히 반영된 공장 생산 규격 파일을 생성해 실물 제작의 진입장벽을 낮춘 점이 주목받았습니다. 댓글에서는 제조 현실성을 묻는 질문에 실제 공장 사양서 기반의 지식 베이스 자동 검증을 제시하고, 캡처된 디자인을 편집 가능한 레이어로 역분해하는 에이전트 기능이 큰 호응을 얻었습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "UseIt Studio",
+   "tagline_en": "Your AI design agent for real, editable project files.",
+   "tagline_kr": "실제 편집 가능한 프로젝트 파일을 만들어주는 AI 디자인 에이전트",
+   "image": "https://ph-files.imgix.net/61871a26-bd6a-43e0-9c7c-3a40b91eb51e.svg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Graphic design tools",
+    "AI Designer",
+    "Design Tools",
+    "Art",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 286,
+   "comments_count": 26,
+   "maker": "Zac Zuo, Lindia Chen, Daniel Gao",
+   "price_model": "Free Options",
+   "price_detail": "신규 가입자에게 15,000 무료 크레딧(프로모션 코드 PHP-01-0002) 제공, 유료 구독 플랜 운영 예정",
+   "desc_kr": "UseIt Studio는 손으로 만질 수 있는 실물 제품을 제작할 수 있도록 돕는 실물 제품 특화 AI 디자인 에이전트입니다. 한 문장으로 원하는 제품을 설명하면 디자이너처럼 필요한 질문을 던지고, 3D 실물 소재 미리보기와 함께 실제 편집 가능한 프로젝트 파일을 생성해 줍니다. 단순한 평면 이미지가 아닌 실제 치수, 도련(bleed), 재단선(dieline)이 완벽히 반영되어 인쇄, 재단, 접기가 가능한 공장 생산 규격 파일을 제공합니다. 핀, 스티커, 선물 상자, 팝업 카드, 브랜드 키트 등 다양한 실물 굿즈를 웹 브라우저나 윈도우 데스크톱 환경에서 손쉽게 제작할 수 있습니다. 컴퓨터 제어(GUI) 에이전트 기술을 기반으로 캔버스 위의 특정 영역을 지정해 세부 요소를 직관적으로 수정하고 커스텀할 수 있습니다.",
+   "launch_url_used": "https://useit.im/?ref=producthunt",
+   "comment_summary": "공동 창업자 Lindia Chen과 Daniel Gao는 단순한 평면 이미지가 아닌 실제 생산과 인쇄가 가능한 편집용 파일을 만들어주는 AI 디자인 스튜디오 UseIt을 소개하며 15,000 무료 크레딧 코드를 공개했습니다. 커뮤니티에서는 실제 공장 제조 기준과의 부합 여부, Canva 디자인의 Figma 재현 지원, 로고 루핑 애니메이션 제작 품질, 향후 ChatGPT 플러그인 확장 가능성 등에 대해 질문했습니다. 메이커 측은 실제 공장 사양 기반의 제조 지식 베이스를 구축해 규격을 자동 검증하고 있으며, GUI 에이전트 기술을 활용해 스크린샷 속 요소를 편집 가능한 레이어로 분해하는 등 창작자들을 위한 지원을 넓혀가고 있다고 답변했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Lindia Chen",
+     "is_maker": true,
+     "text": "Hi Product Hunt! 👋\n\nI'm Lindia, Co-founder of UseIt.\n\nFive years ago, when I first stepped into the world of AI, I had a dream: **what if AI could turn our wildest ideas into things we could actually hold in our hands?**\n\nA gift for someone special, a character you dreamed up, or something that simply didn't exist anywhere else.\n\nBack then, it felt like a distant dream. But I've held onto that idea ever since.\n\n**And today, I'm incredibly excited to finally bring that dream to life with UseIt.** 🥹  \n\nMeet **UseIt, your AI-powered design studio for the physical world.**\n\nWith UseIt, all you need is an idea. Simply describe what you have in mind, and AI helps you figure out the rest, from shaping the design to preparing files that can actually be manufactured. You can keep experimenting, making changes, and exploring possibilities without getting lost in complicated design tools.\n\nHuge thanks to [@zaczuo](https://www.producthunt.com/@zaczuo) for hunting us! 🙏\n\n  \n🎁 Use code PHP-01-0002 to claim **15000 credits** for everyone who joins today.\n\n**Let's make imagination tangible. ✨**",
+     "kr": "안녕하세요 프로덕트 헌트 여러분! 👋\n\n저는 UseIt의 공동 창업자 Lindia입니다.\n\n5년 전, 제가 처음 AI의 세계에 발을 들였을 때 한 가지 꿈이 있었습니다. 바로 'AI가 우리의 가장 기발한 아이디어를 실제로 손에 쥘 수 있는 실물로 만들어줄 수 있다면 어떨까?' 하는 것이었습니다.\n\n특별한 누군가를 위한 선물, 머릿속으로 상상했던 캐릭터, 혹은 어디에도 존재하지 않았던 무언가 말이죠.\n\n그 당시에는 아득한 꿈처럼 느껴졌지만, 저는 그때부터 지금까지 그 아이디어를 늘 품고 있었습니다.\n\n그리고 오늘, 마침내 UseIt을 통해 그 꿈을 현실로 선보이게 되어 이루 말할 수 없이 기쁩니다. 🥹\n\n물리적 세계를 위한 AI 기반 디자인 스튜디오, UseIt을 소개합니다.\n\nUseIt에서는 아이디어 하나만 있으면 충분합니다. 머릿속에 있는 것을 간단히 설명하기만 하면, AI가 디자인의 형태를 잡는 것부터 실제 제조 가능한 파일을 준비하는 것까지 그 밖의 모든 과정을 도와줍니다. 복잡한 디자인 도구 속에서 길을 잃지 않고도 끊임없이 실험하고, 수정하고, 새로운 가능성을 탐색할 수 있습니다.\n\n저희를 헌팅해 주신 @zaczuo 님께 깊은 감사를 드립니다! 🙏\n\n🎁 오늘 참여하시는 모든 분들을 위해 코드 PHP-01-0002를 입력하시면 15,000 크레딧을 드립니다.\n\n상상을 현실로 만져볼 수 있게 만들어 봅시다. ✨"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "[@zaczuo](https://www.producthunt.com/@zaczuo)  [@lindiac](https://www.producthunt.com/@lindiac) How does usel t make sure the final design is practical to manufacture and not just visually appealing",
+     "kr": "@zaczuo @lindiac UseIt은 최종 디자인이 단순히 시각적으로만 그럴듯한 것이 아니라 실제로 제조 가능하도록 어떻게 보장하나요?"
+    },
+    {
+     "author": "Lindia Chen",
+     "is_maker": true,
+     "text": "[@zaczuo](https://www.producthunt.com/@zaczuo)  [@shivam\\_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) Great question! 👀Behind the AI, we’ve actually built a manufacturing knowledge base using real factory templates and spec sheets. It covers all those stuff: dimensions, bleed and safe areas, materials, printing methods, finishes, and how close your design can get to the cut line.\n\nSo while the AI handles the creative magic, the knowledge base makes sure everything is actually production-ready. ✨\n\nAnd yep, we double-check the final files against those rules before they head to the factory.\n\nWe're still growing the knowledge base, and there's definitely more to come!\n\nWould love for you to give UseIt a try! We're always happy to hear your thoughts, answer questions, and chat about ideas! 🫶",
+     "kr": "@zaczuo @shivam_kushwaha16 좋은 질문입니다! 👀 AI 이면에는 실제 공장 템플릿과 사양서를 바탕으로 구축한 제조 지식 베이스가 자리잡고 있습니다. 규격 치수, 도련 및 안전 여백, 소재, 인쇄 방식, 마감, 그리고 디자인이 재단선에 얼마나 가까워질 수 있는지 등 세부 사항을 모두 다룹니다.\n\n따라서 AI가 창의적인 마법을 부리는 동안, 지식 베이스는 모든 것이 실제로 생산 가능한 상태가 되도록 확실히 잡아줍니다. ✨\n\n또한 파일이 공장으로 넘어가기 전에 해당 규격 규칙에 맞춰 최종 파일을 재차 검증합니다.\n\n저희는 여전히 이 지식 베이스를 확장해 나가는 중이며, 앞으로 더 많은 것들이 추가될 예정입니다!\n\nUseIt을 꼭 한번 사용해 보셨으면 좋겠습니다! 피드백을 듣고, 질문에 답하며, 다양한 아이디어를 나누는 것은 언제나 환영입니다! 🫶"
+    },
+    {
+     "author": "Glenn Thomas",
+     "is_maker": false,
+     "text": "[@zaczuo](https://www.producthunt.com/@zaczuo)  [@lindiac](https://www.producthunt.com/@lindiac) Huge congrats, Lindia! 🎉 Love the idea of taking AI beyond generating something that looks good on screen and turning it into a real, editable design that can actually be made. Bridging that gap between imagination and production is a really interesting problem to tackle. Wishing you and the team a great launch! 🚀",
+     "kr": "@zaczuo @lindiac Lindia 님, 런칭을 진심으로 축하드립니다! 🎉 화면에서만 보기 좋은 이미지를 생성하는 것을 넘어, 실제로 제작 가능한 편집 가능한 디자인으로 구현한다는 아이디어가 정말 마음에 듭니다. 상상과 생산 사이의 간극을 메우는 것은 정말 흥미로운 도전 과제네요. 팀의 멋진 런칭을 기원합니다! 🚀"
+    },
+    {
+     "author": "Lindia Chen",
+     "is_maker": true,
+     "text": "[@zaczuo](https://www.producthunt.com/@zaczuo)  [@glennthomas](https://www.producthunt.com/@glennthomas) Thank u sooo much!",
+     "kr": "@zaczuo @glennthomas 정말 너무너무 감사드립니다!"
+    },
+    {
+     "author": "Sumedh Bengale",
+     "is_maker": false,
+     "text": "Great product and congratulations on the launch!  \nI've signed up and whipped up a looping animation for a static logo.  \nVery happy with the quality as of now.  \n  \nThis might go into my usual toolset!  \n  \nOne minor nitpick, it'd be great if the paid plans were mentioned on the homepage.  \nTo my knowledge, they are not.  \n  \nAnyway, aside from that one nitpick, I really liked useit.im!",
+     "kr": "멋진 제품이며 런칭 축하드립니다! 가입해서 정적 로고용 루핑 애니메이션을 빠르게 하나 만들어보았는데, 현재 품질에 아주 만족하고 있습니다. 제 평소 작업 도구 모음에 들어갈 수도 있겠네요! 한 가지 사소한 아쉬운 점이라면 홈페이지에 유료 플랜에 대한 안내가 나와 있으면 좋겠습니다. 제가 알기로는 아직 안 적혀 있는 것 같아서요. 어쨌든 그 사소한 점을 빼면 useit.im이 정말 마음에 들었습니다!"
+    },
+    {
+     "author": "Lindia Chen",
+     "is_maker": true,
+     "text": "[@sumedh\\_bengale](https://www.producthunt.com/@sumedh_bengale) tqsm for trying UseIt and give such precious feedback! 🥹 so happy to hear you enjoyed the results We are actively improving the subscription system experience recently, and we hear you! Will be rolling out hot updates very soon. We also prepared code PHP-01-0002 for 15000 free credits to help everyone keep exploring if you would like to check it out☺️☺️",
+     "kr": "@sumedh_bengale UseIt을 체험해 보시고 소중한 피드백을 남겨주셔서 정말 감사합니다! 🥹 결과물이 마음에 드셨다니 무척 기쁩니다. 최근 구독 시스템 경험을 적극적으로 개선하고 있으며, 말씀해주신 의견도 잘 새겨듣겠습니다! 조만간 빠른 업데이트를 선보일 예정입니다. 계속 둘러보실 수 있도록 15,000 무료 크레딧을 드리는 프로모션 코드 PHP-01-0002도 준비했으니 확인해보세요 ☺️☺️"
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "I would wish to have an agent that can replicate a Canva design in Figma. Is it something that your agent can handle too?",
+     "kr": "Canva 디자인을 Figma로 그대로 복제해 줄 수 있는 에이전트가 있었으면 좋겠는데, UseIt 에이전트도 그런 작업을 처리할 수 있나요?"
+    },
+    {
+     "author": "Lindia Chen",
+     "is_maker": true,
+     "text": "[@busmark\\_w\\_nika](https://www.producthunt.com/@busmark_w_nika) That's actually one of the features we originally built UseIt around, and still one of the things our agent does best! You can give it a flat screenshot of a design, and it'll break it down into separate, editable elements instead of just treating it as one image using our platform. So yes, recreating a Canva design in Figma is exactly the kind of work we're aiming to support! 😎",
+     "kr": "@busmark_w_nika 사실 그 기능은 저희가 애초에 UseIt을 만들 때 핵심으로 삼았던 기능 중 하나이며, 지금도 저희 에이전트가 가장 잘하는 영역 중 하나입니다! 평면 스크린샷 디자인을 입력하면 플랫폼 내에서 단순한 이미지 한 장으로 다루는 대신 편집 가능한 개별 요소로 분해해 냅니다. 따라서 Canva 디자인을 Figma로 다시 구현하는 것은 저희가 정확히 지원하고자 하는 작업 유형이 맞습니다! 😎"
+    },
+    {
+     "author": "Daniel Gao",
+     "is_maker": true,
+     "text": "Hi Product Hunt 👋  \n\nI'm Daniel, co-founder of UseIt.  \n\nAlmost everyone has something they've wanted to make and never did: a gift box for your best friend's wedding, stickers of the characters you've doodled for years. The love is there. Then sizes, materials and manufacturers get in the way, and **we quietly let it go.**  \n\nI research **computer-use agents**, AI that operates real software. Most of the excitement around them is about saving experts time. That was never what moved me. I want more people to **hold the thing they imagined, and know they made it.**\n\n  \nUseIt is how we're trying to get there. Tell it what you want, and it asks what a designer would ask, sets up the real structure, and designs on it. 👆 **Circle any part** to change just that. 📦 **See it in 3D** in real materials. 📐 Get an **editable design file** with real dimensions, ready for a manufacturer. Under the hood, the agent **works directly in design software** instead of generating a picture.\n\n  \n**It's early.** 🌱 Gift boxes, pins, stickers, pop-up cards and brand kits for now, and it won't get everything right yet. Tell me when it breaks, and tell me what you've always wanted to make 💬 That's how we decide what's next.\n\n  \nThanks to [@zaczuo](https://www.producthunt.com/@zaczuo) for hunting us 🙏\n\n  \nCode **PHP-01-0002** gives **15,000 credits** to everyone who joins today. 🎉",
+     "kr": "안녕하세요 프로덕트 헌트 여러분 👋\n\n저는 UseIt의 공동 창업자 Daniel입니다.\n\n거의 모든 사람에게는 만들고 싶었지만 끝내 만들지 못한 무언가가 있습니다. 절친의 결혼식을 위한 선물 상자나 오랫동안 낙서로 그려온 캐릭터 스티커 같은 것들이죠. 애정은 충분하지만, 크기, 소재, 제조사의 장벽에 부딪혀 우리는 조용히 포기하곤 합니다.\n\n저는 실제 소프트웨어를 조작하는 AI인 컴퓨터 제어(GUI) 에이전트를 연구하고 있습니다. 이 기술에 대한 대부분의 관심은 전문가의 시간을 절약해 주는 데 쏠려 있지만, 저는 거기에 크게 마음이 움직이지 않았습니다. 저는 더 많은 사람들이 자신이 상상했던 것을 실제로 손에 쥐고, '내가 이걸 만들었다'는 것을 느낄 수 있기를 바랍니다.\n\nUseIt은 바로 그 목표에 다가가기 위한 시도입니다. 원하는 것을 말하면 디자이너처럼 질문을 던지고, 실제 구조를 잡은 뒤 그 위에 디자인합니다. 👆 어느 부분이든 동그라미를 쳐서 그 부분만 수정할 수 있습니다. 📦 실제 소재로 된 3D 모습을 확인할 수 있습니다. 📐 제조업체에 바로 넘길 수 있는 실제 규격 치수의 편집 가능한 디자인 파일을 얻을 수 있습니다. 보이지 않는 곳에서 에이전트는 그림을 생성하는 대신 디자인 소프트웨어 내부에서 직접 작업합니다.\n\n아직 초기 단계입니다. 🌱 현재는 선물 상자, 핀, 스티커, 팝업 카드, 브랜드 키트 위주로 지원되며 아직 모든 것을 완벽하게 해내지는 못합니다. 문제가 생기면 언제든 알려주시고, 평소 무엇을 만들어보고 싶으셨는지 말씀해 주세요 💬 여러분의 의견을 바탕으로 다음 개발 방향을 결정합니다.\n\n저희를 헌팅해 주신 @zaczuo 님께 감사드립니다 🙏\n\n오늘 가입하시는 모든 분께 코드 PHP-01-0002로 15,000 크레딧을 드립니다. 🎉"
+    },
+    {
+     "author": "Irving",
+     "is_maker": false,
+     "text": "Congrats team! What inspired you to build UseIt?",
+     "kr": "팀 여러분 축하합니다! UseIt을 만들게 된 계기나 영감은 무엇이었나요?"
+    },
+    {
+     "author": "Lindia Chen",
+     "is_maker": true,
+     "text": "[@irving\\_ai](https://www.producthunt.com/@irving_ai) Thank you so much! 🥹💜\n\n3 years ago we were already making solid progress in GUI agent research. But we kept asking ourselves: can we ture all this tech into something people would really use and love?\n\nAnd the inspiration was pretty much all around us. We have people on the founding team from media backgrounds and have worked closely with designers and creatives. Many people around me and my self are part of different fandom communities, where they put so much time and love into creating merch for their favorite work and characters. Also, our team are all the kind of people who will make handmade gifts for friends and put our love to it.\n\nSo we kept coming back to this idea: what if making something beautiful and physical could be as easy as imagining it?\n\nThat's really where UseIt came from. We wanted to help more people make things they love, whether it's for their favorite things, their friends, their small businesses, or just themselves. <3",
+     "kr": "@irving_ai 정말 감사드립니다! 🥹💜\n\n3년 전 저희는 이미 GUI 에이전트 연구에서 확실한 진전을 보이고 있었습니다. 하지만 스스로에게 끊임없이 질문을 던졌죠. '이 모든 기술을 사람들이 실제로 사용하고 사랑할 수 있는 것으로 바꿀 수 있을까?'\n\n영감은 사실 우리 주변 도처에 있었습니다. 창업 팀 구성원 중에는 미디어 배경을 가진 이들이 있어 디자이너 및 창작자들과 긴밀히 협력해 왔습니다. 저와 제 주변의 많은 사람들은 다양한 팬덤 커뮤니티의 일원으로서 자신이 좋아하는 작품과 캐릭터를 위해 굿즈를 만드는 데 많은 시간과 애정을 쏟고 있습니다. 또한 저희 팀은 친구들을 위해 정성을 담아 손수 선물을 만드는 사람들이기도 합니다.\n\n그래서 저희는 계속해서 이 생각으로 되돌아왔습니다. '아름답고 손에 잡히는 무언가를 만드는 일이 상상하는 것만큼 쉬워진다면 어떨까?'\n\n그것이 바로 UseIt의 진정한 출발점이었습니다. 좋아하는 대상이든, 친구든, 소규모 비즈니스든, 혹은 자기 자신을 위해서든 더 많은 사람들이 자신이 사랑하는 것을 만들 수 있도록 돕고 싶었습니다. <3"
+    }
+   ],
+   "slug": "useit-studio-from-idea-to-delivery",
+   "website": "https://useit.im/"
+  },
+  {
+   "name": "Needle",
+   "tagline_en": "The agent-native outbound engine",
+   "tagline_kr": "AI 에이전트 네이티브 아웃바운드 엔진",
+   "image": "https://ph-files.imgix.net/998eb53e-158a-4045-84a5-68c0f635e683.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Lead generation software",
+    "Sales enablement",
+    "AI sales tools",
+    "Sales",
+    "Artificial Intelligence",
+    "LinkedIn"
+   ],
+   "upvotes": 243,
+   "comments_count": 26,
+   "maker": "Rohan Chaubey, Onur Eken, Jan Heimes",
+   "price_model": "Free Options",
+   "price_detail": "7일 무료 체험(7-day free trial) 제공 및 프로모션 코드 PH2026 입력 시 6개월간 50% 할인",
+   "desc_kr": "Needle은 Claude, ChatGPT, Grok 등 기존 AI 에이전트에 연동하여 아웃바운드 영업 전 과정을 자동화하는 에이전트 네이티브 아웃바운드 엔진입니다. 리스트 추출, 데이터 인리치먼트, 시퀀스 설정, 링크드인 발송 등 5개 이상의 분절된 도구를 전전하며 CSV를 복사할 필요 없이 한 줄 프롬프트만으로 전체 캠페인을 실행할 수 있습니다. 링크드인, 인스타그램, 구글 지도에서 이상적인 고객(ICP)을 탐색하고, 에이전트가 고도로 개인화된 메시지를 작성할 수 있도록 심층적인 맥락 데이터를 보강해 줍니다. 사용자가 직접 연동한 계정을 통해 안전한 발송 한도 내에서 다채널 아웃바운드를 전개하며, 사람이 직접 최종 검토 및 승인할 수 있는 안전장치가 기본 내장되어 있습니다. 세일즈 담당자를 대체하는 것이 아니라 에이전트에 실행 능력을 부여함으로써 빠르고 매끄러운 파이프라인 구축을 지원합니다.",
+   "launch_url_used": "https://needle.app/?ref=producthunt",
+   "comment_summary": "공동 창업자 Onur Eken과 Jan Heimes는 여러 영업 도구 사이에서 번거롭게 수동 작업을 반복할 필요 없이 Claude, ChatGPT 등 에이전트에 프롬프트 하나로 리드 수집부터 개인화 발송까지 수행하는 6번째 런칭작 Needle을 공개했습니다. 사용자들은 대행사(에이전시)의 다중 고객사 관리 지원 여부, 링크드인 계정 보호를 위한 발송 한도 관리 방식, 실제 캠페인 성과 지표(수락률 및 응답률), 그리고 타 채널 응답 시 자동 중단 기능 등에 대해 문의했습니다. 메이커 측은 워크스페이스 분리 기능과 계정별 스마트 발송 한도 배분을 안내하고, 최근 캠페인 기준 수락률 38% 및 응답률 23%라는 높은 성과와 함께 메시지 미리보기 및 휴먼 인 더 루프 승인 시스템을 강조했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Onur Eken",
+     "is_maker": true,
+     "text": "Hey there PH community 👋\n\n  \nOnur here, founder of Needle with [@jan\\_heimes](https://www.producthunt.com/@jan_heimes) This is our 6th launch, and thank you to everyone who has followed our journey.\n\n  \n**The problem:** outbound today means juggling 5+ tools. You use one for lists, one for enrichment, one for sequences, one for LinkedIn, and you spend your evenings copy-pasting CSVs between them.\n\n  \n**What we built:** Needle is an outbound engine your AI agent can drive. Connect it to Claude, ChatGPT or Grok, then describe who you want to reach in one prompt:\n\n> “Find 50 Head of Sales at Series A SaaS companies in Berlin, enrich them, and start a LinkedIn sequence referencing their latest post.”\n\nNeedle then:  \n🔍 **Finds** leads from LinkedIn, Instagram and Google Maps  \n✨ **Enriches** them with the context your agent needs to actually personalize  \n📨 **Reaches out** on whichever channel they’re on, from your own connected accounts, with sane sending limits built in\n\n  \n**Why agent-native?** Your agent already knows your ICP, your docs and your voice. It was just missing the hands. We didn’t want to build yet another dashboard, so we built the infrastructure instead.  \n  \n**No AI slop.** We help you use AI the right way: real context on every lead, and messages that sound like you wrote them yourself.\n\n  \n**And it’s not an “AI SDR”.** Needle makes your reps faster. It doesn’t pretend to replace them. Your creativity is your GTM, we make it fluid.\n\n  \n🎁 **For the PH community:** use code **PH2026** for **50% off for 6 months**, on top of the 7-day free trial. Create opportunities and win people. Right now, takes 5 minutes to run your first campaign. Whatever you're after - sales, partnerships, hiring, fundraising.  \n  \nWe’d love your toughest feedback. **What’s the most painful part of your outbound stack right now?** My team and I will be in the comments all day.",
+     "kr": "프로덕트 헌트 커뮤니티 여러분 안녕하세요 👋\n\n@jan_heimes 와 함께 Needle을 창업한 Onur입니다. 이번이 저희의 6번째 런칭이며, 지금까지의 여정을 함께해 주신 모든 분께 감사드립니다.\n\n문제점: 오늘날의 아웃바운드는 5개 이상의 도구를 동시에 다뤄야 함을 의미합니다. 리스트용 도구 하나, 인리치먼트용 도구 하나, 시퀀스용 도구 하나, 링크드인용 도구 하나를 번갈아 쓰며 저녁 내내 도구들 사이에 CSV 파일을 복사해 붙여넣느라 시간을 보냅니다.\n\n저희가 구축한 것: Needle은 AI 에이전트가 직접 운용할 수 있는 아웃바운드 엔진입니다. Claude, ChatGPT, Grok에 연결한 다음 프롬프트 하나로 도달하고자 하는 대상을 설명하기만 하면 됩니다.\n\n> '베를린에 있는 시리즈 A SaaS 기업의 영업 총괄(Head of Sales) 50명을 찾아서 데이터를 보강하고, 그들의 최신 게시물을 언급하는 링크드인 시퀀스를 시작해 줘.'\n\n그 후 Needle은 다음과 같이 작동합니다:\n🔍 링크드인, 인스타그램, 구글 지도에서 리드를 발굴합니다.\n✨ 에이전트가 실제로 개인화하는 데 필요한 맥락 정보를 리드에 보강합니다.\n📨 연동된 본인의 계정을 통해 안전한 발송 제한을 준수하며 대상이 활동하는 채널로 메시지를 전달합니다.\n\n왜 에이전트 네이티브인가요? 여러분의 에이전트는 이미 타깃 고객(ICP), 회사 문서, 어조를 잘 알고 있습니다. 단지 실행할 '손'이 없었을 뿐입니다. 저희는 또 다른 대시보드를 만들고 싶지 않았기에 대신 인프라를 구축했습니다.\n\n조잡한 AI 결과물은 사절합니다. 리드마다 실제 맥락을 반영하고 직접 작성한 것처럼 자연스러운 메시지를 생성하여 AI를 올바르게 활용하도록 돕습니다.\n\n또한 이것은 단순한 'AI SDR'이 아닙니다. Needle은 담당자를 대체하려는 척하지 않고 그들의 업무 속도를 한층 빠르게 만들어 줍니다. 여러분의 창의성이 곧 GTM(시장 진출 전략)이며, 저희는 이를 막힘없이 매끄럽게 연결합니다.\n\n🎁 프로덕트 헌트 커뮤니티를 위해: 7일 무료 체험에 더해 코드 PH2026을 입력하시면 6개월 동안 50% 할인 혜택을 드립니다. 영업, 파트너십, 채용, 투자 유치 등 원하는 목표가 무엇이든 지금 5분 만에 첫 캠페인을 실행해 보세요.\n\n가장 솔직하고 혹독한 피드백을 환영합니다. 현재 아웃바운드 툴스택에서 가장 고통스러운 부분은 무엇인가요? 저희 팀이 온종일 댓글에 머무르며 답변드리겠습니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "[@jan\\_heimes](https://www.producthunt.com/@jan_heimes)  [@oeken](https://www.producthunt.com/@oeken) Can needle help agencies manage outreach for multiple clients at scale while keeping each campaign personalized and safe",
+     "kr": "@jan_heimes @oeken Needle이 대행사에서 각 캠페인을 개인화되고 안전하게 유지하면서도 여러 클라이언트의 아웃리치를 대규모로 관리할 수 있도록 지원할 수 있나요?"
+    },
+    {
+     "author": "Onur Eken",
+     "is_maker": true,
+     "text": "[@shivam\\_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) yes. many of our customers are agencies doing exactly what you mention.  \n  \n1\\. multiple clients: use 1 workspace per client  \n2\\. at scale: build with AI, much faster  \n3\\. personalized and safe: prepare rich messages with AI but human in the loop -> approve and send",
+     "kr": "@shivam_kushwaha16 네, 저희 고객 중 많은 수가 질문하신 것과 똑같은 작업을 수행하는 에이전시들입니다.\n\n1. 다중 클라이언트: 클라이언트당 1개의 워크스페이스를 사용합니다.\n2. 대규모 확장: AI를 활용해 훨씬 빠르게 구축합니다.\n3. 개인화 및 안전성: AI로 풍부한 메시지를 작성하되 휴먼 인 더 루프(인간의 개입)를 두어 확인 후 승인하여 발송합니다."
+    },
+    {
+     "author": "Jaakko (Jack) Timonen",
+     "is_maker": false,
+     "text": "Sounds interesting. I'd love to know more about how you help with LinkedIn.",
+     "kr": "흥미롭네요. 링크드인 관련 작업을 어떻게 지원하는지 더 자세히 알고 싶습니다."
+    },
+    {
+     "author": "Onur Eken",
+     "is_maker": true,
+     "text": "[@jack\\_githits](https://www.producthunt.com/@jack_githits) we'll publish material on the topic, what's the best practice when reaching out on linkedin. if i were to pick 1 most important factor: your message must be short, relevant, and offering value to your contact directly.",
+     "kr": "@jack_githits 링크드인 아웃리치 진행 시 모범 사례에 관한 자료를 발행할 예정입니다. 가장 중요한 단 한 가지 요소를 꼽는다면, 메시지는 짧고 관련성이 높아야 하며 상대방에게 직접적인 가치를 제공해야 한다는 점입니다."
+    },
+    {
+     "author": "Neeraj Nathany",
+     "is_maker": false,
+     "text": "sending from your own connected accounts with built-in limits is a sensible choice for LinkedIn. are those limits set per account or per workspace?",
+     "kr": "자체 연동 계정에서 내장된 제한 한도를 두고 발송하는 것은 링크드인을 위한 매우 현명한 선택입니다. 이러한 발송 제한은 계정별로 설정되나요, 아니면 워크스페이스별로 설정되나요?"
+    },
+    {
+     "author": "Jan Heimes",
+     "is_maker": true,
+     "text": "[@neerajnathany](https://www.producthunt.com/@neerajnathany) Per connected account, you can have multiple accounts per workspace / organization - Needle can also smartly distribute the actions across different accounts.",
+     "kr": "@neerajnathany 연동된 계정별로 적용되며, 하나의 워크스페이스나 조직당 여러 계정을 둘 수 있습니다. 또한 Needle은 여러 계정에 걸쳐 작업을 스마트하게 분산할 수 있습니다."
+    },
+    {
+     "author": "Jan Heimes",
+     "is_maker": true,
+     "text": "Jan here, co-founder alongside[@oeken](https://www.producthunt.com/@oeken) 👋  \n\nSome of you know us from our earlier launches. We built workflow automation: Connect the tools, schedule the run.  \n\nThen we watched **how people actually work now:** They open **Claude Code or Codex** and just ask for the **outcome**.\n\nSo we stopped building another interface and built the hands instead. **Needle plugs straight into your agent, and one prompt gets you researched leads and personal outreach live on LinkedIn or Instagram.**\n\nWe've run our own outbound this way for a year. Smart sending limits and a human approval step are built into the core. Agent speed, without gambling your accounts.\n\nWe are here all day. Ask me anything about the MCP setup, how we run our own pipeline on it, or what's coming next. And if you find a limit, love to hear about it.",
+     "kr": "@oeken 과 함께 공동 창업한 Jan입니다 👋\n\n여러분 중 일부는 저희의 이전 런칭을 통해 저희를 아실 것입니다. 저희는 도구를 연결하고 실행을 예약하는 워크플로우 자동화를 만들었습니다.\n\n그 후 저희는 사람들이 현재 실제로 일하는 방식을 관찰했습니다. 사람들은 Claude Code나 Codex를 열고 바로 '원하는 결과'를 요구합니다.\n\n그래서 저희는 또 다른 인터페이스를 만드는 것을 멈추고 대신 '손'을 만들었습니다. Needle은 여러분의 에이전트에 곧바로 연결되며, 한 번의 프롬프트로 조사된 리드를 확보하고 링크드인이나 인스타그램에서 실시간 맞춤 아웃리치를 수행합니다.\n\n저희는 지난 1년 동안 자체 아웃바운드를 이 방식으로 운영해 왔습니다. 스마트한 발송 제한과 사람의 승인 단계가 코어에 내장되어 있습니다. 계정을 위험에 빠뜨리지 않으면서 에이전트의 속도를 누릴 수 있습니다.\n\n저희는 온종일 대기 중입니다. MCP 설정이나 자체 파이프라인 운영 방식, 혹은 다음 계획에 대해 무엇이든 물어보세요. 만약 한계점을 발견하신다면 기꺼이 의견을 듣겠습니다."
+    },
+    {
+     "author": "Dmitry Zakharov",
+     "is_maker": false,
+     "text": "Tested you ~6 months ago and it was amazing!  \nI'd be happy to test your outbound engine, I'm quite experienced in this AI SDR field :)  \nCould you share pls what metrics do you currently have - reply rate, meetings booked etc? Do you track it?",
+     "kr": "약 6개월 전에 테스트해 봤는데 정말 훌륭했습니다! AI SDR 분야에 경험이 꽤 많은 편이라 귀사의 아웃바운드 엔진을 꼭 테스트해보고 싶네요 :) 현재 응답률, 미팅 예약률 등 어떤 지표를 거두고 계신지 공유해 주실 수 있나요? 추적하고 계신가요?"
+    },
+    {
+     "author": "Jan Heimes",
+     "is_maker": true,
+     "text": "[@dmitry\\_zakharov\\_ai](https://www.producthunt.com/@dmitry_zakharov_ai)   \n  \nWould love, if you give Neelde a spin.\n\nHere are some average stats I quickly pulled from last campaign from DB → ~38% accept, ~23% reply",
+     "kr": "@dmitry_zakharov_ai Needle을 한번 사용해 보신다면 정말 좋겠습니다. DB에서 지난 캠페인의 평균 통계를 빠르게 확인해보니 대략 수락률 ~38%, 응답률 ~23%로 나왔습니다."
+    },
+    {
+     "author": "Onur Eken",
+     "is_maker": true,
+     "text": "[@dmitry\\_zakharov\\_ai](https://www.producthunt.com/@dmitry_zakharov_ai) thank you! we track performance with funnels\n\n![](https://ph-files.imgix.net/bd81c43c-193c-4110-930d-fd5b1770db8b.png?auto=compress,format&codec=mozjpeg&cs=strip)",
+     "kr": "@dmitry_zakharov_ai 감사합니다! 저희는 깔때기(퍼널) 분석으로 성과를 추적하고 있습니다.\n\n![](https://ph-files.imgix.net/bd81c43c-193c-4110-930d-fd5b1770db8b.png?auto=compress,format&codec=mozjpeg&cs=strip)"
+    },
+    {
+     "author": "Dmitry Zakharov",
+     "is_maker": false,
+     "text": "[@jan\\_heimes](https://www.producthunt.com/@jan_heimes) impressive results! Congratulations 🙌",
+     "kr": "@jan_heimes 인상적인 결과네요! 축하드립니다 🙌"
+    }
+   ],
+   "slug": "needle-3",
+   "website": "https://needle.app/"
+  },
+  {
+   "name": "BAND for Developers",
+   "tagline_en": "Coding agents, meet teamwork",
+   "tagline_kr": "코딩 에이전트들을 위한 팀워크 협업 플랫폼",
+   "image": "https://ph-files.imgix.net/d2484b7e-3a24-4ad0-a225-c5f873420f15.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Software Engineering",
+    "Developer Tools",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 241,
+   "comments_count": 11,
+   "maker": "Ben Lang, Arick Goomanovsky, Amit Gazal",
+   "price_model": "Free",
+   "price_detail": "BAND Desktop 무료 제공 (band.ai/use-cases/band-desktop에서 다운로드 가능)",
+   "desc_kr": "BAND for Developers는 여러 코딩 에이전트 간의 상호작용과 협업을 단일 인터랙션 계층에서 조율하고 관리하는 개발자용 멀티 에이전트 플랫폼입니다. 개발자가 개별 에이전트 사이를 오가며 컨텍스트를 복사하고 전달하는 중간 관리자가 될 필요 없이, 에이전트들이 공유 룸에서 직접 소통하고 작업을 인수인계하도록 지원합니다. Claude Code, Codex, GitHub Copilot, OpenCode 등 다양한 에이전트를 기존 개발 환경 그대로 연결하여 팀 단위로 확장할 수 있습니다. 데스크톱 앱을 통해 어떤 에이전트가 작업을 진행 중이고 어디서 병목이 발생했는지 실시간으로 파악할 수 있으며, 판단이 필요한 순간에만 직접 개입하면 됩니다. 세션이 종료되어도 계획, 결정 사항, 작업 상태가 공유 룸에 보존되어 소프트웨어 엔지니어링 전반의 협업 연속성을 완벽하게 보장합니다.",
+   "launch_url_used": "https://www.band.ai/?ref=producthunt",
+   "comment_summary": "공동 창업자이자 CEO인 Arick Goomanovsky는 개발자가 여러 코딩 에이전트 사이에서 메신저 역할을 하지 않고, 에이전트들이 직접 대화하고 작업을 위임하며 협력할 수 있는 BAND for Developers를 런칭했습니다. 커뮤니티에서는 여러 에이전트의 진행 상태와 병목 지점을 한눈에 파악하는 기능에 호평을 보내며 데스크톱·웹·모바일 간 동기화 방식, 다중 에이전트 간 맥락 충돌 방지 및 인수인계 추적 기능에 대해 질문했습니다. 메이커 측은 전 플랫폼에 걸친 끊김 없는 동기화와 상세한 인수인계 히스토리 추적 기능을 설명하고, 에이전트들이 기기와 클라우드를 넘나들며 자율적으로 소프트웨어를 빌드하는 '다크 팩토리' 활용 사례를 제시했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Anne Gherini",
+     "is_maker": false,
+     "text": "🔥🔥",
+     "kr": "🔥🔥"
+    },
+    {
+     "author": "Arick Goomanovsky",
+     "is_maker": true,
+     "text": "Hi Product Hunt,\n\nI'm Arick, co-founder and CEO of BAND. Today we're launching BAND for Developers.\n\nIf you run more than one coding agent, you know the pattern. Each agent is fast on its own, but they can't talk to each other, so you become the go-between. You copy context from one session into the next, tell the test agent what the refactor agent just changed, and find out an hour later that two agents made opposite assumptions about the same interface. More agents should mean more work done. Instead, a lot of it turns into more coordination for you.\n\nMost multi-agent dev tools today give you a better dispatch board. You assign tasks, agents run in parallel, you review what comes back. That helps with throughput, but every handoff still goes through a human.\n\nBAND for Developers lets the agents work it out between themselves:\n\n\\- Connect the agents you already run. Claude Code, Codex, GitHub Copilot and OpenCode agents join shared rooms across machines. You keep your IDE, your terminal and your workflow.\n\n\\- Agents collaborate directly. They message each other, delegate, review each other's work and unblock one another. They can pull in a teammate's agent when the work needs it. Plans, decisions and work state live in the room rather than inside one session, so they survive when a session ends.\n\n\\- You step in when it matters. You keep working from the terminal. BAND desktop shows what's moving, what's blocked and which agent is waiting on you. Open the room, answer the question or redirect the agent, then step back out while the rest of the work keeps going.\n\nThe difference is that the agents aren't only running side by side. They coordinate while the work is happening, so many of the handoffs you'd normally do yourself happen without you. And you don't have to move your whole team onto one vendor's agents to get there.\n\nBAND desktop is free. Download it at band.ai/use-cases/band-desktop. We'd like to hear where it breaks for you, especially if your agents run across more than one harness. The team and I will be in the comments all day.",
+     "kr": "안녕하세요 프로덕트 헌트 여러분,\n\n저는 BAND의 공동 창업자이자 CEO인 Arick입니다. 오늘 저희는 BAND for Developers를 출시합니다.\n\n둘 이상의 코딩 에이전트를 사용해 보셨다면 익숙한 패턴이 있을 것입니다. 각 에이전트는 단독으로는 빠르지만 서로 소통할 수 없기 때문에 개발자가 중간 매개자가 되어야 합니다. 한 세션에서 다음 세션으로 컨텍스트를 복사해 넣고, 리팩토링 에이전트가 방금 변경한 내용을 테스트 에이전트에 알려주다 보면, 한 시간 뒤 두 에이전트가 동일한 인터페이스에 대해 정반대의 가정을 했다는 사실을 발견하게 되죠. 더 많은 에이전트를 쓰면 더 많은 작업을 마칠 수 있어야 하는데, 현실은 개발자의 조율 부담만 가중됩니다.\n\n오늘날 대부분의 멀티 에이전트 개발 도구는 일종의 발전된 작업 배분판에 가깝습니다. 사람이 작업을 할당하고 에이전트가 병렬 실행된 뒤 돌아온 결과를 검토하지만, 모든 인수인계는 여전히 사람의 손을 거쳐야 합니다.\n\nBAND for Developers는 에이전트들이 스스로 조율하며 작업할 수 있게 합니다:\n\n- 이미 실행 중인 에이전트 연결: Claude Code, Codex, GitHub Copilot, OpenCode 에이전트가 여러 머신에 걸친 공유 룸에 참여합니다. 기존의 IDE, 터미널, 워크플로우를 그대로 유지할 수 있습니다.\n\n- 에이전트 간 직접 협업: 에이전트끼리 메시지를 주고받고, 작업을 위임하며, 서로의 작업을 검토하고 막힌 곳을 풀어줍니다. 작업에 필요하다면 동료 팀원의 에이전트를 불러올 수도 있습니다. 계획, 결정 및 작업 상태가 단일 세션 내부가 아니라 공유 룸에 저장되므로 세션이 종료되어도 유지됩니다.\n\n- 중요한 순간에만 개입: 개발자는 평소처럼 터미널에서 계속 작업하면 됩니다. BAND 데스크톱은 어떤 작업이 진행 중이고, 어디가 막혔으며, 어떤 에이전트가 사용자의 결정을 기다리고 있는지 보여줍니다. 해당 룸을 열어 질문에 답하거나 에이전트의 방향을 수정한 뒤 다시 빠져나오면 나머지 작업은 계속 진행됩니다.\n\n단순히 에이전트들이 나란히 실행되는 것과의 차이점은, 작업이 진행되는 동안 에이전트들이 서로 조율하기 때문에 평소 직접 처리해야 했던 수많은 인수인계가 사용자 없이도 알아서 일어난다는 점입니다. 이를 위해 팀 전체를 특정 벤더의 에이전트로 통일할 필요도 없습니다.\n\nBAND 데스크톱은 무료입니다. band.ai/use-cases/band-desktop 에서 다운로드하실 수 있습니다. 특히 에이전트가 둘 이상의 하네스에서 실행되는 환경에서 개선할 점이 있다면 언제든 알려주세요. 팀원들과 함께 온종일 댓글에 대기하겠습니다."
+    },
+    {
+     "author": "Gali  Matsman",
+     "is_maker": false,
+     "text": "[@arick\\_goomanovsky](https://www.producthunt.com/@arick_goomanovsky) The part I like most is seeing where things are stuck without having to check each agent separately. With several agents working on the same project, keeping track of who’s doing what and who’s waiting on whom seems like a task in itself. Curious to hear how people use this in their everyday workflows.",
+     "kr": "@arick_goomanovsky 각 에이전트를 일일이 확인할 필요 없이 어디서 병목이 생겼는지 바로 볼 수 있다는 점이 가장 마음에 듭니다. 여러 에이전트가 동일한 프로젝트를 작업할 때 누가 무엇을 하고 있고 누가 누구를 기다리는지 추적하는 것 자체가 하나의 일처럼 느껴지거든요. 실제 일상 워크플로우에서 사람들이 이를 어떻게 활용하는지 궁금합니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "[@arick\\_goomanovsky](https://www.producthunt.com/@arick_goomanovsky) How can BAND help an agency manage multiple AI agents across different client projects without making things more complicated?",
+     "kr": "@arick_goomanovsky BAND가 대행사에서 복잡도를 높이지 않고 서로 다른 클라이언트 프로젝트 전반의 여러 AI 에이전트를 관리하는 데 어떻게 도움이 될 수 있나요?"
+    },
+    {
+     "author": "gazi nurul hasan",
+     "is_maker": false,
+     "text": "really neat workflow fit. how does it handlee syncing across multiple devices smoothly?",
+     "kr": "정말 깔끔한 워크플로우네요. 여러 기기 간의 동기화는 어떻게 매끄럽게 처리하나요?"
+    },
+    {
+     "author": "Bailey Dickens",
+     "is_maker": true,
+     "text": "[@gazi\\_nurul\\_hasan](https://www.producthunt.com/@gazi_nurul_hasan) Rooms and agents sync seamlessly across all our offerings: BAND Desktop, the BAND Web Platform, and the BAND Mobile App (Android available today, iOS coming soon). You can start a thread at your desk, finish it on your phone, your agents and room state are already there waiting.",
+     "kr": "@gazi_nurul_hasan 공유 룸과 에이전트는 저희의 모든 제품군(BAND Desktop, BAND 웹 플랫폼, 그리고 오늘 출시된 Android 및 출시 예정인 iOS BAND 모바일 앱) 전반에 걸쳐 원활하게 동기화됩니다. 책상 앞에서 스레드를 시작하고 휴대폰에서 마무리할 수 있으며, 에이전트와 룸 상태는 이미 그곳에서 그대로 대기하고 있습니다."
+    },
+    {
+     "author": "Manjunath Majety",
+     "is_maker": false,
+     "text": "so many coding agents?",
+     "kr": "코딩 에이전트가 이렇게나 많나요?"
+    },
+    {
+     "author": "Bailey Dickens",
+     "is_maker": true,
+     "text": "[@manjunath19](https://www.producthunt.com/@manjunath19) With BAND it's not just about wiring up many coding agents. Agentic communication facilitates anything agents are capable of. That includes B2B workflows, coding and QA automation, support triage, research pipelines, scheduled ops tasks, honestly anything where you'd otherwise be the middleman carrying messages between tools.\n\nHowever when talking about BAND for Developers specifically: One of the biggest use cases we have seen is users bringing multiple agents in for coding related tasks, i.e. your standard plan to implement to review pipelines. They will create rooms for each ticket the agents need to accomplish, assemble their agents, and work with those agents to carry out and implement the given ask. We have also started to see our users dive into more automation with things such as true agentic dark factories, where full autonomous or nearly autonomous software building solutions are running on our platform with agents that live anywhere from their own machine to the cloud.",
+     "kr": "@manjunath19 BAND는 단순히 많은 수의 코딩 에이전트를 연결하는 것에 그치지 않습니다. 에이전트 간 커뮤니케이션은 에이전트가 수행할 수 있는 모든 작업을 지원합니다. 여기에는 B2B 워크플로우, 코딩 및 QA 자동화, 고객지원 분류, 리서치 파이프라인, 예약된 운영 작업 등 평소 도구 간 메시지를 전달하는 중간 매개자가 되어야 했던 모든 작업이 포함됩니다.\n\n하지만 BAND for Developers에 한정해 말씀드리자면, 저희가 확인한 가장 큰 사용 사례 중 하나는 계획-구현-검토로 이어지는 표준적인 코딩 파이프라인에 여러 에이전트를 투입하는 것입니다. 사용자들은 에이전트가 완료해야 할 티켓마다 룸을 생성하고, 에이전트들을 모은 뒤, 함께 협력하여 요구사항을 실행하고 구현합니다. 또한 로컬 머신부터 클라우드까지 다양한 위치의 에이전트들이 플랫폼에서 완전 자율 또는 준자율 방식으로 소프트웨어를 구축하는 진정한 에이전트 기반 '다크 팩토리' 같은 고도화된 자동화 사례도 나타나기 시작했습니다."
+    },
+    {
+     "author": "Ariel",
+     "is_maker": false,
+     "text": "Congrats on the launch! how is context managed between different agents? is there a risk that one agent may not have the full context and incorrectly invalidate the output from another? Is reasoning also shared between agents?",
+     "kr": "런칭 축하합니다! 서로 다른 에이전트 간의 컨텍스트는 어떻게 관리되나요? 특정 에이전트가 전체 컨텍스트를 파악하지 못해 다른 에이전트의 결과물을 잘못 무효화할 위험은 없나요? 추론 과정도 에이전트 간에 공유되나요?"
+    },
+    {
+     "author": "Oleksii Sekundant",
+     "is_maker": false,
+     "text": "Keeping the decisions and work state in the room makes sense when agents have separate sessions. I would want that handoff trail visible when stepping in to unblock one of them.",
+     "kr": "에이전트들이 개별 세션을 가질 때 결정 사항과 작업 상태를 룸 안에 유지한다는 점이 매우 합리적으로 느껴집니다. 막힌 에이전트를 풀어주기 위해 개입할 때 그러한 인수인계 추적 내역이 명확히 보였으면 좋겠습니다."
+    },
+    {
+     "author": "Joanna Braunold",
+     "is_maker": true,
+     "text": "[@oleksii\\_sekundant](https://www.producthunt.com/@oleksii_sekundant) When agents hand work to each other, BAND Desktop keeps that trail visible: who owns what, what got handed off, where something’s blocked, and which questions got escalated to you. So when you step in to unblock one, you’re not digging back through separate sessions to work out what happened. You can see it and act before it turns into rework. We also let you toggle those kinds of details on and off within the chat, so that you're not wading through huge amounts of details if you don't want to!",
+     "kr": "@oleksii_sekundant 에이전트들이 서로 작업을 인수인계할 때 BAND Desktop은 그 추적 내역을 명확히 보여줍니다. 누가 무엇을 담당하는지, 무엇이 인수인계되었는지, 어디가 막혔는지, 어떤 질문이 사용자에게 에스컬레이션되었는지 말이죠. 따라서 문제 해결을 위해 개입할 때 무슨 일이 있었는지 알아내기 위해 개별 세션을 일일이 뒤질 필요가 없습니다. 상황을 즉시 파악하고 재작업이 발생하기 전에 조치할 수 있습니다. 또한 원치 않는 과도한 정보에 파묻히지 않도록 채팅 내에서 이러한 세부 정보의 표시 여부를 자유롭게 토글할 수도 있습니다!"
+    }
+   ],
+   "slug": "band",
+   "website": "https://www.band.ai/"
+  },
+  {
+   "name": "The Library",
+   "tagline_en": "Your business context organized by queries",
+   "tagline_kr": "쿼리를 통해 체계화되는 비즈니스 컨텍스트 라이브러리",
+   "image": "https://ph-files.imgix.net/3b204bf1-f8aa-4598-b5cb-7f65074ec4ae.svg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Data visualization tools",
+    "Business intelligence software",
+    "Analytics",
+    "Tech"
+   ],
+   "upvotes": 184,
+   "comments_count": 31,
+   "maker": "Neelam Chakrabarty, Drew Williams, Dave Ingram, Amy Ingram",
+   "price_model": "Free Options",
+   "price_detail": "14일 무료 Pro 체험(14-day free Pro trial) 제공 및 프로모션 코드 HUNTER1000 입력 시 1,000 보너스 크레딧 제공",
+   "desc_kr": "The Library는 Querri가 선보이는 질문 중심의 비즈니스 데이터 및 컨텍스트 정리 플랫폼입니다. 100개 이상의 다양한 데이터 소스를 연결하여 팀이 자주 묻는 질문, KPI, 비즈니스 정의를 체계화하고 신뢰할 수 있는 단일 기준(Single Source of Truth)을 제공합니다. AI 에이전트인 'Librarian'이 자연어 대화를 통해 데이터를 정리하고, 단순한 추측 대신 180가지 이상의 데이터 품질 검사와 출처 역추적을 거쳐 검증된 수치만을 도출합니다. 질문에 여러 가지 해석이 존재할 경우 대안적인 수치를 함께 제시하며, 데이터가 불충분할 때는 억지로 답을 지어내지 않고 결측 사실을 솔직하게 알려줍니다. 대화형 인터페이스뿐만 아니라 실시간 대시보드 구축, 자동 모니터링, Claude 및 ChatGPT 연동 MCP 지원 등 비즈니스 실무에 필요한 폭넓은 환경을 지원합니다.",
+   "launch_url_used": "https://www.querri.com/?ref=producthunt",
+   "comment_summary": "창업자 Dave Ingram과 Amy Ingram은 기업의 고유한 정의와 비즈니스 맥락을 학습해 데이터 기반의 정확하고 반복 검증 가능한 답변을 제공하는 The Library와 Librarian 에이전트를 발표했습니다. 사용자들은 Snowflake Cortex나 Databricks Genie와의 차별점, 대시보드 캡처 재구축 시의 정확도 보장, 수억 건 규모의 대용량 데이터 처리 성능 및 팀별 접근 권한 분리 등에 대해 질의했습니다. 메이커 측은 데이터 수집부터 시맨틱 레이어와 대시보드까지 아우르는 풀스택 지원, 원천 데이터와 계산식의 투명한 코드 추적성, 그리고 밤사이 새로운 KPI를 제안하는 자율 기능과 강력한 보안 인증(SOC 2, ISO 27001 등)을 소개하며 호평을 얻었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Gavin Fan",
+     "is_maker": false,
+     "text": "Hi team, congrats on the launch. Isn't it same thing those big data warehouse players are building? like Cortex from snowflake and Geni from databricks? and I think the challenge for the data query using nlp is governance and how to make sure you answer is correct",
+     "kr": "팀 여러분, 런칭을 축하합니다. 스노우플레이크의 Cortex나 데이터브릭스의 Genie 같은 대형 데이터 웨어하우스 기업들이 만들고 있는 것과 같은 것 아닌가요? 자연어 데이터 쿼리의 핵심 과제는 거버넌스와 답변이 정확한지 검증하는 것이라고 생각합니다."
+    },
+    {
+     "author": "Dave Ingram",
+     "is_maker": true,
+     "text": "[@gavin\\_fgg0815](https://www.producthunt.com/@gavin_fgg0815) Hey Gavin, thanks! Yes, getting the answer right is the most important challenge.  \n  \nGenie and Cortex are the agent layers from SF and DB. These are their agent building tools and somewhat similar. What sets Querri apart is that it's the full stack, from ingestion to data lake to semantic layer to chat and dashboards, all in one package with one bill that can be set up in a few minutes and managed by the whole team. We're really aiming to support the teams that don't have the time, budget and team to do multi-quarter data projects.  \n  \nAs to accuracy, we take that super seriously. All the answers are structured, so you can trace the number in plain english (and SQL as needed) all the way back to the source data. We can only do this because we've got the raw data all the way through the computations, and because the core of the agent is built around repeatable analyses not just spitting out an answer which can and will sometimes be hallucinated.\n\n![](https://ph-files.imgix.net/794c7dde-137c-4f00-9fc4-c19cb8bb9545.png?auto=compress,format&codec=mozjpeg&cs=strip)",
+     "kr": "@gavin_fgg0815 Gavin 님 안녕하세요, 감사합니다! 맞습니다, 올바른 답변을 얻는 것이 가장 중요한 과제입니다.\n\nGenie와 Cortex는 SF와 DB의 에이전트 레이어입니다. 이들은 에이전트 구축 도구이며 어느 정도 유사한 면이 있습니다. Querri의 차별점은 수집부터 데이터 레이크, 시맨틱 레이어, 채팅 및 대시보드에 이르기까지 전체 스택을 단일 패키지와 하나의 청구서로 제공한다는 점입니다. 몇 분 만에 설정하여 팀 전체가 관리할 수 있죠. 저희는 수 분기가 걸리는 대규모 데이터 프로젝트를 진행할 시간, 예산, 인력이 부족한 팀들을 진정으로 지원하고자 합니다.\n\n정확도에 관해서는 저희도 매우 진지하게 접근하고 있습니다. 모든 답변은 구조화되어 있어 자연어(필요시 SQL 포함)로 원천 데이터까지 수치를 완전히 역추적할 수 있습니다. 계산 전 과정에 걸쳐 원시 데이터를 보유하고 있으며, 에이전트의 코어가 단순히 때로는 환각을 일으킬 수 있는 답변을 내뱉는 것이 아니라 반복 가능한 분석을 중심으로 구축되어 있기 때문에 이것이 가능합니다.\n\n![](https://ph-files.imgix.net/794c7dde-137c-4f00-9fc4-c19cb8bb9545.png?auto=compress,format&codec=mozjpeg&cs=strip)"
+    },
+    {
+     "author": "Gavin Fan",
+     "is_maker": false,
+     "text": "[@daveaingram](https://www.producthunt.com/@daveaingram) Hi Dave! Thanks for the answer, still it is very hard to verify your number is right, unless those are pre-orchestrated (but pre orchestration ruin all the agents autonomous). Before, I am struggling to show this to top leader, because I don't have 100% confidence, and it will be very bad to report them a wrong number. When you have a team do this in dashboard, at least you have people to check multiple times",
+     "kr": "@daveaingram Dave 님 답변 감사합니다! 그래도 사전 조율(pre-orchestrated)되지 않는 한 수치가 맞는지 검증하기는 여전히 매우 어렵습니다(하지만 사전 조율은 에이전트의 자율성을 해치죠). 이전에는 저 스스로 100% 확신이 없었기 때문에 최고 경영진에게 이를 보여주는 데 어려움을 겪었습니다. 잘못된 수치를 보고하는 것은 치명적이니까요. 팀이 대시보드에서 작업할 때는 적어도 여러 번 검토해 줄 사람들이 있습니다."
+    },
+    {
+     "author": "Dave Ingram",
+     "is_maker": true,
+     "text": "[@gavin\\_fgg0815](https://www.producthunt.com/@gavin_fgg0815) I think this is the big challenge of the AI era ... fast answers that look right but don't get verified. The good news is, with Querri there's literally nothing you can't deeply inspect both in plain English and in the code. So there's nothing you could check in a dashboard or an Excel formula that you couldn't walk back through here, and we lay it out a lot cleaner imho.  \n  \nThe other thing we can do with AI and do extensively in Querri is double / triple check the numbers and very deliberately surface caveats and alternate readings right in the chat. In our evals, we're 6x more likely to show you an alternate reading that Claude Code does without going and explicitly asking it for alternate readings (which pretty close to nobody does ... and they rarely do with dashboards or other tools either).  \n  \nThat said, pre orchestration is definitely great when it can be done, which is what we do in the Library. You can define exact SQL for a KPI, and build precomputed Views for common questions, but unlike some systems that only allow you to then read from those, Querri can fall back to the raw data (if you've given access to it...all configurable) and still get the autonomous agent capability.",
+     "kr": "@gavin_fgg0815 그것이 바로 AI 시대의 거대한 과제라고 생각합니다... 그럴듯해 보이지만 검증되지 않은 빠른 답변들 말이죠. 다행히 Querri에서는 자연어와 코드 양쪽 모두에서 깊이 들여다볼 수 없는 부분이 전혀 없습니다. 따라서 대시보드나 엑셀 수식에서 확인할 수 있는 모든 것을 여기서 거슬러 올라가며 점검할 수 있으며, 제 생각에는 훨씬 깔끔하게 정리되어 있습니다.\n\n또한 저희가 AI를 통해 광범위하게 수행하는 또 다른 작업은 수치를 이중, 삼중으로 교차 검증하고 대화창에서 주의사항과 대안적 해석을 적극적으로 표출하는 것입니다. 자체 평가에 따르면, 대안적 해석을 명시적으로 요구하지 않더라도 Querri가 이를 제시할 확률은 Claude Code보다 6배 높습니다(실제로 대안을 묻는 사람은 거의 없으며 대시보드에서도 마찬가지입니다).\n\n물론 가능할 때는 사전 조율이 훌륭한 방법이며, 그것이 바로 The Library에서 저희가 하는 일입니다. KPI에 대한 정확한 SQL을 정의하고 자주 묻는 질문에 대해 미리 계산된 뷰(View)를 구축할 수 있습니다. 하지만 오직 뷰만 읽을 수 있는 일부 시스템과 달리, Querri는 (권한이 허용된 경우) 원시 데이터로 폴백하여 에이전트의 자율적 기능도 계속 발휘할 수 있습니다."
+    },
+    {
+     "author": "Dave Ingram",
+     "is_maker": true,
+     "text": "Hi Product Hunt! Dave here, founder and CEO of Querri.  \n\nToday we’re launching the Querri Library and the Librarian, the biggest release in Querri’s history. Querri is the question-first data platform: you start with the questions your business asks, and Querri builds what’s needed to answer them, then keeps learning your business.  \n\n**The problem → solution**\n\nAI made asking your data a question easy. It didn’t make the answer yours. Point a general-purpose AI at real company data, with hundreds of tables and five definitions of “active customer,” and it picks one. Ask again tomorrow and it may pick another.\n\nSo we stopped trying to make the AI a better guesser and changed what it’s standing on. The **Library** is a map of your business: the questions your team keeps asking, the KPIs that answer them, the definitions behind those numbers, and the data they’re computed from. The **Librarian** is the agent that builds it with you, in plain English, and answers from it.  \n\n**What makes it different?**\n\nA chatbot on top of your data is easy to build. I can say that with some authority, because that’s roughly where Querri started. What’s hard is making the answers right, and yours. Every answer in Querri shows the rows, the calculation and the sources it read. Every piece of data loaded gets 180+ quality checks. When a question has more than one reasonable reading, Querri tells you. In our benchmarking, Querri flagged the other defensible answer on 73% of its responses, versus 12% for a leading general-purpose AI agent given the same data. And when the data is too messy or isn’t there, it tells you what’s missing instead of handing you a confident number that happens to be wrong.\n\n  \nAnd all of this feeds into chat, dashboards, MCP for Claude, ChatGPT and the like, and APIs and CLI for further extension.  \n\n**Key features & use cases:**\n\n*   Start from your questions before you connect a single file\n    \n*   125+ connectors, plus spreadsheets and files\n    \n*   KPIs defined once and tied to Revenue, Cost, Efficiency, Quality or Risk\n    \n*   Business rules you settle in chat (“sales means paid orders only”) saved as facts\n    \n*   Paste a screenshot or sketch of an old dashboard and it rebuilds it, calculations included\n    \n*   Monitors that watch a KPI by region, store or rep and tell you which one moved (set up with an agent but run without every time the data updates)\n    \n*   Share a cleaned view with another team instead of the raw tables via access controlled workspaces .. we’re talking real life data work here after all.\n    \n*   While you sleep, Querri “dreams” about your business and suggests new questions and KPIs. Nothing changes without your OK.\n    \n\n**Who is it for?**\n\nOps, customer success and revenue teams whose answers live across several systems. Small business owners doing the data work themselves. Consultants who want each client’s definitions to live somewhere. Data teams who want give the business an easy, accurate and reliable front door and free their issue queue. And software companies that want to white-label it for their own customers.\n\nIt learns your business, and it never trains a model on your data. We’re SOC 2 Type II, HIPAA and ISO 27001:2022 certified.\n\nMy ask: bring the question that tripped up the last AI you tried, and tell us what Querri does with it. I’ll be here all day reading and answering every comment.  \n\nThe full story is on our blog: [https://querri.com/blog/introducing-the-querri-library-and-librarian/](https://querri.com/blog/introducing-the-querri-library-and-librarian/)\n\nDave  \n  \nP.S., want to really put it through the paces? Sign up for a trial with HUNTER1000 promo code and you'll get a 1000 bonus credits to get some serious value out of your data.",
+     "kr": "프로덕트 헌트 여러분 안녕하세요! Querri의 창업자이자 CEO Dave입니다.\n\n오늘 저희는 Querri 역사상 가장 큰 릴리즈인 The Querri Library와 Librarian을 선보입니다. Querri는 질문 중심의 데이터 플랫폼입니다. 비즈니스가 묻는 질문에서 시작하여 그에 답하는 데 필요한 것을 구축하고 회사의 비즈니스를 지속적으로 학습합니다.\n\n문제와 해결책:\nAI 덕분에 데이터에 질문을 던지기는 쉬워졌지만, 그 답변이 '우리 회사만의 것'이 되지는 못했습니다. 수백 개의 테이블과 '활성 고객'에 대한 5가지 정의가 혼재된 실제 기업 데이터에 범용 AI를 적용하면 아무거나 하나를 임의로 고릅니다. 내일 다시 물어보면 또 다른 정의를 선택할 수도 있죠.\n\n그래서 저희는 AI가 더 잘 찍어 맞추게 만드는 시도를 멈추고, AI가 딛고 서 있는 기반 자체를 바꾸었습니다. 'Library'는 여러분 회사의 지도입니다. 팀이 계속 묻는 질문, 이에 답하는 KPI, 그 수치 이면의 정의, 그리고 계산의 바탕이 되는 데이터가 담겨 있습니다. 'Librarian'은 자연어로 사용자와 함께 이를 구축하고 그 위에서 답변을 제공하는 에이전트입니다.\n\n무엇이 다른가요?\n데이터 위에 챗봇을 얹는 것은 누구나 쉽게 만들 수 있습니다. Querri의 출발점도 대략 거기였기에 제가 자신 있게 말씀드릴 수 있습니다. 어려운 것은 답변을 정확하게, 그리고 우리 회사의 현실에 맞게 만드는 일입니다. Querri의 모든 답변은 읽어 들인 행, 계산 과정, 출처를 투명하게 보여줍니다. 로드되는 모든 데이터는 180가지 이상의 품질 검사를 거칩니다. 질문에 합리적인 해석이 둘 이상 존재할 경우 Querri는 이를 알려줍니다. 자체 벤치마크에서 동일한 데이터가 주어졌을 때 선도적 범용 AI 에이전트가 다른 타당한 답변을 지적한 비율은 12%에 불과했던 반면, Querri는 응답의 73%에서 이를 짚어냈습니다. 그리고 데이터가 너무 엉망이거나 누락되었을 때는 잘못된 수치를 자신 있게 제시하는 대신 무엇이 빠졌는지 명확히 말해줍니다.\n\n그리고 이 모든 것은 채팅, 대시보드, Claude 및 ChatGPT 연동을 위한 MCP, API 및 CLI로 확장됩니다.\n\n주요 기능 및 사용 사례:\n* 단 하나의 파일을 연결하기도 전에 질문부터 시작 가능\n* 스프레드시트와 파일을 포함한 125개 이상의 커넥터\n* 매출, 비용, 효율성, 품질, 리스크에 한 번 정의되어 연결되는 KPI\n* 채팅에서 합의된 비즈니스 규칙('매출은 결제 완료된 주문만 의미함')을 팩트로 저장\n* 기존 대시보드의 스크린샷이나 스케치를 붙여넣으면 계산식을 포함하여 재구축\n* 지역, 매장, 담당자별로 KPI를 감시하고 변동을 알려주는 모니터(에이전트로 설정하지만 데이터 업데이트 시마다 자율 실행)\n* 권한 제어 워크스페이스를 통해 원시 테이블 대신 정제된 뷰를 타 팀과 공유\n* 사용자가 자는 동안 Querri가 비즈니스에 대해 '꿈'을 꾸며 새로운 질문과 KPI를 제안(사용자 승인 없이 임의 변경 없음)\n\n누구를 위한 제품인가요?\n답변이 여러 시스템에 흩어져 있는 운영, 고객 성공, 매출 팀. 데이터 작업을 직접 처리하는 소규모 비즈니스 소유자. 각 클라이언트의 정의를 체계화하려는 컨설턴트. 현업에 쉽고 정확하며 신뢰할 수 있는 창구를 제공하여 이슈 큐를 비우고 싶은 데이터 팀. 그리고 고객을 위해 화이트라벨링을 원하는 소프트웨어 회사들입니다.\n\n비즈니스를 학습하되 고객 데이터를 AI 모델 훈련에 절대 사용하지 않습니다. SOC 2 Type II, HIPAA, ISO 27001:2022 인증을 완료했습니다.\n\n부탁드리고 싶은 점: 이전에 사용해 보신 AI를 당황하게 만들었던 질문을 가져와서 Querri가 어떻게 처리하는지 확인해 보세요. 온종일 머물며 모든 댓글을 읽고 답변드리겠습니다.\n\n전체 이야기는 블로그에서 확인하실 수 있습니다: https://querri.com/blog/introducing-the-querri-library-and-librarian/\n\nDave 드림\n\nP.S. 본격적으로 테스트해보고 싶으신가요? 프로모션 코드 HUNTER1000으로 체험판에 가입하시면 데이터에서 진정한 가치를 창출하실 수 있도록 1,000 보너스 크레딧을 드립니다."
+    },
+    {
+     "author": "Amy Ingram",
+     "is_maker": true,
+     "text": "Building Querri has been quite a journey!  \n\nOur mission, from the very beginning, has been to make working with data accessible to everyone. In a world where businesses collect more data than ever, understanding that data is no longer just a nice-to-have. It can make or break important business decisions.  \n\nBut getting data together from dozens of different systems is hard enough. Getting AI to give you reliable answers based on _your_ **business's definitions** of revenue, churn, or other important metrics is another challenge entirely.  \n\n**We've spent thousands of hours tackling this problem. Because it matters.  \n**\n\nAI is an incredibly powerful tool, but it needs to understand your business context. We're also huge believers in keeping **humans in the loop**. Data has so much nuance, and it would be naive to assume AI automatically knows how your business defines everything or how you want to handle every inconsistency.  \n\nThat's why we've built so many ways for people to guide the AI, teach it their business context, and stay in control of how their data is cleaned, analyzed, and understood.  \n\nAnd security isn't an afterthought. Querri has completed a SOC 2 Type II audit, is ISO 27001:2022 certified, supports HIPAA compliance, and never uses customer data to train AI models.  \n\nI'm incredibly proud of our team and what we've built together.\n\nWe're excited to share it with the Product Hunt community, and we'd genuinely love your feedback, questions, and ideas. That's how we learn, grow, and keep getting better!",
+     "kr": "Querri를 만드는 과정은 정말 뜻깊은 여정이었습니다!\n\n처음부터 저희의 사명은 모든 사람이 데이터를 쉽게 다룰 수 있도록 만드는 것이었습니다. 기업이 그 어느 때보다 많은 데이터를 수집하는 세상에서 데이터를 이해하는 것은 더 이상 단순한 부가 기능이 아닙니다. 중요한 비즈니스 결정을 좌우할 수 있죠.\n\n하지만 수십 개의 서로 다른 시스템에서 데이터를 모으는 것만으로도 충분히 힘든 일입니다. 하물며 AI가 매출, 이탈률 등 중요한 지표에 대해 '우리 회사만의 비즈니스 정의'를 바탕으로 신뢰할 수 있는 답변을 내놓게 하는 것은 완전히 차원이 다른 과제입니다.\n\n저희는 이 문제를 해결하기 위해 수천 시간을 쏟아부었습니다. 정말 중요한 일이기 때문입니다.\n\nAI는 믿을 수 없을 만큼 강력한 도구이지만 비즈니스 맥락을 이해해야 합니다. 또한 저희는 '휴먼 인 더 루프(인간의 개입)'의 힘을 굳게 믿습니다. 데이터에는 수많은 뉘앙스가 담겨 있기에, AI가 회사의 모든 정의나 예외 상황 처리 방식을 자동으로 알 것이라 기대하는 것은 순진한 생각입니다.\n\n이것이 바로 사용자가 AI를 안내하고, 비즈니스 컨텍스트를 가르치며, 데이터 정제·분석·이해 방식을 스스로 통제할 수 있도록 다양한 장치를 마련한 이유입니다.\n\n보안 역시 결코 소홀히 하지 않았습니다. Querri는 SOC 2 Type II 감사를 마쳤고, ISO 27001:2022 인증을 획득했으며, HIPAA 준수를 지원하고, 고객 데이터를 AI 훈련에 결코 사용하지 않습니다.\n\n저희 팀과 우리가 함께 만들어낸 결과물이 진심으로 자랑스럽습니다.\n\n프로덕트 헌트 커뮤니티와 이를 공유하게 되어 기쁘며, 여러분의 솔직한 피드백과 질문, 아이디어를 진심으로 기다립니다. 그것이 저희가 배우고 성장하며 더 나아지는 길입니다!"
+    },
+    {
+     "author": "Suryansh Tiwari",
+     "is_maker": false,
+     "text": "congrats team! rebuilding an old dashboard from just a screenshot sounds kinda wild what happens if the numbers don't match the original, does it tell you why?",
+     "kr": "팀 여러분 축하합니다! 스크린샷 하나만으로 기존 대시보드를 재구축한다는 것은 정말 놀랍네요. 만약 수치가 원본과 일치하지 않는다면 이유를 알려주나요?"
+    },
+    {
+     "author": "Neelam Chakrabarty",
+     "is_maker": false,
+     "text": "[@suryansh\\_tiwari2](https://www.producthunt.com/@suryansh_tiwari2)  Library doesn't just compute, it understands your business context, hence it is highly likely that it will point out the discrepancy right away",
+     "kr": "@suryansh_tiwari2 Library는 단순한 계산만 하는 것이 아니라 비즈니스 컨텍스트를 이해하므로 불일치가 발생할 경우 즉시 짚어낼 가능성이 매우 높습니다."
+    },
+    {
+     "author": "Dave Ingram",
+     "is_maker": true,
+     "text": "[@suryansh\\_tiwari2](https://www.producthunt.com/@suryansh_tiwari2) thanks!  \n  \nAnd yes, we're really deep in \"agent loops\" over here. One builds the design of the dashboard and puts placeholders for the data, while another goes into The Library and looks at the data you've loaded and any business definitions you've created already. It then creates what we call \"projects\" for the different analyses (which can later be automated without the agent so the dashboard is live and trustable) and then it all comes together in the finished dashboard. All of those agent chats are visible, so anything it's struggling with like missing data or data quality issues can all be handled conversationally.",
+     "kr": "@suryansh_tiwari2 감사합니다!\n\n네, 저희는 '에이전트 루프'에 깊이 집중하고 있습니다. 한 에이전트가 대시보드의 디자인을 잡고 데이터 플레이스홀더를 배치하는 동안, 다른 에이전트는 The Library로 들어가 이미 로드된 데이터와 정의된 비즈니스 규칙을 확인합니다. 그런 다음 다양한 분석을 위한 '프로젝트'(나중에 에이전트 없이도 자동화되어 대시보드가 실시간으로 신뢰성 있게 유지됨)를 생성하고 완성된 대시보드로 취합됩니다. 이 모든 에이전트 대화는 투명하게 공개되므로 데이터 누락이나 품질 문제 등 에이전트가 겪는 어려움도 대화 형식으로 해결할 수 있습니다."
+    },
+    {
+     "author": "Srinivasa Reddy",
+     "is_maker": false,
+     "text": "Hey [@daveaingram](https://www.producthunt.com/@daveaingram) and [@amy\\_ingram](https://www.producthunt.com/@amy_ingram) - Congratulations on your launch. Very interesting concept. Are there any data limits so Querri can handle and return answers with out any latency issues?  \n  \nAlso, Can we limit the access to answers by team or by data sets?",
+     "kr": "@daveaingram @amy_ingram 런칭을 축하드립니다. 매우 흥미로운 컨셉이네요. Querri가 지연 시간 문제없이 답변을 처리하고 반환할 수 있는 데이터 용량 제한이 있나요? 또한 팀별이나 데이터 세트별로 답변에 대한 접근을 제한할 수 있나요?"
+    },
+    {
+     "author": "Dave Ingram",
+     "is_maker": true,
+     "text": "[@amy\\_ingram](https://www.producthunt.com/@amy_ingram)  [@srinivasareddy](https://www.producthunt.com/@srinivasareddy) Hi Srinivasa! Querri easily handles into the 100s of millions of rows. It's all built on streaming and data lake technologies that scale very efficiently, and the AI is writing code to see it, never trying to process all of it directly.  \n  \nIf you ever need even larger scale data with low latency, we support live connections to data warehouses where you'd likely already be storing that size of data.",
+     "kr": "@amy_ingram @srinivasareddy Srinivasa 님 안녕하세요! Querri는 수억 개 행의 데이터도 손쉽게 처리합니다. 매우 효율적으로 확장되는 스트리밍 및 데이터 레이크 기술을 기반으로 구축되었으며, AI는 데이터를 모두 직접 처리하려 들지 않고 코드를 작성하여 조회합니다.\n\n짧은 지연 시간으로 훨씬 더 큰 규모의 데이터가 필요하시다면 이미 해당 데이터를 저장하고 계실 데이터 웨어하우스로의 라이브 연결도 지원합니다."
+    },
+    {
+     "author": "Srinivasa Reddy",
+     "is_maker": false,
+     "text": "[@amy\\_ingram](https://www.producthunt.com/@amy_ingram)  [@daveaingram](https://www.producthunt.com/@daveaingram) Awesome, Dave. Impressive scalability. All the best.",
+     "kr": "@amy_ingram @daveaingram 멋집니다, Dave 님. 인상적인 확장성이네요. 응원합니다."
+    }
+   ],
+   "slug": "querri",
+   "website": "https://www.querri.com/"
+  },
+  {
+   "name": "TwinMind for Desktop",
+   "tagline_en": "Transcribe meetings and dictate anywhere on Mac & Windows",
+   "tagline_kr": "Mac과 Windows 어디서나 회의 전사와 음성 받아쓰기를 지원하는 데스크톱 AI",
+   "image": "https://ph-files.imgix.net/06214f5e-34ec-4358-b890-de7ecb074ea0.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Writing assistants",
+    "AI notetakers",
+    "AI Dictation Apps",
+    "Productivity",
+    "Notes",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 137,
+   "comments_count": 20,
+   "maker": "Kartikey Sharma, Daniel George, Mahi Karim",
+   "price_model": "Free",
+   "price_detail": "Mac 및 Windows 데스크톱 앱 무료 제공",
+   "desc_kr": "TwinMind for Desktop은 Mac과 Windows 환경에서 네이티브로 실행되는 회의 전사 및 음성 입력 AI 어시스턴트입니다. 귀찮은 봇 초대 없이 줌, 구글 밋, 팀즈 등의 화상회의를 백그라운드에서 자동 감지하여 140개 이상의 언어로 실시간 전사 및 구조화된 요약을 생성합니다. 구글 캘린더와 연동되어 원클릭으로 통화에 참여하고 기록을 시작할 수 있습니다. 모든 앱과 가상 데스크톱 화면 위에 상주하는 플로팅 마이크를 통해 단축키를 누르고 말하면 정제된 텍스트가 커서 위치에 즉시 입력됩니다. 시스템 절전이나 갑작스러운 헤드셋 연결 해제 상황에서도 녹음 세션이 끊김 없이 안정적으로 유지되도록 최적화되었습니다.",
+   "launch_url_used": "https://twinmind.com/?ref=producthunt",
+   "comment_summary": "메이커 Kartikey Sharma는 별도의 봇 초대 없이 주요 화상회의를 백그라운드에서 자동 감지해 전사·요약하고 전역 단축키 음성 입력을 지원하는 TwinMind 데스크톱 버전을 공개했습니다. 사용자들은 절전 모드나 헤드셋 분리 상황에서의 녹음 안정성, 전체 화면 모드에서의 플로팅 마이크 작동 여부, 회의 상대방에 대한 자동 녹음 고지 여부 및 구글 캘린더 단독 연동에 따른 프라이버시 이슈 등을 질의했습니다. 메이커 측은 모든 일상적인 예외 환경을 철저히 대비한 안정성을 강조하고 사용자 제안을 반영해 원문 복원 단축키를 추가하겠다고 밝혔으며, 내부 팀원은 실제 회의 맥락을 Claude 프로토타이핑에 바로 활용하는 MCP 서버의 유용성을 전했습니다.",
+   "warnings": "백그라운드 회의 녹음 시 통화 상대방에게 자동 녹음 알림이 가지 않으므로 녹음 전 상대방 동의 및 관련 법규 준수에 유의해야 하며, 캘린더 연동이 Google 계정 위주로 구성되어 있습니다.",
+   "comments": [
+    {
+     "author": "Kartikey Sharma",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋  \n  \nWe spend half our day in meetings and the other half typing up what happened. Current meeting recorders feel clunky, require annoying bot invites, and trap your notes in another browser tab. We built TwinMind to give you an easier way: it automatically turns your calls into clean notes in the background, and gives you instant voice typing right at your cursor so you never have to type out long updates again.  \n  \nTo make this truly seamless on your desktop, TwinMind lives as a quiet, native assistant that follows you across every desktop Space. You simply hold a hotkey, speak, and the transcribed text appears instantly right where your cursor is. The background engine handles meeting transcription so your calls convert into structured notes without any extra steps.  \n  \nGetting transcription right was only half the battle. We spent most of our development time focusing on the details that make an app feel truly native. We optimized the background recording stability so it survives system sleep or sudden headset disconnections, built google calendar integration to join and record calls in a single tap.  \n  \nWe would love to hear your thoughts. What features or adjustments would make this an indispensable part of your daily workflow? The team and I are here all day to answer your questions and listen to your feedback.  \n  \nThank you for checking us out today!",
+     "kr": "프로덕트 헌트 여러분 안녕하세요 👋\n\n우리는 하루의 절반을 회의에 쓰고 나머지 절반은 회의에서 일어난 일을 정리하며 보냅니다. 기존의 회의 녹음기는 번거롭고 거슬리는 봇 초대가 필요하며, 작성된 메모는 또 다른 브라우저 탭에 갇혀 버립니다. 저희는 더 쉬운 대안을 드리고자 TwinMind를 만들었습니다. 백그라운드에서 통화를 정제된 노트로 자동 변환해 주며, 커서 위치에서 즉각적인 음성 입력을 지원하므로 긴 업데이트 내용을 다시 타이핑할 필요가 없습니다.\n\n데스크톱에서 이를 진정으로 매끄럽게 만들기 위해 TwinMind는 모든 가상 데스크톱 화면을 따라다니는 조용한 네이티브 어시스턴트로 상주합니다. 단축키를 누른 채 말하기만 하면 변환된 텍스트가 커서가 있는 위치에 즉시 나타납니다. 백그라운드 엔진이 회의 전사를 처리하므로 추가 작업 없이도 통화가 구조화된 노트로 전환됩니다.\n\n정확한 전사는 절반의 과제에 불과했습니다. 저희는 개발 시간의 대부분을 앱이 진정한 네이티브 앱처럼 느껴지도록 세부 사항을 다듬는 데 쏟았습니다. 시스템 절전 모드나 갑작스러운 헤드셋 연결 해제 상황에서도 견딜 수 있도록 백그라운드 녹음 안정성을 최적화했으며, 탭 한 번으로 통화에 참여하고 녹음할 수 있도록 구글 캘린더 연동 기능을 구축했습니다.\n\n여러분의 생각이 궁금합니다. 어떤 기능이나 개선점이 추가된다면 여러분의 일상 워크플로우에 없어서는 안 될 도구가 될 수 있을까요? 팀원들과 함께 온종일 여러분의 질문에 답하고 피드백에 귀 기울이겠습니다.\n\n오늘 저희 제품을 확인해 주셔서 감사합니다!"
+    },
+    {
+     "author": "Neeraj Nathany",
+     "is_maker": false,
+     "text": "surviving headset disconnects is the kind of detail that matters for a meeting recorder. does the floating mic still work when a call is full screen on its own Space?",
+     "kr": "헤드셋 연결 해제에도 중단되지 않는다는 점은 회의 녹음기에서 정말 중요한 세부 사항입니다. 플로팅 마이크는 통화가 자체 가상 화면에서 전체 화면으로 실행 중일 때도 여전히 작동하나요?"
+    },
+    {
+     "author": "Kartikey Sharma",
+     "is_maker": true,
+     "text": "[@neerajnathany](https://www.producthunt.com/@neerajnathany) Thank you! Floating button will still work in full screen. It stays across every workspace you are in.",
+     "kr": "@neerajnathany 감사합니다! 플로팅 버튼은 전체 화면 모드에서도 정상 작동합니다. 사용자가 머무르는 모든 작업 공간에 계속 유지됩니다."
+    },
+    {
+     "author": "Saad El Gueddari",
+     "is_maker": false,
+     "text": "keeping the original dictation one shortcut away would be useful\n\nespecially when the cleanup changes a name or a number",
+     "kr": "단축키 하나로 다듬어지기 전의 원문 받아쓰기 내용을 바로 확인할 수 있다면 유용할 것 같습니다. 특히 정제 과정에서 이름이나 숫자가 바뀌었을 때 말이죠."
+    },
+    {
+     "author": "Kartikey Sharma",
+     "is_maker": true,
+     "text": "[@saad\\_el\\_gueddari](https://www.producthunt.com/@saad_el_gueddari) Having the original a shortcut away makes a lot of sense, so I've added it to our list. Thanks for flagging it!",
+     "kr": "@saad_el_gueddari 단축키 하나로 원본을 확인할 수 있게 하는 것은 매우 타당한 제안이네요. 개발 목록에 추가했습니다. 좋은 의견 주셔서 감사합니다!"
+    },
+    {
+     "author": "Oleksii Sekundant",
+     "is_maker": false,
+     "text": "The work on sleep and headset disconnects caught my eye. Those are exactly the interruptions where I would want a meeting recorder to tell me clearly whether it was still capturing.",
+     "kr": "절전 모드와 헤드셋 분리 대응 작업이 눈에 띄네요. 회의 녹음기라면 바로 그런 중단 상황에서 여전히 정상 녹음 중인지 명확히 알려주기를 바라게 되거든요."
+    },
+    {
+     "author": "Kartikey Sharma",
+     "is_maker": true,
+     "text": "[@oleksii\\_sekundant](https://www.producthunt.com/@oleksii_sekundant) Thank you so much! I agree that reliability is very integral for this product and hence we covered all of the usual cases.",
+     "kr": "@oleksii_sekundant 정말 감사드립니다! 이 제품에서 안정성은 가장 핵심적인 요소라고 생각하기에 일상적인 모든 예외 상황을 꼼꼼히 챙겼습니다."
+    },
+    {
+     "author": "Mrigakshi Mishra",
+     "is_maker": false,
+     "text": "The MCP stuff is really cool! but do the other people on the call get any heads up that it’s recording? or is that up to whoever’s using it",
+     "kr": "MCP 기능 정말 멋지네요! 그런데 통화 중인 다른 사람들에게 녹음 중이라는 알림이 전달되나요? 아니면 사용하는 사람 재량에 달려 있나요?"
+    },
+    {
+     "author": "Jason Stroud",
+     "is_maker": false,
+     "text": "TwinMind used to be great, until they removed integrations and combined everything into google integration. I used to be able to sync my local calendar (iOS). Not anymore, unless I sync my calendar with Google.  \n  \nI used to be able to use the MCP server as a Pro member. Not anymore, now they want me to upgrade my membership AGAIN.  \n  \nI'm very privacy-focused, and TwinMind has regressed in this regard, from my view. Google is pretty much an evil company, and I refuse to continue using TwinMind after forcing everything to proxy through google service.  \n  \nI removed the app and now use Openwhispr on MacOS to record my meetings. Not as polished and smooth, but I'm not forced to be in bed with Google.",
+     "kr": "TwinMind는 기존 연동 기능들을 없애고 모든 것을 구글 연동으로 통합하기 전까지는 정말 훌륭했습니다. 예전에는 로컬 캘린더(iOS)를 동기화할 수 있었는데, 이제는 구글과 동기화하지 않는 한 불가능해졌습니다.\n\n또한 Pro 회원으로서 MCP 서버를 사용할 수 있었는데, 이제는 또다시 멤버십을 업그레이드하라고 요구합니다.\n\n저는 프라이버시를 매우 중시하는데, 제 관점에서 TwinMind는 이 부분에서 퇴보했습니다. 구글은 사실상 악덕 기업이며, 모든 것을 구글 서비스를 거치도록 강제한 이후로는 더 이상 TwinMind를 사용할 마음이 없습니다.\n\n결국 앱을 삭제하고 현재는 맥OS에서 Openwhispr를 사용해 회의를 녹음하고 있습니다. 그만큼 매끄럽고 세련되지는 않지만 최소한 구글과 한 침대를 쓰도록 강요당하지는 않으니까요."
+    },
+    {
+     "author": "Pranav Suresh",
+     "is_maker": true,
+     "text": "Full disclosure, I work at TwinMind. I keep the desktop app running through my entire day. The TwinMind MCP is my favorite part: I connect it to Claude, pull in what was discussed, and go straight to building prototypes from real meeting context. Total game changer.",
+     "kr": "솔직히 말씀드리면 저는 TwinMind 직원입니다. 저는 하루 종일 데스크톱 앱을 실행해 두고 있습니다. TwinMind MCP는 제가 가장 좋아하는 부분인데, Claude에 연결해 회의에서 논의된 내용을 불러온 뒤 실제 회의 맥락을 바탕으로 프로토타입 제작에 바로 착수할 수 있습니다. 완전히 차원을 바꿔놓는 경험입니다."
+    }
+   ],
+   "slug": "twinmind",
+   "website": "https://twinmind.com/"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>

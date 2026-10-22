@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-22",
+    "url": "2026-10-22/",
+    "top_product": "UseIt Studio",
+    "count": 5,
+    "upvotes_total": 1091,
+    "comments_total": 57
+  },
+  {
     "date": "2026-10-21",
     "url": "2026-10-21/",
     "top_product": "/dev/null",
