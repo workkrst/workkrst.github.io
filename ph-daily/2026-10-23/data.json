@@ -1,0 +1,402 @@
+{
+ "date": "2026-10-23",
+ "collected_at": "2026-10-23 12:31 KST",
+ "summary": "오늘 Top 5는 개발자 도구, AI 인프라 및 에이전트, 오피스 생산성, 창업가 커뮤니티 등 실무 워크플로우의 실행력을 높여주는 실전형 프로덕트들이 고르게 분포했습니다. 샌드박스 기반 런타임 QA(heal.dev)부터 단일 포맷 문서 동기화(DeepCell), 데일리 책임감 스탠드업(Doneas), 올인원 음성 모델(Mistral Voxtral 3)까지 복잡한 수작업과 단절된 파이프라인을 직접 통합하려는 시도가 돋보였습니다. 수집된 총 43개의 커뮤니티 댓글에서는 실제 프로덕션 코드에서의 취약점 탐지 실효성, 슬라이드 내보내기 후의 동적 데이터 유지, 무단 불참 페널티 룰의 운영 지속성 등 현실적인 워크플로우 안착과 신뢰성 검증에 논의가 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "heal-dev",
+   "why": "정적 코드 리뷰가 놓치는 런타임 버그와 보안 취약점을 프로덕션 유사 샌드박스에서 직접 재현·입증한 뒤 보고하는 차별화된 QA 방식으로 큰 호응을 얻었습니다. 댓글에서는 실제 프로덕션 앱에 적용해 저장형 XSS와 테넌트 간 데이터 누출을 실측해 1시간 만에 분류했다는 구체적 검증 후기와 함께, MCP를 통해 코딩 에이전트와 연동하는 자동 수정 루프 구축에 깊은 관심이 이어졌습니다."
+  },
+  {
+   "slug": "deepcell",
+   "why": "스프레드시트, 서술형 메모, 슬라이드를 독자 포맷(.deepcell)으로 네이티브 연결해 수식 가정이 바뀔 때마다 모든 보고서를 실시간 동기화하는 기능으로 1위를 차지했습니다. 댓글에서는 복잡한 엔비디아 가치평가 모델 데모로 계산 신뢰도를 확인하는 한편, 파워포인트로 내보내면 숫자의 생명력이 사라진다며 상사와 바로 소통할 수 있는 실시간 웹 공유 링크 지원 여부에 질문이 집중되었습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "DeepCell",
+   "tagline_en": "Your deadline survival kit for office work",
+   "tagline_kr": "오피스 업무 마감을 지켜주는 서바이벌 키트",
+   "image": "https://ph-files.imgix.net/67be0c24-289d-4d8b-b2e9-91901a791309.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Spreadsheets",
+    "AI Presentation Software",
+    "Productivity",
+    "Artificial Intelligence",
+    "Business"
+   ],
+   "upvotes": 289,
+   "comments_count": 63,
+   "maker": "Mengqi Jin, Jack Mo, Amy Wang, Justin Jincaid",
+   "price_model": "Free",
+   "price_detail": "무료 제공 (가입 없이 웹 데모 체험 가능, 웹 앱 및 AI 에이전트 플러그인 무료 사용)",
+   "desc_kr": "DeepCell은 재무 모델링, 매출 검토, 예산 예측, 월간 보고서 등 설명과 계산, 프레젠테이션이 동시에 요구되는 고난도 마감 업무를 지원하는 오피스 생산성 도구입니다. 독자적으로 설계된 신규 문서 포맷(.deepcell)을 기반으로 데이터 모델, 서술형 메모, 슬라이드 발표 자료를 단일 파일 내에 유기적으로 연결합니다. 모든 수치가 단순 좌표가 아닌 의미와 맥락을 지니고 있어, 스프레드시트의 가정을 한 번만 수정해도 연결된 보고서와 슬라이드 전체에 실시간으로 일괄 동기화됩니다. 웹 애플리케이션뿐만 아니라 AI 에이전트 플러그인 형태로도 제공되어 사용자가 기존에 쓰던 환경에서 프롬프트만으로 손쉽게 문서를 생성할 수 있습니다. 완성된 결과물은 엑셀, 워드, 파워포인트 등 표준 오피스 포맷으로 손쉽게 내보내 편집할 수 있어 기존 사내 협업 환경과도 원활하게 호환됩니다.",
+   "launch_url_used": "https://deepcell.net/?ref=producthunt",
+   "comment_summary": "공동 창업자 Mengqi Jin, Jack Mo, Amy Wang은 수작업으로 숫자와 문서를 일일이 맞춰야 했던 직장 생활의 고통을 해결하기 위해 스프레드시트와 슬라이드가 연동되는 신규 포맷 기반의 DeepCell을 소개했습니다. 커뮤니티에서는 실제 복잡한 가치평가 모델 적용성, 내부 디자인 시스템 및 템플릿 승계 지원 여부, 내보내기 전 사전 미리보기 및 공유 링크 기반 협업 기능 등에 대해 문의했습니다. 메이커 측은 엔비디아 가치평가 데모를 공유하며 수치 변경 시 슬라이드 자동 반영 원리를 설명했고, 기존 덱 템플릿의 레이아웃과 폰트 승계가 가능하며 향후 이미지 연동과 실시간 웹 협업 기능도 출시할 예정이라고 답했습니다.",
+   "warnings": "파워포인트 내보내기 시 기존 템플릿의 레이아웃과 서체는 유지되나 로고 및 이미지는 아직 자동으로 승계되지 않으며, 실시간 링크 공유 기반 협업 기능은 현재 개발 중입니다.",
+   "comments": [
+    {
+     "author": "Mengqi Jin",
+     "is_maker": true,
+     "text": "Hi everyone!  \n  \nHope you enjoy our short **sitcom video**!  \n  \nI’m Mengqi, the builder of DeepCell.\n\nI spent endless hours buried in spreadsheets, slide decks, and status reports from my 10 years of corporate life. Every time a forecast assumption changed, we’d spend half the day updating numbers across multiple disconnected files—hoping no formulas broke along the way.\n\nWe built DeepCell to fix this at the root. Instead of fragmenting work across separate files, a single .deepcell file holds your data models, narrative memos, and presentation slides, **natively connected**.\n\nAdditional to deadline survival from end user perspective, using .deepcell is also bringing benefits beyond existing office standards.\n\n**Self-Describing Numbers and Traceable Logics**\n\nIn-built meaning of numbers instead of cell coordinates. Every number knows what it is, when it applies, whether it's fact or forecast, and which scenario it belongs to. People get formulas they can read; agents focus on the logic without distraction by coordinates.\n\n**Exchange Protocol of System Two Tasks**\n\nFile itself can be picked up by anyone and any agent at any time. Along with editing experience and embedded version control in DeepCell Studio, .deepcell could be converted native/editable .xlsx, .docx, .pptx anytime for stakeholders who live strictly in Office. During Agent run, AI knows what you are editing and just edited then could react real-time.\n\nWe built this for finance, strategy, FP&A, product teams and anyone whose work turns raw numbers into high-stakes decisions.\n\nWould love to hear your feedback, answer any questions, or to hear about your daily workflow pain points—what feature or integration would help DeepCell solve them best for you?",
+     "kr": "여러분 안녕하세요!  \n  \n저희의 짧은 **시트콤 영상**을 즐겁게 봐주셨기를 바랍니다!  \n  \n저는 DeepCell의 제작자 Mengqi입니다.\n\n저는 10년간의 직장 생활 동안 스프레드시트, 슬라이드 덱, 현황 보고서에 파묻혀 끝없는 시간을 보냈습니다. 예측 가정이 바뀔 때마다 서로 단절된 여러 파일의 숫자를 업데이트하느라 반나절을 허비했고, 그 과정에서 수식이 깨지지 않기만을 바랐습니다.\n\n저희는 이 문제를 근본적으로 해결하기 위해 DeepCell을 만들었습니다. 업무를 여러 파일로 쪼개는 대신, 단 하나의 .deepcell 파일에 데이터 모델, 서술형 메모, 프레젠테이션 슬라이드를 **네이티브로 연결**하여 담아냅니다.\n\n최종 사용자의 마감 기한 사수뿐만 아니라, .deepcell을 사용하면 기존 오피스 표준을 뛰어넘는 이점도 얻을 수 있습니다.\n\n**스스로를 설명하는 숫자와 추적 가능한 로직**\n\n단순한 셀 좌표 대신 숫자에 자체적인 의미가 내장되어 있습니다. 모든 숫자는 자신이 무엇인지, 언제 적용되는지, 실제 사실인지 예측치인지, 어떤 시나리오에 속하는지를 알고 있습니다. 사람은 읽을 수 있는 수식을 얻고, 에이전트는 좌표에 방해받지 않고 로직 자체에 집중할 수 있습니다.\n\n**시스템 2 업무를 위한 교환 프로토콜**\n\n파일 자체를 누구든, 어떤 에이전트든 언제든지 가져와 작업할 수 있습니다. DeepCell Studio의 편집 경험과 내장된 버전 관리를 통해, 오피스 파일만 사용하는 이해관계자들을 위해 언제든지 원본 편집이 가능한 .xlsx, .docx, .pptx 파일로 변환할 수 있습니다. 에이전트가 실행되는 동안 AI는 사용자가 현재 무엇을 편집 중이고 방금 무엇을 수정했는지 실시간으로 파악하여 대응할 수 있습니다.\n\n저희는 금융, 전략, FP&A, 프로덕트 팀을 비롯해 원시 데이터를 기반으로 중요한 의사결정을 내리는 모든 분들을 위해 이 제품을 개발했습니다.\n\n여러분의 피드백을 듣고 질문에 답하며 일상 워크플로우의 고충을 들어보고 싶습니다. DeepCell이 여러분의 문제를 가장 잘 해결해 드리기 위해 어떤 기능이나 연동이 가장 필요하신가요?"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "[@mengqi\\_jin](https://www.producthunt.com/@mengqi_jin) how well does deepcell handle complex client reports when an agency needs calculations and presentations at the same time?",
+     "kr": "@mengqi_jin 에이전시에서 계산과 프레젠테이션 작업을 동시에 진행해야 할 때, 복잡한 클라이언트 보고서를 DeepCell이 얼마나 잘 처리할 수 있나요?"
+    },
+    {
+     "author": "Amy Wang",
+     "is_maker": true,
+     "text": "[@shivam\\_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) That’s a great question! We have attached our actual work on our demo, which is a complicated valuation model of Nvidia with hundreds of related assumptions and deck details. Can feel free to have a try!  \n  \nAttached is our demo: [https://deepcell.net/demo?panel=spreadsheet&sheetId=summary](https://deepcell.net/demo?panel=spreadsheet&sheetId=summary)",
+     "kr": "@shivam_kushwaha16 정말 좋은 질문입니다! 저희 데모에 수백 개의 관련 가정과 상세 덱 내용이 포함된 엔비디아(Nvidia)의 복잡한 가치평가 모델 실제 작업물을 첨부해 두었습니다. 부담 없이 직접 체험해 보세요!  \n  \n데모 링크: https://deepcell.net/demo?panel=spreadsheet&sheetId=summary"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "[@xwang146](https://www.producthunt.com/@xwang146) thankx Amy having a real valuation model with all the assumption and calculations makes it much easier to understand how DeepCell works in practice",
+     "kr": "@xwang146 Amy 님 감사합니다. 모든 가정과 계산이 담긴 실제 가치평가 모델을 보니 DeepCell이 실무에서 어떻게 작동하는지 훨씬 쉽게 이해되네요."
+    },
+    {
+     "author": "Mengqi Jin",
+     "is_maker": true,
+     "text": "[@shivam\\_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) actually very good use cases, using DeepCell, presentation inbuilt with linked numbers, assumptions and calculation could help show different scenarios for quick analysis of pricing and outcomes within quick changing user demands",
+     "kr": "@shivam_kushwaha16 사실 아주 훌륭한 활용 사례입니다. DeepCell을 사용하면 연동된 수치, 가정, 계산이 프레젠테이션에 내장되어 급변하는 사용자 요구 속에서도 가격 책정과 성과에 대한 다양한 시나리오를 신속하게 분석하여 보여줄 수 있습니다."
+    },
+    {
+     "author": "Hayden Munt",
+     "is_maker": false,
+     "text": "Looks very helpful for the monthly investor updates and more - does it incorporate your internal design systems?",
+     "kr": "월간 투자자 업데이트 등에 아주 유용해 보이네요. 사내 디자인 시스템도 반영할 수 있나요?"
+    },
+    {
+     "author": "Jack Mo",
+     "is_maker": true,
+     "text": "[@hayden\\_munt1](https://www.producthunt.com/@hayden_munt1) Good question! You can incorporate our DeepCell plug-in in your own agents now, and the local terminal is also in our product roadmap, then all data will be saved in your local space^^",
+     "kr": "@hayden_munt1 좋은 질문입니다! 현재 자체 에이전트에 DeepCell 플러그인을 통합할 수 있으며, 로컬 터미널 지원 역시 제품 로드맵에 포함되어 있어 향후 모든 데이터를 로컬 환경에 저장할 수 있게 될 예정입니다^^"
+    },
+    {
+     "author": "Amy Wang",
+     "is_maker": true,
+     "text": "[@hayden\\_munt1](https://www.producthunt.com/@hayden_munt1) Currently if you give DeepCell an existing deck as a template it builds the new one in the same layout, colors and type, with every number linked to your model. For now the logos and images aren't carried over yet, we'll see if we can include those too in the future. Feel free to have a try when you have time!",
+     "kr": "@hayden_munt1 현재는 기존 슬라이드 덱을 템플릿으로 제공하면 동일한 레이아웃, 색상, 서체로 새 덱을 생성하며, 모든 숫자가 모델과 연동됩니다. 현재로서는 로고와 이미지가 아직 이전되지 않지만, 향후 이 부분도 포함할 수 있도록 검토하겠습니다. 시간 되실 때 편하게 사용해 보세요!"
+    },
+    {
+     "author": "Denis Prodan",
+     "is_maker": false,
+     "text": "Congrats on the launch! How out-of-the-box it is?",
+     "kr": "출시를 축하합니다! 별도 설정 없이 바로 사용할 수 있는 수준인가요?"
+    },
+    {
+     "author": "Jack Mo",
+     "is_maker": true,
+     "text": "[@denis\\_prodan](https://www.producthunt.com/@denis_prodan) \n\nhey Denis, we make it really convenient for user: 1. can generate the files by direct prompts; 2. can convert your existing works into the kits (.deepcell files). Both features can be achieved through the web app or agent plug-in ^^\n\nWe have a demo for your reference: [https://deepcell.net/demo](https://deepcell.net/demo) Within the demo you can directly change the numbers/assumptions and export the .deepcell file into different documents (ppt/pdf/xlsx/doc)\n\nFeel free to give us more feedback!",
+     "kr": "@denis_prodan 안녕하세요 Denis 님, 사용자가 매우 편리하게 쓸 수 있도록 구성했습니다: 1. 직접 프롬프트를 입력해 파일을 생성할 수 있고, 2. 기존 작업물을 키트(.deepcell 파일)로 변환할 수 있습니다. 두 기능 모두 웹 앱이나 에이전트 플러그인을 통해 이용 가능합니다^^\n\n참고하실 수 있는 데모가 준비되어 있습니다: https://deepcell.net/demo 데모 내에서 숫자나 가정을 직접 변경하고 .deepcell 파일을 다양한 문서(ppt/pdf/xlsx/doc)로 내보낼 수 있습니다.\n\n언제든 더 많은 피드백을 남겨주세요!"
+    },
+    {
+     "author": "Rafik Mkhitaryan",
+     "is_maker": false,
+     "text": "Congrats on the launch! I've lost count of the times the model said one number and slide 14 still said the old one, so I get why you built this.\n\nFor me the best part is that every number shows where it came from. That's also why exporting to PowerPoint feels like a step back. Once it's a .pptx, the numbers are dead again.\n\nAre you thinking about letting people just share a live DeepCell link instead? The boss opens it, comments, and can click a number to see where it came from.",
+     "kr": "출시를 축하합니다! 모델에는 한 숫자가 적혀 있는데 슬라이드 14페이지에는 여전히 옛날 숫자가 적혀 있던 적이 셀 수 없이 많아서, 왜 이 제품을 만드셨는지 깊이 공감합니다.\n\n제가 보기에 가장 훌륭한 점은 모든 숫자의 출처가 표시된다는 점입니다. 그렇기 때문에 파워포인트로 내보내는 것이 오히려 퇴보처럼 느껴지기도 합니다. 일단 .pptx가 되고 나면 숫자가 다시 죽어버리니까요.\n\n그 대신 실시간 DeepCell 링크를 공유할 수 있게 할 계획도 있으신가요? 상사가 링크를 열어서 코멘트를 달고, 숫자를 클릭해 어디서 나온 숫자인지 확인할 수 있게 말이죠."
+    },
+    {
+     "author": "Cruise Chen",
+     "is_maker": false,
+     "text": "Can I preview how exports will look in Word / PPT / Excel before downloading?",
+     "kr": "다운로드하기 전에 워드, 파워포인트, 엑셀에서 내보내기가 어떻게 표시될지 미리 볼 수 있나요?"
+    }
+   ],
+   "slug": "deepcell",
+   "website": "https://deepcell.net/"
+  },
+  {
+   "name": "Claude Duet",
+   "tagline_en": "Proactive agent that understands what needs your attention",
+   "tagline_kr": "주의가 필요한 작업을 능동적으로 파악하는 프로액티브 에이전트",
+   "image": "https://ph-files.imgix.net/bf5b2b1a-a473-4ea8-ac3a-55f84c3a9d1a.svg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "LLMs",
+    "AI Chatbots",
+    "Messaging",
+    "Artificial Intelligence",
+    "Bots"
+   ],
+   "upvotes": 272,
+   "comments_count": 4,
+   "maker": "Chris Messina, Mike Krieger, Pablo Stanley",
+   "price_model": "Payment Required",
+   "price_detail": "유료 구독 필요 (Anthropic 유료 플랜을 통해 클라우드 가상 컴퓨터 환경 제공)",
+   "desc_kr": "Claude Duet은 메시지를 통해 업무를 위임받아 클라우드 환경에서 스스로 작업을 수행하는 Anthropic의 프로액티브 AI 에이전트입니다. 사용자가 필요한 작업을 전달하면 클라우드 내 독립된 가상 컴퓨터에서 연결된 애플리케이션들을 활용해 자율적으로 업무를 진행합니다. 작업이 완료되었거나 사용자의 중요한 결정이 필요할 때만 선별적으로 메시지를 보내어 알림 피로를 최소화합니다. 상시 가동되면서도 뛰어난 판단력을 발휘해 즉시 보고해야 할 사항과 나중에 처리해도 될 작업을 스스로 구분합니다. 사용자의 일상 업무 흐름을 방해하지 않으면서 복잡하고 긴 호흡의 작업을 든든하게 보조하도록 설계되었습니다.",
+   "launch_url_used": "https://www.anthropic.com/claude?ref=producthunt",
+   "comment_summary": "유명 프로덕트 헌터 Chris Messina가 메타의 Muse, 오픈AI의 Dots 등과 함께 마침내 개인용 AI 어시스턴트 경쟁 주자들이 모두 모였다며 이번 출시를 주목했습니다. 커뮤니티에서는 Anthropic 제품군과 완벽하게 어울리는 Duet이라는 네이밍에 대한 호평과 함께 모델 특유의 자연스러운 어조에 대한 칭찬이 이어졌습니다. 또한 신뢰할 수 있는 연구소인 Anthropic에서 선보이는 첫 자율 에이전트에 대한 높은 기대감과 즉각적인 도입 의사를 밝혔습니다.",
+   "warnings": "유료 구독자 전용 기능으로 클라우드 환경에서 실행되며, 클라우드 가상 머신에 연동되는 외부 앱 권한 및 접근 범위 설정에 유의해야 합니다.",
+   "comments": [
+    {
+     "author": "Chris Messina",
+     "is_maker": false,
+     "text": "Finally — now all the contenders have arrived! [@Muse by Meta](https://www.producthunt.com/products/muse-22) , [Instinct](https://www.producthunt.com/products/instinct-3?launch=instinct-3), [@Poke.com](https://www.producthunt.com/products/poke-by-interaction-co) , [Dots by ChatGPT](https://www.producthunt.com/products/chatgpt/launches/dots-by-openai), and [@GrokBot](https://www.producthunt.com/products/grokbot).\n\nWho will win??",
+     "kr": "드디어 — 이제 모든 경쟁자들이 도착했군요! Meta의 Muse, Instinct, Poke.com, ChatGPT의 Dots, 그리고 GrokBot까지.\n\n과연 누가 승리할까요??"
+    },
+    {
+     "author": "Mike Ciesielka",
+     "is_maker": false,
+     "text": "[@chrismessina](https://www.producthunt.com/@chrismessina) I think Duet is my favorite name for the personal assistant bots. Fits in so well with the rest of the Anthropic family",
+     "kr": "@chrismessina 개인용 어시스턴트 봇 이름 중에서는 Duet이 제일 마음에 드네요. 기존 Anthropic 패밀리와도 정말 잘 어울립니다."
+    },
+    {
+     "author": "Madhuporna Dasgupta",
+     "is_maker": false,
+     "text": "The nuance and tone in Claude's writing make it feel much less robotic than other models out there.",
+     "kr": "Claude의 글쓰기에 담긴 뉘앙스와 어조 덕분에 시중의 다른 모델들에 비해 훨씬 덜 로봇처럼 느껴집니다."
+    },
+    {
+     "author": "James L",
+     "is_maker": false,
+     "text": "Nice work [@mike\\_krieger](https://www.producthunt.com/@mike_krieger) , [@pablostanley](https://www.producthunt.com/@pablostanley) , and team. Anthropic is the lab I trust most, and I've been waiting for this agent to drop. Excited to try Claude Duet out!",
+     "kr": "@mike_krieger, @pablostanley 님 그리고 팀원 여러분 멋진 작업입니다. Anthropic은 제가 가장 신뢰하는 연구소이며, 이 에이전트가 출시되기만을 기다려왔습니다. Claude Duet을 어서 사용해보고 싶네요!"
+    }
+   ],
+   "slug": "claude",
+   "website": "https://www.anthropic.com/claude"
+  },
+  {
+   "name": "Doneas",
+   "tagline_en": "A daily accountability call with other entrepreneurs.",
+   "tagline_kr": "동료 창업가들과 매일 진행하는 15분 데일리 스탠드업 콜",
+   "image": "https://ph-files.imgix.net/4b5431d6-a2a1-4051-bd77-fe37f236c2ef.gif?auto=compress&codec=mozjpeg&cs=strip&dpr=2&fit=max&fm=webp&frame=1&h=64&w=64",
+   "categories": [
+    "Standup bots",
+    "Productivity",
+    "Developer Tools"
+   ],
+   "upvotes": 236,
+   "comments_count": 114,
+   "maker": "Bengeekly, Rania Rimali, Alicia Verrando, Amrani Yasser",
+   "price_model": "Free Options",
+   "price_detail": "기본 기능 무료 체험 가능, 3개월 무료 프로모션 제공 후 구독제 운영",
+   "desc_kr": "Doneas는 1인 빌더와 창업가들이 집중력을 유지하고 지속적으로 결과물을 만들어낼 수 있도록 돕는 데일리 피어 책임감(Accountability) 플랫폼입니다. 매주 월요일 한 주의 목표를 계획하고, 매일 정해진 시간에 5명의 다른 창업가들과 함께 15분간의 데일리 스탠드업 콜에 참여합니다. 통화 중에는 어제 완료한 일과 오늘 진행할 계획이라는 두 가지 핵심 질문에 답하며 서로의 목표 달성을 독려합니다. 플랫폼 내 공개 프로그레스 페이지와 리더보드를 통해 자신이 배포하고 완료한 작업들을 투명하게 기록하고 동기부여를 얻을 수 있습니다. 통화에 무단으로 3일 연속 불참할 경우 계정이 비활성화되는 엄격한 룰을 적용하여 그룹 내 적극적인 참여와 높은 응집력을 유지합니다.",
+   "launch_url_used": "https://doneas.com/?ref=producthunt",
+   "comment_summary": "메이커 Bengeekly와 팀원들은 1인 개발 시 겪는 미루기 습관과 집중력 저하를 극복하기 위해 매일 5명의 창업가가 모이는 15분 스탠드업 서비스 Doneas를 공개했습니다. 커뮤니티에서는 매일 통화 참여 필수 여부 및 결석 페널티 규정, 그룹 매칭 방식과 Flow Club 등 기존 코워킹 도구와의 차별점, 그리고 개발 템포와 품질 간의 균형 유지 방안 등에 대해 활발히 질문했습니다. 메이커 측은 사전 공지 시 불이익이 없으나 3일 연속 무단 결석 시 비활성화되는 규칙을 소개하고, 같은 시간대 습관 형성을 통한 몰입과 창업가 간의 실질적인 상호 검증 가치를 강조했습니다.",
+   "warnings": "사전 알림 없이 3일 연속 데일리 콜에 불참할 경우 서클의 활성도 유지를 위해 계정이 자동으로 비활성화되며, 현재 서클 매칭은 관심사가 아닌 시간대 기준으로 무작위 배정됩니다.",
+   "comments": [
+    {
+     "author": "Adana Marukhyan",
+     "is_maker": false,
+     "text": "[@bengeekly](https://www.producthunt.com/@bengeekly) [@amraniyasser](https://www.producthunt.com/@amraniyasser) Congrats on the launch, guys!  \nYou created some really cool stuff <3\n\nI’m a member of Doneas and really loving it so far. Planning to join the calls soon =)\n\nJust a couple of questions:  \nis it necessary to join calls every day, or can you schedule calls whenever you want?  \n\nAnd how are the groups created? How do the 5 people arrange a call - is it random, or is there some kind of matching system?",
+     "kr": "@bengeekly @amraniyasser 출시를 축하합니다! 정말 멋진 프로덕트를 만드셨네요 <3\n\n저도 Doneas 멤버인데 지금까지 정말 만족하며 쓰고 있습니다. 곧 통화에도 참여할 계획이에요 =)\n\n몇 가지 질문이 있는데요:  \n매일 통화에 참여해야 하나요, 아니면 원할 때 일정을 잡을 수 있나요?  \n\n그리고 그룹은 어떻게 만들어지나요? 5명의 통화는 어떻게 정해지나요 - 무작위인가요, 아니면 일종의 매칭 시스템이 있나요?"
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": true,
+     "text": "[@amraniyasser](https://www.producthunt.com/@amraniyasser)  [@adana](https://www.producthunt.com/@adana) The rule is to join daily, but you can announce in advance when you are not joining. If you don't you get a red point.  \nHere is an example of a circle\n\n![](https://ph-files.imgix.net/89ff74e1-e726-4446-93b5-edfa00a1bae0.png?auto=compress,format&codec=mozjpeg&cs=strip)\n\n  \nWhen you choose the time, we assign to an available group in that time randomly and we shuffle every month with people in the same time. We will have a matching system when we have enough builders",
+     "kr": "@amraniyasser @adana 매일 참여하는 것이 원칙이지만, 참여하지 못할 때는 사전에 미리 공지할 수 있습니다. 공지하지 않으면 레드 포인트를 받게 됩니다.  \n서클 예시는 다음과 같습니다.\n\n![](https://ph-files.imgix.net/89ff74e1-e726-4446-93b5-edfa00a1bae0.png?auto=compress,format&codec=mozjpeg&cs=strip)\n\n시간대를 선택하시면 해당 시간에 가능한 그룹에 무작위로 배정되며, 같은 시간대의 사람들과 매달 셔플됩니다. 빌더 수가 충분해지면 매칭 시스템을 도입할 예정입니다."
+    },
+    {
+     "author": "Amrani Yasser",
+     "is_maker": true,
+     "text": "[@adana](https://www.producthunt.com/@adana)  Thanks a lot 🧡  \nIf you can’t join, just mark it on the platform, that’s it!! If you miss a call without letting anyone know, it counts as a missed call🚨\n\nYour circle depends on the call time you choose, but you can switch whenever you want!!",
+     "kr": "@adana 정말 감사드려요 🧡  \n참여할 수 없다면 플랫폼에 표시만 해두시면 됩니다!! 아무에게도 알리지 않고 통화에 불참하면 결석으로 처리됩니다🚨\n\n서클은 선택하신 통화 시간에 따라 결정되지만, 원하실 때 언제든 변경할 수 있습니다!!"
+    },
+    {
+     "author": "Tatsiana Tsybukova",
+     "is_maker": false,
+     "text": "What if I miss one of the calls? Some days I am just too busy.",
+     "kr": "통화에 한 번 빠지면 어떻게 되나요? 어떤 날은 너무 바쁠 때가 있어서요."
+    },
+    {
+     "author": "Amrani Yasser",
+     "is_maker": true,
+     "text": "[@tatsiana\\_tsybukova](https://www.producthunt.com/@tatsiana_tsybukova)  It happened sometimes!! You just have to announce in advance when you are not joining!!",
+     "kr": "@tatsiana_tsybukova 가끔 그런 일이 있죠!! 불참할 때는 미리 공지만 해주시면 됩니다!!"
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": true,
+     "text": "[@tatsiana\\_tsybukova](https://www.producthunt.com/@tatsiana_tsybukova) If you announce it in advance there is no problem, if you miss 3 days in a row without announcing it, your account get inactive, until you activate it again, so we keep circles active",
+     "kr": "@tatsiana_tsybukova 사전에 공지하면 아무 문제 없습니다. 사전 공지 없이 3일 연속 불참하면 서클의 활성 상태를 유지하기 위해 다시 활성화할 때까지 계정이 비활성화 처리됩니다."
+    },
+    {
+     "author": "Alicia Verrando",
+     "is_maker": true,
+     "text": "I collaborated with [@bengeekly](https://www.producthunt.com/@bengeekly) on different projects before joining the Doneas team. When he started building it, I was happy to join and help grow the community.\n\nI've always struggled with staying organized. I used to switch from one task to another and procrastinate a lot. Doneas has helped me plan my weeks and days, and actually finish my tasks.\n\nI particularly appreciate the daily accountability calls with other founders. We talk about what we're working on, share our problems, and help each other out. Sometimes someone has already dealt with the same issue and has tips or advice that really help.\n\nReally happy to be part of the team! 🚀",
+     "kr": "저는 Doneas 팀에 합류하기 전부터 @bengeekly 와 여러 프로젝트에서 협업해 왔습니다. 그가 이 제품을 만들기 시작했을 때 기쁜 마음으로 합류해 커뮤니티 성장을 돕게 되었습니다.\n\n저는 항상 체계적으로 일하는 데 어려움을 겪었습니다. 이 일 저 일로 건너뛰며 미루는 일이 다반사였죠. Doneas는 주간과 일간 계획을 세우고 작업을 실제로 끝마칠 수 있도록 도와주었습니다.\n\n특히 다른 창업가들과 함께하는 데일리 책임감 통화가 정말 마음에 듭니다. 각자 작업 중인 내용에 대해 이야기하고, 고민을 나누며 서로를 돕습니다. 때로는 누군가 이미 같은 문제를 겪어본 적이 있어서 실질적으로 큰 도움이 되는 팁이나 조언을 주기도 합니다.\n\n팀의 일원이 되어 정말 기쁩니다! 🚀"
+    },
+    {
+     "author": "Rania Rimali",
+     "is_maker": true,
+     "text": "[@bengeekly](https://www.producthunt.com/@bengeekly)  [@alicia\\_verrando](https://www.producthunt.com/@alicia_verrando) The calls are one of my favourite parts too! It makes such a difference to have other founders to talk things through with. You start by sharing your tasks and end up building genuine connections :)",
+     "kr": "@bengeekly @alicia_verrando 저도 통화가 가장 좋아하는 부분 중 하나예요! 이야기를 나눌 수 있는 다른 창업가들이 있다는 것은 정말 큰 차이를 만들어냅니다. 작업 내용을 공유하는 것에서 시작해 결국 진정한 유대감을 형성하게 되니까요 :)"
+    },
+    {
+     "author": "Vincent J.",
+     "is_maker": false,
+     "text": "congrats :) can you give me more information how is work ?",
+     "kr": "축하합니다 :) 어떻게 작동하는지 좀 더 자세한 정보를 주실 수 있나요?"
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": true,
+     "text": "[@vincent\\_cigale](https://www.producthunt.com/@vincent_cigale) \n\n1.  You signup\n    \n2.  Choose a time for your daily\n    \n3.  We assign you to a Circle (For next day)\n    \n4.  Everyday you join the call at the same time with Entrepreneurs, and answer 2 questions: What did you do Yesterday, What is your plan for today?\n    \n\nCalls are supposed to be 15mins but you can stay for a discussion after the end of the call.  \nThe platform help you plan your week, and there is a leaderboard.",
+     "kr": "@vincent_cigale \n\n1. 가입합니다\n    \n2. 데일리 콜 시간을 선택합니다\n    \n3. 서클에 배정됩니다 (다음 날부터 시작)\n    \n4. 매일 같은 시간에 다른 창업가들과 통화에 참여하여 두 가지 질문에 답합니다: '어제 무엇을 했는가?', '오늘 계획은 무엇인가?'\n    \n통화는 15분 동안 진행되지만, 통화가 끝난 후에도 남아 토론을 이어갈 수 있습니다.  \n플랫폼은 주간 계획 수립을 도와주며, 리더보드도 마련되어 있습니다."
+    },
+    {
+     "author": "Siddhesh Kulthe",
+     "is_maker": false,
+     "text": "Great product, how did you exactly came up with the idea though? Did you or someone you knew faced this problem?",
+     "kr": "멋진 제품이네요, 그런데 이 아이디어는 정확히 어떻게 떠올리셨나요? 본인이나 지인이 이런 문제를 겪었나요?"
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": true,
+     "text": "[@siddheshkulthe](https://www.producthunt.com/@siddheshkulthe) Honestly, I only solve problems I have, I really struggled with waking up or doing what I promised to myself or keeping habits after traveling so I started doing daily calls",
+     "kr": "@siddheshkulthe 솔직히 말해서 저는 제가 직접 겪는 문제만 해결합니다. 기상 시간이나 스스로 다짐한 약속을 지키는 것, 여행 후 습관을 유지하는 데 정말 큰 어려움을 겪어서 데일리 통화를 시작하게 되었습니다."
+    }
+   ],
+   "slug": "doneas",
+   "website": "https://doneas.com/"
+  },
+  {
+   "name": "heal.dev",
+   "tagline_en": "Find bugs and vulnerabilities code review misses",
+   "tagline_kr": "코드 리뷰가 놓친 런타임 버그와 보안 취약점을 찾아내는 AI",
+   "image": "https://ph-files.imgix.net/ea04a85d-a3ee-4523-80a3-b7aa2d83357c.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Testing and QA software",
+    "Code Review Tools",
+    "AI Code Testing",
+    "Developer Tools",
+    "Artificial Intelligence",
+    "Vibe coding"
+   ],
+   "upvotes": 205,
+   "comments_count": 35,
+   "maker": "Malo Marrec, Pierre Oucif, Ben Lang",
+   "price_model": "Free Options",
+   "price_detail": "베타 기간 동안 신용카드 등록 없이 무료 제공, 이후 엔터프라이즈 및 팀 유료 플랜 도입 예정",
+   "desc_kr": "heal.dev는 정적 코드 리뷰나 diff 검사로는 발견하기 어려운 런타임 버그, 성능 저하, 보안 취약점을 사전에 찾아내는 자율형 테스트 에이전트입니다. 애플리케이션 실행 방식을 학습한 뒤 외부 서비스를 스텁(stub) 처리한 프로덕션과 유사한 샌드박스를 구축하여 실제 사용자 경로를 따라 탐색적 테스트를 수행합니다. 단순한 AI 의심 목록을 남발하는 대신, 모든 결함을 샌드박스에서 재현하고 검증한 후에만 리포트하므로 개발자는 확실한 버그에만 집중할 수 있습니다. 벤치마크 결과 기존 AI 코드 리뷰 도구들이 감지하지 못하는 결함의 70%를 찾아내며, 저장형 XSS나 테넌트 간 데이터 유출 같은 치명적인 런타임 결함을 효과적으로 탐지합니다. MCP(Model Context Protocol)를 통해 코딩 에이전트와 연동하면 결함 감지부터 코드 수정 및 재검증까지의 피드백 루프를 완전 자동화할 수 있습니다.",
+   "launch_url_used": "https://www.heal.dev/?ref=producthunt",
+   "comment_summary": "공동 창업자 Malo Marrec과 Pierre Oucif는 샌드박스 환경에서 실제 사용자 동작을 시뮬레이션하여 런타임 결함을 검증해 주는 heal.dev를 선보이며 기존 AI 코드 리뷰 도구 대비 70% 높은 결함 발견율을 공개했습니다. 커뮤니티에서는 CI/CD 파이프라인 연동 방식, 최근 발생한 PHP 인터프리터 취약점과의 연관성, GitHub 외 AWS CodeCommit이나 온프레미스 로컬 Git 지원 계획 등을 문의했습니다. 메이커 측은 외부 라이브러리보다는 애플리케이션 자체 코드의 런타임 로직에 집중하고 있으며, MCP를 통한 코딩 에이전트 연동 루프와 함께 수개월 내 로컬 Git 지원 버전을 출시할 계획이라고 답했습니다.",
+   "warnings": "현재는 애플리케이션 자체 코드 내의 결함 탐지에 집중되어 있어 외부 라이브러리나 런타임 인터프리터 자체의 CVE 취약점 분석은 대상에서 제외되며, 현재 GitHub 중심 지원으로 로컬 Git 버전은 수개월 내 출시 예정입니다.",
+   "comments": [
+    {
+     "author": "Malo Marrec",
+     "is_maker": true,
+     "text": "Hey Product Hunt!!! I’m Malo, co-founder of [heal.dev](http://heal.dev/).\n\n**The problem**:\n\n👉 Code review and static analysis often miss real runtime bugs and vulnerabilities.\n\n👉 Even with top-performing coding agents, we still ship bugs and vulnerabilities to production. We’ve seen that firsthand by running Heal on a collection of open-source repositories: [https://www.heal.dev/#sandboxes](https://www.heal.dev/#sandboxes).\n\n**The solution**\n\n👉 Instead of just scanning your code, Heal spins up a production-like sandbox with your external dependencies mocked.\n\n👉 Heal finds bugs, perf issues, and vulnerabilities at runtime. It reproduces each against the sandbox before reporting.\n\n👉 Unlike asking a coding agent to write end-to-end tests, Heal proactively hunts for edge cases and runs exploratory testing, not just the happy path.\n\n**The key difference**\n\n👉 Review bots find what a developer would change to keep code clean. A lot of findings.\n\n👉 Heal finds a proven user behaviour that causes a bug. Fewer findings, closer to the user.\n\nWith Heal, you get high-signal, verified bugs and vulnerabilities users would see, and a completely autonomous system. It's free during the beta, no cc required: [www.heal.dev](http://www.heal.dev/)\n\n**Debate club 🥊 Ding ding ding!**\n\nOne question for y'all: what makes it so that you don't auto-merge all PRs? Could Heal be the reason you finally do?",
+     "kr": "프로덕트 헌트 여러분 안녕하세요!!! 저는 heal.dev의 공동 창업자 Malo입니다.\n\n**문제점**:\n\n👉 코드 리뷰와 정적 분석은 실제 런타임 버그와 보안 취약점을 놓치는 경우가 많습니다.\n\n👉 최고 성능의 코딩 에이전트를 사용하더라도 여전히 프로덕션에 버그와 취약점이 배포됩니다. 저희는 다양한 오픈소스 저장소에서 Heal을 직접 실행해 보며 이를 직접 목격했습니다: https://www.heal.dev/#sandboxes.\n\n**해결책**\n\n👉 Heal은 단순히 코드를 스캔하는 대신 외부 종속성을 모킹한 프로덕션과 유사한 샌드박스를 직접 구동합니다.\n\n👉 Heal은 런타임에서 버그, 성능 문제, 취약점을 찾아냅니다. 리포트하기 전에 샌드박스에서 각 결함을 직접 재현합니다.\n\n👉 코딩 에이전트에게 E2E 테스트 작성을 요청하는 것과 달리, Heal은 정상 경로(happy path)뿐만 아니라 엣지 케이스를 적극적으로 탐색하고 탐색적 테스팅을 수행합니다.\n\n**핵심 차이점**\n\n👉 리뷰 봇은 개발자가 코드를 깔끔하게 유지하기 위해 변경할 사항을 찾습니다. 결과가 너무 많죠.\n\n👉 Heal은 버그를 유발하는 검증된 사용자 행동을 찾습니다. 발견 건수는 적지만 사용자에게 훨씬 밀접합니다.\n\nHeal을 사용하면 사용자가 직접 마주치게 될 고신호의 검증된 버그 및 취약점을 파악할 수 있으며, 완전히 자율적인 시스템을 경험할 수 있습니다. 베타 기간 동안 신용카드 등록 없이 무료로 제공됩니다: www.heal.dev\n\n**토론 클럽 🥊 땡땡땡!**\n\n여러분께 질문 하나 드릴게요: 모든 PR을 자동 머지하지 못하게 만드는 요인은 무엇인가요? 혹시 Heal이 마침내 자동 머지를 실현할 이유가 될 수 있을까요?"
+    },
+    {
+     "author": "Georges Biaux",
+     "is_maker": false,
+     "text": "[@therealmalo](https://www.producthunt.com/@therealmalo)  💪🏻",
+     "kr": "@therealmalo 💪🏻 화이팅입니다!"
+    },
+    {
+     "author": "Amaury Soviche",
+     "is_maker": false,
+     "text": "This found things we didn't expect on our codebase. Still wondering how to have it run fully in an automated loop -> part of our CICD process and weekly quality runs over the weekend, and when something is found a PR gets opened automatically. Great job [@therealmalo](https://www.producthunt.com/@therealmalo) [@pierre\\_oucif1](https://www.producthunt.com/@pierre_oucif1) [@alexbeno](https://www.producthunt.com/@alexbeno) !",
+     "kr": "저희 코드베이스에서 전혀 예상치 못했던 문제들을 찾아냈습니다. CI/CD 프로세스나 주말 정기 품질 검사의 일환으로 완전히 자동화된 루프에서 실행되도록 하고, 문제가 발견되면 자동으로 PR이 열리도록 구성하는 방안을 여전히 고민 중입니다. 멋진 작업이에요 @therealmalo @pierre_oucif1 @alexbeno 님!"
+    },
+    {
+     "author": "Malo Marrec",
+     "is_maker": true,
+     "text": "Thanks  [@amaury\\_soviche1](https://www.producthunt.com/@amaury_soviche1) ! Working on it :)\n\nWhat you can do is let your coding agent query Heal via MCP, and let it handle the defects founds, then re-run to validate.\n\nWe're working on speed and UX on how this can fit neatly in a meta-harness.",
+     "kr": "감사합니다 @amaury_soviche1 님! 해당 기능 작업 중입니다 :)\n\n현재 취할 수 있는 방법은 코딩 에이전트가 MCP를 통해 Heal을 조회하도록 하고, 발견된 결함을 에이전트가 처리한 후 재실행하여 검증하도록 만드는 것입니다.\n\n이것이 메타 하네스에 깔끔하게 맞물릴 수 있도록 속도와 UX를 개선하고 있습니다."
+    },
+    {
+     "author": "Pierre Oucif",
+     "is_maker": true,
+     "text": "We asked ourselves how Heal compares to AI code reviewers, and whether stacking two or three of them closes the gap. So we built a benchmark to find out.  \nTL;DR:\n\n*   70% of the defects Heal finds, no code reviewer catches. Heal also _only_ flags defects that are on a real user path\n    \n*   Stacking reviewers doesn’t help much: they overlap heavily on the same classes of bugs and all miss the ones that only show up when the app actually runs.\n    \n\n  \n  \nFull methodology and the defect list: [https://www.heal.dev/benchmark](https://www.heal.dev/benchmark)",
+     "kr": "저희는 Heal이 AI 코드 리뷰어들과 어떻게 비교되는지, 그리고 코드 리뷰어를 2~3개 겹쳐 쓴다고 해서 그 격차를 좁힐 수 있는지 스스로 질문을 던졌습니다. 그래서 이를 확인하기 위한 벤치마크를 구축했습니다.  \n요약하자면:\n\n* Heal이 찾아낸 결함의 70%는 어떤 코드 리뷰어도 잡아내지 못했습니다. 또한 Heal은 실제 사용자 경로 상에 있는 결함만을 선별해 플래그를 지정합니다.\n    \n* 리뷰어를 여러 개 중첩해도 큰 도움이 되지 않습니다: 동일한 유형의 버그에서 심하게 겹치며, 애플리케이션이 실제로 실행될 때만 나타나는 버그는 모두 놓치기 때문입니다.\n    \n\n전체 방법론 및 결함 목록: https://www.heal.dev/benchmark"
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": false,
+     "text": "Nice timing with PHP vulnerabilities, how would your tool have handled the situation in the actual situation",
+     "kr": "최근 PHP 취약점 이슈와 타이밍이 절묘하네요. 실제 상황에서 귀사의 도구는 그 문제를 어떻게 다루었을까요?"
+    },
+    {
+     "author": "Malo Marrec",
+     "is_maker": true,
+     "text": "[@bengeekly](https://www.producthunt.com/@bengeekly) That's out of our current scope, but it brings about some ideas for the future. Currently, we hunt for issues _in the application code,_ and we don't run it on libs. Some topic for us to investigate!",
+     "kr": "@bengeekly 현재로서는 저희 스코프 밖의 일이지만, 향후를 위한 좋은 아이디어가 되네요. 현재 저희는 라이브러리가 아닌 애플리케이션 코드 내부의 문제를 탐색하고 있습니다. 앞으로 연구해 볼 만한 주제입니다!"
+    },
+    {
+     "author": "Pierre Oucif",
+     "is_maker": true,
+     "text": "[@bengeekly](https://www.producthunt.com/@bengeekly) the two CVEs are in the php interpreter itself and our agent is focusing on bugs in the codebase, not inside the installed libs, language api, etc. But as these CVEs are related to memory management and so runtime, it's a bit related/adjacent to the runtime bugs we are finding to reproduce user (human and machine) behaviors.",
+     "kr": "@bengeekly 해당 두 건의 CVE는 PHP 인터프리터 자체에 존재하며, 저희 에이전트는 설치된 라이브러리나 언어 API가 아닌 코드베이스 자체의 버그에 초점을 맞추고 있습니다. 다만 이들 CVE가 메모리 관리 및 런타임과 관련되어 있는 만큼, 사용자(사람 및 머신) 동작을 재현하기 위해 저희가 탐색하는 런타임 버그와 어느 정도 인접한 측면은 있습니다."
+    },
+    {
+     "author": "TJ Ferry",
+     "is_maker": false,
+     "text": "I love the idea! However, my company uses CodeCommit for most of our projects rather than GitHub. Are there any plans in the future to add local Git compatibility?",
+     "kr": "아이디어가 정말 마음에 듭니다! 하지만 저희 회사는 GitHub 대신 CodeCommit을 대부분의 프로젝트에 사용하고 있습니다. 향후 로컬 Git 호환성을 추가할 계획이 있으신가요?"
+    },
+    {
+     "author": "Pierre Oucif",
+     "is_maker": true,
+     "text": "[@tj\\_ferry](https://www.producthunt.com/@tj_ferry) hey! We already have a local version of our agent that we are using for R&D. We plan to release it in couple of months ;)",
+     "kr": "@tj_ferry 안녕하세요! R&D 용도로 사용 중인 로컬 버전 에이전트가 이미 준비되어 있습니다. 몇 달 안에 출시할 계획입니다 ;)"
+    },
+    {
+     "author": "Mark Ridgeon",
+     "is_maker": false,
+     "text": "Ran Heal against our own app and it found real bugs, each with repro steps and a test to prove it. A stored XSS and a cross-tenant data leak were the big ones. The API meant we could triage all 239 findings in about an hour. Congrats on the launch [@therealmalo](https://www.producthunt.com/@therealmalo) and [@pierre\\_oucif1](https://www.producthunt.com/@pierre_oucif1) .",
+     "kr": "저희 자체 앱에 Heal을 실행해 보았더니 재현 단계와 입증 테스트 코드가 포함된 실제 버그들을 찾아냈습니다. 저장형 XSS와 테넌트 간 데이터 누출이 가장 큰 건이었죠. API 덕분에 약 1시간 만에 239개의 발견 사항 전체를 분류할 수 있었습니다. 출시를 축하드립니다 @therealmalo @pierre_oucif1 님."
+    },
+    {
+     "author": "Malo Marrec",
+     "is_maker": true,
+     "text": "Thanks [@mark\\_ridgeon1](https://www.producthunt.com/@mark_ridgeon1) ! We're very grateful for all your feedback along the way!!",
+     "kr": "@mark_ridgeon1 감사합니다! 그동안 보내주신 모든 피드백에 진심으로 감사드립니다!!"
+    }
+   ],
+   "slug": "heal-dev",
+   "website": "https://www.heal.dev/"
+  },
+  {
+   "name": "Mistral Voxtral 3",
+   "tagline_en": "Mistral’s speech models for transcription, TTS and agents",
+   "tagline_kr": "전사, 음성 합성(TTS), 음성 에이전트를 위한 Mistral의 차세대 음성 AI 모델",
+   "image": "https://ph-files.imgix.net/296959f2-f1f5-408c-803c-58b33e049208.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "AI Infrastructure Tools",
+    "Foundation Models",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 200,
+   "comments_count": 3,
+   "maker": "Mistral AI, Rohan Chaubey",
+   "price_model": "Free Options",
+   "price_detail": "API 종량제 과금 (배치 전사 분당 $0.0035~, 실시간 전사 분당 $0.008, TTS 100만 자당 $13, 음성 에이전트 API 분당 $0.04부터 시작, 온프레미스 기업용 별도 문의)",
+   "desc_kr": "Mistral Voxtral 3는 음성 인식(STT), 음성 합성(TTS), 그리고 실시간 음성 에이전트 SDK를 아우르는 Mistral AI의 새로운 음성 파운데이션 모델 패밀리입니다. 50개 이상의 언어를 지원하는 음성 전사는 화자 분리와 컨텍스트 바이어싱을 제공하며, 실시간 전사의 경우 500ms 미만의 초저지연을 실현했습니다. TTS 모델은 35개 이상의 언어와 50개 이상의 방언을 지원하며 대화 맥락에 따른 감정과 속도, 강조 조절은 물론 30분의 음성 데이터만으로 고품질 음성 클로닝이 가능합니다. LiveKit 기반으로 구축된 음성 에이전트 SDK는 음성 청취, 추론, 함수 호출, 발화를 단일 실시간 파이프라인으로 통합하여 1초 미만의 응답 턴을 완성합니다. 모든 기능은 Mistral 공식 API를 통해 유연하게 호출할 수 있으며, 기업 환경을 위한 자체 구축(on-prem) 배포 옵션도 함께 제공됩니다.",
+   "launch_url_used": "https://mistral.ai/?ref=producthunt",
+   "comment_summary": "런칭을 주도한 Rohan Chaubey가 음성 인식부터 추론 및 음성 합성까지 전 과정을 API 하나로 해결할 수 있는 풀루프 음성 모델 제품군 Voxtral 3의 주요 기능과 저렴한 요금 체계를 상세히 소개했습니다. 커뮤니티에서는 실제 회의에서 흔히 발생하는 프랑스어와 영어의 중도 혼용 대화(코드 스위칭) 처리 능력에 대해 높은 관심을 보였습니다. 또한 현재 API 환경에서 공식 지원되는 언어 범위가 영어와 프랑스어 외에 다양하게 확장되었는지에 대한 문의가 이어졌습니다.",
+   "warnings": "고성능 음성 클로닝을 위해 최소 약 30분 분량의 고품질 오디오 데이터가 필요하며, 기업 온프레미스 배포는 영업 팀을 통한 별도 계약이 필요합니다.",
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "**Voxtral 3** is Mistral’s new family of speech models: speech-to-text, text-to-speech and a voice agent SDK, all through Mistral’s API.\n\n**Problem:** Building a voice agent usually means gluing together separate pieces for transcription, reasoning and speech. Transcription also tends to break down on real calls, with several speakers, domain terms and many languages, and robotic voices make conversations feel stiff.\n\n**Solution:** Voxtral 3 covers the full loop. There are batch and realtime transcription models, a text-to-speech model, and an SDK built on LiveKit that combines listening, reasoning, tool calling and speaking in one real-time pipeline.\n\n**What makes it different:** Each stage of the voice agent is a separate model, so you can swap the LLM, the voice or the language. Transcription handles context biasing with keyterms or free-form text, no fine-tuning needed, and the TTS adapts emotion, pacing and emphasis to the conversation. Per Mistral, realtime transcription runs under 500 ms, and a full agent turn completes in under a second.\n\n**Key features:**\n\n*   Voxtral Small Transcribe 3 for the highest accuracy, with speaker diarization and context biasing\n    \n*   Voxtral Mini Transcribe 3 for batch transcription (4B parameters)\n    \n*   Voxtral Mini Transcribe Realtime 3 for agents, with sub-500 ms latency\n    \n*   Voxtral Mini TTS 3 with emotion, pacing and emphasis controls, and voice cloning from about 30 minutes of audio\n    \n*   Transcription in 50+ languages, and TTS in 35+ languages and 50+ dialects\n    \n*   Voice agent SDK with function calling, web search, SIP telephony and WebRTC\n    \n*   Self-deployment and on-prem through Mistral sales\n    \n\n**Pricing per Mistral:** batch transcription from $0.0035 per minute, realtime transcription at $0.008 per minute, TTS at $13 per 1M characters, and the voice agent API from $0.04 per minute.\n\n**Who it’s for:** Developers and teams building voice agents, call transcription, or multilingual voice apps who want one provider for the whole pipeline.",
+     "kr": "**Voxtral 3**는 Mistral의 새로운 음성 모델 제품군으로, 음성 인식(STT), 음성 합성(TTS), 음성 에이전트 SDK를 모두 Mistral API를 통해 제공합니다.\n\n**문제점:** 지금까지 음성 에이전트를 구축하려면 전사, 추론, 음성 합성을 위한 개별 구성 요소들을 짜맞춰야만 했습니다. 또한 실제 통화 환경에서는 다수의 화자, 전문 용어, 다양한 언어로 인해 전사가 실패하기 쉬웠고, 기계적인 음성 때문에 대화가 부자연스럽게 느껴졌습니다.\n\n**해결책:** Voxtral 3는 전체 루프를 완벽히 포괄합니다. 배치 및 실시간 전사 모델, 텍스트-음성 변환 모델, 그리고 듣기, 추론, 툴 호출, 발화를 하나의 실시간 파이프라인으로 통합하는 LiveKit 기반 SDK를 제공합니다.\n\n**차별점:** 음성 에이전트의 각 단계가 독립된 별도의 모델로 구성되어 있으므로 LLM, 음성, 언어를 자유롭게 교체할 수 있습니다. 전사 모델은 파인튜닝 없이도 핵심 용어나 자유 형식 텍스트를 통한 컨텍스트 바이어싱을 지원하며, TTS는 대화 흐름에 맞춰 감정, 속도, 강조를 유연하게 조절합니다. Mistral에 따르면 실시간 전사는 500ms 미만으로 실행되며, 에이전트의 전체 턴은 1초 이내에 완료됩니다.\n\n**주요 기능:**\n\n*   최고 수준의 정확도, 화자 분리 및 컨텍스트 바이어싱을 지원하는 Voxtral Small Transcribe 3\n    \n*   배치 전사용 Voxtral Mini Transcribe 3 (40억 파라미터)\n    \n*   에이전트를 위한 500ms 미만 지연 시간의 Voxtral Mini Transcribe Realtime 3\n    \n*   감정, 속도, 강조 제어 및 약 30분 오디오 기반 음성 복제를 지원하는 Voxtral Mini TTS 3\n    \n*   50개 이상 언어 전사 및 35개 이상 언어와 50개 이상 방언의 TTS 지원\n    \n*   함수 호출, 웹 검색, SIP 전화 통신 및 WebRTC를 지원하는 음성 에이전트 SDK\n    \n*   Mistral 영업 팀을 통한 자체 구축(on-prem) 및 온프레미스 배포 지원\n    \n\n**Mistral 제공 가격:** 배치 전사는 분당 $0.0035부터, 실시간 전사는 분당 $0.008, TTS는 100만 자당 $13, 음성 에이전트 API는 분당 $0.04부터 시작합니다.\n\n**대상 사용자:** 전체 파이프라인을 단일 공급자를 통해 해결하고자 하는 음성 에이전트, 통화 전사 또는 다국어 음성 앱 개발자 및 개발 팀."
+    },
+    {
+     "author": "Jean Bonnenfant",
+     "is_maker": false,
+     "text": "French guy here so obviously biased, but happy to see Mistral push on speech. Does it cope with people switching between French and English mid sentence? Because that's every call I'm on.",
+     "kr": "프랑스인이라 당연히 편향되었겠지만, Mistral이 음성 분야를 적극적으로 밀고 나가는 것을 보니 기쁘네요. 문장 중간에 프랑스어와 영어를 번갈아 쓰는 사람들의 대화도 잘 대처하나요? 제가 참여하는 모든 통화가 항상 그렇거든요."
+    },
+    {
+     "author": "Michael Schreier",
+     "is_maker": false,
+     "text": "Can I now use more languages than only English and French with the API?",
+     "kr": "이제 API를 통해 영어와 프랑스어 외에 더 많은 언어를 사용할 수 있나요?"
+    }
+   ],
+   "slug": "mistral-7b",
+   "website": "https://mistral.ai/"
+  }
+ ]
+}
