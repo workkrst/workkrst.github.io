@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-24",
+    "url": "2026-10-24/",
+    "top_product": "Product Hunt Visual Launch Editor",
+    "count": 5,
+    "upvotes_total": 1247,
+    "comments_total": 45
+  },
+  {
     "date": "2026-10-23",
     "url": "2026-10-23/",
     "top_product": "DeepCell",
