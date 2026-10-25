@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-25",
+    "url": "2026-10-25/",
+    "top_product": "zCAD AI",
+    "count": 5,
+    "upvotes_total": 968,
+    "comments_total": 43
+  },
+  {
     "date": "2026-10-24",
     "url": "2026-10-24/",
     "top_product": "Product Hunt Visual Launch Editor",

@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-10-25</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-10-25 · Top 5 · 수집 댓글 43개 · 수집 2026-10-25 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-10-25",
+ "collected_at": "2026-10-25 12:30 KST",
+ "summary": "오늘 랭킹은 3D CAD(zCAD AI)와 그래픽 디자인(Canva Craft) 같은 창작 도구부터 게임 개발(myPip), 에이전트 모니터링(AgentValley) 및 자격 증명 보안(1Password for Agents)에 이르기까지 개발·디자인 워크플로우 전반에 실전 배포된 AI 도구들이 상위권을 차지했습니다. 댓글에서는 생성된 결과물을 사용자가 파라메트릭하게 수정하거나 레이어별로 편집할 수 있는지와 같은 실무 제어 가능성이 핵심 질문으로 다뤄졌습니다. 아울러 다중 AI 에이전트의 권한 대기 상태 감지와 온디바이스 인증 승인 등 자율 에이전트 도입에 따른 보안과 모니터링 관리 방안에 커뮤니티의 높은 관심이 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "zcad-ai",
+   "why": "단순 관상용 메시 생성을 넘어 실제 조립과 치수 수정이 가능한 파라메트릭 STEP CAD 모델을 AI로 생성한다는 점에서 하드웨어 메이커들의 큰 주목을 받았습니다. 댓글에서도 치수 변경 시 연결 부품의 자동 연동 여부와 자연어 지시를 통한 개별 부품 수정에 질문이 집중되었으며, 메이커가 구속 조건 시스템 기반의 즉시 편집을 확인해 호평을 받았습니다."
+  },
+  {
+   "slug": "agentvalley",
+   "why": "맥북 상단 노치를 활용해 백그라운드에서 실행 중인 여러 Claude Code 세션과 권한 대기 상태를 픽셀 캐릭터로 한눈에 모니터링할 수 있는 실용성으로 큰 호응을 얻었습니다. 댓글에서는 별도 훅 없이 로컬 상태 파일을 읽어 대기 세션을 포착하는 가벼운 구조에 찬사가 이어졌으며, 대기 시간 표시와 개발 컨테이너 지원 등 실무 연동에 대한 질문과 피드백이 활발히 오갔습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "zCAD AI",
+   "tagline_en": "AI 3D that creates real parts, not just shapes",
+   "tagline_kr": "단순 외형을 넘어 실제 조립 가능한 부품을 제작하는 AI 3D CAD 플랫폼",
+   "image": "https://ph-files.imgix.net/403bf260-a186-4e77-a6b8-9f9f9a8eb757.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Design Tools",
+    "SaaS",
+    "3D Modeling",
+    "3D & Animation",
+    "AI Generative Media"
+   ],
+   "upvotes": 263,
+   "comments_count": 33,
+   "maker": "Qi An, Minyan Gong, Ruan YangMing, Xin, gzzeason, Brenda",
+   "price_model": "Free Options",
+   "price_detail": "무료 체험 및 $10 무료 크레딧 제공 (무료 플랜에서도 STEP 파일 내보내기 지원, 추가 모델 생성 시 유료 과금)",
+   "desc_kr": "zCAD AI는 디자이너, 메이커, 엔지니어를 위해 자연어 지시어나 참조 이미지로부터 수정 가능한 파라메트릭 3D 모델을 생성해 주는 AI 기반 CAD 도구입니다. 기존 AI 도구들이 수정이 불가능한 정적 메시(Mesh) 형태를 생성하는 것과 달리, 실제 CAD 지오메트리를 바탕으로 치수 구속과 부품 간 결합(Mate) 정보가 포함된 솔리드 어셈블리를 완성합니다. 사용자는 단일 프롬프트를 통해 부품 간 결합 관계가 적용된 어셈블리를 생성할 수 있으며, 웹 기반 CAD 에디터에서 직접 치수를 변경하거나 추가 자연어 프롬프트로 세부 부품을 손쉽게 수정할 수 있습니다. 무료 플랜을 포함한 모든 작업물은 STEP 포맷으로 내보낼 수 있어 Fusion 360, SolidWorks 등 기존 전문 CAD 소프트웨어로 즉시 가져와 후속 작업을 진행할 수 있습니다. 피규어 같은 관상용 유기적 조각보다는 나사 결합, 브라켓, 기구 케이스 등 실제 현실 세계에서 물리적으로 조립되고 3D 프린팅되어야 하는 기계 부품 제작에 최적화되어 있습니다.",
+   "launch_url_used": "https://zcad.ai/products/ai?ref=producthunt",
+   "comment_summary": "메이커 팀(Qi An, Xin 등)은 단순 장식용 메시가 아닌 실제 조립과 치수 수정이 가능한 STEP 호환 파라메트릭 CAD 모델 생성의 강점을 소개했습니다. 커뮤니티에서는 비전문가도 쉽게 다룰 수 있는지와 프롬프트를 통한 특정 부품의 개별 수정 및 연동된 부품 간 치수 자동 반영 가능 여부를 집중적으로 질문했습니다. 이에 메이커들은 CAD 명령어 사전 지식 없이도 바로 사용할 수 있으며 파라메트릭 구속 조건 시스템을 통해 특정 치수를 변경하면 연결된 부품도 유기적으로 자동 조절된다고 답변해 호평을 받았습니다.",
+   "warnings": "유기적인 피규어나 조각 형태의 3D 메시는 지원하지 않으며, 치수와 결합이 중요한 기계 부품 및 어셈블리 모델링 전용입니다. 공차(Tolerance) 및 재질(Material) 설정 등 전문 엔지니어링 결정은 사용자가 직접 검토하고 지정해야 합니다.",
+   "comments": [
+    {
+     "author": "Qi An",
+     "is_maker": true,
+     "text": "Hi everyone, I'm Elle, and I work on product and go-to-market for zCAD.\n\nThe question we kept coming back to: where is this model going to live? If it lives in a game, a render or a virtual world, a mesh is the right answer, and AI 3D tools already do it well. If it has to work in the physical world, fit another part, take a screw, get printed or machined, it needs CAD: real dimensions, solid geometry, parts that mate.\n\nzCAD. AI generates that from a prompt, and exports STEP into the tool you already use.\n\nOn the product side, a few choices are deliberate. Even the free plan exports STEP, because a part you can't take into your own tools isn't really yours. We turn down figurine requests, because sculpted, organic shapes are what mesh does best, even when you print them. And it doesn't make engineering calls for you. Tolerances and materials stay with you.\n\nOn the go-to-market side, I'll be honest: we're still learning who needs this most. Makers who 3D print, indie hardware designers, engineers who live in CAD all day? That's a big part of why we're here. Try it on something that has to work in the real world, and tell us who you are and where it breaks.\n\nUpvote (6)",
+     "kr": "안녕하세요 여러분, 저는 zCAD의 프로덕트 및 GTM을 담당하고 있는 Elle입니다.\n\n저희가 끊임없이 고민했던 질문은 바로 '이 모델이 어디에서 쓰일 것인가?'였습니다. 게임이나 렌더링, 가상 세계에서 쓰인다면 메시(Mesh)가 정답이며 기존 AI 3D 도구들도 이미 훌륭히 해내고 있습니다. 하지만 물리적인 현실 세계에서 작동해야 하고, 다른 부품과 맞물려야 하며, 나사를 조이거나 3D 프린팅 및 가공을 거쳐야 한다면 CAD가 필요합니다. 즉 실제 치수, 솔리드 지오메트리, 결합되는 부품이 필요한 것이죠.\n\nzCAD AI는 프롬프트로부터 이를 생성해 내고, 여러분이 이미 사용하고 계신 도구로 가져갈 수 있도록 STEP 파일로 내보냅니다.\n\n제품 측면에서 몇 가지 의도적인 결정을 내렸습니다. 본인의 도구로 가져갈 수 없는 부품은 진정한 본인의 것이 아니기 때문에 무료 플랜에서도 STEP 내보내기를 지원합니다. 피규어 제작 요청은 정중히 거절하고 있는데, 조각 형태의 유기적 형상은 프린팅을 하더라도 메시가 가장 잘 표현하기 때문입니다. 또한 엔지니어링 결정을 대신 내려주지는 않습니다. 공차와 재질 결정은 여전히 여러분의 몫입니다.\n\nGTM 측면에서는 솔직히 말씀드리면 이 도구를 가장 필요로 하는 이들이 누구인지 여전히 배우는 과정에 있습니다. 3D 프린팅을 즐기는 메이커, 인디 하드웨어 디자이너, 하루 종일 CAD를 다루는 엔지니어일까요? 그것이 저희가 여기에 온 큰 이유입니다. 현실 세계에서 동작해야 하는 작업에 시험해 보시고, 여러분이 누구인지 그리고 어디서 한계가 나타나는지 알려주세요."
+    },
+    {
+     "author": "Mu Li",
+     "is_maker": false,
+     "text": "Love the generated model stay editable! Congrats on the launch! One quick question, can I refine individual parts of the model with follow up prompts?\n\nUpvote (1)",
+     "kr": "생성된 모델이 계속 편집 가능한 상태로 유지된다는 점이 정말 마음에 듭니다! 런칭 축하드려요! 한 가지 질문이 있는데, 후속 프롬프트를 통해 모델의 개별 부품을 수정할 수 있나요?"
+    },
+    {
+     "author": "Ruan YangMing",
+     "is_maker": true,
+     "text": "[@mu\\_li](https://www.producthunt.com/@mu_li) Thanks! Yes — that's the core of the product: every generated model stays editable. You can go back in, change a dimension or rework one part, and the rest stays as it was — follow-up prompts are just the quickest way to do it. Try \"make that hole 2mm bigger\" and tell us if it behaves the way you'd expect. 🙌\n\nUpvote (2)",
+     "kr": "@mu_li 감사합니다! 네, 바로 그것이 제품의 핵심입니다. 생성된 모든 모델은 편집 가능한 상태를 유지합니다. 다시 들어가서 치수를 변경하거나 한 부분을 다시 작업할 수 있으며, 나머지 부분은 그대로 유지됩니다. 후속 프롬프트는 이를 수행하는 가장 빠른 방법입니다. \"그 구멍을 2mm 더 크게 만들어줘\"라고 시도해 보시고 예상대로 동작하는지 알려주세요. 🙌"
+    },
+    {
+     "author": "Jack Mo",
+     "is_maker": false,
+     "text": "Quick question: would it be easy to use for someone without any design experience like me?\n\nUpvote (1)",
+     "kr": "간단한 질문입니다. 저처럼 디자인 경험이 전혀 없는 사람도 쉽게 사용할 수 있을까요?"
+    },
+    {
+     "author": "X Z",
+     "is_maker": true,
+     "text": "[@jackinlearning96](https://www.producthunt.com/@jackinlearning96) Absolutely! Just start a chat and describe what you have in mind. You can also upload an image as a reference.\n\nUpvote",
+     "kr": "@jackinlearning96 당연하죠! 채팅을 시작하고 생각하고 계신 것을 설명하기만 하면 됩니다. 참조용으로 이미지를 업로드할 수도 있습니다."
+    },
+    {
+     "author": "Qi An",
+     "is_maker": true,
+     "text": "[@jackinlearning96](https://www.producthunt.com/@jackinlearning96) Of course, can try start by describing what you want to make or uploading an image，no need to learn CAD commands first. But we don’t currently support figurines, only mechanical parts and assemblies.\n\nUpvote",
+     "kr": "@jackinlearning96 물론입니다. CAD 명령어를 먼저 배울 필요 없이 만들고 싶은 것을 설명하거나 이미지를 업로드하면서 시작해 보세요. 다만 현재 피규어는 지원하지 않으며 기계 부품 및 어셈블리만 지원합니다."
+    },
+    {
+     "author": "X Z",
+     "is_maker": true,
+     "text": "Hi Product Hunt, I’m Xin and I work on zCAD 👋\n\nI got into CAD because the step from a flat 2D sketch to a solid 3D object always struck me as a kind of magic. Underneath it there’s a quiet mathematical beauty: constraints, dimensions, geometry that holds together exactly. But reaching that magic has always meant learning a lot of software before you’re allowed to make anything, and that’s where most people give up. So I kept asking myself: is there a better way into the same process, one that keeps the precision and removes the barrier?\n\nWith zCAD, you describe what you need in plain words, get a real solid model with real dimensions, and send it straight to your 3D printer.\n\nTo be clear about what it’s for: zCAD won’t sculpt your figurine. Mesh tools already do that beautifully. What it makes is the stand that fits that figurine’s base and stops it tipping over. The pencil case sized for your kid’s pencils, the week before school starts. Small, practical things that have to fit something real.\n\nNone of those are engineering projects. They’re just things you want to exist, and until now they cost an afternoon of fighting software you’d open twice a year. I want that afternoon to become a sentence.\n\nSo try it on something small from your own life, and tell me what you made and where it got it wrong. I’ll be here all day reading every reply. ❤️",
+     "kr": "Product Hunt 커뮤니티 여러분 안녕하세요, 저는 zCAD 팀의 Xin입니다 👋\n\n제가 CAD에 입문하게 된 것은 평면 2D 스케치에서 입체적인 3D 물체로 변하는 과정이 항상 일종의 마법처럼 느껴졌기 때문입니다. 그 이면에는 조용하고도 수학적인 아름다움이 있습니다. 구속 조건, 치수, 그리고 정확하게 맞물리는 지오메트리죠. 하지만 그 마법에 도달하려면 무언가를 만들기 전에 수많은 소프트웨어를 배워야 했고, 대부분의 사람들이 거기서 포기하곤 했습니다. 그래서 저는 끊임없이 질문했습니다. '정밀함은 유지하면서 진입 장벽을 없애는 더 나은 방법이 있지 않을까?'\n\nzCAD를 사용하면 평범한 일상 언어로 필요한 것을 설명하고, 실제 치수를 갖춘 솔리드 모델을 얻어 3D 프린터로 바로 보낼 수 있습니다.\n\n용도를 명확히 하자면, zCAD는 피규어를 조각해 주지는 않습니다. 메시 도구들이 이미 그 역할을 훌륭하게 수행하고 있으니까요. zCAD가 만드는 것은 그 피규어가 쓰러지지 않도록 받쳐주는 스탠드나, 개학 전 아이의 연필 크기에 딱 맞춘 필통 같은 것들입니다. 실제 존재하는 무언가에 꼭 맞아야 하는 작고 실용적인 물건들이죠.\n\n이런 것들은 거창한 엔지니어링 프로젝트가 아닙니다. 단지 존재했으면 하는 물건들일 뿐인데, 지금까지는 일 년에 두 번 열어볼 소프트웨어와 한나절 동안 씨름해야 했습니다. 저는 그 한나절의 시간을 한 문장으로 바꾸고 싶습니다.\n\n여러분의 일상에서 작은 것부터 시도해 보시고, 무엇을 만들었는지 그리고 어디가 어긋났는지 알려주세요. 온종일 여기에 머물며 모든 댓글을 읽겠습니다. ❤️"
+    },
+    {
+     "author": "gzzeaon",
+     "is_maker": true,
+     "text": "Hey everyone! I’m gzzeason, a software engineer on the product team at zCAD. 😊  \nWe’re building zCAD to make it easier for engineers, designers, and makers to turn ideas into editable 3D CAD models. Our goal is simple: help you spend less time on repetitive modeling steps and more time developing and refining your designs.  \nWith zCAD, you can describe a part or assembly in plain language and add a reference image to help communicate your idea. AI turns that input into a parametric CAD model, with dimensions, features, and assembly relationships you can inspect and refine. From there, you can request changes through follow-up instructions, continue editing in zCAD Online, or export your model in formats such as STEP to keep working in other CAD software.  \nWe’d be interested to hear how this fits into your own work: like what you’d use it for, and where it falls short. If you try it and get an unexpected result, send us the prompt and what you were trying to create. Those examples help us figure out what to work on next.",
+     "kr": "안녕하세요 여러분! 저는 zCAD 제품 팀의 소프트웨어 엔지니어 gzzeason입니다. 😊\n\n저희는 엔지니어, 디자이너, 메이커가 아이디어를 편집 가능한 3D CAD 모델로 더 쉽게 전환할 수 있도록 zCAD를 구축하고 있습니다. 저희 목표는 간단합니다. 반복적인 모델링 단계에 드는 시간을 줄이고, 디자인을 개발하고 다듬는 데 더 많은 시간을 쓸 수 있도록 돕는 것입니다.\n\nzCAD를 사용하면 일반적인 언어로 부품이나 어셈블리를 설명하고 참조 이미지를 추가하여 아이디어를 전달할 수 있습니다. AI가 해당 입력을 치수, 피처, 검사 및 수정 가능한 어셈블리 관계를 갖춘 파라메트릭 CAD 모델로 변환합니다. 거기서부터 후속 지시를 통해 변경을 요청하거나, zCAD Online에서 편집을 이어가거나, STEP 등의 형식으로 모델을 내보내 다른 CAD 소프트웨어에서 작업을 계속할 수 있습니다.\n\n이것이 여러분의 업무에 어떻게 맞는지 듣고 싶습니다. 어떤 용도로 사용하실지, 그리고 어떤 점이 부족한지요. 시도해 보시고 예상치 못한 결과가 나온다면 프롬프트와 만들고자 했던 내용을 보내주세요. 이러한 사례들은 저희가 다음에 무엇을 작업해야 할지 결정하는 데 큰 도움이 됩니다."
+    },
+    {
+     "author": "Ruan YangMing",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋 I’m part of the design team behind [zCAD.AI](http://zcad.ai/).  \nAs a designer, my hope for [zCAD.AI](http://zcad.ai/) is to give people more freedom to explore ideas and more ability to turn them into something real.  \nCAD gives us powerful, precise tools, but using them often means translating an idea into a long sequence of commands. I’m excited about a future where we can start by expressing what we want to achieve, and AI helps us work through how to get there—with professional tools always within reach.  \nToday, our first step is generating parametric CAD models from images or text. We see this as the beginning of a broader collaboration: people bring intent, experience, and judgment; AI helps develop possibilities and move the work forward.  \nFor me, this is also an exciting direction for AI: helping people create things they can understand, edit, and build upon. In engineering, that means working toward results people can inspect and verify, with control over how their designs evolve.  \nI hope this makes CAD more approachable for newcomers and gives experienced designers more room to explore alternatives, solve harder problems, and spend time on the decisions that matter.  \nThat’s the future we want to help build with [zCAD.AI](http://zcad.ai/). What would you want an AI collaborator to help you achieve in CAD?",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋 저는 zCAD.AI의 디자인 팀 일원입니다.\n\n디자이너로서 zCAD.AI에 거는 제 바람은 사람들이 아이디어를 더 자유롭게 탐색하고 이를 실제 실물로 전환할 수 있는 능력을 더 많이 얻는 것입니다.\n\nCAD는 강력하고 정밀한 도구를 제공하지만, 이를 사용한다는 것은 종종 하나의 아이디어를 긴 일련의 명령어로 번역하는 작업을 의미했습니다. 저는 우리가 무엇을 달성하고자 하는지 표현하는 것으로 시작하고, 전문 도구를 언제든 사용할 수 있는 상태에서 AI가 그곳에 도달하는 과정을 함께 풀어나가는 미래를 기대하고 있습니다.\n\n오늘 저희의 첫걸음은 이미지나 텍스트로부터 파라메트릭 CAD 모델을 생성하는 것입니다. 저희는 이것을 더 넓은 협업의 시작으로 봅니다. 사람은 의도와 경험, 판단력을 가져오고, AI는 가능성을 개발하며 작업을 진전시키는 데 도움을 줍니다.\n\n저에게 이것은 AI의 흥미로운 방향성이기도 합니다. 사람들이 이해하고, 편집하고, 그 위에 발전시킬 수 있는 것을 만들도록 돕는 것이죠. 엔지니어링에서는 디자인이 발전하는 방식을 제어하면서 검사하고 검증할 수 있는 결과를 지향하는 것을 의미합니다.\n\n이로 인해 초보자에게는 CAD가 더 친숙해지고 숙련된 디자이너에게는 대안을 탐색하고, 더 어려운 문제를 해결하며, 중요한 결정에 시간을 쓸 수 있는 여유가 더 많이 생기기를 바랍니다.\n\n그것이 바로 저희가 zCAD.AI를 통해 구축하고자 하는 미래입니다. 여러분은 AI 협업자가 CAD에서 무엇을 달성하도록 돕기를 원하시나요?"
+    },
+    {
+     "author": "Minyan Gong",
+     "is_maker": true,
+     "text": "[@ruanyangming](https://www.producthunt.com/@ruanyangming) Congrats to the UX guru\n\nUpvote",
+     "kr": "@ruanyangming UX 구루님 축하드립니다"
+    },
+    {
+     "author": "Chenmu Wu",
+     "is_maker": false,
+     "text": "Congrats on the launch! 🎉 Love the focus on editable CAD. If I resize one part in an assembly, can zCAD automatically adjust the connected parts so everything still fits?\n\nUpvote",
+     "kr": "런칭 축하드립니다! 🎉 편집 가능한 CAD에 집중한 점이 정말 좋습니다. 어셈블리 내에서 한 부품의 크기를 조절하면 zCAD가 연결된 부품들을 자동으로 조절하여 모든 부품이 여전히 딱 맞도록 해줄 수 있나요?"
+    },
+    {
+     "author": "Brenda",
+     "is_maker": true,
+     "text": "[@chenmu\\_wu](https://www.producthunt.com/@chenmu_wu) Yes, for sure—as parametric CAD, zCAD handles this natively through our constraint system!\n\nUpvote",
+     "kr": "@chenmu_wu 네, 물론입니다. 파라메트릭 CAD로서 zCAD는 구속 조건 시스템을 통해 이를 기본적으로 처리합니다!"
+    }
+   ],
+   "slug": "zcad-ai",
+   "website": "https://zcad.ai/products/ai"
+  },
+  {
+   "name": "myPip",
+   "tagline_en": "Vibe code, publish, and monetize games with AI",
+   "tagline_kr": "자연어 바이브 코딩으로 게임을 개발·배포하고 수익화하는 AI 플랫폼",
+   "image": "https://ph-files.imgix.net/9c1a698d-fc18-4fd5-9ae2-a434934ec6be.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Developer Tools",
+    "Games",
+    "Vibe coding"
+   ],
+   "upvotes": 225,
+   "comments_count": 16,
+   "maker": "Misha Stastna, Ben Lang, Tanis Lash",
+   "price_model": "Free",
+   "price_detail": "기본 기능 무료 이용 가능 (게임 제작, 실시간 협업, 인앱 결제 및 광고 연동 지원)",
+   "desc_kr": "myPip은 복잡한 프로그래밍 언어나 게임 엔진 지식 없이도 자연어 대화(바이브 코딩)를 통해 브라우저에서 직접 플레이 가능한 게임을 제작하고 즉시 배포할 수 있는 AI 게임 개발 플랫폼입니다. 사용자가 아이디어를 설명하면 AI가 실시간으로 게임을 생성하며, 원하는 수정 사항을 말하는 것만으로 캐릭터 동작이나 물리 엔진, 레벨 디자인을 손쉽게 변경할 수 있습니다. 특히 친구들과 한 방에 모여 한 명은 보스를 만들고 다른 한 명은 물리 효과를 수정하며 동시에 플레이테스트를 진행하는 실시간 멀티플레이어 협업 제작 기능인 '하이브 코딩(Hive Coding)'을 지원합니다. 별도의 넷코드 설정 없이도 완성된 게임을 멀티플레이어로 공유할 수 있으며, PS5·Xbox 등 실제 콘솔 컨트롤러 연결과 본인의 얼굴을 스캔해 게임 캐릭터로 넣는 기능도 제공합니다. 또한 인앱 결제 및 광고 탑재 기능을 갖추어 브라우저를 넘어 여러 게임 스토어에 즉시 배포하고 수익화까지 하나의 대시보드에서 완결할 수 있습니다.",
+   "launch_url_used": "https://mypip.dev/?ref=producthunt",
+   "comment_summary": "공동 창업자이자 CEO인 Misha Stastna는 자연어 프롬프트와 실시간 협업 '하이브 코딩'으로 누구나 게임을 만들고 컨트롤러까지 연결할 수 있는 신규 플랫폼을 공개했습니다. 커뮤니티에서는 실시간 협업 제작 방식의 신선함과 Claude Code 등 기존 AI 코딩 도구 대비 차별점, 연령 제한 및 교육용 게임 제작 가능성에 대해 활발한 질문을 던졌습니다. 메이커는 모든 게임 스토어로의 원클릭 배포와 통합 대시보드가 핵심 경쟁력이라 설명하며 데이터 규정에 따른 일부 연령 제한 정책과 함께 향후 교육용 기능 추가 계획을 밝혔습니다.",
+   "warnings": "일부 국가 및 유럽 지역에서는 데이터 규정 준수(Data Compliance)를 위해 특정 연령대의 가입이 제한될 수 있으며, 기본 욕설 및 유해 콘텐츠 필터링이 적용됩니다.",
+   "comments": [
+    {
+     "author": "Misha Stastna",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋\n\nI'm Misha, cofounder and CEO of [**myPip**](https://mypip.dev/), vibe coding for video games.\n\nMost of us grew up with a game idea in our heads that never got made. Game engines are powerful, but they're intimidating, and \"learn C# first\" kills most ideas before they start. We built myPip so anyone can describe a game in plain English and be playing it minutes later.\n\n**What you can do with myPip:**\n\n🎮 **Vibe code a game.** Describe it, play it, mod it by just saying what you want changed.\n\n🐝 **Hive coding.** This is the one we're most excited about. It's multiplayer game _creation_: you and your friends build the same game together in real time. One person adds a boss, another rewrites the physics, someone else is already playtesting.\n\n👾 **Multiplayer built in.** Games you make can be played with friends, no netcode required.\n\n🕹️ **Controller connect.** Plug in a PS5, Xbox, or Wii controller and your game feels like a real console game.\n\n🤳 **Scan yourself in.** Put yourself (or your friends) into the game as a character.\n\n🤖 **MCP server.** Build myPip games straight from your favorite AI chatbot.\n\nMore than 140,000 people have already made games on myPip, and watching what they come up with has been the best part of building this.\n\nTry it at [**mypip.dev**](http://mypip.dev/). I'll be here all weekend, so tell me what you build, what breaks, and what you want next. And if you start a hive coding lobby, send me the link. I'd love to jump in. 🐝\n\nUpvote (9)",
+     "kr": "Product Hunt 여러분 안녕하세요! 👋\n\n저는 비디오 게임을 위한 바이브 코딩 플랫폼 myPip의 공동 창업자이자 CEO인 Misha입니다.\n\n우리 대부분은 마음속에 끝내 만들어지지 못한 게임 아이디어를 하나씩 품고 자랐습니다. 게임 엔진은 강력하지만 다루기 까다롭고, 'C#부터 먼저 배워라'라는 말은 시작하기도 전에 대부분의 아이디어를 꺾어버립니다. 저희는 누구나 쉬운 영어로 게임을 설명하고 몇 분 만에 직접 플레이할 수 있도록 myPip을 만들었습니다.\n\n**myPip으로 할 수 있는 것들:**\n\n🎮 **게임 바이브 코딩:** 아이디어를 설명하고, 플레이해 보고, 변경하고 싶은 내용을 말하는 것만으로 모드를 수정하세요.\n\n🐝 **하이브 코딩(Hive coding):** 저희가 가장 기대하고 있는 기능입니다. 멀티플레이어 게임 '제작' 환경으로, 친구들과 함께 실시간으로 같은 게임을 만듭니다. 한 사람이 보스를 추가하는 동안 다른 사람은 물리 법칙을 다시 작성하고, 또 다른 사람은 이미 플레이테스트를 진행하고 있죠.\n\n👾 **기본 내장된 멀티플레이어:** 복잡한 넷코드 작업 없이도 친구들과 함께 플레이할 수 있는 게임을 만듭니다.\n\n🕹️ **컨트롤러 연결:** PS5, Xbox, Wii 컨트롤러를 연결하면 실제 콘솔 게임처럼 즐길 수 있습니다.\n\n🤳 **자신을 스캔해 넣기:** 본인(또는 친구)을 게임 속 캐릭터로 직접 등장시키세요.\n\n🤖 **MCP 서버:** 자주 사용하는 AI 챗봇에서 곧바로 myPip 게임을 제작할 수 있습니다.\n\n이미 140,000명 이상의 사용자가 myPip에서 게임을 만들었으며, 그들이 만들어내는 결과물을 지켜보는 것이 이 프로젝트를 개발하면서 가장 즐거운 순간이었습니다.\n\nmypip.dev에서 직접 체험해 보세요. 주말 내내 여기서 여러분이 무엇을 만드셨는지, 어디서 버그가 나는지, 다음에 무엇을 원하는지 의견을 듣겠습니다. 하이브 코딩 로비를 여신다면 링크를 보내주세요, 기꺼이 참여하겠습니다. 🐝"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "[@misha\\_stastna](https://www.producthunt.com/@misha_stastna) Congrats on the launch Misha multiplayer game creation with AI sounds fun especially being able to build and play with friends in real time",
+     "kr": "@misha_stastna Misha 님 런칭을 축하합니다! AI를 이용한 멀티플레이어 게임 제작이라니 정말 재미있어 보이네요. 특히 친구들과 실시간으로 함께 만들고 플레이할 수 있다는 점이 매우 흥미롭습니다."
+    },
+    {
+     "author": "Misha Stastna",
+     "is_maker": true,
+     "text": "[@shivam\\_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) thank you!!",
+     "kr": "@shivam_kushwaha16 감사합니다!!"
+    },
+    {
+     "author": "abhishek jain",
+     "is_maker": false,
+     "text": "This sounds exciting, quick question, is there any age restriction for the players to use the games? Example if someone creates an educational games which can used by kids for studying?",
+     "kr": "정말 흥미진진하네요. 간단한 질문이 하나 있습니다. 플레이어가 게임을 이용하는 데 연령 제한이 있나요? 예를 들어 누군가가 아이들의 학습을 위한 교육용 게임을 만드는 경우 어떻게 되나요?"
+    },
+    {
+     "author": "Misha Stastna",
+     "is_maker": true,
+     "text": "[@abhishek\\_jain42](https://www.producthunt.com/@abhishek_jain42) hey yes! We do ask your age when signing up, some features and types of games are blocked for certain ages.\n\nFor most European ranges some ages are outright banned from the platform.\n\nBut educational games now that’s a fantastic idea!\n\nUpvote",
+     "kr": "@abhishek_jain42 네 맞습니다! 가입 시 연령을 확인하며, 특정 연령대에서는 일부 기능과 게임 종류가 차단됩니다.\n\n대부분의 유럽 지역에서는 규정상 특정 연령대의 플랫폼 이용이 전면 금지되어 있습니다.\n\n하지만 교육용 게임이라니 정말 훌륭한 아이디어네요!"
+    },
+    {
+     "author": "Misha Stastna",
+     "is_maker": true,
+     "text": "[@abhishek\\_jain42](https://www.producthunt.com/@abhishek_jain42) Hey yes in certain regions we outright ban certain ages for data compliance. We also block profanity and certain things by default.\n\nBut educational games is a great shout, we'll definitely be shipping something you'll really like in the next week or two!",
+     "kr": "@abhishek_jain42 네 맞습니다, 특정 지역에서는 데이터 규정 준수를 위해 특정 연령대의 가입을 전면 차단하고 있습니다. 또한 비속어와 특정 유해 요소들은 기본적으로 차단됩니다.\n\n그렇지만 교육용 게임은 아주 좋은 제안입니다. 다음 주나 2주 내로 마음에 들어 하실 만한 기능을 확실하게 선보이겠습니다!"
+    },
+    {
+     "author": "Qi An",
+     "is_maker": false,
+     "text": "This is such a cute idea, I once tried using GPT astra to build a mini game where Mario catches butterflies in a forest, but I could only interact with a keyboard & mouse. Being able to connect a game controller would be really useful！\n\nUpvote (2)",
+     "kr": "정말 귀여운 아이디어네요! 예전에 GPT astra를 사용해서 마리오가 숲에서 나비를 잡는 미니 게임을 만들어본 적이 있는데, 키보드와 마우스로만 조작할 수 있었습니다. 게임 컨트롤러를 연결할 수 있다는 건 정말 유용할 것 같아요!"
+    },
+    {
+     "author": "Misha Stastna",
+     "is_maker": true,
+     "text": "[@qian\\_712](https://www.producthunt.com/@qian_712) tysm yep any controller! ps5, xbox, wii!",
+     "kr": "@qian_712 정말 감사합니다. 맞습니다, 어떤 컨트롤러든 가능합니다! PS5, Xbox, Wii 모두 지원합니다!"
+    },
+    {
+     "author": "Oussama NAKHIL",
+     "is_maker": false,
+     "text": "Nice, how different it is from developing the game through claude code/codex?",
+     "kr": "좋네요, Claude Code나 Codex를 통해 게임을 개발하는 것과는 어떤 점이 다른가요?"
+    },
+    {
+     "author": "Misha Stastna",
+     "is_maker": true,
+     "text": "[@oussama\\_nakhil](https://www.producthunt.com/@oussama_nakhil) Hey so the main differences are publishing to all game stores is instant, you get a great place to test your games by publishing directly on myPip.\n\nA unified all in one place to build test and launch then manage your games all from one dashboard.\n\nUpvote",
+     "kr": "@oussama_nakhil 안녕하세요, 주요 차이점은 모든 게임 스토어로의 발행이 즉각적이라는 점이며, myPip에 직접 배포하여 게임을 테스트할 수 있는 훌륭한 환경을 제공한다는 점입니다.\n\n하나의 대시보드에서 게임을 빌드, 테스트, 런칭하고 관리까지 할 수 있는 올인원 통합 공간입니다."
+    },
+    {
+     "author": "Harsh Yadav",
+     "is_maker": false,
+     "text": "[@misha\\_stastna](https://www.producthunt.com/@misha_stastna) Nice Launch! Hive coding sounds like chaos in the best possible way.\n\nUpvote (3)",
+     "kr": "@misha_stastna 멋진 런칭입니다! 하이브 코딩은 가장 긍정적인 의미에서 기분 좋은 혼돈처럼 들리네요."
+    },
+    {
+     "author": "Misha Stastna",
+     "is_maker": true,
+     "text": "[@harshyadav](https://www.producthunt.com/@harshyadav) ty it really is, and will get even more chaotic when we let streamers connect their live chat XD\n\nUpvote",
+     "kr": "@harshyadav 고마워요, 실제로 그렇습니다! 스트리머들이 라이브 채팅을 연동할 수 있게 되면 한층 더 유쾌한 혼돈이 될 거예요 XD"
+    }
+   ],
+   "slug": "mypip-2",
+   "website": "https://mypip.dev/"
+  },
+  {
+   "name": "1Password for Agents",
+   "tagline_en": "Let AI agents sign in for you without seeing your passwords",
+   "tagline_kr": "AI 에이전트에게 비밀번호를 노출하지 않고 안전하게 로그인을 대행시키는 보안 솔루션",
+   "image": "https://ph-files.imgix.net/6aa4f1ca-12c9-4f65-93e1-b32bfefde948.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Password managers",
+    "Security software",
+    "Artificial Intelligence"
+   ],
+   "upvotes": 216,
+   "comments_count": 6,
+   "maker": "1Password, Rohan Chaubey",
+   "price_model": "Free Options",
+   "price_detail": "기존 1Password 개인(Individual) 및 가족(Family) 유료 구독 플랜에 기본 포함 (추가 요금 없이 제공되며 Meta Muse 및 Grok Bot 지원 순차 배포 중)",
+   "desc_kr": "1Password for Agents는 사용자를 대신해 결제나 웹 작업을 수행하는 AI 에이전트에게 실제 비밀번호를 직접 알려주지 않고도 웹사이트에 로그인할 수 있도록 지원하는 보안 기능입니다. AI 에이전트가 로그인 화면을 마주하면 1Password에 자격 증명을 요청하고, 사용자는 자신의 기기에서 해당 요청을 확인하여 승인하거나 거절할 수 있습니다. 사용자가 승인하면 1Password가 브라우저에 비밀번호나 일회용 2FA 인증 코드를 직접 입력하며, AI 에이전트는 로그인 성공 여부만 전달받을 뿐 실제 비밀번호 텍스트는 전혀 볼 수 없습니다. 에이전트를 연결하더라도 전체 금고(Vault)가 열리지 않으며 엔드투엔드 암호화와 고유 디지털 키를 통해 지정된 사이트의 접근 권한만 엄격히 통제됩니다. 현재 Meta Muse 및 Grok Bot과의 연동을 순차적으로 제공하고 있으며, 1Password의 기존 개인 및 가족 플랜 구독자에게 추가 비용 없이 지원됩니다.",
+   "launch_url_used": "https://1password.com/?ref=producthunt",
+   "comment_summary": "헌터 Rohan Chaubey는 최근 AI 에이전트의 보안 위협이 커지는 상황에서 자격 증명을 직접 넘기지 않고도 안전하게 작업을 위임할 수 있는 새로운 인증 방식을 소개했습니다. 커뮤니티에서는 비밀번호를 에이전트에게 건네는 불안감을 해소하고 사용자 기기에서 직접 승인하는 온디바이스 검증 구조에 큰 호응을 보냈습니다. 아울러 브라우저 자동완성이 실패할 경우의 동작 방식이나 반복 작업을 위한 '항상 허용' 규칙 설정 가능 여부에 대한 질문이 이어졌습니다.",
+   "warnings": "현재 지원되는 일부 AI 에이전트(Meta Muse, Grok Bot 등)에 한해 순차 배포 중이며 대기자 명부(Waitlist)가 운영되고 있습니다. 에이전트가 로그인할 때마다 사용자 기기에서 수동 승인이 필요하므로 자동화 작업 시 지연이 발생할 수 있습니다.",
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "**1Password for Agents** lets supported AI agents sign in to your accounts without ever seeing your passwords.\n\n**Problem:** Personal AI agents increasingly need to log in to sites and apps to get things done, like completing a purchase or working in your accounts. The easy way is to hand over your passwords, which is risky, since you can’t control what the agent does with them.\n\n**Solution:** When an agent reaches a login screen, it asks 1Password for the credential. You approve or deny the request in 1Password, and 1Password fills in the password or one-time code directly. The agent only sees that access was granted.\n\n**What makes it different:** The agent never receives your credentials, and approval happens on your own device. Per 1Password, the agent proves its identity with a unique digital key, and connecting an agent doesn’t give it access to your whole vault, which stays end-to-end encrypted. If several saved logins match, you choose which one gets used.\n\n**Key features:**\n\n*   Agentic Autofill: a supported agent signs in through a browser without handling the password\n    \n*   Approve or deny each access request in 1Password\n    \n*   New account details can be saved to your vault\n    \n*   Connect one or several supported agents\n    \n*   Rolling out with Meta Muse and Grok Bot, with another integration in the works\n    \n*   Included in all Individual and Family plans\n    \n\n**Who it’s for:** People who use personal AI agents and want them to handle logins without giving up their passwords.\n\nUpvote (2)",
+     "kr": "**1Password for Agents**는 지원되는 AI 에이전트가 여러분의 비밀번호를 직접 보지 않고도 계정에 로그인할 수 있도록 지원합니다.\n\n**문제점:** 개인용 AI 에이전트가 구매를 완료하거나 계정 내에서 작업을 처리하기 위해 웹사이트 및 앱에 로그인해야 하는 경우가 점점 늘어나고 있습니다. 가장 쉬운 방법은 비밀번호를 넘겨주는 것이지만, 에이전트가 그 비밀번호로 무엇을 할지 통제할 수 없기 때문에 매우 위험합니다.\n\n**해결책:** 에이전트가 로그인 화면에 도달하면 1Password에 자격 증명을 요청합니다. 사용자는 1Password에서 해당 요청을 승인하거나 거절하며, 승인 시 1Password가 비밀번호나 일회용 코드를 직접 입력합니다. 에이전트는 접근 권한이 부여되었다는 사실만 알 수 있습니다.\n\n**차별점:** 에이전트는 사용자의 자격 증명을 절대 전달받지 않으며 승인은 사용자의 기기에서 이루어집니다. 1Password에 따르면 에이전트는 고유한 디지털 키로 신원을 증명하며, 에이전트를 연결해도 종단간 암호화된 전체 금고에는 접근할 수 없습니다. 일치하는 저장된 로그인이 여러 개인 경우 사용자가 사용할 항목을 직접 선택합니다.\n\n**주요 기능:**\n* 에이전틱 자동완성(Agentic Autofill): 지원되는 에이전트가 비밀번호를 직접 다루지 않고 브라우저를 통해 로그인\n* 1Password에서 각 접근 요청을 개별적으로 승인 또는 거부\n* 새로운 계정 세부 정보를 금고에 자동 저장 가능\n* 하나 또는 여러 개의 지원되는 에이전트 연결 가능\n* Meta Muse 및 Grok Bot을 시작으로 순차 배포 중이며 추가 연동 준비 중\n* 모든 개인(Individual) 및 가족(Family) 플랜에 기본 포함\n\n**대상 사용자:** 비밀번호를 넘겨주지 않고도 개인용 AI 에이전트가 로그인을 대신 처리하기를 원하는 사용자."
+    },
+    {
+     "author": "Richard Acheampong",
+     "is_maker": false,
+     "text": "This sounds great and innovative, what happens when browser autofill does not work for a particular login page, does the agent then copy and paste password without still seeing the password?\n\nUpvote (1)",
+     "kr": "정말 훌륭하고 혁신적으로 들리네요. 특정 로그인 페이지에서 브라우저 자동완성이 작동하지 않으면 어떻게 되나요? 에이전트가 비밀번호를 보지 못한 상태에서 복사하여 붙여넣기를 수행하나요?"
+    },
+    {
+     "author": "Olia Nemirovski",
+     "is_maker": false,
+     "text": "fingers crossed for today, approving each login in 1Password beats pasting a password into an agent. if I don't tap in time, does the agent wait or skip it?\n\nUpvote (1)",
+     "kr": "오늘 런칭 응원합니다! 1Password에서 매 로그인을 승인하는 것이 에이전트에 비밀번호를 붙여넣는 것보다 훨씬 낫네요. 만약 제가 제때 승인 버튼을 누르지 못하면 에이전트가 기다리나요, 아니면 건너뛰나요?"
+    },
+    {
+     "author": "Tedo Patsatsia",
+     "is_maker": false,
+     "text": "Looks very interesting, especially after recent security issues and concerns with AI agents, good to see a safer way to keep using AI agents!\n\nUpvote (1)",
+     "kr": "매우 흥미롭네요. 특히 최근 AI 에이전트 관련 보안 이슈와 우려가 많았는데, AI 에이전트를 계속해서 안전하게 활용할 수 있는 방안을 보게 되어 반갑습니다!"
+    },
+    {
+     "author": "Oumaima Chebbi",
+     "is_maker": false,
+     "text": "Congrats on the launch! This solves a real worry: giving an agent your password always felt like handing over your house keys. Love that approval happens on my own device.\n\nOne question: can I set rules, like “always allow this agent for this site” vs. “ask me every time”? For daily tasks, approving every login could get tiring.\n\nUpvote (2)",
+     "kr": "런칭 축하합니다! 에이전트에게 비밀번호를 주는 것은 항상 집 열쇠를 통째로 넘겨주는 기분이었는데, 실제 우려를 깔끔하게 해결해 주네요. 내 기기에서 직접 승인이 이루어진다는 점이 마음에 듭니다.\n\n질문이 하나 있는데요: \"이 사이트에 대해서는 이 에이전트를 항상 허용\" 대 \"매번 나에게 묻기\"처럼 규칙을 설정할 수 있나요? 일상적인 작업의 경우 매번 로그인을 승인하는 것이 다소 번거로울 수 있을 것 같아서요."
+    },
+    {
+     "author": "Ilko Kacharov",
+     "is_maker": false,
+     "text": "Love that the agent only learns access was granted and never touches the password, approving on your own device is a smart way to keep humans in control.\n\nUpvote (1)",
+     "kr": "에이전트가 접근 권한이 부여되었다는 사실만 인지할 뿐 비밀번호를 절대 건드리지 않는다는 점이 참 좋습니다. 본인의 기기에서 직접 승인하는 방식은 인간의 통제권을 유지하는 매우 현명한 방법입니다."
+    }
+   ],
+   "slug": "1password",
+   "website": "https://1password.com/"
+  },
+  {
+   "name": "AgentValley",
+   "tagline_en": "Every Claude Code agent, at a glance, in your Mac's notch",
+   "tagline_kr": "맥북 노치에서 실행 중인 Claude Code 에이전트 상태를 픽셀 캐릭터로 한눈에 확인하는 오픈소스 앱",
+   "image": "https://ph-files.imgix.net/d6339e83-f70c-466e-ac7e-03eb3895bf6a.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Open Source",
+    "Developer Tools",
+    "GitHub",
+    "AI Coding Agents"
+   ],
+   "upvotes": 144,
+   "comments_count": 14,
+   "maker": "Morse Chimwai",
+   "price_model": "Free",
+   "price_detail": "완전 무료 및 오픈소스 (GitHub을 통해 소스 코드 공개, 맥북 사용자 누구나 자유롭게 이용 가능)",
+   "desc_kr": "AgentValley는 맥북의 상단 노치(Notch) 영역에 상주하며 현재 실행 중인 여러 Claude Code 세션과 서브 에이전트들의 작업 상태를 실시간으로 모니터링할 수 있는 무료 오픈소스 도구입니다. 각 에이전트마다 고유한 12×12 픽셀 캐릭터가 부여되어 마치 가상의 팀원들이 작업 과정을 하나씩 진행해 나가는 모습을 시각적으로 즐겁게 지켜볼 수 있습니다. Claude Code가 세션별로 기록하는 로컬 상태 파일을 직접 읽어 들여 별도의 훅 설정 없이도 어떤 에이전트가 어떤 모델로 작업 중인지, 누가 사용자의 권한 승인이나 입력을 기다리는지 즉시 파악할 수 있습니다. 에이전트가 사용자의 확인을 대기할 때는 노치 옆에 붉은색 알림 배지가 뜨고 캐릭터가 손을 흔들며 필요한 명령 실행이나 파일 수정 요청 내용을 명확하게 안내합니다. 사용량 한도에 도달하면 캐릭터들이 낚시를 떠나는 휴식 애니메이션을 보여주며, 전체 화면으로 영상을 시청하는 중에도 방해받지 않고 백그라운드 코딩 진행 상황을 체크할 수 있습니다.",
+   "launch_url_used": "https://agentvalley.app/?ref=producthunt",
+   "comment_summary": "메이커 Morse Chimwai는 여러 터미널에서 실행되는 Claude Code 세션을 맥북 노치에서 귀여운 픽셀 캐릭터로 관리할 수 있는 오픈소스 앱을 선보였습니다. 커뮤니티에서는 노치라는 독특한 공간 활용과 권한 대기 알림 기능에 큰 관심을 보이며 대기 시간 표시, Devcontainer 및 T3Code 연동 지원 여부를 문의했습니다. 메이커는 로컬 상태 파일 읽기 방식으로 가볍게 구현되었음을 설명하고 제안된 기능들을 차기 버전에서 순차적으로 반영하기 위해 GitHub 이슈 등록을 권장했습니다.",
+   "warnings": "macOS 노치가 있는 맥북 환경에 특화되어 있으며, 현재 Docker나 Devcontainer 등 컨테이너 내부에서 격리되어 실행되는 세션의 상태는 직접 감지하지 못합니다.",
+   "comments": [
+    {
+     "author": "Morse Chimwai",
+     "is_maker": true,
+     "text": "Hi, I'm Morse. I usually have a few Claude Code windows going at the same time, a hobby project, my day job, some experiment, and I wanted one place to see which agent is doing what in which project, if one is stuck, and if one is waiting for me to answer something. So now they all live in the notch.\n\nMy favorite part is the crew. Every agent gets a little pixel character with its own look, and they feel like my employees at this point. I can watch them go through the steps while they work.\n\nI'm not sure yet what's missing, people have to try it first. Maybe a phone app later, so I can answer from the gym or while I'm out getting food. Tell me what you'd want it to do next, and if anything is hard to read, like one of the crew's expressions, or if the UI makes you stop and think before you click.\n\nUpvote",
+     "kr": "안녕하세요, Morse입니다. 저는 대개 취미 프로젝트, 본업, 실험 등 여러 개의 Claude Code 창을 동시에 띄워두곤 하는데요, 어떤 프로젝트에서 어떤 에이전트가 무엇을 하고 있는지, 멈춰 있는 것은 없는지, 제 답변을 기다리는 것은 없는지 한곳에서 보고 싶었습니다. 그래서 이제 그 에이전트들이 모두 노치에 모여 살게 되었습니다.\n\n제가 가장 좋아하는 부분은 크루(Crew)입니다. 모든 에이전트는 고유한 외형의 작은 픽셀 캐릭터를 배정받아 이제는 마치 제 직원처럼 느껴집니다. 그들이 작업하는 동안 각 단계를 진행해 나가는 모습을 지켜볼 수 있죠.\n\n아직 무엇이 부족한지는 사람들이 먼저 사용해 봐야 알 수 있을 것 같습니다. 나중에 헬스장에 있거나 밥을 먹으러 나갔을 때도 답변할 수 있도록 모바일 앱을 만들 수도 있겠네요. 다음에 어떤 기능이 추가되었으면 좋겠는지, 혹은 크루의 표정 등 읽기 어려운 부분이나 클릭하기 전에 망설이게 만드는 UI가 있다면 알려주세요."
+    },
+    {
+     "author": "Leo Heo",
+     "is_maker": false,
+     "text": "could the card show how long an agent has been waiting? i'd want to answer the oldest one first",
+     "kr": "에이전트가 얼마나 오래 대기했는지 카드가 보여줄 수 있을까요? 가장 오래 기다린 것부터 먼저 답변해 주고 싶어서요."
+    },
+    {
+     "author": "Morse Chimwai",
+     "is_maker": true,
+     "text": "[@leoheo](https://www.producthunt.com/@leoheo) Good idea, the card doesn't show that yet. If you'd really use it, open an issue on GitHub and I'll add it in the next version for you: [https://github.com/morsechimwai/agent-valley/issues](https://github.com/morsechimwai/agent-valley/issues)",
+     "kr": "@leoheo 좋은 생각입니다. 카드에 아직 그 기능이 표시되지는 않습니다. 실제로 필요하시다면 GitHub에 이슈를 열어주세요, 다음 버전에서 추가해 드리겠습니다: https://github.com/morsechimwai/agent-valley/issues"
+    },
+    {
+     "author": "Anirudh Madhavan",
+     "is_maker": false,
+     "text": "The \"who's waiting on me\" row is the part I'd use most. Once I have three or four Claude Code sessions going, what costs me time is a session sitting on a permission prompt I didn't notice. How do you detect that state, through hooks or by reading the session output? Great call making it open source.",
+     "kr": "\"누가 나를 기다리고 있는가\" 행이 제가 가장 많이 사용할 기능이네요. 서너 개의 Claude Code 세션을 돌리다 보면 제가 눈치채지 못한 권한 프롬프트에서 멈춰 있는 세션 때문에 시간이 낭비되곤 합니다. 그 상태를 훅을 통해 감지하시나요, 아니면 세션 출력을 읽어서 감지하시나요? 오픈소스로 공개하신 것은 탁월한 선택입니다."
+    },
+    {
+     "author": "Morse Chimwai",
+     "is_maker": true,
+     "text": "[@anirudh\\_madhavan](https://www.producthunt.com/@anirudh_madhavan)  Thank you so much. Sounds like the same problem I kept running into. In the current version the crew can call out to you, and it's more than a notification sound. They might ask for your permission, tell you they're done, or let you know they're heading off for a break when you hit your limit. To answer your question: no hooks for that. Claude Code writes a small status file for each session, and the app reads it, so it knows when one is waiting on you.\n\nUpvote",
+     "kr": "@anirudh_madhavan 정말 감사드립니다. 제가 계속 겪었던 바로 그 문제와 같네요. 현재 버전에서는 크루가 여러분을 부를 수 있으며, 이는 단순한 알림음 그 이상입니다. 권한을 요청하거나, 작업이 끝났음을 알리거나, 사용량 한도에 도달했을 때 휴식을 취하러 간다고 알려줄 수도 있습니다. 질문에 답변드리자면: 훅은 사용하지 않습니다. Claude Code가 각 세션마다 작은 상태 파일을 작성하고, 앱이 이를 읽어 들여 누군가 사용자를 기다리고 있는지를 감지합니다."
+    },
+    {
+     "author": "Melvin Valster",
+     "is_maker": false,
+     "text": "Fun idea! How did you tackle the creation of the pixelated characters? Does it persist between sub-agents? And do you know if it works with Claude sessions started through e.g. T3Code?",
+     "kr": "재미있는 아이디어네요! 픽셀 캐릭터 제작은 어떻게 구현하셨나요? 서브 에이전트 간에도 캐릭터가 유지되나요? 그리고 혹시 T3Code 등을 통해 시작된 Claude 세션에서도 작동하는지 아시나요?"
+    },
+    {
+     "author": "Morse Chimwai",
+     "is_maker": true,
+     "text": "[@melvin\\_valster](https://www.producthunt.com/@melvin_valster) Thanks! The characters are 12×12 pixel grids written into the code row by row, one letter per colour (skin, hair, glasses, shirt). Each sub-agent type gets its own look, and each session keeps the same character, even after /clear or in a new worktree.\n\nAs for T3Code, I'll admit I didn't know it until now. If you'd like to use it with AgentValley, I'll try to add support in the next version.\n\nUpvote",
+     "kr": "@melvin_valster 감사합니다! 캐릭터들은 색상(피부, 머리카락, 안경, 셔츠)당 한 글자씩 코드에 행별로 작성된 12×12 픽셀 그리드입니다. 각 서브 에이전트 유형마다 고유한 외형이 부여되며, 각 세션은 /clear 명령 후나 새 워크트리에서도 동일한 캐릭터를 유지합니다.\n\nT3Code에 대해서는 솔직히 지금까지 알지 못했습니다. AgentValley와 함께 사용하고 싶으시다면 다음 버전에서 지원을 추가해 보도록 하겠습니다."
+    },
+    {
+     "author": "Morse Chimwai",
+     "is_maker": true,
+     "text": "[Morse Chimwai](https://www.producthunt.com/@morsechimwai)",
+     "kr": "@melvin_valster 한 가지만 더요: T3Code 지원을 원하신다면 GitHub에 이슈를 열어주실 수 있나요? https://github.com/morsechimwai/agent-valley/issues 그렇게 해주시면 놓치지 않고 챙길 수 있습니다."
+    },
+    {
+     "author": "Neeraj Nathany",
+     "is_maker": false,
+     "text": "seeing which agent is waiting on me right from the notch sounds handy! does it play a sound when one gets stuck or just change the icon?",
+     "kr": "노치에서 어떤 에이전트가 나를 기다리고 있는지 바로 볼 수 있다니 편리해 보이네요! 에이전트가 멈췄을 때 소리가 나나요, 아니면 아이콘만 바뀌나요?"
+    },
+    {
+     "author": "Morse Chimwai",
+     "is_maker": true,
+     "text": "[@neerajnathany](https://www.producthunt.com/@neerajnathany) Both. When one is waiting on you, a red number shows up next to the notch, its character waves, and it says what it needs, with a different line for running a command, editing a file or asking you something. It tells you when the work is done too. And if you hit your limit, the crew asks to take a break and goes fishing until it resets.\n\nUpvote",
+     "kr": "@neerajnathany 둘 다입니다. 에이전트가 사용자를 기다릴 때는 노치 옆에 빨간 숫자가 나타나고 캐릭터가 손을 흔들며 필요한 것을 말해줍니다. 명령어 실행, 파일 편집, 질문에 따라 각각 다른 대사가 나오죠. 작업이 완료되었을 때도 알려줍니다. 그리고 한도에 도달하면 크루들이 휴식을 요청하고 리셋될 때까지 낚시를 하러 갑니다."
+    },
+    {
+     "author": "Bruno Bueno",
+     "is_maker": false,
+     "text": "would it see sessions running in a devcontainer? the status file would be inside the container i guess",
+     "kr": "devcontainer에서 실행 중인 세션도 인식할 수 있나요? 상태 파일이 컨테이너 내부에 있을 것 같아서요."
+    },
+    {
+     "author": "Morse Chimwai",
+     "is_maker": true,
+     "text": "[@bbueno](https://www.producthunt.com/@bbueno) I don't think it does right now, you guessed right. Honestly, I don't really know devcontainers, sorry about that. But if you'd like to use it that way, I'll read up on it and see if I can make it work. If you open an issue on GitHub with how your setup looks, that would help a lot.\n\nUpvote",
+     "kr": "@bbueno 짐작하신 대로 현재는 인식하지 못하는 것 같습니다. 솔직히 devcontainer를 잘 알지 못해서 죄송합니다. 하지만 그런 방식으로 사용하고 싶으시다면 관련 내용을 공부해서 작동할 수 있도록 해보겠습니다. 설정 환경이 어떻게 되어 있는지 GitHub 이슈를 열어 공유해 주시면 큰 도움이 될 것입니다."
+    }
+   ],
+   "slug": "agentvalley",
+   "website": "https://agentvalley.app/"
+  },
+  {
+   "name": "Canva Craft",
+   "tagline_en": "Turn prompts into design-ready images you can edit",
+   "tagline_kr": "프롬프트를 레이어별로 편집 가능한 고해상도 디자인 이미지로 변환하는 AI 모델",
+   "image": "https://ph-files.imgix.net/5550db64-4466-474a-8cb3-c784b0c4cd8d.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Design Tools",
+    "Marketing",
+    "Photography",
+    "Presentation Software",
+    "Design & Creative",
+    "Graphic design tools"
+   ],
+   "upvotes": 120,
+   "comments_count": 1,
+   "maker": "Canva, Kate Ramakaieva, Jo Magno, Cliff Obrecht",
+   "price_model": "Free Options",
+   "price_detail": "Canva 플랫폼 내 기본 탑재 및 무료 체험 제공 (Canva Pro 구독 또는 개발자용 Craft API 호출량에 따른 과금)",
+   "desc_kr": "Canva Craft는 마케터와 크리에이터를 위해 단순한 그림이 아닌 실제 상업용 디자인에 즉시 활용할 수 있도록 개발된 Canva 최초의 자체 이미지 생성 AI 모델입니다. 일반 사진 데이터 위주로 학습해 픽셀만 나열하는 기존 모델들과 달리, 수백만 개의 전문 Canva 템플릿을 학습하여 구도와 레이아웃을 먼저 기획한 후 2K 고해상도로 렌더링합니다. 한국어를 포함한 55개 언어에서 왜곡 없이 선명하고 가독성 높은 텍스트를 정확한 위치에 렌더링할 수 있는 것이 가장 큰 강점입니다. 생성된 결과물은 통 이미지에 그치지 않고 개별 요소와 레이어로 분리되어 Canva 에디터 안에서 글자, 배경, 그래픽 요소를 자유롭게 개별 수정할 수 있습니다. 인스타그램 스토리부터 대형 웹 배너까지 30가지 이상의 가로세로 비율을 지원하며, 웹 서비스뿐만 아니라 외부 연동을 위한 전용 API로도 제공됩니다.",
+   "launch_url_used": "https://canva.com/?ref=producthunt",
+   "comment_summary": "헌터 Kate Ramakaieva는 기존 AI 이미지 모델들이 겪던 텍스트 뭉개짐과 레이아웃 제어 문제를 해결한 Canva의 첫 자체 이미지 생성 모델 Canva Craft 출시를 소개했습니다. 55개 언어의 선명한 텍스트 렌더링과 함께 결과물을 개별 레이어로 분리해 캔바 에디터에서 자유롭게 수정할 수 있는 실용성을 강조했습니다. 또한 30개 이상의 규격 비율 지원과 API 제공을 통해 일상적인 마케팅 그래픽 제작 워크플로우를 혁신할 수 있음을 전했습니다.",
+   "warnings": "현재 Canva 플랫폼과 API를 통해 제공되며, 고급 에셋 사용 및 무제한 고해상도 생성은 Canva Pro 구독 등 계정 플랜에 따라 제한될 수 있습니다.",
+   "comments": [
+    {
+     "author": "Kate Ramakaieva",
+     "is_maker": false,
+     "text": "I make visuals basically every week. And my biggest AI image pet peeve is text. You ask for a headline, you get alien letters.\n\nSo when I saw Canva built a model that plans the layout before drawing anything, I had to try it.\n\n  \nWhat got me:\n\n*   The text actually reads like text\n    \n*   Things go where you asked them to go\n    \n*   You can open the result in Canva and edit the pieces separately, not just regenerate and pray\n    \n*   Any size you need, from stories to banners\n    \n\nIt’s trained on real design templates, not just photos, and you can tell.\n\nIt’s live for everyone in Canva right now, so go break it! [https://www.canva.com/newsroom/news/canva-craft/](https://www.canva.com/newsroom/news/canva-craft/)\n\nUpvote (1)",
+     "kr": "Product Hunt 여러분 안녕하세요 👋\n\n저는 거의 매주 시각 디자인 작업을 하고 있습니다. 그런데 AI 이미지에서 가장 골치 아픈 문제는 바로 텍스트였습니다. 헤드라인을 써달라고 요청하면 외계어 같은 글자가 나오곤 하죠.\n\n그래서 Canva가 무언가를 그리기 전에 레이아웃부터 먼저 기획하는 모델을 만들었다는 소식을 듣고 꼭 써봐야만 했습니다.\n\n제가 감탄한 부분은 다음과 같습니다:\n\n* 텍스트가 실제로 읽을 수 있는 진짜 글자로 표현됩니다\n* 요소들이 요청한 바로 그 위치에 정확히 배치됩니다\n* 단순히 다시 생성하고 기도하는 대신 Canva에서 결과물을 열어 조각들을 개별적으로 편집할 수 있습니다\n* 인스타 스토리부터 웹 배너까지 필요한 모든 규격 크기를 지원합니다\n\n단순한 사진이 아니라 실제 디자인 템플릿을 기반으로 학습되었음을 확실히 느낄 수 있습니다.\n\n지금 Canva의 모든 사용자에게 공개되어 있으니 마음껏 사용해 보세요! https://www.canva.com/newsroom/news/canva-craft/"
+    }
+   ],
+   "slug": "canva",
+   "website": "https://canva.com/"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
