@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-10-27",
+    "url": "2026-10-27/",
+    "top_product": "Strawberry 1.0",
+    "count": 5,
+    "upvotes_total": 996,
+    "comments_total": 48
+  },
+  {
     "date": "2026-10-26",
     "url": "2026-10-26/",
     "top_product": "Moli by Lexmount",

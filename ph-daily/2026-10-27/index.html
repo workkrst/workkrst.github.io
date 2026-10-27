@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-10-27</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-10-27 · Top 5 · 수집 댓글 48개 · 수집 2026-10-27 12:31 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-10-27",
+ "collected_at": "2026-10-27 12:31 KST",
+ "summary": "오늘 프로덕트헌트 Top 5는 AI와 개발자·생산성 도구가 중심을 이룬 가운데, 단순 생성을 넘어 자율 워크플로우와 세부 제어권을 제공하는 실무형 제품들이 상위권을 차지했습니다. 특히 브라우저 탭 자동화부터 레이어 분리 편집, 초저비용 추론 인프라까지 에이전틱 워크플로우를 실질적으로 구현하려는 흐름이 뚜렷했습니다. 커뮤니티 댓글에서는 에이전트 동작의 실시간 가시성과 외부 알림 연동, 웹훅 보안 프록시 등 프로덕션 도입 시 필수적인 제어권과 안전성이 공통 핵심 논점으로 다뤄졌습니다.",
+ "notable": [
+  {
+   "slug": "strawberry",
+   "why": "Arc 브라우저 서비스 종료 흐름 속에서 파일이 아닌 브라우저 탭 위에서 에이전트 동작을 투명하게 확인하고 제어할 수 있는 점이 큰 주목을 받았습니다. 특히 수백 개 탭의 대규모 병렬 리서치 수행 후 Slack이나 Gmail로 완료 알림을 받아볼 수 있는 외부 협업 툴 연동성에 호평이 이어졌습니다."
+  },
+  {
+   "slug": "surgepix",
+   "why": "AI 이미지 생성 시 작은 수정 때문에 전체를 처음부터 다시 생성해야 했던 번거로움을 레이어 분리 편집과 인페인팅으로 해결해 큰 호응을 얻었습니다. 브라우저 없이 터미널의 Claude Code나 Cursor에서 에이전트 스킬로 직접 비주얼을 호출하고 편집할 수 있는 개발자 친화적 연동 방식이 댓글에서 특히 높이 평가되었습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Strawberry 1.0",
+   "tagline_en": "AI Browser that saves your team >100h/week",
+   "tagline_kr": "반복적인 웹 업무를 24시간 자동화하여 매주 100시간 이상 절약해 주는 AI 브라우저",
+   "image": "https://ph-files.imgix.net/c35c35a2-a69b-4705-ae4e-3611f14b13ff.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Productivity",
+    "Artificial Intelligence",
+    "Web browsers",
+    "Automation tools"
+   ],
+   "upvotes": 278,
+   "comments_count": 63,
+   "maker": "Charles Maddock, Arian Hanifi, Chris Messina",
+   "price_model": "Free Options",
+   "price_detail": "무료 체험 및 무료 플랜 제공 (Mac 및 Windows 지원, 프로덕트헌트 출시 기념 11월 8일까지 월간 플랜 50% 할인 코드 PH50 제공)",
+   "desc_kr": "Strawberry 1.0은 단순한 AI 챗봇이 아닌, 브라우저 환경에서 실제 반복적인 웹 업무를 대행하는 자율 AI 컴패니언(Companion) 플랫폼입니다. 영업 리드 수백 개를 동시에 병렬로 조사하거나, 화상 회의를 실시간으로 기록하고, 고객 후속 조치 이메일을 발송하는 등 팀이 미루기 쉬운 행정 잡무를 24시간 자율 수행합니다. 사용자는 사전 구축된 공식 컴패니언을 선택하거나 인터뷰 방식을 통해 몇 분 만에 자신만의 워크플로우를 학습하는 맞춤형 컴패니언을 제작할 수 있습니다. 특히 에이전트의 작업 과정을 실시간으로 투명하게 확인하고 일시 정지하거나 수정할 수 있으며, 팀원 전체와 동일한 에이전트를 손쉽게 공유할 수 있습니다. Mac과 Windows를 모두 지원하며, SOC 2 Type II 인증 및 유럽 데이터 레지던시를 준수하고 모든 외부 전송 전 승인을 요청하여 보안에 민감한 기업 팀도 안심하고 도입할 수 있습니다.",
+   "launch_url_used": "https://strawberrybrowser.com/?ref=producthunt",
+   "comment_summary": "메이커 Charles Maddock과 팀은 1년간의 베타를 거쳐 백그라운드에서 병렬로 웹 리서치와 반복 업무를 수행하는 AI 브라우저 Strawberry 1.0을 정식 출시했습니다. 커뮤니티는 아크(Arc) 브라우저의 방향성 전환 이후 등장한 점에 주목하며, 파일 단위가 아닌 브라우저 탭 위에서 실시간으로 에이전트의 동작을 직접 보며 제어할 수 있는 직관성과 팀 차원의 컴패니언 공유 방식을 호평했습니다. 아울러 슬랙이나 지메일 등 외부 협업 툴과의 알림 연동 기능과 브라우저 지문(fingerprint) 보안에 대한 활발한 질의응답이 진행되었습니다.",
+   "warnings": "대규모 병렬 웹 탐색 및 스크래핑 수행 시 웹사이트 접근 정책 및 요청 빈도에 유의해야 하며, 복잡한 워크플로우 실행 시 명확한 프롬프트 지침과 실행 단계별 검토가 권장됩니다.",
+   "comments": [
+    {
+     "author": "Charles Maddock",
+     "is_maker": true,
+     "text": "Hi everyone! Charles here, and I'm really excited to share Strawberry 1.0 with you 🍓  \n  \nA year ago we launched our beta here on Product Hunt. Back then, Strawberry was a simple browser with a built-in AI agent.  \n  \nToday it's a fully fledged agent platform that hundreds of teams, including Lovable, Tandem Health and ElevenLabs, use to run agents around the clock, transcribe meetings and build a shared company context.  \n  \nWe call these agents \"companions\".  \n  \n🫠 **The problem**  \n  \nDevelopers already have great AI agents that can work for hours on end, like Claude Code and Codex. But those tools are built for people who work in files, not tabs. These apps are powerful, but usually too complex for the average non-technical team.  \n  \nNewer assistants like Dots, Grok Bot and Instinct are much more delightful and intuitive, and they're great for consumers. But they're hard to rely on for real team work. You mostly work through one long chat and can't easily see what the agent is doing.  \n  \n🌐 **Why we built a browser**  \n  \nThe browser strikes the perfect balance between intuitive and powerful.  \n  \nEveryone knows how to use a browser, and it's where most of your team's work already happens. Your tools, your context and your logins are all there. The browser as the interface makes it much easier for e.g. sales, marketing and talent teams to get started with agents, while still being possible to build advanced systems that run on their own.  \n  \nWe're also big believers in the agentic web. Soon there will be trillions of AI agents communicating and trading with each other. With Strawberry, you are ready for that future, while your companions can still leverage today's internet.  \n  \n🧩 **What you get**  \n  \n• You can start with an official companion, like Sales Sally for sales or Talent Theo for recruiting, or create your own in a few minutes. Your companion interviews you and learns how you work.  \n• You can see and edit everything your companion knows and does: its skills, routines and memory.  \n• Big jobs run in parallel. Ask it to research 200 accounts and you get one finished sheet back.  \n• When a companion works well, share it, and your whole team can use it.  \n• Use any AI model you like. We're SOC 2 Type II compliant with EU data residency, and your companion always asks before it sends anything.  \n  \n🎁 **For the Product Hunt community:** get 50% off your first month on any monthly plan with code PH50, until 8 November.  \n  \n🚀 **Try it** for free at strawberrybrowser.com, on Mac and Windows.  \n  \nWhat's the first job you'd give your companion? Our whole team is in the comments all day, and we'll share the wackiest answers in our team chat 👀\n\nUpvote (15)",
+     "kr": "여러분 안녕하세요! Charles입니다. Strawberry 1.0을 여러분께 선보이게 되어 정말 기쁩니다 🍓\n\n1년 전 저희는 Product Hunt에서 베타 버전을 출시했습니다. 당시 Strawberry는 내장형 AI 에이전트가 탑재된 단순한 브라우저였습니다.\n\n오늘날 Strawberry는 Lovable, Tandem Health, ElevenLabs를 포함한 수백 개의 팀이 24시간 내내 에이전트를 구동하고, 회의를 전사 기록하며, 공유된 회사 컨텍스트를 구축하는 본격적인 에이전트 플랫폼으로 성장했습니다.\n\n저희는 이 에이전트들을 \"컴패니언(Companions)\"이라고 부릅니다.\n\n🫠 **문제점**\n\n개발자들에게는 이미 Claude Code나 Codex처럼 몇 시간이고 쉬지 않고 일할 수 있는 훌륭한 AI 에이전트가 있습니다. 하지만 그러한 도구들은 탭(tabs)이 아닌 파일(files)을 다루는 사람들을 위해 만들어졌습니다. 강력하긴 하지만, 기술적 배경이 없는 일반 팀에게는 지나치게 복잡합니다.\n\nDots, Grok Bot, Instinct와 같은 최신 어시스턴트들은 훨씬 유쾌하고 직관적이며 일반 소비자에게 훌륭합니다. 하지만 실제 팀 업무에서 신뢰하기는 어렵습니다. 주로 하나의 긴 채팅을 통해 작업하게 되며 에이전트가 내부에서 무엇을 하고 있는지 쉽게 확인하기 어렵기 때문입니다.\n\n🌐 **브라우저를 만든 이유**\n\n브라우저는 직관성과 강력함 사이에서 완벽한 균형을 이룹니다.\n\n누구나 브라우저 사용법을 알고 있으며, 팀의 대부분의 작업이 이미 브라우저에서 이루어집니다. 여러분의 도구, 컨텍스트, 로그인 정보가 모두 그곳에 있습니다. 브라우저를 인터페이스로 활용하면 영업, 마케팅, 채용 팀 등이 에이전트를 훨씬 쉽게 시작할 수 있으면서도, 스스로 실행되는 고급 시스템을 구축하는 것 또한 가능합니다.\n\n저희는 '에이전틱 웹(Agentic Web)'의 가능성 또한 굳게 믿고 있습니다. 머지않아 수조 개의 AI 에이전트가 서로 소통하고 거래하게 될 것입니다. Strawberry와 함께라면 오늘날의 인터넷을 컴패니언이 그대로 활용하면서도 그 미래를 대비할 수 있습니다.\n\n🧩 **제공 기능**\n\n• 영업을 위한 'Sales Sally'나 채용을 위한 'Talent Theo'와 같은 공식 컴패니언으로 시작하거나, 몇 분 만에 직접 맞춤형 컴패니언을 만들 수 있습니다. 컴패니언이 사용자를 인터뷰하며 업무 방식을 학습합니다.\n• 컴패니언이 알고 있는 지식과 행동(스킬, 루틴, 메모리)을 모두 확인하고 편집할 수 있습니다.\n• 대규모 작업은 병렬로 실행됩니다. 200개의 계정을 조사하도록 요청하면 완성된 시트 하나로 받아볼 수 있습니다.\n• 컴패니언이 효과적으로 작동하면 이를 공유하여 팀 전체가 함께 사용할 수 있습니다.\n• 원하는 어떤 AI 모델이든 사용 가능합니다. SOC 2 Type II 인증 및 EU 데이터 보관 규정을 준수하며, 컴패니언은 무언가를 외부로 전송하기 전에 항상 사용자에게 확인을 요청합니다.\n\n🎁 **Product Hunt 커뮤니티 혜택:** 11월 8일까지 할인 코드 PH50을 입력하시면 모든 월간 플랜의 첫 달 요금을 50% 할인해 드립니다.\n\n🚀 Mac과 Windows에서 strawberrybrowser.com을 통해 무료로 **체험해 보세요**.\n\n여러분의 컴패니언에게 가장 먼저 맡기고 싶은 작업은 무엇인가요? 저희 팀 전체가 오늘 온종일 댓글에 상주할 예정이며, 가장 기발한 답변은 저희 팀 채팅방에도 공유하겠습니다 👀\n\nUpvote (15)"
+    },
+    {
+     "author": "Tajik Ifrad",
+     "is_maker": false,
+     "text": "[@charles\\_maddock](https://www.producthunt.com/@charles_maddock) sounds really great for single user cases, but how does the whole team benefit from it?\n\nUpvote (2)",
+     "kr": "@charles_maddock 개인 사용 사례로는 정말 훌륭해 보이는데, 팀 전체 관점에서는 어떤 실질적인 혜택을 얻을 수 있나요?\n\nUpvote (2)"
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "[@charles\\_maddock](https://www.producthunt.com/@charles_maddock) Can companions keep their knowledge up to date automatically when our team's tools and workflows change???\n\nUpvote (1)",
+     "kr": "@charles_maddock 팀의 도구나 워크플로우가 변경될 때 컴패니언이 그에 맞춰 자동으로 지식을 최신 상태로 유지할 수 있나요???\n\nUpvote (1)"
+    },
+    {
+     "author": "Chris Messina",
+     "is_maker": false,
+     "text": "Good timing in the context of [Arc's sunsetting](https://www.producthunt.com/p/arc-browser/arc-is-sunsetting-on-december-22-2026-and-people-are-pissed)!\n\nCurious how you compare with other proactive agents like Dots, Grok Bot, Duet, et al?\n\nUpvote (3)",
+     "kr": "[Arc 브라우저의 서비스 종료 소식](https://www.producthunt.com/p/arc-browser/arc-is-sunsetting-on-december-22-2026-and-people-are-pissed) 맥락에서 아주 절묘한 타이밍이네요!\n\nDots, Grok Bot, Duet 등과 같은 다른 능동형(proactive) 에이전트들과 비교했을 때 어떤 차별점이 있는지 궁금합니다.\n\nUpvote (3)"
+    },
+    {
+     "author": "Charles Maddock",
+     "is_maker": true,
+     "text": "[@chrismessina](https://www.producthunt.com/@chrismessina) Yes! We loved Arc and it is a large part of the reason we fell in love with the browser!  \n  \nDots, Grok Bot, etc are super nice but IMO it's hard to build more complex workflows in them, it's hard to see what their agent is doing underneath the hood!  \n  \nWith Strawberry, we see teams within sales and recruiting building up serious workflows that e.g source hundreds of leads and book meetings on autopilot!  \n  \nThat's since Strawberry is a browser, it can open hundreds of tabs to source, do research, and scrape data, all on your device!  \n  \nDid you try it lately? :)\n\nUpvote (1)",
+     "kr": "@chrismessina 맞습니다! 저희도 Arc를 정말 사랑했고, 저희가 브라우저에 매료된 가장 큰 이유 중 하나였습니다!\n\nDots, Grok Bot 등도 매우 훌륭하지만 제 생각에는 그 안에서 복잡한 워크플로우를 구축하기가 어렵고 내부적으로 에이전트가 무엇을 하고 있는지 파악하기 어렵습니다!\n\nStrawberry를 사용하면 영업이나 채용 부서의 팀들이 수백 개의 리드를 발굴하고 미팅을 전자동으로 예약하는 등 본격적인 업무 워크플로우를 구축하고 있습니다!\n\nStrawberry는 브라우저이기 때문에 사용자 기기에서 직접 수백 개의 탭을 열어 소싱하고 리서치하며 데이터를 스크래핑할 수 있기 때문입니다!\n\n최근에 직접 사용해 보셨나요? :)\n\nUpvote (1)"
+    },
+    {
+     "author": "Chris Messina",
+     "is_maker": false,
+     "text": "[@charles\\_maddock](https://www.producthunt.com/@charles_maddock) just downloaded!\n\nUpvote",
+     "kr": "@charles_maddock 방금 다운로드했습니다!\n\nUpvote"
+    },
+    {
+     "author": "Neeraj Nathany",
+     "is_maker": false,
+     "text": "companions running agents all day for sales and recruiting folks is a nice step past dev tools. when one finishes something overnight, where does it tell you?\n\nUpvote (4)",
+     "kr": "영업과 채용 담당자를 위해 에이전트가 온종일 실행되는 컴패니언은 개발자 전용 도구를 넘어선 멋진 진전이네요. 밤새 작업을 마쳤을 때 결과는 어디로 알려주나요?\n\nUpvote (4)"
+    },
+    {
+     "author": "Sebastian Thunman",
+     "is_maker": true,
+     "text": "[@neerajnathany](https://www.producthunt.com/@neerajnathany) thanks! It shows up as a regular chat in your sidebar.\n\nUpvote (2)",
+     "kr": "@neerajnathany 감사합니다! 사이드바의 일반 채팅 형태로 표시됩니다.\n\nUpvote (2)"
+    },
+    {
+     "author": "Neeraj Nathany",
+     "is_maker": false,
+     "text": "[@sebastian\\_thunman](https://www.producthunt.com/@sebastian_thunman) ok that's simple, a normal chat in the sidebar. thanks Sebastian.\n\nUpvote",
+     "kr": "@sebastian_thunman 사이드바의 일반 채팅이라니 심플하네요. 알려주셔서 감사합니다 Sebastian.\n\nUpvote"
+    },
+    {
+     "author": "Arian Hanifi",
+     "is_maker": true,
+     "text": "[@neerajnathany](https://www.producthunt.com/@neerajnathany) it can answer you anywhere you want. Connect it with Slack, Gmail, Hubspot, or whatever tool you're using and it can notify you in there!\n\nUpvote (2)",
+     "kr": "@neerajnathany 원하시는 어느 곳으로든 답변을 보낼 수 있습니다. Slack, Gmail, HubSpot 또는 사용하시는 어떤 도구든 연결하면 해당 도구 내에서 바로 알림을 받아보실 수 있습니다!\n\nUpvote (2)"
+    },
+    {
+     "author": "Neeraj Nathany",
+     "is_maker": false,
+     "text": "[@coffecup25](https://www.producthunt.com/@coffecup25) good to know it can ping me in Slack or Gmail too. thanks Arian.\n\nUpvote (1)",
+     "kr": "@coffecup25 Slack이나 Gmail로도 알림을 받을 수 있다니 유용하네요. 알려주셔서 감사합니다 Arian.\n\nUpvote (1)"
+    },
+    {
+     "author": "Arian Hanifi",
+     "is_maker": true,
+     "text": "[@neerajnathany](https://www.producthunt.com/@neerajnathany) Anywhere else you would want it to ping you? Always open to suggestion on how we can make the product better!\n\nUpvote",
+     "kr": "@neerajnathany 그 외에 알림을 받고 싶으신 다른 플랫폼이 있으신가요? 제품을 더 훌륭하게 개선할 수 있는 제안은 언제나 환영합니다!\n\nUpvote"
+    }
+   ],
+   "slug": "strawberry",
+   "website": "https://strawberrybrowser.com/"
+  },
+  {
+   "name": "SurgePix",
+   "tagline_en": "AI visuals. Edit every layer. Agent-callable.",
+   "tagline_kr": "모든 레이어를 분리 편집할 수 있고 터미널 에이전트가 직접 호출하는 AI 비주얼 디자인 플랫폼",
+   "image": "https://ph-files.imgix.net/63c38e20-1271-4f3b-8ed2-1b7b30fed1c1.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Design Tools",
+    "Developer Tools",
+    "Artificial Intelligence",
+    "AI Generative Media",
+    "AI Designer"
+   ],
+   "upvotes": 230,
+   "comments_count": 87,
+   "maker": "ZHANG YICHI, Zac Zuo, charlotte, Emily Rae",
+   "price_model": "Free Options",
+   "price_detail": "무료 체험 제공 (웹 및 오픈소스 에이전트 스킬 지원, 브랜드 에셋 관리 및 고급 기능 플랜 운영)",
+   "desc_kr": "SurgePix는 일회성 생성에 그치는 기존 AI 이미지 도구의 한계를 넘어, 생성된 모든 이미지의 레이어를 자유롭게 분리하고 부분 수정할 수 있는 AI 비주얼 디자인 플랫폼입니다. 프레젠테이션 슬라이드나 마케팅 비주얼을 한 번 생성한 뒤 마음에 들지 않는 영역만 브러시로 칠해 인페인팅(Inpainting)하거나, 텍스트만 추출해 수정할 수 있어 처음부터 다시 생성할 필요가 없습니다. 회사의 로고, 컬러 팔레트, 폰트 등 브랜드 에셋을 한 번만 등록해 두면 모든 생성 및 편집 결과물이 일관된 브랜드 정체성을 유지하도록 보장합니다. 특히 개발자를 위한 오픈소스 에이전트 스킬을 제공하여, 브라우저를 켤 필요 없이 터미널의 Claude Code나 Cursor에서 에이전트가 직접 비주얼을 생성하고 편집하도록 연동할 수 있습니다. 내장된 디자이너 에이전트는 실시간 웹 검색까지 수행하여 최신 정보를 바탕으로 발표 자료와 인포그래픽을 즉시 디자인합니다.",
+   "launch_url_used": "https://surgepix.ai/?ref=producthunt",
+   "comment_summary": "메이커 ZHANG YICHI는 슬라이드나 이미지를 생성한 후 헤드라인이나 색상을 바꾸려고 매번 처음부터 다시 생성해야 했던 고통을 해결하기 위해 레이어 분리 편집 기능을 갖춘 SurgePix를 선보였습니다. 커뮤니티는 프레젠테이션 전체 레이아웃을 깨뜨리지 않고 특정 요소만 브러시나 디자이너 에이전트로 핀포인트 수정할 수 있다는 점과 터미널 코딩 에이전트 연동 지원에 큰 호응을 보였습니다. 특히 텍스트 수정 시 벡터 폰트 속성이 유지되는지 여부와 실시간 웹 검색 기반의 디자인 자동화 역량에 관한 질문들이 이어졌습니다.",
+   "warnings": "복잡한 그래픽의 경우 레이어 분리 시 경계선 디테일이나 배경 합성 자연스러움에 차이가 있을 수 있으며, 터미널 에이전트 연동 시 로컬 환경의 스킬 설정 및 API 토큰 사용량 관리가 필요합니다.",
+   "comments": [
+    {
+     "author": "ZHANG YICHI",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋\n\nI'm Yichi, the maker behind _SurgePix_.\n\n**_SurgePix puts the whole job in one place — no juggling a dozen tools. Its built-in design agent can even search the live web and design straight from what it finds._**\n\nIt started with a simple frustration: every AI image tool I tried was great at generating something new, but the moment I wanted to **_tweak a color_**, **_swap a headline_**, or **_keep things on-brand across a whole set of visuals_**, I was stuck starting over.\n\nThe latest models — _GPT Image 2.5_ and friends — are genuinely amazing at generating that first image, or that first slide.\n\nThe problem starts after: I'd generate a whole deck in one click, then spend an hour fixing headlines, swapping charts, and getting every slide back on-brand. **_That redo-from-scratch gap is exactly what SurgePix is built to close — for decks, and for every visual you make_**.\n\nSo we built SurgePix around three ideas:\n\n*   **_Edit, don't regenerate_**: brush over any area to repaint it, split a flat image into editable layers, or pull the text off an image to retype it\n    \n*   Upload your brand assets once, and every output stays on-brand\n    \n*   For developers: **_SurgePix ships as open-source agent skills_**, so Claude Code, Cursor, or any AI agent can generate and edit visuals for you — _right from your terminal, no browser needed_\n    \n\nWe're still early and shipping fast. Would love to hear what you think, and what you'd want SurgePix to do next.\n\n_👉_**_Try it free:_** [**_https://surgepix.ai_**](https://surgepix.ai/?utm_source=producthunt&utm_medium=maker_comment&utm_campaign=ph_launch_2026)\n\nUpvote (9)",
+     "kr": "안녕하세요 Product Hunt 👋\n\nSurgePix의 메이커 Yichi입니다.\n\n**SurgePix는 수십 가지 도구를 오갈 필요 없이 모든 작업을 한곳에서 처리합니다. 내장된 디자인 에이전트는 실시간 웹을 직접 검색하여 찾은 정보로 즉시 디자인을 완성할 수도 있습니다.**\n\n시작은 단순한 답답함 때문이었습니다. 제가 사용해 본 모든 AI 이미지 도구는 새로운 것을 생성하는 데는 뛰어났지만, **색상을 미세 조정**하거나, **헤드라인을 변경**하거나, **일련의 비주얼 전반에서 브랜드 통일성을 유지**하고 싶을 때마다 결국 처음부터 다시 시작해야만 했습니다.\n\nGPT Image 2.5와 같은 최신 모델들은 첫 번째 이미지나 첫 번째 슬라이드를 생성하는 데는 진정으로 놀랍습니다.\n\n진짜 문제는 그 이후에 시작됩니다. 클릭 한 번으로 프레젠테이션 전체를 생성한 뒤, 헤드라인을 고치고, 차트를 바꾸고, 모든 슬라이드를 브랜드 스타일에 맞추느라 한 시간을 허비하곤 했습니다. **처음부터 다시 만들어야 했던 그 간극을 메우기 위해 만들어진 것이 바로 SurgePix입니다. 슬라이드 덱뿐만 아니라 여러분이 만드는 모든 비주얼을 위해서요.**\n\n그래서 저희는 세 가지 핵심 아이디어를 중심으로 SurgePix를 구축했습니다:\n\n* **다시 생성하지 말고 편집하세요:** 원하는 영역을 브러시로 칠해 다시 그리거나, 평면 이미지를 편집 가능한 레이어로 분리하거나, 이미지에서 텍스트를 추출하여 다시 타이핑할 수 있습니다.\n* 브랜드 에셋을 한 번만 업로드해 두면 모든 결과물이 브랜드 가이드라인을 일관되게 유지합니다.\n* 개발자를 위해: **SurgePix는 오픈소스 에이전트 스킬로 제공되므로**, Claude Code, Cursor 또는 어떤 AI 에이전트든 브라우저를 켤 필요 없이 _터미널에서 직접_ 비주얼을 생성하고 편집할 수 있습니다.\n\n아직 초기 단계이지만 빠르게 배포하고 있습니다. 여러분의 생각과 앞으로 SurgePix에 바라는 기능을 듣고 싶습니다.\n\n👉 **무료로 체험해 보세요:** [https://surgepix.ai](https://surgepix.ai/?utm_source=producthunt&utm_medium=maker_comment&utm_campaign=ph_launch_2026)\n\nUpvote (9)"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "[@eeeeeach](https://www.producthunt.com/@eeeeeach) Congrats Yichi can I edit parts of an image without regenerating the whole thing?\n\nUpvote (1)",
+     "kr": "@eeeeeach Yichi 런칭 축하합니다! 전체를 다시 생성하지 않고 이미지의 특정 부분만 편집할 수 있나요?\n\nUpvote (1)"
+    },
+    {
+     "author": "ZHANG YICHI",
+     "is_maker": true,
+     "text": "[@shivam\\_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) Thanks, Shivam! Of course, you can use the **_inpainting image_** to circle the part you want to refine without even prompting a lot. Try it and tell me what you think!\n\nUpvote (1)",
+     "kr": "@shivam_kushwaha16 감사합니다 Shivam! 물론입니다, 인페인팅(inpainting) 기능을 사용해 수정하고 싶은 부분을 동그라미로 지정하면 긴 프롬프트 없이도 바로 다듬을 수 있습니다. 사용해 보시고 의견 남겨주세요!\n\nUpvote (1)"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "[@eeeeeach](https://www.producthunt.com/@eeeeeach) thankx Yichi i will try out and see how well it works\n\nUpvote (1)",
+     "kr": "@eeeeeach 감사합니다 Yichi, 직접 테스트해 보고 얼마나 잘 작동하는지 확인해 보겠습니다.\n\nUpvote (1)"
+    },
+    {
+     "author": "ZHANG YICHI",
+     "is_maker": true,
+     "text": "[@shivam\\_kushwaha16](https://www.producthunt.com/@shivam_kushwaha16) Looking forward！\n\nUpvote (1)",
+     "kr": "@shivam_kushwaha16 기대하고 있겠습니다!\n\nUpvote (1)"
+    },
+    {
+     "author": "Zepeng She",
+     "is_maker": false,
+     "text": "[@eeeeeach](https://www.producthunt.com/@eeeeeach) Nice job, Yichi!\n\nUpvote",
+     "kr": "@eeeeeach 멋진 작업이네요, Yichi!\n\nUpvote"
+    },
+    {
+     "author": "ZHANG YICHI",
+     "is_maker": true,
+     "text": "[@rocsheh](https://www.producthunt.com/@rocsheh) Thanks!\n\nUpvote",
+     "kr": "@rocsheh 감사합니다!\n\nUpvote"
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "[@eeeeeach](https://www.producthunt.com/@eeeeeach) Can SurgePix edit individual elements in a generated slide without changing the layout of the rest of the design???\n\nUpvote (1)",
+     "kr": "@eeeeeach SurgePix는 나머지 디자인의 레이아웃을 깨뜨리지 않고 생성된 슬라이드 내의 개별 요소만 편집할 수 있나요???\n\nUpvote (1)"
+    },
+    {
+     "author": "ZHANG YICHI",
+     "is_maker": true,
+     "text": "[@amrita\\_prajapati2](https://www.producthunt.com/@amrita_prajapati2) Yes! That is what we worked for. Every page of the slide could be split into multiple layers. You can either select one layer to refine(with our designer agent assistant) or just use the inpainting image quick menu to draw the part you want to change(this way you don't even have to split layers).\n\nUpvote",
+     "kr": "@amrita_prajapati2 네! 바로 그것을 위해 저희가 개발했습니다. 슬라이드의 각 페이지는 여러 개의 레이어로 분리될 수 있습니다. 특정 레이어 하나를 선택해 디자이너 에이전트 어시스턴트로 수정하거나, 퀵 메뉴의 인페인팅으로 변경하고 싶은 부분을 칠하면 레이어를 분리할 필요조차 없이 바로 수정할 수 있습니다.\n\nUpvote"
+    },
+    {
+     "author": "Zepeng She",
+     "is_maker": false,
+     "text": "Congrats to the Surge team on launching SurgePix! 🎉 [@eeeeeach](https://www.producthunt.com/@eeeeeach) Yichi !!  \n\nAs the founder of Surge team, seeing this product evolve to where it is today is genuinely emotional. Seeing it launch on PH today brings back a lot — the late nights, the messy whiteboards, the endless iterations, and the whole team pushing together to make it real. I'm no longer with the team, but I'm truly so proud of the Surge team — going from the v1 to here is a beautiful arc 👏  \n\nSurgePix tackles the exact pain I felt when building v1: generating with AI is fun, but editing is painful. Now you can edit every layer, repaint regions, swap text while staying on-brand, and even call agent skills from Claude Code / Cursor to generate visuals — this direction is spot on 🔥  \n\nEveryone, go try it and share your feedback !!!\n\nUpvote (3)",
+     "kr": "Surge 팀의 SurgePix 출시를 진심으로 축하합니다! 🎉 @eeeeeach Yichi !!\n\nSurge 팀의 창립자로서, 이 제품이 오늘날의 모습으로 발전한 것을 보니 정말 감회가 새롭습니다. 오늘 Product Hunt에 런칭된 모습을 보니 늦은 밤샘 작업, 낙서로 가득했던 화이트보드, 끝없는 이터레이션, 그리고 이를 실현하기 위해 함께 달렸던 전체 팀원들의 기억이 생생하게 떠오릅니다. 비록 저는 지금 팀을 떠났지만 Surge 팀이 진심으로 자랑스럽습니다. v1에서 여기까지 도달한 여정은 정말 아름다운 궤적입니다 👏\n\nSurgePix는 제가 v1을 구축할 때 느꼈던 정확한 고통을 해결합니다. AI로 생성하는 건 재미있지만 편집하는 건 고통스러웠죠. 이제 모든 레이어를 편집하고, 특정 영역을 다시 칠하고, 브랜드 통일성을 지키며 텍스트를 바꾸고, 심지어 Claude Code나 Cursor에서 에이전트 스킬로 비주얼을 생성할 수도 있습니다. 이 방향성은 완벽히 적중했습니다 🔥\n\n여러분 모두 꼭 써보시고 피드백을 공유해 주세요 !!!\n\nUpvote (3)"
+    },
+    {
+     "author": "ZHANG YICHI",
+     "is_maker": true,
+     "text": "[@rocsheh](https://www.producthunt.com/@rocsheh) Nice to see you! Thanks for continuing to support SurgePix!\n\nUpvote (1)",
+     "kr": "@rocsheh 다시 만나서 반가워요! SurgePix를 계속 응원해 주셔서 감사합니다!\n\nUpvote (1)"
+    },
+    {
+     "author": "Cassie Wang",
+     "is_maker": false,
+     "text": "Congrats! Looks clever. Does editing text keep it vector or does it rasterize ?\n\nUpvote (1)",
+     "kr": "축하합니다! 매우 영리해 보이네요. 텍스트를 편집할 때 벡터 속성이 유지되나요, 아니면 래스터화(이미지화)되나요?\n\nUpvote (1)"
+    }
+   ],
+   "slug": "surgepix",
+   "website": "https://surgepix.ai/"
+  },
+  {
+   "name": "MiniMax M3.1 Flash",
+   "tagline_en": "MiniMax’s Flash model, 3x faster and 70% cheaper for agents",
+   "tagline_kr": "이전 모델 대비 3배 빠르고 70% 저렴한 에이전트 전용 초고속 초저비용 파운데이션 모델",
+   "image": "https://ph-files.imgix.net/d9847daf-0cdc-4552-a2c7-b7dca2ebf1f5.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Artificial Intelligence",
+    "AI Infrastructure Tools",
+    "Foundation Models",
+    "Developer Tools"
+   ],
+   "upvotes": 189,
+   "comments_count": 5,
+   "maker": "MiniMax, Rohan Chaubey",
+   "price_model": "Free Options",
+   "price_detail": "입력 1M 토큰당 $0.15, 출력 1M 토큰당 $0.60, 캐시 입력 1M 토큰당 $0.015 (MiniMax API, M 플랜 구독 및 MiniMax Code 데스크톱 앱 지원)",
+   "desc_kr": "MiniMax M3.1 Flash는 AI 에이전트 작업, 코딩, 컴퓨터 제어(Computer Use), 사이버 보안 작업에 최적화된 MiniMax의 차세대 초경량 플래시 언어 모델입니다. 공식 런칭 전 'Space Bunny'라는 익명 모델로 200조 개 이상의 토큰을 처리하며 안정성과 실전 성능을 광범위하게 검증받았습니다. 공격적인 스파시티(Sparsity) 기법을 적용하여 온라인 추론 속도를 이전 대비 약 3배 향상시켰으며, 일상 사용 기준 초당 200개 이상의 토큰 출력 속도를 자랑합니다. 에이전트 워크플로우에 드는 비용을 70% 이상 대폭 절감하여 입력 100만 토큰당 $0.15, 출력 100만 토큰당 $0.60의 파격적인 단가로 제공됩니다. DeepSWE v1.1 73.7%, OSWorld V2 61.7 등 코딩 및 컴퓨터 조작 벤치마크에서 우수한 성적을 기록하며 저비용 고성능 에이전트 인프라로 주목받고 있습니다.",
+   "launch_url_used": "https://www.minimax.io/blog/minimax-m31f?ref=producthunt",
+   "comment_summary": "헌터 Rohan Chaubey는 익명으로 200조 토큰을 처리하며 검증을 거친 뒤 3배 빨라지고 70% 저렴해진 MiniMax M3.1 Flash 출시를 알렸습니다. 커뮤니티에서는 수많은 툴 호출과 자가 수정 루프를 반복해야 하는 AI 코딩 에이전트 구축에 있어 이 같은 파격적인 단가 인하와 초당 200토큰의 속도가 실질적인 게임 체인저가 될 것이라 평가했습니다. 다만 속도 대비 다단계 도구 호출 시의 정확도 유지 여부와 실제 완료 작업당 총비용을 면밀히 검증해야 한다는 현실적인 의견도 제시되었습니다.",
+   "warnings": "초고속 추론에 최적화된 경량 모델 특성상 고난도 복합 추론이나 다단계 도구 체이닝 시 프롬프트 지침 준수와 환각 여부를 사전에 모니터링해야 합니다.",
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "**MiniMax M3.1 Flash** is MiniMax’s next-generation Flash model, built for agentic tasks, coding, computer use and cybersecurity. MiniMax calls it a “generational leap” over its predecessor.\n\nAn early version ran anonymously as “Space Bunny”, and MiniMax says it processed over 200 trillion tokens before the official launch.\n\n**What’s new in M3.1 Flash:**\n\n*   About 3x faster online inference than its predecessor, with more aggressive sparsity improving inference efficiency\n    \n*   A 70% lower usage cost for agentic tasks\n    \n*   Output at 200+ tokens per second in everyday use, with a median of 170+\n    \n*   Stronger agentic, coding, computer use and cybersecurity performance\n    \n\n**Some numbers:**\n\n*   DeepSWE v1.1: 73.7%\n    \n*   OSWorld V2: 61.7 and ALE: 29.6, which MiniMax says rank first among Chinese models\n    \n*   BankerToolBench: 76.2\n    \n*   CyberGym: 82%, assessed by MiniMax’s internal security experts\n    \n\nPricing is flat at $0.15 per 1M input tokens, $0.60 per 1M output tokens and $0.015 per 1M cached input tokens.\n\nYou can use it through the MiniMax API, the M Plan subscription and the MiniMax Code desktop app. Good fit if you’re building coding or computer-use agents and want a fast, low-cost model.\n\nP.S. I hunt the latest and greatest launches in tech, SaaS and AI, follow to be notified **→** [@rohanrecommends](https://www.producthunt.com/@rohanrecommends)\n\nUpvote (4)",
+     "kr": "**MiniMax M3.1 Flash**는 에이전트 작업, 코딩, 컴퓨터 사용(Computer Use), 사이버 보안을 위해 구축된 MiniMax의 차세대 플래시 모델입니다. MiniMax는 이전 모델 대비 '세대적 도약'이라고 설명합니다.\n\n공식 출시 전 'Space Bunny'라는 익명으로 초기 버전이 운영되었으며, MiniMax에 따르면 정식 공개 전 이미 200조 개 이상의 토큰을 처리했다고 합니다.\n\n**M3.1 Flash의 새로운 점:**\n\n* 공격적인 스파시티(sparsity) 적용으로 추론 효율을 높여 이전 모델 대비 약 3배 빠른 온라인 추론 속도 제공\n* 에이전트 작업 실행 비용 70% 절감\n* 일상적인 사용 환경에서 초당 200개 이상의 토큰 출력 (중앙값 170+ 토큰/초)\n* 에이전트, 코딩, 컴퓨터 제어 및 사이버 보안 성능 대폭 강화\n\n**주요 벤치마크 수치:**\n\n* DeepSWE v1.1: 73.7%\n* OSWorld V2: 61.7 및 ALE: 29.6 (MiniMax 측 설명 기준 중국계 모델 중 1위)\n* BankerToolBench: 76.2\n* CyberGym: 82% (MiniMax 내부 보안 전문가 평가)\n\n가격은 입력 100만 토큰당 $0.15, 출력 100만 토큰당 $0.60, 캐시된 입력 100만 토큰당 $0.015로 책정되었습니다.\n\nMiniMax API, M 플랜 구독 및 MiniMax Code 데스크톱 앱을 통해 사용하실 수 있습니다. 빠르고 비용 부담이 적은 모델로 코딩 또는 컴퓨터 제어 에이전트를 구축하려는 분들께 매우 적합합니다.\n\nP.S. 저는 기술, SaaS, AI 분야의 최신 우수 프로덕트를 발굴하고 있으니 소식을 받아보시려면 팔로우해 주세요 → [@rohanrecommends](https://www.producthunt.com/@rohanrecommends)\n\nUpvote (4)"
+    },
+    {
+     "author": "Aaron Chowdhury",
+     "is_maker": false,
+     "text": "As someone who always uses up my weekly tokens, a cheaper more efficient model is a godsend.\n\nUpvote",
+     "kr": "매주 할당된 토큰을 다 써버리는 사용자 입장에서, 더 저렴하고 효율적인 모델은 정말 신의 선물과도 같네요.\n\nUpvote"
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The DeepSWE and OSWorld numbers are what I would look at first for coding work, more than raw tokens per second. For long agent loops, the question I keep coming back to is how it holds up when a task needs several tool calls and a correction mid-run — does the speed hold, or does accuracy drop off first?\n\nUpvote",
+     "kr": "코딩 작업의 경우 단순한 초당 토큰 속도보다는 DeepSWE와 OSWorld 수치를 먼저 살펴보게 됩니다. 긴 에이전트 루프의 경우, 여러 번의 도구 호출과 실행 중 중간 수정이 필요한 작업에서 얼마나 잘 버텨주는지가 핵심 의문입니다. 속도가 계속 유지되는지, 아니면 정확도가 먼저 떨어지는지 궁금하네요.\n\nUpvote"
+    },
+    {
+     "author": "Saad El Gueddari",
+     "is_maker": false,
+     "text": "the price makes this interesting for longer agent runs\n\ni would compare cost per finished task alongside tokens per second since retries can change the bill quite a bit\n\nUpvote (1)",
+     "kr": "긴 에이전트 실행에 있어서 가격 경쟁력이 확실히 흥미롭네요.\n\n재시도(retry)가 발생하면 청구 요금이 크게 달라질 수 있기 때문에 초당 토큰 수와 더불어 최종 완료된 작업당 비용(cost per finished task)을 함께 비교해 봐야 할 것 같습니다.\n\nUpvote (1)"
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Three times faster at 70 percent cheaper is the kind of change that quietly makes a whole agent workflow viable, and 200 tokens per second should make those long tool loops feel less like waiting.\n\nUpvote (1)",
+     "kr": "3배 빠르면서 70% 저렴하다는 것은 전체 에이전트 워크플로우를 실질적으로 실현 가능하게 만들어 주는 결정적인 변화입니다. 초당 200토큰의 속도라면 긴 도구 루프를 기다리는 답답함도 훨씬 덜 느껴질 것입니다.\n\nUpvote (1)"
+    }
+   ],
+   "slug": "minimax-4",
+   "website": "https://www.minimax.io/blog/minimax-m31f"
+  },
+  {
+   "name": "N8N Chat UI",
+   "tagline_en": "Beautiful, no-code, on-brand AI chat widgets for n8n",
+   "tagline_kr": "n8n 워크플로우에 연결하여 브랜드 맞춤형으로 웹사이트에 임베드하는 노코드 AI 챗 위젯 빌더",
+   "image": "https://ph-files.imgix.net/c59eca39-ac3f-4ae1-af4b-c628da9ffdd2.x-icon?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Developer Tools",
+    "Artificial Intelligence",
+    "No-Code",
+    "Advertising tools",
+    "Sales enablement"
+   ],
+   "upvotes": 163,
+   "comments_count": 76,
+   "maker": "Ross Jenkins, Dani Martin, Jonno Riekwel",
+   "price_model": "Payment Required",
+   "price_detail": "평생 라이선스 단일 구매 방식 (기본 $149이나 프로덕트헌트 출시 기념 $59 특가 + 2,500 무료 크레딧 제공, 카드 등록 없이 100 크레딧 무료 체험 가능)",
+   "desc_kr": "N8N Chat UI는 n8n 자동화 워크플로우를 활용하는 빌더, 에이전시, SaaS 기업을 위해 개발된 브랜드 맞춤형 노코드 AI 챗 위젯 빌더입니다. n8n 기본 챗 위젯의 디자인 및 기능적 한계를 극복하여 실시간 라이브 프리뷰를 보며 색상, 글꼴, 아바타, 웰컴 메시지, 커스텀 CSS를 완벽히 브랜딩할 수 있습니다. 텍스트 스트리밍 답변, 음성 입력, 파일 업로드, Markdown/HTML 렌더링뿐 아니라 아랍어와 히브리어 등 우횡서(RTL) 환경까지 빈틈없이 지원합니다. 웹훅 URL을 숨겨주는 관리형 위젯 보안, 도메인 제한, 지오펜싱, 호출 속도 제한, 실시간 분석 패널 등 프로덕션 환경에 필수적인 보호 기능을 갖추고 있습니다. 워드프레스, 윅스, 웹플로우, 쇼피파이 공식 플러그인과 공식 n8n 커뮤니티 노드를 지원하며, 자바스크립트 API와 MCP 서버를 통해 Claude나 Cursor에서도 위젯을 제어할 수 있습니다.",
+   "launch_url_used": "https://n8nchatui.com/?ref=producthunt",
+   "comment_summary": "디지털 에이전시를 운영하던 Ross와 Dani 팀은 n8n 커뮤니티에서 사랑받던 오픈 프로젝트를 인수하여 플러그인 생태계와 엔터프라이즈 보안 기능을 더한 N8N Chat UI를 공개했습니다. 커뮤니티에서는 n8n 기본 위젯에서 불가능했던 웹훅 URL 노출 방지(보안 프록시), 도메인 화이트리스트, 파일 및 음성 입력 지원에 찬사를 보냈습니다. 특히 $59 평생 라이선스(LTD) 혜택에 대한 호응과 함께 상담 도중 실제 상담원으로의 실시간 핸드오버(인간 개입) 기능 지원 계획에 대한 심도 있는 논의가 이뤄졌습니다.",
+   "warnings": "관리형(Managed) 프록시 위젯 기능을 이용할 경우 크레딧 소모가 발생하므로 월간 트래픽 및 사용량에 따른 크레딧 잔여분을 확인해야 하며, 자체 호스팅 연동 시 n8n 인스턴스의 CORS 및 웹훅 연결 상태를 점검해야 합니다.",
+   "comments": [
+    {
+     "author": "Ross Jenkins",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 Ross ([@ross\\_jenkins](https://www.producthunt.com/@ross_jenkins)) & Dani ([@dani\\_martin1](https://www.producthunt.com/@dani_martin1)), the owners of N8N Chat UI.  \n  \n**The problem**  \nn8n is brilliant for building AI agents, but its built-in chat widget is basic. Making it look like your brand means digging into HTML, CSS and JavaScript, and your webhook URL sits in the page source for anyone to find.  \n  \n**What we built**  \nA visual builder that turns any n8n workflow into a polished, on-brand chat widget. Customize it with a live preview, copy one snippet, and it's on your site. No code.  \nTry the builder yourself, no signup needed: [n8nchatui.com](https://n8nchatui.com/#widget-config-section)  \n  \n**Key features**  \n\n*   Popup or in-page widgets, fully themed: colors, fonts, avatars, welcome messages, custom CSS\n    \n\n  \n\n*   Streaming replies, voice input, file uploads, follow-up prompts, Markdown/HTML rendering\n    \n\n  \n\n*   RTL support for Arabic, Hebrew and Persian\n    \n\n  \n\n*   Managed widgets: hidden webhook, domain restrictions, geofencing, rate limits and real-time analytics\n    \n\n  \n\n*   MCP server: ask Claude, Cursor or VS Code to create and restyle widgets for you\n    \n\n  \n\n*   Official plugins for WordPress, Webflow, Shopify and Wix, plus an n8n community node\n    \n\n  \n  \n**For developers: it's no-code, but not locked down**  \n\n*   Send messages programmatically with sendMessage(): start a chat from a \"Ask about this product\" button, a form submission, a URL parameter, or after a visitor has been idle on the checkout page\n    \n\n  \n\n*   Event callbacks (onWidgetOpen, beforeSubmit, onResponseReceived, onError…) to hook the chat into your analytics or app logic\n    \n\n  \n\n*   Pass custom metadata (user ID, plan, current page) to your n8n workflow with every message\n    \n\n  \n\n*   Change the theme and starter prompts on the fly with updateTheme() and updatePrompts(), no reload needed\n    \n\n  \n\n*   Session keys to keep separate conversations per page or per user\n    \n\n  \n\n*   Works with any backend that returns JSON, not only n8n\n    \n\n  \n  \n**For agencies**  \n\n*   Build a branded chat widget for every client in minutes, and clone widgets to reuse your best setups\n    \n\n  \n\n*   Help your clients turn more website visitors into leads and sales\n    \n\n  \n\n*   Show clients the results in the analytics panel, with message counts you can use to charge them per message\n    \n\n  \n  \n**How pricing works**  \nOne paid plan: a lifetime license. Pay once, never pay again. You can also try it free with 100 credits, no card needed.  \n  \n**How it started**  \nN8N Chat UI launched on the n8n community forum in April 2025 to fix a problem every n8n builder runs into: you build a great AI agent, put it on your website, and get a generic chat window with hardly any options to match your brand, unless you write the code yourself.  \n  \nIt caught on. More than 2,700 people have built widgets with it, and a lot of what shipped along the way began as requests from the community: session management, a free way to get started, streaming replies, voice notes and file uploads.  \n  \n**Why we bought it**  \nIn August 2026, we bought N8N Chat UI from its original creator, and Nicholas and Daniel from Ross's team at DigitalME joined us to build it out. We could see how many people already relied on it, because it fixes what n8n's own chat widget can't. And we could see how much further it could go: more advanced features, and a library of ready-made n8n recipes we're building to give to the community for free.  \n  \nOur first big step is getting it onto the platforms people actually build with: official plugins for WordPress, Wix, Webflow and Shopify, plus an n8n community node that replaces the usual webhook wiring.  \n  \n🎁 Product Hunt offer: $90 off the lifetime license ($59 instead of $149), plus 2,500 free credits to try Managed widgets  \n  \n**We'd love your feedback**: which integrations or features should we build next? Drop them below.  \n  \nThanks to [@jonnotie](https://www.producthunt.com/@jonnotie) for hunting us, and to the PH community!  \nQuestions or feedback? Email us at [hello@n8nchatui.com](mailto:hello@n8nchatui.com), or connect with me on [LinkedIn](https://www.linkedin.com/in/ross-jenkins-97888950).  \n  \n— Ross & Dani\n\nUpvote (12)",
+     "kr": "안녕하세요 Product Hunt 👋 N8N Chat UI의 운영자 Ross([@ross_jenkins](https://www.producthunt.com/@ross_jenkins))와 Dani([@dani_martin1](https://www.producthunt.com/@dani_martin1))입니다.\n\n**문제점**\nn8n은 AI 에이전트를 구축하기에 훌륭하지만 기본 내장된 챗 위젯은 너무나 단순합니다. 브랜드에 맞게 꾸미려면 HTML, CSS, JavaScript를 직접 파고들어야 하고, 웹훅 URL이 페이지 소스에 그대로 노출되어 누구나 찾아낼 수 있는 위험이 있었습니다.\n\n**저희가 만든 것**\n어떤 n8n 워크플로우든 세련된 브랜드 맞춤형 챗 위젯으로 변환해 주는 비주얼 빌더입니다. 실시간 미리보기를 보며 커스터마이징하고 코드 한 줄만 복사하면 사이트에 즉시 적용됩니다. 코딩은 필요 없습니다.\n회원가입 없이 빌더를 직접 사용해 보세요: [n8nchatui.com](https://n8nchatui.com/#widget-config-section)\n\n**주요 기능**\n* 팝업형 또는 페이지 내장형 위젯, 완전한 테마 설정 지원: 색상, 글꼴, 아바타, 웰컴 메시지, 커스텀 CSS\n* 스트리밍 답변, 음성 입력, 파일 업로드, 후속 질문 추천 프롬프트, Markdown/HTML 렌더링\n* 아랍어, 히브리어, 페르시아어를 위한 RTL(우횡서) 완벽 지원\n* 관리형(Managed) 위젯: 웹훅 숨김, 도메인 제한, 지오펜싱, 호출 속도 제한, 실시간 분석\n* MCP 서버: Claude, Cursor, VS Code에 요청하여 위젯 생성 및 스타일 수정 가능\n* WordPress, Webflow, Shopify, Wix 공식 플러그인 및 n8n 커뮤니티 노드 제공\n\n**개발자를 위한 기능: 노코드이지만 갇혀있지 않습니다**\n* sendMessage()로 프로그래밍 방식 메시지 전송: '상품 문의' 버튼, 폼 제출, URL 파라미터, 결제 페이지 체류 시간 기반 등으로 채팅 시작\n* 이벤트 콜백(onWidgetOpen, beforeSubmit, onResponseReceived, onError 등)을 통해 분석 도구 및 앱 로직 연동\n* 메시지마다 커스텀 메타데이터(유저 ID, 플랜, 현재 페이지 등)를 n8n 워크플로우로 전달\n* updateTheme() 및 updatePrompts()로 새로고침 없이 실시간 테마 및 프롬프트 동적 변경\n* 페이지별 또는 사용자별로 대화를 격리 보관하는 세션 키 지원\n* n8n뿐만 아니라 JSON을 반환하는 모든 백엔드와 연동 가능\n\n**에이전시를 위한 기능**\n* 몇 분 만에 고객사별 브랜드 맞춤형 챗 위젯 구축 및 최적 설정 복제 재사용\n* 웹사이트 방문자를 리드와 매출로 전환하도록 고객 지원\n* 분석 패널에서 메시지 수를 확인하여 메시지당 과금 모델로 고객에게 청구 가능\n* 어떻게 가격이 책정되나요: 평생 라이선스 단일 유료 플랜. 한 번 결제하면 추가 결제가 없습니다. 카드 등록 없이 100 크레딧으로 무료 체험도 가능합니다.\n\n**시작 배경**\nN8N Chat UI는 2025년 4월 n8n 커뮤니티 포럼에서 모든 n8n 빌더가 겪는 문제를 해결하기 위해 시작되었습니다. 훌륭한 AI 에이전트를 만들어 웹사이트에 올려도 코드를 직접 짜지 않으면 브랜드와 어울리지 않는 밋밋한 채팅창만 나왔기 때문입니다. 큰 반응을 얻어 2,700명 이상의 유저가 위젯을 만들었고 세션 관리, 무료 시작 플랜, 스트리밍 답변, 음성 메모, 파일 업로드 등 많은 기능이 커뮤니티의 요청으로 추가되었습니다.\n\n**인수한 이유**\n2026년 8월 저희는 원 개발자로부터 N8N Chat UI를 인수했고 Ross의 DigitalME 팀의 Nicholas와 Daniel이 합류하여 기능을 본격 확장했습니다. n8n 자체 위젯의 한계를 해결해 주어 이미 많은 분들이 의존하고 있는 것을 보았고, 더 나아가 커뮤니티에 무료로 제공할 완성형 n8n 레시피 라이브러리 등 무한한 확장성을 확신했습니다.\n첫 번째 단계로 실제 빌더들이 사용하는 플랫폼에 맞춘 WordPress, Wix, Webflow, Shopify 공식 플러그인과 복잡한 웹훅 설정을 대체하는 n8n 커뮤니티 노드를 출시했습니다.\n\n🎁 Product Hunt 혜택: 평생 라이선스 $90 할인 ($149 -> $59) 및 관리형 위젯용 2,500 무료 크레딧 제공\n\n피드백을 환영합니다: 다음에 어떤 통합이나 기능을 구축하면 좋을까요? 아래 댓글로 남겨주세요.\n헌팅해 준 @jonnotie와 PH 커뮤니티에 감사드립니다!\n질문이나 피드백은 hello@n8nchatui.com 또는 제 링크드인으로 언제든 연락해 주세요.\n\n— Ross & Dani\n\nUpvote (12)"
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "[@ross\\_jenkins](https://www.producthunt.com/@ross_jenkins)  [@dani\\_martin1](https://www.producthunt.com/@dani_martin1)  [@jonnotie](https://www.producthunt.com/@jonnotie) How do you protect webhook URLs from being exposed in the browser?\n\nUpvote (4)",
+     "kr": "@ross_jenkins @dani_martin1 @jonnotie 웹훅 URL이 브라우저 상에 노출되지 않도록 어떻게 보호하나요?\n\nUpvote (4)"
+    },
+    {
+     "author": "Dani Martin",
+     "is_maker": true,
+     "text": "[@ross\\_jenkins](https://www.producthunt.com/@ross_jenkins)  [@jonnotie](https://www.producthunt.com/@jonnotie)  [@vipul\\_kumar1280](https://www.producthunt.com/@vipul_kumar1280) That's exactly what Managed widgets are for. The visitor's browser never sees your n8n webhook URL.\n\nHow it works:\n\n*   **The browser only talks to us.** Your embed code points to our proxy ([proxy.n8nchatui.com/api/chat/your-widget](http://proxy.n8nchatui.com/api/chat/your-widget)). Your real webhook URL is stored encrypted on our side and isn't included in anything we send to the page.\n    \n*   **We forward each message to n8n from our server.** If you turn on authentication on your n8n webhook (Basic Auth, Header Auth or JWT), we add those credentials on the way through. They never reach the browser either, and your webhook rejects anything that doesn't come through us.\n    \n*   **You decide who can use it.** Domain restrictions (the widget only loads on your sites), country restrictions and per-visitor rate limits are all set in the dashboard.\n    \n\nWith a Standalone widget, the browser connects straight to your n8n, so the webhook URL is in your page code. That's fine for plenty of uses, but if keeping the URL private matters to you, use Managed.\n\n— Dani\n\nUpvote (4)",
+     "kr": "@ross_jenkins @jonnotie @vipul_kumar1280 바로 그것을 위해 관리형(Managed) 위젯이 존재합니다. 방문자의 브라우저에는 n8n 웹훅 URL이 절대 노출되지 않습니다.\n\n작동 원리:\n\n* **브라우저는 저희 서버와만 통신합니다:** 임베드 코드는 저희 프록시(proxy.n8nchatui.com/api/chat/your-widget)를 가리킵니다. 실제 웹훅 URL은 저희 쪽에 암호화되어 저장되며 페이지로 전송되는 어떤 데이터에도 포함되지 않습니다.\n* **저희 서버에서 n8n으로 각 메시지를 전달합니다:** n8n 웹훅에 인증(Basic Auth, Header Auth, JWT)을 설정해 두시면 프록시를 통과할 때 해당 자격 증명을 추가합니다. 이 정보 역시 브라우저에 도달하지 않으며 웹훅은 저희를 거치지 않은 요청을 모두 거부합니다.\n* **사용 권한을 직접 제어합니다:** 도메인 제한(지정된 사이트에서만 위젯 로드), 국가 제한(지오펜싱), 방문자별 호출 빈도 제한을 대시보드에서 설정할 수 있습니다.\n\n스탠드얼론(Standalone) 위젯의 경우 브라우저가 n8n과 직접 연결되므로 페이지 코드에 웹훅 URL이 포함됩니다. 일반적인 용도로는 충분하지만 URL 비공개가 중요한 환경이라면 Managed 위젯을 사용하시면 됩니다.\n\n— Dani\n\nUpvote (4)"
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "[@ross\\_jenkins](https://www.producthunt.com/@ross_jenkins)  [@jonnotie](https://www.producthunt.com/@jonnotie)  [@dani\\_martin1](https://www.producthunt.com/@dani_martin1) Got it, thanks for explaining! The proxy approach makes a lot of sense.\n\nUpvote (6)",
+     "kr": "@ross_jenkins @jonnotie @dani_martin1 이해했습니다, 설명해 주셔서 감사합니다! 프록시 방식이 매우 합리적이네요.\n\nUpvote (6)"
+    },
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "🔌 Plugged in\n\nMany congratulations on the launch Ross and Dani! :)\n\nGood to see there is a WordPress plugin as I plan to build my personal website on WordPress soon.\n\n[@n8n](https://www.producthunt.com/products/n8n-io) builder community creates powerful automations, but giving visitors a polished, on-brand chat experience has traditionally taken extra frontend work. This seemingly turns those workflows into a clean, production-ready chat interface in minutes. Love it!!\n\nUpvote (7)",
+     "kr": "🔌 Plugged in\n\nRoss와 Dani의 성공적인 출시를 축하합니다! :)\n\n조만간 워드프레스로 개인 웹사이트를 구축할 계획인데 워드프레스 플러그인이 제공된다니 반갑네요.\n\nn8n 빌더 커뮤니티가 강력한 자동화를 만들어내고 있지만, 방문자에게 브랜드에 걸맞은 세련된 채팅 경험을 제공하려면 기존에는 프론트엔드 작업이 추가로 필요했습니다. 이 도구는 그러한 워크플로우를 단 몇 분 만에 깔끔한 프로덕션급 채팅 인터페이스로 바꿔주는 것 같네요. 정말 마음에 듭니다!!\n\nUpvote (7)"
+    },
+    {
+     "author": "Dani Martin",
+     "is_maker": true,
+     "text": "[@rohanrecommends](https://www.producthunt.com/@rohanrecommends) Thanks so much, Rohan, and thank you for all your help getting us to launch day! 🙏\n\nYou've summed up why we built this better than we have. The n8n community builds brilliant things, and the last step of making them look good on a real website shouldn't be what holds them back.\n\nThe WordPress plugin should suit you well. You install it, connect your workflow, and the widget appears across your whole site with no code. Here's the setup guide for when you're ready: [https://n8nchatui.com/plugins/wordpress](https://n8nchatui.com/plugins/wordpress)\n\nSend us the link when the site's live. We'd love to see it, and we're happy to help if you get stuck setting it up.\n\n— Dani & Ross\n\nUpvote (6)",
+     "kr": "@rohanrecommends Rohan 정말 감사드리고, 런칭일까지 많은 도움을 주셔서 고맙습니다! 🙏\n\n저희가 만든 이유를 저희보다 훨씬 잘 요약해 주셨네요. n8n 커뮤니티는 정말 훌륭한 결과물들을 만들어내고 있으며, 이를 실제 웹사이트에서 멋지게 보여주는 마지막 단계가 걸림돌이 되어서는 안 된다고 생각했습니다.\n\n워드프레스 플러그인이 잘 맞으실 겁니다. 설치하고 워크플로우를 연결하기만 하면 코드 한 줄 없이 사이트 전체에 위젯이 표시됩니다. 준비되셨을 때 참고하실 수 있는 가이드 링크를 남겨드립니다: https://n8nchatui.com/plugins/wordpress\n\n사이트가 오픈되면 링크 꼭 보내주세요. 구경하고 싶고 설정 중 막히는 부분이 있다면 기꺼이 도와드리겠습니다.\n\n— Dani & Ross\n\nUpvote (6)"
+    },
+    {
+     "author": "Cal",
+     "is_maker": false,
+     "text": "Love the interactive builder and how easy it is to set up for those less technical. Is there any way you could populate it with some session context, ie the logged in user?\n\nBest of luck with the launch, will give it a try!\n\nUpvote (6)",
+     "kr": "대화형 빌더와 기술적 지식이 적은 사용자도 쉽게 설정할 수 있는 점이 정말 마음에 듭니다. 로그인한 사용자와 같은 세션 컨텍스트를 위젯에 주입할 수 있는 방법이 있나요?\n\n런칭 성공을 기원하며 직접 테스트해 보겠습니다!\n\nUpvote (6)"
+    },
+    {
+     "author": "Dani Martin",
+     "is_maker": true,
+     "text": "[@calvinagh](https://www.producthunt.com/@calvinagh) Thanks, and yes! You can add any context you like to the embed code as \"metadata\", and it's sent to your n8n workflow with every message. For a logged-in user, have your site fill in their details when the page loads (a user ID, email, plan, whatever helps). Your workflow then sees who it's talking to from the first message, so it can greet them by name, look up their orders, and so on.\n\nTwo related tips:\n\n*   Give each logged-in user their own session key, so they get their own conversation, kept separate from anyone else who uses the same browser.\n    \n*   If the details change mid-visit, for example they log in after the chat has started, you can update the metadata before each message is sent.\n    \n\nOne thing to watch: metadata comes from the browser, so treat it as \"who the page says this is\". If your workflow will show private data like orders or account details, send a signed token from your backend as well and check it in n8n.\n\nThe docs have copy-and-paste examples: [https://n8nchatui.com/docs/configuration/metadata](https://n8nchatui.com/docs/configuration/metadata)\n\nLet us know how you get on!\n\n— Dani\n\nUpvote (5)",
+     "kr": "@calvinagh 감사드리며, 네 가능합니다! 임베드 코드에 'metadata' 항목으로 원하는 모든 컨텍스트를 추가할 수 있으며, 이 정보는 메시지가 전송될 때마다 n8n 워크플로우로 전달됩니다. 로그인한 사용자의 경우 페이지가 로드될 때 사이트에서 해당 정보(사용자 ID, 이메일, 플랜 등)를 채워 넣도록 하면 됩니다. 그러면 워크플로우가 첫 메시지부터 대화 상대가 누구인지 파악하여 이름으로 인사하고 주문 내역을 조회하는 등의 작업이 가능합니다.\n\n관련 팁 두 가지:\n* 로그인한 사용자마다 고유한 세션 키를 부여하면 동일한 브라우저를 사용하는 다른 사람과 분리된 독립적인 대화 기록을 유지할 수 있습니다.\n* 대화가 시작된 후 로그인하는 등 방문 도중 정보가 변경되면 각 메시지 전송 전에 메타데이터를 동적으로 업데이트할 수 있습니다.\n\n한 가지 유의점: 메타데이터는 브라우저에서 전달되므로 '페이지가 주장하는 사용자 신원'으로 간주해야 합니다. 워크플로우에서 주문 내역이나 계정 세부정보 같은 민감한 비공개 데이터를 표시할 계획이라면 백엔드에서 서명된 토큰(signed token)을 함께 전송하여 n8n에서 검증하는 것이 좋습니다.\n\n문서에 복사해서 쓸 수 있는 예제가 있습니다: https://n8nchatui.com/docs/configuration/metadata\n\n사용해 보시고 어떠셨는지 알려주세요!\n\n— Dani\n\nUpvote (5)"
+    },
+    {
+     "author": "S.S. Rahman",
+     "is_maker": false,
+     "text": "The LTDs are the way to go in the AI age. Question, is the lifetime license separate from any usage costs associated with n8n itself??\n\nUpvote (6)",
+     "kr": "AI 시대에는 평생 라이선스(LTD)가 정답이죠. 질문이 있는데요, 이 평생 라이선스는 n8n 자체에서 발생하는 사용 비용과는 별개인가요??\n\nUpvote (6)"
+    },
+    {
+     "author": "Dani Martin",
+     "is_maker": true,
+     "text": "[@syed\\_shayanur\\_rahman](https://www.producthunt.com/@syed_shayanur_rahman) Yes, they're completely separate. The lifetime license is for the widget itself. Your n8n and AI costs stay with whoever you already pay:\n\n*   **N8N Chat UI license ($59 during launch):** unlimited Standalone widgets, all the customisation, footer removal. You pay us nothing per message, because messages go straight from the widget to your own n8n.\n    \n*   **n8n:** whatever your setup already costs. On n8n Cloud, each chat message runs your workflow once, so it counts towards your plan's executions. If you self-host, it's just your server.\n    \n*   **AI model:** if your workflow calls OpenAI, Claude or similar, those token costs go to that provider as usual.\n    \n\nSo we never take a cut of usage. The one exception is Managed widgets, our hosted option with the hidden webhook, domain locks and analytics, which run on credits. The launch license includes 2,500 Managed credits that never expire, so you can try that side for free too.\n\nOne thing to be upfront about: the license works forever and includes a year of updates and priority support. After that, updates are an optional add-on. You don't have to renew to keep using it.\n\n— Dani\n\nUpvote (4)",
+     "kr": "@syed_shayanur_rahman 네, 완전히 별개입니다. 평생 라이선스는 위젯 자체에 대한 것입니다. n8n 및 AI 관련 비용은 기존에 지불하시던 곳에 그대로 청구됩니다:\n\n* **N8N Chat UI 라이선스 (런칭 특가 $59):** 무제한 스탠드얼론 위젯, 모든 커스터마이징, 하단 푸터 로고 제거. 메시지가 위젯에서 본인의 n8n으로 직접 전달되므로 메시지당 비용을 저희에게 지불하지 않습니다.\n* **n8n:** 기존 설정 비용 그대로입니다. n8n Cloud의 경우 각 채팅 메시지가 워크플로우를 1회 실행하므로 플랜의 실행 횟수에 반영됩니다. 자체 호스팅이라면 본인 서버 비용만 발생합니다.\n* **AI 모델:** 워크플로우에서 OpenAI, Claude 등을 호출한다면 해당 토큰 비용은 평소처럼 해당 제공업체에 직접 지불됩니다.\n\n따라서 저희는 사용량에 대한 수수료를 전혀 취하지 않습니다. 유일한 예외는 크레딧으로 운영되는 웹훅 숨김, 도메인 잠금, 분석 기능이 포함된 호스팅 옵션인 관리형(Managed) 위젯입니다. 이번 런칭 라이선스에는 만료되지 않는 2,500개의 관리형 크레딧이 기본 포함되어 있어 해당 기능도 무료로 체험해 보실 수 있습니다.\n\n투명하게 말씀드리자면, 라이선스는 영구 작동하며 1년간의 업데이트와 우선 지원이 포함됩니다. 그 이후의 업데이트는 선택 사항이며 계속 사용하기 위해 갱신할 필요는 없습니다.\n\n— Dani\n\nUpvote (4)"
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": false,
+     "text": "Is this to build chat support with n8n?  \nand can we take over the chat ?\n\nUpvote (6)",
+     "kr": "이 도구는 n8n으로 고객 지원 채팅을 구축하기 위한 것인가요? 그리고 사람이 채팅을 실시간으로 넘겨받을(take over) 수도 있나요?\n\nUpvote (6)"
+    },
+    {
+     "author": "Dani Martin",
+     "is_maker": true,
+     "text": "[@bengeekly](https://www.producthunt.com/@bengeekly) Yes, that's exactly what it's for. N8N Chat UI is the chat window your visitors see, and your n8n workflow is the brain behind it. You build the support logic in n8n (an AI agent answering from your docs, order lookups, ticket creation, whatever you need), and the widget gives it a branded chat on your website, WordPress, Wix or Webflow.\n\nOn taking over the chat: a person can already answer inside the chat. When a visitor needs a human, your workflow sends their message to Slack using n8n's \"send and wait for response\" option. Someone on your team replies in Slack, and the answer appears in the chat as the next reply. The catch is timing: it works best when the person replies within about a minute, and staff can only reply to the visitor's messages, not start new ones.\n\nFull live takeover, where a person can join the conversation at any time and send messages whenever they like, isn't there yet. We've sketched out how to add it properly using the conversation's session ID, and it's high on our list after today.\n\nOther ways people hand off in the meantime:\n\n*   **Email handoff:** when the bot can't help, it takes the visitor's email and sends the whole conversation to your inbox for a person to follow up. Recipe: [https://n8nchatui.com/recipes/ai-faq-chatbot-email-handoff](https://n8nchatui.com/recipes/ai-faq-chatbot-email-handoff)\n    \n*   **Helpdesk ticket:** the workflow opens a ticket with the conversation attached, so it lands in your usual support queue. Recipe: [https://n8nchatui.com/recipes/zendesk-support-chatbot](https://n8nchatui.com/recipes/zendesk-support-chatbot)\n    \n\nThanks for asking, it helps us decide what to build next. 👍\n\n— Dani\n\nUpvote (4)",
+     "kr": "@bengeekly 네, 바로 그 용도가 맞습니다. N8N Chat UI는 방문자가 보는 채팅창이고, n8n 워크플로우는 그 뒤에서 작동하는 두뇌입니다. n8n에서 지원 로직(문서를 바탕으로 답변하는 AI 에이전트, 주문 조회, 티켓 생성 등 필요한 모든 기능)을 구축하면, 위젯이 웹사이트, WordPress, Wix, Webflow에 브랜드화된 채팅창을 제공합니다.\n\n채팅 인계(takeover)와 관련해서는: 현재도 사람이 채팅 내에서 답변할 수 있습니다. 방문자가 상담원을 필요로 할 때 워크플로우가 n8n의 'send and wait for response' 옵션을 통해 메시지를 Slack으로 전송합니다. 팀원이 Slack에서 답장하면 해당 답변이 채팅창의 다음 메시지로 표시됩니다. 다만 타이밍상 상담원이 약 1분 이내에 답변해야 가장 잘 동작하며, 직원이 새 메시지를 먼저 시작할 수는 없고 방문자의 메시지에 답장하는 방식입니다.\n\n상담원이 언제든 대화에 참여하여 원할 때마다 메시지를 보낼 수 있는 완전한 실시간 라이브 인계 기능은 아직 구현되지 않았습니다. 대화의 세션 ID를 사용하여 이를 제대로 추가하는 방식을 구상해 두었으며 오늘 이후 최우선 작업 목록에 있습니다.\n\n그동안 사용자들이 인계하는 다른 방식들:\n* **이메일 인계:** 봇이 해결할 수 없을 때 방문자의 이메일을 받아 전체 대화 내용을 수신함으로 전달하여 담당자가 후속 조치합니다. 레시피: https://n8nchatui.com/recipes/ai-faq-chatbot-email-handoff\n* **헬프데스크 티켓:** 대화 내용을 첨부하여 티켓을 생성하므로 기존 고객지원 대기열로 접수됩니다. 레시피: https://n8nchatui.com/recipes/zendesk-support-chatbot\n\n질문해 주셔서 감사드리며, 다음에 무엇을 개발할지 결정하는 데 큰 도움이 됩니다. 👍\n\n— Dani\n\nUpvote (4)"
+    }
+   ],
+   "slug": "n8n-chat-ui-2",
+   "website": "https://n8nchatui.com/"
+  },
+  {
+   "name": "2G",
+   "tagline_en": "Sampler to create early 2000 Neural Synthesis",
+   "tagline_kr": "2000년대 초반 레트로 기기의 음색과 질감을 재현하는 AI 신경망 신디사이징 샘플러",
+   "image": "https://ph-files.imgix.net/437ed3f0-8a19-4783-8e2b-ddeb1d85f456.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=64&w=64",
+   "categories": [
+    "Music",
+    "Artificial Intelligence",
+    "Music Generation"
+   ],
+   "upvotes": 136,
+   "comments_count": 7,
+   "maker": "Metehan Sipahi",
+   "price_model": "Free Options",
+   "price_detail": "무료 시작 가능 (기본 20 사운드 생성 크레딧 무료 제공, Windows 및 macOS 플러그인/스탠드얼론 지원, Studio 플랜은 7일 무료 체험 후 월 $10에 월 200 크레딧 제공)",
+   "desc_kr": "2G는 2000년대 초반 휴대용 게임기나 피처폰 특유의 로우파이(Lo-Fi) 감성을 AI 신경망 합성(Neural Synthesis) 기술로 재현한 혁신적인 음악 샘플러입니다. 현대 음악 소프트웨어들이 점점 더 깨끗하고 완벽한 음질만을 추구하는 흐름과 달리, 2G는 의도적으로 낮은 샘플 레이트와 4화음(4 voices) 동시 발음 제한, 특유의 공명과 압축을 적용했습니다. 사용자가 원하는 사운드를 텍스트로 묘사하면 AI가 그에 맞는 독특한 질감의 사운드를 즉시 생성하며, 컴퓨터 키보드로 바로 연주하거나 세부 편집할 수 있습니다. 텍스트 프롬프트 생성뿐만 아니라 사용자가 보유한 기존 오디오 파일을 로드하면 2000년대 특유의 빈티지 질감으로 완벽히 재해석해 줍니다. Windows와 macOS 모두에서 독립형(Standalone) 앱 및 DAW 플러그인(VST/AU) 형태로 무료 다운로드하여 사용할 수 있습니다.",
+   "launch_url_used": "https://scrapbrainaudio.com/2G?ref=producthunt",
+   "comment_summary": "Scrap Brain Audio의 개발자 Metehan Sipahi는 지나치게 깔끔해지는 현대 음향 툴에 반하여 4화음 제한과 작은 스피커의 찌그러짐을 의도적으로 구현한 레트로 샘플러 2G를 선보였습니다. 커뮤니티는 2000년대 초반 배터리 2% 남은 피처폰에서 흘러나오는 듯한 감성적 노스탤지어 사운드에 열광하며 신선한 역발상이라 호평했습니다. 특히 단순 일회성 사운드 생성을 넘어 사용자의 자체 오디오를 불러와 2G만의 독창적인 레트로 질감으로 착색할 수 있다는 확장성에 높은 평가를 내렸습니다.",
+   "warnings": "의도적인 4화음(4-voice) 제한과 로우파이 음향 압축이 적용되어 있으므로 풀 레인지의 깨끗한 고음질 음악 작업보다는 빈티지 로우파이 특화 사운드 디자인 및 샘플링에 적합합니다.",
+   "comments": [
+    {
+     "author": "Saad El Gueddari",
+     "is_maker": false,
+     "text": "four voices and a little speaker that rings is a very specific kind of limitation lol\n\nbeing able to load your own audio makes that interesting beyond the first generated sound\n\nUpvote (2)",
+     "kr": "4화음 동시 발음과 찌렁찌렁 울리는 작은 스피커라니 정말 독특하고 구체적인 한계 설정이네요 ㅎㅎ\n\n자체 오디오를 불러올 수 있다는 점 덕분에 단순히 처음 생성된 사운드에 그치지 않고 흥미롭게 활용할 수 있겠어요.\n\nUpvote (2)"
+    },
+    {
+     "author": "Metehan Sipahi",
+     "is_maker": true,
+     "text": "[@saad\\_el\\_gueddari](https://www.producthunt.com/@saad_el_gueddari) Thanks! The limitation is intentional; four voices and a small speaker give the instrument its character. And agreed, loading your own audio is where it gets interesting: anything you bring in takes on that same voice.\n\nUpvote (1)",
+     "kr": "@saad_el_gueddari 감사합니다! 한계 설정은 의도된 것입니다. 4개 보이스와 작은 스피커가 이 악기만의 고유한 캐릭터를 부여하니까요. 말씀하신 대로 자체 오디오를 불러오는 순간부터 진정한 재미가 시작됩니다. 어떤 소리를 가져오든 바로 그 특유의 음색을 입게 되거든요.\n\nUpvote (1)"
+    },
+    {
+     "author": "Metehan Sipahi",
+     "is_maker": true,
+     "text": "Hi PH, we’re Scrap Brain Audio. We’re mostly curious whether the idea behind 2G holds up.\n\nMost music software keeps getting cleaner and more capable. We went the other way on purpose: a low sample rate, a speaker that compresses and rings, only four voices. Would you want limits like that in the tools you use, or do they get in the way once the novelty wears off?\n\nUpvote",
+     "kr": "안녕하세요 PH, 저희는 Scrap Brain Audio입니다. 2G에 담긴 아이디어가 여러분께 어떻게 다가갈지 정말 궁금합니다.\n\n대부분의 음악 소프트웨어는 점점 더 깨끗해지고 고성능화되고 있습니다. 저희는 의도적으로 정반대의 길을 택했습니다. 낮은 샘플 레이트, 컴프레션이 걸려 찌그러지고 울리는 스피커, 단 4개의 보이스 제한입니다. 여러분이 사용하는 작업 도구에 이러한 제약이 있는 것을 선호하시나요, 아니면 신선함이 사라지고 나면 작업에 방해가 될까요?\n\nUpvote"
+    },
+    {
+     "author": "Oleksii Sekundant",
+     "is_maker": false,
+     "text": "Four voices puts a real limit on how crowded a part can get. I can see that giving the sampler its own character even after the retro look stops being new.\n\nUpvote (1)",
+     "kr": "4개 보이스 제한은 파트가 지나치게 복잡해지는 것을 확실하게 막아주네요. 레트로한 외형이 더 이상 새롭지 않게 느껴진 후에도 이 샘플러만의 독자적인 개성을 유지해 줄 것 같습니다.\n\nUpvote (1)"
+    },
+    {
+     "author": "Metehan Sipahi",
+     "is_maker": true,
+     "text": "[@oleksii\\_sekundant](https://www.producthunt.com/@oleksii_sekundant) Agreed. The voice limit changes how you write parts more than the look does, so I'd expect that to matter longer. 🙂‍↕️\n\nUpvote",
+     "kr": "@oleksii_sekundant 동감합니다. 보이스 제한은 외형적인 디자인보다 파트를 작곡하고 편곡하는 방식 자체를 근본적으로 바꾸어 주기 때문에 훨씬 더 오래 의미가 있을 것이라 생각합니다. 🙂‍↕️\n\nUpvote"
+    },
+    {
+     "author": "Maria Anosova 🔥",
+     "is_maker": false,
+     "text": "That's what nostalgia means...\n\nUpvote (3)",
+     "kr": "이것이 바로 노스탤지어(향수)의 의미죠...\n\nUpvote (3)"
+    },
+    {
+     "author": "Ankit Pandit",
+     "is_maker": false,
+     "text": "Finally, a way to make my music sound like it came from a phone with 2% battery in 2002 😂 Love this idea!\n\nUpvote (1)",
+     "kr": "마침내 내 음악을 2002년 배터리 2% 남은 휴대폰에서 나오는 소리처럼 만들 수 있는 방법이 나왔네요 😂 이 아이디어 정말 최고입니다!\n\nUpvote (1)"
+    }
+   ],
+   "slug": "2g",
+   "website": "https://scrapbrainaudio.com/2G"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
