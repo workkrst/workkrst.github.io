@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@everyday_sori - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">이소정 l 콘텐츠로 사람과 비즈니스를 키웁니다</span>
+                    
+                    <a href="https://www.threads.net/@everyday_sori" target="_blank" rel="noopener" class="username">@everyday_sori</a>
+                </div>
+                <span class="post-date">2026-10-27 20:17</span>
+            </div>
+            <div class="post-text">안녕하세요. <br>월급쟁이부자들 콘텐츠팀에서 5년 일한 이소정입니다.<br>직원 열 명일 때 콘텐츠팀 세 번째 멤버로 들어갔고, <br>구독자 210만까지 만들고, 올해 7월에 나왔습니다. <br><br>22년부터 26년 초까지는 팀장을 맡으며<br>그 기간동안 회사 매출은 10억에서 508억이 된<br>멋진 성과에 일조했습니다.<br><br>그 안에서 배운 걸 콘텐츠, 마인드셋, 사람<br>세 갈래로 나눠 딱 핵심적인 7개만 적어 보려고 합니다.<br><br>이 글은 제 5년간의 피땀눈물이 담겨 있습니다.<br>AI가 절대 복제불가한, <br>그리고 짧게 일하며 조직을 옮기는 사람들이 <br>절대 경험할 수 없는 깊이가 녹아져 있으니…<br><br>콘텐츠로 내 비즈니스를 키우겠다. <br>콘텐츠로 진짜 TOP을 찍어보고 싶다는 분들은<br>지금 리포스트하고 두고두고 보세요.</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 4013</span>
+                    <span>💬 172</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@everyday_sori/post/De_u05BkwPo" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (10개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@everyday_sori</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-27 20:17</span>
+                    <span class="reply-likes">❤️ 401</span>
+                </div>
+                <div class="reply-text">[콘텐츠편]<br><br>1. 공감이 없으면, 좋은 정보도 안 봅니다<br><br>영상을 유튜브에 2천 편 넘게 올렸습니다. 그 경험에서 뭐가 가장 중요했는지를 누가 제게 질문한다면? 저는 망설임 없이 ‘공감’이라고 답합니다. 정보가 좀 약해도 &quot;어, 이거 내 얘긴데&quot; 싶으면 사람들은 끝까지 봅니다. 공감 없이 정보만 쏟아 내면 반응은 딱 이 정도로만 나오죠. &quot;고마워요, 근데 당신 누구에요?(잊혀진다는 의미)&quot; <br><br>다들 제가 정보 제공에 제일 힘쓴 줄 아는데, 기획할 때 제일 오래 붙잡고 있던 건 공감이었습니다. 공감의 크기가 곧 pain point의 크기이기 때문에 확산력이 생기기 때문입니다.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@everyday_sori</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-27 20:17</span>
+                    <span class="reply-likes">❤️ 194</span>
+                </div>
+                <div class="reply-text">2. 조회수 상위 콘텐츠랑 매출 상위 콘텐츠는 거의 안 겹칩니다<br><br>조회수를 만드는 콘텐츠와 매출을 견인하는 콘텐츠는 기획 단계부터 다르게 시작합니다. 때문에, &lt;조회수 = 매출&gt; 이란 상관관계가 성립될 수 없습니다. 실제 제가 당시 기록했던 데이터로도 확인 가능합니다.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@everyday_sori</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-27 20:18</span>
+                    <span class="reply-likes">❤️ 255</span>
+                </div>
+                <div class="reply-text">3. 가장 중요한 지표는 공유입니다<br><br>영상 2,276편을 시트에 넣고 조회수랑 같이 움직이는 숫자를 찾았더니, 공유가 제일 상관관계가 높았습니다. 공유 200 이하인 영상 중에 10만 뷰를 넘긴 건 0편이었고, 10만 넘긴 209편 중 83%는 공유가 1,000을 넘었습니다. 그 뒤로 콘텐츠팀 회의 첫 질문이 바뀌었어요.<br><br>“이거 누가 누구한테 보낼 것 같아?&quot;</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@everyday_sori</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-27 20:18</span>
+                    <span class="reply-likes">❤️ 203</span>
+                </div>
+                <div class="reply-text">4. 사람들은 이 채널이 나한테 뭘 주고있는지 정확히 압니다<br><br>고객은, 그리고 시청자는 꽤나 복잡하고 생각보다 더 똑똑하고 현명합니다. 이걸 잊게 된 순간 비극이 찾아옵니다. <br><br>강의팔이, 라는 단어가 교육업계를 뒤덮은 지금. 콘텐츠를 다루는 사람들은 더 기민하게 반응해야 합니다. <br><br>파는 게 문제가 아닙니다. 팔기 전에 어떤 관계성을 내 팔로워들과 맺고 있는지? 얼마나 긴 기간 공들였는지? 진심으로 대했는지? 일상을 공유했는지? 등 고객접점을 늘리고 접점에서 얼마나 깊이감 있게 나를 표현하는지가 정말 정말 중요합니다. (별표 백만개....)</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@everyday_sori</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-27 20:18</span>
+                    <span class="reply-likes">❤️ 200</span>
+                </div>
+                <div class="reply-text">5. 댓글에 어떤 말이 달리면 좋을지를 기획하세요<br><br>영상을 만들기 전에 댓글창에 어떤 말이 달렸으면 좋겠는지부터 정했습니다. &quot;도움 됐어요&quot; 정도로 정하면 안 됩니다. <br><br>저희가 정한 문장은 이거였어요.<br>&quot;진짜 도움 많이 돼서 다른 경제 채널 안 봐도 될 것 같아요.&quot;<br>이 한 문장이 정해지면 구성도, 말투도, 배경음악도 그 말을 듣는 쪽으로 따라옵니다. 이거 하나 정하려고 워크숍 하루를 통째로 쓴 적도 있습니다.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@everyday_sori</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-27 20:18</span>
+                    <span class="reply-likes">❤️ 158</span>
+                </div>
+                <div class="reply-text">6. 썸네일 클릭률은 유튜브가 정책을 계속 바꿔도 제일 중요한 지표입니다<br><br>1시간 클릭률이 10%를 넘기 전까지는 10만이 거의 안 나왔고, 14%를 넘을 때 영상의 55%가 10만을 넘었습니다. 이 숫자는 유튜브가 유효시청수 정책을 바꾸지 않았을 때의 숫자 지표인 걸 참고해주세요. <br><br>본인이 솔파PD가 아니면 클릭률은 유튜브PD의 기본이고, 또 이제 막 일을 시작한 사람이라면 유튜브 썸네일 부터 디깅하는 것이 맞습니다.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@everyday_sori</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-27 20:18</span>
+                    <span class="reply-likes">❤️ 176</span>
+                </div>
+                <div class="reply-text">7. 대부분의 영상은 원래 잘 안 됩니다<br><br>그러니까 쉽게 우울감과 좌절감을 내비치지 마세요. 대부분의 영상은 원래 잘 안 됩니다. <br><br>하지만 이 일을 사랑하는 내 초심과 꾸준함, 절대 기준을 낮추기 않겠다는 독기와 집념 그리고 백만번을 강조해도 지나치지 않는 복기만이 채널을 210만으로 만들어주었습니다. 그리고… 저를 이 판에서 난 년으로 만들어줬죠.<br><br>그저 그런 커리어가 아니라 압도적인 몰입을 통해서 저는 제가 일하고 싶은 사람들 그리고 배우고 싶은 사람들 곁으로 갈 수 있는 자유를 얻었습니다. 월부에서의 5년이 저를 여기까지 데려다 주었습니다.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@everyday_sori</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-27 20:18</span>
+                    <span class="reply-likes">❤️ 165</span>
+                </div>
+                <div class="reply-text">여기까지가 제가 정리해본<br>콘텐츠편 핵심 포인트 7가지입니다. <br><br>돌아보면 제 커리어는 좀 이상하게 흘러왔어요. <br>EBS 리서처로 잠깐 일하다<br>불교방송 라디오 PD로 업을 시작했고, <br>그 다음이 월급쟁이부자들, 지금은 TRUS에 있습니다. <br><br>교육에서 종교로, 종교에서 돈으로, 다시 사람의 내면으로. <br>서로 한참 떨어진 세계인데, 어디서든 제가 붙잡고 있던 건<br><br>&lt;당신은 혼자가 아니다 라는 메세지를 줄 수 있는 콘텐츠&gt; <br>그리고 &lt;현장&gt;이었습니다. <br><br>아무리 일을 난다긴다 잘 했던 사람이어도 <br>현장을 떠나면 그때부터는 감이 무뎌지거든요. <br>저는... 무뎌지는 걸 제일 무서운 사람입니다.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@everyday_sori</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-27 20:18</span>
+                    <span class="reply-likes">❤️ 132</span>
+                </div>
+                <div class="reply-text">저는 지금 계속 들어오는 컨설팅도,<br>채널 제작도 참여하지 않고<br>또 다시 trus와 함께 현장을 달리고 있네요!<br><br>배우고, 정리하고, 이론으로 남기면서<br>현장을 달리는 게 <br>제가 살아내고 싶은 기획자의 모습이어서요.<br><br>위 7가지로 다 담지 못한 것들이 아직 너무 많습니다.<br>월부에서 피땀눈물로 축적되어 제가 이론화시킨 것들인데요.<br>이 5년간의 농축된 경험을<br>생생하게 전달할 수 있는 방법을 고민하고 있어요.<br><br>우선 이 스레드 시리즈(?)를 끝내고 <br>천천히 전달할 방법을 고민해보려 해요.</div>
+            </div>
+            
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@everyday_sori</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-10-27 20:18</span>
+                    <span class="reply-likes">❤️ 163</span>
+                </div>
+                <div class="reply-text">다음엔 마인드셋편을 올릴 예정입니다.<br><br>마인드셋 관련해선 너무너무 말할 게 많네요. <br><br>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️<br>[미리보기]<br>제게 5년 동안 3번의 굴곡이 있었는데요...<br>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️<br><br>이 내용이 궁금하시다면<br>미리 팔로우하고 기다려주세요 :)<br><br>오늘 이 글이 아주 조금이라도<br>여러분의 콘텐츠 기획/창작에 도움이 되셨기를...!</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (172개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@vitalvibes.moments</span>
+            <span class="reply-date">2026-10-27 20:28</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@limit_interior</span>
+            <span class="reply-date">2026-10-27 20:33</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">와우</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@billionaire_0214</span>
+            <span class="reply-date">2026-10-27 20:35</span>
+            <span class="reply-likes">❤️ 3</span>
+        </div>
+        <div class="reply-text">키야 진짜 좋은 인사이트 감사합니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 20:39</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">감사합니다 :)</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@aabbey_road</span>
+            <span class="reply-date">2026-10-27 20:39</span>
+            <span class="reply-likes">❤️ 5</span>
+        </div>
+        <div class="reply-text">넘나 유익하네요. 정말 잘 읽었습니다!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 20:46</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오 애비로드님 ㅎㅎ 저도 애비로드님 계정 넘 유익하게 잘 보고 있습니다. 감사합니다!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@workingmom_dororong</span>
+            <span class="reply-date">2026-10-27 20:40</span>
+            <span class="reply-likes">❤️ 4</span>
+        </div>
+        <div class="reply-text">와 라디오피디 출신이시구나 저는 편성피디에요 소정님처럼 콘텐츠 피디로 피봇하고싶어용</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 20:44</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">유튜브로 오세요 !</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@s__atto</span>
+            <span class="reply-date">2026-10-27 20:45</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">좋은 글 감사해요!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jungeun_mon</span>
+            <span class="reply-date">2026-10-27 20:45</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">우왕 선배님 안녕하세요!! 😊 멋진 인사이트 잘 배우겠습미다!! (현 불교방송 쪼랩PD)</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 20:47</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">꺅 ! 찾아와주셔서 영광.... (사랑사랑)</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jungeun_mon</span>
+            <span class="reply-date">2026-10-27 20:53</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">선배님 포스팅을 스으윽 보다가 신기한 점이! 저도 아리랑tv 프리랜서로 시작해서 교육mcn 에서 대행사를 거쳐 불교방송으로 오게되었고 인터뷰와 팟캐스트형 콘텐츠를 했었습니다!! 혼자 내적 친밀감을 느끼고 헤헤... 언젠가 커피챗 가능하다면 영광일 것 같습미다 ❤️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bonjilnam</span>
+            <span class="reply-date">2026-10-27 20:46</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">강의..안하시나요? <br>강의 구매할 생각 있습니다.!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@insightmina</span>
+            <span class="reply-date">2026-10-27 20:55</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">노하우가 담긴 좋은 글 감사해요🫶</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hanneww_</span>
+            <span class="reply-date">2026-10-27 20:57</span>
+            <span class="reply-likes">❤️ 5</span>
+        </div>
+        <div class="reply-text">와 너무 공감되요… 댓글 잘 안남기는데 남겨요!!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 20:59</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">💪🏼🙏🏻🙏🏻</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@writer_jindam</span>
+            <span class="reply-date">2026-10-27 21:06</span>
+            <span class="reply-likes">❤️ 5</span>
+        </div>
+        <div class="reply-text">오랜만에 찐 인사이트를 본 느낌입니다. 감사합니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:21</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">오 감사합니다 진담님🥰</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@the_eastern_physicist</span>
+            <span class="reply-date">2026-10-27 21:10</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와 소중한 정보 감사합니다 👍👍👍👍</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:17</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">알아봐주셔서 감사해요 ㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@choigpt_ai</span>
+            <span class="reply-date">2026-10-27 21:11</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">찐베이네</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ceo_jinuk</span>
+            <span class="reply-date">2026-10-27 21:13</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">정말 좋네요! 인사이트 감사합니다<br>팔로우하고 갑니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@80monki</span>
+            <span class="reply-date">2026-10-27 21:15</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">최고다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:16</span>
+            
+        </div>
+        <div class="reply-text">악 감사합니다… ㅎㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dayin_app</span>
+            <span class="reply-date">2026-10-27 21:17</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">좋은 인사이트 감사합니다.<br><br>리포 완!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:18</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">🫶🏼🫶🏼</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@s._.m249</span>
+            <span class="reply-date">2026-10-27 21:30</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">팔로우 했어요!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:37</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">😘</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@deverapper</span>
+            <span class="reply-date">2026-10-27 21:31</span>
+            <span class="reply-likes">❤️ 7</span>
+        </div>
+        <div class="reply-text">역시 대가들은 공감을 1순위로 두는것 똑같군요! 너무 좋은 글 잘 봤습니다:)</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:35</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">앗 감사합니다 ㅎㅎ 다음편도 잘 정리해보겠습니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jungho.io</span>
+            <span class="reply-date">2026-10-27 21:32</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">좋은 내용 감사합니다!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@sheen.aistudio</span>
+            <span class="reply-date">2026-10-27 21:33</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">너무 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:34</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">🙏🏻🙏🏻🫶🏼🫶🏼</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@onluvme_meal</span>
+            <span class="reply-date">2026-10-27 21:33</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">댓글기획은 생각해보지 못했던거라 너무 좋은 인사이트예요♥️ 마인스셋편도 기대됩니다👍</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:34</span>
+            
+        </div>
+        <div class="reply-text">잘 정리해볼게요! 응원 감사합니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ffe_global</span>
+            <span class="reply-date">2026-10-27 21:33</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">멋지네요 ㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jiwonnnnieee</span>
+            <span class="reply-date">2026-10-27 21:35</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">저 월부 너무 좋아해요.. 올려주실 콘텐츠 기대 됩니다!!!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:35</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">계속 좋아해주긔… 약속❤️🫶🏼</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@lallal_redsix</span>
+            <span class="reply-date">2026-10-27 21:39</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">나이스하네요. 리포.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@iruda_life</span>
+            <span class="reply-date">2026-10-27 21:42</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와 엄청 배웠습니다!! 앞으로 기대할게요!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:42</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">고맙습니다😘</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@stella_branding</span>
+            <span class="reply-date">2026-10-27 21:43</span>
+            <span class="reply-likes">❤️ 5</span>
+        </div>
+        <div class="reply-text">역시 인사이트 👍  두고두고 보려고 팔로우하고 갑니다!!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:43</span>
+            
+        </div>
+        <div class="reply-text">🫶🏼🫶🏼</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@sj.life.lab</span>
+            <span class="reply-date">2026-10-27 21:43</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">월부 애청자였습니다 넘 멋지시네요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 21:44</span>
+            
+        </div>
+        <div class="reply-text">월부인 !! 감사합니다❤️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@shunni_everyday</span>
+            <span class="reply-date">2026-10-27 21:48</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">메모하고 저장...유익하네요 🥹</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@helperpaulpark</span>
+            <span class="reply-date">2026-10-27 21:50</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">딱 저한테 필요했던 내용이네요.<br>생각보다 영상이라는게... 많이 고민하고 기획하고 직접 부딪혀봐야 하는 영역인 것 같아요. 오늘 인사이트 잘 간직하면서 성장하는데 잘 사용하겠습니다^^</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@mullsilk.ceo</span>
+            <span class="reply-date">2026-10-27 21:51</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">리포! 스하리! 피땀눈물 흘려 경험한걸 <br>나눠주어 고마워!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jaedorrr.p</span>
+            <span class="reply-date">2026-10-27 21:59</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와 두 번 세 번 아니 열 번은 읽어보겠습니다..!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 22:15</span>
+            
+        </div>
+        <div class="reply-text">감동❤️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@pplove_life</span>
+            <span class="reply-date">2026-10-27 22:04</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">유투브 신입생에게 정말 귀한 글이네요. 제 이야기는 있지만 이걸 어떻게 풀어낼까 그게 가장 고민이에요. 공감, 공유, 썸네일. <br>이 3가지 확실히 기억하고 실행해볼게요. 감사합니다 !</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@mgz.less</span>
+            <span class="reply-date">2026-10-27 22:10</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오오 기대하겠습니다 !!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ladderwon</span>
+            <span class="reply-date">2026-10-27 22:12</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">와드찍고 갑니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@sohnjiu</span>
+            <span class="reply-date">2026-10-27 22:12</span>
+            <span class="reply-likes">❤️ 3</span>
+        </div>
+        <div class="reply-text">저는 이글에서 진심을 읽었습니다<br>바탕에 진심과 애정이 있으시군요<br>도움이 되었습니다. 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 22:13</span>
+            
+        </div>
+        <div class="reply-text">감사합니다 🙏🏻</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@node_collector</span>
+            <span class="reply-date">2026-10-27 22:17</span>
+            <span class="reply-likes">❤️ 7</span>
+        </div>
+        <div class="reply-text">월부는 안 좋아하지만 빠와 안티를 모두 열광하게 만든 능력은 최고이신듯 합니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 22:18</span>
+            <span class="reply-likes">❤️ 7</span>
+        </div>
+        <div class="reply-text">ㅇㅈ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@physical_foot</span>
+            <span class="reply-date">2026-10-27 22:17</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">리포 노노! 팔로우 박고 갑니다!<br>평생보죠 뭐ㅋㅋㅋㅋ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 22:19</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">악 🔥🔥</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@physical_foot</span>
+            <span class="reply-date">2026-10-27 22:46</span>
+            
+        </div>
+        <div class="reply-text">혹시 메시지 한번 봐주실 수 있으실까요?✨✨</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@semi_1009</span>
+            <span class="reply-date">2026-10-27 22:19</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">전 이 시장을 아무것도 모르는데도 큰 울림이 있네</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dachidaddy</span>
+            <span class="reply-date">2026-10-27 22:25</span>
+            <span class="reply-likes">❤️ 6</span>
+        </div>
+        <div class="reply-text">20시간동안 읽는중입니다 ㅠㅠㅠ 감동의 인사이트</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 22:38</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">네? ㅎㅎㅎㅎ 대치대디님이 오시다니 ㅎㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dachidaddy</span>
+            <span class="reply-date">2026-10-27 22:57</span>
+            
+        </div>
+        <div class="reply-text">저를 아시다니 ㅠㅠ 댓글을 20시간동안 소리 내어 읽는중입니다 ㅠㅠ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 22:58</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">아 당연히 알죠 ㅠㅠ 🔥🔥 저도 갈아타기 성공해야 되는데 ㅎㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@swimmy1225</span>
+            <span class="reply-date">2026-10-27 22:37</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">산전수전?을 지나 찐경험에서 우러나온 탁월함이 느껴지네요. <br>꼭꼭 눌러써주신 글 잘 읽고 배우겠습니다 :)</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ppeumyu_home</span>
+            <span class="reply-date">2026-10-27 22:43</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">좋은 글 써주셔서 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@decadence_in_london</span>
+            <span class="reply-date">2026-10-27 22:44</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">찐이네요!! 앞으로 기대하겠습니다 응원합니다!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dalcyuni</span>
+            <span class="reply-date">2026-10-27 22:44</span>
+            <span class="reply-likes">❤️ 5</span>
+        </div>
+        <div class="reply-text">와 진짜 좋다...❤️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 22:51</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">아토피랩 대표님 유니님의 인정이라니🔥</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@minulago</span>
+            <span class="reply-date">2026-10-27 22:50</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">주옥같은 글 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 22:51</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">🙏🏻🙏🏻❤️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@a.pisode</span>
+            <span class="reply-date">2026-10-27 23:04</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">소정님. 좋은 글 감사합니다.! 👍🏻</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 23:08</span>
+            
+        </div>
+        <div class="reply-text">감사합니다..❤️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@cham_choii</span>
+            <span class="reply-date">2026-10-27 23:07</span>
+            <span class="reply-likes">❤️ 7</span>
+        </div>
+        <div class="reply-text">와... 진짜 찐글이에요!! 공유해주셔서 감사합니당🥰</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@aruharumarket</span>
+            <span class="reply-date">2026-10-27 23:14</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">첫번째 이야기부터 와닿네요 <br>정보만 있으면 반응이적고 공감대가 형성되면 끝까지 본다는 것 , 블로그도 마찬가지같아요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@upside_sangmin</span>
+            <span class="reply-date">2026-10-27 23:24</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">7번 얘기에 위안을 얻고 갑니다ㅜㅜ 감사합니다 😆</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-27 23:26</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">포기하지만 않는다면 행운은 우리편❤️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@brand.ssol</span>
+            <span class="reply-date">2026-10-27 23:27</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와 찐이네요 앞으로의 인사이트도 기대됩니다!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dang.ha.7</span>
+            <span class="reply-date">2026-10-27 23:33</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">우와 🥹 좋은글 …!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ho_ho_ju_ju</span>
+            <span class="reply-date">2026-10-27 23:34</span>
+            <span class="reply-likes">❤️ 8</span>
+        </div>
+        <div class="reply-text">너무나도 잘 봤습니다 귀한 정보를..🥹🥹👍🏻</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jenny_graciasa</span>
+            <span class="reply-date">2026-10-27 23:35</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">반포 신축 청약 당첨되기 까지 본 유투브 채널 중 Top 3안에 들어요~~~ 좋은 영상 너무 감사합니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ogamtrip</span>
+            <span class="reply-date">2026-10-27 23:38</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">인사이트 나눠 주셔서 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@susu.ggang7</span>
+            <span class="reply-date">2026-10-27 23:40</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">와..월부 PD님이라니...</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ara_clouds</span>
+            <span class="reply-date">2026-10-27 23:43</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">이런 멋진 글을 누가 쓰셨나하고 들어가보니.. 날 이미 팔로해주셨던 분임을 알았을때의 행복. ㅎㅎ 🥹🙏🏻 분야는 다르지만 많이 배워갑니다!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@yeasulzip</span>
+            <span class="reply-date">2026-10-27 23:44</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와 선생님, 감명깊게 읽었습니다. 고마워요!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-28 08:56</span>
+            
+        </div>
+        <div class="reply-text">앗! 항상 제가 더… ㅎㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@grow.log_hd</span>
+            <span class="reply-date">2026-10-27 23:44</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">진정성이 있네요 멋집니다 요새도 이런 열정이 있는 분이 있다니!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@for_the_start</span>
+            <span class="reply-date">2026-10-27 23:48</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">콘텐츠 초보가 배울 것이 많을 것 같다는 느낌이 딱 옵니다. 팔로우하고 정독하겠습니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-28 08:55</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">💪🏼💪🏼🫶🏼</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@epispace.official</span>
+            <span class="reply-date">2026-10-27 23:50</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">이제 막 콘텐츠 키우고 있는데 너무 도움됩니다! 좋은 인사이트 감사해요 🫶</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@sallim_cafeah</span>
+            <span class="reply-date">2026-10-27 23:53</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와!! 방금까지 월부 보다가 왔는데,, 대박이에요🥹🧡🤍</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@daniel.2588</span>
+            <span class="reply-date">2026-10-27 23:57</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와 미쳤다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@pageroot.studio</span>
+            <span class="reply-date">2026-10-28 00:04</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">나의 첫 부동산 공부의 시작은 월부였다💕</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-28 00:33</span>
+            
+        </div>
+        <div class="reply-text">크으 이게 맞죠❤️💪🏼✨🔥</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kiuk_note</span>
+            <span class="reply-date">2026-10-28 00:04</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">리포스트했습니다<br>귀한 인사이트를 남겨주셔서 감사드립니다:)</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@sj_realai_really</span>
+            <span class="reply-date">2026-10-28 00:08</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">멋집니다 인사이트 감사합니당</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gy20250227</span>
+            <span class="reply-date">2026-10-28 00:12</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">소정님 유튜브 채널에서 먼저 접했었는데 여기서 보니 너무 반갑네요! 보자마자 팔로우, 리포했습니다. 저 이런 거 진짜 안하는데.. 찐을 보면 바로 반응 나오는 거죠! :)</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-28 00:13</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">앗 너무 감사합니다❤️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@larva_rabbit</span>
+            <span class="reply-date">2026-10-28 00:29</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">인사이트 꼬마오🥹</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-28 00:30</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">많이 많이 써먹어주세요 ! 좋은 콘텐츠에 쓰일 수 있어 저도 기뻐요💪🏼✨</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@iktae_shin</span>
+            <span class="reply-date">2026-10-28 00:40</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">기대되네요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@limjhlaw</span>
+            <span class="reply-date">2026-10-28 00:41</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">좋은 글 잘 봤습니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@cosmos_muse</span>
+            <span class="reply-date">2026-10-28 00:43</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">크................. 감사합니다! 잘 읽었습니다. 🙇‍♀️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-28 00:51</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">감사해요 ㅎㅎ 궁금한 거 있음 또 알려주세요 !</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@cosmos_muse</span>
+            <span class="reply-date">2026-10-28 00:55</span>
+            
+        </div>
+        <div class="reply-text">네! 생각나면 말씀드릴게요.<br><br>쓰신 글, <br>제 피드에 공유해도 될까요? <br>혼자 보기 아깝습니다! ㅎ.ㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-28 01:06</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">그럼요! 같이 공부하면 넘 좋죠 🥰</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@asphalt_potato</span>
+            <span class="reply-date">2026-10-28 01:04</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">이글도 계획하에 쓰셨겠지요? 너무 나이브했다 싶네요. 두고두고 봐야겠네요. 감사합니다!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@devollwillb</span>
+            <span class="reply-date">2026-10-28 01:04</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">새벽에 잘 보고 갑니다<br>깊은 인사이트 감사합니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@temny.art</span>
+            <span class="reply-date">2026-10-28 01:10</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">정말 주옥 같았다.. 추천</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ideastech</span>
+            <span class="reply-date">2026-10-28 01:12</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">너무나도 멋진 글입니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@goldparkpro</span>
+            <span class="reply-date">2026-10-28 01:25</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">그동안 일만했지 컨텐츠를 만들지도 모르고 sns나 마케팅도 해본적이 없었는데 ,,<br>최근에서야 컨텐츠를 만들어야겠다 생각하고 공부하고있어요 ,, <br>공부하면서 여러가지 많은걸 느끼게 되더라고요.<br>사람의 심리, 욕구  그리고 내가 앞으로 시장에서 살아남기 위해  일을 해나갈 방향에 대해서요~<br>소정님 글 통해 정말 많은거 배웁니다. 글속에서 훌룽하신 분인게 막! 느껴지네요.<br>좋은 인사이트 나누어 주셔서 찐 감사요!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@james_albazar</span>
+            <span class="reply-date">2026-10-28 01:34</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">엄청난 글이네요 두고두고 봐야할듯!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@arin_yaho</span>
+            <span class="reply-date">2026-10-28 01:40</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bookish2f</span>
+            <span class="reply-date">2026-10-28 02:00</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">👍👍👍👍👍👍👍👍👍</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@qnqo88</span>
+            <span class="reply-date">2026-10-28 02:18</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">이렇게 밀도높은 콘텐츠는 정말 오랜만이라.. 응원과 감사의 글 남기고 갑니다. (콘텐츠랑은 관련없지만 많이 공감하는 상품기획자)</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@neoclassic0</span>
+            <span class="reply-date">2026-10-28 02:20</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">👍</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jormak_flower</span>
+            <span class="reply-date">2026-10-28 02:48</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">사랑해 우리 소소리 💛</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@everyday_sori</span>
+            <span class="reply-date">2026-10-28 09:01</span>
+            
+        </div>
+        <div class="reply-text">나의 서래마을 비밀정원💚 선생님 감사해요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@choiys_sunny</span>
+            <span class="reply-date">2026-10-28 03:24</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">우와 맞팔함♡</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@scentsxscene</span>
+            <span class="reply-date">2026-10-28 03:29</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">진짜 멋진 인사이트 고마오..!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@voobogle</span>
+            <span class="reply-date">2026-10-28 03:49</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">너무 알찬 인사이트 감사합니다!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dr.glow_u</span>
+            <span class="reply-date">2026-10-28 04:10</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">멋진 인사이트 너무 감사드려요...ㅎㅎ이런분을 쓰레드로만날수있다는게 쓰레드하는이유...ㅎㅎㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@chancenote</span>
+            <span class="reply-date">2026-10-28 04:32</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">스레드의 순기능을 오늘 다시 한 번 발견합니다. 귀힌 통찰 , 쏙쏙 와닿게 공유해주셔서 감사합니디. 🙏</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@valuecontents</span>
+            <span class="reply-date">2026-10-28 05:11</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">공감되네요 인사이트 감사합니다~ 계속 되새김 해봐야겠어요ㅜㅜ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@happytony74</span>
+            <span class="reply-date">2026-10-28 05:28</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">인사이트 고마워 스하리완료</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@alberodm</span>
+            <span class="reply-date">2026-10-28 05:47</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">새벽에 첫 글로 읽으면서  오늘의 시작이  기쁘고 응원합니다.^^</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@campfire.0914</span>
+            <span class="reply-date">2026-10-28 06:02</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">이거 누가 누구한테 보낼것 같아? !!!<br>간만에 진짜 인사이트를 읽은 느낌입니다. 감사합니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@cosmo.library</span>
+            <span class="reply-date">2026-10-28 06:04</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">저는 저장해두고 두고두고 보겠습니다. ㅋㅋㅋ<br>좋은 콘텐츠 넘 좋아요 👍</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@iyr4068</span>
+            <span class="reply-date">2026-10-28 06:26</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">감사합니다 !!!! 성장하지 않는 제 계정에 도움이 될거 같아요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gun__ssam01</span>
+            <span class="reply-date">2026-10-28 06:31</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">제 생각과 거의 일치합니다.<br>글도 잘 쓰고 정말 멋지시네요.<br>앞으로도 좋은 일들 가득하세요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bong__base</span>
+            <span class="reply-date">2026-10-28 06:35</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">인사이트 얻고 갑니다. 5년간 고생 많으셨습니다. 좋은 콘텐츠 감사했습나다. 팀장님.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@one3.e</span>
+            <span class="reply-date">2026-10-28 06:35</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">노하우를 알려주며 저에게도 <br>도움이 되는 좋은 글 감사합니다. <br>오늘도 미소로 물드는 행복한 하루 보내세요~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@salimdealradar</span>
+            <span class="reply-date">2026-10-28 06:44</span>
+            
+        </div>
+        <div class="reply-text">스하리~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@1st_jfam</span>
+            <span class="reply-date">2026-10-28 06:44</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">월부 잘 보고 있었는데<br>헌신과 노력의 결실을<br>숫자로 또 보고나니 엄청나네요!!<br>어디서든 빛나는 분 화이팅!!<br>공감과 공유 새기고 갑니다~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@baeseonyeong27</span>
+            <span class="reply-date">2026-10-28 06:44</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">우아 멋집니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@rwwr_happy</span>
+            <span class="reply-date">2026-10-28 06:46</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">굿</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@big.sil.jang</span>
+            <span class="reply-date">2026-10-28 07:01</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">대단해<br>배우고 싶다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jinji_twins_recipe</span>
+            <span class="reply-date">2026-10-28 07:01</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">잘봤습니다!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@vinty_digger</span>
+            <span class="reply-date">2026-10-28 07:03</span>
+            
+        </div>
+        <div class="reply-text">와! 팍 와 닿습니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@park.seonghye</span>
+            <span class="reply-date">2026-10-28 07:12</span>
+            <span class="reply-likes">❤️ 4</span>
+        </div>
+        <div class="reply-text">월부의 보물 이소정 작가님✨️ <br>사람을 대하는 마음과 열정이 너무나 남달랐던 우리 작가님🩷<br>함께 할 때마다 감동이였죠🙂</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@wangcen0090</span>
+            <span class="reply-date">2026-10-28 07:14</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">공감, 정보에 공감을 더하는 방법을 더 고민해봐야겠어요~ 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@seoulwhi</span>
+            <span class="reply-date">2026-10-28 07:37</span>
+            <span class="reply-likes">❤️ 3</span>
+        </div>
+        <div class="reply-text">2015년 월급쟁이부자들 첨 생길때 너바나님 도와 카페 자리잡는데 많이 도와드렸죠. 매달 1회 오프 모임에 나가 발표도 하고 강의도 하고 잼났는데...<br><br>제 첫책 &lt;나는 상가에서 월급받는다&gt;가 18000부 팔렸는데, 월부의 도움이 컸었죠.<br><br>2015년 월부에서 제 책 후기 1등 노트북 경품 걸고 이벤트 했던게 기억나네요.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@munsur_10000</span>
+            <span class="reply-date">2026-10-28 07:40</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">너무 좋은 글입니다.<br>7번 말씀 보고 위로가 되네요. 진심이 담긴 컨텐츠 계속 만들면 언젠간 시청자분들께 닿기를.. 좋은 글 감사합니다.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@cowboy76</span>
+            <span class="reply-date">2026-10-28 07:41</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">가치있는 경험담. 트러블슈팅. 각종 인사이트를 제공하는 글을 간만에 쓰레드에서 보게 되네요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@riribibi4250</span>
+            <span class="reply-date">2026-10-28 07:45</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">찐이다..인사이트도..일에 대한 열정도..현장에서 배운걸 남에게 퍼주는 것도..🙊 여러모로 배우고 감동하고, 선팔해놓고😊 다음편 기다릴께요!!🙌🙇‍♀️☺️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@thedalbee</span>
+            <span class="reply-date">2026-10-28 07:56</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">여기에 유튜브 유료 강의들이 몇 편이나 들어있는거냐 ㅋㅋㅋ...<br><br>새로 알게 된 것도 있고 오랫동안 말로 표현 못했던 것들도 많네요 .. 이 글도 이런 댓글을 기획하셨을까요?!! 좋은 글 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@godo.dok</span>
+            <span class="reply-date">2026-10-28 07:56</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">듀근..</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@teamjang.kim</span>
+            <span class="reply-date">2026-10-28 08:00</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">월부가 인기가 많은 이유가 있었네요 👍 좋은 글, 좋은 안사이트 감사합니다!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@polymath.k</span>
+            <span class="reply-date">2026-10-28 08:09</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">오오 잘 읽었습니다! 마케팅 퍼널 관점에서만 설계했는데, 공감, 댓글, 공유까지 설계(기획) 한다는 부분에서 디테일을 배웠네요. <br><br>앞으로도 좋은 글과 인사이트 기대됩니다! ☺️</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@latrace.project</span>
+            <span class="reply-date">2026-10-28 08:12</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">5년의 시간을 나눠주어 고맙습니다.<br>차근차근 잘 읽어보고 적용해보겠습니다.<br>소정님의 하고 싶은 일을 응원하며. .  축복을 보내요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@0ynb_psk</span>
+            <span class="reply-date">2026-10-28 08:16</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">콘텐츠기획과 1도 관련없는사람인데 첨으로 11개의 이어지는 글을 읽었어요 글안에서 느껴지는 열정과 자부심 감명깊게 느끼고 갑니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@peoplay2011</span>
+            <span class="reply-date">2026-10-28 08:23</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">자료 요청과 상담 문의를 나눠 보고 있는데, 댓글창에 어떤 반응을 원하는지 먼저 정한다는 부분이 특히 와닿습니다. 조회수와 별도로 남겨야 할 기록도 다시 생각하게 되네요.</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@moa._.design</span>
+            <span class="reply-date">2026-10-28 08:26</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">우와,,</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@vivianne431_</span>
+            <span class="reply-date">2026-10-28 08:32</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">잘 적용해볼께요 감사합니다💓</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dandi_it</span>
+            <span class="reply-date">2026-10-28 08:35</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">이글 저는 남편에게 보낼게요 유튜브를 오래했지만 아직어려워요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ai.yeongseon</span>
+            <span class="reply-date">2026-10-28 08:35</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">와 너무 좋습니다! 잘 읽었어요..!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@rio.contents</span>
+            <span class="reply-date">2026-10-28 08:43</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">긴 내용인데도 너무 잘 읽었습니다!👍</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bombomkimchi</span>
+            <span class="reply-date">2026-10-28 08:48</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">현장~~~~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@west_dream_</span>
+            <span class="reply-date">2026-10-28 08:50</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">귀한분이 오셨군요. 인사이트 기억하겠습니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@think.muscle</span>
+            <span class="reply-date">2026-10-28 08:53</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">도움되는글 자동으로 적게되네요~^^</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@igotmysidedish</span>
+            <span class="reply-date">2026-10-28 08:55</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">잘 읽어보겠습니다 감사합니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@picniday_playlist</span>
+            <span class="reply-date">2026-10-28 08:56</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">스하리^^ 잘 읽겠습니다~♡</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@travel_jourday</span>
+            <span class="reply-date">2026-10-28 09:06</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">팔로우하고 갑니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kpopsarangae123</span>
+            <span class="reply-date">2026-10-28 09:08</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">열 명일 때 들어가셨다니 대단해요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hossam_it_</span>
+            <span class="reply-date">2026-10-28 09:08</span>
+            <span class="reply-likes">❤️ 2</span>
+        </div>
+        <div class="reply-text">고객에 대한 분석과 이해가 필요하겠네요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@stay_mosim</span>
+            <span class="reply-date">2026-10-28 09:14</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">반가워요.<br>월부카페 애독자인데 치니의 피땀눈물이 담겨있었구나<br>믿고 스팔했어</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@damong9__</span>
+            <span class="reply-date">2026-10-28 09:21</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">좋은 글 잘 읽었습니다!! 콘텐츠 만드는 사람으로써 너무 공감됩니다. voc에 집착해야 진정 상대가 원하는 좋은 소스가 많이 나오는데, 귀찮다고 간과하는 분들 너무 많더라고요...</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@shinasu_youtube</span>
+            <span class="reply-date">2026-10-28 09:33</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">좋은 인사이트 배우고 갑니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@fd_goodbodam</span>
+            <span class="reply-date">2026-10-28 09:48</span>
+            
+        </div>
+        <div class="reply-text">멋지십니다</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@namjh9083</span>
+            <span class="reply-date">2026-10-28 09:49</span>
+            
+        </div>
+        <div class="reply-text">부의 폭풍 성장을 이끈 5년간의 피땀눈물, 첫 문장부터 몰입감이 엄청납니다! 콘텐츠와 조직 성장의 본질을 직접 겪어낸 분의 경험담이라 하나하나 가슴에 와닿네요.<br>저 역시 현장에서 비즈니스 콘텐츠와 영업 브랜딩을 치열하게 고민하는 사람으로서 소정님의 인사이트에 깊이 공감하고 갑니다. 앞으로도 좋은 배움 나누고자 바로 팔로우 누르고 응원하겠습니다. ✨</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jewellery_kinshell</span>
+            <span class="reply-date">2026-10-28 09:54</span>
+            
+        </div>
+        <div class="reply-text">다 맞는 얘기네요 ~좋은 정보 감사합니다 ✨️🙏</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
