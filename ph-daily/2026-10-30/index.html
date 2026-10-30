@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-10-30</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-10-30 · Top 5 · 수집 댓글 43개 · 수집 2026-10-30 12:31 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-10-30",
+ "collected_at": "2026-10-30 12:31 KST",
+ "summary": "오늘 프로덕트 헌트에서는 현장 소상공인 비서, 채팅 기반 앱 빌더, 브라우저 인프라 등 워크플로우 자동화 및 AI 에이전트 관련 프로덕트들이 주목받았습니다. 사용자들은 복잡한 프롬프트 작업 없이 채팅창이나 맥북 노치 등 기존 작업 환경에 자연스럽게 결합되는 실용적 UX에 높은 점수를 주었습니다. 댓글에서는 에이전트 간 세션 격리 보안과 빠른 온보딩 등 실제 업무 도입 시의 안전성과 단순함이 주요 논점으로 다루어졌습니다.",
+ "notable": [
+  {
+   "slug": "floot",
+   "why": "기존 대화 맥락을 유지하며 채팅창 내에서 실시간 라이브 프리뷰와 스토어 직접 배포를 지원한다는 점에 커뮤니티의 큰 호응이 이어졌습니다. 제작진은 복잡한 설정 없이 예약 페이지나 고객 양식 같은 가벼운 프로젝트부터 즉시 시작해 볼 것을 권장하며 실용성을 강조했습니다."
+  },
+  {
+   "slug": "empacer",
+   "why": "소상공인이 채팅창과 씨름할 필요 없이 3문답 온보딩과 음성 명령만으로 일상 업무를 처리하도록 돕는 간결한 UX가 호평을 받았습니다. 댓글에서는 복잡성을 덜어낸 단순함의 가치와 함께 사업주의 톤앤매너 반영도에 대한 높은 관심을 드러냈습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Empacer",
+   "tagline_en": "The voice-first assistant for small business owners",
+   "tagline_kr": "소상공인을 위한 음성 기반 AI 어시스턴트",
+   "image": "https://ph-files.imgix.net/a1505ee2-c8de-4f69-a32f-a5f4325d924e.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://empacer.com/",
+   "categories": [
+    "Productivity",
+    "AI Workflow Automation"
+   ],
+   "upvotes": 392,
+   "comments_count": 72,
+   "maker": [
+    "Yerkebulan Akhmetzaki",
+    "Galymzhan Makashev",
+    "Kenessary"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Empacer는 매번 프롬프트를 작성하고 비즈니스 상황을 설명할 여유가 없는 소상공인을 위해 개발된 음성 기반 AI 비서입니다. 초기 설정 시 3가지 간단한 질문에만 답하면, 이후 사용자의 말 한마디로 고객 응대, SNS 게시물 작성, 인보이스 발행 등의 업무 계획과 결과물이 즉시 생성됩니다. 모든 작업은 사업주의 최종 승인 없이는 전송되지 않아 안심하고 업무를 자동화할 수 있습니다. 살롱, 이발소, 자동차 정비소 등 현장 업무로 바쁜 오너들이 채팅창과 씨름하지 않고도 손쉽게 AI의 생산성을 누릴 수 있도록 돕습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/empacer",
+   "comment_summary": "창업자가 소상공인의 실질적인 고충과 간단한 3문답 온보딩 기획 배경을 밝히며 호응을 얻었습니다. 사용자들은 복잡함을 덜어낸 간결함에 찬사를 보냈으며, 초기 질문만으로 대표의 톤앤매너를 얼마나 잘 파악하는지에 대한 관심도 이어졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Yerkebulan Akhmetzaki",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt 👋 I’m Yerkebulan, Founder & CEO of **Empacer**. Everyone keeps telling small business owners to \"use AI.\" But watch a salon owner’s actual day: clients in the chair since morning, DMs piling up, this week’s posts still not written, and they are still expected to sit down, write prompts, and manage chat threads. _Tools got smarter, but using them became another job._ Before building anything, we talked to dozens of small business owners across the US: salons, barbershops, auto s",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요 👋 Empacer의 창업자이자 CEO인 예르케불란(Yerkebulan)입니다. 다들 소상공인들에게 'AI를 쓰라'고 말하지만, 미용실 원장님의 하루를 지켜보세요. 아침부터 손님 머리를 해야 하고, DM은 쌓여가며, 이번 주 SNS 글은 아직 작성도 못 했는데, 여전히 자리에 앉아 프롬프트를 쓰고 채팅 스레드를 관리하라고 요구받습니다. 도구는 더 똑똑해졌지만, 이를 쓰는 것 자체가 또 하나의 일이 되어버린 것이죠. 저희는 제품을 개발하기 전 미국 전역의 미용실, 바버숍, 자동차 정비소 등 수십 명의 소상공인을 직접 인터뷰했습니다."
+    },
+    {
+     "author": "Nastassia",
+     "is_maker": false,
+     "text": "@yakhmetzaki best of luck, guys 🍀",
+     "kr": "@yakhmetzaki 여러분 행운을 빕니다 🍀"
+    },
+    {
+     "author": "Yerkebulan Akhmetzaki",
+     "is_maker": true,
+     "text": "@nastassia\\_k thanks a lot!❤️",
+     "kr": "@nastassia_k 정말 감사합니다!❤️"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@vehsakam @kenessary @yesmakhan @cool\\_person\\_v2 @yakhmetzaki Love how Empacer help small business owners manage daily task without making thing complicated",
+     "kr": "@vehsakam @kenessary @yesmakhan @cool_person_v2 @yakhmetzaki Empacer가 일을 복잡하게 만들지 않고도 소상공인의 일상 업무 관리를 돕는 방식이 정말 마음에 듭니다."
+    },
+    {
+     "author": "Galymzhan Makashev",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 Thank you, Shivam! Keeping it simple is one of the hardest and most importants features we ship - glad it comes through.",
+     "kr": "@shivam_kushwaha16 감사합니다, Shivam 님! 단순함을 유지하는 것은 저희가 제공하는 기능 중 가장 어렵고도 중요한 부분인데, 잘 전해진 것 같아 기쁩니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@vehsakam yeh bro keeping things simple always makes a big difference",
+     "kr": "@vehsakam 네 맞아요, 단순함을 유지하는 게 항상 큰 차이를 만들어내죠."
+    },
+    {
+     "author": "Eduard Horkusha",
+     "is_maker": false,
+     "text": "Good luck",
+     "kr": "응원합니다."
+    },
+    {
+     "author": "Galymzhan Makashev",
+     "is_maker": true,
+     "text": "@eduard\\_horkusha Thank you very much!",
+     "kr": "@eduard_horkusha 정말 감사드립니다!"
+    },
+    {
+     "author": "Stas Voronov",
+     "is_maker": false,
+     "text": "@yakhmetzaki good luck with launch!",
+     "kr": "@yakhmetzaki 런칭 축하드리며 행운을 빕니다!"
+    },
+    {
+     "author": "Yerkebulan Akhmetzaki",
+     "is_maker": true,
+     "text": "@stas\\_voronov thank you, Stas!",
+     "kr": "@stas_voronov 감사합니다, Stas 님!"
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@vehsakam @kenessary @yesmakhan @cool\\_person\\_v2 @yakhmetzaki How well does Empacer learn a business owner's tone and style from just the initial onboarding questions???",
+     "kr": "@vehsakam @kenessary @yesmakhan @cool_person_v2 @yakhmetzaki Empacer는 초기 온보딩 질문 몇 가지만으로 사업주의 말투와 스타일을 얼마나 잘 학습하나요???"
+    },
+    {
+     "author": "Kenessary",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋 I'm Kenessary, and I lead product at Empacer. Yerkebulan covered the core, so I wanted to share how we arrived at the three-question onboarding and the suggested work plan. Many business owners we spoke with wanted to use AI but got stuck at the blank chat. What should they ask? How much background should they give? Explaining their business and managing conversations felt like more work before seeing any benefit. That’s why Empacer suggests a plan right after onboarding. It ",
+     "kr": "프로덕트 헌트 여러분 안녕하세요! 👋 Empacer의 제품 총괄 Kenessary입니다. 예르케불란이 핵심 내용을 소개했으니, 저는 3가지 질문으로 구성된 온보딩과 추천 작업 계획을 만들게 된 배경을 나누고자 합니다. 저희가 만난 많은 사업주분들은 AI를 쓰고 싶어 했지만 빈 채팅창 앞에서 막막해했습니다. 무엇을 물어봐야 할지, 배경 설명을 얼마나 해야 할지 고민하며 효과를 보기도 전에 비즈니스를 설명하고 대화를 이어가는 것이 또 다른 일처럼 느껴졌던 것이죠. 그래서 Empacer는 온보딩 직후 맞춤 계획을 제안하도록 설계되었습니다."
+    }
+   ],
+   "slug": "empacer"
+  },
+  {
+   "name": "Scape",
+   "tagline_en": "Build tools to automate your work & give them to your agents",
+   "tagline_kr": "업무 자동화 도구를 직접 구축하고 에이전트에 연동하는 플랫폼",
+   "image": "https://ph-files.imgix.net/691c315a-7b8f-48dd-b6f1-fa50df3bdf04.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=369",
+   "website": "https://www.scape.work/",
+   "categories": [],
+   "upvotes": 292,
+   "comments_count": 64,
+   "maker": [],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Scape는 자신의 업무 일부를 자동화할 수 있는 커스텀 도구를 만들고 이를 AI 에이전트에 부여할 수 있도록 지원하는 macOS 앱입니다. 사용자의 실제 업무 방식을 학습한 에이전트를 구성하여 강력한 오케스트레이션 기반으로 결과물을 대폭 확장할 수 있습니다. 특히 Claude Code, Codex, OpenCode 간의 상호 대립형 코드 리뷰(adversarial review)를 자동화하여 코드 품질과 안전성을 극대화합니다. 로컬 프라이버시를 유지하면서 멀티 에이전트 협업 및 병렬 실행 환경을 손쉽게 구축할 수 있는 것이 큰 장점입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/scape-4",
+   "comment_summary": "수집된 본문 내에 사용자 댓글이 포함되어 있지 않습니다. 개발자 커뮤니티에서는 로컬 macOS 환경의 멀티 에이전트 오케스트레이션 및 코드 상호 검증 기능에 높은 관심을 보이고 있습니다.",
+   "warnings": null,
+   "comments": [],
+   "slug": "scape-4"
+  },
+  {
+   "name": "Floot",
+   "tagline_en": "Build and ship web and mobile apps inside Claude or ChatGPT",
+   "tagline_kr": "Claude나 ChatGPT 채팅창 안에서 웹 및 모바일 앱을 구축하고 배포하는 도구",
+   "image": "https://ph-files.imgix.net/fe3996b7-d350-43cc-add6-813fdb14d07a.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://floot.com/",
+   "categories": [
+    "AI Coding Agents",
+    "Vibe Coding Tools"
+   ],
+   "upvotes": 178,
+   "comments_count": 59,
+   "maker": [
+    "Yuj Yao",
+    "Allen Tang",
+    "Jlam",
+    "Surya"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Floot Connector는 Claude와 ChatGPT에 직접 연동되어, 일상적으로 사용하는 채팅창 안에서 아이디어를 설명하는 것만으로 실제 데이터베이스, 사용자 로그인, 실시간 배포 URL이 포함된 풀스택 앱을 제작해 줍니다. 별도의 AI 크레딧 비용 없이 기존 Claude 또는 ChatGPT 구독을 활용하여 두뇌 역할을 맡기고, Floot은 빌드, 호스팅, 배포를 전담합니다. 웹 앱뿐만 아니라 iOS 및 Android 앱 배포까지 지원하여, 최초 1회 스토어 로그인 후 채팅창에서 바로 모바일 앱을 출시할 수 있습니다. 이미 활성화된 대화 맥락을 그대로 이어받아 매번 기획을 처음부터 설명할 필요가 없는 원활한 개발 경험을 선사합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/floot",
+   "comment_summary": "채팅창 내 실시간 라이브 프리뷰와 앱스토어 직접 배포 기능에 대해 커뮤니티의 큰 호응이 이어졌습니다. 제작진은 대화 맥락을 그대로 이어받아 앱을 생성하는 장점을 강조하며 내부 툴이나 예약 페이지 같은 가벼운 프로젝트부터 시작해 볼 것을 추천했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Yuj Yao",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! Yuj here, founder of Floot (YC S25). Floot was already one of the most used ways to build apps over MCP, and it’s the top-ranked app builder in ChatGPT. Now it’s a native app in your ChatGPT sidebar, which means it can: → Show a live preview of your app right inside the chat → Pick up what you’ve been discussing, so you don’t have to re-explain or copy and paste → Send prompts to ChatGPT for you while it builds Then you can: → Publish to a real link, plus the App Store and Go",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요! Floot(YC S25) 창업자 Yuj입니다. Floot은 이미 MCP 기반 앱 개발 분야에서 가장 많이 쓰이는 도구 중 하나이자 ChatGPT 최고 평점 앱 빌더입니다. 이제 ChatGPT 사이드바의 네이티브 앱으로 탑재되어 다음과 같은 작업이 가능합니다: → 채팅창 내부에서 실시간 앱 미리보기 제공 → 기존 대화 내용을 이어받아 다시 설명하거나 복사·붙여넣기할 필요 없음 → 앱을 빌드하는 동안 사용자를 대신해 ChatGPT에 프롬프트 전달. 그리고 실제 웹 링크뿐만 아니라 앱스토어 및 구글 플레이로 즉시 출시할 수 있습니다."
+    },
+    {
+     "author": "Allen Tang",
+     "is_maker": true,
+     "text": "@yujian @shivam\\_kushwaha16 Thanks Shivam! The live preview was the part we were most excited to get into the chat.",
+     "kr": "@yujian @shivam_kushwaha16 Shivam 님 감사합니다! 라이브 프리뷰 기능은 저희가 채팅창에 구현하면서 가장 기대했던 핵심 기능이었습니다."
+    },
+    {
+     "author": "Jlam",
+     "is_maker": true,
+     "text": "@yujian @shivam\\_kushwaha16 thank you Shivam!! would love to hear what you end up building 🙌",
+     "kr": "@yujian @shivam_kushwaha16 Shivam 님 감사드려요!! 어떤 멋진 앱을 완성하실지 꼭 듣고 싶습니다 🙌"
+    },
+    {
+     "author": "Aleksandar Blazhev",
+     "is_maker": false,
+     "text": "Congrats on the launch! Building directly inside ChatGPT with a live preview is amazing. Can we also deploy apps from here?",
+     "kr": "런칭 축하합니다! 실시간 미리보기를 보며 ChatGPT 안에서 바로 빌드할 수 있다니 놀랍네요. 여기서 앱 배포까지 바로 가능한가요?"
+    },
+    {
+     "author": "Jlam",
+     "is_maker": true,
+     "text": "@byalexai thank you Aleksandar! and yes — you publish straight from the chat and get a real live link, and you can push to the App Store and Google Play from there too",
+     "kr": "@byalexai Aleksandar 님 감사합니다! 맞습니다. 채팅창에서 바로 배포하여 실제 라이브 링크를 얻을 수 있고, 앱스토어와 구글 플레이로도 직접 푸시할 수 있습니다."
+    },
+    {
+     "author": "Ms. Harita Kanuri",
+     "is_maker": false,
+     "text": "This is so tempting — I love not having to re-explain an app idea sitting in my ChatGPT history. What's a good first app to try for a first build?",
+     "kr": "정말 매력적이네요. ChatGPT 기록에 남아있는 앱 아이디어를 다시 설명할 필요가 없다는 점이 아주 좋습니다. 처음 빌드해 보기에 좋은 앱 프로젝트는 무엇일까요?"
+    },
+    {
+     "author": "Surya",
+     "is_maker": true,
+     "text": "@ms\\_harita\\_kanuri haha that's exactly why we built it! a good first one is something small you'd use yourself, like a booking page, a habit tracker or a simple client form. try \"@Floot build a booking page for a yoga studio with a login\" and you'll see the whole flow in a few minutes",
+     "kr": "@ms_harita_kanuri 하하, 그게 바로 저희가 이 서비스를 만든 이유입니다! 예약 페이지, 습관 추적기, 간단한 고객 양식처럼 직접 사용할 만한 작은 프로젝트부터 시작해 보세요. '@Floot 로그인 기능이 있는 요가 스튜디오 예약 페이지 만들어줘'라고 입력하면 몇 분 만에 전체 흐름을 확인하실 수 있습니다."
+    },
+    {
+     "author": "Yuj Yao",
+     "is_maker": true,
+     "text": "@ms\\_harita\\_kanuri honestly anything! Just ask ChatGPT after you connect.",
+     "kr": "@ms_harita_kanuri 솔직히 어떤 것이든 좋습니다! 연동 후 ChatGPT에 바로 물어보세요."
+    },
+    {
+     "author": "Allen Tang",
+     "is_maker": true,
+     "text": "@ms\\_harita\\_kanuri Pick the idea you've already talked through most in ChatGPT, since Floot picks up that context. Small internal tools are a great first build.",
+     "kr": "@ms_harita_kanuri Floot이 대화 맥락을 읽어내므로, ChatGPT에서 이미 가장 많은 대화를 나누었던 아이디어를 골라보세요. 작은 내부 도구가 첫 빌드로 훌륭합니다."
+    },
+    {
+     "author": "Jlam",
+     "is_maker": true,
+     "text": "@ms\\_harita\\_kanuri once you've picked one, come back and tell us how the first build went :) that re-explaining pain was basically the reason we made this",
+     "kr": "@ms_harita_kanuri 하나 골라서 빌드해 보신 뒤 어떻게 완성되었는지 후기를 들려주세요 :) 다시 설명해야 하는 번거로움을 해결하는 것이 저희의 핵심 개발 목표였습니다."
+    },
+    {
+     "author": "Abhishek N",
+     "is_maker": false,
+     "text": "I just built a product‑marketing internal tool inside Claude using Floot. So cool! Congratulations to the launch team; I love it.",
+     "kr": "방금 Claude 안에서 Floot을 사용해 제품 마케팅 내부 도구를 만들었습니다. 정말 멋지네요! 런칭 팀 축하드리며, 아주 마음에 듭니다."
+    },
+    {
+     "author": "Surya",
+     "is_maker": true,
+     "text": "@abhishek\\_nellikkalaya ah love this! what does the tool do? you can open the same project from chatgpt now too",
+     "kr": "@abhishek_nellikkalaya 아 정말 좋네요! 어떤 기능을 하는 도구인가요? 이제 동일한 프로젝트를 ChatGPT에서도 바로 열어볼 수 있습니다."
+    }
+   ],
+   "slug": "floot"
+  },
+  {
+   "name": "Notch Metrics",
+   "tagline_en": "Use claude code to build analytics widgets for your notch",
+   "tagline_kr": "Claude Code를 활용해 맥북 노치용 분석 위젯을 구축하는 앱",
+   "image": "https://ph-files.imgix.net/887bbd13-a9e1-4bbd-a326-391aaf79aacd.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=293",
+   "website": "https://notchmetrics.com/",
+   "categories": [],
+   "upvotes": 173,
+   "comments_count": 7,
+   "maker": [
+    "Musthaq Ahamad"
+   ],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Notch Metrics는 맥북의 카메라 노치 영역을 활용하여 주요 비즈니스 분석 지표를 실시간으로 확인할 수 있게 해주는 유틸리티입니다. Stripe, Polar, Paddle, Dodo Payments 등 여러 결제 서비스의 매출, MRR, 구독자 수를 별도의 브라우저 로그인 없이 노치에서 바로 확인할 수 있습니다. 노치 위에 마우스를 올리면 위젯이 확장되어 최근 결제 내역 피드와 상세 통계가 나란히 표시됩니다. 사용자가 자체 API나 Claude Code를 활용해 커스텀 위젯을 손쉽게 구성하고 모니터링할 수 있도록 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/notch-metrics",
+   "comment_summary": "자주 확인하는 지표들을 브라우저 탭 대신 맥북 노치 공간에 효율적으로 배치했다는 점에서 큰 관심을 모았습니다. 커뮤니티에서는 자체 커스텀 API 지표 연동 방식 및 백그라운드 데이터 갱신 주기에 대해 질문을 던졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Musthaq Ahamad",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt. I’m Musthaq, and I made Notch Metrics. The numbers I check most sit behind four different logins. A browser tab is a decision every time, and the decision comes back every morning. Notch Metrics puts those numbers in the camera housing on your MacBook. Look up, and they are already there. Hover the notch and it opens. Revenue, MRR, subscribers and today’s takings sit side by side, with a recent-payments feed beside them. Widgets run from a single square to the full width, and ",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요. Notch Metrics를 개발한 Musthaq입니다. 매일 확인해야 하는 지표들이 4개의 서로 다른 로그인 창 뒤에 숨어 있었습니다. 브라우저 탭을 여는 것도 매번 결정이 필요하고 매일 아침 반복되죠. Notch Metrics는 이 숫자들을 맥북의 카메라 노치 영역에 띄워줍니다. 시선만 올리면 이미 거기에 있죠. 노치에 마우스를 올리면 열리며, 매출, MRR, 구독자 수, 당일 수익이 최근 결제 피드와 함께 나란히 표시됩니다. 위젯은 작은 정사각형부터 전체 너비까지 다양하게 확장됩니다."
+    },
+    {
+     "author": "Irene Chan",
+     "is_maker": false,
+     "text": "@haxzie Congratulations on the launch! i've never thought of the notch being useful before. that's a great use of the space!",
+     "kr": "@haxzie 런칭 축하합니다! 노치가 이렇게 유용하게 쓰일 수 있을 거라곤 생각도 못 했네요. 공간 활용이 정말 훌륭합니다!"
+    },
+    {
+     "author": "Neeraj Nathany",
+     "is_maker": false,
+     "text": "the notch is a smart spot for numbers you check anyway. does it show the revenue change versus yesterday or just the running total?",
+     "kr": "어차피 매일 확인해야 하는 숫자들을 노치에 두는 건 정말 똑똑한 발상이네요. 전일 대비 매출 변화량도 보여주나요, 아니면 누적 합계만 표시되나요?"
+    },
+    {
+     "author": "Oleksii Sekundant",
+     "is_maker": false,
+     "text": "Having Stripe and Paddle figures together is the useful part here. I'd want the date range visible too, especially when checking today's revenue beside MRR.",
+     "kr": "Stripe와 Paddle 수치를 한곳에 모아볼 수 있다는 점이 매우 유용합니다. 특히 MRR 옆에서 당일 매출을 확인할 때는 날짜 범위도 함께 표시되면 좋겠네요."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The part that caught me is the custom metric against your own API sitting alongside Stripe and Paddle in the same view. I check a few different dashboards every morning, and the friction is never one provider, it is comparing numbers that live in different places. Does a custom metric get the same side-by-side treatment as the built-in sources, or does it live in its own widget?",
+     "kr": "자체 API의 커스텀 지표를 Stripe 및 Paddle과 같은 화면에서 나란히 볼 수 있다는 점이 가장 눈에 띕니다. 매일 아침 여러 대시보드를 확인할 때 가장 큰 불편은 서로 다른 곳에 있는 수치들을 비교하는 것이었거든요. 커스텀 지표도 기본 제공 서비스와 동일하게 나란히 배치되나요, 아니면 별도의 전용 위젯으로 분리되나요?"
+    },
+    {
+     "author": "Mostafa Hosseini",
+     "is_maker": false,
+     "text": "own api number - does it still fetch if you never hover the notch?",
+     "kr": "자체 API 수치의 경우, 노치에 마우스를 올리지 않아도 백그라운드에서 데이터를 계속 가져오나요?"
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Likely AI MRR sitting in the camera housing where I already glance a hundred times a day is smarter than another dashboard tab, since the whole problem is remembering to check at all.",
+     "kr": "하루에도 수백 번 시선이 가는 카메라 노치에 AI MRR이 표시되는 것은 또 다른 대시보드 탭을 띄우는 것보다 훨씬 똑똑한 방식입니다. 결국 확인하는 것 자체를 기억해 내는 게 가장 큰 문제니까요."
+    }
+   ],
+   "slug": "notch-metrics"
+  },
+  {
+   "name": "Gologin",
+   "tagline_en": "Gologin - software which allows to manage multiple accounts",
+   "tagline_kr": "다중 계정 관리 및 AI 에이전트를 위한 안티디텍트 브라우저 플랫폼",
+   "image": "https://ph-files.imgix.net/c2dcc381-b427-4d86-a78f-d5d61c784624.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://gologin.com/",
+   "categories": [
+    "Web browsers",
+    "Browser Automation"
+   ],
+   "upvotes": 139,
+   "comments_count": 28,
+   "maker": [
+    "Eugene Stepnov"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Gologin은 다중 계정 관리, 웹 자동화 및 AI 에이전트 실행을 위한 전문 브라우저 인프라를 제공합니다. 각 프로필마다 고유한 기기 핑거프린트, 프록시, 위치 정보를 독립적으로 부여하여 여러 계정을 동시에 안전하게 운용할 수 있는 안티디텍트 환경을 구축합니다. 또한 클라우드 브라우저 기능을 통해 별도의 로컬 컴퓨터 구동 없이도 영구 세션과 주거용/모바일 프록시를 갖춘 실제 Chromium 환경을 제공합니다. 7년간 축적된 안티디텍트 기술력을 바탕으로 웹 스크래핑과 AI 에이전트 자동화의 봇 탐지 차단을 효과적으로 우회합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/gologin",
+   "comment_summary": "클라우드 환경에서 에이전트별 세션을 분리해 비밀번호 노출 없이 안전하게 공유하는 아키텍처가 큰 관심을 받았습니다. 무료 플랜 혜택과 미사용 대기 시간의 과금 여부 등 실제 프로덕션 도입을 고려한 구체적인 질문들이 논의되었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Eugene Stepnov",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! 👋 Eugene here, from Gologin. **The problem** We kept seeing the same failure mode from teams running scrapers and AI agents at scale: a brand-new browser is the most suspicious thing on the internet. Cloudflare, DataDome and Akamai aren't really hunting for automation, because that's cheap to fake. They score coherence: does the hardware story hold together, and has this identity been seen before? **A container that didn't exist three seconds ago fails both checks. Not for be",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요! 👋 Gologin의 Eugene입니다. 대규모 스크래퍼나 AI 에이전트를 운영하는 팀들에서 동일한 실패 패턴을 계속 목격했습니다. 바로 새로 생성된 브라우저가 인터넷에서 가장 의심스러운 대상이라는 점입니다. Cloudflare, DataDome, Akamai 등은 단순 자동화 여부를 찾는 것이 아니라 일관성을 평가합니다. 즉, 하드웨어 정보의 맥락이 일치하는지, 이 신원이 이전에 확인된 적이 있는지를 검사합니다. 3초 전에 생성된 컨테이너는 이 두 가지 검사를 모두 통과하지 못합니다."
+    },
+    {
+     "author": "Fabian Maume",
+     "is_maker": false,
+     "text": "@eugene\\_stepnov, for things that don't require login, I usually use Apify. For scraping behind a login, it is tricky: how do you handle security if you share sessions between Agents?",
+     "kr": "@eugene_stepnov 로그인이 필요 없는 작업에는 주로 Apify를 씁니다. 하지만 로그인 후 스크래핑은 까다로운데요, 에이전트 간 세션을 공유할 때 보안은 어떻게 처리하나요?"
+    },
+    {
+     "author": "Eugene Stepnov",
+     "is_maker": true,
+     "text": "@fabian\\_maume Great question, Fabian! We’d avoid sharing one session between agents: give each agent its own profile, isolated with its own cookies, fingerprint and IP. The agent never sees passwords, since it works in a session you’ve already signed into, and your API token stays on your server, so you control exactly what each agent can do. And for the no-login part, our Web Unlocker does what you use Apify for: send a URL, get the page, pay only on success.",
+     "kr": "@fabian_maume 좋은 질문입니다, Fabian 님! 저희는 여러 에이전트가 단일 세션을 공유하는 것을 피하도록 권장합니다. 각 에이전트에 고유한 쿠키, 핑거프린트, IP로 격리된 독립 프로필을 부여하는 것이죠. 이미 로그인된 세션 내에서 작동하므로 에이전트는 비밀번호를 알 수 없고, API 토큰도 서버에 안전하게 유지되어 제어가 가능합니다. 로그인이 필요 없는 작업의 경우 URL을 전송해 페이지만 받아오고 성공 시에만 과금되는 Web Unlocker 기능을 제공합니다."
+    },
+    {
+     "author": "Muhammad Tahir",
+     "is_maker": false,
+     "text": "Me using GoLogin in the past to manage my reddit profiles and i had pretty good experience with it.",
+     "kr": "예전에 레딧 프로필을 관리할 때 GoLogin을 사용했었는데 매우 만족스러운 경험이었습니다."
+    },
+    {
+     "author": "Eugene Stepnov",
+     "is_maker": true,
+     "text": "@tahir21 Thanks, Muhammad, that’s great to hear! Cloud Browser is basically those same profiles, now running in the cloud. Your scripts or AI agents can use them without your computer on, and they stay logged in between runs. Would love to hear what you think if you give it a try.",
+     "kr": "@tahir21 Muhammad 님 감사합니다, 그렇게 말씀해 주시니 기쁩니다! Cloud Browser는 바로 그 프로필들을 클라우드에서 실행하는 버전입니다. 컴퓨터를 켜두지 않아도 스크립트나 AI 에이전트가 사용할 수 있으며, 실행 간에도 로그인 상태가 유지됩니다. 사용해 보시고 의견 들려주시면 감사하겠습니다."
+    },
+    {
+     "author": "Angelo Bram",
+     "is_maker": false,
+     "text": "this could save a lot of time! how easy is it to set up the first profile?",
+     "kr": "시간을 크게 절약해 줄 것 같네요! 첫 프로필을 설정하는 것은 얼마나 쉬운가요?"
+    },
+    {
+     "author": "Eugene Stepnov",
+     "is_maker": true,
+     "text": "@angelo\\_bram Thanks, Angelo! Very easy: sign up with Google and create a profile in one click, either in the Gologin app or in the web dashboard. Gologin fills in a realistic fingerprint for you, so you can start right away. The same profile can then run in the cloud through Cloud Browser, and it stays logged in between runs.",
+     "kr": "@angelo_bram 감사합니다, Angelo 님! 아주 간단합니다. 구글 계정으로 가입한 뒤 Gologin 앱이나 웹 대시보드에서 클릭 한 번으로 프로필을 생성할 수 있습니다. Gologin이 사실적인 기기 핑거프린트를 자동으로 채워주므로 즉시 시작할 수 있으며, 동일한 프로필을 Cloud Browser를 통해 클라우드에서 로그인 상태를 유지한 채 실행할 수 있습니다."
+    },
+    {
+     "author": "Barnaby Lloyd",
+     "is_maker": false,
+     "text": "Congrats @eugene\\_stepnov how many browser profiles can you create on the free plan?",
+     "kr": "축하합니다 @eugene_stepnov 무료 플랜에서는 브라우저 프로필을 몇 개까지 생성할 수 있나요?"
+    },
+    {
+     "author": "Eugene Stepnov",
+     "is_maker": true,
+     "text": "@barnaby\\_lloyd Thanks, Barnaby! The free plan gives you 3 browser profiles, and for Cloud Browser you get 3 runs of up to 15 minutes each, no card needed. New accounts also get a 7-day trial with all features if you want to test more.",
+     "kr": "@barnaby_lloyd 감사합니다, Barnaby 님! 무료 플랜에서는 3개의 브라우저 프로필이 제공되며, Cloud Browser의 경우 카드 등록 없이 최대 15분씩 3회 실행이 가능합니다. 더 많은 기능을 테스트해 보고 싶다면 신규 계정 전용 7일 무료 체험도 제공됩니다."
+    },
+    {
+     "author": "Olivia Bennett",
+     "is_maker": false,
+     "text": "Congrats @eugene\\_stepnov quick question! can you share sessions without giving away passwords?",
+     "kr": "축하드려요 @eugene_stepnov 짧은 질문 하나 드립니다! 비밀번호를 노출하지 않고도 세션을 공유할 수 있나요?"
+    },
+    {
+     "author": "Eugene Stepnov",
+     "is_maker": true,
+     "text": "@olivia\\_bennett7 Thanks, Olivia! Yes, that’s exactly how it works. You log in once, and the session lives in the profile. Then you share the profile with a teammate, or let your script or agent connect to it, and they’re already signed in without ever seeing the password. Profile sharing is available on paid plans.",
+     "kr": "@olivia_bennett7 감사합니다, Olivia 님! 네, 정확히 그렇게 작동합니다. 한 번 로그인하면 세션이 해당 프로필에 상주합니다. 이후 팀원에게 프로필을 공유하거나 스크립트/에이전트에 연결하면 비밀번호를 전혀 볼 수 없는 상태로 로그인되어 작동합니다. 프로필 공유는 유료 플랜에서 지원됩니다."
+    },
+    {
+     "author": "Nicholas Zakas",
+     "is_maker": false,
+     "text": "If I start a session and forget to shut it down, am I charged for those idle minutes? Or is there an inactivity timeout to catch idle sessions? Really interested in digging in further.",
+     "kr": "세션을 시작해 두고 종료하는 것을 깜빡 잊었을 경우, 대기 상태인 유휴 시간에도 요금이 부과되나요? 아니면 유휴 세션을 감지하는 비활성 타임아웃 기능이 있나요? 더 자세히 알아보고 싶네요."
+    }
+   ],
+   "slug": "gologin"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
