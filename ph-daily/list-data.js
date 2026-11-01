@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-11-01",
+    "url": "2026-11-01/",
+    "top_product": "SKI",
+    "count": 5,
+    "upvotes_total": 903,
+    "comments_total": 59
+  },
+  {
     "date": "2026-10-31",
     "url": "2026-10-31/",
     "top_product": "Vaani Developer Platform",

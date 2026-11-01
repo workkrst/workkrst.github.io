@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-11-01</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-11-01 · Top 5 · 수집 댓글 59개 · 수집 2026-11-01 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-11-01",
+ "collected_at": "2026-11-01 12:30 KST",
+ "summary": "오늘 상위 제품군은 AI 코딩 에이전트 조율(SKI), 배포 변경점 관측(Specsight), LLM 실행 트레이싱(telemetry.dev), 자율 백엔드 인프라(Backenly) 등 AI 에이전트의 개발·운영 라이프사이클 전반을 지원하는 개발자 도구가 지배적이었습니다. 커뮤니티 댓글에서는 여러 에이전트의 병렬 실행 시 컨텍스트 전환 매끄러움, 잘못된 배포나 스키마 변경에 대한 체크포인트 롤백 안전성, MCP 서버 연동 및 민감 정보 마스킹 등 실무 프로덕션 도입을 전제로 한 안정성 검증 질문이 집중적으로 오갔습니다.",
+ "notable": [
+  {
+   "slug": "ski",
+   "why": "단일 음성 명령으로 여러 코딩 에이전트를 동시에 오가며 세션과 컨텍스트를 인계하는 혁신적인 멀티태스킹 제어 방식으로 큰 주목을 받았습니다. 댓글에서는 Claude Code나 Cursor 등 기존 도구와의 차별점과 함께 타 OS 지원 및 다중 에이전트 동시 질의 시의 우선순위 처리 방식에 대한 실무적 관심이 집중되었습니다."
+  },
+  {
+   "slug": "backenly-2",
+   "why": "AI 코딩 에이전트가 만든 백엔드를 자가 치유 루프로 상시 유지 관리하고 MCP를 통해 PostgreSQL부터 인증까지 자동 구축한다는 점에서 높은 관심을 모았습니다. 댓글에서는 에이전트의 스키마 변경 오류 시 데이터 무손실 롤백 메커니즘과 실제 사본 트랜잭션 기반의 사전 리허설 안전성 검증 여부가 핵심 논점으로 다뤄졌습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "SKI",
+   "tagline_en": "Voice-first coding harness for all your agents",
+   "tagline_kr": "모든 AI 에이전트를 위한 음성 우선 코딩 하네스",
+   "image": "https://ph-files.imgix.net/c51ef03e-0e19-4fab-b0a2-3b69fc8d07c4.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Code editors",
+    "AI Coding Agents",
+    "AI Code Editors"
+   ],
+   "upvotes": 232,
+   "comments_count": 36,
+   "maker": [
+    "Anand Balakrishnan",
+    "John"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "SKI는 여러 코딩 에이전트를 동시에 실행하고 음성으로 관리할 수 있는 음성 우선(Voice-first) 코딩 하네스 도구입니다. 에이전트가 작업 중 발생한 의문점을 음성으로 질문하면 사용자가 음성으로 바로 답변할 수 있으며, 사용자의 최종 검토 없이는 코드가 병합되지 않아 안전합니다. Claude Code, Codex, Cursor 등 다양한 기존 도구 및 구독 플랜과 호환되어 별도 API 키 없이도 손쉽게 연동할 수 있습니다. 단일 음성 명령으로 에이전트 간 세션과 컨텍스트를 원활하게 인계하며 병렬 코딩 작업을 직관적으로 조율할 수 있습니다. 개발자가 키보드에만 얽매이지 않고 대화하듯 여러 AI 에이전트를 지휘할 수 있도록 지원하는 것이 핵심 강점입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/ski",
+   "website": "https://justski.it/",
+   "comment_summary": "사용자들은 여러 에이전트를 음성으로 동시에 제어하고 컨텍스트를 인계하는 독창적인 멀티태스킹 기능에 대해 매우 긍정적인 반응을 보였습니다. 타 OS 지원 여부(Windows/Linux), 단일 플랜 연동 방식, 에이전트 간 우선순위 처리 등에 대한 실용적인 질문들이 이어졌으며, 제작자는 실시간으로 상세한 로드맵과 작동 방식을 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Anand Balakrishnan",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt 👋 Anand here, one of the makers of SKI. In July we launched SKI as a voice layer for coding agents. It went to #1 that day, and the people who found us through that launch gave us the feedback that shaped what we are showing today. One pattern kept coming up: the people who got the most out of SKI were running three or four agents at once and using voice to keep track of them. So we rebuilt SKI around that. SKI is now a voice-first harness for coding agents: • Run Claude Code, ",
+     "kr": "📌 안녕하세요 Product Hunt 👋 SKI 제작자 중 한 명인 Anand입니다. 지난 7월 저희는 코딩 에이전트를 위한 음성 레이어로 SKI를 출시했습니다. 그날 1위를 차지했고, 당시 피드백을 통해 오늘의 제품을 완성할 수 있었습니다. 특히 사용자들이 가장 유용하게 쓴 패턴은 3~4개의 에이전트를 동시에 실행하면서 음성으로 관리하는 방식이었습니다. 그래서 저희는 이를 중심으로 SKI를 완전히 재구축했습니다. 이제 SKI는 코딩 에이전트를 위한 음성 우선 하네스입니다: • Claude Code 등을 동시에 실행하세요..."
+    },
+    {
+     "author": "Helen Fedulova",
+     "is_maker": false,
+     "text": "@anand\\_balakrishnan5 Congrats on the launch! Mac-only for now, or is Windows parity close?",
+     "kr": "@anand_balakrishnan5 출시 축하드립니다! 현재는 Mac 전용인가요, 아니면 Windows 지원도 곧 제공되나요?"
+    },
+    {
+     "author": "Anand Balakrishnan",
+     "is_maker": true,
+     "text": "@fedulovelena Thank you, Helen! We are working on the Windows and Linux versions now, and we will let you know as soon as they launch.",
+     "kr": "@fedulovelena 감사합니다, Helen님! 현재 Windows와 Linux 버전을 개발 중이며, 출시되는 대로 바로 알려드리겠습니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@anand\\_balakrishnan5 Can it switch between agents smoothly while keeping the full context",
+     "kr": "@anand_balakrishnan5 전체 컨텍스트를 유지하면서 에이전트 간 전환을 매끄럽게 수행할 수 있나요?"
+    },
+    {
+     "author": "Anand Balakrishnan",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 If it is in the same coding agent, for instance, Opus to Sonnet, it hands over the session. If it is from a different coding agent, for instance, Opus to OpenAI models, it hands over the session and files seamlessly",
+     "kr": "@shivam_kushwaha16 동일한 코딩 에이전트 내(예: Opus에서 Sonnet으로)라면 세션을 그대로 인계합니다. 다른 코딩 에이전트 간(예: Opus에서 OpenAI 모델로)이라도 세션과 파일을 매끄럽게 인계합니다."
+    },
+    {
+     "author": "Tushar Mehta",
+     "is_maker": false,
+     "text": "This is awesome. Congrats on the launch. Just want to know what is the difference between using the voice feature on Claude Code, Codex or Cursor or OpenCode directly versus this?",
+     "kr": "멋지네요. 출시 축하드립니다. Claude Code, Codex, Cursor 또는 OpenCode의 자체 음성 기능을 직접 사용하는 것과 비교했을 때 어떤 차이점이 있는지 궁금합니다."
+    },
+    {
+     "author": "@tushaarmehtaa",
+     "is_maker": false,
+     "text": "1. This works across harness. Say, once voice can talk to Codex and ask it to hand over to Claude code and maybe to opencode etc. 2. It works with different sessions at the same time - There is a one voice for all agents option - You could talk to all agents in one voice. Or you can switch between sessions - who identify by their voice 3. It is bi-directional voice, not dictation. The agent can choose to talk back. 4. There is option for auto prompt processing - from your audio, SKI can create p",
+     "kr": "1. 여러 하네스에 걸쳐 작동합니다. 예를 들어 한 음성으로 Codex에 지시해 Claude Code나 OpenCode로 넘기도록 할 수 있습니다. 2. 여러 세션에서 동시에 작동합니다. 모든 에이전트를 위한 단일 음성 옵션이 있어 한 번에 말하거나, 음성으로 구분되는 각 세션을 오갈 수 있습니다. 3. 단순 받아쓰기가 아닌 양방향 음성 대화입니다. 에이전트가 직접 음성으로 답변합니다. 4. 자동 프롬프트 처리 옵션이 있어 음성에서 프롬프트를 자동으로 생성할 수 있습니다."
+    },
+    {
+     "author": "Neeraj Nathany",
+     "is_maker": false,
+     "text": "clicking the notch to move your voice to another chat is a neat detail :) if two agents ask something at the same moment, which one gets read out first?",
+     "kr": "노치를 클릭해 다른 채팅으로 음성을 전환하는 기능이 정말 깔끔하네요 :) 만약 두 에이전트가 동시에 질문을 한다면 어떤 것이 먼저 읽히나요?"
+    },
+    {
+     "author": "John",
+     "is_maker": true,
+     "text": "@neerajnathany The one which you are currently working on gets the first priority as you are engaging with it actively.",
+     "kr": "@neerajnathany 현재 사용자가 활발히 참여하며 작업 중인 에이전트가 최우선 순위를 갖습니다."
+    },
+    {
+     "author": "Rahul Saji",
+     "is_maker": false,
+     "text": "Does it work with Claude Code on a Max plan, or only API keys?",
+     "kr": "Claude Code의 Max 플랜에서도 작동하나요, 아니면 API 키로만 사용 가능한가요?"
+    },
+    {
+     "author": "Anand Balakrishnan",
+     "is_maker": true,
+     "text": "@rahul\\_saji007 Yes. Your current Max plan works as is, no API key needed. You can bring all your agent subscriptions into SKI. And if you have more than one Claude plan, connect them all: when one runs out of credits, switch to the next and keep going.",
+     "kr": "@rahul_saji007 네, 현재 사용 중인 Max 플랜 그대로 사용하실 수 있으며 API 키는 필요하지 않습니다. 기존 에이전트 구독을 모두 SKI에 연동할 수 있습니다. 여러 개의 Claude 플랜이 있다면 모두 연결해 두고, 하나가 크레딧을 다 쓰면 다음 플랜으로 전환해 계속 작업할 수도 있습니다."
+    },
+    {
+     "author": "Arjun Suresh",
+     "is_maker": false,
+     "text": "Can I use it away from my desk, from my phone?",
+     "kr": "책상을 벗어나 스마트폰으로도 사용할 수 있나요?"
+    }
+   ],
+   "slug": "ski"
+  },
+  {
+   "name": "Specsight",
+   "tagline_en": "Product observability for teams shipping fast with AI",
+   "tagline_kr": "AI로 빠르게 배포하는 팀을 위한 제품 관측성 플랫폼",
+   "image": "https://ph-files.imgix.net/19f1aa34-f2f3-4249-9ebf-42aefa9f1830.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Productivity",
+    "Engineering & Development",
+    "AI Agents"
+   ],
+   "upvotes": 210,
+   "comments_count": 40,
+   "maker": [
+    "Ola Piętka"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Specsight는 AI 도입으로 코드 변경 속도가 빨라진 개발 환경에서 코드 변경 내역을 실시간 제품 맵, 기능 지식, 명확한 릴리스 업데이트로 자동 변환해 주는 제품 관측성 플랫폼입니다. 코드베이스를 분석해 소프트웨어의 실제 동작 방식을 살아있는 지도로 구성하므로 기획, 영업, 고객지원 팀이 제품의 최신 상태를 투명하게 공유할 수 있습니다. 엔지니어링 차원의 단순 리팩터링이나 버전 변경과 같은 노이즈를 걸러내고, 사용자가 체감하는 실질적 기능 변경만 선별하여 알기 쉬운 자연어로 요약합니다. 여러 AI 에이전트가 동시에 병렬로 코드를 수정하더라도 단일화된 뷰를 제공하여 제품의 거버넌스와 정합성을 완벽하게 유지하도록 돕습니다. 이를 통해 사내 비엔지니어 조직이 겪는 정보 단절을 해소하고 고객 커뮤니케이션의 오차를 획기적으로 줄여줍니다.",
+   "launch_url_used": "https://www.producthunt.com/products/specsight",
+   "website": "https://specsight.app/",
+   "comment_summary": "영업 및 지원 조직이 코드 변경 사항을 파악하지 못해 겪던 고질적인 소통 문제를 해결해 준다는 점에서 실무자들의 열렬한 호응을 얻었습니다. 여러 AI 에이전트의 병렬 배포 추적, 엔지니어링 노이즈 필터링 기준, PostHog 연동 등 실무 도입에 필요한 구체적인 질의가 활발히 오갔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Ola Piętka",
+     "is_maker": false,
+     "text": "Thank you so much Himanshu! 🙏 \"Sales is demoing a product that no longer exists\" is painfully accurate. So glad the digests clicked for you. Next we’re making them personal for each role, and even turning them into short videos! Features behind flags or only partly live is a great call. On it. How did the startups you worked with keep track of what was on for which customers?",
+     "kr": "정말 감사합니다, Himanshu님! 🙏 \"영업팀이 이미 사라진 기능으로 데모를 진행하고 있다\"는 지적은 너무나 뼈아픈 현실이죠. 다이제스트가 마음에 드셨다니 기쁩니다. 다음 단계로는 역할별 맞춤형 다이제스트와 숏폼 영상 제작까지 준비 중입니다! 피처 플래그나 일부만 배포된 기능 추적도 좋은 제안이네요. 바로 검토하겠습니다. 함께 일하셨던 스타트업들은 고객별 활성화 기능을 어떻게 추적했나요?"
+    },
+    {
+     "author": "Ola Piętka",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt 👋 I'm Ola, founder of Specsight. At every startup I worked at, I was the engineer people came to with the same three questions: How does this work? What changed? Is this supposed to happen? The answer was always sitting in the code, in a language most of the company couldn't read. I spent years being the translation layer and never stopped finding it absurd. Now everyone is building with AI, products change every day, and nobody can keep up with what's actually shipping. But yo",
+     "kr": "📌 안녕하세요 Product Hunt 👋 Specsight의 창업자 Ola입니다. 제가 일했던 모든 스타트업에서 동료들은 항상 저에게 세 가지 질문을 던졌습니다: '이거 어떻게 동작하나요?', '뭐가 바뀐 건가요?', '이게 정상인가요?' 답은 언제나 코드 속에 있었지만, 회사 내 대다수는 코드를 읽을 수 없었습니다. 저는 수년간 그 사이를 통역하는 역할을 맡았고, 늘 이것이 불합리하다고 느꼈습니다. 이제는 누구나 AI로 개발하면서 제품이 매일 바뀌고, 실제 무엇이 배포되는지 아무도 따라가지 못하고 있습니다..."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@olapietka How well does it track changes when multiple AI agent are updating the same product?",
+     "kr": "@olapietka 여러 AI 에이전트가 동일한 제품을 동시에 업데이트할 때 변경 사항을 얼마나 잘 추적하나요?"
+    },
+    {
+     "author": "Ola Piętka",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 that’s exactly the world Specsight is built for! it doesn’t matter who wrote the code, a person or five agents. Specsight follows what actually ships, works out which parts of the product each release touched, and updates them. so no matter how many agents are building in parallel, you get one view of how the product works now and what each release changed and honestly, the more agents build your product, the more you need this. you can’t steer what you can’t see 👀",
+     "kr": "@shivam_kushwaha16 바로 그 환경을 위해 Specsight가 만들어졌습니다! 사람이 썼든 5개의 에이전트가 썼든 상관없습니다. Specsight는 실제 배포된 내용을 추적하여 각 릴리스가 제품의 어느 부분을 건드렸는지 분석하고 업데이트합니다. 따라서 아무리 많은 에이전트가 병렬로 개발하더라도 제품이 현재 어떻게 동작하는지, 각 릴리스에서 무엇이 바뀌었는지 한 화면에서 볼 수 있습니다. 사실 에이전트가 많이 빌드할수록 이 도구가 더욱 필요합니다. 보이지 않는 것은 조율할 수 없으니까요 👀"
+    },
+    {
+     "author": "Agshin Rajabov",
+     "is_maker": false,
+     "text": "congrats on the launch Ola. the plain language map is the part id use most. sales and support usually hear about a change from an angry customer, not from the release notes. how do you decide what counts as a change worth showing them and what is just engineering noise?",
+     "kr": "Ola님 출시를 축하합니다. 쉬운 언어로 정리된 제품 맵이 가장 유용해 보이네요. 영업과 지원팀은 대개 릴리스 노트가 아니라 화난 고객을 통해 변경 사항을 알게 되니까요. 사용자에게 보여줄 가치가 있는 변경과 단순 엔지니어링 노이즈를 어떻게 구분하시나요?"
+    },
+    {
+     "author": "Ola Piętka",
+     "is_maker": true,
+     "text": "@agshin\\_rajabov Thanks Agshin! 🙏 Nobody wants to learn about a change from an angry customer, and that’s why we built this It all comes down to the map. When you connect your code, Specsight first maps your whole product: every feature, how it behaves and how it connects to the rest. Then every release is checked against that map. If a change alters how the product behaves or what users see, it shows up in the updates. If it’s a version bump or a refactor that doesn’t change anything for users,",
+     "kr": "@agshin_rajabov 감사합니다, Agshin님! 🙏 화난 고객을 통해 변경 사실을 알고 싶은 사람은 아무도 없으며, 그것이 바로 저희가 이 제품을 만든 이유입니다. 모든 것은 제품 맵에서 시작됩니다. 코드를 연결하면 Specsight가 전체 제품의 모든 기능과 동작, 연결 구조를 먼저 매핑합니다. 그런 다음 모든 릴리스를 해당 맵과 대조합니다. 변경 사항이 제품의 동작이나 사용자 화면을 바꾼다면 업데이트에 표시됩니다. 사용자에게 영향이 없는 버전 업이나 리팩터링이라면 업데이트에 포함되지 않습니다."
+    },
+    {
+     "author": "Lohith Paturu",
+     "is_maker": false,
+     "text": "A decent chunk of our work is to replace legacy applications. Video recordings of the person using the appliction is usually used as on of the inputs while speccing the new project. Any chance your application can intelligently ingest the video to speed up the requirement and process mapping?",
+     "kr": "저희 업무의 상당 부분은 레거시 애플리케이션을 교체하는 것입니다. 새 프로젝트 스펙을 작성할 때 사용자가 앱을 쓰는 화면 녹화 영상을 주요 입력값으로 활용하곤 합니다. 혹시 귀사의 애플리케이션이 영상을 인텔리전트하게 분석하여 요구사항과 프로세스 매핑을 가속화할 계획이 있나요?"
+    },
+    {
+     "author": "Ola Piętka",
+     "is_maker": true,
+     "text": "@lohith\\_paturu great use case! video isn’t something Specsight takes in, it works from the code. but if you have access to the legacy app’s code, that might be even better. Specsight maps every feature, flow and behaviour of the old system, including the edge cases nobody shows in a recording. so you start the new project knowing exactly what the old one does and funny you mention video, we’re actually working on it from the other side. Specsight creating video walkthroughs of your product stra",
+     "kr": "@lohith_paturu 훌륭한 유스케이스네요! Specsight는 영상 입력이 아닌 코드를 기반으로 동작합니다. 하지만 레거시 앱의 코드에 접근할 수 있다면 그게 더 효과적일 수 있습니다. Specsight는 녹화에 드러나지 않는 예외 케이스까지 포함해 이전 시스템의 모든 기능과 흐름, 동작을 매핑해주기 때문입니다. 덕분에 기존 시스템의 정확한 동작을 파악한 채 새 프로젝트를 시작할 수 있습니다. 영상 말씀을 해주셔서 흥미로운데, 저희는 반대로 제품의 코드로부터 비디오 워크스루를 생성하는 기능을 개발 중입니다."
+    },
+    {
+     "author": "Lohith Paturu",
+     "is_maker": false,
+     "text": "@olapietka - We don't always have access to the legacy code. Will definitely keep an eye out on the updates here.",
+     "kr": "@olapietka - 레거시 코드에 항상 접근할 수 있는 것은 아니라서요. 업데이트를 계속 지켜보겠습니다."
+    },
+    {
+     "author": "Ola Piętka",
+     "is_maker": true,
+     "text": "@lohith\\_paturu hmm makes sense. one idea though, once you build the new system, connect Specsight to it from day one. then whoever replaces it in a few years won’t need to rely on screen recordings, they’ll have the whole product mapped. would love to stay in touch :)",
+     "kr": "@lohith_paturu 음, 이해합니다. 한 가지 아이디어라면 새 시스템을 구축할 때 첫날부터 Specsight를 연결해 두는 것입니다. 그러면 몇 년 후 이를 교체할 사람이 화면 녹화에 의존할 필요 없이 제품 전체 맵을 가질 수 있으니까요. 계속 교류하면 좋겠습니다 :)"
+    },
+    {
+     "author": "Riccardo Helfrecht",
+     "is_maker": false,
+     "text": "@olapietka is there an integration with PostHog? I see this as the perfect companion for it!",
+     "kr": "@olapietka PostHog와의 연동 기능이 있나요? 함께 쓰기에 완벽한 조합으로 보입니다!"
+    },
+    {
+     "author": "Ola Piętka",
+     "is_maker": true,
+     "text": "@riccardohelfrecht not yet, but it’s on the roadmap! 👀 yeah they fit perfectly together. Specsight knows exactly what changed in every release, PostHog shows how users behave. connect the two and you see what shipped AND how it actually landed with users 🙌",
+     "kr": "@riccardohelfrecht 아직은 없지만 로드맵에 포함되어 있습니다! 👀 네, 두 도구는 완벽하게 어울립니다. Specsight는 각 릴리스에서 무엇이 바뀌었는지 정확히 알고, PostHog는 사용자의 행동을 보여줍니다. 둘을 연결하면 무엇이 배포되었고 사용자가 이에 어떻게 반응했는지를 한눈에 볼 수 있습니다 🙌"
+    }
+   ],
+   "slug": "specsight"
+  },
+  {
+   "name": "telemetry.dev",
+   "tagline_en": "LLM observability for AI agents",
+   "tagline_kr": "AI 에이전트를 위한 LLM 관측성 도구",
+   "image": "https://ph-files.imgix.net/f4967885-c088-4095-af88-59e9d7d59c8c.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=368",
+   "categories": [
+    "AI Metrics and Evaluation",
+    "Observability tools",
+    "LLM Developer Tools"
+   ],
+   "upvotes": 203,
+   "comments_count": 18,
+   "maker": [
+    "Ephraim Atta-Duncan"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "telemetry.dev는 AI 에이전트의 전체 실행 과정을 단일 트레이스로 통합해 시각화해 주는 LLM 관측성 플랫폼입니다. 모든 모델 호출과 도구(Tool) 호출을 개별 스팬으로 기록하여 소요 시간, 토큰 사용량, 비용, 에러 발생 여부를 직관적으로 파악할 수 있습니다. 별도의 배포 작업 없이도 프롬프트를 즉시 수정하고, 과거 데이터셋 기반의 평가(Evals)를 통해 프로덕션 배포 전 점수를 비교 검증할 수 있습니다. 오류 누적이나 급격한 비용 증가, 에이전트 무한 루프 등 이상 징후 발생 시 실시간 알림을 제공합니다. TypeScript와 Python SDK는 물론 기존 OpenTelemetry 익스포터 및 MCP 서버와 원활히 연동되어 손쉽게 통합할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/telemetry-dev",
+   "website": "https://telemetry.dev/",
+   "comment_summary": "단일 트레이스 기반의 직관적인 에이전트 모니터링과 배포 없는 프롬프트 관리 기능에 대해 개발자들의 관심이 집중되었습니다. 원격 MCP 서버 환경에서의 호출 그룹화, 토큰이 아닌 이벤트 기반의 요금제 구조, 트레이스 조회 시 민감 정보 자동 마스킹 및 보안 처리 방식 등에 대한 심도 있는 질의응답이 이루어졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Ephraim Atta-Duncan",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt, I'm Ephraim, one of the makers of telemetry.dev. When an agent breaks in production, you want to know which step did it and what the run cost. telemetry.dev shows each run as one trace, with every model call and tool call as a span with its tokens, cost, and error. New in this launch: \\- Prompt management: change prompts without a deploy \\- Evals: test a new prompt version on a dataset before it goes live \\- Alerts when errors pile up or a run gets expensive \\- A CLI and an MC",
+     "kr": "📌 안녕하세요 Product Hunt, telemetry.dev의 제작자 중 한 명인 Ephraim입니다. 프로덕션 환경에서 에이전트가 실패했을 때, 어느 단계에서 문제가 발생했고 실행 비용이 얼마나 들었는지 파악해야 합니다. telemetry.dev는 각 에이전트 실행을 하나의 트레이스로 보여주며, 모든 모델 호출과 도구 호출을 소요 시간, 토큰, 비용, 에러가 포함된 스팬으로 표시합니다. 이번 출시의 새로운 기능: \\- 프롬프트 관리: 배포 없이 프롬프트 수정 \\- 평가(Evals): 새 프롬프트 버전을 배포 전 데이터셋으로 사전 테스트 \\- 알림: 오류 누적 및 비용 급증 경고 \\- CLI 및 MCP 지원"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "Hunter absolute fan of @ephraimduncan's work. the maker of @blocks.so keeps cooking!",
+     "kr": "헌터로서 @ephraimduncan의 작업을 정말 열렬히 지지합니다. @blocks.so 제작자가 멋진 결과물을 계속 만들어내고 있네요!"
+    },
+    {
+     "author": "Ephraim Atta-Duncan",
+     "is_maker": true,
+     "text": "@fmerian thank you for the support🫡❤️",
+     "kr": "@fmerian 응원해 주셔서 감사합니다🫡❤️"
+    },
+    {
+     "author": "Sk Al Murad",
+     "is_maker": false,
+     "text": "Congrats Ephraim. We run a remote MCP server, so the agent loop lives in the user’s Claude, not on our side. All we see are separate tool calls coming in. Can telemetry.dev group the calls from one conversation into a single trace from the server side, or does it have to sit inside the agent?",
+     "kr": "축하합니다 Ephraim. 저희는 원격 MCP 서버를 운영 중이라 에이전트 루프가 저희 쪽이 아닌 사용자의 Claude 내에 존재합니다. 저희에게는 개별 도구 호출만 들어오는 것으로 보입니다. telemetry.dev는 서버 측에서 한 대화의 호출들을 단일 트레이스로 그룹화할 수 있나요, 아니면 에이전트 내부에 설치되어야 하나요?"
+    },
+    {
+     "author": "Ephraim Atta-Duncan",
+     "is_maker": true,
+     "text": "@skalmurad Thanks! Short answer: not from the server alone, at least with claude.ai today. To group calls by conversation, your server has to know which conversation each call came from. Claude doesn't tell it. Each tool call arrives with no conversation ID and no trace ID, so two calls from the same chat look the same as two calls from different chats. It works when the client sends that information. Claude's API MCP connector sends a trace ID with each call, and our MCP package picks it up aut",
+     "kr": "@skalmurad 감사합니다! 짧게 답하자면, 적어도 현재 claude.ai 환경에서는 서버 단독으로는 불가능합니다. 호출을 대화별로 그룹화하려면 각 호출이 어떤 대화에서 왔는지 서버가 알아야 하는데, Claude는 이를 알려주지 않습니다. 각 도구 호출에 conversation ID나 trace ID가 없어서 동일한 채팅의 두 호출과 다른 채팅의 두 호출이 같아 보입니다. 클라이언트가 이 정보를 보낼 때에만 그룹화가 가능합니다. Claude API MCP 커넥터는 각 호출마다 trace ID를 전송하며, 저희 MCP 패키지가 이를 자동으로 감지합니다."
+    },
+    {
+     "author": "Omri Ben-Shoham",
+     "is_maker": false,
+     "text": "Impressive tracing. Questions: does pricing scale for high-volume inference? Self-hosting option? How does this compare to vanilla OpenTelemetry sampling?",
+     "kr": "인상적인 트레이싱이네요. 질문이 있습니다: 대규모 추론 시 가격 책정이 어떻게 확장되나요? 셀프 호스팅 옵션이 있나요? 순정 OpenTelemetry 샘플링과는 어떻게 비교되나요?"
+    },
+    {
+     "author": "Ephraim Atta-Duncan",
+     "is_maker": true,
+     "text": "@omri\\_ben\\_shoham1 Thank you❤️ Pricing is per event, not per token, Team is $50/month for 2M, with no overage charges (yet - we should have it soon). We don't have self-hosting also and we don't sample on our side, so use any OpenTelemetry sampler you like.",
+     "kr": "@omri_ben_shoham1 감사합니다❤️ 가격은 토큰당이 아니라 이벤트당 책정되며, Team 플랜은 월 50달러에 200만 이벤트(현재 초과 요금 없음, 곧 도입 예정)입니다. 셀프 호스팅은 지원하지 않으며 저희 측에서 자체 샘플링을 하지 않으므로 선호하는 OpenTelemetry 샘플러를 자유롭게 사용하시면 됩니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The MCP server part is what caught my eye — when a coding agent reads a trace to fix a failing run, does it see the full prompt and tool inputs, or can you redact sensitive parts first? I'm wondering how you keep debugging useful without leaking things like API keys or user data into the agent's context.",
+     "kr": "MCP 서버 기능이 눈에 띄네요. 코딩 에이전트가 실패한 실행을 수정하기 위해 트레이스를 읽을 때 전체 프롬프트와 도구 입력을 그대로 보나요, 아니면 민감한 정보를 먼저 마스킹할 수 있나요? API 키나 사용자 데이터가 에이전트 컨텍스트로 유출되지 않으면서도 디버깅의 유용성을 어떻게 유지하는지 궁금합니다."
+    },
+    {
+     "author": "Ephraim Atta-Duncan",
+     "is_maker": true,
+     "text": "@jcbuilds Thanks you, by default the agent doesn't see prompts or tool inputs. It sees the steps, timing, tokens, cost, and errors. Full payloads need a separate permission that you turn on when you connect the agent. We also redact API keys, tokens, passwords, emails, phone numbers, and card numbers before we store anything, so the agent never sees them. You can add your own patterns, or mask data in the SDK so it never leaves your app.",
+     "kr": "@jcbuilds 감사합니다. 기본적으로 에이전트는 프롬프트나 도구 입력을 보지 않습니다. 단계, 소요 시간, 토큰 수, 비용, 오류만 확인합니다. 전체 페이로드를 보려면 에이전트 연결 시 별도 권한을 활성화해야 합니다. 또한 저장 전 API 키, 토큰, 비밀번호, 이메일, 전화번호, 카드 번호를 자동으로 마스킹하므로 에이전트에 노출되지 않습니다. 사용자 정의 패턴을 추가하거나 SDK에서 마스킹하여 데이터가 앱 외부로 나가지 않도록 할 수도 있습니다."
+    },
+    {
+     "author": "Soham Bharambe",
+     "is_maker": false,
+     "text": "ive built ai apps and always felt I needed something like this to debug and improve my ai responses. dope launch",
+     "kr": "AI 앱을 만들면서 AI 응답을 디버깅하고 개선하기 위해 이런 도구가 절실하다고 항상 느꼈습니다. 멋진 런칭이네요."
+    },
+    {
+     "author": "Ephraim Atta-Duncan",
+     "is_maker": true,
+     "text": "@soham\\_bharambe thank you, let me know if you need any help onboarding",
+     "kr": "@soham_bharambe 감사합니다, 온보딩에 도움이 필요하시면 언제든 말씀해 주세요."
+    },
+    {
+     "author": "Ms. Harita Kanuri",
+     "is_maker": false,
+     "text": "Congrats on the launch! I love how each run shows up as one trace — is cost or errors usually the first thing you check in a trace?",
+     "kr": "출시를 축하합니다! 각 실행이 단일 트레이스로 나타나는 점이 마음에 듭니다. 트레이스에서 보통 비용과 오류 중 어느 것을 먼저 확인하시나요?"
+    }
+   ],
+   "slug": "telemetry-dev"
+  },
+  {
+   "name": "LumaFold: Screen Light",
+   "tagline_en": "Makeup Mirror & Color Effects for iPhone Duo",
+   "tagline_kr": "iPhone Duo를 위한 메이크업 거울 및 컬러 조명 효과",
+   "image": "https://ph-files.imgix.net/0f615813-b1f2-4cf4-889a-1949ea2eb9b7.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=313",
+   "categories": [
+    "Photo editing",
+    "Camera apps",
+    "Graphic design tools"
+   ],
+   "upvotes": 131,
+   "comments_count": 11,
+   "maker": [
+    "Maxym Babenko"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "LumaFold는 폴더블 스마트폰의 듀얼 스크린을 활용하여 기기를 창의적인 휴대용 뷰티 스튜디오로 탈바꿈시키는 스크린 라이트 앱입니다. 분할 화면의 한쪽에는 실시간 전면 카메라를 띄워 메이크업 거울로 활용하고, 다른 한쪽에는 밝기와 색온도 조절이 가능한 조명을 켜서 어두운 곳에서도 얼굴을 화사하게 비출 수 있습니다. 뷰티 루틴뿐만 아니라 감성적인 사진 촬영을 위한 두 가지 컬러 조합 조명, 사진과 손글씨 메시지 디스플레이 등 다채로운 분위기 연출이 가능합니다. 5.1MB의 매우 가벼운 앱 크기와 일체의 사용자 추적 및 분석 도구가 없는 '데이터 미수집' 정책으로 높은 프라이버시를 보장합니다. 무거운 링 라이트를 별도로 챙기지 않고도 언제 어디서나 스마트폰 화면만으로 완벽한 셀카 및 수정 화장 환경을 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/lumafold-screen-light",
+   "website": "https://apps.apple.com/app/id6811553813",
+   "comment_summary": "듀얼 스크린의 양면을 각각 거울과 조명으로 나누어 활용한다는 영리한 아이디어가 링 라이트를 대체할 실용적인 혁신이라며 많은 칭찬을 받았습니다. 백그라운드 조명 작동 가능 여부와 앰비언트 무드 조명으로의 확장 가능성에 대한 의견이 오갔으며, 추적 없는 가벼운 인디 앱이라는 점도 호평을 받았습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Maxym Babenko",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! 👋 I’m Max, an independent developer building apps for **iOS** and **macOS.** When Apple announced its foldable **iPhone Duo**, I immediately started thinking about what I could build around that screen. What could you do if each half had its own role? That question became **LumaFold**. For makeup and everyday touch-ups, one half shows a live view from the front camera while the other lights your face, with adjustable brightness and color. You can also turn both halves into se",
+     "kr": "📌 안녕하세요 Product Hunt! 👋 저는 iOS 및 macOS용 앱을 개발하는 1인 인디 개발자 Max입니다. 애플이 폴더블 iPhone Duo를 발표했을 때, 저는 그 화면을 활용해 무엇을 만들 수 있을지 바로 고민하기 시작했습니다. 화면의 각 절반이 서로 다른 역할을 한다면 어떨까? 그 고민의 결과물이 바로 LumaFold입니다. 메이크업과 일상적인 수정 화장을 위해 한쪽 화면은 전면 카메라의 라이브 뷰를 보여주고 다른 한쪽은 밝기와 색상 조절이 가능한 조명으로 얼굴을 비춰줍니다..."
+    },
+    {
+     "author": "Adam Petritsis",
+     "is_maker": false,
+     "text": "Can one half work as a fill light while I record selfie video in the normal Camera app, or only inside LumaFold?",
+     "kr": "일반 카메라 앱에서 셀카 비디오를 녹화하는 동안 한쪽 화면을 보조 조명으로 쓸 수 있나요, 아니면 LumaFold 앱 내부에서만 작동하나요?"
+    },
+    {
+     "author": "Maxym Babenko",
+     "is_maker": true,
+     "text": "@adamvisu Only inside LumaFold on the same iPhone. The light comes from the screen, so LumaFold must stay open. You can use LumaFold as the light while recording with another camera or phone.",
+     "kr": "@adamvisu 동일한 iPhone에서는 LumaFold 내부에서만 가능합니다. 빛이 화면에서 나오기 때문에 LumaFold가 열려 있어야 합니다. 다른 카메라나 휴대폰으로 녹화할 때 LumaFold를 조명용 보조 기기로 활용할 수는 있습니다."
+    },
+    {
+     "author": "Shunsuke Katahira",
+     "is_maker": false,
+     "text": "I'm from Japan and I feel like this concept would really click with people here. Love the design too. As a fellow indie dev, nice to see an app that doesn't bother with analytics or tracking. 5.1 MB and \"Data Not Collected\" is how I like it.",
+     "kr": "일본에 살고 있는데 이 콘셉트가 이곳 사람들에게 큰 호응을 얻을 것 같습니다. 디자인도 정말 마음에 드네요. 같은 인디 개발자로서 분석 도구나 사용자 추적을 일체 넣지 않은 점이 인상적입니다. 5.1MB의 가벼운 용량과 '데이터 수집 없음' 정책이 정말 마음에 듭니다."
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "That's so cool – it reminds me of one app that a Copenhagen capsule hotel had. (CityHub) – you had a dashboard where you could change colours, and those colours were connected to the lights inside the capsule unit.",
+     "kr": "정말 멋지네요. 코펜하겐의 한 캡슐 호텔(CityHub)에서 사용하던 앱이 떠오릅니다. 색상을 바꿀 수 있는 대시보드가 있었고, 그 색상이 캡슐 유닛 내부의 조명과 연동되어 있었거든요."
+    },
+    {
+     "author": "Maxym Babenko",
+     "is_maker": true,
+     "text": "@busmark\\_w\\_nika That’s a great comparison. Thanks for sharing this example. It makes me think about even more ambient uses for the app.",
+     "kr": "@busmark_w_nika 훌륭한 비유네요. 좋은 사례를 공유해 주셔서 감사합니다. 앱을 앰비언트 무드 조명으로 더욱 다양하게 활용할 방안을 고민하게 만드네요."
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "@meltedmen yes, you can reconnect it with lights and distribute into households :D subscription for extended light modes in different colours or people could design their own and use their own in the pro version lol.",
+     "kr": "@meltedmen 네, 스마트 조명과 연동해 가정용으로 보급할 수도 있겠네요 :D 프로 버전에서는 다양한 색상의 확장 조명 모드를 구독하거나 직접 디자인해 사용할 수도 있겠고요 ㅎㅎ"
+    },
+    {
+     "author": "Maxym Babenko",
+     "is_maker": true,
+     "text": "@busmark\\_w\\_nika nice idea, thank you)",
+     "kr": "@busmark_w_nika 좋은 아이디어네요, 감사합니다 :)"
+    },
+    {
+     "author": "Germán Merlo",
+     "is_maker": false,
+     "text": "👏🏻👏🏻👏🏻",
+     "kr": "👏🏻👏🏻👏🏻"
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Likely AI Using each half of the screen for a different job, mirror on one side and warm light on the other, is a small clever idea that makes a phone do what a ring light used to.",
+     "kr": "화면의 양쪽 절반을 서로 다른 용도로 활용해 한쪽은 거울로, 다른 한쪽은 따뜻한 조명으로 쓰는 방식은 기존 링 라이트의 역할을 스마트폰 하나로 대체하는 작지만 영리한 아이디어입니다."
+    },
+    {
+     "author": "Maxym Babenko",
+     "is_maker": true,
+     "text": "@karimbenkeroum Exactly. That was the idea behind LumaFold: one half works as a live mirror, while the other provides adjustable light, so you can see yourself and light your face at the same time.",
+     "kr": "@karimbenkeroum 정확합니다. 그것이 바로 LumaFold 기획의 핵심이었습니다. 한쪽은 라이브 거울 역할을 하고 다른 쪽은 조절 가능한 조명을 제공하여, 얼굴을 비추면서 동시에 자신의 모습을 확인할 수 있도록 했습니다."
+    }
+   ],
+   "slug": "lumafold-screen-light"
+  },
+  {
+   "name": "Backenly",
+   "tagline_en": "The autonomous backend for AI coding agents",
+   "tagline_kr": "AI 코딩 에이전트를 위한 자율형 백엔드 플랫폼",
+   "image": "https://ph-files.imgix.net/9201c082-7f59-4761-ad0a-97e8847cda1c.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "categories": [
+    "Databases and backend frameworks",
+    "AI Infrastructure Tools",
+    "Cloud Computing Platforms"
+   ],
+   "upvotes": 127,
+   "comments_count": 18,
+   "maker": [
+    "Adarsh Chiriyamkandath Jose"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Backenly는 AI 코딩 에이전트가 직접 구축하고 스스로 유지 관리할 수 있도록 설계된 자율형 백엔드 플랫폼입니다. 코딩 에이전트가 MCP(Model Context Protocol)를 통해 PostgreSQL 데이터베이스부터 사용자 인증, 스토리지, 서버리스 함수, 실시간 기능까지 백엔드 인프라 전반을 손쉽게 구축합니다. 배포 이후에는 매 분마다 실행되는 자가 치유(Self-healing) 루프가 누락된 인덱스, RLS(행 수준 보안) 허점, 비활성화된 실시간 트리거 등을 자동으로 감지하고 수정하여 라이브로 검증합니다. 스키마 분할이나 파괴적인 변경 작업은 실제 데이터 복사본에서 사전 리허설 트랜잭션을 거쳐 안전성을 입증한 뒤에만 사용자 승인을 요청합니다. 모든 변경 내역은 완벽하게 버전 관리되어 체크포인트 기반의 즉각적인 롤백을 지원하므로, 에이전트가 만든 백엔드 장애를 신속하게 복구할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/backenly-2",
+   "website": "https://backenly.com/",
+   "comment_summary": "AI 에이전트 개발 후 방치되기 쉬운 배포 이후 백엔드의 자가 치유 및 유지 관리를 다룬다는 점에서 개발자들의 큰 관심과 호평을 받았습니다. 실패한 스키마 변경 시의 체크포인트 자동 롤백 메커니즘, 사본 데이터를 활용한 사전 리허설 안전성 검증, 테이블별 RLS 정책 승인 제어 로드맵 등에 대한 심도 있는 논의가 진행되었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Adarsh Chiriyamkandath Jose",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 I'm Adarsh, cofounder of Backenly with @lakshmi\\_sunil AI coding agents can now build an application in an afternoon. But once that application goes live, the backend still works the old way: it waits for a person to notice what broke. APIs break. Schemas drift. Permissions leak. Migrations go wrong. Patches pile up. Eventually, someone has to stop building and start debugging the backend. We started Backenly around one question: **If software is increasingly built by AI age",
+     "kr": "📌 안녕하세요 Product Hunt 👋 @lakshmi_sunil과 함께 Backenly를 공동 창업한 Adarsh입니다. 이제 AI 코딩 에이전트는 반나절 만에 애플리케이션을 완성할 수 있습니다. 하지만 앱이 배포되고 나면 백엔드는 여전히 사람이 무엇이 망가졌는지 알아차릴 때까지 기다리는 과거 방식 그대로입니다. API가 깨지고, 스키마가 틀어지며, 권한이 누출되고, 마이그레이션이 실패하며 패치가 쌓입니다. 결국 누군가는 개발을 멈추고 백엔드 디버깅을 시작해야 합니다. 저희는 '소프트웨어가 점점 더 AI 에이전트에 의해 구축된다면 백엔드는 어떻게 바뀌어야 하는가?'라는 질문에서 Backenly를 시작했습니다."
+    },
+    {
+     "author": "Adarsh Chiriyamkandath Jose",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 Thanks Shivam, we actually take a checkpoint before every fix and verify the change right after. If verification fails, Backenly rolls back to that checkpoint automatically, but only if no rows written after the fix would be affected. If some would, the rollback waits for your approval and shows you exactly what it would change. You can also roll back any change yourself from History.",
+     "kr": "@shivam_kushwaha16 감사합니다 Shivam님. 저희는 모든 수정 작업 전에 체크포인트를 생성하고 변경 직후 즉시 검증합니다. 검증이 실패하면 Backenly가 해당 체크포인트로 자동 롤백하지만, 수정 이후 작성된 데이터 행에 영향이 없을 때에만 자동으로 수행됩니다. 영향이 발생하는 경우 롤백은 사용자의 승인을 기다리며 정확히 무엇이 바뀔지 보여줍니다. 또한 사용자가 직접 히스토리에서 언제든 변경 사항을 롤백할 수 있습니다."
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@lakshmi\\_sunil @adarsh\\_cj Building everything from Postgres to authentication through MCP sounds incredibly useful. Great work, team!",
+     "kr": "@lakshmi_sunil @adarsh_cj MCP를 통해 Postgres부터 인증까지 모든 것을 구축할 수 있다는 점이 정말 유용해 보입니다. 멋진 작업이네요!"
+    },
+    {
+     "author": "Adarsh Chiriyamkandath Jose",
+     "is_maker": true,
+     "text": "@vipul\\_kumar1280 Hi Vipul, thanks for the kind words on our launch. Use code PRODUCTHUNT50 for 50% off Pro for 3 months, until Nov 7. What project are you building?",
+     "kr": "@vipul_kumar1280 안녕하세요 Vipul님, 런칭에 따뜻한 말씀 감사드립니다. 11월 7일까지 PRODUCTHUNT50 코드를 사용하시면 3개월간 Pro 플랜 50% 할인을 받으실 수 있습니다. 어떤 프로젝트를 만들고 계신가요?"
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "@adarsh\\_cj What happens if an AI agent makes an incorrect schema change ? Can developers easily roll it back ?",
+     "kr": "@adarsh_cj AI 에이전트가 잘못된 스키마 변경을 수행하면 어떻게 되나요? 개발자가 쉽게 롤백할 수 있나요?"
+    },
+    {
+     "author": "Adarsh Chiriyamkandath Jose",
+     "is_maker": true,
+     "text": "@dipanshu\\_kushwaha5 Hey Dipanshu, yes, you can rollback it. Every change the agent makes is saved in your project's History, so you just pick the change and restore the state before it. Your app's data isn't lost, and the agent can ask for a rollback, but you're the one who approves it.",
+     "kr": "@dipanshu_kushwaha5 안녕하세요 Dipanshu님, 네, 롤백할 수 있습니다. 에이전트가 수행한 모든 변경 사항은 프로젝트 히스토리에 저장되므로, 해당 변경 사항을 선택해 그 이전 상태로 복원하기만 하면 됩니다. 앱 데이터는 손실되지 않으며 에이전트가 롤백을 요청할 수도 있지만 최종 승인은 사용자가 직접 내립니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The rehearsed split on a copy is the part I am most curious about. What does the rehearsal actually validate before it shows you the proposal, and does a split still wait for approval like other destructive changes?",
+     "kr": "사본에서 사전 리허설 분할을 거치는 부분이 가장 궁금합니다. 제안을 표시하기 전에 리허설에서 실제로 어떤 검증을 수행하며, 분할 작업도 다른 파괴적 변경처럼 승인을 거치나요?"
+    },
+    {
+     "author": "Adarsh Chiriyamkandath Jose",
+     "is_maker": true,
+     "text": "@jcbuilds Hey JC , Before you ever see a split, we run the actual migration on a copy of your real rows, inside a transaction that always rolls back. We check the old and new tables stay identical as data gets written, and that permissions behave exactly like before. If anything fails, it never gets proposed. And yes, it always waits for your approval. Your agent can't approve it, and we never drop the old columns. That part's always your call.",
+     "kr": "@jcbuilds 안녕하세요 JC님, 분할 제안을 보여드리기 전에 항상 롤백되는 트랜잭션 내부에서 실제 데이터 행의 복사본을 대상으로 마이그레이션을 직접 실행합니다. 데이터가 기록될 때 이전 테이블과 새 테이블이 동일하게 유지되는지, 권한이 이전과 정확히 똑같이 작동하는지 검증합니다. 실패하는 항목이 있으면 결코 제안되지 않습니다. 그리고 네, 항상 사용자의 승인을 기다립니다. 에이전트가 임의로 승인할 수 없으며 기존 열을 절대 먼저 삭제하지 않습니다. 그 부분은 전적으로 사용자의 결정에 달려 있습니다."
+    },
+    {
+     "author": "Art Stavenka",
+     "is_maker": false,
+     "text": "Well, finally someone takes care about what happens after deployment. Defo bookmarked for my next project! Congrats on launching this very useful product.",
+     "kr": "드디어 배포 이후의 문제를 제대로 챙겨주는 제품이 나왔네요. 다음 프로젝트를 위해 꼭 북마크해 두겠습니다! 대단히 유용한 제품의 출시를 축하드립니다."
+    },
+    {
+     "author": "Adarsh Chiriyamkandath Jose",
+     "is_maker": true,
+     "text": "@artstavenka1 Thank you Stavenka, after deployment is where most backends quietly break, so that's where we focused and want Backenly to prove itself. Would love to hear how it goes on your next project😄",
+     "kr": "@artstavenka1 감사합니다 Stavenka님, 배포 이후야말로 대부분의 백엔드가 조용히 고장 나는 지점이기에 저희가 집중했고 Backenly의 가치를 증명하고 싶은 영역입니다. 다음 프로젝트에서 사용해 보시고 후기 들려주시면 감사하겠습니다😄"
+    },
+    {
+     "author": "Ahmed Khaled",
+     "is_maker": false,
+     "text": "Likely AI To your question: I'd let it add a missing index or fix a dead realtime trigger on its own, but anything touching row-level security on orders or payments should wait for me, even when it looks like a fix. In a multi-store setup, one wrong policy means one merchant can see another merchant's customers. Can approval rules be set per table, so a few tables always need a human while the rest repair themselves?",
+     "kr": "누락된 인덱스를 추가하거나 죽은 실시간 트리거를 고치는 것은 스스로 하도록 두겠지만, 주문이나 결제 관련 RLS(행 수준 보안)를 건드리는 작업은 수정으로 보이더라도 반드시 제 승인을 거치게 할 것입니다. 멀티 스토어 환경에서는 정책 하나만 잘못돼도 한 판매자가 다른 판매자의 고객 정보를 볼 수 있으니까요. 특정 테이블은 항상 사람의 승인을 받도록 테이블별 승인 규칙을 설정할 수 있나요?"
+    },
+    {
+     "author": "Adarsh Chiriyamkandath Jose",
+     "is_maker": true,
+     "text": "@ahmed\\_khaled32 Ahmed, that's a good call on orders and payments, and you're right that one bad policy there is the real risk. Not per table yet, right now it's one setting for the whole project. But if you have your coding agent write the RLS policies for those tables, Backenly won't change them on its own. Tightening a policy always waits for you. It only adds a policy to tables that have none. Per table \"always ask\" is exactly the right idea, and we're building it🙌",
+     "kr": "@ahmed_khaled32 Ahmed님, 주문과 결제에 관한 지적은 매우 정확하며 단 하나의 잘못된 정책이 실제 치명적인 위험이 될 수 있습니다. 아직 테이블별 설정은 안 되며 현재는 프로젝트 전체에 적용되는 단일 설정입니다. 하지만 코딩 에이전트가 해당 테이블의 RLS 정책을 직접 작성하게 해두면 Backenly가 이를 임의로 변경하지 않습니다. 정책을 강화하거나 변경하는 작업은 항상 사용자의 승인을 기다립니다. 정책이 전혀 없는 테이블에만 정책을 추가합니다. 테이블별 '항상 승인 요청' 기능은 정확히 올바른 방향이며 현재 개발 중입니다🙌"
+    }
+   ],
+   "slug": "backenly-2"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
