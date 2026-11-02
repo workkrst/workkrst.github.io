@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-11-02",
+    "url": "2026-11-02/",
+    "top_product": "Screen Studio",
+    "count": 5,
+    "upvotes_total": 1019,
+    "comments_total": 41
+  },
+  {
     "date": "2026-11-01",
     "url": "2026-11-01/",
     "top_product": "SKI",

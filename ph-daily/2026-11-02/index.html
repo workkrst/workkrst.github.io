@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-11-02</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-11-02 · Top 5 · 수집 댓글 41개 · 수집 2026-11-02 12:31 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-11-02",
+ "collected_at": "2026-11-02 12:31 KST",
+ "summary": "오늘 프로덕트 헌트에서는 스크린 녹화 및 영상 제작 도구(Screen Studio, Riverside)와 연구·고객 지원을 자율화하는 AI 에이전트(ClawsGO Science, Embage), 8K 정밀 이미지 편집(Ideogram) 등 실무 생산성을 고도화하는 제품들이 상위권을 차지했습니다. 댓글에서는 단순 텍스트 생성을 넘어 수일에 걸친 장기 실행 안정성, 자동화 과정에서의 민감 정보 블러 처리, 상담원 부재 시의 인계 메커니즘 등 실제 프로덕션 도입 시의 신뢰성과 예외 처리에 질문이 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "screen-studio",
+   "why": "Screen Studio 4.0은 글래스 루프와 대본 기반 편집 등 대규모 기능 추가로 가장 많은 추천과 관심을 모았습니다. 커뮤니티에서는 녹화 시 API 키 등 민감 데이터의 자동 블러 지원 여부와 긴 영상 편집 안정성에 대해 메이커와 활발한 피드백을 나누며 완성도를 검증했습니다."
+  },
+  {
+   "slug": "clawsgo-science",
+   "why": "자체 클라우드 연구실 환경에서 며칠간 자율적으로 가설 검증과 논문 작성을 수행한다는 차별화된 접근으로 큰 주목을 받았습니다. 댓글에서는 설명에 그치는 챗봇과 달리 직접 실험을 수행하는 실행력을 호평하는 동시에, 논문 인용 출처의 실제 존재 여부 및 주장 검증 방식에 대한 날카로운 질문이 이어졌습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Screen Studio",
+   "tagline_en": "Beautiful screen recordings, in minutes.",
+   "tagline_kr": "단 몇 분 만에 완성하는 아름다운 화면 녹화",
+   "image": "https://ph-files.imgix.net/c77fb016-3dbe-4723-96df-de1790db78be.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://screen.studio/",
+   "categories": [
+    "Screenshots and screen recording apps",
+    "Product demo"
+   ],
+   "upvotes": 350,
+   "comments_count": 79,
+   "maker": [
+    "Merlin Druzinec",
+    "Dawid Wilewski"
+   ],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Screen Studio는 마우스 움직임을 부드럽게 보정하고 클릭 시 자동으로 확대하며 시네마틱 모션 블러와 감각적인 배경을 적용해 주는 화면 녹화 도구입니다. 녹화 직후 별도의 복잡한 편집 과정 없이도 단 1분 만에 고품질 프로모션 및 데모 영상으로 완성해 줍니다. 이번 4.0 업데이트에서는 화면 전체를 이동하지 않고 특정 영역만 돋보기처럼 확대하는 글래스 루프(Glass Loupe) 기능이 새롭게 추가되었습니다. 또한 그린스크린 없이도 배경을 제거해 화면 앞에 사용자를 배치하는 카메라 컷아웃과 대본 텍스트를 삭제해 영상을 편집하는 스크립트 기반 편집 기능을 제공합니다. 복잡한 영상 편집 툴을 다루기 힘든 제작자나 제품 마케터에게 강력하고 직관적인 제작 경험을 선사합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/screen-studio",
+   "comment_summary": "사용자들은 전반적인 화면 녹화 품질과 인터페이스에 대해 오랫동안 만족해왔다며 4.0 출시를 크게 환영하는 분위기입니다. 민감 정보 자동 블러 기능과 스크립트 기반 긴 영상 편집의 안정성에 대한 질의가 이어졌고, 메이커는 기능 지원 여부를 확인하며 빠른 피드백을 제공했습니다. 또한 오디오 트랙 분리와 다중 클립 병합 기능에 대한 사용자 요청에 대해 메이커 측은 향후 업데이트를 적극 준비 중이라고 밝혔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Ankush Singh",
+     "is_maker": false,
+     "text": "used Screen Studio to build Construct Computer •14 reviews fast performance (9)user-friendly interface (29)excellent customer support (3)frequent updates (9)beginner-friendly (1)time-saving (4)customizable backgrounds (7)versatile use cases (16)high-quality screen recordings (37)easy sharing options (2)automatic zoom (14)cursor animations (1)built-in editing tools (14)smooth mouse movement (12)cinematic motion blur (2) Incredible app! I have been using this for years, and its the best screen rec",
+     "kr": "Construct Computer 제작에 Screen Studio를 사용했습니다. 빠른 성능, 사용자 친화적인 인터페이스, 우수한 고객 지원, 잦은 업데이트, 시간 절약, 배경 커스텀, 자동 줌, 부드러운 마우스 움직임과 시네마틱 모션 블러 등 모든 면에서 놀라운 앱입니다! 수년간 사용해 왔는데 정말 최고의 화면 녹화 도구입니다."
+    },
+    {
+     "author": "Adam Pietrasiak",
+     "is_maker": false,
+     "text": "Hunter 📌 Hey Product Hunt, Screen Studio 4.0 is here, and it's our biggest update yet. Screen Studio records your Mac and turns it into a polished video. Zooms, a smooth cursor, and framing happen for you. What's new: • Glass Loupe. Magnify one detail under a glass lens, without moving the whole screen like a classic zoom does. • Camera cutout. Appear in front of your screen without your background. No green screen. • Edit by transcript. Delete a sentence from the transcript to cut it from your ",
+     "kr": "헌터 📌 Product Hunt 여러분 안녕하세요, 역대 최대 규모의 업데이트인 Screen Studio 4.0이 출시되었습니다. Screen Studio는 Mac 화면을 녹화해 세련된 영상으로 만들어 줍니다. 줌, 부드러운 커서, 프레이밍이 자동으로 처리됩니다. 이번 업데이트 주요 내용: • 글래스 루프(Glass Loupe): 기존 줌처럼 전체 화면을 움직이지 않고 돋보기 렌즈로 디테일만 확대합니다. • 카메라 컷아웃: 그린스크린 없이도 배경을 제거하고 화면 앞에 사용자를 배치합니다. • 대본 기반 편집: 대본에서 문장을 삭제하면 영상에서도 해당 부분이 잘라냅니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@pie6k Can it automatically blur sensitive details in recording or di i need select them manually?",
+     "kr": "@pie6k 녹화 시 민감한 정보를 자동으로 블러 처리해 주나요, 아니면 수동으로 일일이 선택해야 하나요?"
+    },
+    {
+     "author": "Merlin Druzinec",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 Yeah! It can automatically blur phrases you specify as well as sensitive data (think API keys, last names, ...)",
+     "kr": "@shivam_kushwaha16 네! 직접 지정한 문구뿐만 아니라 API 키, 성(last name) 등 민감한 데이터를 자동으로 블러 처리할 수 있습니다."
+    },
+    {
+     "author": "@merlindru",
+     "is_maker": false,
+     "text": "oky i will try it today and share my experience review tomorrow",
+     "kr": "좋네요, 오늘 바로 써보고 내일 후기 공유하겠습니다."
+    },
+    {
+     "author": "Merlin Druzinec",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 Thank you! If it's not a hassle, it'd be great if you could share to team@screen.studio too. Then the entire team sees it.",
+     "kr": "@shivam_kushwaha16 감사합니다! 번거롭지 않으시다면 team@screen.studio 로도 공유해 주시면 팀 전체가 확인할 수 있어 큰 도움이 됩니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@merlindru sure",
+     "kr": "@merlindru 물론이죠."
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "@pie6k How well does the new transcript based editing work with longer recording, especially when removing multiples sections without affecting the video flow??",
+     "kr": "@pie6k 새로운 대본 기반 편집 기능이 긴 녹화 영상에서도 잘 작동하나요? 특히 영상 흐름을 해치지 않고 여러 구간을 삭제할 때 어떤가요??"
+    },
+    {
+     "author": "Dawid Wilewski",
+     "is_maker": true,
+     "text": "@pie6k @amrita\\_prajapati2 Hi Amrita! Easiest is to try it on a long recording of yours: https://screen.studio/download. Would love to hear how it works for you :D",
+     "kr": "@pie6k @amrita_prajapati2 안녕하세요 Amrita님! 가장 좋은 방법은 가지고 계신 긴 녹화 영상으로 직접 테스트해 보시는 것입니다(https://screen.studio/download). 사용해 보시고 어떤지 꼭 알려주세요 :D"
+    },
+    {
+     "author": "Wojtek Szkutnik",
+     "is_maker": false,
+     "text": "Congrats on the launch and good luck! Using the glass lens on my next demo 🥰 One major feature request: I've been using Screen Studio forever, but there are two missing things that make the workflow 10x slower: 1. Impossible to detach the audio track from video 2. Can't stitch multiple clips together Putting this together in Final Cut Pro is a nightmare, it keeps crashing and doing weird stuff, so if you managed to ship these two I'm sure many of your users would be popping champagne and it woul",
+     "kr": "출시 축하드리고 응원합니다! 다음 데모에 글래스 렌즈 기능을 꼭 써봐야겠네요 🥰 주요 기능 요청이 하나 있습니다. Screen Studio를 정말 오랫동안 쓰고 있는데 워크플로를 크게 늦추는 두 가지 부족한 점이 있습니다: 1. 비디오에서 오디오 트랙을 분리할 수 없음 2. 여러 클립을 하나로 합칠 수 없음. 파이널 컷 프로에서 합치려면 자꾸 튕기고 오류가 나서 악몽 같은데, 이 두 가지만 지원해 주신다면 수많은 사용자들이 샴페인을 터뜨릴 겁니다."
+    },
+    {
+     "author": "Merlin Druzinec",
+     "is_maker": true,
+     "text": "@wojtekszkutnik Appreciate your kind words!! :) We're aware multi-clips are direly needed, of course. We're working out how exactly these should work, but we're planning to address it soon. As for your first point - what would you need detaching audio for? Just curious about your use case. Thanks for being a Screen Studio customer.",
+     "kr": "@wojtekszkutnik 따뜻한 말씀 감사드립니다!! :) 다중 클립 병합이 절실히 필요한 기능이라는 점은 잘 알고 있습니다. 구체적인 동작 방식을 다듬고 있으며 조만간 지원할 계획입니다. 첫 번째로 말씀해주신 오디오 분리는 어떤 사용 사례 때문인지 여쭤봐도 될까요? Screen Studio를 애용해 주셔서 감사합니다."
+    },
+    {
+     "author": "Wojtek Szkutnik",
+     "is_maker": false,
+     "text": "@merlindru there's a couple cases for longer recordings: \\- cleaning ummss ahms coughs or someone walking in as you record \\- moving audio vs video - sometimes the audio is just a narrative not something that is anchored to a very specific visual, so as you edit sometimes it makes sense to push it forwards or backwards - this happens a lot especially when you recycle shorter clips and mix and match",
+     "kr": "@merlindru 긴 녹화 영상에서 몇 가지 활용 사례가 있습니다: 1) 녹화 중 '음', '어' 같은 군더더기 소리, 기침 소리, 또는 지나가는 사람의 소음 정리 2) 오디오와 비디오 타이밍 이동 - 가끔 오디오가 특정 화면에 딱 고정되지 않은 내레이션일 때, 편집하면서 앞뒤로 미세 조정해야 할 때가 많습니다. 특히 짧은 클립을 재활용하고 조합할 때 매우 자주 발생합니다."
+    }
+   ],
+   "slug": "screen-studio"
+  },
+  {
+   "name": "ClawsGO Science",
+   "tagline_en": "The AI research agent with its own cloud lab",
+   "tagline_kr": "자체 클라우드 연구실을 갖춘 AI 연구 에이전트",
+   "image": "https://ph-files.imgix.net/b4ee4a4b-0656-47f4-98bc-7ab5fdaea2d9.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://clawsgo.ai/",
+   "categories": [
+    "Data analysis tools",
+    "AI Agents",
+    "AI Data Scientist"
+   ],
+   "upvotes": 221,
+   "comments_count": 30,
+   "maker": [
+    "Annactswell"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "ClawsGO Science는 연구 전 과정을 완전 자동화하여 질문 입력부터 과학적 발견, 인용 출처가 포함된 논문 작성까지 수행하는 AI 연구 에이전트입니다. 500개 이상의 분석 도구와 90개 이상의 데이터셋이 기본 탑재된 클라우드 랩 환경을 제공합니다. 장기 과제 수행에 특화된 하네스를 통해 Claude와 GPT 에이전트 클러스터를 며칠 동안 지속적으로 실행하며 심층 연구를 진행할 수 있습니다. 단순한 대화형 AI를 넘어 실제 가설 검증과 실험 실행, 결과 보고서 작성을 자율적으로 처리합니다. 복잡한 환경 설정 없이 즉시 분석에 착수할 수 있어 과학 연구의 새로운 패러다임을 제시합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/clawsgo-science",
+   "comment_summary": "사용자들은 단순 챗봇을 넘어 클라우드 환경에서 직접 실험과 논문 작성을 수행하는 실용적인 접근에 큰 기대감을 표했습니다. 초기 분석 소요 시간과 인용 출처의 정확성 검증 방식, AI SaaS 분야 연구 적합성에 대한 질의가 이어졌습니다. 메이커는 환경 설정 없이 즉시 분석이 가능하며 단순 분석은 수 분, 전체 논문은 수 시간에서 수일까지 걸린다고 설명하며 사용자들의 테스트를 독려했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Annactswell",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 I'm Annactswell, founder of ClawsGO Science. We think the next paradigm for science is a lab that never closes: agents that take a question, run the experiments and write the paper while you sleep. To get there, an agent needs more than a model. It needs a lab. Our team used Claude Code and Codex for research every day. They're great at code. But research isn't a repo. Ask one whether two gut bacteria cause depression, and it spends the first hour installing Mendelian random",
+     "kr": "📌 Product Hunt 여러분 안녕하세요 👋 ClawsGO Science의 창립자 Annactswell입니다. 저희는 과학의 다음 패러다임이 24시간 문을 닫지 않는 연구실이라고 생각합니다. 질문을 던지면 사용자가 잠든 사이 실험을 수행하고 논문을 작성하는 에이전트입니다. 이를 위해 에이전트에게는 단순한 모델 이상의 전용 연구실이 필요합니다. 기존 도구들은 코딩에는 뛰어나지만 연구는 단순한 코드 저장소가 아닙니다. 두 장내 세균이 우울증을 유발하는지 물어보면 관련 분석 도구를 설치하는 데만 첫 1시간을 씁니다."
+    },
+    {
+     "author": "Cassie Wang",
+     "is_maker": false,
+     "text": "Congrats team!! The research lab angle makes this feel more practical than a general chat tool.",
+     "kr": "팀 여러분 축하드립니다!! 전용 연구실을 제공한다는 점이 일반 대화형 챗봇 도구보다 훨씬 실용적으로 느껴지네요."
+    },
+    {
+     "author": "Annactswell",
+     "is_maker": true,
+     "text": "@itscassiew Thanks so much! A chat tool can explain a method. ClawsGO runs it. 500+ tools and 90+ datasets are already on the workstation, so the agent goes straight to the analysis. What question would you hand it first?",
+     "kr": "@itscassiew 정말 감사드립니다! 대화 도구는 방법을 설명할 뿐이지만, ClawsGO는 직접 실행합니다. 워크스테이션에 500개 이상의 도구와 90개 이상의 데이터셋이 이미 준비되어 있어 에이전트가 곧바로 분석에 들어갑니다. 어떤 질문을 가장 먼저 맡겨보고 싶으신가요?"
+    },
+    {
+     "author": "Carlvert",
+     "is_maker": false,
+     "text": "This looks promising! Curious — how long does a simple first run usually take?",
+     "kr": "정말 유망해 보이네요! 궁금한 점이 있는데, 간단한 첫 실행은 대략 얼마나 걸리나요?"
+    },
+    {
+     "author": "Annactswell",
+     "is_maker": true,
+     "text": "@carlvert Thanks! It depends on the question. A quick analysis comes back in minutes. A full paper with figures takes hours, and the biggest projects run for days. Setup adds no wait: the lab is ready on minute one.",
+     "kr": "@carlvert 감사합니다! 질문에 따라 다릅니다. 빠른 분석은 몇 분 안에 완료되고 도표가 포함된 전체 논문은 몇 시간, 대형 프로젝트는 며칠 동안 실행됩니다. 랩 환경이 처음부터 완벽히 준비되어 있어 세팅을 위해 기다릴 필요가 전혀 없습니다."
+    },
+    {
+     "author": "Olia Nemirovski",
+     "is_maker": false,
+     "text": "Congrats on the launch! Research is a great fit for an agent that covers the whole loop from finding papers to writing up results. How do you make sure the sources it cites are real and say what the report claims?",
+     "kr": "출시를 축하합니다! 논문 탐색부터 결과 작성까지 전 과정을 다루는 에이전트에게 연구는 정말 딱 맞는 분야네요. 인용된 출처가 실제 존재하고 보고서의 주장과 일치하는지는 어떻게 검증하나요?"
+    },
+    {
+     "author": "Anthony Cai",
+     "is_maker": false,
+     "text": "Is your tool suitable for research in the field of AI SaaS?",
+     "kr": "이 도구가 AI SaaS 분야 연구에도 적합한가요?"
+    },
+    {
+     "author": "Yinn1014",
+     "is_maker": false,
+     "text": "multi day runs are the feature I want to test first",
+     "kr": "며칠 동안 연속으로 실행되는 기능을 가장 먼저 테스트해 보고 싶네요."
+    },
+    {
+     "author": "Wayne Zhang",
+     "is_maker": false,
+     "text": "Having the lab and LaTeX tools together could remove a lot of tab switching. I want to try it on a small paper.",
+     "kr": "연구 환경과 LaTeX 도구가 함께 갖춰져 있으면 탭 전환을 크게 줄일 수 있겠네요. 작은 논문으로 한번 시험해 보고 싶습니다."
+    }
+   ],
+   "slug": "clawsgo-science"
+  },
+  {
+   "name": "Riverside",
+   "tagline_en": "Record, edit & publish podcasts & videos, all in one place",
+   "tagline_kr": "팟캐스트와 영상의 녹음, 편집, 배포를 한곳에서",
+   "image": "https://ph-files.imgix.net/0e174364-8fd4-4379-a58f-707e6c3f63ea.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "http://riverside.com/",
+   "categories": [
+    "Video editing",
+    "Social audio apps",
+    "Podcasting Tools"
+   ],
+   "upvotes": 175,
+   "comments_count": 9,
+   "maker": [],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Riverside는 스튜디오 품질의 영상과 팟캐스트를 한곳에서 녹화, 라이브 스트리밍, 편집, 재가공, 배포할 수 있는 올인원 제작 플랫폼입니다. 이번 9번째 출시에서는 영상 제작 전 과정을 분담해 처리하는 4종의 특화 AI 에이전트 'Riverside Agents'가 새롭게 도입되었습니다. 프로듀서 에이전트는 녹화 전 게스트 질문과 세션을 준비하고, 클리퍼 및 에디터 에이전트는 하이라이트 추출과 컷 편집을 자동으로 처리합니다. 또한 마케터 에이전트는 플랫폼별 규격에 맞춘 캡션과 쇼츠 발행 스케줄링을 지원합니다. 강력한 AI 기반 자동화 기능을 통해 단 한 명의 제작자도 대규모 프로덕션 팀 수준의 콘텐츠를 효율적으로 제작할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/riverside-fm",
+   "comment_summary": "사용자들은 팟캐스트 제작팀을 대체해 월 비용을 크게 절감했다는 실제 사용 후기와 함께, 녹화 시작 전 단계부터 세션을 준비해 주는 프로듀서 에이전트에 대해 호평했습니다. 반면 플랫폼별 쇼츠 발행 규칙의 자동 최적화 여부와 클리퍼 에이전트의 맥락 인식 및 사용자 피드백 학습 능력에 대한 기술적 질의도 함께 제기되었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "Hunter 📌 **Riverside Agents** is a team of AI agents built only for video, working inside Riverside’s tools for conversations and talking-head videos. **Problem:** Making a video takes a lot of work beyond the recording itself: prepping the session, editing, clipping, captioning and posting. Per Riverside, that work used to fall on one person, and general-purpose AI tools aren’t built for it. **Solution:** Riverside Agents splits that work between four agents: * Producer preps the session, such ",
+     "kr": "헌터 📌 **Riverside Agents**는 대화 및 토킹헤드(talking-head) 영상 제작을 위해 설계된 전용 AI 에이전트 팀으로 Riverside 툴 안에서 직접 작동합니다. **문제점:** 영상 제작은 녹화 외에도 세션 준비, 편집, 클립 추출, 자막 제작, 게시 등 많은 작업이 요구되며 보통 한 사람에게 부담이 집중됩니다. **해결책:** Riverside Agents는 이 작업을 4명의 에이전트(세션을 사전 준비하는 프로듀서 등)로 분담하여 해결합니다."
+    },
+    {
+     "author": "Alexis Ohanian",
+     "is_maker": false,
+     "text": "Most impressive!!",
+     "kr": "정말 인상적입니다!!"
+    },
+    {
+     "author": "Jason Kirby",
+     "is_maker": false,
+     "text": "Since they released this I fired my production crew for my podcast and completely automated everything end to end. Saves me $1400/mo",
+     "kr": "이 기능이 출시된 후 팟캐스트 제작팀을 정리하고 전체 과정을 완전히 자동화했습니다. 매달 1,400달러를 절약하고 있어요."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The Producer agent is the part that stands out to me — most tools like this only help after you hit record, but suggesting guest questions and helping run the session moves the help to before the recording even starts. That's usually where a good episode is won or lost.",
+     "kr": "저는 프로듀서 에이전트가 특히 돋보입니다. 대다수 도구는 녹화 버튼을 누른 후에만 도움을 주지만, 게스트 질문을 제안하고 세션 진행을 돕는 것은 녹화 시작 전 단계부터 개입하기 때문입니다. 보통 에피소드의 성공 여부는 녹화 전에 결정되죠."
+    },
+    {
+     "author": "Richard Acheampong",
+     "is_maker": false,
+     "text": "I have been using Riverside and can't wait to try my hands on this new feature. Good job guys!!",
+     "kr": "그동안 Riverside를 사용해 왔는데, 이 새로운 기능을 얼른 사용해 보고 싶네요. 훌륭합니다!!"
+    },
+    {
+     "author": "Sk Al Murad",
+     "is_maker": false,
+     "text": "Likely AI Congrats on the launch. When the Marketer schedules a clip, does it adjust for each platform? We ran into this ourselves: LinkedIn won’t take a video as a Short, only as a normal post, and YouTube wants a title and tags. Does the agent know those rules, or do I set them once per channel?",
+     "kr": "출시를 축하합니다. 마케터 에이전트가 클립 일정을 잡을 때 플랫폼별 규칙을 알아서 맞춰주나요? 링크드인은 쇼츠 형식을 지원하지 않고 일반 게시물로만 올라가며, 유튜브는 제목과 태그를 요구하는 등 차이가 있는데, 에이전트가 이러한 규칙을 알고 있나요 아니면 채널마다 직접 설정해야 하나요?"
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "Likely AI The approval gate before publishing makes sense, but I'm more curious about the Clipper's \"best moment\" judgment upstream of that. Viral-clip heuristics tend to favor generic high-energy beats, which can pull a line out of context and change what it sounds like someone said. Does the Clipper learn from which suggested clips you reject, or does every session start from the same baseline model with no memory of your past edits?",
+     "kr": "발행 전 승인 단계는 합리적이지만, 클리퍼 에이전트가 '최고의 순간'을 판단하는 기준이 더 궁금합니다. 바이럴 클립 알고리즘은 에너지 넘치는 자극적 순간만 선호해 맥락을 왜곡할 위험이 있습니다. 클리퍼가 사용자가 거절한 클립을 학습해 개선되는지, 아니면 이전 편집 기억 없이 매번 동일한 기본 모델로 시작하는지 궁금합니다."
+    },
+    {
+     "author": "Kyle Hudson",
+     "is_maker": false,
+     "text": "used Riverside to build Stacklist •11 reviews I'd used so many different recording and streaming platforms in the past but when we launched our two podcasts I needed something that made 1) recording, 2) editing, and 3) publishing super simple so it didn't take too much overhead and time. Riverside totally does that. The AI scene cut saves me SO much time, makes the podcast look and feel professionally cut in 1 click. The editing and exporting are seamless as well. Great job team. Helpful (1) 73 ",
+     "kr": "과거에 수많은 녹화 및 스트리밍 플랫폼을 써봤지만, 두 개의 팟캐스트를 론칭하면서 녹음, 편집, 배포를 매우 간단하게 해결할 수 있는 도구가 필요했습니다. Riverside가 이를 완벽히 충족해 주었습니다. AI 씬 컷 기능 덕분에 클릭 한 번으로 전문가 수준의 편집이 가능해져 시간이 엄청나게 절약됩니다. 편집과 내보내기 과정도 매끄럽습니다. 팀 여러분 훌륭합니다."
+    }
+   ],
+   "slug": "riverside-fm"
+  },
+  {
+   "name": "Embage",
+   "tagline_en": "Build agent for your customers, run workflows, analyzed.",
+   "tagline_kr": "고객 응대 에이전트 구축부터 워크플로 실행 및 분석까지",
+   "image": "https://ph-files.imgix.net/47f45415-e870-41f9-9f37-f99b79f19f99.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://embage.com/",
+   "categories": [
+    "Customer support tools",
+    "AI Chatbots",
+    "AI Workflow Automation"
+   ],
+   "upvotes": 141,
+   "comments_count": 8,
+   "maker": [
+    "Aradhya Tiwari"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Embage는 웹사이트와 텔레그램 등 다양한 채널을 아우르는 고객 지원용 AI 채팅 및 음성 에이전트를 구축할 수 있는 플랫폼입니다. 사내 기술 문서와 데이터베이스, 수백 개의 외부 서드파티 도구와 실시간으로 연동되는 전문 서브 에이전트를 생성하여 복잡한 업무를 오케스트레이션합니다. 고객과의 모든 상호작용을 자동으로 평가하고 리드 품질 점수를 산출하며 대화 기록에서 정형 데이터를 즉시 추출합니다. 반복적인 고객 문의와 반품 처리 등의 업무를 에이전트가 자율적으로 해결하며 필요시 상담원에게 원활히 인계됩니다. 소규모 팀이나 1인 창업가도 대규모 고객 응대와 운영을 자동화할 수 있도록 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/embage",
+   "comment_summary": "사용자들은 상담원의 반복적인 업무를 자동화하면서도 사람에게 인계할 수 있는 하이브리드 지원 방식에 큰 공감을 보였습니다. 실제 고객 환경에서 상담원이 부재중일 때의 인계 처리 방식과 무료 플랜의 크레딧 사용 조건에 대한 질의가 있었으며, 메이커는 상담원이 접속하기 전까지 AI가 대화를 유지하며 대기 요청을 관리한다고 상세히 답변했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Aradhya Tiwari",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt! 👋 I’m Aradhya, maker of **Embage**. Full disclosure: I originally built Embage to launch a one-person company. I picked customer support because reps spend way too much time on repetitive tasks, sifting through docs, processing returns, and sending standard emails. With Embage, AI agents handle all of that autonomously. If anything critical comes up, your human team can step in whenever the agent requests a handoff. **The Vision:** My goal with Embage is to give lean teams fro",
+     "kr": "📌 Product Hunt 여러분 안녕하세요! 👋 Embage의 제작자 Aradhya입니다. 솔직히 고백하자면 원래 1인 기업을 운영하기 위해 Embage를 만들었습니다. 상담원들이 문서 검색, 반품 처리, 정형 이메일 발송 등 반복 업무에 너무 많은 시간을 쓴다는 점에 착안해 고객 지원을 선택했습니다. Embage를 통해 AI 에이전트가 이를 자율 처리하며, 중요한 사안이 발생하면 에이전트의 요청에 따라 실제 담당자가 즉시 개입할 수 있습니다. 린한 조직에게 강력한 역량을 제공하는 것이 목표입니다."
+    },
+    {
+     "author": "Tehreem Fatima",
+     "is_maker": false,
+     "text": "@aradhya\\_tiwari2 Customer support reps spending half their day on repetitive tasks is so real. Handing that over to autonomous AI agents while keeping a human handoff option is the exact right approach. Congrats on launching Embage!",
+     "kr": "@aradhya_tiwari2 고객 지원 담당자가 하루 절반을 반복 업무에 쓴다는 말에 정말 공감합니다. 이를 자율 AI 에이전트에 넘기면서도 상담원 인계 옵션을 유지하는 것은 정말 올바른 접근법입니다. Embage 출시를 축하드려요!"
+    },
+    {
+     "author": "Aradhya Tiwari",
+     "is_maker": true,
+     "text": "@tehreem\\_fatima5 Thank you Tehreem, would love to have your feedback.",
+     "kr": "@tehreem_fatima5 감사합니다 Tehreem님, 피드백을 주시면 정말 감사하겠습니다."
+    },
+    {
+     "author": "Aradhya Tiwari",
+     "is_maker": true,
+     "text": "Hey Everyone, One thing I want to share is that, you have to avail free AI credits using \"LAUNCH\\_FREE\" coupon if you are on free-tier to get AI credits, otherwise you wont be able to build Agents since Free tier by default don't include any AI credits.",
+     "kr": "여러분, 한 가지 알려드릴 점이 있습니다. 무료 티어 사용자분들은 'LAUNCH_FREE' 쿠폰을 적용해 무료 AI 크레딧을 받으셔야 합니다. 무료 티어 기본 상태에는 AI 크레딧이 포함되어 있지 않아 에이전트를 생성할 수 없습니다."
+    },
+    {
+     "author": "Germán Merlo",
+     "is_maker": false,
+     "text": "Congrats on the launch Aradhya, you deserved it. All the best!",
+     "kr": "Aradhya, 출시 축하해! 마땅히 누릴 자격이 있어. 앞날을 응원할게!"
+    },
+    {
+     "author": "Aradhya Tiwari",
+     "is_maker": true,
+     "text": "@german\\_merlo1 Thank you so much German, appreciate it.",
+     "kr": "@german_merlo1 정말 고마워 German, 진심으로 감사해."
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "Likely AI The human handoff piece is the part I'd want to stress-test before trusting this with real customers. What happens on the customer's end when the agent requests a handoff but no human is actually online, do they sit in a queue, get a message to wait, or does the agent keep trying to resolve it solo? Running voice agents myself, that gap is usually where the experience actually breaks.",
+     "kr": "실제 고객에게 적용하기 전 가장 철저히 검증해보고 싶은 부분이 바로 상담원 인계 기능입니다. 에이전트가 인계를 요청했을 때 온라인 상태인 실제 상담원이 아무도 없다면 고객 화면에는 어떻게 표시되나요? 대기열에 들어가나요, 대기 안내 메시지가 뜨나요, 아니면 에이전트가 단독으로 해결을 계속 시도하나요? 음성 에이전트를 직접 운영해보니 바로 이 간극에서 사용자 경험이 망가지더군요."
+    },
+    {
+     "author": "Aradhya Tiwari",
+     "is_maker": true,
+     "text": "@galdayan Thanks for the question Gal, for human handoff, once the agent thinks human is needed (as per the instruction), till the human takes over, AI chats with the user, and when human takes over AI stops answering till human agent handoff control to AI Agent. From the human agent's perspective, if they are not available, all the requests sits right there till they take over.",
+     "kr": "@galdayan 질문 감사합니다 Gal님. 상담원 인계의 경우 지침에 따라 에이전트가 사람의 개입이 필요하다고 판단하면 실제 사람이 인계받을 때까지 AI가 계속 고객과 대화를 이어갑니다. 상담원이 인계받으면 AI는 답변을 멈추고 상담원이 다시 권한을 넘겨줄 때까지 대기합니다. 상담원 부재 시에는 상담원이 인계받을 때까지 모든 요청이 대기 상태로 유지됩니다."
+    }
+   ],
+   "slug": "embage"
+  },
+  {
+   "name": "Ideogram",
+   "tagline_en": "Just a moment...",
+   "tagline_kr": "잠시만 기다려 주세요...",
+   "image": "https://ph-files.imgix.net/e724792f-5534-4e6b-a93d-d51920e59598.svg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://ideogram.ai/",
+   "categories": [
+    "AI Generative Media"
+   ],
+   "upvotes": 132,
+   "comments_count": 4,
+   "maker": [],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Ideogram은 단 한 장의 참조 이미지만으로 캐릭터 일관성을 유지하며 이미지를 생성하고 편집할 수 있는 생성형 AI 도구입니다. 이번 출시에서는 최대 8K 해상도의 원본 픽셀 상태 그대로 원하는 영역만 선택해 수정할 수 있는 정밀 편집(Precise Edit) 기능이 도입되었습니다. 수정할 영역을 지정하고 프롬프트를 입력하면 마스크 외부 영역의 해상도 저하나 색상 왜곡, 경계선 이질감 없이 지정된 부위만 정교하게 재작업합니다. 특히 미세한 텍스트나 로고, 세밀한 디테일을 뭉개짐 없이 선명하게 렌더링하도록 컨텍스트 윈도우가 자동 설정됩니다. 현재 ideogram.ai 웹사이트와 iOS 앱을 통해 모든 사용자에게 무료로 제공됩니다.",
+   "launch_url_used": "https://www.producthunt.com/products/ideogram",
+   "comment_summary": "사용자들은 8K 고해상도 이미지를 다운스케일링 없이 원본 그대로 유지하며 작은 텍스트나 로고를 정밀 수정할 수 있다는 점에 높은 관심을 보였습니다. 특히 작은 마스크 영역 주변의 컨텍스트를 자동으로 어느 정도 인식하는지와 광택 표면의 반사광 일관성을 어떻게 처리하는지에 대한 구체적인 기술적 질문들이 이어졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "Hunter 📌 **Precise Edit** by Ideogram now has a context window, so you can edit images up to 8K at their original pixels. You mark the area you want changed and describe the edit. Ideogram works inside that region and places it back, so everything outside it comes back exactly as you sent it. No downscaling, no seams, no color mismatch. Small text, logos and fine detail also render sharper. Key features: * Edit images up to 8K at original resolution * Context window set automatically around your",
+     "kr": "헌터 📌 Ideogram의 **정밀 편집(Precise Edit)**에 컨텍스트 윈도우 기능이 도입되어 최대 8K 해상도 이미지를 원본 픽셀 그대로 편집할 수 있게 되었습니다. 변경할 영역을 지정하고 수정을 묘사하면 해당 영역 내부만 작업한 뒤 다시 합성하므로 영역 밖의 모든 것은 원본 그대로 보존됩니다. 해상도 저하, 경계선 이질감, 색상 불일치가 없습니다. 작은 텍스트와 로고, 세부 디테일도 훨씬 선명하게 렌더링됩니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The small-text and logo part is what I would test first — those are usually the first things that go soft when an edit regenerates more of the image than it needs to. Setting the context window automatically around the mask makes sense for that. If I mask just a tiny logo on an 8K product shot, how much surrounding context does it pull in by default, and can I widen it manually when the lighting needs more to match?",
+     "kr": "작은 텍스트와 로고 처리 부분을 가장 먼저 테스트해 보고 싶네요. 필요한 영역보다 더 넓게 이미지를 재생성할 때 가장 먼저 뭉개지는 부분이니까요. 마스크 주변으로 컨텍스트 윈도우를 자동 설정하는 것은 합리적입니다. 8K 제품 사진에서 아주 작은 로고만 마스킹할 경우 기본적으로 주변 컨텍스트를 얼마나 끌어오는지, 조명을 더 자연스럽게 맞추기 위해 수동으로 확장할 수도 있는지 궁금합니다."
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Likely AI Editing one region at 8K and getting everything outside it back untouched is the detail that matters, because a soft logo or a shifted background is what gives an edited image away immediately.",
+     "kr": "8K 해상도에서 특정 영역만 수정하고 그 외 영역을 온전히 원본 그대로 돌려받는다는 점이 핵심 디테일입니다. 뭉개진 로고나 미세하게 틀어진 배경이야말로 합성한 티를 즉시 내는 요인이기 때문입니다."
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "Likely AI No downscaling and no seams is the real promise here, the usual failure mode with masked edits is a visible boundary where the patch meets the original pixels. For product photography specifically, recoloring something on a reflective or glossy surface means the edit also has to fake a consistent reflection/highlight, not just the base color. Curious if that's handled by the context window pulling in the reflection area automatically, or if you still have to mask that separately.",
+     "kr": "해상도 저하나 경계선 이음새가 없다는 점이 진정한 강점입니다. 마스크 편집의 전형적인 실패는 원본 픽셀과 패치가 만나는 경계선이 눈에 띄는 것이니까요. 특히 제품 사진의 경우 반사광이나 광택이 있는 표면의 색상을 바꿀 때 기본 색상뿐 아니라 일관된 반사 및 하이라이트까지 함께 처리해야 합니다. 컨텍스트 윈도우가 반사 영역을 자동으로 끌어와 처리하는지, 아니면 별도로 마스킹해야 하는지 궁금하네요."
+    }
+   ],
+   "slug": "ideogram"
+  }
+ ],
+ "disquiet": [
+  {
+   "slug": "specory",
+   "name": "Specory",
+   "tagline": "생성형 AI 기초부터 개발·아키텍처·보안·거버넌스까지, 44개 과정 3000개 이상의 문항으로 연습하고 실력을 증명하는 비영리 학습 플랫폼",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/specory",
+   "comment": "생성형 AI 전 영역을 다루는 방대한 문제 풀이를 비영리로 제공하여, 체계적인 AI 기술 학습과 역량 검증을 원하는 엔지니어에게 실질적인 도움을 줍니다."
+  },
+  {
+   "slug": "5e9bb8b2-2f1e-46ee-9b84-138ad8c00dff",
+   "name": "킹덤 인베스터: 천하대세전",
+   "tagline": "3분마다 요동치는 실시간 삼국지 관전 & 모의 거상 투자 시뮬레이션 웹게임",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/5e9bb8b2-2f1e-46ee-9b84-138ad8c00dff",
+   "comment": "삼국지 세계관의 실시간 전황을 관전하며 상인 시점에서 거상 투자 시뮬레이션을 즐길 수 있어 웹 기반 인터랙티브 콘텐츠로서 흥미롭습니다."
+  },
+  {
+   "slug": "c16b1683-3ea1-4cbd-8d45-e2a35451d7de",
+   "name": "셀러가드",
+   "tagline": "정산 엑셀 올리면 빠진 정산, 더 떼인 수수료, 진짜 남은 돈을 보여주는 셀러용 도구",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/c16b1683-3ea1-4cbd-8d45-e2a35451d7de",
+   "comment": "이커머스 정산 엑셀 파일을 업로드해 누락된 정산금과 초과 공제된 수수료를 즉시 대조 분석할 수 있어 온라인 판매자의 정산 관리 부담을 덜어줍니다."
+  },
+  {
+   "slug": "fieldbase",
+   "name": "FieldBase",
+   "tagline": "해외 대금을 받은 통화 그대로 기록하고, 수입시기별 한국은행 환율로 환산하는 장부",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/fieldbase",
+   "comment": "외화 수납 원통화 기록과 한국은행 공시 환율 자동 환산을 지원해 해외 매출이 발생하는 프리랜서나 소규모 기업의 세무 회계 관리를 간소화합니다."
+  },
+  {
+   "slug": "c3ea77b9-334d-411a-9d4e-8f53ee7f180f",
+   "name": "이뭔그",
+   "tagline": "링크 하나로 가입 없이 친구들과 하는 한국어 그림 맞히기 웹게임. 초성 힌트, 이어 그리기, 방송 모드까지.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/c3ea77b9-334d-411a-9d4e-8f53ee7f180f",
+   "comment": "별도 회원가입 없이 링크 공유만으로 실시간 캐치마인드 퀴즈와 방송 진행 모드를 제공해 모임이나 스트리밍용 가벼운 엔터테인먼트로 적합합니다."
+  },
+  {
+   "slug": "moonquest",
+   "name": "MOONQUEST 데이터 정리",
+   "tagline": "엉망 CSV·엑셀을 48시간에 정리해 드립니다 — 정리본·행별 리포트·재사용 스크립트 (9,000원)",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/moonquest",
+   "comment": "비정형 스프레드시트 데이터를 정제해 결과 리포트와 함께 재사용 가능한 자동화 스크립트를 저비용으로 제공하는 실용적인 외주 서비스입니다."
+  },
+  {
+   "slug": "haebogo",
+   "name": "해보고 HAEBOGO",
+   "tagline": "스키장 선택부터 장비·강습 준비까지, 처음 하는 액티비티의 시작을 돕는 가이드.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/haebogo",
+   "comment": "스키를 비롯한 아웃도어 레저 입문자에게 필요한 시설 비교와 장비 렌탈 및 강습 정보를 단계별로 안내해 초보자의 진입 장벽을 낮춥니다."
+  },
+  {
+   "slug": "film-mode",
+   "name": "Film Mode",
+   "tagline": "필름을 고르고 셔터를 누르면, 보정 없이 필름 느낌의 사진이 저장되는 카메라 앱입니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/film-mode",
+   "comment": "촬영 단계에서 선택한 필름 프리셋 질감을 즉시 현상하듯 적용하여 번거로운 후가공 없이 아날로그 감성의 결과물을 얻을 수 있습니다."
+  },
+  {
+   "slug": "47274a0e-de00-4e0d-bdb7-c0025d4a4799",
+   "name": "두 하늘 사주",
+   "tagline": "태어난 곳과 지금 사는 곳의 경도를 따로 반영해 시주와 오늘의 일진을 계산하는 사주 도구. 계산은 브라우저 안에서만 이루어지며 한·영·일을 지원합니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/47274a0e-de00-4e0d-bdb7-c0025d4a4799",
+   "comment": "출생지와 거주지의 경도 차이를 보정하여 시주를 정밀 연산하고 모든 처리를 브라우저 로컬에서 안전하게 수행하는 점이 돋보입니다."
+  },
+  {
+   "slug": "smart-scheduler",
+   "name": "스마트 스케줄러 (Smart Scheduler)",
+   "tagline": "지연된 업무와 오늘 일정을 똑똑하게 챙겨주는 웹 & 모바일 실시간 동기화 스마트 캘린더",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/smart-scheduler",
+   "comment": "기한이 지난 미완료 작업과 당일 일정을 능동적으로 재배치하고 멀티 디바이스에 동기화하여 개인 생산성 유지에 유용합니다."
+  },
+  {
+   "slug": "talkcrush",
+   "name": "톡크러시 TalkCrush",
+   "tagline": "폰 하나를 사이에 두고 각자 자기 말로 말하면, 상대 언어 음성과 자막으로 들려주는 대면 대화 통역 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/talkcrush",
+   "comment": "하나의 스마트폰으로 마주 앉아 각자의 모국어로 자연스럽게 음성과 텍스트 통역을 주고받을 수 있어 외국인과의 오프라인 소통에 직관적입니다."
+  },
+  {
+   "slug": "ody",
+   "name": "오디 Ody",
+   "tagline": "스키장·축제·마라톤부터 주변 맛집과 카페까지, 하루 여행을 연결합니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/ody",
+   "comment": "계절 스포츠나 축제 등 특정 액티비티 방문 동선에 맞춰 인근 식당과 카페를 연계 추천하여 당일치기 여행 일정을 손쉽게 짤 수 있습니다."
+  },
+  {
+   "slug": "d8e9a25c-5abb-42f4-a912-305a2eb68d82",
+   "name": "쇠친",
+   "tagline": "켜두기만 하면 운동에 초집중 할 수 있는 헬스장 웨이트 파트너.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/d8e9a25c-5abb-42f4-a912-305a2eb68d82",
+   "comment": "웨이트 트레이닝 중 세트 간 휴식 시간과 루틴 진행을 백그라운드에서 직관적으로 보조해 운동 몰입도를 높여줍니다."
+  },
+  {
+   "slug": "d0ef18d1-1697-44a6-8bfd-3fb89956a48b",
+   "name": "쓸모",
+   "tagline": "쓸데없어 보이는데 은근 쓰게 되는 생활 도구 6개 — N빵 계산, 문자 다듬기, 종이 사진 정리 등. 설치·가입 없음",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/d0ef18d1-1697-44a6-8bfd-3fb89956a48b",
+   "comment": "정산 계산이나 텍스트 교정 등 일상에서 자주 발생하는 자잘한 작업들을 설치 없이 웹에서 곧바로 처리할 수 있는 마이크로 유틸리티 모음입니다."
+  },
+  {
+   "slug": "b11ed537-627f-4e50-b7c5-15fd001f6942",
+   "name": "생활 패턴의 시각화",
+   "tagline": "나의 패턴을 돌아보고 이를 시각화 해볼 수 있습니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/b11ed537-627f-4e50-b7c5-15fd001f6942",
+   "comment": "일상적인 생활 습관 데이터를 시각적 차트로 전환하여 자신의 루틴과 행동 패턴을 객관적으로 회고하도록 돕습니다."
+  },
+  {
+   "slug": "golfmap",
+   "name": "골맵 (Golfmap)",
+   "tagline": "전국 골프장을 지도 한 장에서 — 토스에서 설치 없이 바로 쓰는 골프장 지도",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/golfmap",
+   "comment": "토스 미니앱 환경에서 별도 설치 없이 전국의 골프장 위치와 관련 시설 정보를 지도로 간편하게 탐색할 수 있습니다."
+  },
+  {
+   "slug": "relai",
+   "name": "RELAI",
+   "tagline": "프로젝트 가이드 시스템",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/relai",
+   "comment": "프로젝트 진행 과정의 마일스톤과 워크플로를 체계적으로 안내하여 팀 작업의 방향성과 수행 효율을 유지하도록 지원합니다."
+  },
+  {
+   "slug": "fliphtml5-downloader",
+   "name": "FlipHTML5 Downloader",
+   "tagline": "Transform Fliphtml5 to Beautiful PDFs",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/fliphtml5-downloader",
+   "comment": "웹 기반 전자책 플랫폼인 FlipHTML5의 디지털 문서를 오프라인 열람이 가능한 고품질 PDF 문서로 손쉽게 변환해 줍니다."
+  },
+  {
+   "slug": "cognitia-business-api",
+   "name": "Cognitia Business API",
+   "tagline": "사용자가 동의한 범위 안에서 사용자 본인의 메모리에 질문하는 API. 모든 답변에 출처가 붙습니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/cognitia-business-api",
+   "comment": "사용자가 승인한 개인 기억 데이터를 기반으로 출처가 명시된 답변을 도출하는 기업용 API로, 신뢰할 수 있는 개인화 AI 서비스 구축에 적합합니다."
+  },
+  {
+   "slug": "leeway",
+   "name": "Leeway",
+   "tagline": "Claude·ChatGPT·Gemini 사용량 한도를 Chrome 툴바에서 한눈에",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/leeway",
+   "comment": "주요 대형 언어 모델 서비스들의 남은 쿼리 한도와 사용량을 브라우저 상단 툴바에서 실시간으로 모니터링할 수 있어 편리합니다."
+  },
+  {
+   "slug": "e7d515c2-0c2d-4982-a679-ed1cff290f6b",
+   "name": "맛도리",
+   "tagline": "동네 질문과 현지인 추천으로 살펴보는 맛집 랭킹 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/e7d515c2-0c2d-4982-a679-ed1cff290f6b",
+   "comment": "지역 주민들의 생생한 질의응답과 현지 거주자 평가를 집계하여 광고성 정보를 배제한 로컬 맛집 순위를 확인할 수 있습니다."
+  },
+  {
+   "slug": "4119cab7-6ece-4794-a5d0-739501d9b01b",
+   "name": "데일리베이비",
+   "tagline": "수유·수면·기저귀 기록과 가족 공유를 돕는 육아 기록 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/4119cab7-6ece-4794-a5d0-739501d9b01b",
+   "comment": "신생아의 주요 돌봄 일과를 간편하게 기록하고 공동 양육자 간 실시간으로 상태를 공유할 수 있어 육아 협업에 유용합니다."
+  },
+  {
+   "slug": "tiltwell",
+   "name": "Tiltwell: 수평계·각도기·자",
+   "tagline": "휴대폰을 3D 수평계·각도기·자로 바꿔 주는 광고 없는 측정 공구",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/tiltwell",
+   "comment": "모바일 기기의 센서를 활용해 광고 방해 없이 수평과 각도를 3차원으로 측정할 수 있는 깔끔한 물리 공구 앱입니다."
+  },
+  {
+   "slug": "2a66eadc-2fbe-4a4c-8f68-26e1c113b6ec",
+   "name": "언제볼래",
+   "tagline": "“그래서 우리 언제 봐?” 복잡한 모임 날짜 조율을 간편하게!",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/2a66eadc-2fbe-4a4c-8f68-26e1c113b6ec",
+   "comment": "여러 참여자의 가능 일정을 취합하여 최적의 약속 일자를 시각적으로 빠르게 조율해 주는 소모임용 편의 도구입니다."
+  },
+  {
+   "slug": "itda",
+   "name": "잇다 (ITDA)",
+   "tagline": "인간관계에서 생긴 고민과 감정, AI와 함께 정리하는 관계 기록 서비스",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/itda",
+   "comment": "대인관계에서 겪는 갈등과 감정을 기록하면 AI가 상황을 분석하고 객관적인 정리를 도와 관계 회복과 자기 관리를 지원합니다."
+  },
+  {
+   "slug": "alias",
+   "name": "Alias",
+   "tagline": "아이폰 한 대로 함께 즐기는 오프라인 단어 설명 파티게임",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/alias",
+   "comment": "단일 모바일 기기를 활용해 여럿이 모여 제한 시간 내 단어를 설명하고 맞히는 직관적인 오프라인 파티 게임입니다."
+  },
+  {
+   "slug": "3e537858-0ed1-4aca-a5d0-9738b4659360",
+   "name": "불멍",
+   "tagline": "브라우저에 켜 두는 모닥불",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/3e537858-0ed1-4aca-a5d0-9738b4659360",
+   "comment": "웹 브라우저에서 모닥불 시각 애니메이션과 잔잔한 사운드를 재생하여 작업 중 휴식이나 집중용 배경 화면으로 활용하기 좋습니다."
+  },
+  {
+   "slug": "b-side",
+   "name": "b-side",
+   "tagline": "음악 앱이 달라도, 플레이리스트로 취향을 나누세요.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/b-side",
+   "comment": "서로 다른 음원 스트리밍 플랫폼 간 플레이리스트 곡 목록을 연동 변환하여 음악 취향을 제약 없이 공유할 수 있습니다."
+  },
+  {
+   "slug": "vibecheck",
+   "name": "vibecheck",
+   "tagline": "RLS를 다 켜도 뚫리는 곳을 찾아 주는, AI로 만든 앱 보안 점검",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/vibecheck",
+   "comment": "행 단위 보안 정책(RLS) 설정 속에서 발생할 수 있는 데이터 누수 취약점을 AI로 정밀 점검하여 웹 애플리케이션의 보안 결함을 사전에 탐지합니다."
+  },
+  {
+   "slug": "neverending-canvas",
+   "name": "NEVERENDING CANVAS (네버엔딩 캔버스)",
+   "tagline": "전 세계의 사람들이 남긴 한 문장으로 정원과 음악이 자라는 곳, Neverending Canvas",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/neverending-canvas",
+   "comment": "방문자들의 참여 문장이 모여 디지털 정원과 반응형 배경 음악을 생성하는 독창적인 협업형 인터랙티브 웹 아트입니다."
+  },
+  {
+   "slug": "37d7d895-b7c8-431a-9a62-15b0ed65977a",
+   "name": "땅땅 - 단톡방 익명 재판소",
+   "tagline": "싸웠을 때 단톡방에 링크 던지면 친구들이 익명으로 판결해주는 모의재판 사이트",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/37d7d895-b7c8-431a-9a62-15b0ed65977a",
+   "comment": "일상적인 의견 충돌 상황을 공유해 지인들의 익명 투표와 의견으로 판결을 내려주는 가벼운 모의 중재 웹서비스입니다."
+  },
+  {
+   "slug": "261cfcaa-c590-44f4-af3f-4573de3d2c1d",
+   "name": "스레드 벤치마킹 리포트",
+   "tagline": "경쟁 계정의 스레드 글을 모아 반응이 컸던 글의 형식을 리포트로 정리해 드려요",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/261cfcaa-c590-44f4-af3f-4573de3d2c1d",
+   "comment": "경쟁 스레드 계정의 고인게이지먼트 게시물 유형과 문장 구조를 분석 리포트로 제공해 SNS 콘텐츠 마케팅 전략 수립에 도움을 줍니다."
+  },
+  {
+   "slug": "tavi",
+   "name": "Tavi",
+   "tagline": "대본부터 샷별 영상까지 만드는 AI 제작 도구",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/tavi",
+   "comment": "텍스트 시나리오를 바탕으로 장면별 영상 클립 생성과 편집을 일괄 자동화하여 쇼츠나 스토리 영상 제작 시간을 단축해 줍니다."
+  },
+  {
+   "slug": "9f9b83c3-48e9-4821-8b75-236e29f4b21c",
+   "name": "계산판",
+   "tagline": "만 나이·디데이·날짜·퍼센트·평수·전역일·비율·영문 이름을 가입 없이 계산하고, 계산 기준도 같은 페이지에서 확인하는 무료 계산기 모음",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/9f9b83c3-48e9-4821-8b75-236e29f4b21c",
+   "comment": "생활 및 행정에서 빈번히 쓰이는 다양한 수치 계산 공식과 산출 기준을 한곳에 모아 회원가입 없이 즉시 제공합니다."
+  },
+  {
+   "slug": "time-calculator",
+   "name": "Time Calculator",
+   "tagline": "Add time, find the difference and total a weekly time card",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/time-calculator",
+   "comment": "시간 덧셈과 차이 계산 및 주간 근무 타임카드의 누적 근무 시간을 간편하게 합산할 수 있는 실용적인 시간 연산 도구입니다."
+  },
+  {
+   "slug": "minecraft-circle-generator",
+   "name": "Minecraft Circle Generator",
+   "tagline": "Plan Minecraft circles and ovals with exact block counts",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/minecraft-circle-generator",
+   "comment": "마인크래프트 건축 시 원형이나 타원형 구조물에 필요한 블록 배치와 정확한 수량을 사전에 시각화해 줍니다."
+  },
+  {
+   "slug": "ai-6aa15af9-efa6-46b3-80d8-cf89e2c9dd6d",
+   "name": "공간: AI 감정일기 · 음성 일기장",
+   "tagline": "말로 털어놓으면 AI가 감정을 읽고 위로해 주는 한국어 무료 일기장",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/ai-6aa15af9-efa6-46b3-80d8-cf89e2c9dd6d",
+   "comment": "음성으로 하루 일과와 감정을 구술하면 인공지능이 감정 상태를 분석하고 공감 메시지를 남겨주는 심리 케어형 일기장입니다."
+  },
+  {
+   "slug": "linksaver",
+   "name": "LinkSaver",
+   "tagline": "나중에 볼 링크를 폴더와 메모로 모아 두는 iPhone 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/linksaver",
+   "comment": "웹서핑 중 저장하고 싶은 링크를 폴더별로 분류하고 간단한 메모와 함께 체계적으로 보관할 수 있는 iOS 북마크 앱입니다."
+  },
+  {
+   "slug": "vocaback",
+   "name": "Vocaback",
+   "tagline": "1년 뒤 무너질 회사의 신입 첫날로 돌아왔다. 영어 답장 한 마디로 미래를 바꾸는 업무 영어 상황극",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/vocaback",
+   "comment": "가상의 기업 위기 상황을 배경으로 한 롤플레잉 스토리텔링을 통해 실무 비즈니스 영어를 몰입감 있게 학습하도록 설계되었습니다."
+  },
+  {
+   "slug": "humn",
+   "name": "HUMN",
+   "tagline": "사람이 직접 쓴 글만 받는 익명 게시판. 자동화 도구로는 글을 쓸 수 없습니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/humn",
+   "comment": "AI 봇과 스크립트 기반 자동 작성을 엄격히 차단하고 실제 인간이 작성한 진솔한 글만 소통하도록 유도하는 실험적 익명 커뮤니티입니다."
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
