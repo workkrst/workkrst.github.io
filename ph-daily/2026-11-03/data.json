@@ -1,0 +1,428 @@
+{
+ "date": "2026-11-03",
+ "collected_at": "2026-11-03 12:30 KST",
+ "summary": "오늘 Top 5는 코딩 에이전트 메모리, 비즈니스 워크포스, 미팅 대행 등 AI 생산성 및 자동화 도구가 강세를 보인 가운데 헬스케어 앱이 포함되었습니다. 커뮤니티에서는 서로 다른 도구 간 컨텍스트 유지와 지식 노후화 검증, 그리고 현업 도입 시 인간의 관리 감독 수준 등 실제 운영 안정성을 중심으로 심도 있는 논의가 이어졌습니다.",
+ "notable": [
+  {
+   "slug": "asymptotelabs",
+   "why": "여러 AI 코딩 도구 간에 디버깅 맥락과 세션 지식을 인계받아 반복 작업을 줄여준다는 점에서 개발자들의 큰 관심을 받았습니다. 커뮤니티에서는 과거 지식의 노후화 방지 방안을 집중적으로 질의했으며, 메이커는 실행 트레이스를 피드백 루프로 활용해 유효하지 않은 스킬을 자동 갱신 및 검증한다고 답했습니다."
+  },
+  {
+   "slug": "xmind",
+   "why": "20주년을 맞아 출시된 대화형 Xmind Agent와 MCP 연동을 통해 마인드맵을 외부 AI 환경에서도 단일 진실 공급원으로 활용하는 방식이 호평을 받았습니다. 사용자들은 다중 문서 취합 시 출처 검증과 목표 추적 유지에 대해 문의했고, 메이커는 토픽 노트에 출처를 기록하며 중심 질문을 기준으로 구조를 유지한다고 설명했습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "beacon.sh",
+   "tagline_en": "Open-source self-improving memory for AI coding agents",
+   "tagline_kr": "AI 코딩 에이전트를 위한 오픈소스 자기 개선형 메모리",
+   "image": "https://ph-files.imgix.net/65f19ad3-bb19-4059-aa6d-3be6411e3581.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://github.com/asymptote-labs/agent-beacon",
+   "categories": [
+    "LLM Memory"
+   ],
+   "upvotes": 377,
+   "comments_count": 74,
+   "maker": [
+    "Justin D'Souza"
+   ],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Beacon은 Claude Code, Cursor, Codex, OpenCode 등 20개 이상의 AI 코딩 에이전트 세션을 누적 지식 레이어로 변환하는 오픈소스 도구입니다. 각 에이전트의 실행 트레이스를 실시간으로 기록하여 반복되는 문제 해결 경험을 재사용 가능한 메모리와 스킬로 축적합니다. 에이전트 간 도구를 전환하더라도 이전 세션에서 학습한 디버깅 패턴과 아키텍처 맥락을 그대로 인계받아 활용할 수 있습니다. 새로운 세션의 피드백 루프를 통해 오래되거나 유효하지 않은 지식을 자동으로 검증하고 갱신하여 지식의 최신성을 유지합니다. 개발 환경 전반의 활동을 명확한 운영 가시성으로 제공하며 beacon.sh에서 무료로 시작할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/asymptotelabs",
+   "comment_summary": "여러 코딩 도구 간에 컨텍스트를 유지하고 반복 디버깅을 줄일 수 있다는 점에 많은 개발자들의 기대와 호평이 이어졌습니다. 커뮤니티에서는 과거 세션 정보가 노후화되거나 잘못된 지식으로 남는 문제를 어떻게 방지하는지와 실제 토큰 절감 효과에 대한 질문이 제기되었습니다. 메이커는 에이전트 실행 트레이스를 지속적인 피드백 루프로 활용하여 유효하지 않은 스킬을 검증하고 갱신하거나 폐기한다고 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Justin D'Souza",
+     "is_maker": true,
+     "text": "📌 One of my favorite things about Beacon is that it **makes your coding agents smarter the more you use them**. For everyone in the Product Hunt community building and shipping with Claude Code, Cursor, Codex, or other coding agents, you've probably experienced how frustrating it is to solve the same problem multiple times across different sessions and tools! Beacon **learns from your past sessions**, turns **useful discoveries into reusable memories and skills**, and makes them **portable acros",
+     "kr": "📌 제가 Beacon에서 가장 좋아하는 점 중 하나는 **사용할수록 코딩 에이전트가 더 똑똑해진다**는 것입니다. Claude Code, Cursor, Codex 등의 코딩 에이전트를 사용해 제품을 만들고 배포하는 프로덕트 헌트 커뮤니티 여러분은 서로 다른 세션과 도구에서 동일한 문제를 여러 번 해결해야 하는 답답함을 겪어보셨을 겁니다! Beacon은 **지난 세션에서 학습**하여 **유용한 발견을 재사용 가능한 메모리와 스킬로 변환**하고, 이를 이식 가능하게 만들어 줍니다."
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "Hunter @justindsouza S/O for the great work! keep launching",
+     "kr": "헌터 @justindsouza 멋진 결과물 축하드립니다! 계속해서 좋은 제품 출시해 주세요."
+    },
+    {
+     "author": "Justin D'Souza",
+     "is_maker": true,
+     "text": "@fmerian thank you!",
+     "kr": "@fmerian 감사합니다!"
+    },
+    {
+     "author": "Swati Paliwal",
+     "is_maker": false,
+     "text": "Likely AI @justindsouza Congrats! When Beacon turns a past debugging session into a reusable skill, how do you decide what’s worth remembering versus what could become stale or misleading later?",
+     "kr": "Likely AI @justindsouza 축하합니다! Beacon이 과거 디버깅 세션을 재사용 가능한 스킬로 변환할 때, 무엇을 기억할 가치가 있는 것으로 판단하고 나중에 진부해지거나 오해를 불러일으킬 수 있는 정보를 어떻게 구분하나요?"
+    },
+    {
+     "author": "Justin D'Souza",
+     "is_maker": true,
+     "text": "@swati\\_paliwal Great question Swati! We try to capture the reusable lessons like debugging patterns, architectural context, and hard-earned lessons. Staleness is definitely a challenge, which is why we see agent session traces as a continuous feedback loop. As agents run into new situations, Beacon can use those traces to validate, update, or retire skills that no longer hold up. I'd love your feedback on Beacon! If you like the project please upvote us and don't forget to star our repo: https:",
+     "kr": "@swati\\_paliwal 좋은 질문입니다, Swati 님! 저희는 디버깅 패턴, 아키텍처 맥락, 어렵게 얻은 교훈과 같은 재사용 가능한 내용을 포착하고자 합니다. 정보의 노후화는 분명 도전 과제이며, 이것이 바로 에이전트 세션 트레이스를 지속적인 피드백 루프로 보는 이유입니다. 에이전트가 새로운 상황에 직면할 때 Beacon은 이러한 트레이스를 활용해 더 이상 유효하지 않은 스킬을 검증, 업데이트하거나 폐기할 수 있습니다. Beacon에 대한 피드백을 꼭 듣고 싶습니다! 프로젝트가 마음에 드신다면 찬표를 보내주시고 저희 저장소에 스타도 잊지 말고 눌러주세요: https:"
+    },
+    {
+     "author": "Csaba Kissi",
+     "is_maker": false,
+     "text": "@justindsouza, love the idea behind this! One of the biggest frustrations with coding agents is losing useful context between sessions. Being able to carry over debugging insights and lessons across different tools could be a huge time saver. Congrats on the launch, guys! 🚀",
+     "kr": "@justindsouza, 이 프로젝트 뒤에 담긴 아이디어가 정말 마음에 듭니다! 코딩 에이전트를 쓸 때 가장 답답한 점 중 하나가 세션 간에 유용한 컨텍스트를 잃어버리는 것이었죠. 서로 다른 도구 전반에 걸쳐 디버깅 인사이트와 교훈을 이어갈 수 있다면 엄청난 시간을 아낄 수 있겠네요. 출시 축하합니다! 🚀"
+    },
+    {
+     "author": "Justin D'Souza",
+     "is_maker": true,
+     "text": "@csaba\\_kissi appreciate the kind words Csaba! Would love your feedback on Beacon if you try it out: https://beacon.sh/",
+     "kr": "@csaba\\_kissi 따뜻한 말씀 감사합니다, Csaba 님! 사용해 보시고 Beacon에 대한 피드백을 남겨주시면 감사하겠습니다: https://beacon.sh/"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "Hunter How many times did you re-explain the same project to a different AI? @beacon.sh fixed that. Switch sessions between coding agents like @Claude Code and @Cursor, and one command hands the work to the next agent with everything it learned. They just raised $5.5M, and it's open-source. Star this repo: github.com/asymptote-labs/agent-beacon",
+     "kr": "헌터 서로 다른 AI에게 같은 프로젝트를 몇 번이나 다시 설명하셨나요? @beacon.sh가 이를 해결했습니다. @Claude Code와 @Cursor 같은 코딩 에이전트 간 세션을 전환할 때 명령어 하나로 지금까지 학습한 모든 내용을 다음 에이전트에 넘겨줍니다. 550만 달러 투자를 유치했으며 오픈소스입니다. 저장소에 스타를 눌러주세요: github.com/asymptote-labs/agent-beacon"
+    },
+    {
+     "author": "Justin D'Souza",
+     "is_maker": true,
+     "text": "@fmerian we're just getting started!",
+     "kr": "@fmerian 이제 막 시작했을 뿐입니다!"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "Hunter @justindsouza keep launching! it pays off in the long term",
+     "kr": "헌터 @justindsouza 계속 출시해 주세요! 장기적으로 보답이 따를 것입니다."
+    },
+    {
+     "author": "Mr. Ånand",
+     "is_maker": false,
+     "text": "Congrats on the launch! Local first and shared knowledge support for almost all coding agents. I have used few similar tools in past, would love to see any benchmark or internal findings on how much token/cost saved if I use Beacon on cross harness. How are you handling stale context issue with it?",
+     "kr": "출시를 축하합니다! 거의 모든 코딩 에이전트를 위한 로컬 우선 및 공유 지식 지원이 인상적이네요. 과거에 유사한 도구를 몇 가지 써봤는데, 여러 환경에서 Beacon을 사용할 경우 토큰 및 비용이 얼마나 절감되는지에 대한 벤치마크나 내부 조사 결과가 궁금합니다. 오래된 컨텍스트 문제는 어떻게 처리하고 계신가요?"
+    },
+    {
+     "author": "Justin D'Souza",
+     "is_maker": true,
+     "text": "@astrodevil Great question Anand! The biggest opportunity we’re seeing is eliminating repeated exploration and debugging by letting agents reuse hard-earned context from previous sessions. On staleness, traces give us a continuous feedback loop. Beacon can see how agents apply what they’ve learned in future sessions, catch patterns that stop working, and update or retire stale knowledge. Would love your feedback on Beacon! And if you find it useful, an upvote and GitHub star would mean a lot :) ",
+     "kr": "@astrodevil 훌륭한 질문입니다, Anand 님! 저희가 보고 있는 가장 큰 기회는 에이전트가 이전 세션에서 얻은 귀중한 컨텍스트를 재사용함으로써 반복적인 탐색과 디버깅을 없애는 것입니다. 노후화 문제와 관련해서는 트레이스가 지속적인 피드백 루프 역할을 합니다. Beacon은 에이전트가 향후 세션에서 학습한 내용을 어떻게 적용하는지 확인하고, 더 이상 작동하지 않는 패턴을 감지하여 오래된 지식을 업데이트하거나 폐기할 수 있습니다. Beacon에 대한 피드백을 주시면 정말 기쁘겠습니다! 유용하다고 생각되시면 찬표와 깃허브 스타도 큰 힘이 됩니다. :)"
+    }
+   ],
+   "slug": "asymptotelabs"
+  },
+  {
+   "name": "Xmind",
+   "tagline_en": "The most professional and popular mind mapping tool",
+   "tagline_kr": "가장 전문적이고 대중적인 마인드맵 도구",
+   "image": "https://ph-files.imgix.net/e38df7cb-67e1-4713-9837-1a78121307d8.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://xmind.com/",
+   "categories": [
+    "Productivity",
+    "Note and writing apps",
+    "Team collaboration software"
+   ],
+   "upvotes": 250,
+   "comments_count": 31,
+   "maker": [
+    "Maggie Müller"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Xmind는 창의성을 극대화하고 영감을 정리하여 생산성을 높여주는 올인원 마인드맵 및 브레인스토밍 도구입니다. 이번에 20주년을 맞아 출시된 Xmind 2027은 대화형 AI인 Xmind Agent를 핵심 기능으로 탑재했습니다. 단순히 프롬프트로 맵을 생성하는 수준을 넘어 사용자의 기존 메모나 문서를 바탕으로 AI와 함께 아이디어를 조사하고 확장할 수 있습니다. 모델 컨텍스트 프로토콜(MCP) 지원을 추가하여 ChatGPT 등 외부 환경에서도 마인드맵을 직접 조회하고 업데이트할 수 있습니다. 모든 플랫폼에서 일관되고 뛰어난 사용자 경험을 제공하며 아웃라인 정리부터 프레젠테이션까지 한 곳에서 완결할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/xmind",
+   "comment_summary": "출시 20주년을 맞은 Xmind의 업그레이드와 마인드맵을 단일 진실 공급원으로 유지하는 Xmind Agent 및 MCP 연동 방식에 큰 호평이 이어졌습니다. 사용자들은 여러 문서를 취합할 때 출처 확인이 가능한지, 그리고 대화가 복잡해지거나 새로운 관점으로 재구성할 때 기존 구조와 세부 내용을 온전히 유지할 수 있는지를 집중적으로 질의했습니다. 메이커는 원본 출처를 토픽 노트에 기록해 검증할 수 있도록 지원하며, 사용자의 원래 목표를 기준으로 세부 내용을 보존하면서도 유연하게 재구조화할 수 있다고 답변했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Justin Jincaid",
+     "is_maker": false,
+     "text": "Hunter 📌 Xmind turns **20** this year, and they've just released Xmind 2027 with a pretty interesting upgrade. Most AI mind mapping tools generate a map from a prompt. Xmind is taking it a step further with Xmind Agent. You can start with your own notes, documents, or an existing mind map, then work with AI to research ideas, explore different perspectives, and keep refining the map as you go. They've also added **MCP support**, so you can access and update your mind maps directly from ChatGPT, ",
+     "kr": "헌터 📌 Xmind가 올해로 **20주년**을 맞이했으며, 매우 흥미로운 업그레이드가 포함된 Xmind 2027을 방금 출시했습니다. 대부분의 AI 마인드맵 도구는 프롬프트로부터 맵을 일방적으로 생성합니다. 하지만 Xmind는 Xmind Agent를 통해 한 단계 더 나아갔습니다. 직접 작성한 메모, 문서, 또는 기존 마인드맵에서 시작하여 AI와 협력해 아이디어를 조사하고 다양한 관점을 탐색하며 맵을 지속적으로 정교화할 수 있습니다. 또한 **MCP 지원**이 추가되어 ChatGPT 등에서도 마인드맵에 직접 접근하고 업데이트할 수 있습니다."
+    },
+    {
+     "author": "Maggie Müller",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋 Thanks @justin2025 for hunting us today. Ideas rarely arrive fully formed. You gather information, question an assumption, and reconsider what matters. We wanted Xmind to take a more active part in that process, while keeping you in charge of the direction. Today, we’re sharing **Xmind 2027, with Xmind Agent at the heart of the release.** Start with an idea, your own documents, or a map you’ve already been working on. Xmind Agent uses that context to research a topic, explore",
+     "kr": "안녕하세요 프로덕트 헌트 여러분! 👋 오늘 저희를 소개해 주신 @justin2025 님께 감사드립니다. 아이디어는 처음부터 완벽한 형태로 떠오르는 법이 거의 없습니다. 정보를 수집하고 가설을 의심하며 무엇이 중요한지 재검토하는 과정을 거치게 되죠. 저희는 사용자가 방향의 주도권을 쥐면서도 Xmind가 그 과정에 더 적극적으로 참여하기를 바랐습니다. 오늘 저희는 **Xmind Agent를 핵심으로 담은 Xmind 2027**을 선보입니다. 아이디어 하나, 여러분의 문서, 또는 이미 작업 중인 맵에서 시작해 보세요. Xmind Agent는 해당 맥락을 활용해 주제를 조사하고 탐색을 돕습니다."
+    },
+    {
+     "author": "Victoria Wu",
+     "is_maker": false,
+     "text": "Likely AI @justin2025 @maggie\\_muller Been living in mind maps for product thinking for years. Most AI map tools just dump a tree from a prompt. The Agent + MCP angle here feels different: you keep the map as the source of truth, and the model works _inside_ that space instead of replacing it. Curious how well Agent holds structure when the conversation gets messy.",
+     "kr": "Likely AI @justin2025 @maggie\\_muller 수년 동안 제품 기획을 위해 마인드맵을 적극적으로 활용해 왔습니다. 대부분의 AI 마인드맵 도구는 프롬프트에 따라 단순히 트리 구조를 쏟아낼 뿐입니다. 여기서 선보인 Agent와 MCP 접근법은 사뭇 다르게 느껴집니다. 마인드맵을 '단일 진실 공급원'으로 유지하면서 모델이 맵을 대체하는 대신 그 공간 _내부_에서 작업하니까요. 대화가 복잡해질 때 Agent가 구조를 얼마나 잘 유지하는지 궁금합니다."
+    },
+    {
+     "author": "Maggie Müller",
+     "is_maker": true,
+     "text": "@victoria\\_wu That’s exactly the workflow we’re aiming for, Victoria. Xmind Agent works with the context of both your conversation and your existing map, drawing on MCP, Skills, and tools like web search as needed to understand, enrich, and organize the information. This keeps individual branches and the overall map clear, coherent, and complete, even as conversations become long and complex. For larger changes, we recommend breaking the work into a few focused steps. That gives Agent a clear sc",
+     "kr": "@victoria\\_wu Victoria 님, 바로 그것이 저희가 목표로 하는 워크플로입니다. Xmind Agent는 사용자와의 대화 및 기존 맵의 맥락을 모두 활용하며, 필요에 따라 MCP, 스킬, 웹 검색과 같은 도구를 동원해 정보를 이해하고 보강하며 정리합니다. 이를 통해 대화가 길어지고 복잡해지더라도 개별 가지와 전체 맵의 명확성, 일관성, 완전성을 유지할 수 있습니다. 대규모 변경의 경우 작업을 몇 가지 집중된 단계로 나누어 진행하는 것을 권장하며, 그렇게 하면 Agent가 명확한 범위를 확보할 수 있습니다."
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "@maggie\\_muller How well does Xmind agent keep track of the original goal when a research map grows into several branches??",
+     "kr": "@maggie\\_muller 조사 맵이 여러 갈래의 가지로 뻗어나갈 때 Xmind Agent가 원래의 목표를 얼마나 잘 추적하나요??"
+    },
+    {
+     "author": "Maggie Müller",
+     "is_maker": true,
+     "text": "@amrita\\_prajapati2 Amrita, the original goal remains a central reference for Xmind Agent as the work develops. It uses that goal together with the conversation and the existing map to guide how new information is expanded, grouped, and connected to what’s already there. As the research grows into more branches, that shared context keeps the content organized around the central question and the relationships between branches visible. The research can go deeper while maintaining a clear direction",
+     "kr": "@amrita\\_prajapati2 Amrita 님, 작업이 진행되는 동안 원래의 목표는 Xmind Agent의 중심 기준점으로 유지됩니다. Agent는 대화 내용 및 기존 맵과 함께 그 목표를 활용하여 새로운 정보를 확장하고 그룹화하며 기존 내용과 연결하는 방식을 조율합니다. 조사가 더 많은 가지로 확장되더라도 이러한 공유 맥락 덕분에 핵심 질문을 중심으로 콘텐츠가 정리되고 가지 간의 관계가 명확하게 유지됩니다. 덕분에 명확한 방향성을 잃지 않으면서도 조사를 더 깊이 진행할 수 있습니다."
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@justin2025 @maggie\\_muller Can Xmind agent use information from multiple uploaded documents to build a mind map while keeping the sources easy to verify??",
+     "kr": "@justin2025 @maggie\\_muller Xmind Agent가 업로드된 여러 문서의 정보를 활용해 마인드맵을 구성하면서도 출처를 쉽게 검증할 수 있도록 유지할 수 있나요??"
+    },
+    {
+     "author": "Maggie Müller",
+     "is_maker": true,
+     "text": "@vipul\\_kumar1280 Yes, Vipul! Xmind Agent can bring information from multiple uploaded documents into a single mind map, drawing out key findings, identifying shared themes, and connecting related ideas. Source information can be included in the relevant topic notes, making it easier to see where the content came from and check it against the original documents. You get a consolidated view across your materials, with the source context needed to understand and verify important findings.",
+     "kr": "@vipul\\_kumar1280 네, Vipul 님! Xmind Agent는 업로드된 여러 문서의 정보를 하나의 마인드맵으로 통합하여 핵심 결과를 도출하고 공통 테마를 식별하며 연관된 아이디어를 연결할 수 있습니다. 출처 정보는 관련 토픽 노트에 포함될 수 있어 내용이 어디서 비롯되었는지 확인하고 원본 문서와 대조하기 쉽습니다. 중요한 발견을 이해하고 검증하는 데 필요한 출처 맥락과 함께 자료 전반에 대한 통합된 뷰를 얻을 수 있습니다."
+    },
+    {
+     "author": "Aryan Mehta",
+     "is_maker": false,
+     "text": "@justin2025 @maggie\\_muller Can you ask Xmind agent handle to reorganize an existing map around a completely different angle without losing the usefull details??",
+     "kr": "@justin2025 @maggie\\_muller 유용한 세부 정보를 잃지 않으면서 기존 맵을 완전히 다른 관점으로 재구성하도록 Xmind Agent에 요청할 수 있나요??"
+    },
+    {
+     "author": "Maggie Müller",
+     "is_maker": true,
+     "text": "@aryan\\_mehta6 Yes, Aryan! Xmind Agent can reorganize an existing map around a new perspective while preserving the valuable details. For example, a research map organized by competitor can be restructured around customer needs, carrying the relevant data, examples, and supporting insights into the appropriate new branches. That lets you explore the same research from a different angle while retaining the depth of the work you’ve already done. Give it a try with a map you’re working on—we’d love",
+     "kr": "@aryan\\_mehta6 네, Aryan 님! Xmind Agent는 가치 있는 세부 정보를 보존하면서 새로운 관점을 중심으로 기존 맵을 재구성할 수 있습니다. 예를 들어 경쟁사별로 정리된 조사 맵을 고객 요구사항을 중심으로 재편하면서 관련 데이터, 사례, 뒷받침하는 인사이트를 적절한 새 가지로 옮길 수 있습니다. 이를 통해 이미 수행한 작업의 깊이를 유지하면서 동일한 연구를 다른 각도에서 살펴볼 수 있습니다. 현재 작업 중인 맵으로 직접 시험해 보세요!"
+    },
+    {
+     "author": "Swati Paliwal",
+     "is_maker": false,
+     "text": "@justin2025 @maggie\\_muller My goodness! 20 years? What a milestone! My question: when someone brings in a messy, half-formed idea, how do you help them avoid the trap of accepting the first “well-organized” map the AI produces?",
+     "kr": "@justin2025 @maggie\\_muller 세상에! 20년이라니요? 정말 뜻깊은 이정표네요! 질문이 있습니다. 누군가 정돈되지 않은 불완전한 아이디어를 가져왔을 때, AI가 처음으로 만들어낸 '깔끔하게 정리된' 맵을 무비판적으로 수용해 버리는 함정에 빠지지 않도록 어떻게 도와주나요?"
+    },
+    {
+     "author": "Maggie Müller",
+     "is_maker": true,
+     "text": "@swati\\_paliwal That’s a great question, Swati, and thank you for celebrating our 20th anniversary with us! A tidy map can make a half-formed idea feel more settled than it really is. That’s why we focus first on the quality of the content. Xmind Agent uses the user’s question and context to develop the key ideas, clarify their relationships, and surface areas that need further exploration, then organizes them into a structure that fits. Our goal is a map with strong, readable content that also ",
+     "kr": "@swati\\_paliwal 훌륭한 질문입니다, Swati 님, 20주년을 함께 축하해 주셔서 감사합니다! 깔끔하게 정돈된 맵은 불완전한 아이디어가 실제보다 더 완성도 높게 느껴지도록 착각을 줄 수 있습니다. 그렇기 때문에 저희는 콘텐츠의 품질에 먼저 집중합니다. Xmind Agent는 사용자의 질문과 맥락을 바탕으로 핵심 아이디어를 발전시키고 관계를 명확히 하며 추가 탐색이 필요한 부분을 도출한 뒤 이에 적합한 구조로 정리합니다. 저희 목표는 알차고 가독성 높으면서도 탐색의 여지를 열어두는 맵을 만드는 것입니다."
+    }
+   ],
+   "slug": "xmind"
+  },
+  {
+   "name": "UnleashX",
+   "tagline_en": "The AI workforce that turns conversations into outcomes.",
+   "tagline_kr": "대화를 결과로 전환하는 AI 워크포스",
+   "image": "https://ph-files.imgix.net/08f53bc9-7c5e-409d-8b9c-fe264c8d86b0.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://unleashx.ai/",
+   "categories": [
+    "AI Workflow Automation"
+   ],
+   "upvotes": 232,
+   "comments_count": 53,
+   "maker": [
+    "Ajay Kadyan"
+   ],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "UnleashX는 사람을 채용하듯 기업에 필요한 AI 직원을 고용하여 업무를 위임할 수 있는 엔터프라이즈 AI 워크포스 플랫폼입니다. 15개의 사전 구축된 AI 직무 모델을 선택하거나 기업 요구에 맞게 새로운 AI 직원을 직접 생성하고 교육할 수 있습니다. CRM 및 업무 도구 등 100개 이상의 시스템과 연동되어 엔드투엔드로 복잡한 비즈니스 워크플로를 자율 실행합니다. 모든 예외 상황에는 담당 인력이 지정되어 있어 위험도가 높은 순간에만 사람이 개입하는 안전한 운영 구조를 갖췄습니다. 단순 반복적인 리드 검증부터 고객 지원, 인사, 재무에 이르기까지 전사적인 업무 자동화를 신속하게 실현합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/unleashx",
+   "comment_summary": "사전 구축된 AI 직원을 도입해 반복적인 비즈니스 워크플로를 자율화한다는 콘셉트와 예외 상황마다 담당 인력을 두는 구조에 큰 호응이 있었습니다. 커뮤니티에서는 개발 업무 외에 인사나 회계 등 일반 직무 적용 가능 여부와 현업 도입 시 실제로 필요한 사람의 관리 감독 수준에 대해 문의했습니다. 창업자는 비개발 직무에도 맞춤 설정이 가능하며, 루틴한 업무는 AI가 독립 처리하고 정의된 에스컬레이션 규칙에 따라 사람에게 인계하여 부담을 최소화한다고 답변했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Ajay Kadyan",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 Ajay here, founder of UnleashX. **UnleashX is an AI workforce platform for enterprises.** Hire from 15 pre-built AI employees, or build your own. They take on real work across 100+ systems, and every exception has a human owner. 🕵️ **Try it here:** tryunleashx.com 🙋 **Why we built it:** at Zimyo, the HR-tech company I co-founded (where I also worked with Pawan and Ruchika), I saw the same pattern again and again. More leads meant more follow-ups, more customers meant more co",
+     "kr": "📌 안녕하세요 프로덕트 헌트 여러분 👋 UnleashX의 창업자 Ajay입니다. **UnleashX는 기업을 위한 AI 워크포스 플랫폼입니다.** 사전 구축된 15명의 AI 직원 중 채용하거나 직접 나만의 직원을 만들 수 있습니다. 이들은 100개 이상의 시스템에 걸쳐 실제 업무를 수행하며, 모든 예외 상황에는 인간 담당자가 지정됩니다. 🕵️ **여기서 사용해 보세요:** tryunleashx.com 🙋 **개발 배경:** 제가 공동 창업한 HR 테크 기업 Zimyo에서 리드가 늘어날수록 후속 조치가 폭증하고 고객이 늘어날수록 커뮤니케이션 업무가 늘어나는 패턴을 끊임없이 목격했습니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@kadyan\\_ajay This sounds interesting which task do you think businesses should hand over to their first AI enployee?",
+     "kr": "@kadyan\\_ajay 흥미롭게 들립니다. 기업이 첫 번째 AI 직원에게 맡기기에 가장 좋은 업무는 무엇이라고 생각하시나요?"
+    },
+    {
+     "author": "Ajay Kadyan",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 I’d start with anything that is repetitive, high-volume task that has clear outcomes, like lead qualification or customer support follow-ups. It’s a practical way to see the impact quickly without overhauling existing workflows. Once businesses build trust, they can gradually hand over more complex responsibilities to their AI workforce. What business are you into? What are some tasks that are repetitive for you?",
+     "kr": "@shivam\\_kushwaha16 리드 자격 검증이나 고객 지원 후속 대응처럼 결과가 명확하고 대량으로 발생하는 반복 업무부터 시작할 것을 권장합니다. 기존 워크플로를 크게 바꾸지 않고도 빠른 효과를 체감할 수 있는 실용적인 방법입니다. 신뢰가 쌓이면 점차 더 복잡한 책임을 AI 워크포스에 위임할 수 있습니다. 어떤 비즈니스를 운영 중이신가요? 반복적으로 처리하시는 업무에는 어떤 것들이 있나요?"
+    },
+    {
+     "author": "Nitesh Tripathi",
+     "is_maker": false,
+     "text": "@kadyan\\_ajay are these mostly trained for tech jobs? or I can hire/train HR/accountant roles as well?",
+     "kr": "@kadyan\\_ajay 이 직원들은 주로 기술 직군용으로 훈련되어 있나요? 아니면 인사나 회계 담당 역할도 채용하고 훈련시킬 수 있나요?"
+    },
+    {
+     "author": "Ajay Kadyan",
+     "is_maker": true,
+     "text": "@nitesh\\_tripathi Not at all, Nitesh! UnleashX isn't limited to tech roles. You can build and train AI employees for functions like HR, finance, accounting, sales, and customer support as well. The idea is to configure them around the role, workflows, and business rules you need. Think of it as building an AI workforce across the organisation, not just the tech team.",
+     "kr": "@nitesh\\_tripathi 전혀 그렇지 않습니다, Nitesh 님! UnleashX는 기술 직무에 국한되지 않습니다. 인사, 재무, 회계, 영업, 고객 지원 등의 직무를 위한 AI 직원을 구축하고 훈련시킬 수 있습니다. 귀하에게 필요한 역할, 워크플로, 비즈니스 규칙에 맞게 구성하는 것이 핵심입니다. 기술 부서뿐만 아니라 조직 전반에 걸쳐 AI 워크포스를 구축한다고 생각하시면 됩니다."
+    },
+    {
+     "author": "Ajay Kadyan",
+     "is_maker": true,
+     "text": "@nitesh\\_tripathi this for customer facing roles",
+     "kr": "@nitesh\\_tripathi 이는 고객 대면 직무에도 동일하게 적용됩니다."
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "@kadyan\\_ajay interesting concept. But how much human supervision is actually needed once these AI employees are deployed ?",
+     "kr": "@kadyan\\_ajay 흥미로운 개념입니다. 하지만 이러한 AI 직원이 배포된 후 실제로 어느 정도의 인간 감독이 필요한가요?"
+    },
+    {
+     "author": "Ajay Kadyan",
+     "is_maker": true,
+     "text": "@dipanshu\\_kushwaha5 Good question, Dipanshu. It depends on the complexity and risk of the workflow. Once deployed, AI employees can handle routine tasks independently, while human oversight comes in through defined escalation rules, exception handling, and ongoing quality monitoring. The goal is to reduce constant supervision without removing human control where it matters. What kind of workflow are you considering?",
+     "kr": "@dipanshu\\_kushwaha5 좋은 질문입니다, Dipanshu 님. 워크플로의 복잡성과 리스크에 따라 다릅니다. 배포가 완료되면 AI 직원은 일상적인 루틴 업무를 독립적으로 처리하며, 인간의 감독은 사전에 정의된 에스컬레이션 규칙, 예외 처리, 지속적인 품질 모니터링을 통해 개입합니다. 중요한 부분에서 인간의 통제권을 유지하면서 지속적인 감시 부담을 줄이는 것이 목표입니다. 어떤 종류의 워크플로를 염두에 두고 계신가요?"
+    },
+    {
+     "author": "Saurabh Rajput",
+     "is_maker": false,
+     "text": "Likely AI Big congrats to the UnleashX team on the launch! 🚀 🎉 What I like is that you didn't hide the human part. \"Every exception has a human owner\" is a small line, but it changes how the whole product feels. It reads less like replacing people and more like giving them a teammate who handles the repetitive stuff. Curious how the human owner gets alerted when something needs them. Is it inside UnleashX, or does it come through tools like Slack too?",
+     "kr": "Likely AI UnleashX 팀의 출시를 진심으로 축하합니다! 🚀 🎉 제가 특히 마음에 든 점은 인간의 역할을 숨기지 않았다는 것입니다. \"모든 예외에는 담당자가 있다\"는 문구는 짧지만 제품 전체의 느낌을 바꿔놓습니다. 사람을 대체한다기보다는 반복적인 잡무를 처리해 주는 팀원을 붙여주는 느낌을 줍니다. 담당자의 개입이 필요할 때 알림을 어떻게 받는지 궁금합니다. UnleashX 내부에서 알림이 오나요, 아니면 Slack 같은 도구로도 전달되나요?"
+    },
+    {
+     "author": "Eldar Miensutov",
+     "is_maker": false,
+     "text": "😹 LOL lead qualification for us. half the inbound we get at the agency is people who just want a price for \"an app like uber\" 😅 how does it decide when to pass something to a human vs just guess",
+     "kr": "😹 하하, 저희에게는 딱 리드 자격 검증이 필요하네요. 저희 에이전시 인바운드 문의의 절반은 그냥 \"우버 같은 앱\" 견적을 묻는 사람들이거든요. 😅 AI가 자체적으로 추측하는 대신 언제 사람에게 넘길지를 어떻게 결정하나요?"
+    },
+    {
+     "author": "Ajay Kadyan",
+     "is_maker": true,
+     "text": "@eldarmiensutov The \"app like Uber\" brief definitely needs a few more questions before a quote! 😄 That's exactly where lead qualification helps. The agent can assess budget, timeline, requirements, and project feasibility through follow-up questions. If something is unclear or needs human judgment, it escalates rather than guessing. Your team gets to focus on leads with real potential.",
+     "kr": "@eldarmiensutov \"우버 같은 앱\" 문의는 견적을 내기 전에 몇 가지 질문이 반드시 더 필요하죠! 😄 바로 그 부분에서 리드 검증이 큰 도움이 됩니다. 에이전트는 후속 질문을 통해 예산, 일정, 세부 요구사항, 프로젝트 실현 가능성을 평가할 수 있습니다. 불분명하거나 사람의 판단이 필요한 경우 AI가 억지로 추측하는 대신 담당자에게 에스컬레이션합니다. 덕분에 귀하의 팀은 실질적인 잠재력을 가진 리드에 집중할 수 있습니다."
+    },
+    {
+     "author": "Vijayanand Kailash",
+     "is_maker": false,
+     "text": "https://unleashx.ai/workforce/ — These are readily available AI workers we can hire immediately. 1\\. Can we train them further for our business needs? 2\\. Would it be possible to create a new one from the scratch?",
+     "kr": "https://unleashx.ai/workforce/ — 즉시 채용할 수 있는 준비된 AI 직원들이군요. 1. 우리 비즈니스 필요에 맞게 추가로 훈련시킬 수 있나요? 2. 처음부터 새로운 AI 직원을 완전히 새로 만들 수도 있나요?"
+    }
+   ],
+   "slug": "unleashx"
+  },
+  {
+   "name": "Cedric AI Teammate for Startups",
+   "tagline_en": "The AI teammate that gets things done",
+   "tagline_kr": "실제 업무를 해결해 주는 AI 팀원",
+   "image": "https://ph-files.imgix.net/69d303d3-67c8-4ef1-9d36-fc7c597ace1b.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://meet-cedric.com/use-cases/ai-solution-for-startups?utm_source=product_hunt",
+   "categories": [
+    "AI notetakers",
+    "AI Workflow Automation",
+    "AI Presentation Software"
+   ],
+   "upvotes": 205,
+   "comments_count": 23,
+   "maker": [
+    "Benjamin Ben Hattar",
+    "Jacopo Trinca"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Cedric은 스타트업의 비즈니스 운영, 경쟁사 분석, 마케팅 실행, 영업 데이터 추적 등을 도맡아 처리하는 AI 팀원입니다. 3,000개 이상의 외부 업무 도구와 연동되어 일일 브랜드 모니터링부터 주간 성과 업데이트까지 한 문장으로 자동화합니다. 사용자를 대신하여 Zoom, Google Meet, Teams 화상 회의에 직접 참석해 슬라이드를 발표하고 질의응답을 수행할 수 있습니다. 팀의 업무 맥락을 지속적으로 기억하며 Slack, Discord, Telegram, 웹 앱 등 다양한 환경에서 원활하게 소통합니다. 구글 시트 등과 연동되어 리드 데이터를 실시간으로 정리하고 중복을 제거하는 등 실무 잡무를 크게 줄여줍니다.",
+   "launch_url_used": "https://www.producthunt.com/products/cedric",
+   "comment_summary": "화상 미팅에 AI가 대신 참석해 발표를 진행하고 도구 연동을 통해 영업 리드를 자동 정리해 준다는 점에 많은 관심이 쏠렸습니다. 커뮤니티에서는 고객과의 미팅 중 미묘한 분위기나 망설임을 AI가 읽어낼 수 있는지, 의료 분야 등에 필요한 HIPAA 규정 준수 여부 및 음성 복제 지원 계획을 질의했습니다. 메이커는 민감한 대화에서는 보수적으로 대응하도록 설계되었으며 맞춤 음성 복제 기능을 준비 중이나, 현재 의료 규정(HIPAA)은 지원하지 않는다고 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Christian Mischler",
+     "is_maker": false,
+     "text": "used Cedric AI Teammate for Startups to build Deskimo •2 reviews We use Cedric at Deskimo to keep our lead tracker clean. Leads used to come in through Slack and our website forms, and someone had to copy them into the Google Sheet by hand afterwards. Now Cedric picks them up, adds them to the sheet, skips duplicates and fills in the gaps. What surprised me most is that the team started using it on their own; nobody had to push them. Setup took minutes, and once you correct him on something (dat",
+     "kr": "Deskimo 구축에 Cedric AI Teammate for Startups를 사용함 •리뷰 2개 저희 Deskimo에서는 영업 리드 트래커를 깔끔하게 유지하기 위해 Cedric을 사용하고 있습니다. 예전에는 Slack과 웹사이트 양식으로 리드가 들어오면 누군가 수작업으로 구글 시트에 복사해 넣어야 했습니다. 이제는 Cedric이 리드를 가져와 시트에 추가하고, 중복을 건너뛰며 빈틈을 채워줍니다. 가장 놀라웠던 점은 누가 시키지 않아도 팀원들이 자발적으로 사용하기 시작했다는 것입니다. 설정에는 몇 분밖에 걸리지 않았으며, 한 번 피드백을 주면 즉시 반영합니다."
+    },
+    {
+     "author": "Benjamin Ben Hattar",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! Ben here, co-founder of Cedric. Have you ever joined a one-hour meeting just to present three slides? Or missed a call because two clients booked the same slot? That’s what we built Cedric for. Brief him beforehand: what to present, what matters, and what he should avoid committing to. He joins your Zoom, Meet, or Teams call, presents your slides, and answers questions using the context and tools you’ve connected. We see this being useful for: * **Founders** juggling customer",
+     "kr": "📌 안녕하세요 프로덕트 헌트 여러분! Cedric의 공동 창업자 Ben입니다. 슬라이드 세 장을 발표하려고 1시간짜리 회의에 참석해 보신 적이 있나요? 아니면 두 고객이 같은 시간대를 예약해 미팅을 놓친 적은 없으신가요? 바로 그런 문제를 해결하기 위해 Cedric을 만들었습니다. 무엇을 발표할지, 무엇이 중요한지, 어떤 약속을 피해야 하는지 사전에 브리핑해 두기만 하면 됩니다. Cedric이 사용자의 Zoom, Meet, Teams 회의에 직접 참석해 슬라이드를 발표하고 연동된 도구와 맥락을 바탕으로 질문에 답변합니다. 고객 미팅을 병행해야 하는 창업자들에게 특히 유용할 것입니다."
+    },
+    {
+     "author": "Swati Paliwal",
+     "is_maker": false,
+     "text": "Likely AI @benjamin\\_ben\\_hattar Kudos on the launch! When Cedric presents on someone’s behalf, how do you handle the human side of a meeting like reading the room, sensing hesitation, or knowing when a client is really asking for reassurance rather than information? Is that something Cedric can pick up from context, or do you see the person joining live as essential for those judgment calls?",
+     "kr": "Likely AI @benjamin\\_ben\\_hattar 출시를 축하합니다! Cedric이 누군가를 대신해 발표할 때, 분위기를 파악하거나 상대방의 망설임을 감지하고, 고객이 정보 대신 안심을 구하고 있음을 알아채는 등 회의의 인간적인 측면은 어떻게 다루나요? Cedric이 맥락 속에서 이를 포착할 수 있나요, 아니면 그러한 판단을 위해서는 실제 사람이 직접 참여하는 것이 필수적이라고 보시나요?"
+    },
+    {
+     "author": "Benjamin Ben Hattar",
+     "is_maker": true,
+     "text": "Thank you! Cedric can follow the conversation’s context and understands the tone of the discussion. In delicate situations like a sales call, he will typically err on the side of caution, though his behavior can easily be adjusted.",
+     "kr": "감사합니다! Cedric은 대화의 맥락을 따라갈 수 있으며 논의의 어조를 이해합니다. 영업 미팅과 같이 민감한 상황에서는 기본적으로 신중한 태도를 취하지만, 이러한 행동 양식은 손쉽게 조정할 수 있습니다."
+    },
+    {
+     "author": "Mohsin Ali",
+     "is_maker": false,
+     "text": "@benjamin\\_ben\\_hattar followup straight to hubspot or zoho crm as a draft is handy. how it handle formatting if our google sheets columns constantly change?",
+     "kr": "@benjamin\\_ben\\_hattar HubSpot이나 Zoho CRM에 후속 조치를 초안으로 바로 등록해 주는 기능이 매우 유용하네요. 구글 시트의 열 구조가 수시로 바뀌는 경우 서식 처리는 어떻게 대응하나요?"
+    },
+    {
+     "author": "Benjamin Ben Hattar",
+     "is_maker": true,
+     "text": "Cedric works really well with Google Sheets! Deskimo, a YC startup, uses him to keep its sales lead tracker clean and up to date. You can read about their experience here: https://meet-cedric.com/blog/how-deskimo-keeps-its-lead-tracker-clean",
+     "kr": "Cedric은 구글 시트와 아주 훌륭하게 연동됩니다! YC 스타트업인 Deskimo는 영업 리드 트래커를 최신 상태로 깔끔하게 관리하기 위해 Cedric을 활용하고 있습니다. 관련 경험담은 여기서 확인하실 수 있습니다: https://meet-cedric.com/blog/how-deskimo-keeps-its-lead-tracker-clean"
+    },
+    {
+     "author": "Daniel",
+     "is_maker": false,
+     "text": "Real question from healthcare: a lot of our calls touch patient info, so an AI joining and recording is a no-go without HIPAA and a BAA. Is that on the roadmap?",
+     "kr": "의료 분야에서 드리는 실제 질문입니다. 저희 통화는 환자 정보를 다루는 경우가 많아 HIPAA 규정 준수 및 BAA 체결 없이는 AI 참여 및 녹음이 불가능합니다. 로드맵에 반영되어 있나요?"
+    },
+    {
+     "author": "Jacopo Trinca",
+     "is_maker": true,
+     "text": "Good question,@dan16. We don’t currently offer HIPAA compliance or a BAA, so Cedric wouldn’t be suitable for calls involving patient information today. We’re still assessing what supporting healthcare would require, so I can’t give you a timeline yet.",
+     "kr": "좋은 질문입니다, @dan16 님. 현재는 HIPAA 규정 준수나 BAA를 제공하지 않으므로, 현재로서는 환자 정보를 다루는 통화에 Cedric을 사용하는 것이 적합하지 않습니다. 의료 분야 지원에 필요한 요건을 여전히 검토 중이어서 아직 구체적인 일정을 말씀드리기는 어렵습니다."
+    },
+    {
+     "author": "Irene Chan",
+     "is_maker": false,
+     "text": "Congrats on the launch! Can you change Cedric's voice? I actually have my AI voice clone and wonder if it can present using my AI clone voice. 😅",
+     "kr": "출시 축하드립니다! Cedric의 목소리를 바꿀 수 있나요? 사실 저만의 AI 복제 음성이 있는데 제 목소리로 발표하게 할 수 있는지 궁금합니다. 😅"
+    },
+    {
+     "author": "Benjamin Ben Hattar",
+     "is_maker": true,
+     "text": "Thanks! Using your own AI voice clone is a great idea that we're planning to add. It’s great to hear you’d use it, thanks for confirming there’s demand for it!",
+     "kr": "감사합니다! 본인의 AI 복제 음성을 사용하는 것은 아주 훌륭한 아이디어이며 추가할 계획을 가지고 있습니다. 실제로 사용할 의향이 있으시다니 수요가 있음을 확인해 주셔서 감사합니다!"
+    },
+    {
+     "author": "Matheus Paranhos",
+     "is_maker": false,
+     "text": "Hey! thinking about letting cedric handle those morning update meetings while i’m still waking up. does he handle awkward silence well? i might find out and still need my coffee just in case. 😁 Congratulations on your launch!",
+     "kr": "안녕하세요! 아침에 잠이 덜 깼을 때 모닝 업데이트 미팅을 Cedric에게 맡겨볼까 생각 중입니다. 어색한 침묵 상황도 잘 처리하나요? 만약을 대비해 커피는 챙겨두고 직접 확인해 봐야겠네요. 😁 출시 축하합니다!"
+    },
+    {
+     "author": "Benjamin Ben Hattar",
+     "is_maker": true,
+     "text": "Hey, thank you! Cedric will typically not intervene if he has nothing interesting to say or he's not addressed directly. But asking him to run an agenda on a meeting is actually a great way to avoid long awkward silences.",
+     "kr": "안녕하세요, 감사합니다! Cedric은 특별히 할 말이 없거나 직접 지목되지 않으면 보통 끼어들지 않습니다. 하지만 미팅 안건을 진행하도록 요청하면 긴 어색한 침묵을 방지하는 아주 좋은 방법이 됩니다."
+    }
+   ],
+   "slug": "cedric"
+  },
+  {
+   "name": "hera",
+   "tagline_en": "track your period safely",
+   "tagline_kr": "안전하고 간편한 월경 주기 추적",
+   "image": "https://ph-files.imgix.net/f2f138b0-41e5-4219-bf5d-88ba2f498def.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=102",
+   "website": "https://apps.apple.com/ca/app/hera-period-tracker/id6754183143",
+   "categories": [
+    "Medical",
+    "Activity tracking"
+   ],
+   "upvotes": 196,
+   "comments_count": 32,
+   "maker": [],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Hera는 복잡한 절차 없이 간편하게 월경 주기를 관리할 수 있는 가벼운 iOS 전용 주기 추적 앱입니다. 직관적인 인터페이스를 통해 월경 기간과 신체 증상을 손쉽게 기록하고 호르몬 변화에 대한 명확한 인사이트를 얻을 수 있습니다. 불필요한 기능 없이 핵심적인 주기 예측과 건강 상태 점검에 집중하여 사용자가 자신의 신체 리듬을 명확히 이해하도록 돕습니다. 사용자의 민감한 개인 건강 데이터를 안전하게 보호할 수 있도록 설계되어 안심하고 기록을 유지할 수 있습니다. 일상에서 부담 없이 자신의 신체 변화와 소통하며 건강한 습관을 유지할 수 있는 환경을 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/hera-6",
+   "comment_summary": "출시 초기 단계로 제품 헌트 페이지에 아직 등록된 커뮤니티 댓글이 없습니다. 개인정보 보호와 가벼운 인터페이스를 강점으로 내세운 월경 추적 앱으로서 향후 사용자들의 피드백이 기대되는 상황입니다.",
+   "warnings": null,
+   "comments": [],
+   "slug": "hera-6"
+  }
+ ]
+}

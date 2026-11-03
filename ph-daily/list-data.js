@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-11-03",
+    "url": "2026-11-03/",
+    "top_product": "beacon.sh",
+    "count": 5,
+    "upvotes_total": 1260,
+    "comments_total": 48
+  },
+  {
     "date": "2026-11-02",
     "url": "2026-11-02/",
     "top_product": "Screen Studio",
