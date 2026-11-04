@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-11-04",
+    "url": "2026-11-04/",
+    "top_product": "AgentKit by Scalekit",
+    "count": 5,
+    "upvotes_total": 1166,
+    "comments_total": 60
+  },
+  {
     "date": "2026-11-03",
     "url": "2026-11-03/",
     "top_product": "beacon.sh",

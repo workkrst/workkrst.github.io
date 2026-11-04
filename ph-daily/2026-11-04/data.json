@@ -1,0 +1,509 @@
+{
+ "date": "2026-11-04",
+ "collected_at": "2026-11-04 12:31 KST",
+ "summary": "오늘 Product Hunt 상위권은 AI 에이전트 인프라와 협업 도구, 그리고 자동화 솔루션이 주류를 이뤘습니다. 특히 MCP를 활용해 에이전트를 실무에 투입하는 제품들이 주목받았으며, 댓글에서는 권한 격리와 예산 안전 가드레일 등 프로덕션 환경에서의 통제권 확보가 핵심 논점으로 다뤄졌습니다.",
+ "notable": [
+  {
+   "slug": "scalekit",
+   "why": "수백 개의 SaaS 도구를 안전하게 연결하는 MCP 게이트웨이로서 프로덕션 에이전트 배포의 현실적 과제를 정조준했습니다. 댓글에서는 컨텍스트 크기 최적화와 최소 권한 부여의 균형에 대한 질문에 가상 MCP 서버와 런타임 인가를 분리하는 구체적 아키텍처를 제시해 높은 평가를 받았습니다."
+  },
+  {
+   "slug": "synter-canvas",
+   "why": "파편화된 다채널 광고 집행을 단일 MCP 인터페이스로 통합해 AI 에이전트의 실질적 업무 영역을 마케팅으로 확장했습니다. 댓글에서는 광고 예산 집행에 따른 위험을 통제하기 위해 변경 승인 게이트와 일일 지출 한도, 롤백 기능 등 엄격한 가드레일 요구가 집중 논의되었습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "AgentKit by Scalekit",
+   "tagline_en": "MCP gateway for production agents that acts on your behalf",
+   "tagline_kr": "사용자를 대신해 실행되는 프로덕션 에이전트를 위한 MCP 게이트웨이",
+   "image": "https://ph-files.imgix.net/851127f8-1a17-42d4-a618-0cc25dd3638f.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://www.scalekit.com/",
+   "categories": [
+    "Authentication & identity tools",
+    "LLM Developer Tools",
+    "AI Agents"
+   ],
+   "upvotes": 360,
+   "comments_count": 86,
+   "maker": [
+    "Ravi Madabhushi",
+    "Satya Devarakonda"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "AgentKit by Scalekit은 단일 MCP 게이트웨이를 통해 Salesforce부터 GitHub까지 600개 이상의 앱과 3만 개 이상의 도구를 AI 에이전트에 연결해 주는 플랫폼입니다. 인증과 연동 처리를 전담하여 모든 작업이 요청한 사용자의 권한 및 허용된 스코프 내에서 안전하게 실행되도록 보장합니다. 가상 MCP 서버를 통해 각 에이전트에 필요한 도구만 선별적으로 부여할 수 있으며, 사내 내부 API도 커스텀 커넥터로 손쉽게 추가할 수 있습니다. 이메일 수신과 같은 이벤트 발생 시 에이전트를 즉각 구동하는 트리거 기능과 모든 호출에 대한 세밀한 로깅 기능을 제공합니다. 프로덕션 환경으로 AI 에이전트를 배포하려는 개발자를 위해 설계되었으며, 매월 10,000건의 도구 호출을 무료 티어로 이용할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/scalekit",
+   "comment_summary": "공동 창업자들이 실운영 에이전트의 인증과 세분화된 런타임 접근 제어의 중요성을 강조하며 제품 출시 배경을 설명했습니다. 커뮤니티에서는 가상 MCP를 통한 컨텍스트 최적화와 사용자별 권한 격리 방식에 대해 질문했고, 메이커의 상세한 답변과 함께 높은 보안성과 실용성에 대해 긍정적인 반응이 이어졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Ravi Madabhushi",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt, I'm Ravi, co-founder of Scalekit. Today we're launching AgentKit, an MCP gateway that handles auth and tool-calling for AI agents in production. **Why now?** Over the last year, wiring an agent to a tool got easy. MCP standardized the interface, and any agent can now call Gmail or Salesforce after an afternoon of work. But the tool call is only the surface. Once an agent ships to real users, everything underneath it shows up: * whose credentials each call executes with * whic",
+     "kr": "📌 안녕하세요 Product Hunt 여러분, Scalekit의 공동 창업자 Ravi입니다. 오늘 저희는 프로덕션 AI 에이전트의 인증과 도구 호출을 처리하는 MCP 게이트웨이인 AgentKit을 출시합니다. **왜 지금일까요?** 지난 1년 동안 에이전트를 도구에 연결하는 작업은 쉬워졌습니다. MCP가 인터페이스를 표준화하면서 누구나 반나절 작업으로 에이전트가 Gmail이나 Salesforce를 호출하도록 만들 수 있게 되었습니다. 하지만 도구 호출은 표면에 불과합니다. 에이전트가 실제 사용자에게 배포되면 그 이면의 문제들이 드러납니다. 각 호출이 누구의 자격 증명으로 실행되는지, 어떤 권한 범위를 갖는지 등의 문제가 대표적입니다."
+    },
+    {
+     "author": "Jonathan Crowder",
+     "is_maker": false,
+     "text": "@ravibits Congrats on the launch, Ravi!",
+     "kr": "@ravibits 출시 축하드려요, Ravi!"
+    },
+    {
+     "author": "Swati Paliwal",
+     "is_maker": false,
+     "text": "Likely AI @ravibits Congrats on the launch! When an agent needs to act across several tools for one user request, how do you decide which tools should stay in its context versus be fetched or composed on demand? I’m curious how teams balance giving agents enough capability with keeping prompts focused and access truly least-privilege.",
+     "kr": "Likely AI @ravibits 출시 축하드립니다! 사용자의 단일 요청을 처리하기 위해 에이전트가 여러 도구에 걸쳐 작동해야 할 때, 어떤 도구를 컨텍스트에 유지하고 어떤 도구를 온디맨드로 가져오거나 조합할지 어떻게 결정하시나요? 에이전트에게 충분한 기능을 부여하면서도 프롬프트의 집중도를 유지하고 진정한 최소 권한 원칙을 지키는 균형을 어떻게 맞추는지 궁금합니다."
+    },
+    {
+     "author": "Satya Devarakonda",
+     "is_maker": true,
+     "text": "@swati\\_paliwal Thanks! The common mistake we see is treating \"what's in context\" and \"what's allowed\" as the same problem. They aren't. Two ways we solve this. 1. Context: give each agent a small pinned set of tools via a Virtual MCP server, and use tool search to pull in the rest per request, so you're not shipping hundreds of tool definitions in every prompt. 2. Access: scopes are set on each connection, and every tool call runs on that user's own token. If a scope isn't granted, the call fai",
+     "kr": "@swati\\_paliwal 감사합니다! 자주 발견되는 실수는 '컨텍스트에 무엇이 포함되는가'와 '무엇이 허용되는가'를 동일한 문제로 취급하는 것입니다. 둘은 서로 다릅니다. 저희는 이를 두 가지 방식으로 해결합니다. 1. 컨텍스트: 가상 MCP 서버를 통해 각 에이전트에 작고 고정된 도구 세트를 부여하고, 요청마다 도구 검색을 사용하여 나머지를 불러옴으로써 매 프롬프트마다 수백 개의 도구 정의를 전송하지 않도록 합니다. 2. 접근 권한: 각 연결마다 스코프가 설정되며 모든 도구 호출은 해당 사용자의 고유 토큰으로 실행됩니다. 스코프가 부여되지 않으면 호출이 실패합니다."
+    },
+    {
+     "author": "Buchi Reddy B",
+     "is_maker": false,
+     "text": "@ravibits Congrats on the launch. Does AgentKit support organization-wide connector restrictions?",
+     "kr": "@ravibits 출시 축하드립니다. AgentKit은 조직 전체 차원의 커넥터 제한 기능을 지원하나요?"
+    },
+    {
+     "author": "Chandra Rentachintala",
+     "is_maker": false,
+     "text": "@ravibits Congratulations. I will give it a try today",
+     "kr": "@ravibits 축하드립니다. 오늘 꼭 사용해 보겠습니다."
+    },
+    {
+     "author": "Satya Devarakonda",
+     "is_maker": true,
+     "text": "Satya here, co-founder of Scalekit. Some context on why we’re building this. Before Scalekit, we built Pipemonk, an iPaaS that connected SaaS apps and kept data in sync. A developer set it up once and it ran on a schedule. Agents broke that model. They act on a user’s behalf and decide what to call on every run, so the hard part moved from mapping schemas to runtime access control. What we kept hearing from teams shipping agents: access that expires mid-run, and permissions broader than the task",
+     "kr": "Scalekit 공동 창업자 Satya입니다. 저희가 이 제품을 개발하게 된 배경을 말씀드리고자 합니다. Scalekit 이전에는 SaaS 앱을 연결하고 데이터를 동기화하는 iPaaS인 Pipemonk를 만들었습니다. 당시에는 개발자가 한 번 설정하면 일정에 따라 실행되었습니다. 하지만 에이전트가 그 모델을 깨뜨렸습니다. 에이전트는 사용자를 대신해 매번 무엇을 호출할지 자체적으로 결정하므로, 스키마 매핑보다 런타임 접근 제어가 더 까다로운 문제가 되었습니다. 에이전트를 배포하는 팀들로부터 실행 도중 만료되는 권한이나 작업에 필요한 범위를 넘어서는 과도한 권한 문제에 대해 지속적으로 들었습니다."
+    },
+    {
+     "author": "Saurabh Prabhuzantye",
+     "is_maker": false,
+     "text": "@satya\\_deva549 this is pretty cool Satya, will definitely try!",
+     "kr": "@satya\\_deva549 정말 멋지네요 Satya, 꼭 사용해 보겠습니다!"
+    },
+    {
+     "author": "Navin Kumar",
+     "is_maker": false,
+     "text": "@satya\\_deva549 Congrats Satya.. 🎉this is awesome and will try it",
+     "kr": "@satya\\_deva549 축하드립니다 Satya.. 🎉 멋진 제품이네요, 사용해 보겠습니다."
+    },
+    {
+     "author": "Krishna Kishore",
+     "is_maker": false,
+     "text": "@satya\\_deva549 congrats on the launch 🎉",
+     "kr": "@satya\\_deva549 출시 축하드립니다 🎉"
+    },
+    {
+     "author": "Ramesh Ravishankar",
+     "is_maker": false,
+     "text": "@satya\\_deva549 Congrats Ravi, Satya and team! Building AI agents is getting easier. Making them secure, reliable and production ready is where the real challenge begins. Identity, permissions and orchestration are super critical infrastructure in the agentic world . Love what you’re building at Scalekit. And many congratulations on the launch!",
+     "kr": "@satya\\_deva549 Ravi, Satya 그리고 팀 여러분 축하드립니다! AI 에이전트를 구축하는 일은 점점 쉬워지고 있습니다. 하지만 이를 안전하고 신뢰할 수 있으며 프로덕션에 적합하게 만드는 것이 진짜 도전 과제가 시작되는 지점입니다. 신원 인증, 권한 관리, 오케스트레이션은 에이전트 세상에서 매우 중요한 핵심 인프라입니다. Scalekit이 만들고 있는 기능들이 정말 마음에 듭니다. 출시를 진심으로 축하합니다!"
+    },
+    {
+     "author": "Shyam",
+     "is_maker": false,
+     "text": "Excited about this launch. Congratulations team! Scalekit helped us with its coverage of some of the emerging tools that are not offered by other vendors. With the agentic capability it'll add wings to their powerful platform. Good luck.",
+     "kr": "이번 출시 소식에 기대가 큽니다. 팀 여러분 축하드립니다! Scalekit은 다른 공급업체들이 제공하지 않는 새로운 도구들을 폭넓게 지원해 주어 큰 도움이 되었습니다. 이번 에이전트 기능 추가는 이들의 강력한 플랫폼에 날개를 달아줄 것입니다. 행운을 빕니다."
+    }
+   ],
+   "slug": "scalekit"
+  },
+  {
+   "name": "Teamily AI",
+   "tagline_en": "Your personal agent, agent teams & people in one messenger",
+   "tagline_kr": "개인 에이전트, 에이전트 팀, 사람이 하나의 메신저에서 협업하는 공간",
+   "image": "https://ph-files.imgix.net/fd5b66ca-66f1-473b-be98-91d0ad7fce9c.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://teamily.ai/",
+   "categories": [
+    "Team collaboration software",
+    "Messaging apps",
+    "AI Agents"
+   ],
+   "upvotes": 286,
+   "comments_count": 140,
+   "maker": [
+    "Salman Avestimehr",
+    "Chaoyang He",
+    "Michelle Guevara",
+    "Xavier"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Teamily AI는 사용자와 상시 대기 중인 AI 에이전트가 하나의 통합된 컨텍스트 인식 공간에서 함께 업무를 수행하는 협업 플랫폼입니다. 단일 사용자 중심의 기존 개인 비서와 달리 다자간 사용자 및 다중 에이전트 팀워크를 지원하는 것이 큰 특징입니다. AI 네이티브 메신저를 기반으로 문서, 미팅, 통화, 워크플로, 비즈니스 시스템을 에이전트와 유기적으로 연결하여 사무 작업과 고객 서비스를 자동화합니다. 에이전트는 영구적인 기억력과 선제적인 지능, 지속적인 자체 학습 능력을 갖추어 팀의 진정한 동료로 기능합니다. 초기 설정 비용 없이 무료로 시작할 수 있어 소규모 팀부터 엔터프라이즈 환경까지 유연하게 도입할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/teamily-ai-human-ai-social-network",
+   "comment_summary": "USC 교수 출신 공동 창업자가 다중 에이전트와 인간 간의 협업 및 지식 공유가 가져올 시너지에 대한 비전을 제시했습니다. 사용자들은 그룹 퇴장 시 에이전트 작업 처리나 공동 작업 문서의 버전 잠금 기능 등 실무 협업 시나리오를 질문했고, 메이커 팀은 구체적인 워크플로와 로드맵을 공유하며 활발히 소통했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Salman Avestimehr",
+     "is_maker": true,
+     "text": "👋 Hi Product Hunt! I'm Salman Avestimehr, Co-founder of Teamily AI and Professor at USC. Excited to introduce Teamily AI to this community! 🚀 Having spent years researching collaborative and distributed AI, I've become increasingly convinced that the next major breakthrough in AI won't simply come from making individual models smarter. It will come from enabling humans and AI agents to think, collaborate, and continuously learn together. Today, AI is largely built around one person interacting w",
+     "kr": "👋 안녕하세요 Product Hunt! 저는 Teamily AI의 공동 창업자이자 USC 교수인 Salman Avestimehr입니다. 커뮤니티에 Teamily AI를 소개하게 되어 매우 기쁩니다! 🚀 협업 및 분산 AI를 오랫동안 연구하면서, AI의 다음 큰 도약은 단순히 개별 모델을 더 똑똑하게 만드는 데서 오지 않는다는 확신을 갖게 되었습니다. 진정한 혁신은 인간과 AI 에이전트가 함께 생각하고 협력하며 지속적으로 학습하는 환경에서 비롯될 것입니다. 오늘날의 AI는 대체로 한 사람이 단일 모델과 상호작용하는 구조에 머물러 있습니다."
+    },
+    {
+     "author": "Leon Ding",
+     "is_maker": false,
+     "text": "@salman\\_avestimehr1 nice！",
+     "kr": "@salman\\_avestimehr1 멋지네요!"
+    },
+    {
+     "author": "Chaoyang He",
+     "is_maker": true,
+     "text": "@salman\\_avestimehr1 I also share my vision here: https://x.com/AidenChaoyangHe/status/2117613537929703708",
+     "kr": "@salman\\_avestimehr1 저도 제 비전을 여기에 공유해 두었습니다: https://x.com/AidenChaoyangHe/status/2117613537929703708"
+    },
+    {
+     "author": "Salman Avestimehr",
+     "is_maker": true,
+     "text": "@aidenchaoyanghe nice!",
+     "kr": "@aidenchaoyanghe 좋습니다!"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@salman\\_avestimehr1 Do you think AI agents will work better when they share knowledge instead of working alone?",
+     "kr": "@salman\\_avestimehr1 AI 에이전트가 혼자 일하는 것보다 지식을 서로 공유할 때 더 잘 작동할 것이라고 보시나요?"
+    },
+    {
+     "author": "Salman Avestimehr",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 Definitely! Just like us, agents can achieve a lot more when they share knowledge, build on each other's work, and learn together. And the really exciting part is how that collective intelligence compounds over time.",
+     "kr": "@shivam\\_kushwaha16 물론입니다! 우리 인간처럼 에이전트도 지식을 공유하고, 서로의 작업물을 발전시키며, 함께 학습할 때 훨씬 더 많은 것을 이룰 수 있습니다. 특히 흥미로운 부분은 이러한 집단 지성이 시간이 지남에 따라 복리처럼 축적된다는 점입니다."
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "@salman\\_avestimehr1 Could it pull themes from a batch of user interview notes???",
+     "kr": "@salman\\_avestimehr1 여러 사용자의 인터뷰 노트 묶음에서 주요 테마를 추출해낼 수도 있나요???"
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@salman\\_avestimehr1 What happens to agent tasks when the person who started them leaves the group???",
+     "kr": "@salman\\_avestimehr1 에이전트 작업을 시작한 사람이 그룹을 나가면 해당 작업은 어떻게 되나요???"
+    },
+    {
+     "author": "Salman Avestimehr",
+     "is_maker": true,
+     "text": "@vipul\\_kumar1280 if they don't want the tasks to continue (without them being still in the group), they should take their agents off with them and abort the tasks.",
+     "kr": "@vipul\\_kumar1280 본인이 그룹에 없는 상태에서 작업이 계속되는 것을 원치 않는다면, 에이전트를 함께 데리고 나가면서 작업을 중단시킬 수 있습니다."
+    },
+    {
+     "author": "Clara Bennett",
+     "is_maker": false,
+     "text": "Is there a way to lock a final version before more edits happen?",
+     "kr": "추가 수정이 일어나기 전에 최종 버전을 잠글 수 있는 방법이 있나요?"
+    },
+    {
+     "author": "Michelle Guevara",
+     "is_maker": true,
+     "text": "@sy\\_jin\\_3 I’d have to check whether you can lock the draft itself. In the meantime, you can save a separate copy of the approved version and share it in the group chat so everyone knows which one got signed off.",
+     "kr": "@sy\\_jin\\_3 초안 자체를 잠글 수 있는지는 확인해 보아야겠습니다. 그전까지는 승인된 버전의 사본을 별도로 저장하여 그룹 채팅에 공유함으로써 어떤 버전이 최종 승인되었는지 모두가 알 수 있도록 할 수 있습니다."
+    },
+    {
+     "author": "Xavier",
+     "is_maker": true,
+     "text": "@sy\\_jin\\_3 You can ask an agent to save the final version as a shared doc in the group, so everyone has one clear reference while new ideas keep coming in the chat. A proper lock for finished work is something we're looking into, so thanks for the nudge!",
+     "kr": "@sy\\_jin\\_3 에이전트에게 최종 버전을 그룹 내 공유 문서로 저장하도록 요청하면, 채팅에 새로운 아이디어가 계속 올라오는 동안에도 명확한 기준 문서를 유지할 수 있습니다. 완성된 작업물에 대한 정식 잠금 기능은 현재 검토 중인 사안이니 좋은 의견 주셔서 감사합니다!"
+    }
+   ],
+   "slug": "teamily-ai-human-ai-social-network"
+  },
+  {
+   "name": "Testifly launch",
+   "tagline_en": "AI-powered end-to-end full web testing in minutes",
+   "tagline_kr": "단 몇 분 만에 구축하는 AI 기반 엔드투엔드 전체 웹 테스트",
+   "image": "https://ph-files.imgix.net/3181d12a-fbcc-4643-95bd-0ee6ab099bf2.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://testifly.dev/",
+   "categories": [
+    "Testing and QA software"
+   ],
+   "upvotes": 224,
+   "comments_count": 36,
+   "maker": [
+    "Amihay Schwarz"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Testifly는 웹사이트 URL과 로그인 정보만 입력하면 몇 분 만에 완전 자동화된 엔드투엔드(E2E) 웹 테스트를 생성해 주는 솔루션입니다. 실제 사용자 흐름을 이해하고 UI 변경 사항에 스스로 적응하는 AI를 활용하여 깨지기 쉬운 스크립트 작성 부담과 불안정한 테스트 실패를 대폭 줄여줍니다. 현대적인 브라우저 자동화 기술을 기반으로 구축되어 복잡한 초기 설정 없이도 안정적이고 유지보수가 쉬운 테스트 환경을 제공합니다. 실제 프로덕션 애플리케이션 및 CI/CD 파이프라인에 최적화되어 있어 빠른 속도로 개발을 진행하는 팀에게 이상적입니다. 실패 발생 시 비디오 녹화와 근본 원인 분석 보고서를 제공하여 전담 QA 인력이 없는 팀도 배포 안정성을 손쉽게 확보할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/testifly-launch",
+   "comment_summary": "25년 차 개발자인 창업자가 전담 QA가 없는 소규모 팀과 테스트 작성에 지친 개발자들을 위해 제품을 만들게 되었다고 밝혔습니다. 복잡한 권한별 사용자 흐름 탐색, UI 변경 시 자가 치유(self-healing) 메커니즘, 프로덕션 상시 점검(keep-alive) 등 실용적인 기능에 대해 문의가 이어졌고 창업자가 기술적 해결책을 상세히 답변했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Amihay Schwarz",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! 👋 I’m Amihay, founder and CEO of Testifly. Testifly is for CTOs, founders and small teams that ship a web app without a dedicated QA person, and want their time to go to building. It’s also for QA testers, developers and product managers who are tired of writing and fixing tests. If you’ve ever said “I hope this deploy didn’t break anything,” this is for you. **The problem** I’ve worked in software for 25 years. On almost every project, I saw the same thing: we never got a go",
+     "kr": "📌 안녕하세요 Product Hunt! 👋 Testifly의 설립자이자 CEO인 Amihay입니다. Testifly는 전담 QA 인력 없이 웹 앱을 배포하면서 개발에 더 많은 시간을 쏟고 싶은 CTO, 창업자 및 소규모 팀을 위한 제품입니다. 또한 테스트를 작성하고 수정하는 데 지친 QA 테스터, 개발자, 프로덕트 매니저를 위한 것이기도 합니다. '이번 배포로 아무것도 깨지지 않았으면 좋겠다'고 한 번이라도 생각해 보셨다면 바로 여러분을 위한 도구입니다. **문제점** 저는 지난 25년간 소프트웨어 분야에서 일해왔습니다. 거의 모든 프로젝트에서 항상 똑같은 문제를 보았습니다. 충분한 테스트 커버리지를 확보하기 어려웠다는 점입니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@rohanrecommends @amihay\\_schwarz1 Can it handle complex user flows and catch bugs after every update?",
+     "kr": "@rohanrecommends @amihay\\_schwarz1 복잡한 사용자 흐름을 처리하고 업데이트마다 버그를 잡아낼 수 있나요?"
+    },
+    {
+     "author": "@shivam\\_kushwaha16",
+     "is_maker": false,
+     "text": "Yes. Testifly finds your app's flows by itself, including multi-step ones behind login (username/password, SSO, magic link). It then runs the tests on every release and environment and can block your deployment through CI/CD. It updates tests as the UI and features change, distinguishes real regressions from harmless changes, and provides a video and root-cause report for each failure.",
+     "kr": "네, 가능합니다. Testifly는 로그인(아이디/비밀번호, SSO, 매직 링크) 뒤에 있는 다단계 플로우를 포함해 앱의 흐름을 스스로 찾아냅니다. 그런 다음 모든 릴리스 및 환경에서 테스트를 실행하고 CI/CD를 통해 배포를 차단할 수도 있습니다. UI와 기능 변경에 맞춰 테스트를 업데이트하고 무해한 변경과 실제 결함을 구분하며, 실패 시마다 비디오와 근본 원인 분석 보고서를 제공합니다."
+    },
+    {
+     "author": "Swati Paliwal",
+     "is_maker": false,
+     "text": "@rohanrecommends @amihay\\_schwarz1 Congrats on the launch. Kudos to them team as well. When Testifly detects that a user flow may be broken, how does it help a small team decide whether it’s a genuine product bug versus an intentional change in the app? For example, if a signup form changes by design, does the maker confirm the new flow once, or does Testifly learn from deployment context over time?",
+     "kr": "@rohanrecommends @amihay\\_schwarz1 출시를 축하드리며 팀에게도 박수를 보냅니다. Testifly가 사용자 흐름이 깨진 것을 감지했을 때, 소규모 팀이 이것이 실제 제품 버그인지 의도된 변경 사항인지 판단하도록 어떻게 돕나요? 예를 들어 회원가입 폼 디자인이 의도적으로 변경된 경우, 담당자가 새 흐름을 한 번 확인해 주어야 하나요 아니면 배포 컨텍스트를 통해 시간이 지나며 스스로 학습하나요?"
+    },
+    {
+     "author": "Amihay Schwarz",
+     "is_maker": true,
+     "text": "Thanak you @swati\\_paliwal The maker confirms it once. Testifly first checks the live app and heals small UI changes on its own. If it can't tell whether your app changed or has a bug, it shows an explanation with a video and a root-cause report, and you pick an answer. Then it updates the test, retries it, or marks a bug. If a signup form changes by design, you confirm the new flow once, and the test follows it from then on. Context from Jira or Linear tickets and from your IDE changes can also",
+     "kr": "감사합니다 @swati\\_paliwal. 담당자가 한 번 확인해 주면 됩니다. Testifly는 먼저 실제 앱을 확인하고 사소한 UI 변경은 스스로 자가 치유(healing)합니다. 앱이 의도적으로 변경된 것인지 버그가 발생한 것인지 판단할 수 없는 경우, 비디오 및 근본 원인 보고서와 함께 설명을 보여주며 선택지를 제공합니다. 이후 테스트를 업데이트하거나 재시도하고, 또는 버그로 표시합니다. 회원가입 폼이 의도대로 바뀌었다면 새 흐름을 한 번만 승인하면 이후부터는 새 흐름을 따릅니다. Jira나 Linear 티켓 및 IDE 변경 사항의 컨텍스트도 활용할 수 있습니다."
+    },
+    {
+     "author": "Simon Moxon",
+     "is_maker": false,
+     "text": "My biggest one is probably the break that only shows up in production. Last week a deploy of ours went out without its production env file, and our checks let a blank AI key straight through. The deploy said success but new signups were broken. I only caught it because I had an agent sign up as a brand new user in a real browser.",
+     "kr": "저에게 가장 큰 문제는 프로덕션 환경에서만 나타나는 장애입니다. 지난주 배포 때 프로덕션 환경 변수 파일이 누락되었는데, 검사 단계에서 비어 있는 AI 키를 그대로 통과시켰습니다. 배포는 성공했다고 떴지만 신규 가입이 먹통이 되었죠. 실제 브라우저에서 신규 사용자로 가입하도록 에이전트를 돌려두었기 때문에 겨우 잡아낼 수 있었습니다."
+    },
+    {
+     "author": "@simon\\_moxon",
+     "is_maker": false,
+     "text": "That failure is exactly what Testifly is built to catch. A green deploy only means the code shipped. It doesn't mean signup works. Testifly signs up as a new user in a real browser, as your agent did, and fails if the flow breaks. A blank AI key would have failed that signup test right after the deploy. You can also run Testifly against production on a schedule, using keep-alive tests. It checks the signup flow every few minutes or hours, not only at deploy time. If it breaks, you get a Slack al",
+     "kr": "그런 실패야말로 Testifly가 잡아내기 위해 만들어진 핵심 상황입니다. 배포가 초록불(성공)로 끝났다는 것은 코드가 전달되었다는 의미일 뿐, 가입 기능이 작동한다는 뜻은 아닙니다. Testifly는 사용하신 에이전트처럼 실제 브라우저에서 새 사용자로 가입을 시도하며 흐름이 끊기면 실패로 처리합니다. 비어 있는 AI 키가 있었다면 배포 직후 가입 테스트에서 바로 실패했을 것입니다. 또한 keep-alive 테스트를 통해 일정에 따라 프로덕션 환경을 주기적으로 검사할 수도 있습니다. 배포 시점뿐만 아니라 몇 분 또는 몇 시간마다 가입 흐름을 확인하여 문제가 생기면 슬랙 알림을 보냅니다."
+    },
+    {
+     "author": "Dotan Frank",
+     "is_maker": false,
+     "text": "Hi, A couple of questions: 1. How are use cases defined? Automatically? 2. What are the limitations of using it? 3. I have a 2fa system. Is it an issue? 4. Does it require to know the site internals? The source code itself?",
+     "kr": "안녕하세요, 몇 가지 질문이 있습니다: 1. 유스케이스는 어떻게 정의되나요? 자동으로 되나요? 2. 사용상의 한계점은 무엇인가요? 3. 2FA 시스템을 사용 중인데 문제가 되나요? 4. 사이트 내부 구조나 소스 코드 자체를 알아야 하나요?"
+    },
+    {
+     "author": "Amihay Schwarz",
+     "is_maker": true,
+     "text": "Hi @dotan\\_frank, and thank you for your question **How are use cases defined? Automatically?** Yes. You give Testifly your URL and a test account, and its agents explore the app and write the tests, so you write no test code. It also connects to Jira, Linear, and similar tools and suggests new or updated tests from your tickets. You can review everything, or continue from Claude through our MCP support. **What are the limitations?** Use a test or staging environment, because the agents click an",
+     "kr": "안녕하세요 @dotan\\_frank, 질문 감사합니다. **유스케이스는 어떻게 정의되나요? 자동으로 되나요?** 네 맞습니다. Testifly에 URL과 테스트 계정을 전달하면 에이전트가 앱을 탐색하고 테스트를 작성하므로 테스트 코드를 전혀 작성할 필요가 없습니다. 또한 Jira, Linear 등과 연동하여 티켓 내용을 기반으로 신규 또는 업데이트된 테스트를 제안합니다. 모든 내용을 검토하거나 MCP 지원을 통해 Claude에서 이어서 작업할 수도 있습니다. **한계점은 무엇인가요?** 에이전트가 실제로 클릭하고 상호작용하므로 테스트나 스테이징 환경을 사용하는 것이 좋습니다."
+    },
+    {
+     "author": "Ramana Abhishek",
+     "is_maker": false,
+     "text": "Could you tell me how Testifly handles apps with different user roles and permissions. Wouldn’t testing an admin flow versus regular user flow be very different?",
+     "kr": "서로 다른 사용자 역할과 권한을 가진 앱을 Testifly가 어떻게 처리하는지 설명해 주실 수 있나요? 관리자 플로우와 일반 사용자 플로우는 테스트 방식이 많이 다르지 않나요?"
+    },
+    {
+     "author": "Amihay Schwarz",
+     "is_maker": true,
+     "text": "@ramana\\_abhishek Yes, they are different, and Testifly handles that with test users. You can add several test users per environment, for example, an admin and a regular user, and Testifly stores a role for each one. You can also tell it which areas to never open, such as an admin area or a delete-account link. Tessa can draft role-specific tests, like \"an admin invites a teammate\".",
+     "kr": "@ramana\\_abhishek 네, 서로 다르며 Testifly는 테스트 사용자를 통해 이를 처리합니다. 환경별로 관리자와 일반 사용자 등 여러 테스트 사용자를 등록할 수 있고 각 사용자별 역할을 저장합니다. 또한 관리자 전용 영역이나 계정 삭제 링크처럼 절대 열지 말아야 할 영역을 지정할 수도 있습니다. AI 비서 Tessa는 '관리자가 팀원을 초대하는 흐름'과 같은 역할별 맞춤 테스트 초안을 작성할 수 있습니다."
+    },
+    {
+     "author": "Daniel",
+     "is_maker": false,
+     "text": "Our biggest testing gap is mobile. A lot of what we ship is iOS, and that's where nobody has time to click through every flow after a release. Any plans beyond web?",
+     "kr": "저희 팀의 가장 큰 테스트 공백은 모바일입니다. 배포하는 상당 부분이 iOS인데 릴리스 후 모든 플로우를 직접 클릭해 볼 시간이 없습니다. 웹 이외의 플랫폼으로 확장할 계획도 있으신가요?"
+    }
+   ],
+   "slug": "testifly-launch"
+  },
+  {
+   "name": "Synter Canvas",
+   "tagline_en": "Your AI agent runs ads across 30+ ad platforms",
+   "tagline_kr": "AI 에이전트가 30개 이상의 플랫폼에 걸쳐 광고를 운영하는 솔루션",
+   "image": "https://ph-files.imgix.net/c944b0c4-0593-4974-8a59-79b470a8f8f7.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=293",
+   "website": "https://synterai.com/",
+   "categories": [
+    "Advertising tools",
+    "LLM Developer Tools",
+    "AI Agents"
+   ],
+   "upvotes": 161,
+   "comments_count": 22,
+   "maker": [
+    "Joel Horwitz"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Synter Canvas는 AI 에이전트가 30개 이상의 주요 광고 플랫폼에 걸쳐 캠페인을 직접 기획, 집행, 최적화할 수 있도록 지원하는 광고 자동화 플랫폼입니다. 플랫폼별로 분편화된 대시보드와 API를 단일 MCP 연결로 통합하여 Claude나 ChatGPT 등의 AI 에이전트가 손쉽게 광고 계정을 제어할 수 있게 돕습니다. 모든 예산 변경과 캠페인 수정 작업에 안전 게이트와 가드레일을 적용하여 사용자의 사전 승인을 거치도록 설계되었습니다. 검증된 쓰기 작업당 0.25달러의 정액 요금제만 부과되며 광고 집행 금액에 대한 수수료율은 0%로 책정되어 비용 효율적입니다. 플랫폼별 파편화된 보고서를 넘어 전체 계정의 실제 성과 데이터를 통합 분석하는 지능형 레이어를 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/synter-canvas",
+   "comment_summary": "창업자 Joel은 광고 플랫폼마다 별도 관리가 필요했던 비효율을 해결하기 위해 범용 광고 MCP를 구축하고 캔버스 레이어로 확장했다고 설명했습니다. 댓글에서는 실제 광고 예산 집행에 따른 위험 관리, 원클릭 롤백, 플랫폼별 일일 지출 한도 설정, 변경 전후 예산 비교 UI에 대한 논의가 활발히 오갔으며 메이커가 적극적으로 피드백을 수용했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Joel Horwitz",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt, I'm Joel, founder of Synter. AI agents can build software now, but advertising still means a separate dashboard, API and login for every platform. So we built Synter: one connection that lets your agent work across 30+ ad platforms. The easiest way to start is Claude plus the Synter MCP server. It also works with ChatGPT and other MCP clients, and it's built right into Amp. How it works: 1\\. Add https://mcp.synterai.com to Claude. 2\\. Connect your ad accounts. 3\\. Ask it to b",
+     "kr": "📌 안녕하세요 Product Hunt 여러분, Synter 설립자 Joel입니다. 이제 AI 에이전트가 소프트웨어도 개발하지만, 광고는 여전히 플랫폼마다 별도의 대시보드, API, 로그인을 거쳐야 합니다. 그래서 에이전트가 단 한 번의 연결로 30개 이상의 광고 플랫폼에서 작업할 수 있는 Synter를 만들었습니다. 가장 쉬운 시작 방법은 Claude에 Synter MCP 서버를 연동하는 것입니다. ChatGPT 및 기타 MCP 클라이언트와도 호환되며 Amp에 기본 내장되어 있습니다. 작동 방식: 1. Claude에 https://mcp.synterai.com 추가 2. 광고 계정 연결 3. 작업 요청."
+    },
+    {
+     "author": "Sk Al Murad",
+     "is_maker": false,
+     "text": "Nice work Joel. I run ads for a couple of our own products and the scary part with an agent is a bad change going live on a Friday night. If a change goes wrong, can I roll it back in one step? And can I set a hard daily spend cap per platform that the agent can’t go over, even if it thinks a campaign is doing well?",
+     "kr": "멋진 작업입니다 Joel. 저희 자체 제품 몇 개의 광고를 직접 운영하고 있는데, 에이전트 사용 시 가장 두려운 점은 금요일 밤에 잘못된 변경 사항이 라이브로 반영되는 것입니다. 변경이 잘못되었을 때 원클릭으로 롤백할 수 있나요? 그리고 캠페인 성과가 좋다고 판단하더라도 에이전트가 절대 넘길 수 없는 플랫폼별 엄격한 일일 지출 한도를 설정할 수 있나요?"
+    },
+    {
+     "author": "Joel Horwitz",
+     "is_maker": true,
+     "text": "@skalmurad Thanks Sk, really appreciate it, and those are exactly the right things to ask before trusting an agent with real budgets. Rollback and hard per-platform spend caps are details I want to answer properly rather than guess, so I'll follow up here soon.",
+     "kr": "@skalmurad 감사합니다 Sk, 정말 감사드리며 실제 예산을 에이전트에 맡기기 전에 확인해야 할 가장 핵심적인 질문들입니다. 롤백과 플랫폼별 엄격한 지출 한도는 어림짐작하기보다 정확하게 확인 후 답변드리고 싶어 곧 후속 답변을 남기겠습니다."
+    },
+    {
+     "author": "Henry Habib",
+     "is_maker": false,
+     "text": "I like the idea of starting with approval for every change and gradually giving the agent more autonomy. Handing over ad budgets blindly would be pretty scary. Conratulations!",
+     "kr": "모든 변경 사항에 대한 승인으로 시작해서 점진적으로 에이전트에게 더 많은 자율성을 부여한다는 개념이 마음에 듭니다. 광고 예산을 맹목적으로 맡기는 것은 꽤 두려운 일이니까요. 축하드립니다!"
+    },
+    {
+     "author": "Joel Horwitz",
+     "is_maker": true,
+     "text": "@henry\\_habib Thanks Henry! That's exactly how we think about it. You start by approving every change, and as the agent earns your trust you can give it more room. Nobody should have to hand over ad budgets blindly.",
+     "kr": "@henry\\_habib 감사합니다 Henry! 저희가 생각하는 바와 정확히 일치합니다. 처음에는 모든 변경을 승인하는 것으로 시작하고, 에이전트가 신뢰를 쌓아감에 따라 더 많은 자율권을 줄 수 있습니다. 누구도 광고 예산을 맹목적으로 넘겨주어서는 안 됩니다."
+    },
+    {
+     "author": "Joel Horwitz",
+     "is_maker": true,
+     "text": "@henry\\_habib yes, when dealing with real money, one needs to be extra careful.",
+     "kr": "@henry\\_habib 맞습니다, 실제 돈을 다룰 때는 각별히 신중해야 합니다."
+    },
+    {
+     "author": "Joel Horwitz",
+     "is_maker": true,
+     "text": "A bit of the backstory from the maker side. We started with the Synter MCP, a universal ads MCP, so any AI agent could connect to 30+ ad platforms through one connection instead of 30 separate integrations. From there we've kept building the intelligence layer on top of it, so your agent understands what's actually working across all your accounts, not just what each platform reports on its own. Synter Canvas is the application layer: one place where you and your agent plan, build and run campai",
+     "kr": "제작자 입장에서 비하인드 스토리를 조금 들려드리겠습니다. 저희는 어떤 AI 에이전트든 30개의 개별 연동 대신 단 하나의 연결로 30개 이상의 광고 플랫폼에 접근할 수 있도록 범용 광고 MCP인 Synter MCP부터 시작했습니다. 거기서 더 나아가 각 플랫폼의 자체 보고서뿐만 아니라 모든 계정에서 실제로 무엇이 효과가 있는지 에이전트가 이해할 수 있도록 인텔리전스 레이어를 구축해 왔습니다. Synter Canvas는 애플리케이션 레이어로서, 사용자와 에이전트가 한곳에서 캠페인을 기획, 구축, 실행할 수 있는 공간입니다."
+    },
+    {
+     "author": "Joel Horwitz",
+     "is_maker": true,
+     "text": "Last week at Seattle AI Days I said people expect their agents to cook like a Michelin star chef, but what they got was a line cook at a local diner. A real chef has mise en place: the right tools, the right ingredients and the right prep cooks and staff refining every dish so it meets the highest standards. For advertising, that means your agent gets the right tools to connect every ad account, the right data on what's actually working, and autonomous agents that refine every campaign around th",
+     "kr": "지난주 시애틀 AI 데이에서 저는 사람들이 에이전트가 미슐랭 스타 셰프처럼 요리하기를 기대하지만 실제 얻은 것은 동네 식당의 조리사 수준이라고 말했습니다. 진정한 셰프는 미장플라스(준비 작업)를 갖추고 있습니다. 최고 기준을 맞추기 위해 올바른 도구, 적절한 재료, 요리를 다듬어줄 보조 요리사들을 구비하죠. 광고에 비유하자면 모든 광고 계정을 연결할 올바른 도구, 실제 효과에 대한 정확한 데이터, 그리고 캠페인을 정교하게 다듬어주는 자율 에이전트를 갖추는 것을 의미합니다."
+    },
+    {
+     "author": "Oleksii Sekundant",
+     "is_maker": false,
+     "text": "I'd want the old and new budgets side by side in the approval. Moving money between platforms is much easier to review when the exact change is visible.",
+     "kr": "승인 화면에서 기존 예산과 새 예산이 나란히 비교되어 보이면 좋겠습니다. 정확한 변경 폭을 눈으로 볼 수 있다면 플랫폼 간 자금 이동을 검토하기가 훨씬 수월할 것입니다."
+    },
+    {
+     "author": "Joel Horwitz",
+     "is_maker": true,
+     "text": "@oleksii\\_sekundant Thanks Oleksii, that's a great call. When an agent moves money between platforms, you should see the exact before and after for every budget right in the approval. I'm taking this to the team and will follow up here once we've looked at it.",
+     "kr": "@oleksii\\_sekundant 감사합니다 Oleksii, 정말 훌륭한 제안입니다. 에이전트가 플랫폼 간 자금을 이동할 때 승인 화면에서 각 예산의 정확한 전후 비교를 직접 볼 수 있어야 합니다. 팀에 전달하여 검토 후 이곳에 후속 소식을 전하겠습니다."
+    },
+    {
+     "author": "Joel Horwitz",
+     "is_maker": true,
+     "text": "@oleksii\\_sekundant nice idea, yes, there is no limit to how you configure this given the mcp allows you to customize using your own coding agents.",
+     "kr": "@oleksii\\_sekundant 좋은 아이디어입니다. MCP를 통해 자체 코딩 에이전트를 사용하여 커스터마이징할 수 있으므로 구성 방식에는 제한이 없습니다."
+    },
+    {
+     "author": "PRIYANKA MANDAL",
+     "is_maker": false,
+     "text": "Love the vision behind Synter Canvas! Bringing multiple advertising platforms together with AI automation is a smart move. Congratulations, @joel\\_horwitz",
+     "kr": "Synter Canvas 이면에 담긴 비전이 정말 마음에 듭니다! 여러 광고 플랫폼을 AI 자동화로 하나로 묶은 것은 현명한 선택입니다. 축하드립니다, @joel\\_horwitz"
+    }
+   ],
+   "slug": "synter-canvas"
+  },
+  {
+   "name": "Vidsell - AI Personalized Video",
+   "tagline_en": "Make every video a connection 🎥",
+   "tagline_kr": "모든 비디오를 소중한 연결로 만드세요 🎥",
+   "image": "https://ph-files.imgix.net/a60c24a9-cf76-4c07-9adc-a06445b7855b.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=368",
+   "website": "https://vidsell.ai/",
+   "categories": [
+    "Video editing",
+    "Marketing automation platforms",
+    "Sales training"
+   ],
+   "upvotes": 135,
+   "comments_count": 22,
+   "maker": [
+    "Alexandre Contador"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Vidsell(Videco)은 영업 및 마케팅 전문가가 AI 기술을 활용하여 맞춤형 인터랙티브 비디오를 제작할 수 있도록 지원하는 플랫폼입니다. 성과가 낮고 비용과 시간이 많이 소요되는 전통적인 콜드 이메일의 한계를 극복하고 잠재 고객과의 실질적인 관계 형성을 돕습니다. 개인화된 비디오 메시지를 통해 미팅 예약률을 높이고 전환율을 극대화하여 비즈니스 매출 성장을 견인합니다. 복잡한 영상 편집 기술 없이도 누구나 몇 분 만에 직관적이고 매력적인 동영상을 손쉽게 제작할 수 있도록 설계되었습니다. 무료 체험 옵션을 제공하여 개인 아웃리치부터 대규모 세일즈 캠페인까지 유연하게 활용할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/videco",
+   "comment_summary": "메이커 Alex와 공동 창업자 Malith는 7개월간의 개발 끝에 비디오 개인화와 상호작용성을 대중화하기 위해 Vidsell을 출시했다고 전했습니다. 지지자들은 콜드 아웃리치의 게임 체인저가 될 것이라며 출시를 축하했고, 소규모 아웃리치 적용 가능성과 향후 사용자 피드백 반영 로드맵에 대한 기대감을 나타냈습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Alexandre Contador",
+     "is_maker": false,
+     "text": "Thank you for your great review! wish you success with the use of Videco",
+     "kr": "좋은 리뷰를 남겨주셔서 감사합니다! Videco를 유용하게 활용하시고 성공을 거두시기를 바랍니다."
+    },
+    {
+     "author": "Alexandre Contador",
+     "is_maker": false,
+     "text": "Thank you so much for your support and glad you like Videco :)",
+     "kr": "많은 응원에 감사드리며 Videco를 좋아해 주셔서 기쁩니다 :)"
+    },
+    {
+     "author": "Alexandre Contador",
+     "is_maker": false,
+     "text": "Thank you for the kind words! They mean a lot :)",
+     "kr": "따뜻한 말씀 감사합니다! 큰 힘이 됩니다 :)"
+    },
+    {
+     "author": "Alexandre Contador",
+     "is_maker": true,
+     "text": "📌 Hey, PH Community! Alex here from Vidsell 👋 After a long 7 months, the day has finally come for our launch! Thank you @kevin for hunting us! Cold emailing and traditional videos are no longer effective, often being costly, time-consuming, and complex without delivering results + missed revenue opportunities. We needed a better way to engage prospects and clients. Vidsell is an AI-powered tool for creating personalized and interactive videos, designed specifically for sales and marketing teams ",
+     "kr": "📌 안녕하세요 PH 커뮤니티 여러분! Vidsell의 Alex입니다 👋 지난 7개월간의 여정 끝에 드디어 출시일을 맞이했습니다! 저희를 헌팅해 준 @kevin에게 감사드립니다! 콜드 이메일과 전통적인 비디오는 이제 효과가 떨어지며 비용과 시간이 많이 들고 복잡함에도 성과가 나지 않아 수익 기회를 놓치게 만듭니다. 저희는 잠재 고객 및 클라이언트와 소통할 더 나은 방법이 필요했습니다. Vidsell은 영업 및 마케팅 팀을 위해 특별히 설계된 맞춤형 인터랙티브 비디오 제작 AI 도구입니다."
+    },
+    {
+     "author": "Sandra Idjoski",
+     "is_maker": false,
+     "text": "@alexdigitalmkt congrats on the launch, it looks amazing 🚀",
+     "kr": "@alexdigitalmkt 출시 축하드립니다, 정말 멋져 보이네요 🚀"
+    },
+    {
+     "author": "Alexandre Contador",
+     "is_maker": true,
+     "text": "@novicto\\_herlistianto thank you! glad to see that you liked it, have you had the chance to use it? :)",
+     "kr": "@novicto\\_herlistianto 감사합니다! 마음에 들어 하셔서 기쁘네요, 혹시 사용해 볼 기회가 있으셨나요? :)"
+    },
+    {
+     "author": "Alexandre Contador",
+     "is_maker": true,
+     "text": "@sandra\\_idjoski thank you for the support! are you already using video?",
+     "kr": "@sandra\\_idjoski 응원 감사합니다! 비디오를 이미 업무에 활용하고 계신가요?"
+    },
+    {
+     "author": "Andreea S.",
+     "is_maker": false,
+     "text": "@kevin @alexdigitalmkt Congratulations on the launch of Videco! It’s fantastic to see a tool that makes creating personalized videos so easy and efficient.",
+     "kr": "@kevin @alexdigitalmkt Videco의 출시를 축하드립니다! 맞춤형 비디오 제작을 이처럼 쉽고 효율적으로 만들어주는 도구를 보게 되어 참 좋습니다."
+    },
+    {
+     "author": "Malith Gamage",
+     "is_maker": false,
+     "text": "Hey everyone! Malith here, co-founder and CTO of Videco 👋 I'm thrilled to join Alex in celebrating our launch on Product Hunt today! It's been an incredible journey building Videco from the ground up over the past 7 months. Our mission has always been to make video personalization and interactivity accessible to everyone, and I'm proud of what we've achieved. We've worked hard to ensure that Videco is not only powerful but also easy to use, so you can create engaging, personalized videos in minu",
+     "kr": "안녕하세요 여러분! Videco의 공동 창업자이자 CTO인 Malith입니다 👋 오늘 Product Hunt에서 Alex와 함께 출시를 축하하게 되어 매우 기쁩니다! 지난 7개월 동안 처음부터 Videco를 구축해 온 것은 정말 놀라운 여정이었습니다. 저희의 사명은 비디오 개인화와 상호작용성을 모든 사람이 쉽게 접할 수 있도록 만드는 것이었으며, 지금까지 이룬 성과가 매우 자랑스럽습니다. 강력하면서도 사용하기 쉬워 누구나 몇 분 만에 매력적인 맞춤형 비디오를 만들 수 있도록 최선을 다했습니다."
+    },
+    {
+     "author": "Bilal Asif",
+     "is_maker": false,
+     "text": "Many congratulations @alexdigitalmkt on the launch. This is a true game changer for marketing and sales. the free trial seems so promising. I am curious, as you continue to develop Videco, how do you plan to incorporate user feedback to enhance these features further? So psyched to see Videoco evolve.",
+     "kr": "@alexdigitalmkt 출시를 진심으로 축하드립니다. 마케팅과 영업 분야의 진정한 게임 체인저입니다. 무료 평가판도 매우 기대가 되네요. 향후 Videco를 계속 개발하면서 이러한 기능들을 더욱 향상시키기 위해 사용자 피드백을 어떻게 반영할 계획인지 궁금합니다. Videco의 진화를 보게 되어 매우 흥미진진합니다."
+    },
+    {
+     "author": "Bilal Asif",
+     "is_maker": false,
+     "text": "@alexdigitalmkt superd Keep the good work going, I wish you the best of luck for the entire journey.",
+     "kr": "@alexdigitalmkt 최고입니다. 앞으로도 멋진 작업 이어가시길 바라며 모든 여정에 행운이 함께하기를 바랍니다."
+    },
+    {
+     "author": "thomas crossman",
+     "is_maker": false,
+     "text": "💎 Pixel perfection Yes! Been excited for this for a hot minute. So much going on in the video and personalisation space and videco looks super interesting. Q: Do you think this would benefit my small outreach as well as large scale?",
+     "kr": "💎 픽셀 단위의 완벽함이네요! 한동안 정말 기대하고 있었습니다. 비디오와 개인화 분야에서 많은 일들이 일어나고 있는데 Videco는 정말 흥미로워 보입니다. 질문: 대규모 캠페인뿐만 아니라 저 같은 소규모 아웃리치에도 도움이 될까요?"
+    }
+   ],
+   "slug": "videco"
+  }
+ ]
+}
