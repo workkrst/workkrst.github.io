@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-11-05",
+    "url": "2026-11-05/",
+    "top_product": "Wanaka Studio",
+    "count": 5,
+    "upvotes_total": 1241,
+    "comments_total": 59
+  },
+  {
     "date": "2026-11-04",
     "url": "2026-11-04/",
     "top_product": "AgentKit by Scalekit",
