@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-11-07</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-11-07 · Top 5 · 수집 댓글 47개 · 수집 2026-11-07 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-11-07",
+ "collected_at": "2026-11-07 12:30 KST",
+ "summary": "오늘 프로덕트 헌트는 AI 에이전트와 생산성 및 AI 검색 최적화(GEO) 도구가 상위권을 장악한 가운데, 로컬 기반 데이터 프라이버시와 사용자 인프라 연결성이 강조되었습니다. 커뮤니티 댓글에서는 실제 운영 시 사람 담당자로의 리드 인계 방식과 로컬 모델 구동을 통한 보안성, 생성형 검색 결과의 반영 기준 등 실무 적용성 검증이 핵심 화두였습니다.",
+ "notable": [
+  {
+   "slug": "tobira-ai",
+   "why": "에이전트 간 직접 통신으로 비즈니스 기회를 연결한다는 독창적인 접근으로 2,900표 이상의 호응을 얻었습니다. 댓글에서는 고객 문의 시 텔레그램이나 이메일로 대화 요약과 함께 담당자에게 인계되는 실질적인 연동 방식에 큰 관심이 쏠렸습니다."
+  },
+  {
+   "slug": "turnstone",
+   "why": "기존 AI 구독과 Ollama 로컬 모델을 연결하여 사용량 한도 없이 무료로 활용할 수 있다는 점에서 호평을 받았습니다. 커뮤니티에서는 외부 클라우드 무저장 정책을 통한 철저한 데이터 프라이버시 보장을 확인하며 높은 지지를 보냈습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Tobira.ai",
+   "tagline_en": "A network where AI agents find deals for their humans",
+   "tagline_kr": "AI 에이전트가 인간 사용자를 위해 거래 기회를 찾아주는 네트워크",
+   "image": "https://ph-files.imgix.net/cfffedd6-2cb9-41bc-bee6-ad9f9b44c486.gif?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://tobira.ai/",
+   "categories": [
+    "Productivity",
+    "Social & Community",
+    "AI Agents"
+   ],
+   "upvotes": 2983,
+   "comments_count": 2650,
+   "maker": [
+    "Vlad Shipilov",
+    "Olia Nemirovski"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Tobira.ai는 개인이나 기업의 AI 에이전트에게 공개 네트워크 상의 무료 고유 주소를 부여하는 플랫폼입니다. 사용자의 에이전트는 다른 에이전트들과 직접 소통하며 고객, 창업자, 투자자, 일자리 및 비즈니스 파트너를 찾고 협상을 대행합니다. 공유할 정보의 범위는 사용자가 직접 완벽히 통제할 수 있어 안전합니다. 웹사이트에도 전용 에이전트(Tobira Site Agent)를 구축하여 방문자와 외부 AI 비서의 질의응답을 처리하고 통화 예약 및 주문을 자동으로 접수합니다. ChatGPT, Claude, Grok, Codex 등 다양한 주요 AI 모델과 호환되며 고유 핸들을 선점할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/tobira-ai",
+   "comment_summary": "커뮤니티에서는 에이전트 간 직접 소통 기능과 실제 웹사이트 적용 가능성에 대해 높은 관심을 보였습니다. 특히 고객 응대 중 실제 인간 담당자로의 전환 방식과 AI의 잘못된 약속 방지 대책에 대한 질문이 이어졌으며, 메이커는 텔레그램 및 이메일 연동 요약 기능과 문서 기반 답변 제한 방식을 안내했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Vlad Shipilov",
+     "is_maker": true,
+     "text": "Hey Product Hunt! 👋 I'm Vlad, founder of **Tobira.ai** In March you made our open network for AI agents #1 Product of the Day 🏆 Today we're back with what that network was missing: **Tobira Site Agent**. Your customers already ask ChatGPT, Claude, Gemini and other AI to find businesses like yours. Then they ask it to book a demo or pay, right in their chat, not on your website. Last week I asked my Claude to book a call with 10 real companies (no names, I don't want to get sued 🙂). **Zero bookin",
+     "kr": "안녕하세요 Product Hunt 여러분! 👋 Tobira.ai 창립자 Vlad입니다. 지난 3월 여러분의 성원 덕분에 AI 에이전트용 개방형 네트워크가 '오늘의 제품 1위'에 올랐습니다. 🏆 오늘은 그 네트워크에 부족했던 부분인 **Tobira Site Agent**를 가지고 돌아왔습니다. 여러분의 고객들은 이미 여러분과 같은 비즈니스를 찾기 위해 ChatGPT, Claude, Gemini 등 AI에 질문하고 있습니다. 그리고 웹사이트를 방문하지 않고 채팅창에서 바로 데모 예약이나 결제를 요청하죠. 지난주 저는 Claude에게 10개 실제 회사(소송당하고 싶지 않아서 이름은 밝히지 않겠습니다 🙂)와 미팅 예약을 요청해 보았습니다. 예약 성공률은 제로였습니다."
+    },
+    {
+     "author": "Maria Anosova 🔥",
+     "is_maker": false,
+     "text": "@chrismessina @vlad\\_shipilov Fantastic! This takes things to a whole new level with the agents. Good luck in today’s race.",
+     "kr": "@chrismessina @vlad\\_shipilov 환상적입니다! 에이전트를 한 차원 더 높은 단계로 끌어올렸네요. 오늘 레이스에서 좋은 결과 있기를 응원합니다."
+    },
+    {
+     "author": "Olia Nemirovski",
+     "is_maker": true,
+     "text": "@maria\\_anosova haha yes, the race is on 🙂 if you tried it on one site first, which one would it be?",
+     "kr": "@maria\\_anosova 하하 네, 레이스가 시작되었습니다 🙂 만약 한 사이트에 먼저 적용해 보신다면 어떤 사이트가 될까요?"
+    },
+    {
+     "author": "Vlad Shipilov",
+     "is_maker": true,
+     "text": "@maria\\_anosova thank you, means a lot 🙏 The agent-to-agent part is my favourite too",
+     "kr": "@maria\\_anosova 감사드립니다, 큰 힘이 됩니다 🙏 에이전트 간 소통 부분은 저도 가장 마음에 드는 기능입니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@chrismessina @vlad\\_shipilov How does Tobira handle lead handoff when a customer needs to speak with a real person?",
+     "kr": "@chrismessina @vlad\\_shipilov 고객이 실제 사람과 대화해야 할 때 Tobira는 리드 인계를 어떻게 처리하나요?"
+    },
+    {
+     "author": "Olia Nemirovski",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 when someone wants a person, the agent takes their contact and sends the lead straight to your Telegram or email, or books a call in your calendar. if they prefer WhatsApp, it saves their number so you can reply there. how do you hand off leads today?",
+     "kr": "@shivam\\_kushwaha16 고객이 실제 담당자를 원하면 에이전트가 연락처를 받아 텔레그램이나 이메일로 리드를 바로 전송하거나 캘린더에 통화를 예약해 줍니다. 왓츠앱을 선호하는 경우 번호를 저장해 해당 채널로 답변할 수 있도록 합니다. 현재는 리드 인계를 어떻게 처리하고 계신가요?"
+    },
+    {
+     "author": "Vlad Shipilov",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 and the lead comes with a short summary of what they asked, so you pick up where the agent left off instead of rereading the whole chat",
+     "kr": "@shivam\\_kushwaha16 또한 리드 전송 시 고객의 질문 요약본이 함께 제공되므로, 전체 대화를 다시 읽을 필요 없이 에이전트가 중단한 지점부터 바로 대화를 이어갈 수 있습니다."
+    },
+    {
+     "author": "Bob Vasic",
+     "is_maker": false,
+     "text": "@chrismessina @vlad\\_shipilov congrats on the launch. Good luck!",
+     "kr": "@chrismessina @vlad\\_shipilov 출시를 축하합니다. 행운을 빕니다!"
+    },
+    {
+     "author": "Olia Nemirovski",
+     "is_maker": true,
+     "text": "@bobvasic thanks Bob, appreciate you stopping by. got a site we should try the agent on?",
+     "kr": "@bobvasic 감사해요 Bob, 방문해 주셔서 기쁩니다. 저희 에이전트를 테스트해 볼 만한 추천 사이트가 있으신가요?"
+    },
+    {
+     "author": "Vlad Shipilov",
+     "is_maker": true,
+     "text": "@bobvasic thank you 🙏 means a lot on launch day",
+     "kr": "@bobvasic 감사합니다 🙏 출시 당일에 큰 힘이 됩니다."
+    },
+    {
+     "author": "Vadym Pavlenko",
+     "is_maker": false,
+     "text": "tried to think how this would work for us (mobile app, our site is mostly a landing page) and have 2 questions: 1\\. what stops the agent from promising things we don't do? e.g. a discount, or a feature that is on the roadmap but not shipped yet 2\\. can I see the full conversations, also the ones that didn't end in a lead? those would tell me more than the leads do also congrats on launch!",
+     "kr": "저희 서비스(모바일 앱 중심이고 사이트는 대부분 랜딩 페이지 수준)에 어떻게 적용될지 고민해 보며 2가지 질문이 있습니다: 1. 우리가 제공하지 않는 것들(예: 임의의 할인이나 아직 출시되지 않은 로드맵 상의 기능)을 에이전트가 함부로 약속하지 않도록 어떻게 막나요? 2. 리드로 이어지지 않은 대화를 포함해 전체 대화 내역을 확인할 수 있나요? 그런 대화들이 리드보다 더 많은 인사이트를 줄 것 같아서요. 출시 축하드립니다!"
+    },
+    {
+     "author": "Olia Nemirovski",
+     "is_maker": true,
+     "text": "@vadym\\_pavlenko it only answers from your site and the docs you give it, so a discount you never published won't come up. if it gets something wrong, tell your agent in the owner chat and it fixes it. and every visitor question lands in Analytics, lead or not. full transcripts, let me check and come back to you here",
+     "kr": "@vadym\\_pavlenko 에이전트는 제공해주신 웹사이트와 문서의 내용만 바탕으로 답변하므로 공개하지 않은 할인 혜택 등은 언급되지 않습니다. 만약 잘못된 답변을 하면 관리자 채팅창에서 에이전트에게 알려 즉시 수정할 수 있습니다. 또한 리드로 연결되었는지 여부와 상관없이 모든 방문자 질문은 분석 페이지에 기록됩니다. 전체 대화 전문 제공 여부는 확인 후 다시 답변드리겠습니다."
+    }
+   ],
+   "slug": "tobira-ai"
+  },
+  {
+   "name": "Turnstone",
+   "tagline_en": "Grok Bot alternative that runs on your AI, completely free",
+   "tagline_kr": "보유한 AI로 구동되는 완전 무료 Grok Bot 대안",
+   "image": "https://ph-files.imgix.net/edaa1eef-4c2a-40c7-a724-cbccbf4b6cdc.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://myturnstone.ai/",
+   "categories": [
+    "Productivity",
+    "AI Agents"
+   ],
+   "upvotes": 1879,
+   "comments_count": 1650,
+   "maker": [
+    "Aryan Vij"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Turnstone은 기존에 보유하고 있는 AI 구독이나 인프라를 활용하여 동작하는 완전 무료 Grok Bot 대안 서비스입니다. 개인 AI 구독 서비스 계정, API 키 또는 자체 호스팅 모델을 직접 연결할 수 있습니다. 연결된 모델 중 하나가 사용량 한도에 도달하면 에이전트가 다른 모델로 자동 전환되어 작업이 끊김 없이 지속됩니다. Mac과 iPhone 모두에서 사용할 수 있어 언제 어디서나 연속적인 작업 흐름을 유지할 수 있습니다. 사용자 데이터는 외부 클라우드 서버에 저장되지 않고 로컬에 안전하게 유지됩니다.",
+   "launch_url_used": "https://www.producthunt.com/products/turnstone",
+   "comment_summary": "기존 Grok Bot의 사용량 한도 문제로 불편을 겪던 사용자들 사이에서 본인 계정과 로컬 모델을 연결할 수 있는 유연한 대안으로 큰 호평을 받았습니다. 특히 Ollama를 통한 로컬 모델 지원 여부와 데이터 프라이버시 유지 방식에 관심이 집중되었으며, 메이커는 클라우드 무저장 정책과 맞춤형 에이전트 팀 구성 팁을 안내했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Aryan Vij",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! 👋 I'm Aryan, one of the founders of Turnstone. I was using Grok Bot every day and kept hitting the usage limit right in the middle of real work. It was pretty frustrating because it felt like my team of employees would randomly take a 3 day vacation when I needed them the most. At the same time, I was already paying for Claude and ChatGPT, and those subscriptions were barely being used. This is why @jai\\_bhatia2 and I decided to build Turnstone. Turnstone lets your Agents run",
+     "kr": "📌 안녕하세요 Product Hunt 여러분! 👋 Turnstone 공동 창립자 Aryan입니다. 저는 매일 Grok Bot을 사용하다가 실제 업무 도중 사용량 한도에 부딪히는 일을 자주 겪었습니다. 가장 도움이 필요한 순간에 직원들이 뜬금없이 사흘짜리 휴가를 떠나버린 듯한 답답함을 느꼈죠. 한편으로는 Claude와 ChatGPT 구독료를 내고 있으면서도 거의 쓰지 않고 있었습니다. 이것이 저와 @jai\\_bhatia2가 Turnstone을 만들기로 결심한 이유입니다. Turnstone을 통해 에이전트들을 원활하게 구동할 수 있습니다."
+    },
+    {
+     "author": "Priya K",
+     "is_maker": false,
+     "text": "@jai\\_bhatia2 @aryanvij02 what a great find today.. one que i have If I route queries exclusively through Ollama does any telemetry data still touch external cloud servers?",
+     "kr": "@jai\\_bhatia2 @aryanvij02 오늘 정말 훌륭한 제품을 발견했네요.. 한 가지 질문이 있는데 쿼리를 Ollama를 통해서만 라우팅할 경우 원격 측정 데이터가 외부 클라우드 서버에 조금이라도 닿게 되나요?"
+    },
+    {
+     "author": "Aryan Vij",
+     "is_maker": true,
+     "text": "@priya\\_kushwaha1 Nothing touches our cloud server! Your data remains yours and stays local. For the connectors, we have zero data retention with our provider (Composio) so no information gets stored there as well. Happy to answer more questions.",
+     "kr": "@priya\\_kushwaha1 어떤 데이터도 저희 클라우드 서버에 닿지 않습니다! 사용자의 데이터는 온전히 본인의 것이며 로컬에만 유지됩니다. 커넥터의 경우 공급자(Composio)와의 무보존 정책을 적용하여 그곳에도 어떠한 정보도 저장되지 않습니다. 추가 질문이 있다면 언제든 편하게 남겨주세요."
+    },
+    {
+     "author": "Priya K",
+     "is_maker": false,
+     "text": "@aryanvij02 that's great to hear, thanks for confirming best of luck for today🙌",
+     "kr": "@aryanvij02 안심이 되는 답변이네요, 확인해 주셔서 감사합니다. 오늘 출시 화이팅입니다🙌"
+    },
+    {
+     "author": "Aryan Mehta",
+     "is_maker": false,
+     "text": "@priya\\_kushwaha1 @aryanvij02 It feels super lightweight compared to otherbloated automation tools out there.",
+     "kr": "@priya\\_kushwaha1 @aryanvij02 시중에 나와 있는 다른 무거운 자동화 툴들에 비해 정말 가볍게 느껴지네요."
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@jai\\_bhatia2 @aryanvij02 Perfect alternative for keeping workflows running smoothly all day long.",
+     "kr": "@jai\\_bhatia2 @aryanvij02 하루 종일 워크플로우를 매끄럽게 유지하기 위한 완벽한 대안입니다."
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "@aryanvij02 Best productivity find on product hunt today, hands down.",
+     "kr": "@aryanvij02 단언컨대 오늘 Product Hunt에서 발견한 최고의 생산성 도구입니다."
+    },
+    {
+     "author": "Aryan Vij",
+     "is_maker": true,
+     "text": "@amrita\\_prajapati2 Love to hear it! Let me know if there's any way I can help",
+     "kr": "@amrita\\_prajapati2 그런 말씀을 들으니 기쁘네요! 제가 도울 수 있는 부분이 있다면 언제든 말씀해 주세요."
+    },
+    {
+     "author": "Alan Duong",
+     "is_maker": false,
+     "text": "Super cool, are you guys planning on supporting local models or is that included already? What is yall’s favorite agent template you recommend to anyone",
+     "kr": "정말 멋지네요. 로컬 모델 지원 계획이 있나요, 아니면 이미 포함되어 있나요? 누구에게나 추천하고 싶은 최애 에이전트 템플릿은 무엇인가요?"
+    },
+    {
+     "author": "Aryan Vij",
+     "is_maker": true,
+     "text": "@alanduong I prefer talking to the Chief of Staff agent about what I need, and it suggests the perfect team of agents for me! It works better than pre-existing templates and the chief of staff has some unique configurations that makes it really good at making and maintaining other agents.",
+     "kr": "@alanduong 저는 Chief of Staff 에이전트에게 필요한 것을 이야기하는 편인데, 그러면 저에게 딱 맞는 에이전트 팀을 제안해 줍니다! 기존 템플릿보다 훨씬 뛰어나며, Chief of Staff에는 다른 에이전트들을 구성하고 관리하는 데 특화된 고유한 설정이 적용되어 있습니다."
+    },
+    {
+     "author": "Aryan Vij",
+     "is_maker": true,
+     "text": "@alanduong We do support local models! You can use Ollama or point to a custom endpoint if you have your own inference running on your servers.",
+     "kr": "@alanduong 로컬 모델을 완벽히 지원합니다! Ollama를 사용하거나 자체 서버에서 추론 모델을 운영 중인 경우 커스텀 엔드포인트를 지정하실 수 있습니다."
+    },
+    {
+     "author": "Kurtis Tryber",
+     "is_maker": false,
+     "text": "I woke up a few days ago to find that my grokbot usage was all the sudden at 100%. And then I started to find an alternative that could just hook to my claude sub. Turnstone delivered! Platform works great, updates are happening daily, no complaints and really happy with the product so far. I've even got the mobile app which is working really well.",
+     "kr": "며칠 전 아침에 일어나 보니 grokbot 사용량이 갑자기 100%에 달해 있었습니다. 그래서 Claude 구독과 바로 연결할 수 있는 대안을 찾기 시작했죠. Turnstone이 그 기대를 완벽히 충족해 주었습니다! 플랫폼도 잘 작동하고 매일 업데이트가 진행되며, 불만 없이 지금까지 정말 만족스럽게 쓰고 있습니다. 심지어 모바일 앱도 설치했는데 정말 잘 작동하네요."
+    }
+   ],
+   "slug": "turnstone"
+  },
+  {
+   "name": "Rankfender",
+   "tagline_en": "The SEO/GEO operating system, built for people and AI agents",
+   "tagline_kr": "사람과 AI 에이전트를 위해 구축된 SEO/GEO 통합 운영체제",
+   "image": "https://ph-files.imgix.net/773dfc07-4fbf-4485-a46b-4bb1ca0395a9.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://rankfender.com/",
+   "categories": [
+    "SEO tools",
+    "GEO Tools"
+   ],
+   "upvotes": 799,
+   "comments_count": 650,
+   "maker": [
+    "Imed Radhouani"
+   ],
+   "price_model": "Payment Required",
+   "price_detail": null,
+   "desc_kr": "Rankfender 3.0은 여러 SEO 도구를 번갈아 사용하는 번거로움에 지친 마케터, 창업자 및 대행사를 위한 올인원 SEO/GEO 플랫폼입니다. 키워드 리서치, AI 오버뷰를 포함한 순위 추적, 경쟁사 및 백링크 분석, 사이트 감사, 콘텐츠 및 소셜 전략을 하나의 대시보드에 통합했습니다. 특히 기존 툴들이 놓치고 있던 ChatGPT, Claude, Gemini, Perplexity 등 주요 AI 어시스턴트들이 브랜드를 어떻게 언급하는지 모니터링할 수 있습니다. 전용 앱에서 직접 작업하거나 Claude 및 ChatGPT와 연동하여 AI 에이전트가 최적화 작업을 자율적으로 수행하도록 설정할 수 있습니다. 수정 사항 반영 후 즉시 재확인하는 기능 등을 통해 AI 검색 노출 가시성을 체계적으로 개선합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/rankfender",
+   "comment_summary": "AI 어시스턴트 내 브랜드 인용 및 노출(GEO)을 모니터링하고 개선할 수 있다는 점에서 사용자들의 큰 호응을 얻었습니다. 사용자들은 사이트 수정 후 AI 답변 반영 여부를 판별하는 기준과 즉각적인 재확인 기능에 대해 문의했으며, 메이커는 당일 출시된 신속 재확인 기능(Re-check now) 소개와 함께 향후 AI 인용 근거 비교 기능을 고도화하겠다고 밝혔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Imed Radhouani",
+     "is_maker": false,
+     "text": "Matija, thank you. This genuinely means a lot !!! You didn't have to write any of this. You took the time. That tells me we're doing something right. What you experienced; the responsiveness, the patience, the walking through WordPress details, that's not extra. That's the baseline. We just happen to be in an industry where most people have forgotten that. So it stands out. The $20k you spent before? That's the part that frustrates me. Agencies charging for blog posts nobody reads. Strategies th",
+     "kr": "Matija님, 감사합니다. 진심으로 큰 의미가 있습니다! 굳이 이런 글을 쓰지 않으셔도 됐는데 시간을 내어 작성해 주셨네요. 저희가 올바른 방향으로 나아가고 있다는 확신을 줍니다. 경험하신 빠른 응답, 인내심, 워드프레스 세부 사항에 대한 안내는 특별 서비스가 아닌 기본 기준입니다. 다만 업계의 많은 이들이 이를 잊고 있어서 두드러져 보일 뿐이죠. 이전에 쓰셨다는 2만 달러요? 그 부분이 참 안타깝습니다. 아무도 읽지 않는 블로그 포스팅에 비용을 청구하고 실행되지 않는 전략만 남발하는 대행사들 말이죠."
+    },
+    {
+     "author": "Imed Radhouani",
+     "is_maker": false,
+     "text": "Thank you Aadil — really appreciate you taking the time to write this. The 60% invisible number is painful but honest, and that's exactly the moment we built Rankfender for. Not to make you feel bad, but to give you a map to fix it. **On your suggestion:** \"take the action automatically if codebase access is given for the marketing sites\" — that's actually exactly where we're heading with ROSE. We're building Rankfender to be the most sophisticated agentic SEO and GEO platform — and that means m",
+     "kr": "Aadil님 감사합니다 — 시간 내어 글을 써주셔서 진심으로 감사드립니다. 60% 미노출이라는 수치는 뼈아프지만 정직한 수치이며, 바로 그런 문제를 해결하기 위해 저희가 Rankfender를 만들었습니다. 좌절감을 주기 위함이 아니라 고칠 수 있는 로드맵을 제공하기 위함입니다. **마케팅 사이트의 코드베이스 접근 권한이 주어지면 자동으로 조치를 취하게 하자**는 제안에 대해 말씀드리자면, 그것이 바로 저희가 ROSE를 통해 나아가고 있는 정확한 방향입니다. 가장 정교한 에이전트 기반 SEO 및 GEO 플랫폼을 구축하고 있습니다."
+    },
+    {
+     "author": "Imed Radhouani",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 Imed here, founder of Rankfender. When we first launched here in March, Rankfender did one thing: it showed whether your brand appeared in AI answers. Since then we've been listening closely to our users, customers and this community: every support message, every feature request, every \"can it also do…?\". The message was consistent. Teams didn't want one more SEO tool. They wanted one place that does the whole job. So we spent the last months rebuilding Rankfender around tha",
+     "kr": "📌 안녕하세요 Product Hunt 👋 Rankfender 창립자 Imed입니다. 지난 3월 이곳에 처음 출시했을 때 Rankfender는 AI 답변에 브랜드가 나타나는지 여부를 보여주는 단 한 가지 역할을 했습니다. 그 후 저희는 사용자와 고객, 커뮤니티의 모든 지원 메시지와 기능 요청, 문의에 귀를 기울였습니다. 메시지는 일관되었습니다. 팀들은 단순한 또 하나의 SEO 도구가 아닌, 모든 작업을 한곳에서 처리할 수 있는 통합 공간을 원했습니다. 그래서 지난 몇 달간 그 요구를 중심으로 Rankfender를 전면 재구축했습니다."
+    },
+    {
+     "author": "Imed Radhouani",
+     "is_maker": true,
+     "text": "@busmark\\_w\\_nika Thank you for your everlasting support Nika !! We always had your comments as something we appreciate in our team !! We would love you to suggest what we need to ship next, something that a SEO/GEO platform must have or that you wish it could there !! What would you suggest next ?",
+     "kr": "@busmark\\_w\\_nika 변함없는 응원을 보내주시는 Nika님 감사합니다!! 저희 팀은 항상 Nika님의 피드백을 매우 소중하게 생각하고 있습니다!! SEO/GEO 플랫폼에 꼭 있어야 하거나 추가되었으면 하는 다음 기능에 대해 제안해 주시면 감사하겠습니다!! 다음으로 어떤 기능을 제안하고 싶으신가요?"
+    },
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "💡 Bright idea If I publish a fix and the next recheck cites me, do you count that as the fix working or just normal AI answer noise?",
+     "kr": "💡 좋은 아이디어네요. 사이트 수정 사항을 발행한 후 다음 재확인에서 인용되었다면, 이를 수정이 효과를 발휘한 것으로 보나요 아니면 일반적인 AI 답변 노이즈로 보나요?"
+    },
+    {
+     "author": "Imed Radhouani",
+     "is_maker": true,
+     "text": "@igorblink Honest answer: today, no. One re-check is one sample, and AI answers move around between runs even when nothing changed. We store every answer and show the trend per question and per assistant, but we don't yet tell you \"this is your fix working\" vs \"this is noise\". You have to read the trend yourself. What we'd want it to do: • mark the day you published the fix on the question's chart • compare how often you were cited before vs after, per assistant • only call it **\"working\"** when",
+     "kr": "@igorblink 솔직히 말씀드리면 현재는 아닙니다. 1회의 재확인은 단일 샘플일 뿐이며 아무런 변경이 없더라도 AI 답변은 실행마다 변동될 수 있습니다. 저희는 모든 답변을 저장하고 질문별, 어시스턴트별 트렌드를 보여주지만 '이것이 수정의 효과인지 노이즈인지'까지 단정해 알려주지는 않으므로 트렌드를 직접 확인하셔야 합니다. 저희가 구현하고자 하는 기능은: • 질문 차트에 수정 사항 반영 날짜 표시 • 어시스턴트별 수정 전후 인용 빈도 비교 • 유의미한 변화가 있을 때만 효과가 있는 것으로 판단하는 기능입니다."
+    },
+    {
+     "author": "Oleksii Sekundant",
+     "is_maker": false,
+     "text": "The prioritized fix list is the part I'd look at first. Keeping the search result or AI answer that prompted each fix beside it would help explain why that work matters.",
+     "kr": "우선순위가 지정된 수정 작업 목록이 가장 먼저 살펴볼 부분인 것 같습니다. 각 수정을 유발한 검색 결과나 AI 답변을 작업 옆에 나란히 보여주면 왜 그 작업이 중요한지 설명하는 데 큰 도움이 될 것 같네요."
+    },
+    {
+     "author": "Imed Radhouani",
+     "is_maker": true,
+     "text": "@oleksii\\_sekundant Thanks, that's exactly how we think about it too. Today each move in Strategy shows why it's there: the numbers behind it (position, search volume, how often the AI assistants name you vs a competitor). It doesn't yet show the actual Google result or AI answer that triggered it. Putting that next to the fix (\"here's what ChatGPT said, here's why this page should change it\") is a great idea. It's going on the roadmap and I'll reply here when it ships.",
+     "kr": "@oleksii\\_sekundant 감사합니다, 저희도 정확히 그렇게 생각하고 있습니다. 현재 Strategy의 각 조치 항목은 그 이유가 되는 배경 수치(순위, 검색량, 경쟁사 대비 AI 어시스턴트의 언급 빈도)를 보여줍니다. 다만 이를 촉발한 실제 구글 결과나 AI 답변 원문까지는 아직 보여주지 못하고 있습니다. 수정 작업 옆에 'ChatGPT가 이렇게 답변했으므로 이 페이지를 변경해야 함'과 같이 배치하는 것은 훌륭한 아이디어입니다. 로드맵에 반영하였으며 배포되면 댓글로 소식 전하겠습니다."
+    },
+    {
+     "author": "Amelia Wampler",
+     "is_maker": false,
+     "text": "how long do you normally see it take for indexing on changes? i feel like when we update our site it still takes a couple days/week to propagate to search and llms. does your product help speed that up?",
+     "kr": "수정 사항이 인덱싱되는 데 보통 얼마나 걸리나요? 웹사이트를 업데이트하면 검색엔진과 LLM에 전파되는 데 며칠에서 일주일 정도 걸리는 것 같더라고요. 귀사 제품이 이 과정을 단축하는 데 도움이 되나요?"
+    },
+    {
+     "author": "Gevorg Arakelyan",
+     "is_maker": false,
+     "text": "Congrats on v3.0! \"Re-check now\" after publishing a fix looks like a small thing, but it saves a lot of waiting. Good luck with the launch today 🙌",
+     "kr": "v3.0 출시를 축하합니다! 수정 사항을 발행한 후 누를 수 있는 '지금 재확인(Re-check now)' 버튼은 사소해 보일 수 있지만 불필요한 대기 시간을 크게 줄여주네요. 오늘 출시 좋은 결과 있기를 바랍니다 🙌"
+    },
+    {
+     "author": "Imed Radhouani",
+     "is_maker": true,
+     "text": "@gevorgarakelyann Thank you! 🙌 It came straight from a request this morning: Juan asked for it, and it shipped a few hours later in 3.0.1. You're right, it's a small button, but it removes a week of waiting right when you most want to know whether a fix worked. We're shipping requests all day for Hypership, so if there's anything you'd want Rankfender to do next, drop it here and we'll try to ship it today.",
+     "kr": "@gevorgarakelyann 감사합니다! 🙌 오늘 아침 Juan님의 요청을 받아 몇 시간 만에 3.0.1 버전에 바로 반영해 배포한 기능입니다. 말씀하신 대로 작은 버튼이지만, 수정이 효과가 있었는지 가장 궁금한 시점에 일주일간의 대기 시간을 없애줍니다. Hypership 행사 기간 동안 하루 종일 요청 사항을 빠르게 배포하고 있으니, Rankfender에 바라는 점이 있다면 편하게 남겨주세요."
+    },
+    {
+     "author": "Marianna Tymchuk",
+     "is_maker": false,
+     "text": "Likely AI Can you see which sources an AI assistant cited when it mentioned a competitor? That would help explain where the gap comes from",
+     "kr": "AI 어시스턴트가 경쟁사를 언급할 때 어떤 출처를 인용했는지 확인할 수 있나요? 그렇게 하면 격차가 어디서 발생하는지 파악하는 데 큰 도움이 될 것 같습니다."
+    }
+   ],
+   "slug": "rankfender"
+  },
+  {
+   "name": "EdgeBar",
+   "tagline_en": "Control your Mac’s volume and brightness from the trackpad",
+   "tagline_kr": "트랙패드로 맥북의 음량과 화면 밝기를 조절하는 유틸리티",
+   "image": "https://ph-files.imgix.net/107ba604-867d-46c9-b593-3da670c6d1c8.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://edgebar.xyz/",
+   "categories": [],
+   "upvotes": 508,
+   "comments_count": 400,
+   "maker": [
+    "Shashank Bhardwaj"
+   ],
+   "price_model": "Payment Required",
+   "price_detail": null,
+   "desc_kr": "EdgeBar는 맥북 트랙패드의 가장자리를 햅틱 피드백이 적용된 부드러운 볼륨 및 화면 밝기 조절 영역으로 바꿔주는 앱입니다. 트랙패드 오른쪽 가장자리를 슬라이드하면 볼륨을, 왼쪽 가장자리를 슬라이드하면 밝기를 조절할 수 있으며 키보드 단축키와 동일한 온스크린 디스플레이 및 경쾌한 햅틱 진동이 제공됩니다. 오른쪽 상단 모서리를 더블 탭하면 음소거가 실행되고, 하단 가장자리를 스와이프하면 음악 트랙을 건너뛸 수 있습니다. 메뉴 막대에 상주하며 CPU 점유율을 거의 차지하지 않아 배터리와 성능에 부담을 주지 않습니다. 9달러 1회 구매로 평생 업데이트가 제공되어 실용적입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/edgebar",
+   "comment_summary": "트랙패드 가장자리 조작이라는 직관적인 발상과 햅틱 피드백의 디테일에 대해 맥 사용자들의 호평이 이어졌습니다. 특히 두 손가락 스크롤과의 간섭 방지 처리 방식과 앱별 개별 매핑 지원 계획에 대한 문의가 있었으며, 메이커는 단일 손가락 감지 설계와 감지 영역 너비 조절 기능을 설명하며 향후 앱별 매핑 기능 개발 의사를 밝혔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "If I'm two-finger scrolling near the right edge, how do you tell that from a volume swipe—or do I need a modifier?",
+     "kr": "오른쪽 가장자리 부근에서 두 손가락으로 스크롤할 때 볼륨 스와이프와 어떻게 구분하나요? 아니면 보조 키를 눌러야 하나요?"
+    },
+    {
+     "author": "Shashank Bhardwaj",
+     "is_maker": true,
+     "text": "hi @igorblink, the app only detects single-finger gestures. designed it that way to avoid interfering with most macOS gestures. Also there's a setting to change the edge width so you can narrow it as much as you like, for users who scroll close to the edges.",
+     "kr": "안녕하세요 @igorblink님, 이 앱은 단일 손가락 제스처만 감지합니다. 대부분의 macOS 기본 제스처와 간섭을 피하도록 설계되었습니다. 또한 가장자리 너비를 조절할 수 있는 설정이 있어, 가장자리에 가깝게 스크롤하는 사용자분들은 원하는 만큼 인식 범위를 좁힐 수 있습니다."
+    },
+    {
+     "author": "Athul Dileep",
+     "is_maker": false,
+     "text": "Can the edges do different things per app - like volume everywhere but track skip only in Music - or is it one global mapping?",
+     "kr": "앱마다 가장자리 동작을 다르게 설정할 수 있나요? 예를 들어 볼륨 조절은 모든 앱에서 동작하지만 트랙 넘김은 Music 앱에서만 동작하도록 하는 식인지, 아니면 전역 단일 매핑인가요?"
+    },
+    {
+     "author": "Shashank Bhardwaj",
+     "is_maker": true,
+     "text": "hi @greylightshines it's global mapping, but i'm looking into app-specific mapping. @gabe had a similar suggestion",
+     "kr": "안녕하세요 @greylightshines님, 현재는 전역 매핑이지만 앱별 맞춤 매핑 기능도 검토 중입니다. @gabe님께서도 비슷한 제안을 주셨습니다."
+    },
+    {
+     "author": "Shashank Bhardwaj",
+     "is_maker": true,
+     "text": "Hey Product Hunt - Shashank here, I made EdgeBar. My finger is on the trackpad most of the day, and while I can change volume or brightness by reaching for the keys - I didn't want to. Plus haptic feedback when using the trackpad is very cool. So now, with EdgeBar, the edges of your trackpad do this: * right edge slides volume, left edge slides brightness * double-tap the top-right corner to mute * swipe the bottom edge to skip tracks * a light haptic tick as you slide, and the same on-screen di",
+     "kr": "안녕하세요 Product Hunt - EdgeBar를 만든 Shashank입니다. 저는 하루의 대부분을 트랙패드 위에 손가락을 올려두고 생활하는데, 볼륨이나 밝기를 조절하기 위해 키보드로 손을 뻗는 것이 번거로웠습니다. 게다가 트랙패드의 햅틱 피드백을 활용하면 정말 멋지겠다는 생각이 들었죠. 이제 EdgeBar를 통해 트랙패드 가장자리에서 다음과 같은 제어가 가능합니다: * 오른쪽 가장자리 슬라이드로 볼륨 조절, 왼쪽 가장자리 슬라이드로 밝기 조절 * 오른쪽 상단 모서리 더블 탭으로 음소거 * 하단 가장자리 스와이프로 트랙 넘김 * 슬라이드할 때 느껴지는 가벼운 햅틱 틱 반응 및 동일한 온스크린 디스플레이 표시"
+    },
+    {
+     "author": "Sushmita Singh",
+     "is_maker": false,
+     "text": "Super useful and very well designed. I'm dependent on it and also loved how fast the improvements got shipped",
+     "kr": "매우 유용하고 디자인도 정말 훌륭합니다. 완전히 정착해서 쓰고 있으며, 개선 사항들이 매우 빠르게 반영되는 점도 마음에 들었습니다."
+    },
+    {
+     "author": "Gevorg Arakelyan",
+     "is_maker": false,
+     "text": "trackpad edge for brightness is such an obvious idea once you see it, why is this not built in",
+     "kr": "트랙패드 가장자리로 밝기를 조절한다는 건 보고 나면 너무나 직관적인 아이디어인데, 왜 맥OS 기본 기능으로 안 들어가 있는지 모르겠네요."
+    },
+    {
+     "author": "Austin Mejia",
+     "is_maker": false,
+     "text": "Power user we dream haha Wondering if there’s a touchscreen mac version of this!",
+     "kr": "파워 유저들이 꿈꾸던 기능이네요 ㅎㅎ 터치스크린 맥 버전으로도 나올 수 있을지 궁금합니다!"
+    },
+    {
+     "author": "Julianna Delaney",
+     "is_maker": false,
+     "text": "I love the haptic feedback touch aspect. Definitely something I could see myself using daily!",
+     "kr": "터치 시의 햅틱 피드백 요소가 정말 마음에 듭니다. 매일 유용하게 사용할 수 있을 것 같네요!"
+    }
+   ],
+   "slug": "edgebar"
+  },
+  {
+   "name": "Datastripes",
+   "tagline_en": "An online spreadsheet on steroids",
+   "tagline_kr": "강력한 성능을 갖춘 차세대 온라인 스프레드시트",
+   "image": "https://ph-files.imgix.net/132dfc21-ad60-46fd-9b9b-64bde32e3bf2.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://datastripes.com/",
+   "categories": [
+    "Business intelligence software"
+   ],
+   "upvotes": 485,
+   "comments_count": 400,
+   "maker": [
+    "Vincenzo Manto"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Datastripes는 스프레드시트 데이터를 단 몇 초 만에 BI 앱과 인사이트 스토리로 변환해 주는 도구입니다. 복잡한 예측 분석, 이상 징후 감지 및 시나리오 시뮬레이션을 별도의 설정 없이 로컬 환경에서 완전한 데이터 보안 속에 실행할 수 있습니다. 브라우저에 CSV, XML, NDJSON 파일을 끌어다 놓기만 하면 즉시 파싱과 분석이 시작됩니다. 모든 연산이 로컬 기기 내에서 처리되므로 파일이 외부 서버로 전송되지 않아 프라이버시가 철저히 보장됩니다. 스마트 분석 엔진이 데이터의 차원과 지표를 자동 감지하여 수동 설정 없이도 최적의 대시보드 레이아웃을 생성합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/datastripes",
+   "comment_summary": "스프레드시트 데이터로부터 전문 분석가 없이도 즉각적인 데이터 스토리를 도출할 수 있다는 점에 주목을 받았습니다. 파일이 로컬 기기에서 안전하게 처리된다는 점과 함께 구글 시트 연동 및 실시간 업데이트 기능 지원에 대해 긍정적인 반응이 이어졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Vincenzo Manto",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 Every dataset has a story in it, but getting it out usually takes an analyst, a designer and a writer. We built Datastripes Data Story so one person with a spreadsheet can do it in minutes. How it works: 1. **Drop a file.** CSV, Excel or Google Sheets. No setup, no formulas. Your file stays on your device until you choose to publish. 2. **Get a story right away.** Datastripes finds the crucial numbers, the turning points and the before/after, and writes each one up with a ch",
+     "kr": "📌 안녕하세요 Product Hunt 👋 모든 데이터셋에는 스토리가 담겨 있지만, 이를 밖으로 끄집어내려면 보통 분석가, 디자이너, 작성자가 필요합니다. 저희는 스프레드시트를 다루는 단 한 사람도 몇 분 만에 이를 해낼 수 있도록 Datastripes Data Story를 만들었습니다. 작동 방식: 1. **파일을 끌어다 놓습니다.** CSV, Excel 또는 구글 시트 모두 가능하며, 복잡한 설정이나 수식이 필요 없습니다. 사용자가 발행을 선택하기 전까지 파일은 기기에 안전하게 유지됩니다. 2. **즉시 스토리를 얻습니다.** Datastripes가 핵심 지표와 전환점, 변화 전후를 찾아내어 시각 자료와 함께 정리해 줍니다."
+    },
+    {
+     "author": "Vincenzo Manto",
+     "is_maker": true,
+     "text": "@gevorgarakelyann Hi! Yep, it handles Google Sheets and live updates",
+     "kr": "@gevorgarakelyann 안녕하세요! 네, 구글 시트와 실시간 업데이트를 정상적으로 지원합니다."
+    }
+   ],
+   "slug": "datastripes"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>

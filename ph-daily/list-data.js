@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-11-07",
+    "url": "2026-11-07/",
+    "top_product": "Tobira.ai",
+    "count": 5,
+    "upvotes_total": 6654,
+    "comments_total": 47
+  },
+  {
     "date": "2026-11-05",
     "url": "2026-11-05/",
     "top_product": "Wanaka Studio",
