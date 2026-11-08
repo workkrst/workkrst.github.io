@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-11-08</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-11-08 · Top 5 · 수집 댓글 34개 · 수집 2026-11-08 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-11-08",
+ "collected_at": "2026-11-08 12:30 KST",
+ "summary": "오늘 프로덕트 헌트에서는 AI 에이전트 검색 인프라와 위험 인식 코드 리뷰, 보안 전용 모델 등 개발·보안 자동화 도구가 강세를 보였으며 개인 맞춤형 AI 어드바이저도 주목받았습니다. 커뮤니티 댓글에서는 불필요한 알림 노이즈 및 비용 절감 효과, 프로덕션 배포 시 위험도 자동 판별의 신뢰성, 데이터 샌드박스를 통한 프라이버시 통제 등 실제 도입 시의 안정성과 실용성에 대한 검증 논의가 주를 이뤘습니다.",
+ "notable": [
+  {
+   "slug": "livereview",
+   "why": "Meta의 인시던트 데이터 기반 ML 모델을 적용해 저위험 PR을 자동 승인함으로써 AI 코딩 시대의 리뷰 병목을 해소한다는 점에서 큰 주목을 받았습니다. 댓글에서는 사소한 설정 변경의 영향 범위(Blast Radius) 분석 방식과 신규 팀의 위험 점수 신뢰도 확보를 위한 학습 기간 등 심도 있는 기술 질의가 활발히 오갔습니다."
+  },
+  {
+   "slug": "exa-ai",
+   "why": "1,000회 실행당 2달러라는 합리적인 가격 정책과 유의미한 변경점만 선별 전달하는 노이즈 감소 웹훅 기능이 에이전트 개발자들의 호평을 받았습니다. 사용자들은 기존 모니터링 툴의 알림 피로 문제를 짚으며 경쟁사 가격 추적과 채용 공고 감지 등 즉각적인 실무 활용 계획을 공유했습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "exa.ai",
+   "tagline_en": "Search API for AI applications",
+   "tagline_kr": "AI 애플리케이션을 위한 검색 API",
+   "image": "https://ph-files.imgix.net/4ec2d393-59d1-46f7-add1-85ee89e98afa.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=419",
+   "website": "https://exa.ai/",
+   "categories": [
+    "Search"
+   ],
+   "upvotes": 191,
+   "comments_count": 6,
+   "maker": [],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "exa.ai는 AI 에이전트와 애플리케이션을 위해 설계된 지능형 웹 검색 API 플랫폼입니다. 자연어 기반의 시맨틱 검색을 통해 웹 전반에서 리드, 인재 목록 등 필요한 정보를 에이전트 방식으로 수집하고 보강합니다. 이번에 업데이트된 Exa Monitors v2는 AI 에이전트를 위한 정기 웹 검색 모니터링 기능으로, 에이전트가 직접 폴링할 필요 없이 웹훅으로 변경 사항을 전달합니다. 특히 실제로 유의미한 변화가 발생했을 때만 선별적으로 알림을 전송하여 노이즈를 획기적으로 줄였습니다. 실행 비용 역시 1,000회 실행당 2달러로 대폭 낮춰 경쟁사 동향 파악, 채용 공고 추적 등 다양한 모니터링 작업을 경제적으로 운영할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/exa-ai",
+   "comment_summary": "사용자들은 1,000회 실행당 2달러라는 합리적인 가격 정책과 변경 사항 발생 시에만 알림을 주는 노이즈 감소 기능에 큰 만족감을 보였습니다. 특히 경쟁사 가격 모니터링, 채용 공고 추적, 앱스토어 가이드라인 변경 감지 등 실무 자동화 활용에 대한 높은 기대와 구체적인 활용 사례가 공유되었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "Hunter 📌 **Exa Monitors v2** is the update to Exa’s scheduled web search for AI agents. It’s now cheaper and quieter. Monitors is web search on a schedule. You describe what to watch and pick an interval, and Exa sends only new, relevant results to your agent’s webhook, so the agent doesn’t have to poll. Exa compares it to Google Alerts, which sends an email or RSS digest, while Monitors calls your agent directly. **What changed in v2:** * Price is $2 per 1k runs, down from $15, which Exa calls ",
+     "kr": "헌터 📌 **Exa Monitors v2**는 AI 에이전트를 위한 Exa의 예약 웹 검색 기능 업데이트입니다. 이제 가격이 더 저렴해지고 불필요한 알림(노이즈)이 줄었습니다. Monitors는 일정에 따라 실행되는 웹 검색입니다. 감시할 대상을 설명하고 주기를 선택하면, Exa가 에이전트의 웹훅으로 새롭고 관련성 높은 결과만 전송하므로 에이전트가 직접 폴링할 필요가 없습니다. Exa는 이를 이메일이나 RSS 다이제스트를 보내는 Google 알리미와 비교하며, Monitors는 에이전트를 직접 호출한다고 설명합니다. **v2에서 변경된 점:** * 1,000회 실행당 가격이 기존 15달러에서 2달러로 인하되었습니다."
+    },
+    {
+     "author": "Agshin Rajabov",
+     "is_maker": false,
+     "text": "congrats on the launch exa team. i would use this for competitor pricing and landing pages, those changes are easy to miss. does the alert show exactly what changed on the page?",
+     "kr": "출시를 축하합니다, Exa 팀. 놓치기 쉬운 경쟁사의 가격 책정 및 랜딩 페이지 변경 사항을 추적하는 데 사용하고 싶네요. 알림에서 페이지의 어떤 부분이 변경되었는지 정확히 보여주나요?"
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The 'only ping me when something actually changed' part is what makes this usable — every monitor I've set up before turned into noise within a week. At $2/1k runs I'd happily leave a bunch running: App Store guideline pages, Swift evolution proposals, competitor changelogs. It's the stuff I check manually every morning and mostly find unchanged.",
+     "kr": "'실제로 변경된 사항이 있을 때만 알림을 준다'는 점이 이 제품을 정말 실용적으로 만듭니다. 이전에 설정했던 모든 모니터링 도구는 일주일도 안 되어 노이즈로 전락했거든요. 1,000회 실행당 2달러라면 앱스토어 가이드라인 페이지, Swift 발전 제안서, 경쟁사 변경 이력 등 여러 개를 부담 없이 계속 돌려둘 수 있겠네요. 매일 아침 수동으로 확인하지만 대부분 변경 사항이 없던 내용들이거든요."
+    },
+    {
+     "author": "Shrijith Venkatramana",
+     "is_maker": false,
+     "text": "Cool launch! Does this deliver results from existing search engine indices or has its own crawling/indexing?",
+     "kr": "멋진 출시네요! 기존 검색 엔진 색인에서 결과를 가져오나요, 아니면 자체적인 크롤링/색인 시스템을 갖추고 있나요?"
+    },
+    {
+     "author": "Eldar Miensutov",
+     "is_maker": false,
+     "text": "wed use this to catch companies posting that theyre hiring mobile devs, thats often right before they start asking agencies for quotes. at $2 per 1k runs you can just leave a bunch of them running",
+     "kr": "기업들이 모바일 개발자를 채용한다는 공고를 올리는 것을 포착하는 데 사용할 것 같습니다. 대개 에이전시에 견적을 요청하기 직전에 그런 공고를 올리거든요. 1,000회 실행당 2달러라면 여러 개를 그냥 계속 켜둘 수 있겠네요."
+    },
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "cool launch, congrats!! if a story I'm watching gets a follow-up article with one new detail, does Exa count that as new and ping my agent or treat it as already sent?",
+     "kr": "멋진 출시 축하합니다!! 제가 주시하고 있는 기사에 새로운 세부 정보가 하나 추가된 후속 기사가 나오면, Exa는 이를 새로운 것으로 인식하여 제 에이전트에 알림을 보내나요, 아니면 이미 전송된 것으로 처리하나요?"
+    },
+    {
+     "author": "Ivan Semenov",
+     "is_maker": false,
+     "text": "used exa.ai to build Causo •4 reviews We’ve tried pretty much every product in the category, and Exa stands out for both its tooling and its support. The team has been incredibly helpful, and we’re extremely grateful for their ongoing support. Helpful 31 views19d ago",
+     "kr": "Causo를 구축하는 데 exa.ai를 활용했습니다 • 리뷰 4개 해당 카테고리의 거의 모든 제품을 써보았는데, Exa는 툴링과 기술 지원 모두에서 단연 돋보입니다. 팀이 매우 큰 도움을 주었으며 지속적인 지원에 깊이 감사하고 있습니다. 유용함 · 조회수 31회 · 19일 전"
+    },
+    {
+     "author": "Zain Pirani",
+     "is_maker": false,
+     "text": "used exa.ai to build Brief •7 reviews Exa.ai is a search API that gives our AI real web content and images fast. It uses smart search and fast crawling to find links, summaries, and pictures. This helps our AI write better articles with accurate and fresh info. Helpful 121 views1yr ago",
+     "kr": "Brief를 구축하는 데 exa.ai를 활용했습니다 • 리뷰 7개 Exa.ai는 우리 AI에게 실제 웹 콘텐츠와 이미지를 빠르게 제공하는 검색 API입니다. 스마트 검색과 빠른 크롤링을 통해 링크, 요약, 사진을 찾아냅니다. 덕분에 우리 AI가 정확하고 최신 정보를 담은 더 나은 글을 작성할 수 있습니다. 유용함 · 조회수 121회 · 1년 전"
+    },
+    {
+     "author": "Shalin Shah",
+     "is_maker": false,
+     "text": "used exa.ai to build Hyper •6 reviews We use Exa to give Hyper's AI agent the ability to search the web mid-conversation. When a user asks something beyond their own meeting history, Exa handles the retrieval. We looked at Tavily and Brave Search API but Exa's results felt more semantically relevant out of the box, which matters when an agent is trying to answer a nuanced question in real time. Google Search API was too expensive for us. It felt dead simple to integrate too. Helpful 42 views8mo ",
+     "kr": "Hyper를 구축하는 데 exa.ai를 활용했습니다 • 리뷰 6개 대화 도중 웹을 검색할 수 있는 기능을 Hyper의 AI 에이전트에게 부여하기 위해 Exa를 사용하고 있습니다. 사용자가 자신의 미팅 기록 범위를 벗어난 질문을 할 때 Exa가 검색을 처리합니다. Tavily와 Brave Search API도 살펴보았지만, Exa의 결과가 별도 튜닝 없이도 의미론적으로 더 관련성이 높았습니다. 이는 에이전트가 실시간으로 미묘한 질문에 답변하려 할 때 매우 중요합니다. Google Search API는 우리에게 너무 비쌌습니다. 연동하기도 매우 간단했습니다. 유용함 · 조회수 42회 · 8개월 전"
+    }
+   ],
+   "slug": "exa-ai"
+  },
+  {
+   "name": "LiveReview",
+   "tagline_en": "Free, Risk-Aware Code Review: Auto Approve Low-Risk Changes",
+   "tagline_kr": "무료 위험 인식 코드 리뷰: 위험도가 낮은 변경 사항 자동 승인",
+   "image": "https://ph-files.imgix.net/414f9ad7-5744-45ec-bad7-17247b3ca1fd.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://hexmos.com/livereview/",
+   "categories": [
+    "Automation tools",
+    "Code Review Tools",
+    "Security software"
+   ],
+   "upvotes": 188,
+   "comments_count": 39,
+   "maker": [],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "LiveReview는 단순한 코드 이슈 지적을 넘어 프로덕션 인시던트와 롤백을 실질적으로 줄여주는 무료 오픈소스 코드 리뷰 도구입니다. 모든 풀 리퀘스트(PR)의 위험도를 분석하여, 위험도가 가장 낮은 30~50%의 변경 사항은 자동으로 안전하게 승인합니다. 반면 잠재적 위험이 높은 코드는 해당 영역을 검토해야 할 시니어 엔지니어에게 바로 라우팅하여 검토 병목을 해소합니다. 프로덕션 인시던트를 50배 줄인 Meta의 사내 AI 리뷰 시스템에서 영감을 받아 LLM, 인시던트 데이터 기반 ML, 코드 그래프 분석을 결합했습니다. 자체 호스팅이 가능하고 개별 API 키를 연동해 무료로 사용할 수 있어 보안에 민감한 팀에도 최적화되어 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/livereview",
+   "comment_summary": "댓글에서는 Meta 방식의 위험도 산정 모델과 자체 호스팅 지원에 대해 큰 관심을 보였습니다. 특히 30~50% 자동 승인의 안정성, 작은 설정 변경의 영향도(Blast Radius) 분석 방식, 프로덕션 인시던트 피드백 주기 등에 관한 심도 있는 기술적 질의응답이 오갔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Shrijith Venkatramana",
+     "is_maker": false,
+     "text": "Hunter 💎 Pixel perfection 📌 In February, you helped git-lrc reach #3 Product of the Day. Thank you. git-lrc fixed one problem: developers committing AI-written code they hadn't read. As teams adopted it, a bigger problem showed up at the pull request. AI made code cheap to write. Reviews stayed expensive. Every PR waited in the same queue for the same few senior engineers. A renamed variable and a rewritten payment flow got the same attention. Seniors became the bottleneck. They skimmed. RISKY c",
+     "kr": "헌터 💎 픽셀 퍼펙션 📌 지난 2월, 여러분 덕분에 git-lrc가 일간 제품 3위에 오를 수 있었습니다. 감사합니다. git-lrc는 한 가지 문제를 해결했습니다. 바로 개발자들이 읽어보지도 않은 AI 작성 코드를 커밋하는 문제였죠. 팀들이 이를 도입하면서 풀 리퀘스트 단계에서 더 큰 문제가 드러났습니다. AI 덕분에 코드 작성 비용은 저렴해졌지만, 코드 리뷰 비용은 여전히 비쌌습니다. 변수 이름 변경과 결제 흐름 재작성이 동일한 소수의 시니어 엔지니어 대기열에서 똑같은 관심을 받았습니다. 시니어들이 병목이 되었고, 코드를 대충 훑어보게 되면서 위험한 코드가 통과되기 시작했습니다."
+    },
+    {
+     "author": "Mohsin Ali",
+     "is_maker": false,
+     "text": "Likely AI",
+     "kr": "AI가 작성한 것으로 보임"
+    },
+    {
+     "author": "@shrsv",
+     "is_maker": false,
+     "text": "noticed you feed production incidents back into the risk score unlike coderabbit. btw how many merges or rollbacks does the ML need to process before that 30-50% auto approve rate actually becomes reliable for a new team?",
+     "kr": "CodeRabbit과 달리 프로덕션 인시던트를 위험 점수에 다시 반영한다는 점이 눈에 띄네요. 그런데 새로운 팀의 경우 30~50% 자동 승인 비율이 실제로 신뢰할 수 있게 되려면 ML이 얼마나 많은 머지나 롤백을 학습해야 하나요?"
+    },
+    {
+     "author": "Shrijith Venkatramana",
+     "is_maker": false,
+     "text": "Hunter @mohsinproduct That's highly org/codebase/deployment specific, but even a few days worth of data can will quickly capture \"hotspots\" and improve the classification significantly. There are also \"high severity\" but \"rarely changed\" things -- which do not become exposed this way. But for most orgs even 2 weeks good enough to capture the landscape I'd say.",
+     "kr": "헌터 @mohsinproduct 조직, 코드베이스, 배포 환경에 따라 크게 다르지만, 며칠 분량의 데이터만으로도 위험 '핫스팟'을 빠르게 포착하여 분류 정확도를 크게 향상시킬 수 있습니다. 물론 '심각도는 높지만 거의 변경되지 않는' 코드처럼 이런 방식으로는 잘 드러나지 않는 영역도 있습니다. 하지만 대부분의 조직에서는 2주 정도면 전반적인 흐름을 파악하기에 충분하다고 말씀드릴 수 있습니다."
+    },
+    {
+     "author": "Gabe Moronta",
+     "is_maker": false,
+     "text": "@shrsv in the vibe coding era this is going to be helpful.",
+     "kr": "@shrsv 바이브 코딩(vibe coding) 시대에 정말 큰 도움이 될 것 같네요."
+    },
+    {
+     "author": "Shrijith Venkatramana",
+     "is_maker": false,
+     "text": "Hunter @mogabr Hoping to make a contribution to the world of engineering -- including newcomers entering this field!",
+     "kr": "헌터 @mogabr 이 분야에 새로 진입하는 분들을 포함해 엔지니어링 생태계에 기여할 수 있기를 바랍니다!"
+    },
+    {
+     "author": "Agshin Rajabov",
+     "is_maker": false,
+     "text": "💎 Pixel perfection congrats on the launch shrijith. auto approving low risk prs is where i would be careful. a tiny pricing or config change can look harmless in code but still affect customers. can those be marked as risky too?",
+     "kr": "💎 픽셀 퍼펙션 출시를 축하합니다, Shrijith. 위험도가 낮은 PR을 자동 승인하는 부분은 주의가 필요해 보입니다. 사소한 가격 책정이나 설정 변경은 코드상으로는 무해해 보이지만 고객에게 직접적인 영향을 미칠 수 있거든요. 이런 변경도 위험한 것으로 표시될 수 있나요?"
+    },
+    {
+     "author": "Shrijith Venkatramana",
+     "is_maker": false,
+     "text": "Hunter @agshin\\_rajabov Thanks Agshin, for engaging! Short answer: Yes, the size of the code is only one of the signals we use. We have blast radius analysis based on AST, production feedback, keywords, approval levels and such things to make it more intelligent. On top of that -- the ML system can learn over time from production behaviors (incidents, rollback) to know which parts of code are tricky, etc as well. The thing is -- over time -- the system level performance will improve -- lower dow",
+     "kr": "헌터 @agshin_rajabov 참여해 주셔서 감사합니다, Agshin! 짧게 답변드리자면: 네, 가능합니다. 코드 크기는 저희가 활용하는 여러 신호 중 하나일 뿐입니다. AST 기반의 영향 범위(blast radius) 분석, 프로덕션 피드백, 키워드, 승인 레벨 등을 결합해 지능적으로 판단합니다. 그뿐만 아니라 ML 시스템이 프로덕션 동작(인시던트, 롤백)을 지속적으로 학습하여 어떤 코드 영역이 까다로운지 파악하게 됩니다. 시간이 지남에 따라 시스템 성능이 지속적으로 향상됩니다."
+    },
+    {
+     "author": "André J",
+     "is_maker": false,
+     "text": "Interesting! So How does it work? Is it like a graphify kind of tool? that looks at blast radius and then does industry standard heuristic bench marks on what it finds etc? I assume no AI since its free and self hostable?",
+     "kr": "흥미롭네요! 어떻게 작동하는 건가요? 영향 범위를 파악하고 검색된 내용을 업계 표준 휴리스틱 벤치마크와 비교하는 Graphify 같은 도구인가요? 무료이고 자체 호스팅이 가능하니 AI는 사용하지 않는 것인가요?"
+    },
+    {
+     "author": "Shrijith Venkatramana",
+     "is_maker": false,
+     "text": "Hunter @alchemist\\_studio Hi Andre, thanks for engaging. It combined around 20+ \"signals\" to create risk profile -- including things like graph based blast radius analysis, production performance feedback, code complexity, contributor trust levels, LLM semantic feedback, static analysis, etc. Essentially it's a custom risk scoring formula in a clean workflow. It combines LLM, traditional ML, static checks -- pretty much any and everything that can contribute to risk profiling (aiming to be compr",
+     "kr": "헌터 @alchemist_studio 안녕하세요 Andre, 관심 가져주셔서 감사합니다. 그래프 기반 영향 범위 분석, 프로덕션 성능 피드백, 코드 복잡도, 기여자 신뢰도, LLM 의미론적 피드백, 정적 분석 등 20개 이상의 '신호'를 결합하여 위험 프로필을 생성합니다. 기본적으로 깔끔한 워크플로우 내에서 작동하는 맞춤형 위험 점수화 공식입니다. LLM, 전통적인 머신러닝, 정적 검사를 모두 결합하여 종합적인 위험 프로파일링을 제공합니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "Free and self-hostable with my own Claude key is the part that would actually get me to try it — I don't love routing my code through another hosted reviewer. As a solo dev, the Cognitive Coverage bit is what caught my eye: walking a PR as slides before merging is a nice answer to the 'AI wrote it, I skimmed it' problem.",
+     "kr": "자체 Claude API 키를 사용해 무료로 자체 호스팅할 수 있다는 점이 사용해 보고 싶게 만드네요. 제 코드를 외부 호스팅 리뷰 서비스를 거치게 하는 것을 별로 좋아하지 않거든요. 1인 개발자로서 '인지 커버리지(Cognitive Coverage)' 기능이 특히 눈길을 끌었습니다. 머지하기 전에 PR을 슬라이드 형태로 훑어볼 수 있어 'AI가 작성하고 내가 대충 훑어본' 문제를 해결하는 훌륭한 대안입니다."
+    },
+    {
+     "author": "Shrijith Venkatramana",
+     "is_maker": false,
+     "text": "Hunter @jcbuilds We do have a docker image at our Github, you're welcome to try it out. Although we also have a cloud version for quickly understanding how it all works at a high level. And we support pretty much all major providers (you can mix and match) -- so that shouldn't be a problem as well.",
+     "kr": "헌터 @jcbuilds 저희 GitHub에 Docker 이미지가 준비되어 있으니 꼭 사용해 보세요. 전체적인 동작 방식을 빠르게 파악할 수 있는 클라우드 버전도 제공하고 있습니다. 또한 거의 모든 주요 모델 제공업체를 지원(혼합 사용 가능)하므로 문제없이 연동하실 수 있을 것입니다."
+    }
+   ],
+   "slug": "livereview"
+  },
+  {
+   "name": "Quest",
+   "tagline_en": "Your personal AI advisor for a more intentional life",
+   "tagline_kr": "더 의도적인 삶을 위한 나만의 개인 맞춤형 AI 어드바이저",
+   "image": "https://ph-files.imgix.net/ed3c6493-ecef-43d6-a154-acc8e09f7fbe.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "http://start.new.quest/",
+   "categories": [
+    "AI Chatbots"
+   ],
+   "upvotes": 174,
+   "comments_count": 19,
+   "maker": [
+    "Vincent Nallatamby",
+    "Nour Desouki",
+    "Tân Tân Nguyễn"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Quest는 단순한 업무 처리를 넘어 사용자의 성격, 가치관, 야망, 동기를 깊이 이해하는 개인 맞춤형 AI 어드바이저입니다. 이전 대화를 단순 기억하는 것에 그치지 않고, 사용자가 스스로를 돌아보고 어려운 선택의 기로에서 자신에게 맞는 결정을 내릴 수 있도록 돕습니다. 일방적으로 해야 할 일을 지시하는 비서가 아니라, 사용자 본인만의 길을 찾도록 돕는 사려 깊은 조언자 역할을 수행합니다. 사용자의 목표와 우선순위 변화를 능동적으로 파악하여 필요할 때 계획을 조정하고 적합한 코칭 스타일을 찾아갑니다. 개인정보 보호를 최우선으로 하여 사용자가 허용한 데이터만 안전한 독립 샌드박스에서 격리 관리됩니다.",
+   "launch_url_used": "https://www.producthunt.com/products/quest-d8e9c4e8-cc0d-4b07-baee-e3dbf712c279",
+   "comment_summary": "제작진은 일상 속 소소한 관심사(사이드 퀘스트)부터 인생의 중요한 결정까지 돕는 개발 취지를 공유했습니다. 사용자들은 성장에 따른 목표 변화 반영 여부, 사용자의 잘못된 판단에 대한 피드백 방식, 엄격한 개인정보 샌드박스 보안 정책에 주목하며 긍정적인 반응을 보였습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Vincent Nallatamby",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt I’m Vincent, co-founder of Quest. **Why we built it** For a long time, I was jealous of people who had a passion. I found mine by accident. I grew up in the French countryside, spent way too much time on the internet, and at 20 I discovered Kickstarter: founders on camera, inventing crazy cool things and convincing people to make them real. That’s when I knew I wanted to build. I was lucky to find my quest. But when I look around, I see a lot of people with real potential who ",
+     "kr": "📌 프로덕트 헌트 커뮤니티 여러분 안녕하세요, Quest의 공동 창업자 Vincent입니다. **우리가 이 제품을 만든 이유** 오랫동안 저는 뚜렷한 열정을 가진 사람들을 부러워했습니다. 저는 우연히 제 열정을 찾았죠. 프랑스 시골에서 자라며 인터넷에서 너무 많은 시간을 보내다 20살 때 킥스타터를 발견했습니다. 창업자들이 카메라 앞에서 멋진 것들을 발명하고 사람들을 설득해 실현하는 모습을 보며 나도 무언가를 만들고 싶다는 것을 깨달았습니다. 저는 운 좋게 제 탐구(quest)를 찾았지만, 주위를 둘러보면 엄청난 잠재력을 지니고도 방황하는 많은 사람들이 보였습니다."
+    },
+    {
+     "author": "Aiden",
+     "is_maker": false,
+     "text": "i wonder if question can notice when someone's goals or priorities change over time. People grow, and their AI advisor should be able to grow with them.",
+     "kr": "시간이 흐르면서 사용자의 목표나 우선순위가 바뀌는 것을 Quest가 알아챌 수 있는지 궁금합니다. 사람은 성장하므로 AI 어드바이저도 함께 성장할 수 있어야 하니까요."
+    },
+    {
+     "author": "Nour Desouki",
+     "is_maker": true,
+     "text": "@aiden24 Totally agree, and that’s a big part of how Quest works. It’s always reflecting on what’s changing in your life, so it can pause a goal when something more pressing comes up, adjust a plan that no longer fits, and learn over time which coaching style actually works for you.",
+     "kr": "@aiden24 전적으로 동의합니다. 바로 그것이 Quest가 작동하는 핵심 방식입니다. Quest는 사용자의 삶에서 무엇이 변하고 있는지 항상 되돌아보며, 더 시급한 일이 생기면 기존 목표를 일시 정지하고 더 이상 맞지 않는 계획을 조정하며 시간이 지남에 따라 어떤 코칭 스타일이 가장 효과적인지 학습합니다."
+    },
+    {
+     "author": "Tân Tân Nguyễn",
+     "is_maker": true,
+     "text": "@aiden24 you got it! Quest is proactive and grow with you as you progress",
+     "kr": "@aiden24 정확히 짚으셨습니다! Quest는 능동적이며 사용자가 발전함에 따라 함께 성장합니다."
+    },
+    {
+     "author": "Odeth N",
+     "is_maker": false,
+     "text": "The idea of finding \"quest\" for people is really cool! What are the most surprising way people are using quest so far? Congratulations on your launch!",
+     "kr": "사람들에게 각자의 '퀘스트(목표)'를 찾아준다는 아이디어가 정말 멋집니다! 지금까지 사용자들이 Quest를 활용한 가장 놀라운 방식은 무엇이었나요? 출시를 축하합니다!"
+    },
+    {
+     "author": "Nour Desouki",
+     "is_maker": true,
+     "text": "@odeth\\_negapatan1 Thank you so much! The most surprising thing so far has been people using Quest for their side quests, like keeping up with friends, exploring a new city, or picking up a new hobby. It’s amazing to see Quest helping people enjoy the small moments in their lives.",
+     "kr": "@odeth_negapatan1 정말 감사드립니다! 지금까지 가장 놀라웠던 점은 친구들과의 관계 유지, 새로운 도시 탐험, 새로운 취미 시작 등 일상의 '사이드 퀘스트'에 Quest를 활용한다는 것이었습니다. 사용자들이 삶의 소소한 순간들을 즐길 수 있도록 돕는 모습을 보는 것은 정말 멋진 일입니다."
+    },
+    {
+     "author": "Velvet Trace",
+     "is_maker": false,
+     "text": "one thing i'd want to know is how much control users have over what Quest remembers. Personal conversations should always feel private.",
+     "kr": "Quest가 기억하는 내용에 대해 사용자가 얼마나 제어 권한을 갖는지 알고 싶습니다. 개인적인 대화는 항상 프라이빗하게 느껴져야 하니까요."
+    },
+    {
+     "author": "Nour Desouki",
+     "is_maker": true,
+     "text": "@velvet\\_trace You have complete control. You can see everything Quest remembers and correct, delete, or add anything you want. You also choose which apps to connect, so Quest only learns from the sources you pick. For messaging apps, we know you don’t want to hand over every conversation, so you can choose exactly which chats Quest can see and learn from. And your conversation stays yours, it lives in your own sandbox, never sold, and never used to train models.",
+     "kr": "@velvet_trace 사용자가 완전한 제어권을 갖습니다. Quest가 기억하는 모든 내용을 확인하고 원하는 대로 수정, 삭제, 추가할 수 있습니다. 또한 어떤 앱을 연동할지 직접 선택하므로 Quest는 사용자가 지정한 소스에서만 학습합니다. 메시징 앱의 경우 모든 대화를 공유하고 싶지 않으실 것이므로 Quest가 확인하고 학습할 대화를 정확히 지정할 수 있습니다. 대화 내용은 오직 사용자의 소유이며 독립된 전용 샌드박스에 보관되어 절대 판매되거나 모델 학습에 사용되지 않습니다."
+    },
+    {
+     "author": "Leo Parker",
+     "is_maker": false,
+     "text": "privacy seems especially important for a product like this because users may share very personal thoughts. How do you handle and protect that information?",
+     "kr": "사용자가 매우 개인적인 생각을 공유할 수 있는 제품인 만큼 개인정보 보호가 특히 중요해 보입니다. 해당 정보를 어떻게 다루고 보호하시나요?"
+    },
+    {
+     "author": "Nour Desouki",
+     "is_maker": true,
+     "text": "@leoparker1965\\_alt Totally agree, which is why we take it seriously. Your data lives in a private sandbox that holds only your data, powered by Blaxel (https://compliance.blaxel.ai). We use several model providers (Anthropic, OpenAI, Google, Typesafe, and Baseten) and make sure none of them can store your data. We try to be as transparent as possible, so feel free to check out our privacy notice: https://new.quest/#privacy",
+     "kr": "@leoparker1965_alt 전적으로 공감하며, 그렇기 때문에 저희도 매우 엄격하게 다루고 있습니다. 사용자의 데이터는 Blaxel(https://compliance.blaxel.ai) 기반의 독립된 전용 샌드박스에 격리 보관됩니다. 여러 모델 제공업체(Anthropic, OpenAI, Google, Typesafe, Baseten)를 사용하지만 어느 곳도 사용자 데이터를 저장하지 못하도록 보장합니다. 투명한 운영을 위해 개인정보 처리방침(https://new.quest/#privacy)도 언제든 확인하실 수 있습니다."
+    },
+    {
+     "author": "Alicia Verrando",
+     "is_maker": false,
+     "text": "Does it ever disagree with you?",
+     "kr": "사용자의 생각에 반대 의견을 내기도 하나요?"
+    },
+    {
+     "author": "Nour Desouki",
+     "is_maker": true,
+     "text": "@alicia\\_verrando Yes! If your plan doesn’t add up or you’re going easy on yourself, Quest will push back and challenge your thinking. It also learns over time which coaching style works best for you.",
+     "kr": "@alicia_verrando 네! 계획이 비합리적이거나 스스로에게 지나치게 안주하고 있을 때 Quest는 이의를 제기하고 생각에 도전장을 던집니다. 또한 시간이 지나면서 어떤 코칭 스타일이 가장 효과적인지 파악해 나갑니다."
+    }
+   ],
+   "slug": "quest-d8e9c4e8-cc0d-4b07-baee-e3dbf712c279"
+  },
+  {
+   "name": "GPT‑6 Cyber",
+   "tagline_en": "OpenAI's cyber model, with vetted access for defenders",
+   "tagline_kr": "방어자를 위한 검증된 접근 권한을 갖춘 OpenAI의 사이버 보안 모델",
+   "image": "https://ph-files.imgix.net/2080aa91-9a86-47f5-b621-855102339361.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=330",
+   "website": "https://openai.com/blog/introducing-openai",
+   "categories": [],
+   "upvotes": 144,
+   "comments_count": 2,
+   "maker": [],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "GPT-6 Cyber는 OpenAI가 보안 방어자를 위해 특별히 개발한 차세대 사이버 보안 전문 인공지능 모델입니다. 엄격한 검증을 통과한 신뢰할 수 있는 보안 전문가 및 방어 담당자에게만 선별적으로 접근 권한이 부여됩니다. 시스템 취약점 탐지, 악성코드 분석, 사이버 위협 헌팅 등 복잡한 보안 분석 작업을 탁월한 정확도로 수행합니다. 잠재적 침해 사고 대응 및 방어 전략 수립을 신속하게 지원하여 보안 운영팀의 역량을 크게 강화합니다. 악용 위험을 원천 차단하기 위해 엄격한 안전 정렬과 규제 준수 프레임워크 아래 안전하게 운영됩니다.",
+   "launch_url_used": "https://www.producthunt.com/products/openai",
+   "comment_summary": "보안 방어자를 위해 검증된 환경에서 제공되는 차세대 사이버 모델로서의 전문성에 대해 긍정적인 기대가 모아졌습니다. 특히 방어 목적에 특화된 접근 방식과 철저한 보안 통제 기준에 대해 주목을 받았습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Max Lund",
+     "is_maker": false,
+     "text": "used OpenAI, Inc. to build Jumper •4 reviews Fantastic open source ML models! Helpful 9 views2yr ago",
+     "kr": "Jumper를 구축하는 데 OpenAI, Inc.를 활용했습니다 • 리뷰 4개 환상적인 오픈소스 ML 모델입니다! 유용함 · 조회수 9회 · 2년 전"
+    }
+   ],
+   "slug": "openai"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
