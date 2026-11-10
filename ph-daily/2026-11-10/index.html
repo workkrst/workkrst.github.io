@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-11-10</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-11-10 · Top 5 · 수집 댓글 60개 · 수집 2026-11-10 12:31 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-11-10",
+ "collected_at": "2026-11-10 12:31 KST",
+ "summary": "오늘 순위권은 개발자 도구, 에이전트 보안 및 비즈니스 분석 전반에 걸쳐 AI 에이전트가 직접 실행하거나 연동하는 인프라 솔루션들이 장악했습니다. 커뮤니티에서는 공식 MCP 서버 도입, CLI 기반 에이전트 스킬, 런타임 프롬프트 인젝션 방어 등 에이전트의 작업 실행력과 안전성을 동시에 확보하는 방안이 핵심 화두로 다뤄졌습니다. 특히 에이전트의 코드 탐색 토큰 낭비를 줄이거나 오탐 없이 위협을 차단하는 실무 최적화 기술에 댓글 논의가 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "databox",
+   "why": "브라우저 대시보드를 넘어 터미널 환경에서 코딩 에이전트가 즉시 활용할 수 있는 91개 명령어와 10가지 전용 스킬을 탑재한 CLI를 선보여 개발자들의 높은 호응을 얻었습니다. 커뮤니티에서는 별도의 복잡한 권한 설정 없이 기존 역할을 따르는 API 키 연동과 멱등성 보장이 에이전트 기반 자동화 워크플로우 구축에 최적이라는 구체적인 호평이 이어졌습니다."
+  },
+  {
+   "slug": "arcjet",
+   "why": "범용 모델로는 탐지하기 힘든 프롬프트 인젝션과 에이전트 남용을 방어하기 위해 세션 맥락 기반 전문 모델군을 엣지 인프라에 구축했습니다. 댓글에서는 코딩 에이전트의 파일 탐색 시 발생하는 빈번한 오탐 문제를 세션 전체를 살펴보는 2차 의사결정 단계로 해결했다는 점이 실무자들로부터 큰 지지를 받았습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Product Hunt",
+   "tagline_en": "The place to discover your next favorite thing",
+   "tagline_kr": "다음으로 좋아할 제품을 발견하는 곳",
+   "image": "https://ph-files.imgix.net/launch-image-uploads/4c5f80d7-e0ac-4e64-8960-164b95981148/72d50bc68623fd59e0ad381b8b3ccea25c438c79e354767eb52eb8371473bc25.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [],
+   "upvotes": 356,
+   "comments_count": 32,
+   "maker": [
+    "Mike Ciesielka"
+   ],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Product Hunt는 전 세계 메이커와 기업들이 최신 앱, 기기, 물리적 제품을 선보이는 대표적인 글로벌 테크 커뮤니티 플랫폼입니다. 이번 출시는 AI 에이전트가 Product Hunt의 방대한 제품 데이터베이스를 직접 탐색하고 분석할 수 있도록 지원하는 공식 MCP(Model Context Protocol) 서버를 도입했습니다. 사용자는 이제 자신의 AI 어시스턴트에게 필요한 도구 추천을 요청하거나 Notion 등의 대안 제품을 비교하고 커뮤니티 리뷰를 분석하도록 지시할 수 있습니다. 단순한 제품 설명을 넘어 실제 사용자 평점, 리뷰, 메이커 정보까지 AI가 종합적으로 파악하여 최적의 소프트웨어를 제안합니다. AI 기반 제품 탐색 및 경쟁사 조사의 새로운 워크플로우를 열어주는 의미 있는 업데이트입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/producthunt",
+   "comment_summary": "커뮤니티는 기존 Ask Product Hunt AI보다 훨씬 강력해진 MCP 도입에 큰 기대감을 표하며 AI를 통한 경쟁사 분석 및 론칭 준비 기능 제안을 활발히 이어갔습니다. 메이커는 제품 추천, 대안 비교뿐만 아니라 에이전트를 통한 피드백 제출까지 MCP를 통해 가능하다고 설명하며 적극적으로 소통했습니다.",
+   "warnings": null,
+   "website": "https://producthunt.com/",
+   "comments": [
+    {
+     "author": "Ryan Hoover",
+     "is_maker": false,
+     "text": "Doh! That's bad. I'll forward this to the team and sincerely appreciate taking the time to flag this. :)",
+     "kr": "앗! 안 좋은 상황이네요. 팀에 전달하도록 하겠으며, 시간 내어 문제를 제보해 주셔서 진심으로 감사드립니다. :)"
+    },
+    {
+     "author": "Mike Ciesielka",
+     "is_maker": true,
+     "text": "📌 Hey folks, You already ask your AI assistant which tools to use. Now it can do that research using Product Hunt. Describe what you need, compare alternatives, and see what people like or dislike. Community reviews, ratings, and maker details give you more to go on than a product description alone. Try asking: * Find tools for turning meeting notes into tasks. * Find alternatives to Notion and compare their Product Hunt reviews. * What were the top products on Product Hunt last month? Building ",
+     "kr": "📌 여러분 안녕하세요! 이미 AI 어시스턴트에게 어떤 도구를 쓸지 묻고 계실 텐데요, 이제 Product Hunt를 활용해 그 조사를 수행할 수 있습니다. 필요한 기능을 설명하고, 대안을 비교하며, 사용자들이 무엇을 좋아하고 싫어하는지 확인해 보세요. 단순한 제품 설명보다 커뮤니티 리뷰, 평점, 메이커 정보가 훨씬 풍부한 근거를 제공합니다. 다음과 같이 질문해 보세요: * 회의록을 업무로 전환해 주는 도구 찾아줘. * Notion의 대안을 찾고 Product Hunt 리뷰를 비교해 줘. * 지난달 Product Hunt 1위 제품들은 뭐야? 구축 중"
+    },
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "@mike\\_ciesielka1 Hey Mike, this is a fantastic upgrade to Product Hunt, something I was personally looking forward to. Earlier this year, Product Hunt rolled out Ask Product Hunt AI, which was later removed, and the MCP feels like a much more powerful evolution of that idea. It seems like search was pulled back so it could be rebuilt into something far more capable... The MCP! I also think it’s more important than ever for Product Hunt to encourage product reviews. The combination of quantitati",
+     "kr": "@mike\\_ciesielka1 안녕하세요 Mike, Product Hunt의 환상적인 업그레이드이며 개인적으로도 무척 기대하던 기능입니다. 올해 초 Product Hunt가 Ask Product Hunt AI를 출시했다가 나중에 제거했는데, 이번 MCP는 그 아이디어가 훨씬 더 강력하게 진화한 것으로 느껴집니다. 훨씬 뛰어난 기능을 갖춘 무언가로 다시 구축하기 위해 검색을 잠시 거둬들였던 것 같네요... 바로 MCP로요! 또한 Product Hunt가 제품 리뷰를 장려하는 것이 그 어느 때보다 중요하다고 생각합니다. 정량적"
+    },
+    {
+     "author": "@mike\\_ciesielka1",
+     "is_maker": false,
+     "text": "Guys, this is amazing! A really cool update.",
+     "kr": "여러분, 정말 대단하네요! 아주 멋진 업데이트입니다."
+    },
+    {
+     "author": "Chris Messina",
+     "is_maker": false,
+     "text": "How do this work for hunters who want to post products on other makers' behalves?",
+     "kr": "다른 메이커를 대신해 제품을 등록하려는 헌터들에게는 이 기능이 어떻게 작동하나요?"
+    },
+    {
+     "author": "Mike Ciesielka",
+     "is_maker": true,
+     "text": "@chrismessina If you can do it on the site, you should be able to do it via the MCP. If you have issues, let us know.",
+     "kr": "@chrismessina 사이트에서 가능한 작업이라면 MCP를 통해서도 가능해야 합니다. 문제가 발생하면 언제든 알려주세요."
+    },
+    {
+     "author": "Chris Messina",
+     "is_maker": false,
+     "text": "@mike\\_ciesielka1 ok — and what's the best way to send feedback (i.e. once launch day is over)?",
+     "kr": "@mike\\_ciesielka1 알겠습니다 — 그리고 피드백을 보내는 가장 좋은 방법은 무엇인가요(예: 론칭 당일이 지난 후)?"
+    },
+    {
+     "author": "Mike Ciesielka",
+     "is_maker": true,
+     "text": "@chrismessina ask your agent to submit feedback to us (the MCP has a tool to do so)! if that's proving problematic, an email to help@producthunt.com will help us set you straight.",
+     "kr": "@chrismessina 에이전트에게 저희 쪽에 피드백을 제출하도록 요청하세요(MCP에 해당 도구가 포함되어 있습니다)! 만약 문제가 있다면 help@producthunt.com으로 이메일을 보내주시면 바로 안내해 드리겠습니다."
+    },
+    {
+     "author": "Chris Messina",
+     "is_maker": false,
+     "text": "@mike\\_ciesielka1 ha, nice!",
+     "kr": "@mike\\_ciesielka1 하하, 좋네요!"
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "Love this idea. 1. Can it calculate my preparedness for the launch (chances of being featured)? 2. Can it scan all the launches so far and give me an overview of whether something similar (competitors) already exists in the history of this platform?",
+     "kr": "이 아이디어 정말 마음에 듭니다. 1. 론칭 준비도(피처드될 확률)를 계산해 줄 수 있나요? 2. 지금까지의 모든 론칭을 스캔하여 이 플랫폼 역사상 유사한 것(경쟁사)이 이미 존재하는지 개요를 제공해 줄 수 있나요?"
+    },
+    {
+     "author": "Kate Ramakaieva",
+     "is_maker": false,
+     "text": "@busmark\\_w\\_nika great suggestions, both points would help founders and teams a lot! so ++ from me 🙌 competitor research on PH is smth everyone need to do before launching, it would be great to have it done directly from the PH using MCP ⚡",
+     "kr": "@busmark\\_w\\_nika 훌륭한 제안입니다. 두 가지 모두 창업자와 팀에 큰 도움이 될 것 같아 저도 적극 찬성합니다 🙌 PH에서의 경쟁사 조사는 론칭 전 누구나 해야 하는 작업인데, MCP를 통해 PH에서 직접 처리할 수 있다면 정말 좋겠네요 ⚡"
+    },
+    {
+     "author": "Mike Ciesielka",
+     "is_maker": true,
+     "text": "@amraniyasser +1. the best way to understand the capabilities of the MCP are just to ask it. we don't offer any explicit chances of featuring today.",
+     "kr": "@amraniyasser 동감합니다. MCP의 기능을 이해하는 가장 좋은 방법은 그냥 직접 물어보는 것입니다. 현재는 피처드될 명시적인 확률 계산 기능은 제공하지 않습니다."
+    }
+   ],
+   "slug": "producthunt"
+  },
+  {
+   "name": "Dageno AI",
+   "tagline_en": "Become the brand AI answers recommend across 7+ major LLMs.",
+   "tagline_kr": "7개 이상의 주요 LLM 답변에서 추천받는 브랜드가 되세요.",
+   "image": "https://ph-files.imgix.net/ad3802d6-94f8-4ddc-b7c7-e7377f816cf2.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Writing assistants",
+    "GEO Tools"
+   ],
+   "upvotes": 307,
+   "comments_count": 56,
+   "maker": [
+    "Tim Lin"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Dageno AI는 7개 이상의 주요 LLM 환경에서 AI 시스템이 자사 브랜드를 어떻게 인식하고 추천하는지 파악하고 개선하도록 돕는 GEO(생성형 검색 최적화) 데이터 및 에이전트 플랫폼입니다. 웹사이트, 트래픽, 프롬프트, 소셜 미디어, 브랜드 멘션 등 다양한 신호를 종합하여 AI 가시성 격차를 분석하고 콘텐츠와 인용 출처에서 개선해야 할 점을 정확히 짚어냅니다. 단순한 인사이트 제공에 그치지 않고 AI 에이전트를 기반으로 개선 작업을 자동 실행하며 시간에 따른 성과를 지속적으로 추적합니다. 프롬프트를 일일이 수동 설정할 필요 없이 12,000개 이상의 니치 시장 모델을 기반으로 브랜드별 모니터링 질문군을 자동 구성합니다. 이를 통해 기업은 AI 추천 가시성을 확보하고 실질적인 비즈니스 성장으로 전환할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/agent-powered-geo-by-dageno",
+   "comment_summary": "댓글에서는 프롬프트 설정 방식, 과거 데이터 조회 가능 기간, Reddit 등 AI 인용 출처의 실제 비중에 대한 심도 있는 질문들이 오갔습니다. 메이커는 300만 개 이상의 브랜드 데이터와 자체 AI 인용 데이터베이스를 바탕으로 시장 모델을 자동 구축하며, 플랫폼별 인용 양상을 정량적으로 분석해 대응한다고 상세히 설명했습니다.",
+   "warnings": null,
+   "website": "https://dageno.ai/",
+   "comments": [
+    {
+     "author": "Tim Lin",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt, I'm Tim from Dageno. More buyers now skip search and ask ChatGPT or Gemini what to buy. Yet most GEO/AEO tools start with one question: \"Does AI mention your website?\" We think that's backwards. Before deciding what to track, you should understand the market: who AI recommends, what buyers ask, and which sources AI cites. So Dageno now brings market research and AI visibility tracking into one workflow, so you can see exactly what to optimize: * Start with any brand or product",
+     "kr": "📌 안녕하세요 Product Hunt, Dageno의 Tim입니다. 점점 더 많은 구매자들이 검색을 건너뛰고 ChatGPT나 Gemini에 무엇을 살지 묻고 있습니다. 하지만 대부분의 GEO/AEO 도구는 \"AI가 당신의 웹사이트를 언급하는가?\"라는 한 가지 질문으로 시작합니다. 저희는 그것이 잘못된 순서라고 생각합니다. 무엇을 추적할지 결정하기 전에 시장을 이해해야 합니다. 즉, AI가 누구를 추천하는지, 구매자가 무엇을 묻는지, AI가 어떤 출처를 인용하는지 알아야 합니다. 그래서 Dageno는 시장 조사와 AI 가시성 추적을 하나의 워크플로우로 통합하여 무엇을 최적화해야 하는지 정확히 보여줍니다: * 어떤 브랜드나 제품으로든 시작하세요"
+    },
+    {
+     "author": "Deepak 🏆",
+     "is_maker": false,
+     "text": "@tim\\_dageno\\_ai When you say no prompt setup is needed, how do you decide which questions to collect answers for in each market?",
+     "kr": "@tim\\_dageno\\_ai 프롬프트 설정이 필요 없다고 하셨는데, 각 시장에서 어떤 질문에 대한 답변을 수집할지 어떻게 결정하시나요?"
+    },
+    {
+     "author": "Tim Lin",
+     "is_maker": true,
+     "text": "@deepaksingh09 Our approach isn't to ask users to guess what consumers might ask AI. Instead, we start by building a market model, then generate and organize the questions worth monitoring within that market. Dageno currently covers over 12,000 niche markets and more than 3 million brands. We build market-specific question sets by considering brands, products, subcategories, competitive relationships, product differentiators, and the different intents behind consumers' purchasing decisions. For ",
+     "kr": "@deepaksingh09 저희의 접근 방식은 소비자들의 AI 질문을 사용자가 직접 추측하게 만드는 것이 아닙니다. 대신 시장 모델을 먼저 구축한 후, 해당 시장 내에서 모니터링할 가치가 있는 질문들을 생성하고 구조화합니다. Dageno는 현재 12,000개 이상의 니치 시장과 300만 개 이상의 브랜드를 다룹니다. 브랜드, 제품, 하위 카테고리, 경쟁 관계, 제품 차별화 요소, 소비자의 구매 결정 뒤에 숨은 다양한 의도를 종합적으로 고려하여 시장별 질문 세트를 구축합니다."
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@tim\\_dageno\\_ai Which competitor is AI recommending most often for your target buyers. and what specific factors are driving those recommendations???",
+     "kr": "@tim\\_dageno\\_ai 타깃 구매자들에게 AI가 가장 자주 추천하는 경쟁사는 어디이며, 그러한 추천을 유도하는 구체적인 요인은 무엇인가요???"
+    },
+    {
+     "author": "Romy Chou",
+     "is_maker": false,
+     "text": "How far back does the existing data go? Could I see how a brand’s AI presence changed before I started using Dageno?",
+     "kr": "기존 데이터는 얼마나 이전 시점까지 거슬러 올라가나요? Dageno를 사용하기 전 브랜드의 AI 존재감이 어떻게 변했는지도 확인할 수 있나요?"
+    },
+    {
+     "author": "Tim Lin",
+     "is_maker": true,
+     "text": "@romy\\_chou Great question. Dageno’s market and brand views are built from AI answers we keep collecting over time(3-6 month)—not only from the day you sign up. So for brands or markets already in our coverage, you can review past performance and trends even before you started using Dageno. Continuous tracking for your own custom prompts begins once you set them up. The exact lookback window depends on what is available in-product for that brand or market. You can try a brand first at insight.da",
+     "kr": "@romy\\_chou 좋은 질문입니다. Dageno의 시장 및 브랜드 뷰는 가입한 날부터만이 아니라 지속적으로 수집해 온 AI 답변(3~6개월)을 바탕으로 구축됩니다. 따라서 저희가 이미 커버하고 있는 브랜드나 시장의 경우, Dageno를 사용하기 전의 과거 성과와 트렌드까지 검토하실 수 있습니다. 커스텀 프롬프트에 대한 지속적인 추적은 설정하는 즉시 시작됩니다. 정확한 소급 조회 기간은 해당 브랜드나 시장에 대해 제품 내에서 제공되는 데이터에 따라 달라집니다. insight.da에서 브랜드를 먼저 확인해 보세요."
+    },
+    {
+     "author": "Pavel Hegler",
+     "is_maker": false,
+     "text": "There are a few of the tools that doe AEO but this is by far the most usable one in regards of UI/UX. It makes me so curious do you guys get all that info to make this so usable?",
+     "kr": "AEO를 다루는 도구가 몇 가지 있지만, UI/UX 측면에서는 이것이 단연 가장 사용하기 편리합니다. 이토록 사용하기 쉽게 만들기 위해 필요한 모든 정보를 어떻게 확보하시는지 정말 궁금하네요."
+    },
+    {
+     "author": "Tim Lin",
+     "is_maker": true,
+     "text": "@pavel\\_hegler Thanks, Pavel! We regularly collect AI answers and their cited sources, then organize the companies, brands, products and markets they mention into connected data. The UI follows a simple path: start with a brand, explore its relationships, then drill into the original answers and sources. We want the evidence to be accessible without requiring users to configure everything first.",
+     "kr": "@pavel\\_hegler 감사합니다, Pavel! 저희는 AI 답변과 인용 출처를 정기적으로 수집한 다음, 언급된 기업, 브랜드, 제품, 시장을 연결된 데이터로 체계화합니다. UI는 단순한 경로를 따릅니다: 브랜드로 시작하여 관계를 탐색하고 원래의 답변과 출처를 깊이 파고드는 식입니다. 사용자가 모든 것을 일일이 먼저 설정하지 않고도 증거 데이터에 쉽게 접근할 수 있기를 원했습니다."
+    },
+    {
+     "author": "Daniel van Wyk",
+     "is_maker": false,
+     "text": "I run a roofing contractor directory, and the first thing I'd want to see is which sources AI cites for something like \"how much does a roof replacement cost.\" Is it mostly Reddit and forums, or Angi and HomeAdvisor? Does the free lookup go for home services niches, or is it mostly SaaS and ecommerce?",
+     "kr": "지붕 시공업체 디렉터리를 운영하고 있는데, 가장 먼저 보고 싶은 것은 \"지붕 교체 비용이 얼마나 드나요\" 같은 질문에 AI가 어떤 출처를 인용하는지입니다. 주로 레딧과 포럼인가요, 아니면 Angi와 HomeAdvisor인가요? 무료 조회 기능이 홈 서비스 니치 시장에도 적용되나요, 아니면 주로 SaaS와 전자상거래 중심인가요?"
+    },
+    {
+     "author": "Tim Lin",
+     "is_maker": true,
+     "text": "@daniel\\_vanwyk Great question! First, when it comes to Reddit, Angi, and HomeAdvisor, there isn't necessarily one platform that dominates across the board. Different AI models, regions, and questions can lead to very different citation sources. For example, \"How much does a roof replacement cost?\" and \"Who are the best roofing contractors near me?\" may draw on completely different sources. That's exactly why we've built a large-scale AI citation database. Dageno has already collected over **10 ",
+     "kr": "@daniel\\_vanwyk 훌륭한 질문입니다! 먼저 Reddit, Angi, HomeAdvisor에 관해서는 전반적으로 한 플랫폼이 지배적이라고 단정할 수는 없습니다. AI 모델, 지역, 질문에 따라 인용 출처가 크게 달라질 수 있기 때문입니다. 예를 들어 \"지붕 교체 비용이 얼마나 드나요?\"와 \"내 주변 최고의 지붕 시공업체는 누구인가요?\"는 완전히 다른 출처를 끌어올 수 있습니다. 그것이 바로 저희가 대규모 AI 인용 데이터베이스를 구축한 이유입니다. Dageno는 이미 1,000만 개 이상의"
+    },
+    {
+     "author": "Rajat Gupta",
+     "is_maker": false,
+     "text": "I had a question regarding the answers AI gives. Are they mostly based upon reddit answers or something else? You guys would definitely know since you are deep in this",
+     "kr": "AI가 제공하는 답변에 대해 질문이 있습니다. 주로 레딧 답변을 기반으로 하나요, 아니면 다른 것인가요? 이 분야를 깊이 파고 계시니 분명 잘 알고 계실 것 같아서요."
+    },
+    {
+     "author": "Tim Lin",
+     "is_maker": true,
+     "text": "@rajat\\_gupta51 Hi Rajat, Reddit is one source, but its importance varies considerably by platform, topic and time. AI answers can draw on knowledge learned during training and, when web search is used, sources including company websites, documentation, news, research and community discussions. For example, in our September 2026 sample of fixed questions, **1.4% of ChatGPT answers with sources linked to Reddit, compared with 38.6% for Google AI Overviews.** Brand websites remained widely cited a",
+     "kr": "@rajat\\_gupta51 안녕하세요 Rajat, 레딧은 여러 출처 중 하나일 뿐이며, 그 중요성은 플랫폼, 주제, 시점에 따라 크게 달라집니다. AI 답변은 학습 과정에서 습득한 지식을 활용할 수 있으며, 웹 검색이 사용될 때는 기업 웹사이트, 공식 문서, 뉴스, 연구 자료 및 커뮤니티 토론 등의 출처를 참조합니다. 예를 들어 2026년 9월 고정 질문 표본에서 **출처가 포함된 ChatGPT 답변 중 1.4%만이 레딧으로 연결된 반면, Google AI Overviews는 38.6%에 달했습니다.** 브랜드 웹사이트는 여전히 널리 인용되고 있습니다."
+    }
+   ],
+   "slug": "agent-powered-geo-by-dageno"
+  },
+  {
+   "name": "Databox",
+   "tagline_en": "Agentic analytics platform for you and your agents.",
+   "tagline_kr": "사용자와 에이전트를 위한 에이전틱 분석 플랫폼.",
+   "image": "https://ph-files.imgix.net/c50d30d8-8c7a-4d11-b1a4-b31b9af4060a.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "categories": [
+    "Data visualization tools",
+    "Business intelligence software",
+    "AI Workflow Automation"
+   ],
+   "upvotes": 273,
+   "comments_count": 44,
+   "maker": [
+    "Tadej",
+    "Ziga Potocnik",
+    "Davorin Gabrovec"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Databox는 기업 전반의 비즈니스 성과 데이터를 일관된 지표 및 맥락과 결합하여 제공하는 에이전틱 분석 플랫폼입니다. 이번 업데이트에서는 브라우저 기반 대시보드를 넘어 터미널 환경에서 분석 데이터를 다룰 수 있는 Databox CLI를 출시했습니다. 공개 API(V2)와 1:1로 매핑되는 91개의 명령어와 함께 Claude Code, Cursor, Codex 등 코딩 에이전트가 즉시 활용할 수 있는 10가지 사전 빌드 스킬을 제공합니다. 개발자와 AI 에이전트는 별도의 복잡한 API 연동 코드 없이도 데이터셋 구성, 매출 지표 생성, 자동화 보고서 작성 등의 작업을 손쉽게 실행할 수 있습니다. 반복적인 분석과 보고 업무를 에이전트에게 위임하여 성과를 신속히 파악하고 데이터 기반 의사결정을 가속화합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/databox",
+   "comment_summary": "커뮤니티는 터미널을 떠나지 않고도 코딩 에이전트와 결합해 데이터 분석을 자동화할 수 있는 강력한 CLI 출시에 큰 호응을 보였습니다. 특히 공개 API와 1:1 매핑되는 91개 명령어와 역할 기반 권한 연동, 멱등성 보장 기능에 대해 메이커 팀이 상세히 답변하며 높은 기술적 완성도를 강조했습니다.",
+   "warnings": null,
+   "website": "http://databox.com/",
+   "comments": [
+    {
+     "author": "Tadej",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt! 👋 I’m Tadej from Databox. Today we’re launching Databox CLI, bringing Databox directly into your terminal. For most people, Databox lives in a browser tab. You log in, check dashboards, and manage your analytics in the app. Meanwhile, teams increasingly use scripts, data pipelines, CI jobs, and AI coding agents to move data between systems, configure tools, and automate repetitive tasks. Until now, bringing Databox into those workflows meant working directly with our API, writ",
+     "kr": "📌 안녕하세요 Product Hunt! 👋 Databox의 Tadej입니다. 오늘 저희는 Databox를 터미널로 직접 가져오는 Databox CLI를 출시합니다. 대부분의 사람들에게 Databox는 브라우저 탭 속에 존재했습니다. 로그인하고, 대시보드를 확인하며, 앱에서 분석 지표를 관리했죠. 한편 팀들은 시스템 간 데이터를 이동하고 도구를 설정하며 반복 작업을 자동화하기 위해 스크립트, 데이터 파이프라인, CI 작업, AI 코딩 에이전트를 점점 더 많이 활용하고 있습니다. 지금까지 이러한 워크플로우에 Databox를 도입하려면 API를 직접 다루며 코드를 작성해야 했습니다."
+    },
+    {
+     "author": "Žan Perkovič",
+     "is_maker": false,
+     "text": "Been looking forward to this one team - awesome work, especially for going full agentic. My first use case with this (as someone in sales) is to use my agent to automate my outreach cadence to people from product signals I have in the database - work that is now being done manually (with great results), but can free up so much time for my AEs to work on the meetings they have.",
+     "kr": "정말 기대하고 있던 제품입니다 - 특히 완벽한 에이전틱 환경으로 나아간 멋진 성과네요. 영업 담당자로서 저의 첫 번째 활용 사례는 데이터베이스의 제품 신호를 기반으로 고객 아웃리치 주기를 에이전트로 자동화하는 것입니다. 지금은 수동으로 진행하고 있지만(결과는 훌륭합니다), 이를 자동화하면 AE들이 미팅에 집중할 수 있는 시간을 엄청나게 확보할 수 있습니다."
+    },
+    {
+     "author": "Ziga Potocnik",
+     "is_maker": true,
+     "text": "@zan\\_perkovic Thanks Žan! That’s a great first use case. Product signals are exactly the kind of data an agent should act on, not just report on. If the signals live in a Databox dataset, your agent can pull the rows with dataset data and build the outreach list from there. Would love to hear how it goes once it’s running.",
+     "kr": "@zan\\_perkovic 감사합니다, Žan! 아주 훌륭한 첫 번째 사용 사례네요. 제품 신호는 에이전트가 단순히 보고하는 데 그치지 않고 직접 행동을 취해야 하는 정확한 데이터 유형입니다. 해당 신호가 Databox 데이터셋에 있다면, 에이전트가 데이터셋에서 행 데이터를 가져와 아웃리치 목록을 작성할 수 있습니다. 실제로 운영해 보신 후 어떤지 꼭 후기 들려주세요."
+    },
+    {
+     "author": "Žan Perkovič",
+     "is_maker": false,
+     "text": "@zigapotocnik will update you for sure!",
+     "kr": "@zigapotocnik 꼭 소식 전해드리겠습니다!"
+    },
+    {
+     "author": "Simon Moxon",
+     "is_maker": false,
+     "text": "Good to see a proper CLI with the agent skills already in the box. I've ended up giving my agents command line tools against the API for most things, so this is pretty much how I'd want to hook an agent up to analytics. Did the 91 commands come straight from the API spec?",
+     "kr": "에이전트 스킬이 기본 탑재된 제대로 된 CLI를 보게 되어 기쁩니다. 결국 대부분의 작업에서 에이전트에게 API 기반 명령줄 도구를 쥐어주게 되었는데, 이것이야말로 에이전트를 분석 도구에 연결하는 이상적인 방식이네요. 91개의 명령어는 API 사양에서 곧바로 가져온 것인가요?"
+    },
+    {
+     "author": "Ziga Potocnik",
+     "is_maker": true,
+     "text": "@simon\\_moxon Thanks Simon! Yes, every command maps 1:1 to an endpoint in the Databox public API (V2), so there’s no extra logic between your agent and the data. The 10 agent skills are split by area (datasets, metrics, data sources, users, etc.), so an agent only loads the part it needs. Agents also get --json, clear exit codes, and --idempotency-key for safe retries on writes. Curious what you’ve been using for your other API tools - anything you’d want us to add?",
+     "kr": "@simon\\_moxon 감사합니다, Simon! 네, 모든 명령어는 Databox 공개 API(V2)의 엔드포인트와 1:1로 매핑되므로 에이전트와 데이터 사이에 불필요한 추가 로직이 없습니다. 10개의 에이전트 스킬은 영역별(데이터셋, 지표, 데이터 소스, 사용자 등)로 나뉘어 있어 에이전트가 필요한 부분만 로드합니다. 또한 에이전트를 위한 --json 출력, 명확한 종료 코드, 쓰기 작업의 안전한 재시도를 위한 --idempotency-key도 지원합니다. 다른 API 도구로는 무엇을 사용하고 계셨는지 궁금하네요 - 추가되었으면 하는 기능이 있으신가요?"
+    },
+    {
+     "author": "Mateja Verlic Bruncic",
+     "is_maker": false,
+     "text": "I'm a big fan of CLIs and use them a lot. They're really not as scary as they might sound :) And now Databox (finally) has one too! What I also like is that anyone can create their own API key and use the CLI, regardless of their Databox plan or user role. Permissions still follow your existing role, so there's nothing extra to manage. This makes life a lot easier, especially when you're working with scripts, automations, and agents.",
+     "kr": "저는 CLI의 열렬한 팬이며 자주 사용합니다. 생각만큼 무섭거나 어렵지 않죠 :) 그리고 드디어 Databox에도 CLI가 생겼네요! 특히 마음에 드는 점은 Databox 플랜이나 사용자 역할에 관계없이 누구나 자신만의 API 키를 생성하여 CLI를 사용할 수 있다는 점입니다. 권한은 기존 역할을 그대로 따르므로 별도로 관리할 필요가 없습니다. 이는 특히 스크립트, 자동화, 에이전트 작업을 할 때 삶을 훨씬 편하게 만들어 줍니다."
+    },
+    {
+     "author": "Ziga Potocnik",
+     "is_maker": true,
+     "text": "@mateja\\_verlic\\_bruncic Thanks Mateja! Agree, CLIs are a lot friendlier than people expect, especially once an agent is doing the typing. And yes, anyone can create their own API key now. Since the key acts as you, it follows your existing role and access. No separate permission setup, which keeps scripts and agents simple and safe.",
+     "kr": "@mateja\\_verlic\\_bruncic 감사합니다, Mateja! 맞습니다, 특히 에이전트가 입력을 대신하게 되면 CLI는 사람들이 생각하는 것보다 훨씬 친숙합니다. 그리고 말씀대로 이제 누구나 자신만의 API 키를 생성할 수 있습니다. 키가 본인의 권한으로 동작하므로 기존 역할과 접근 권한을 그대로 따릅니다. 별도의 권한 설정이 필요 없어 스크립트와 에이전트를 단순하고 안전하게 유지할 수 있습니다."
+    },
+    {
+     "author": "Davorin Gabrovec",
+     "is_maker": true,
+     "text": "Hey Product Hunt 👋 AI agents are great at writing code. Things get interesting when you give them the tools to do the work. Databox CLI is that toolset for analytics. Tell your agent “set up our orders data, load last quarter, and build the revenue metrics.” It does the work, checks it, and reports back. You don’t write any custom API integration. What’s inside: * 91 commands, a 1:1 mirror of our public API * 10 ready-to-use skills for Claude Code, Cursor, Codex and other coding agents * Schema ",
+     "kr": "안녕하세요 Product Hunt 👋 AI 에이전트는 코드 작성에 매우 뛰어납니다. 하지만 실제로 작업을 수행할 도구를 쥐어주었을 때 상황은 더욱 흥미로워집니다. Databox CLI는 분석을 위한 바로 그 툴셋입니다. 에이전트에게 \"주문 데이터를 설정하고 지난 분기 데이터를 로드한 뒤 수익 지표를 구축해 줘\"라고 말해 보세요. 에이전트가 작업을 수행하고, 검증하며, 보고합니다. 맞춤형 API 연동 코드를 작성할 필요가 없습니다. 포함된 내용: * 공개 API를 1:1로 반영한 91개 명령어 * Claude Code, Cursor, Codex 및 기타 코딩 에이전트를 위해 바로 사용 가능한 10개 스킬 * 스키마"
+    },
+    {
+     "author": "Aljaz Mislovic",
+     "is_maker": false,
+     "text": "Boy do I like not leaving my terminal these days. MCPs are cool, but I like spamming my terminal commands as in the old days more ;)",
+     "kr": "요즘 터미널을 벗어나지 않는 게 정말 좋더군요. MCP도 멋지지만, 예전 방식처럼 터미널 명령어를 마구 날리는 게 전 더 좋습니다 ;)"
+    },
+    {
+     "author": "Ziga Potocnik",
+     "is_maker": true,
+     "text": "@aljaazm Ha, same here Aljaz. Both have their place - MCP when you want to chat with your data inside Claude or ChatGPT, the CLI when you want to script it, pipe it, or let an agent run it in the terminal.",
+     "kr": "@aljaazm 하하, 저도 마찬가지입니다 Aljaz. 둘 다 각자의 자리가 있죠 - Claude나 ChatGPT 안에서 데이터와 대화하고 싶을 때는 MCP를, 스크립트 작성, 파이프라인 연결, 터미널에서 에이전트 실행을 원할 때는 CLI를 쓰면 되니까요."
+    },
+    {
+     "author": "André J",
+     "is_maker": false,
+     "text": "When you envision the ultimate user for this product. What does he/he use it for, and how does he/she use it? What problem do they have, and how does this solve it and what does the outcome look like? Trying to understand it a bit more. Thanks",
+     "kr": "이 제품의 궁극적인 사용자를 어떻게 그리고 계신가요? 그 사용자는 어떤 용도로, 어떻게 제품을 사용하게 될까요? 그들이 겪는 문제는 무엇이며, 이 제품이 어떻게 해결하고 그 결과는 어떤 모습일까요? 좀 더 잘 이해해 보고 싶어서 여쭙니다. 감사합니다."
+    }
+   ],
+   "slug": "databox"
+  },
+  {
+   "name": "Arcjet",
+   "tagline_en": "Secure the AI agents you're building at runtime",
+   "tagline_kr": "구축 중인 AI 에이전트를 런타임에 안전하게 보호하세요",
+   "image": "https://ph-files.imgix.net/9f89ef3a-743d-4f6b-8ae7-146a3f0b637f.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Security software"
+   ],
+   "upvotes": 213,
+   "comments_count": 34,
+   "maker": [
+    "David Mytton"
+   ],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Arcjet은 개발자의 AI 애플리케이션 코드에 직접 내장되어 동작하는 런타임 보안 플랫폼입니다. 이번 출시는 범용 LLM으로는 탐지하기 어려운 프롬프트 인젝션과 에이전트 남용을 방어하기 위해 특화 훈련된 맞춤형 AI 보안 모델 제품군을 선보였습니다. 범용 프롬프트 인젝션 방어 모델인 Himalia 1과 코딩 에이전트 전용 Thebe 1 등 작업 특성에 맞춘 전문 모델을 제공합니다. 잠재적 위협이 감지되면 전체 세션 맥락을 종합 분석하는 2차 의사결정 모델을 가동하여 오탐을 최소화하면서 위험한 도구 호출을 사전 차단합니다. Cloudflare 기반 300개 이상의 엣지 로케이션을 통해 전 세계 어디서든 지연 시간을 최소화하며 실시간 보안 검사를 수행합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/arcjet",
+   "comment_summary": "사용자들은 코딩 에이전트의 저장소 파일 탐색 등 오탐 위험이 높은 환경에서 세션 전체 맥락을 분석하는 Thebe 1 모델의 차별성에 큰 관심을 보였습니다. 메이커는 정교하게 정제된 데이터셋으로 사후 학습을 진행했으며, 엣지 인프라를 통한 빠른 분석과 유연한 데이터 보존 정책을 제공한다고 답변했습니다.",
+   "warnings": null,
+   "website": "https://arcjet.com/",
+   "comments": [
+    {
+     "author": "David Mytton",
+     "is_maker": false,
+     "text": "Thanks, Matt - glad it's working well for you!",
+     "kr": "감사합니다, Matt - 잘 활용하고 계시다니 기쁩니다!"
+    },
+    {
+     "author": "Daniel Zaremba",
+     "is_maker": false,
+     "text": "used Arcjet to build Leads Ward •7 reviews One of the backbone products under Leads Ward is Arcjet, we use it heavily to identify the spam/fake leads and boots. Helpful (2) 72 views1yr ago What do you think? … Login to comment",
+     "kr": "Leads Ward를 구축하는 데 Arcjet을 사용했습니다 • 리뷰 7개 Leads Ward의 핵심 기반 제품 중 하나가 Arcjet이며, 스팸/가짜 리드 및 봇을 식별하는 데 적극적으로 활용하고 있습니다. 유용함 (2) 조회수 72회 1년 전 어떻게 생각하시나요? … 댓글을 달려면 로그인하세요"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": false,
+     "text": "Hunter 📌 @davidmytton put it simply: \"You can't detect prompt injections with a general-purpose model.\" First launched here 2 months ago and loved by the community (Top Product of the Week, featured in the newsletter), @Arcjet keeps the momentum by announcing a family of custom-trained security models designed for analyzing AI agent activity: * Arcjet Himalia 1, a general-purpose prompt injection model (live now) * Arcjet Thebe 1, for coding agents (in early preview) * Arcjet Carme 1, for autono",
+     "kr": "Hunter 📌 @davidmytton이 명쾌하게 밝혔듯, \"범용 모델로는 프롬프트 인젝션을 탐지할 수 없습니다.\" 2달 전 이곳에서 처음 출시되어 커뮤니티의 큰 사랑을 받았던(주간 1위 제품, 뉴스레터 게재) @Arcjet이 AI 에이전트 활동 분석을 위해 특별히 맞춤 훈련된 보안 모델 제품군을 발표하며 기세를 이어갑니다: * Arcjet Himalia 1: 범용 프롬프트 인젝션 모델 (현재 배포됨) * Arcjet Thebe 1: 코딩 에이전트 전용 (초기 프리뷰) * Arcjet Carme 1: 자율형 에이전트용"
+    },
+    {
+     "author": "Bruno Bueno",
+     "is_maker": false,
+     "text": "what happens when the injection gets the agent to write into CLAUDE.md and it only fires next session, does session analysis carry anything across sessions",
+     "kr": "인젝션 공격으로 에이전트가 CLAUDE.md 파일에 코드를 작성하도록 만들고 다음 세션에서야 실행되는 경우 어떻게 되나요? 세션 분석이 여러 세션 간에 정보를 전달할 수 있나요?"
+    },
+    {
+     "author": "David Mytton",
+     "is_maker": true,
+     "text": "@bbueno Arcjet's models are the first line of defense for prompt injection. When they detect a potential injection, a secondary decision model runs with a larger context that examines the whole session, including activities before and which action the agent is going to do next. This allows us to detect more than just basic prompt injection. Arcjet also supports ongoing session analysis so every action is assessed individually and in the context of the broader session. This allows us to detect ag",
+     "kr": "@bbueno Arcjet의 모델은 프롬프트 인젝션에 대한 1차 방어선 역할을 합니다. 잠재적 인젝션이 감지되면 이전 활동과 에이전트가 다음에 수행할 작업을 포함하여 전체 세션을 검토하는 더 큰 맥락의 2차 의사결정 모델이 실행됩니다. 이를 통해 기본적인 프롬프트 인젝션 이상의 위협을 감지할 수 있습니다. 또한 Arcjet은 지속적인 세션 분석을 지원하여 모든 작업이 개별적으로 평가되는 동시에 더 넓은 세션 맥락에서도 평가됩니다. 이를 통해 에이전트의"
+    },
+    {
+     "author": "Agshin Rajabov",
+     "is_maker": false,
+     "text": "congrats on the launch. to your question, i would want a plain log of why a request was blocked, so a false positive on a real signup is easy to debug )",
+     "kr": "론칭을 축하드립니다. 질문에 답하자면, 실제 가입 과정에서 발생하는 오탐을 쉽게 디버깅할 수 있도록 요청이 차단된 구체적인 사유가 담긴 명확한 로그를 원합니다 :)"
+    },
+    {
+     "author": "David Mytton",
+     "is_maker": true,
+     "text": "@agshin\\_rajabov The Arcjet SDK returns the decision with the reason so you can see it in the context of the prompt that triggered it. We can also optionally retain the prompt on our platform so you can see the results of historic evaluations. We have customizable retention policies, including the option for zero data retention, so it's up to you what gets stored.",
+     "kr": "@agshin\\_rajabov Arcjet SDK는 결정 사유를 함께 반환하므로 트리거를 유발한 프롬프트 맥락 내에서 이를 확인할 수 있습니다. 또한 플랫폼에 프롬프트를 선택적으로 보존하여 이전 평가 결과를 조회할 수도 있습니다. 완전 데이터 무보존(Zero data retention) 옵션을 포함해 맞춤형 보존 정책을 제공하므로 저장할 데이터는 사용자가 직접 결정할 수 있습니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The Thebe 1 angle is the one that lands for me. I run coding agents against my own repos all day, and the stuff they read — docs, dependencies, random files — is exactly the kind of content that looks suspicious out of context. A general prompt-injection check would drive me nuts with false blocks, so a specialist model plus that second decision step looking at the whole session before blocking a risky action feels like the right trade-off. One thing I'm curious about: my agents mostly run local",
+     "kr": "Thebe 1의 방향성이 저에게 가장 와닿네요. 저는 하루 종일 제 저장소를 대상으로 코딩 에이전트를 실행하는데, 에이전트가 읽는 문서, 의존성, 무작위 파일 등은 맥락을 떼어놓고 보면 딱 의심스러워 보이기 쉬운 콘텐츠들입니다. 범용 프롬프트 인젝션 검사를 쓰면 잦은 오탐 차단으로 미칠 지경일 텐데, 위험한 작업을 차단하기 전에 세션 전체를 살펴보는 전문 모델과 2차 의사결정 단계의 결합은 최적의 절충안으로 느껴집니다. 한 가지 궁금한 점은: 제 에이전트는 주로 로컬에서 실행되는데"
+    },
+    {
+     "author": "David Mytton",
+     "is_maker": true,
+     "text": "@jcbuilds we run the models in the cloud on our platform. We're regularly updating them with new data and manage the scaling and inference for you. Analysis happens at the edge though, and we're deployed on Cloudflare so have over 300 locations worldwide.",
+     "kr": "@jcbuilds 모델은 저희 플랫폼의 클라우드에서 실행됩니다. 새로운 데이터로 정기적으로 업데이트하며 확정성과 추론을 대신 관리해 드립니다. 다만 분석은 엣지에서 이루어지며, Cloudflare에 배포되어 전 세계 300개 이상의 로케이션을 보유하고 있습니다."
+    },
+    {
+     "author": "Sam Morris",
+     "is_maker": false,
+     "text": "Arcjet an essential company in the space right now. Excited to try out these models! How did you post-train them out of interest?",
+     "kr": "Arcjet은 현재 이 분야에서 필수적인 회사입니다. 이 모델들을 사용해 볼 생각에 기대되네요! 흥미로운 부분인데 사후 학습은 어떻게 진행하셨나요?"
+    },
+    {
+     "author": "David Mytton",
+     "is_maker": true,
+     "text": "@samsmallmind Most of the work was in curating high quality datasets because many of the open examples are ambiguously licensed and poorly labeled. Our technical writeup is at https://arcjet.com/blog/introducing-arcjets-custom-ai-security-models",
+     "kr": "@samsmallmind 공개된 예제 상당수가 라이선스가 불분명하고 라벨링이 부실했기 때문에 고품질 데이터셋을 큐레이션하는 데 대부분의 노력을 기울였습니다. 기술 관련 상세 글은 https://arcjet.com/blog/introducing-arcjets-custom-ai-security-models 에서 확인하실 수 있습니다."
+    },
+    {
+     "author": "Germán Merlo",
+     "is_maker": false,
+     "text": "Hey team, a huge milestone today! Arcjet Security Models came to change the AI game and I'm truly sure many founders will take the most of it. Keep it up!!!",
+     "kr": "팀 여러분, 오늘 정말 대단한 이정표를 세우셨네요! Arcjet Security Models는 AI 판도를 바꿀 것이며 많은 창업자들이 이를 최대한 활용할 것이라 확신합니다. 계속 멋진 모습 보여주세요!!!"
+    }
+   ],
+   "slug": "arcjet"
+  },
+  {
+   "name": "HoundDog.ai Privacy Code Scanner",
+   "tagline_en": "GDPR Data Mapping and PII Leak Prevention at Dev Speed",
+   "tagline_kr": "개발 속도에 맞춘 GDPR 데이터 매핑 및 개인정보 유출 방지",
+   "image": "https://ph-files.imgix.net/d6a0506c-94e2-45e9-b627-6958e105063c.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Engineering & Development",
+    "Compliance software",
+    "Security software"
+   ],
+   "upvotes": 156,
+   "comments_count": 17,
+   "maker": [
+    "Amjad Afanah",
+    "Joohwan Oh"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "HoundDog.ai Privacy Code Scanner는 민감한 데이터가 어디서 수집, 처리, 공유되는지를 소스 코드 수준에서 실시간으로 시각화해 주는 보안 및 컴플라이언스 도구입니다. 기존 설문 방식으로는 놓치기 쉬운 AI 및 서드파티 연동 경로의 개인정보 흐름까지 정확하게 추적합니다. 이번 출시에서는 AI 코딩 에이전트가 대규모 gRPC 및 Protobuf 코드베이스에서 서비스와 의존성 관계를 탐색하느라 낭비하는 토큰을 대폭 절감하는 ProtoMap 기능을 선보였습니다. 개발팀은 PR 머지 전 메인 브랜치의 서비스 그래프와 MCP를 연동하여 API나 필드 변경 시 다른 서비스에 미치는 영향을 즉시 파악할 수 있습니다. 보안, 개인정보, AI 거버넌스 팀 모두 자연어 대화형 인터페이스를 통해 조직 전반의 데이터 맵을 직관적으로 탐색할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/hounddog-ai-static-code-scanner-2",
+   "comment_summary": "커뮤니티는 에이전트가 레포지토리 전반을 탐색하며 대량의 토큰을 소모하는 문제를 결정론적 의존성 맵으로 해결해 토큰 비용을 획기적으로 줄였다는 점에 주목했습니다. 메이커는 수백 개의 마이크로서비스가 분산된 멀티 레포 환경에서도 소유권과 영향도를 정확히 파악하며, 비개발자도 자연어로 데이터 흐름을 질의할 수 있다고 설명했습니다.",
+   "warnings": null,
+   "website": "https://hounddog.ai/privacy-code-scanning/",
+   "comments": [
+    {
+     "author": "Amjad Afanah",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! I'm Amjad, co-founder of HoundDog.ai. Today we're launching ProtoMap. **The problem** AI coding agents are writing more of our code every day, and every line adds services, calls and fields that the next agent has to rediscover. In a large gRPC + Protobuf codebase, a simple question like \"what breaks if I change this service, RPC or field?\" sends an agent off to grep, find and read files across repos, trying to piece together relationships in code that often isn't even checke",
+     "kr": "📌 안녕하세요 Product Hunt! HoundDog.ai의 공동 창업자 Amjad입니다. 오늘 저희는 ProtoMap을 출시합니다. **문제점** AI 코딩 에이전트가 매일 더 많은 코드를 작성하고 있으며, 코드 한 줄이 늘어날 때마다 다음 에이전트가 다시 탐색해야 할 서비스, 호출, 필드가 추가됩니다. 대규모 gRPC + Protobuf 코드베이스에서 \"이 서비스, RPC, 필드를 변경하면 무엇이 깨질까?\"라는 단순한 질문 하나에도 에이전트는 여러 저장소의 파일을 grep하고 찾고 읽으며 확인조차 되지 않은 코드 관계를 맞추느라 헤매게 됩니다."
+    },
+    {
+     "author": "Velvet Trace",
+     "is_maker": false,
+     "text": "i like the idea of asking questions directly from the data map. Can non-technical privacy teams use it without developer help?",
+     "kr": "데이터 맵에서 직접 질문할 수 있다는 아이디어가 마음에 듭니다. 비개발직군인 개인정보보호 팀도 개발자의 도움 없이 사용할 수 있나요?"
+    },
+    {
+     "author": "Joohwan Oh",
+     "is_maker": true,
+     "text": "@velvet\\_trace yes, absolutely! ProtoMap has a chat interface where you can ask questions in plain English, and answers come with interactive diagrams that help you explore your gRPC and Protobuf data flows.",
+     "kr": "@velvet\\_trace 네, 물론입니다! ProtoMap에는 쉬운 일상어로 질문할 수 있는 채팅 인터페이스가 마련되어 있으며, gRPC 및 Protobuf 데이터 흐름을 탐색할 수 있는 대화형 다이어그램과 함께 답변이 제공됩니다."
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": false,
+     "text": "Can ProtoMap detect what can break before I merge a PR?",
+     "kr": "PR을 머지하기 전에 무엇이 깨질 수 있는지 ProtoMap이 감지할 수 있나요?"
+    },
+    {
+     "author": "Amjad Afanah",
+     "is_maker": true,
+     "text": "@bengeekly Absolutely! Before you merge, your AI coding agent gets the service graph from the main branch via MCP, with your changes layered on top. This lets your agent quickly see if changes to an API, service, or field impact other dependencies, without wasting tokens on discovery.",
+     "kr": "@bengeekly 물론입니다! 머지하기 전에 AI 코딩 에이전트가 MCP를 통해 메인 브랜치의 서비스 그래프를 가져오고 그 위에 변경 사항을 얹어 검토합니다. 이를 통해 에이전트는 탐색에 토큰을 낭비하지 않고도 API, 서비스 또는 필드 변경이 다른 의존성에 영향을 미치는지 빠르게 확인할 수 있습니다."
+    },
+    {
+     "author": "Thami Benjelloun",
+     "is_maker": false,
+     "text": "the same proto message declared diffrently in two repos is such a real one, nobody notices until something breaks in prod since the map refreshes on every commit, what does the agent see for a field that only changed on an open branch??? or is it main only for now",
+     "kr": "두 저장소에서 동일한 proto 메시지가 서로 다르게 선언되는 건 정말 흔히 겪는 일인데, 커밋마다 맵이 새로고침되므로 프로덕션에서 무언가 깨지기 전까지는 아무도 모릅니다. 오픈된 브랜치에서만 변경된 필드에 대해 에이전트는 무엇을 보게 되나요??? 아니면 현재는 메인 브랜치 전용인가요?"
+    },
+    {
+     "author": "Joohwan Oh",
+     "is_maker": true,
+     "text": "@thamibenjelloun thanks for the question! In a nutshell, your team sees the context graph built from main and as you code on a feature branch your agent gets a local copy of the main graph that updates with your changes in real time. Your agent sees your changes, while teammates still see main until you merge.",
+     "kr": "@thamibenjelloun 질문 감사합니다! 간단히 요약하면, 팀은 메인 브랜치에서 구축된 컨텍스트 그래프를 보게 되고, 사용자가 피처 브랜치에서 코딩하는 동안 에이전트는 변경 사항이 실시간으로 반영되는 메인 그래프의 로컬 사본을 받게 됩니다. 머지하기 전까지 동료들은 여전히 메인을 보는 반면 사용자의 에이전트는 변경 사항을 보게 됩니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "This hits a pain I feel in basically every coding-agent session — a huge share of the tokens goes to the agent re-reading code just to work out what a change touches, before it does anything useful. A deterministic dependency map it can query instead of grepping through repos feels like the right fix, and your side-by-side says it plainly: 24.5M tokens down to 262K for that RPC removal. Curious whether the payoff holds up on a smaller codebase that isn't a big gRPC estate, or if this is really a",
+     "kr": "이것은 제가 코딩 에이전트 세션을 진행할 때마다 거의 항상 겪는 고통을 정확히 짚어냈네요 — 에이전트가 유용한 작업을 수행하기 전에 단지 변경 사항이 무엇에 영향을 주는지 파악하기 위해 코드를 다시 읽는 데 엄청난 양의 토큰이 소모됩니다. 저장소를 grep하는 대신 쿼리할 수 있는 결정론적 의존성 맵이야말로 올바른 해결책으로 느껴지며, 비교표에서도 명확히 드러납니다: 해당 RPC 제거 작업에서 2,450만 토큰이 26.2만 토큰으로 줄었더군요. 대규모 gRPC 환경이 아닌 더 작은 코드베이스에서도 이러한 효과가 유지되는지, 아니면 이것이 정말"
+    },
+    {
+     "author": "Amjad Afanah",
+     "is_maker": true,
+     "text": "@jcbuilds Great question! The value of ProtoMap definitely compounds as the codebase and microservices estate grow, but it's not just a scale play. In our detailed benchmark (https://hounddog.ai/protomap-benchmark/), certain queries, like finding all dependents of a service or the blast radius of a field name change, show significantly greater savings than others. For those queries, you can expect substantial ROI (potentially 5X or more in time and cost), even with a relatively smaller codebase ",
+     "kr": "@jcbuilds 훌륭한 질문입니다! ProtoMap의 가치는 코드베이스와 마이크로서비스 규모가 커질수록 확실히 복리로 증가하지만, 단순히 규모만의 문제는 아닙니다. 상세 벤치마크(https://hounddog.ai/protomap-benchmark/)에 따르면 특정 쿼리(예: 서비스의 모든 종속 항목 찾기 또는 필드명 변경의 영향 반경 확인)는 다른 작업보다 훨씬 더 큰 절감 효과를 보여줍니다. 이러한 쿼리의 경우 상대적으로 작은 코드베이스에서도 상당한 ROI(시간 및 비용 측면에서 5배 이상 잠재력)를 기대할 수 있습니다."
+    },
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "benchmark is kinda the best case for a graph tho. would be cool to see one where the agent has to actually ship the change after",
+     "kr": "하지만 벤치마크는 그래프 입장에서 일종의 최상의 시나리오에 가깝긴 합니다. 에이전트가 그 이후에 변경 사항을 실제로 배포까지 해야 하는 사례도 보면 멋질 것 같네요."
+    },
+    {
+     "author": "Amjad Afanah",
+     "is_maker": true,
+     "text": "@igorblink Fair point! Would love to benchmark that too. Generating code is the easy part for agents. Understanding context, service dependencies, and relationships, especially in large monorepos or complex microservices estates, is where agents waste a ton of tokens on discovery. That's the problem we're tackling with ProtoMap.",
+     "kr": "@igorblink 일리 있는 지적입니다! 그 부분도 꼭 벤치마크해 보고 싶네요. 에이전트에게 코드 생성은 쉬운 부분입니다. 특히 대규모 모노레포나 복잡한 마이크로서비스 환경에서 컨텍스트, 서비스 의존성, 관계를 파악하는 과정에서 에이전트는 탐색에 엄청난 양의 토큰을 낭비합니다. 그것이 바로 저희가 ProtoMap으로 해결하고자 하는 문제입니다."
+    },
+    {
+     "author": "Amjad Afanah",
+     "is_maker": true,
+     "text": "@neerajnathany It works across repos for sure! Even if your org has hundreds of microservices spread across different repos, ProtoMap captures all those dependencies and their code owners. So when you ask your agent to change an API, service, or field, it already understands the relationships, potential impact, and who owns what, without wasting tokens on discovery.",
+     "kr": "@neerajnathany 여러 저장소에 걸쳐 확실하게 동작합니다! 조직 내에 서로 다른 저장소에 분산된 수백 개의 마이크로서비스가 있더라도 ProtoMap은 모든 의존성과 코드 소유자를 캡처합니다. 따라서 에이전트에게 API, 서비스 또는 필드를 변경하도록 요청하면 탐색에 토큰을 낭비하지 않고도 관계, 잠재적 영향, 소유자가 누구인지 이미 이해하고 있게 됩니다."
+    }
+   ],
+   "slug": "hounddog-ai-static-code-scanner-2"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
