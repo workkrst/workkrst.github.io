@@ -1,5 +1,13 @@
 window.PH_DAILY_LIST = [
   {
+    "date": "2026-11-11",
+    "url": "2026-11-11/",
+    "top_product": "Alsona",
+    "count": 5,
+    "upvotes_total": 1291,
+    "comments_total": 60
+  },
+  {
     "date": "2026-11-10",
     "url": "2026-11-10/",
     "top_product": "Product Hunt",

@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-11-11</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-11-11 · Top 5 · 수집 댓글 60개 · 수집 2026-11-11 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-11-11",
+ "collected_at": "2026-11-11 12:30 KST",
+ "summary": "영업, 유료 광고, 회계, QA 테스트 등 특정 실무에 특화된 버티컬 AI 에이전트와 인간 사고를 돕는 글쓰기 도구가 상위권을 형성했습니다. 커뮤니티에서는 단순 일임 대신 판단 근거 출처 제공과 사전 승인 절차를 통한 신뢰성 확보가 공통 관심사로 다뤄졌습니다. 아울러 AI가 인간의 작업을 단순히 대체하기보다는 사용자의 의사결정과 지성을 보완하는 안전한 협업 구조에 공감대가 형성되었습니다.",
+ "notable": [
+  {
+   "slug": "alsona",
+   "why": "단순 콜드 아웃바운드 목록 생성이 아닌 32가지 기업 구매 시그널과 근거 원본을 투명하게 연결해 영업 타이밍을 포착하도록 설계되어 1위를 기록했습니다. 댓글에서는 무작위 대량 발송 대신 명확한 연락 이유를 제시하는 투명성과 타깃 직급별 시그널 유효성에 대한 실무자들의 열띤 토론이 이어졌습니다."
+  },
+  {
+   "slug": "medium",
+   "why": "AI가 글을 대신 생성해 주는 범람 속에서 오히려 인간의 사고력을 단련하고 직접 글을 쓰도록 자극하는 에이전틱 노트북을 선보여 큰 주목을 받았습니다. 커뮤니티에서는 인공지능에 생각을 전적으로 맡길 때 발생하는 뇌의 나태함을 경계하며, 인간 지성을 대체하지 않고 보강하는 방향성에 깊은 공감을 표했습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Alsona",
+   "tagline_en": "AI agents that turn buying signals into booked sales calls",
+   "tagline_kr": "구매 의향 시그널을 실제 영업 미팅으로 전환하는 AI 에이전트",
+   "image": "https://ph-files.imgix.net/fdfa2e91-beed-413d-8292-a9b9801f4c68.gif?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=293",
+   "categories": [
+    "AI sales tools"
+   ],
+   "upvotes": 389,
+   "comments_count": 91,
+   "maker": [
+    "Jaclyn VC",
+    "Paul Andrei",
+    "Andrei Breaz"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "영업 대상 잠재 고객 중 95%는 아웃바운드 연락 시점에 구매 준비가 되어 있지 않은 경우가 많습니다. Alsona는 채용, 투자 유치, 기술 스택 변경, 리뷰, 광고 집행 등 32가지 이상의 시그널을 실시간 추적하여 지금 구매 의향을 보이는 기업을 포착합니다. 수집된 시그널을 바탕으로 고객의 이상적 고객 프로필(ICP)과 대조해 점수를 매기고, 해당 기업에 연락해야 하는 구체적인 이유와 근거를 명확히 제시합니다. AI 에이전트는 이러한 시그널을 바탕으로 초개인화된 맞춤형 링크드인 및 이메일 아웃리치를 생성하여 구매 적기에 대화를 시작할 수 있도록 돕습니다. 이를 통해 영업 팀은 무작위 리스트에 의존하지 않고 지금 당장 구매할 준비가 된 5%의 잠재 고객과 성공적으로 미팅을 예약할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/alsona",
+   "website": "https://alsona.com/",
+   "comment_summary": "커뮤니티는 단순 리드 목록 나열이 아니라 연락해야 하는 구체적인 이유와 근거 출처를 제시하는 투명성에 대해 높은 호응을 보였습니다. 특히 아웃바운드 타이밍의 중요성과 32개 시그널 중 어떤 시그널이 효과적인지에 대한 질문이 이어졌으며, 메이커는 타깃 고객과 직급에 따라 효과적인 시그널 조합이 달라진다고 설명했습니다. 또한 사용자가 직접 발송 일정을 세밀하게 제어하거나 사전 승인 모드를 통해 안전하게 아웃리치를 진행할 수 있다는 점이 강조되었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Jaclyn VC",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt, I’m Jaclyn, co-founder and CEO of Alsona. Alsona finds the companies that are in market right now, so you can reach them before your competitors even know they’re looking. We built it for people who do their own outbound and secretly hate it. If your current strategy is buying a list and hoping somebody on it needs you this week, hi, this is for you. Quick confession: our team built the first cloud-based LinkedIn automation platform and sold it back in 2021. So yeah, we’re pa",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요, Alsona의 공동 창업자이자 CEO인 Jaclyn입니다. Alsona는 현재 구매 의향이 있는 시장 내 기업들을 찾아내어, 경쟁사들이 눈치채기도 전에 먼저 도달할 수 있도록 돕습니다. 저희는 직접 아웃바운드 영업을 진행하면서도 속으로는 이를 정말 부담스러워하는 분들을 위해 이 제품을 개발했습니다. 만약 현재 여러분의 전략이 무작위 리스트를 구매한 뒤 이번 주에 누군가 우리 서비스를 필요로 하길 바라는 방식이라면, 바로 여러분을 위한 도구입니다. 한 가지 솔직히 말씀드리자면, 저희 팀은 최초의 클라우드 기반 링크드인 자동화 플랫폼을 구축해 2021년에 매각한 경험이 있습니다. 그만큼 저희는 이 분야에 진심입니다."
+    },
+    {
+     "author": "Gabe Moronta",
+     "is_maker": false,
+     "text": "@jaclyn\\_vc congrats! Wish you luck with this launch",
+     "kr": "@jaclyn_vc 축하드립니다! 이번 런칭에 좋은 결과가 있기를 바랍니다."
+    },
+    {
+     "author": "Jaclyn VC",
+     "is_maker": true,
+     "text": "@mogabr Thanks, Gabe! I really appreciate your support :)",
+     "kr": "@mogabr 고마워요, Gabe! 응원해 주셔서 정말 감사합니다 :)"
+    },
+    {
+     "author": "Mae Twyman",
+     "is_maker": false,
+     "text": "I like that Alsona explains why a company is worth contacting instead of just giving you another list of leads.",
+     "kr": "Alsona가 단순한 리드 목록만 넘겨주는 대신, 왜 그 기업에 연락해야 하는지에 대한 이유를 설명해 주는 점이 마음에 드네요."
+    },
+    {
+     "author": "Jaclyn VC",
+     "is_maker": true,
+     "text": "@mae\\_twyman Alsona provides detailed evidence behind every signal and opportunity score. We felt this was really important not just for data and insights, but transparency!",
+     "kr": "@mae_twyman Alsona는 모든 시그널과 기회 점수 이면에 있는 구체적인 근거를 제공합니다. 이는 단순한 데이터와 인사이트뿐만 아니라 투명성을 위해서도 정말 중요하다고 생각했습니다!"
+    },
+    {
+     "author": "Paul Andrei",
+     "is_maker": true,
+     "text": "@mae\\_twyman Thanks! Each signal links directly to its source, such as a job posting, ad, or LinkedIn post, along with the time it was detected. This way, you can check it out in seconds and decide for yourself if it's worth reaching out to.",
+     "kr": "@mae_twyman 감사합니다! 각 시그널은 감지된 시점과 함께 채용 공고, 광고, 링크드인 게시물 등 해당 원본 출처로 바로 연결됩니다. 이를 통해 몇 초 만에 직접 확인하고 연락할 가치가 있는지 판단할 수 있습니다."
+    },
+    {
+     "author": "Eldar Miensutov",
+     "is_maker": false,
+     "text": "we do our own outbound at the agency and timing is pretty much everything, a lead from last week is already talking to 3 other studios lol. out of the 32 signals which one ends up booking the most calls",
+     "kr": "저희 에이전시에서도 직접 아웃바운드를 하고 있는데 타이밍이 거의 전부더라고요. 지난주에 발굴한 리드는 벌써 다른 에이전시 3곳과 대화 중이더군요 ㅎㅎ. 32가지 시그널 중에서 실제로 미팅 예약으로 가장 많이 이어지는 시그널은 무엇인가요?"
+    },
+    {
+     "author": "Andrei Breaz",
+     "is_maker": true,
+     "text": "@eldarmiensutov 100%, timing makes a huge difference. Some signals work for pretty much everyone, like people engaging with competitors or industry experts, or commenting on relevant LinkedIn posts. Others only stand out for certain users, depending on their ICP and what they’re selling. Something that works well on founders at small companies can behave very differently on a VP at a 1,000+ person company. In can also be a combination of multiple signals, not just one. When a few relevant signal",
+     "kr": "@eldarmiensutov 백번 동의합니다, 타이밍이 정말 큰 차이를 만들어내죠. 경쟁사나 업계 전문가와의 교류, 혹은 관련 링크드인 게시물에 댓글을 다는 등의 시그널은 누구에게나 효과적입니다. 반면 타깃 ICP나 판매하는 제품에 따라 특정 사용자에게만 두드러지게 반응하는 시그널도 있습니다. 소규모 기업 대표에게 효과적인 방식이 1,000명 이상 규모 기업의 VP에게는 전혀 다르게 작동할 수 있으니까요. 또한 단일 시그널뿐만 아니라 여러 시그널의 조합으로 나타나기도 합니다. 여러 관련 시그널이 함께 감지될 때 효과는 더욱 강력해집니다."
+    },
+    {
+     "author": "Jaclyn VC",
+     "is_maker": true,
+     "text": "@eldarmiensutov I always tell people that it really comes down to the company. Every single company is very unique in terms of what signals will yield the most relevant results. I am always happy to hop on a call and go through the signals that we see working best in your specific industry!",
+     "kr": "@eldarmiensutov 저는 늘 결국 회사마다 다르다고 말씀드립니다. 어떤 시그널이 가장 유의미한 결과를 가져올지는 개별 기업마다 매우 고유합니다. 원하신다면 언제든 미팅을 통해 귀사의 특정 산업군에서 가장 효과적인 시그널들을 함께 살펴봐 드릴 수 있습니다!"
+    },
+    {
+     "author": "Hamza Afzal Butt",
+     "is_maker": false,
+     "text": "Can users choose when to reach out or does alsona suggest the best time automatically? Congrats @jaclyn\\_vc & team! Good luck with your launch 🙌🏻",
+     "kr": "사용자가 연락 시점을 직접 선택할 수 있나요, 아니면 Alsona가 최적의 시간을 자동으로 제안하나요? @jaclyn_vc 님과 팀원분들 런칭 축하드립니다! 좋은 결과 있기를 응원해요 🙌🏻"
+    },
+    {
+     "author": "Jaclyn VC",
+     "is_maker": true,
+     "text": "@hamza\\_afzal\\_butt Users set their own schedule, based on the time zone of their audience, and Alsona will stagger outreach throughout that window. Thanks for the support!",
+     "kr": "@hamza_afzal_butt 사용자가 타깃 고객의 시간대를 기준으로 자체 일정을 설정하면, Alsona가 해당 시간대에 맞춰 순차적으로 아웃리치를 분산 발송합니다. 응원해 주셔서 감사합니다!"
+    },
+    {
+     "author": "Paul Andrei",
+     "is_maker": true,
+     "text": "@jaclyn\\_vc @hamza\\_afzal\\_butt Thanks Hamza! If you want full control, you can switch an agent to review mode. Alsona drafts every message, but nothing goes out until you approve it.",
+     "kr": "@jaclyn_vc @hamza_afzal_butt 감사합니다 Hamza! 모든 과정을 완벽히 제어하고 싶으시다면 에이전트를 '검토 모드(review mode)'로 전환할 수 있습니다. Alsona가 모든 메시지 초안을 작성하지만, 사용자가 직접 승인하기 전까지는 발송되지 않습니다."
+    }
+   ],
+   "slug": "alsona"
+  },
+  {
+   "name": "Maxma",
+   "tagline_en": "The 24/7 AI teammate that scales your paid ad performance",
+   "tagline_kr": "유료 광고 성과를 극대화하는 24시간 연중무휴 AI 팀원",
+   "image": "https://ph-files.imgix.net/2685ae33-68b0-442b-868c-e5497f482278.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=367",
+   "categories": [
+    "Advertising tools",
+    "Marketing automation platforms",
+    "Shopify Apps"
+   ],
+   "upvotes": 276,
+   "comments_count": 35,
+   "maker": [
+    "Yurong Fan"
+   ],
+   "price_model": "Payment Required",
+   "price_detail": null,
+   "desc_kr": "Maxma는 마케터의 역량을 10배로 확장해 주는 유료 광고 전문 AI 플랫폼입니다. 성과 분석, 광고 소재 및 랜딩 페이지 제작, 크로스 채널 캠페인 집행과 최적화, 추적 및 성과 리포팅까지 유료 광고의 전 과정을 엔드투엔드로 처리합니다. Slack 내에서 동료처럼 상주하며 온디맨드 또는 24시간 자율적으로 동작하고, 예산 및 소재 변경 사항을 제안하여 사전 승인을 받도록 설계되었습니다. Google, Meta, TikTok, LinkedIn, ChatGPT 광고 등 다양한 매체 전반에서 측정 가능하고 실질적인 성장을 견인합니다. 이를 통해 전문 미디어 바이어나 분석가가 부족한 소규모 팀도 한계 없이 마케팅을 확장할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/maxma-2",
+   "website": "https://maxma.ai/",
+   "comment_summary": "창업자가 P&G와 Asana에서의 마케팅 사이언티스트 경험을 바탕으로 유료 광고 집행에 필요한 팀 전체의 역할을 AI 에이전트로 구현했다고 소개했습니다. 사용자들은 예산 지출의 안전성을 위한 사전 승인 프로세스, 성과 측정 및 증분(incrementality) 테스트 방식, 과금 모델 등에 대해 질문을 던졌습니다. 메이커는 광고 집행 후 크리에이티브 피로도 모니터링과 지속적인 최적화가 핵심 차별점이며, 기본 구독료 월 99달러부터 시작한다고 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Yurong Fan",
+     "is_maker": true,
+     "text": "📌 Hi everyone, I'm Yurong, founder of Maxma. I spent over a decade in paid media inside enterprise marketing teams at companies like P&G and Asana — first as a marketer, then as a marketing scientist. I saw how much of their growth came from paid media. But it's much harder for everyone else to make it work, and it isn't about budget — you can start with $100. It's that doing it well takes media buyers, creatives, analysts, ops, and someone technical. A whole team. Most teams never have that. I ",
+     "kr": "📌 여러분 안녕하세요, Maxma의 창업자 Yurong입니다. 저는 P&G와 Asana 같은 기업의 마케팅 팀에서 마케터이자 마케팅 사이언티스트로 10년 넘게 유료 미디어 분야를 담당했습니다. 기업의 성장이 유료 광고에서 얼마나 많이 나오는지 직접 확인했죠. 하지만 다른 팀들이 이를 성공시키기는 훨씬 어려운데, 이는 예산 문제라기보다는(100달러로도 시작할 수 있습니다), 제대로 운영하려면 미디어 바이어, 크리에이티브 기획자, 데이터 분석가, 운영자, 테크 전문가까지 팀 전체가 필요하기 때문입니다. 대부분의 팀은 이런 인력을 갖추지 못하고 있죠."
+    },
+    {
+     "author": "Pedro Thomaz",
+     "is_maker": false,
+     "text": "Congrats on the launch, Yurong! Proposing changes for approval instead of just acting feels like the right call for ad spend. How does Maxma decide when to act proactively versus wait to be asked in Slack, and can a team cap how much it changes budgets in a day?",
+     "kr": "런칭 축하드려요, Yurong! 광고비 지출에 있어서 임의로 실행하지 않고 승인을 받도록 변경 사항을 제안하는 방식은 정말 현명한 선택 같습니다. Maxma는 능동적으로 제안할 시점과 Slack에서 요청을 기다릴 시점을 어떻게 결정하나요? 그리고 팀에서 하루 예산 변경 상한을 설정할 수도 있나요?"
+    },
+    {
+     "author": "Yurong Fan",
+     "is_maker": true,
+     "text": "Hi@mr\\_pft , Good question. In the product you can set up a specialist to work proactively within a scope, toward a goal — managing an ad channel, say, or minimizing CPA on a campaign. It sends proposals for your approval in the Maxma app, or to Slack if you have connected it. You can also ping the specialist any time, or brief it on something new. Without setting up a specialist, you can use Maxma on demand by just asking for what you need, in the web app or from Slack. Though it won't have the",
+     "kr": "안녕하세요 @mr_pft 님, 좋은 질문입니다. 제품 내에서 특정 광고 채널 관리나 캠페인 CPA 최소화 같은 목표와 범위에 맞춰 전문 에이전트가 능동적으로 작업하도록 설정할 수 있습니다. 에이전트는 Maxma 앱이나 연동된 Slack으로 승인 요청 제안을 보냅니다. 물론 언제든 에이전트를 호출하거나 새로운 작업을 지시할 수도 있습니다. 전담 에이전트를 설정하지 않더라도 웹 앱이나 Slack에서 필요한 것을 요청하여 온디맨드 방식으로 Maxma를 사용할 수도 있습니다."
+    },
+    {
+     "author": "Pedro Thomaz",
+     "is_maker": false,
+     "text": "@yurong\\_fan1 Thanks Yurong, that makes sense. If nothing changes without approval, the approval itself is the cap, which is the safest version. Being able to start on demand and add a proactive specialist later sounds like a gentle way in. Good luck with the rest of the launch!",
+     "kr": "@yurong_fan1 답변 감사합니다, Yurong. 납득이 되네요. 승인 없이는 아무것도 바뀌지 않는다면 승인 과정 자체가 안전장치(캡)가 되니 가장 안전한 방식이군요. 온디맨드로 시작해서 나중에 능동형 전문 에이전트를 추가할 수 있다는 점도 부담 없이 도입하기 좋아 보입니다. 남은 런칭도 잘 마무리하시길 바랍니다!"
+    },
+    {
+     "author": "Silvia O'Dwyer",
+     "is_maker": false,
+     "text": "Will this support AEO/GEO in the future? This is a cool product - like how you can monitor ad spend like this and get those insights. Also, on the landing page, if I am scrolling the \"Watch it do the work\" animation demo, I would like it to stay paused or the scroll bar to remain on the item as I am scrolling. I saw there's a pause button, but not everyone might click it. Just thought I'd point it out, I like the animation and wanna keep reading lol",
+     "kr": "향후 AEO/GEO도 지원할 계획이 있으신가요? 광고 지출을 모니터링하고 인사이트를 얻을 수 있다는 점에서 정말 멋진 제품이네요. 그리고 랜딩 페이지에서 '작업 과정 보기' 애니메이션 데모를 스크롤할 때 일시정지 상태를 유지하거나 스크롤바가 해당 항목에 고정되면 좋겠습니다. 일시정지 버튼이 있긴 하지만 모두가 클릭하는 건 아니니까요. 애니메이션이 마음에 들어서 계속 읽어보려다 보니 의견 남겨봅니다 ㅎㅎ"
+    },
+    {
+     "author": "Yurong Fan",
+     "is_maker": true,
+     "text": "Thanks@silvia\\_odwyer1 for the landing page suggestion — noted, and we will get it updated. On AEO/GEO: no plans to go there in the foreseeable future. Paid media on its own is a big, complicated problem that AI can make genuinely better, and it is where our team's experience sits — so we would rather go deep there than spread across both.",
+     "kr": "@silvia_odwyer1 랜딩 페이지 피드백 감사합니다. 잘 기록해 두었으며 업데이트하도록 하겠습니다. AEO/GEO의 경우 당분간은 지원 계획이 없습니다. 유료 미디어 자체만으로도 AI가 실질적으로 개선할 수 있는 매우 크고 복잡한 문제이며 저희 팀의 전문성이 가장 집중된 분야이므로, 여러 영역으로 분산되기보다는 이곳에 더 깊이 파고들고자 합니다."
+    },
+    {
+     "author": "Cruise Chen",
+     "is_maker": false,
+     "text": "actually just curious - how would the results be measured by using maxma?",
+     "kr": "궁금한 점이 있는데, Maxma를 사용할 때 성과는 어떻게 측정되나요?"
+    },
+    {
+     "author": "Yurong Fan",
+     "is_maker": true,
+     "text": "Hi @cruise\\_chen, thanks for the question. Tell me if you meant something else, but I will take it as how Maxma measures ad performance. It depends on what you connect. With only an ad platform connected, the conversions that platform reports are the primary source. Connect Google Analytics as well and the agent reconciles the two instead of taking either at face value. Separately from attribution, Maxma can run geo incrementality tests — those measure the conversions your ads actually caused, r",
+     "kr": "안녕하세요 @cruise_chen 님, 질문 감사합니다. 다른 의도였다면 말씀해 주시되, Maxma가 광고 성과를 측정하는 방식에 대한 질문으로 이해하고 답변드리겠습니다. 연동된 도구에 따라 달라집니다. 광고 플랫폼만 연결된 경우 해당 플랫폼이 보고하는 전환이 기본 데이터가 됩니다. Google 애널리틱스까지 연동하면 에이전트가 한쪽 수치만 맹신하지 않고 두 데이터를 교차 검증합니다. 기여 모델 분석과 별개로 Maxma는 지역별 증분(geo incrementality) 테스트를 실행하여 광고가 실제로 유발한 전환을 정밀하게 측정할 수도 있습니다."
+    },
+    {
+     "author": "Wendy",
+     "is_maker": false,
+     "text": "How does pricing work? Credit or a percentage of ad spend?",
+     "kr": "가격 정책은 어떻게 운영되나요? 크레딧 기반인가요, 아니면 광고 지출액의 일정 비율인가요?"
+    },
+    {
+     "author": "Yurong Fan",
+     "is_maker": true,
+     "text": "Hi @wendyba, it is a subscription plus usage credits if you go past what the plan includes. Plans start at $99 a month with full breakdown here: https://maxma.ai/pricing.",
+     "kr": "안녕하세요 @wendyba 님, 기본 정기 구독 방식이며 플랜에 포함된 사용량을 초과할 경우 사용 크레딧이 추가되는 구조입니다. 플랜은 월 99달러부터 시작하며 상세 내용은 https://maxma.ai/pricing 에서 확인하실 수 있습니다."
+    },
+    {
+     "author": "Amy Wang",
+     "is_maker": false,
+     "text": "Congrats! How is this different from the AI tools that just create and launch ads?",
+     "kr": "축하드립니다! 단순히 광고를 제작하고 집행해 주는 기존 AI 툴들과는 어떻게 다른가요?"
+    },
+    {
+     "author": "Yurong Fan",
+     "is_maker": true,
+     "text": "@xwang146 Good question. The short version: those tools finish when the ad goes live. But that is just the beginning of the job, and it is never one-off. Maxma lets you manage campaigns continuously even after ads are launched — monitoring creative fatigue, rotating in new creative, learning from what performs, and getting better with every cycle. You can turn your best playbook into a repeatable workflow, or spin up an AI specialist to manage the entire creative lifecycle proactively — both bui",
+     "kr": "@xwang146 좋은 질문입니다. 간단히 요약하자면, 기존 툴들은 광고가 라이브되는 시점에 역할이 끝납니다. 하지만 광고 라이브는 업무의 시작일 뿐이며 결코 일회성으로 끝나지 않습니다. Maxma는 광고가 집행된 이후에도 소재 피로도 모니터링, 신규 크리에이티브 교체, 성과 학습 등을 통해 캠페인을 지속적으로 관리하며 매 주기마다 성과를 개선합니다. 팀의 최고 플레이북을 반복 가능한 워크플로우로 전환하거나, 크리에이티브 라이프사이클 전체를 능동적으로 관리하는 AI 전문 에이전트를 가동할 수 있습니다."
+    }
+   ],
+   "slug": "maxma-2"
+  },
+  {
+   "name": "Medium",
+   "tagline_en": "A place to read, write, and deepen your understanding",
+   "tagline_kr": "생각을 읽고, 쓰고, 깊이를 더하는 글쓰기 플랫폼",
+   "image": "https://ph-files.imgix.net/2f27c64b-8d3d-4215-be5c-83474f332268.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "categories": [
+    "Blogging platforms",
+    "Writing assistants",
+    "News"
+   ],
+   "upvotes": 217,
+   "comments_count": 36,
+   "maker": [
+    "Tony Stubblebine"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Medium은 사람 중심의 진솔한 이야기를 읽고 기록할 수 있는 대표적인 글쓰기 플랫폼입니다. 메일링 리스트나 많은 팔로워를 사전에 구축하지 않아도 전 세계 독자들과 지식 및 통찰을 자유롭게 나눌 수 있습니다. 혼란스럽고 소음이 가득한 인터넷 환경 속에서 Medium은 조용하면서도 깊은 통찰력을 선사하는 공간을 지향합니다. 간결하고 아름다운 인터페이스와 협업 기능을 통해 작성자가 전하고자 하는 메시지에 꼭 맞는 독자를 찾을 수 있도록 지원합니다. 이번 런칭에서는 글을 쓰는 과정을 직접 지원하고 사고를 확장해 주는 새로운 에이전틱 노트북 'TK'를 선보였습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/medium",
+   "website": "http://medium.com/",
+   "comment_summary": "Medium의 CEO Tony Stubblebine이 글쓰기를 통한 사고의 확장을 돕는 새로운 에이전틱 노트북 'TK' 출시를 알리며 큰 호응을 얻었습니다. 초기 사용자들과 베테랑 작가들은 AI가 인간의 생각을 대체하는 대신 사고력을 훈련하고 깊이 있는 글쓰기를 자극한다는 점에 깊은 공감을 표했습니다. 팀원들과 커뮤니티는 글쓰기라는 본질적인 행위의 가치를 재발견하게 해주는 도구라며 긍정적인 평가를 전했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Tony Stubblebine",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 I’m Tony, CEO of Medium. TK is our new **agentic notebook**, built by people who love to write, for a world that now runs on words. Every AI tool you use gets better the more of your thinking it can read, so every word you write, even the messy ones, works on your behalf. Chat apps can help you research, but TK helps you write. Three simple steps level up your writing: **craft**, **compound**, **create**. **1\\. Craft**. Writing is thinking. Craft your best writing distractio",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요 👋 Medium의 CEO Tony입니다. TK는 글쓰기를 사랑하는 사람들이 만든 새로운 **에이전틱 노트북(agentic notebook)**으로, 언어로 움직이는 세상을 위해 탄생했습니다. 사용하는 모든 AI 도구는 여러분의 생각을 더 많이 읽어낼수록 똑똑해지므로, 다듬어지지 않은 거친 글이라도 여러분이 작성하는 모든 단어는 여러분을 대신해 일하게 됩니다. 채팅 앱은 조사를 도울 수 있지만, TK는 직접 글을 쓸 수 있도록 돕습니다. 글쓰기 역량을 높이는 세 가지 단계는 바로 **다듬기(Craft)**, **축적하기(Compound)**, **창작하기(Create)**입니다. 첫 번째, 다듬기입니다. 글을 쓰는 것은 곧 생각하는 것입니다. 집중을 방해받지 않고 최상의 글을 써 내려가 보세요."
+    },
+    {
+     "author": "Chris Messina",
+     "is_maker": false,
+     "text": "Hunter @Medium's back, baby! TK is a super compelling entry into the daily note-taking world, with an agentic, mind-amplifying twist. Lately I’ve been pondering how to build _a harness for my mind_, because I can already feel the _sloppification (_🫠) when I let AI do too much of my thinking. Start with a messy daily note at the top of your day, work through the thought, then get feedback from readers you trust. If you lean in, you can think of TK as a kind of gym for your mind, helping you get t",
+     "kr": "헌터 @Medium이 돌아왔군요! TK는 생각을 확장해 주는 에이전틱 기능을 더해 일상적인 노트 필기 세계에 매우 매력적으로 진입했습니다. 최근 저는 AI에게 생각을 너무 많이 맡겼을 때 오는 '뇌의 나태함(🫠)'을 실감하면서, 어떻게 하면 '내 생각을 단련할 고삐'를 만들 수 있을지 고민해 왔습니다. 하루의 시작에 거친 일일 노트를 작성하고 생각을 정리한 뒤 신뢰하는 독자들로부터 피드백을 받아보세요. 집중해 보면 TK는 생각을 단련시켜 주는 일종의 '마인드 체육관'으로 여길 수 있습니다."
+    },
+    {
+     "author": "Tony Stubblebine",
+     "is_maker": true,
+     "text": "@chrismessina This is exactly the way! The entire agentic universe is begging for more human intelligence and if you want to harness it all you have to do is write more.",
+     "kr": "@chrismessina 바로 그 방식입니다! 전체 에이전트 생태계는 더 많은 인간 지성을 갈망하고 있으며, 이를 온전히 활용하기 위해 필요한 것은 바로 글을 더 많이 쓰는 것입니다."
+    },
+    {
+     "author": "Thomas Knoll",
+     "is_maker": false,
+     "text": "I wish there were a way to say this that wouldn't sound so cheesy: I remember what it felt like to get my blogger account, and to be able to write about muddy, messy, or even mundane things, and turn strangers into lifelong friends because of words. I remember what it felt like to get my twttr account, and turn strangers into lifelong friends because of words. These past months of the TK beta have felt exactly the same. And, yet again, I feel complete strangers becoming lifelong friends, just be",
+     "kr": "너무 진부하게 들리지 않게 표현하고 싶은데요. 처음 블로거 계정을 만들고 거칠고 다듬어지지 않은 일상적인 글을 쓰며 글이라는 매개체로 낯선 사람들을 평생의 친구로 만들었던 그때의 감동이 기억납니다. 트위터 계정을 처음 만들었을 때도 마찬가지였죠. 지난 몇 달간의 TK 베타를 사용하는 동안 정확히 같은 감정을 느꼈습니다. 오직 글을 통해서 완전히 낯선 이들이 평생의 친구가 되어가는 것을 다시금 느끼고 있습니다."
+    },
+    {
+     "author": "Kassandra Mendes",
+     "is_maker": false,
+     "text": "Thanks for being an early adopter,@thomasknoll ! Your feedback and experience has helped us shape the product into something even better!",
+     "kr": "초기 사용자로 함께해 주셔서 감사합니다, @thomasknoll 님! 보내주신 피드백과 경험 덕분에 제품을 한층 더 훌륭하게 발전시킬 수 있었습니다!"
+    },
+    {
+     "author": "Thomas Knoll",
+     "is_maker": false,
+     "text": "@kassandra\\_mendes 💛💜💚",
+     "kr": "@kassandra_mendes 💛💜💚"
+    },
+    {
+     "author": "Anil Dash",
+     "is_maker": false,
+     "text": "I think there’s probably no cohort online that’s more skeptical about the rise of LLMs than writers, which I say as someone who’s published a few million words online. So it’s a pretty remarkable testament to the thought and care that the Medium team put into TK that they’ve gotten the balance exactly right for what real writers might want to see out of an “AI” tool that actually does what we’d want. The biggest thing for me is that this isn’t an app where I prompt the AI, it’s where the AI prom",
+     "kr": "온라인에 수백만 단어의 글을 발행해 온 사람으로서 말씀드리자면, LLM의 부상에 대해 작가들만큼 회의적인 집단도 없을 것입니다. 그렇기에 Medium 팀이 TK에 쏟은 고민과 정성은 실제 작가들이 진정으로 원하는 'AI 도구'의 균형점을 정확히 잡아냈다는 놀라운 증거입니다. 제게 가장 크게 다가온 점은 사용자가 AI에게 프롬프트를 입력하는 앱이 아니라, AI가 인간에게 글을 쓰도록 자극을 준다는 점입니다."
+    },
+    {
+     "author": "Tony Stubblebine",
+     "is_maker": true,
+     "text": "@anildash You are right on. I'm not sure why other products struggle to understand the job to be done, which is to elevate human thought rather than replace it.",
+     "kr": "@anildash 정확한 지적이십니다. 다른 제품들은 왜 인간의 생각을 대체하는 것이 아니라 오히려 격상시켜야 한다는 본질적인 과제를 이해하는 데 어려움을 겪는지 모르겠습니다."
+    },
+    {
+     "author": "Cassie McDaniel",
+     "is_maker": false,
+     "text": "@anildash You said it exactly right. Still fightin' the good fight! 🫡",
+     "kr": "@anildash 정말 정확히 말씀해 주셨네요. 저희는 여전히 가치 있는 싸움을 이어가고 있습니다! 🫡"
+    },
+    {
+     "author": "Zack Shapiro",
+     "is_maker": false,
+     "text": "I've been using TK for a few months and have really been enjoying it. Go Tony and Team!",
+     "kr": "몇 달 동안 TK를 사용해 왔는데 정말 즐겁게 쓰고 있습니다. Tony 님과 팀원분들 파이팅입니다!"
+    },
+    {
+     "author": "Kassandra Mendes",
+     "is_maker": false,
+     "text": "Thanks@zackshapiro ! Glad to hear you're enjoying TK.",
+     "kr": "@zackshapiro 님 감사합니다! TK를 유용하게 쓰고 계시다니 정말 기쁘네요."
+    },
+    {
+     "author": "Moishe Lettvin",
+     "is_maker": false,
+     "text": "I'm one of the engineers on TK, so take this with the appropriate grains of salt, but I joined the team as someone who wrote in brief, sporadic bursts, very occasionally. I admit I was worried about joining Medium, a company built on writing, and the TK team, to build a product to write in, as someone who wasn't a habitual writer. Building TK, and using it, has made me a fierce believer in writing as a practice. At the most foundational level, writing is a way to think, and writing is also a way",
+     "kr": "저는 TK 엔지니어 중 한 명이라 약간 걸러 들으셔도 좋지만, 저는 원래 글을 아주 가끔 짧게만 쓰던 사람이었습니다. 습관적으로 글을 쓰는 사람이 아니었기에 글쓰기를 기반으로 세워진 Medium과 글쓰기 도구를 만드는 TK 팀에 합류할 때 걱정이 많았던 것도 사실입니다. 하지만 TK를 만들고 직접 사용하면서 글쓰기라는 실천에 대한 열렬한 신봉자가 되었습니다. 가장 근본적인 차원에서 글쓰기는 생각하는 방식이자 자신을 표현하는 방법입니다."
+    }
+   ],
+   "slug": "medium"
+  },
+  {
+   "name": "Latch.ai",
+   "tagline_en": "Automate complex accounting work without a single prompt",
+   "tagline_kr": "프롬프트 입력 없이 복잡한 회계 업무를 자동화하는 솔루션",
+   "image": "https://ph-files.imgix.net/9bbdfe71-f3be-4d1b-b1b9-200f28eefd9a.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "categories": [
+    "Accounting software",
+    "AI Workflow Automation"
+   ],
+   "upvotes": 212,
+   "comments_count": 46,
+   "maker": [
+    "Stefan Kalb",
+    "Aaron Pennell",
+    "Samantha Wobst",
+    "Jared Kofron",
+    "Emilie Thaler"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Latch는 반복적인 클릭 작업과 결산 업무에 지친 회계 실무자들을 위해 탄생한 자동화 도구입니다. 복잡한 프롬프트를 작성할 필요 없이 평소처럼 화면에서 작업을 수행하며 말로 설명하기만 하면 업무 방식을 학습합니다. 표준 운영 절차(SOP)에 기록되지 않는 3일 간의 매칭 유예 기간이나 수동 환율 조정과 같은 미묘한 예외 사항까지도 질문을 통해 정확히 파악합니다. 이를 바탕으로 사용자가 이미 사용하는 기존 업무 도구 내에서 매번 동일하고 정확하게 작업을 수행하는 AI 사이드킥을 생성합니다. 작업 중 규칙에 맞지 않는 상황이 발생하면 임의로 처리하지 않고 멈춰서 사람에게 확인을 요청하며, 모든 단계가 투명하게 기록되어 검토할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/latch-ai-2",
+   "website": "https://www.latch.ai/",
+   "comment_summary": "메이커 팀은 긴 작업 비디오와 음성 설명 속에서 핵심 규칙과 예외 사항을 포착해 내는 멀티 에이전트 아키텍처를 소개했습니다. 커뮤니티에서는 Stripe 및 Xero 등 기존 회계 툴과의 연동 여부, 유럽 지역 지원 가능성, 회계 외 분야로의 확장성에 대해 많은 관심을 보였습니다. 팀은 Stripe 연동이 이미 준비되어 있으며, 사용자를 대체하는 것이 아니라 귀찮은 반복 작업을 대신 처리하고 최종 판단 권한을 사용자에게 남겨두는 안전한 설계 원칙을 강조했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Stefan Kalb",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt! I’m Stefan, co-founder and CEO of Latch. AI has come with a lot of big promises, and yet many of us still spend hours pointing and clicking: pulling reports, moving data between systems, checking one number against another. That kind of work looks easy to automate until you dig in and find the nuance underneath: the exceptions, the edge cases, the judgment calls nobody wrote down. I’ve built and sold two companies, and in both, some of our most capable people lost hours every ",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요! Latch의 공동 창업자이자 CEO Stefan입니다. AI가 수많은 장밋빛 약속을 가져왔지만, 여전히 많은 이들이 리포트를 추출하고, 시스템 간 데이터를 옮기고, 숫자를 대조하며 마우스를 클릭하는 데 수시간을 보내고 있습니다. 이런 작업은 겉보기엔 자동화하기 쉬워 보이지만, 막상 파고들면 문서화되지 않은 수많은 예외, 엣지 케이스, 사람의 판단 등 미묘한 뉘앙스가 숨어 있습니다. 저는 두 번의 창업과 매각을 경험했는데, 두 회사 모두 가장 유능한 인재들이 매일 이런 작업에 귀중한 시간을 뺏기곤 했습니다."
+    },
+    {
+     "author": "Gabriel Del Salto",
+     "is_maker": false,
+     "text": "Congrats on the launch! We're an early-stage startup using Stripe + Xero, but haven't managed to get everything syncing properly. Ideally, we'd love to automate our bookkeeping so every transaction in Stripe Treasury gets recorded and categorized correctly in Xero, without having to manually review everything. Could Latch help us set up and automate a workflow like this?",
+     "kr": "런칭 축하드립니다! 저희는 Stripe와 Xero를 사용하는 초기 스타트업인데, 모든 데이터를 제대로 동기화하는 데 어려움을 겪고 있습니다. 이상적으로는 일일이 수동 검토하지 않고도 Stripe Treasury의 모든 거래가 Xero에 올바르게 기록되고 분류되도록 장부 관리를 자동화하고 싶은데요. Latch가 이러한 워크플로우를 구축하고 자동화하는 데 도움이 될 수 있을까요?"
+    },
+    {
+     "author": "Aaron Pennell",
+     "is_maker": true,
+     "text": "@gabrieldelsalto Yes we currently have compatibility with Xero and a host of other applications. We are working toward adding Stripe. One of our engineers will respond soon to this thread on how close we are with Stripe compatibility. @stefankalb",
+     "kr": "@gabrieldelsalto 네, 현재 Xero를 비롯한 다양한 애플리케이션과의 호환성을 지원하고 있습니다. Stripe 지원도 작업 중입니다. Stripe 호환성 완료 일정에 대해 저희 엔지니어가 곧 이 스레드에 답변드릴 예정입니다. @stefankalb"
+    },
+    {
+     "author": "Gabriel Del Salto",
+     "is_maker": false,
+     "text": "@aaron\\_pennell That's great to hear! Stripe integration would definitely make this interesting for us. Looking forward to hearing from your engineer. Thanks for the quick reply!",
+     "kr": "@aaron_pennell 좋은 소식이네요! Stripe 연동이 지원된다면 저희에게 정말 매력적인 솔루션이 될 것 같습니다. 엔지니어분의 답변 기대하겠습니다. 빠른 답변 감사합니다!"
+    },
+    {
+     "author": "Samantha Wobst",
+     "is_maker": true,
+     "text": "@aaron\\_pennell @gabrieldelsalto Hey Gabriel, good news: Stripe is ready to go! (We’ve been adding plugins fast, so Aaron’s list was a step behind.) For your setup, a sidekick could record and categorize Stripe Treasury transactions in Xero the same way every time, and only flag the ones that don’t fit your rules for you to review. Sounds like a great fit for your stack and stage. We’d love to show you on a quick demo: https://latch.ai/demo?ref=producthunt",
+     "kr": "@aaron_pennell @gabrieldelsalto Gabriel 님, 좋은 소식이 있습니다. Stripe 연동이 바로 사용 가능합니다! (플러그인을 빠르게 추가하고 있어서 Aaron의 목록이 한 발 늦었네요.) 귀사의 설정에 맞추어 사이드킥이 Stripe Treasury 거래를 Xero에 매번 일관되게 기록 및 분류하고, 규칙에 맞지 않는 항목만 플래그를 띄워 검토하도록 할 수 있습니다. 귀사의 기술 스택과 성장 단계에 완벽히 맞을 것 같습니다. 간단한 데모(https://latch.ai/demo?ref=producthunt)를 통해 보여드리고 싶네요."
+    },
+    {
+     "author": "Jared Kofron",
+     "is_maker": true,
+     "text": "Hey Product Hunt! I'm Jared, co-founder and CTO. Building Latch was a serious technical challenge - it turns out if you take a 3 hour video and hand it to an LLM, it gets completely wrapped around the axle. If it even manages to take it all in, it can't tell the signal from the noise. Solving that took some real smarts - but we landed on a multi-agent architecture that intelligently reads between the lines of what you're _actually_ doing to build deep context around how you do the work you want ",
+     "kr": "프로덕트 헌트 여러분 안녕하세요! 공동 창업자이자 CTO Jared입니다. Latch를 구축하는 것은 중대한 기술적 도전이었습니다. 3시간짜리 영상을 LLM에 그대로 넘기면 완전히 혼란에 빠지게 됩니다. 모든 정보를 소화한다 해도 노이즈와 핵심 시그널을 구분하지 못하죠. 이를 해결하기 위해 많은 노력을 기울였으며, 사용자가 실제로 수행하는 작업의 행간을 똑똑하게 파악하여 깊은 맥락을 형성하는 멀티 에이전트 아키텍처를 완성했습니다."
+    },
+    {
+     "author": "Melody Bay",
+     "is_maker": false,
+     "text": "Interesting! Will you be looking into use cases outside of accountancy?",
+     "kr": "흥미롭네요! 회계 업무 외의 다른 활용 사례도 고려하고 계신가요?"
+    },
+    {
+     "author": "Aaron Pennell",
+     "is_maker": true,
+     "text": "@orcastra Yes, we are happy to work on use cases where contextual capture and automation or other needs are present.",
+     "kr": "@orcastra 네, 맥락 파악과 자동화가 필요한 다른 업무 영역의 유스케이스도 기꺼이 다루고자 합니다."
+    },
+    {
+     "author": "Samantha Wobst",
+     "is_maker": true,
+     "text": "@orcastra Hey Melody, just adding to Aaron's response to share a bit more information. We started with accounting because few processes have more nuance than the month-end close, so it's where we've tested Latch hardest and where we've seen a lot of early traction. But the approach works for any repeatable task across the tools on your computer, and we already have plugins for a number of general purpose tools outside accounting (Google Sheets, Slack, GitHub, etc.). What would you want to try it",
+     "kr": "@orcastra Melody 님, Aaron의 답변에 조금 더 덧붙여 설명드리자면, 월말 결산만큼 미묘한 뉘앙스가 많은 프로세스도 드물기 때문에 회계 영역에서 Latch를 가장 혹독하게 테스트하고 초기 성과를 거두었습니다. 하지만 이 접근 방식은 PC의 여러 도구에 걸친 모든 반복 작업에 적용 가능하며, 이미 Google 스프레드시트, Slack, GitHub 등 범용 도구 플러그인도 다수 보유하고 있습니다. 어떤 업무에 사용해 보고 싶으신가요?"
+    },
+    {
+     "author": "Emilie Thaler",
+     "is_maker": true,
+     "text": "Hi Product Hunt! I'm Emilie, the designer for Latch. When we started building out Latch, we kept hearing the same worry: _\"Is AI going to replace me?\"_ We designed around the opposite idea: that you're the expert. Latch learns from you, takes the tedious parts off your plate, and leaves you with the judgement calls. That shaped a lot of decisions: * You decide what gets recorded. Latch only learns from sessions you initiate. * No surprises before the first run. Latch lists every step a sidekick ",
+     "kr": "프로덕트 헌트 여러분 안녕하세요! Latch의 디자이너 Emilie입니다. Latch 개발을 시작했을 때 'AI가 나를 대체하는 것 아닌가?'라는 우려를 자주 들었습니다. 저희는 정반대의 철학을 바탕으로 디자인했습니다. 바로 여러분이 전문가라는 점입니다. Latch는 여러분에게서 학습하여 지루한 작업만 대신 처리하고, 핵심적인 판단은 여러분에게 맡깁니다. 이 철학은 여러 결정에 반영되었습니다: * 무엇을 녹화할지는 사용자가 결정하며 사용자가 시작한 세션에서만 학습합니다. * 첫 실행 전 사전 예고 없는 돌발 행동이 없도록 사이드킥의 모든 단계를 미리 목록화합니다."
+    },
+    {
+     "author": "André J",
+     "is_maker": false,
+     "text": "Does it Work in the Eu? In Norway for instance?",
+     "kr": "유럽에서도 사용 가능한가요? 예를 들어 노르웨이에서도 쓸 수 있는지요?"
+    },
+    {
+     "author": "Samantha Wobst",
+     "is_maker": true,
+     "text": "@alchemist\\_studio Hey André, thanks for asking! Yes, you can sign up and use Latch from Norway and anywhere in the EU. We haven't added plugins for specifically European or Norwegian accounting tools yet, but it takes less than a day to get a new plugin stood up for most tools. For which tools would a plugin be most important for Latch? We'd be happy to investigate and add them to our stack.",
+     "kr": "@alchemist_studio André 님, 질문 감사합니다! 네, 노르웨이를 비롯한 EU 전역에서 가입하여 Latch를 사용하실 수 있습니다. 아직 유럽이나 노르웨이 전용 회계 툴 플러그인이 추가되지는 않았지만, 대부분의 도구는 하루도 채 걸리지 않고 새로운 플러그인을 구축할 수 있습니다. 어떤 도구의 플러그인이 가장 필요하신가요? 검토 후 빠르게 스택에 추가해 드리겠습니다."
+    }
+   ],
+   "slug": "latch-ai-2"
+  },
+  {
+   "name": "Seldon",
+   "tagline_en": "Behavioral QA agents that use your product like customers do",
+   "tagline_kr": "실제 고객처럼 제품을 탐색하고 결함을 찾아내는 행동 기반 QA 에이전트",
+   "image": "https://ph-files.imgix.net/bb2bd4c2-3d5e-46d7-890b-4027b9d9bc2a.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "categories": [
+    "Testing and QA software"
+   ],
+   "upvotes": 197,
+   "comments_count": 69,
+   "maker": [
+    "Tom Charman",
+    "Dominic Kennedy",
+    "Olivia Higgs"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Seldon은 개발자가 미처 작성하지 못한 테스트 시나리오를 스스로 찾아내 주는 QA 솔루션입니다. 사용자가 일상적인 자연어로 무엇이 정상 작동해야 하는지 설명하기만 하면 AI 에이전트 'Wren'이 실제 고객처럼 제품을 사용해 봅니다. 결제 도중 뒤로 돌아가 배송지 주소를 변경하거나 실패한 결제를 재시도하는 등 실제 유저들의 복잡하고 예측하기 어려운 탐색 경로를 그대로 시도합니다. 제품 흐름에 오류가 발생하면 버그를 즉시 재현할 수 있는 상세 단계와 함께 다시보기(Replay) 영상을 제공합니다. 초기 10회 실행을 무료로 제공하여 누구나 손쉽게 도입해 볼 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/seldon",
+   "website": "https://www.seldon.com/products/wren",
+   "comment_summary": "메이커 팀은 완벽히 통과한 기존 테스트 스위트 뒤에 숨은 실사용자 경로의 버그를 잡기 위해 MIT와 UC 버클리 출신 연구진이 개발한 Wren을 소개했습니다. 커뮤니티에서는 수동 QA의 직관적인 버그 탐색 능력을 AI가 구현했다는 점에 주목하며 네이티브 앱 지원 여부와 테스트 목표 검증 방식에 대해 문의했습니다. 메이커는 현재 웹 환경을 우선 지원하며 네이티브 앱도 개발 중이고, 실행 전 통과 기준 설정 및 리플레이 영상을 통해 에이전트의 동작을 검증할 수 있다고 밝혔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Tom Charman",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! I’m Tom, co-founder of Seldon. We built Wren because your entire test suite can pass and a customer can still find a bug five minutes after you ship. We’re an applied research lab in SF. Our team includes researchers from MIT and Berkeley and people who’ve built products at Meta and Spotify. We put people and agents in front of the same screens and study where their decisions differ. That got us interested in a QA problem. A test can tell you whether the route you scripted wo",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요! Seldon의 공동 창업자 Tom입니다. 전체 테스트 스위트가 완벽히 통과하더라도 배포 5분 만에 고객이 버그를 찾아내는 문제를 해결하기 위해 Wren을 개발했습니다. 저희는 샌프란시스코의 응용 연구소로, MIT 및 UC 버클리 출신 연구원들과 Meta, Spotify에서 제품을 만든 인재들로 구성되어 있습니다. 저희는 사람과 AI 에이전트를 같은 화면 앞에 두고 의사결정의 차이를 연구해 왔으며, 이를 통해 QA 문제에 관심을 갖게 되었습니다. 기존 스크립트 테스트는 사전에 작성된 경로가 작동하는지만 알려줄 뿐입니다."
+    },
+    {
+     "author": "Alexandra Skey",
+     "is_maker": false,
+     "text": "Love this, @tom\\_charman! Fun fact about how Wren started… @marquise\\_rosier was on a customer call helping with something else when he spotted a problem nobody asked us to solve. He thought: we could probably build this. So we did. A few weeks later, @dominic\\_kennedy shared some early feedback. Tests went from 10–15 carefully written steps to “go here, go there, click here. That’s it.” One design partner called it “a bit of a must.” I remember that “wait, this could be something” moment. Super",
+     "kr": "정말 멋지네요, @tom_charman! Wren의 시작에 관한 재밌는 일화가 있죠… @marquise_rosier가 다른 용건으로 고객과 통화하던 중 아무도 풀어달라고 요청하지 않았던 문제점을 발견했습니다. 그는 '우리가 이걸 만들 수 있겠다'고 생각했고, 그렇게 개발이 시작되었죠. 몇 주 뒤 @dominic_kennedy가 초기 피드백을 공유했을 때, 테스트는 10~15개의 꼼꼼한 작성 단계에서 '여기로 이동, 저기로 이동, 여기 클릭, 끝'으로 단순해졌습니다. 한 디자인 파트너는 '필수 도구'라고 평가했죠. '이거 정말 대단한 게 되겠는데' 싶었던 그 순간이 생생합니다."
+    },
+    {
+     "author": "Dhaval Bhatt",
+     "is_maker": false,
+     "text": "@tom\\_charman The next big startup in San Francisco!",
+     "kr": "@tom_charman 샌프란시스코의 차세대 대형 스타트업이군요!"
+    },
+    {
+     "author": "Tom Charman",
+     "is_maker": true,
+     "text": "@dhaval\\_bhatt3 doing our best!",
+     "kr": "@dhaval_bhatt3 최선을 다하고 있습니다!"
+    },
+    {
+     "author": "Dominic Kennedy",
+     "is_maker": true,
+     "text": "@dhaval\\_bhatt3 Thank you! its great to see all the support",
+     "kr": "@dhaval_bhatt3 감사합니다! 많은 응원을 받아 정말 기쁩니다."
+    },
+    {
+     "author": "Sam Abrika",
+     "is_maker": false,
+     "text": "@tom\\_charman I've been waiting for such a QA product for years. Back in the day, I hired non-engineer QA because I found they were better at breaking user flow and finding bugs that engineers wouldn't even consider. NB: big fan of your branding, can you make a designer agent that creates experience users would like to have?",
+     "kr": "@tom_charman 수년 동안 이런 QA 제품을 기다려왔습니다. 예전에 비엔지니어 출신 QA를 채용하곤 했는데, 엔지니어들이 미처 생각지도 못한 방식으로 유저 플로우를 깨뜨리고 버그를 찾는 데 훨씬 뛰어났기 때문입니다. 추신: 브랜딩이 정말 마음에 드는데, 사용자가 좋아할 만한 경험을 디자인해 주는 디자이너 에이전트도 만들어주실 수 있나요?"
+    },
+    {
+     "author": "Tom Charman",
+     "is_maker": true,
+     "text": "@samabrika1 Haha, thanks so much! That instinct for finding the one path nobody thought to test is exactly what we’re building into Wren. I’ll pass the branding love on to the team. And I should show you Finch at some point - it's built to make the lives of product teams and designers easier 👀",
+     "kr": "@samabrika1 하하, 정말 감사합니다! 아무도 테스트할 생각을 못 했던 경로를 찾아내는 바로 그 직관을 Wren에 구현하고 있습니다. 브랜딩 칭찬도 팀에 꼭 전달하겠습니다. 언젠가 Finch도 보여드리고 싶네요. 제품 팀과 디자이너들의 업무를 한결 수월하게 돕기 위해 만든 제품입니다 👀"
+    },
+    {
+     "author": "Emil Bogomolov",
+     "is_maker": false,
+     "text": "@tom\\_charman do I have a chance to verify the goal the agent understood?",
+     "kr": "@tom_charman 에이전트가 이해한 목표가 맞는지 확인할 수 있는 방법이 있나요?"
+    },
+    {
+     "author": "Tom Charman",
+     "is_maker": true,
+     "text": "@emil\\_bogomolov1 you do! you write down what should count as a pass before the run - and then you can watch the replay to check what the agent actually did!",
+     "kr": "@emil_bogomolov1 네, 가능합니다! 실행 전에 무엇이 '통과(pass)'인지 명시할 수 있으며, 실행 후에는 다시보기(replay)를 통해 에이전트가 실제로 무엇을 수행했는지 직접 확인하실 수 있습니다!"
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The \"tests you didn't know to write\" framing is what got me — as a solo dev I mostly hand-test the happy path and find the weird stuff from users after shipping. The half-finished onboarding flows are exactly where I'd point this first. One question: does Wren work on native apps too, or is it web-only right now? Most of what I ship is native, so that's the deciding factor for me.",
+     "kr": "'작성할 생각도 못 했던 테스트'라는 문구가 확 와닿았습니다. 1인 개발자로서 저는 보통 정상적인 경로만 수동으로 테스트하고, 배포 후에야 사용자들로부터 온갖 이상한 버그를 발견하거든요. 절반쯤 완료된 온보딩 플로우야말로 이 툴을 가장 먼저 적용해보고 싶은 곳입니다. 질문이 하나 있는데요, Wren은 네이티브 앱에서도 작동하나요, 아니면 지금은 웹 전용인가요? 제가 출시하는 대부분의 제품이 네이티브라 제겐 중요한 결정 요인입니다."
+    },
+    {
+     "author": "Olivia Higgs",
+     "is_maker": true,
+     "text": "@jcbuilds That's helpful to know! We're web only for now, but native is in the works and we’ll want early testers. If you're up for it, can we reach out when it’s ready?",
+     "kr": "@jcbuilds 유용한 의견 감사합니다! 현재는 웹만 지원하지만 네이티브 앱도 개발 중이며 초기 테스터를 모집할 예정입니다. 괜찮으시다면 준비되었을 때 연락을 드려도 될까요?"
+    },
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "cool launch!! the hard part is knowing if a weird path it found is a real bug or just something no customer would ever do",
+     "kr": "멋진 런칭이네요!! 다만 어려운 점은 찾아낸 특이한 경로가 실제 버그인지, 아니면 어떤 고객도 절대 하지 않을 비현실적인 행동인지 판단하는 것이겠네요."
+    }
+   ],
+   "slug": "seldon"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
