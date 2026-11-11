@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@suceeeesbooks7 - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">성공북스77</span>
+                    
+                    <a href="https://www.threads.net/@suceeeesbooks7" target="_blank" rel="noopener" class="username">@suceeeesbooks7</a>
+                </div>
+                <span class="post-date">2026-11-11 07:15</span>
+            </div>
+            <div class="post-text">강의비 500만원 썼는데 <br>이 유튜버 3명 영상에 다 있었어..<br>AI로 돈 벌고 싶은 쓰친이들, <br>제발 돈 쓰기 전에 봐줘.<br><br>1. Jeff Su - 구독자 193만<br>영상편집 리얼 맛집 <br>영상 AI 자동화툴 퀄리티 올리는데<br>이 분 기술이 진짜 많이 도움되었어.. <br>솔직히 쓰친이들 이 사람 알면 이<br>제 인스타에서 영상은 DM으로 <br>프롬프트 받을 필요 없다..</div>
+            
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 84</span>
+                    <span>💬 47</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@suceeeesbooks7/post/Dfk9N9wAhxe" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (1개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@suceeeesbooks7</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-11-11 07:15</span>
+                    <span class="reply-likes">❤️ 12</span>
+                </div>
+                <div class="reply-text">2. Liam ottley - 구독자 86만명<br>자동화 에이전시 Morningside AI 창시자<br>현 기업가 겸 유튜버<br>최신 AI 방향, 정보는 이 사람 따라갈 수가 없음<br><br>3. Jack Roberts - 구독자 28만명<br>AI 자동화 돈 안되면 의미없지..<br>이 사람은 실제 돈되는 사업까지 <br>굴리는 과정을 보여줘<br>(그리고 영상 자체도 재밌어..ㅎ)<br><br>사실 내 스승은 7명 더 있어!!<br>아직 초보 쓰친이들은 <br>3명에 인사이트도 넘 많을꺼 같아 안 올렸어<br>나머지 7명은 구독자 적지만<br>AI로 한 분야만 판 ai 초고수들이야<br>혹시 알고 싶은 쓰친이들 있으면<br>팔로우하고 &quot;멘토&quot;라고 댓글 남기면 <br>나머지도 디엠으로 알려줄께!</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (47개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hanwonmo</span>
+            <span class="reply-date">2026-11-11 07:36</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@rosee486</span>
+            <span class="reply-date">2026-11-11 07:39</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@h.ninano</span>
+            <span class="reply-date">2026-11-11 07:41</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gajagogo100</span>
+            <span class="reply-date">2026-11-11 07:48</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kimjudy333</span>
+            <span class="reply-date">2026-11-11 07:49</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@easyswim__</span>
+            <span class="reply-date">2026-11-11 07:50</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@neulblack</span>
+            <span class="reply-date">2026-11-11 08:00</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ginamkoo</span>
+            <span class="reply-date">2026-11-11 08:02</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@baek91cm</span>
+            <span class="reply-date">2026-11-11 08:10</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@plena_home_</span>
+            <span class="reply-date">2026-11-11 08:10</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@podomilk83</span>
+            <span class="reply-date">2026-11-11 08:12</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@restyartist</span>
+            <span class="reply-date">2026-11-11 08:14</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@leehyemin28</span>
+            <span class="reply-date">2026-11-11 08:21</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@aden__kim</span>
+            <span class="reply-date">2026-11-11 08:21</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@d.blue7</span>
+            <span class="reply-date">2026-11-11 08:33</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@pinkcloud_1125</span>
+            <span class="reply-date">2026-11-11 08:40</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@successatomybiz</span>
+            <span class="reply-date">2026-11-11 08:57</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hoon_slow2</span>
+            <span class="reply-date">2026-11-11 08:53</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@quiet_burn</span>
+            <span class="reply-date">2026-11-11 08:53</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dampercoffee</span>
+            <span class="reply-date">2026-11-11 08:56</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@buildnwrite</span>
+            <span class="reply-date">2026-11-11 08:57</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gildonges2</span>
+            <span class="reply-date">2026-11-11 08:58</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@onyoojinyoo1213</span>
+            <span class="reply-date">2026-11-11 09:00</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@oeoeoeoeoing</span>
+            <span class="reply-date">2026-11-11 09:00</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@quokka_eodbs</span>
+            <span class="reply-date">2026-11-11 09:02</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@youngkt333</span>
+            <span class="reply-date">2026-11-11 09:08</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@comislab12</span>
+            <span class="reply-date">2026-11-11 09:08</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@heejoo_hitu</span>
+            <span class="reply-date">2026-11-11 09:17</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@giver_suny</span>
+            <span class="reply-date">2026-11-11 09:20</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@itev_design</span>
+            <span class="reply-date">2026-11-11 09:20</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@tetty_off</span>
+            <span class="reply-date">2026-11-11 09:26</span>
+            
+        </div>
+        <div class="reply-text">맨토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@taean_dog_119</span>
+            <span class="reply-date">2026-11-11 09:28</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@joycepark2020</span>
+            <span class="reply-date">2026-11-11 09:34</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@busanbadass</span>
+            <span class="reply-date">2026-11-11 09:41</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@lollollol.yeahyeah</span>
+            <span class="reply-date">2026-11-11 09:42</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@simso._</span>
+            <span class="reply-date">2026-11-11 09:42</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@lovewinsall2010</span>
+            <span class="reply-date">2026-11-11 09:42</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ju.yongsic</span>
+            <span class="reply-date">2026-11-11 09:46</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@yejin_always</span>
+            <span class="reply-date">2026-11-11 09:48</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jakejo007</span>
+            <span class="reply-date">2026-11-11 09:50</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kyle_dhkim</span>
+            <span class="reply-date">2026-11-11 09:56</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@99k_sh</span>
+            <span class="reply-date">2026-11-11 10:01</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@greatdh0</span>
+            <span class="reply-date">2026-11-11 10:23</span>
+            
+        </div>
+        <div class="reply-text">멘토 ~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@bigshotjs</span>
+            <span class="reply-date">2026-11-11 10:25</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@teojilgak</span>
+            <span class="reply-date">2026-11-11 10:26</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@konggomool09</span>
+            <span class="reply-date">2026-11-11 10:32</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@_je_woo_</span>
+            <span class="reply-date">2026-11-11 10:34</span>
+            
+        </div>
+        <div class="reply-text">멘토</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
