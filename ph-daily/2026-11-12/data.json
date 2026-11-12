@@ -1,0 +1,453 @@
+{
+ "date": "2026-11-12",
+ "collected_at": "2026-11-12 12:32 KST",
+ "summary": "오늘 상위권은 로컬 실행형 워크플로우(n8n), AI 전화 인프라(CALL-E), 스킬 동기화(Skillbox) 등 AI 에이전트의 자율 실행과 인프라를 보조하는 제품들이 주류를 형성했습니다. 커뮤니티 댓글에서는 에이전트의 돌발 행동이나 오작동을 차단하기 위한 사전 승인 및 가드레일 구조와 실무 환경에서의 데이터 제어권이 공통적인 핵심 논점으로 다뤄졌습니다.",
+ "notable": [
+  {
+   "slug": "n8n-io",
+   "why": "로컬 전용 가상 머신에서 구동되는 오픈소스 에이전트 'Nod'를 통해 외부 의존 없이 보안과 제어권을 확보했다는 점에서 커뮤니티의 높은 기대를 모았습니다. 특히 결제, 예약, 삭제 등 민감한 외부 발송 작업 직전에 반드시 사용자의 사전 승인을 거치는 권한 제어 방식에 대해 댓글에서 실무자들의 호평이 이어졌습니다."
+  },
+  {
+   "slug": "call-e",
+   "why": "AI 어시스턴트가 실제 유선 전화를 걸어 예약이나 문의를 직접 수행하는 보이스 인프라로 큰 관심을 받았습니다. 댓글에서는 에이전트의 돌발 행동을 막기 위해 통화 전 계획을 사용자가 직접 승인하는 안전장치와 HubSpot 워크플로우 연동 가능 여부가 주요 논점으로 다뤄졌습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "n8n",
+   "tagline_en": "Build AI agents and workflows you can understand and control",
+   "tagline_kr": "직관적으로 이해하고 제어할 수 있는 AI 에이전트 및 워크플로우 구축",
+   "image": "https://ph-files.imgix.net/64ca41cb-9c52-452d-a847-822d4b7c675a.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://n8n.io/",
+   "categories": [
+    "Automation tools",
+    "Platforms",
+    "AI Infrastructure Tools",
+    "n8n was awarded the Best for Developers Award for AI Workflow Automation in Winter 2026"
+   ],
+   "upvotes": 256,
+   "comments_count": 33,
+   "maker": [
+    "Johan Cutych",
+    "Albert Alises Sorribas"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "n8n은 프로토타입부터 실제 운영 환경까지 AI 에이전트와 워크플로우를 구축, 실행 및 관리할 수 있는 오픈소스 기반 플랫폼입니다. 이번 런칭에서는 사용자의 Mac이나 Windows PC에서 자체 브라우저를 갖춘 전용 가상 머신으로 구동되는 개인용 AI 에이전트 'Nod'를 새롭게 선보였습니다. Nod는 Gmail, Slack, Notion, 드라이브 등 200개 이상의 서비스와 연동되어 인보이스 추적이나 무료 체험 취소 등 실질적인 업무를 수행합니다. 외부 서버에 의존하지 않고 로컬 환경에서 원하는 AI 모델을 연결하여 안전하게 작업을 처리할 수 있는 점이 큰 특징입니다. 특히 전송, 결제, 예약, 삭제 등 민감한 실행 단계에서는 사전에 사용자의 승인을 받도록 설계되어 제어권을 유지할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/n8n-io",
+   "comment_summary": "사용자들은 기존 챗봇과 달리 직접 실제 작업을 수행하는 Nod의 로컬 가상 머신 구동 방식과 오픈소스 접근성에 큰 호응을 보였습니다. 제작팀은 클라우드 에이전트 대비 높은 보안성과 제어권을 강조하며, 결제나 삭제 등 중요 액션 시 반드시 사용자 승인을 거친다는 점을 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Johan Cutych",
+     "is_maker": true,
+     "text": "📌 👋 Heyy Product Hunt, I'm Johan from n8n Labs and I am **super excited to share Nod**!! Nod started from the pain of AI chats being great at telling you how to do a thing... but not actually doing them. 🧾 chase the invoice ❌ cancel the trial before it renews 💬 answer the Slack thread 💰 check whether the hotel got cheaper Nod runs a **private virtual machine** with its **own browser** on your Mac or Windows PC. It connects to Gmail, Slack, Notion, Drive and Calendar (**200+ connections!**), and ",
+     "kr": "📌 👋 안녕하세요 Product Hunt 여러분, n8n Labs의 Johan입니다. 이번에 **Nod를 소개해 드리게 되어 정말 기쁩니다**!! Nod는 AI 채팅이 방법은 잘 알려주지만... 정작 실행은 해주지 못한다는 문제의식에서 출발했습니다. 🧾 인보이스 독촉하기 ❌ 갱신 전에 무료 체험 취소하기 💬 Slack 스레드 답장하기 💰 호텔 가격이 더 저렴해졌는지 확인하기. Nod는 Mac이나 Windows PC에서 **자체 브라우저**를 갖춘 **비공개 가상 머신**으로 실행됩니다. Gmail, Slack, Notion, Drive, Calendar 등과 연결되며 (**200개 이상의 연동!**), "
+    },
+    {
+     "author": "Micah Shackelford",
+     "is_maker": false,
+     "text": "Congrats on the launch! Been a fairly consistent user of N8N for over 3 years so really excited for the direction. I’ve been getting into ChatGPT Dots lately for some autonomous work with a machine attached. Curious what you see as the biggest differences if I were to switch over to Nod?",
+     "kr": "런칭 축하합니다! 3년 넘게 n8n을 꾸준히 써온 사용자로서 이번 방향성이 정말 기대됩니다. 최근 머신이 연결된 자율 작업을 위해 ChatGPT Dots를 써보고 있었는데요. Nod로 전환할 경우 가장 큰 차이점이 무엇이라고 보시나요?"
+    },
+    {
+     "author": "Johan Cutych",
+     "is_maker": true,
+     "text": "@mdshack The open agents (openclaw, hermes) are a lot of hassle to keep spinning, and the easy ones (Instinct, GrokBot) are closed and run on someone else’s servers. Nod is both open and easy. It runs on your computer with the AI provider you pick, and it asks before it sends, pays, books or deletes anything.",
+     "kr": "@mdshack 오픈 에이전트(openclaw, hermes)는 계속 구동하기가 번거롭고, 쉬운 에이전트(Instinct, GrokBot)는 폐쇄형이며 타인의 서버에서 실행됩니다. Nod는 오픈되어 있으면서도 다루기 쉽습니다. 원하는 AI 제공업체를 선택해 본인 컴퓨터에서 직접 실행되며, 전송, 결제, 예약, 삭제하기 전에 항상 사용자에게 먼저 묻습니다."
+    },
+    {
+     "author": "Aadil Ghani",
+     "is_maker": false,
+     "text": "How does it work with permissions, approvals and audit logs of what action were rejected or approved?",
+     "kr": "권한, 승인, 그리고 어떤 작업이 거부되거나 승인되었는지에 대한 감사 로그는 어떻게 작동하나요?"
+    },
+    {
+     "author": "Johan Cutych",
+     "is_maker": true,
+     "text": "@aadilghani Most of a long task is reading, searching and clicking through sites, and that runs on its own. It only stops when something would go out (send, book, pay, delete) that your words didn't ask for. So searching flights runs through, booking one asks you first",
+     "kr": "@aadilghani 긴 작업의 대부분은 사이트를 읽고, 검색하고, 클릭하는 과정이며 이는 자체적으로 실행됩니다. 사용자가 요청하지 않은 외부 발송 작업(전송, 예약, 결제, 삭제)이 발생할 때만 멈춥니다. 예를 들어 항공편 검색은 알아서 진행되지만, 예약할 때는 먼저 물어봅니다."
+    },
+    {
+     "author": "Aadil Ghani",
+     "is_maker": false,
+     "text": "@johancutych top! does it also nudge my phone already when it shoots the asks? if not happy to wire up a pushary plugin pr ;)",
+     "kr": "@johancutych 최고네요! 승인을 요청할 때 스마트폰으로도 알림을 보내주나요? 아직 지원하지 않는다면 pushary 플러그인 PR을 직접 올려볼 수도 있습니다 ;)"
+    },
+    {
+     "author": "Levi",
+     "is_maker": false,
+     "text": "Congratulations on this launch! How is this going to impact n8n itself because you are launching it under a new name? Because I think it can unlock a lot for the platform..",
+     "kr": "런칭 축하합니다! 새로운 이름으로 출시하셨는데 이것이 n8n 자체에는 어떤 영향을 미치게 되나요? 플랫폼 차원에서 많은 가능성을 열어줄 것 같아서요.."
+    },
+    {
+     "author": "Johan Cutych",
+     "is_maker": true,
+     "text": "@olympheon It's a research preview, coming from the Labs... n8n is becoming multi product and this might be the first major one to arrive!",
+     "kr": "@olympheon Labs에서 나온 리서치 프리뷰입니다... n8n은 멀티 프로덕트 체제로 전환 중이며, 이것이 그 첫 번째 주요 제품이 될 수 있습니다!"
+    },
+    {
+     "author": "Artem Korchunov",
+     "is_maker": false,
+     "text": "Cancelling a trial is the one I'd try first. Lots of sites hide that behind a support chat instead of a button, what does Nod do then?",
+     "kr": "무료 체험 취소를 제일 먼저 써보고 싶네요. 많은 사이트들이 버튼 대신 고객지원 채팅 뒤에 취소 기능을 숨겨두곤 하는데, 그럴 때는 Nod가 어떻게 처리하나요?"
+    },
+    {
+     "author": "Johan Cutych",
+     "is_maker": true,
+     "text": "@artemkorchunov Thats the best part, it just chat it out for you :)",
+     "kr": "@artemkorchunov 그게 가장 멋진 부분인데요, 대신 채팅을 진행해서 해결해 줍니다 :)"
+    },
+    {
+     "author": "Luis Guzmán",
+     "is_maker": false,
+     "text": "Luis from the n8n team here - I’ve tried a few other personal agents and I sometimes get this uncomfortable feeling of proactiveness that makes me wonder how much is pulling from my accounts, what's being accessed or shared and being too proactive in some cases With Nod, I feel more in control of what I'm handing over, what model I want to use and of course, open-source This is still a research preview, so plenty left to improve! but excited what the rest think about it :)",
+     "kr": "n8n 팀의 Luis입니다. 몇 가지 다른 개인용 에이전트를 써봤을 때, 가끔 내 계정에서 얼마나 많은 데이터를 가져오는지, 무엇에 접근하고 공유하는지, 때로는 지나치게 주도적이어서 불편한 느낌이 들었습니다. Nod를 쓰면서는 무엇을 넘겨줄지, 어떤 모델을 사용할지 훨씬 더 잘 통제할 수 있다고 느꼈고, 물론 오픈소스이기도 하고요. 아직 리서치 프리뷰라 개선할 점이 많지만, 다른 분들이 어떻게 생각하실지 기대됩니다 :)"
+    },
+    {
+     "author": "Albert Alises Sorribas",
+     "is_maker": true,
+     "text": "Hi! Albert here, one of the engineers that worked on shaping and building Nod! open to any question that you might have! and if there's something that you would like on Nod... it's Open Source! contributions welcome",
+     "kr": "안녕하세요! Nod를 기획하고 개발하는 데 참여한 엔지니어 중 한 명인 Albert입니다! 궁금한 점이 있으시면 편하게 질문해 주세요! 그리고 Nod에 원하는 기능이 있다면... 오픈소스이니 기여는 언제든 환영합니다"
+    }
+   ],
+   "slug": "n8n-io"
+  },
+  {
+   "name": "ScroogeFrog AI",
+   "tagline_en": "AI ad fraud detection that protects your marketing budget",
+   "tagline_kr": "마케팅 예산을 지켜주는 AI 광고 사기 탐지 솔루션",
+   "image": "https://ph-files.imgix.net/e215c77e-255d-42ed-8070-e883259f0699.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://scroogefrog.ai/",
+   "categories": [
+    "Advertising tools",
+    "Security software"
+   ],
+   "upvotes": 246,
+   "comments_count": 47,
+   "maker": [
+    "Kostia Novofastovskyi",
+    "Maksym Melnychenko",
+    "Eugene Chernyak"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "ScroogeFrog AI는 광고주가 낭비되는 광고 예산을 찾아내고 보호할 수 있도록 지원하는 부정 클릭 방지 솔루션입니다. 웹사이트 트래픽과 Google Ads 캠페인을 정밀 감사하여 의심스러운 클릭, 봇 활동, 비효율적인 지출을 실시간으로 감지합니다. 일반적인 봇 규칙이나 블랙리스트에만 의존하지 않고, 실제 전환이 일어난 신뢰할 수 있는 트래픽 데이터를 바탕으로 맞춤형 AI 모델을 학습시킵니다. 대행사와 대규모 광고주에게는 전용 데이터 학습 모델을 제공하며 복잡한 광고 데이터를 실행 가능한 개선 권고사항으로 변환해 줍니다. 또한 Google Ads 환불에 필요한 11가지 핵심 지표를 정확히 분석해 높은 확률로 무효 트래픽에 대한 환불 신청을 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/scroogefrog-ai-antifraud",
+   "comment_summary": "댓글에서는 구글 외에 메타나 틱톡 등 다양한 광고 플랫폼 지원 여부와 구글 광고 환불 기능의 성공률에 관한 질문이 이어졌습니다. 제작진은 모든 트래픽 소스를 지원하며 자동 차단 대신 사용자가 최종 통제권을 갖는 구조와 높은 환불 승인율을 설명하며 적극적으로 소통했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Kostia Novofastovskyi",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! 👋 I'm Kostia, founder of ScroogeFrog. 🐸 We've spent over 15 years in digital advertising, and there's one problem we keep running into: advertisers paying for clicks that look legitimate but never turn into real customers. Traditional fraud filters don't always catch these. So we built ScroogeFrog AI Antifraud. Instead of relying only on generic bot rules and blacklists, we train custom AI models using your trusted traffic sources - the ones that actually bring conversions an",
+     "kr": "📌 안녕하세요 Product Hunt 여러분! 👋 ScroogeFrog 창립자 Kostia입니다. 🐸 저희는 15년 이상 디지털 광고 분야에 종사하며 한 가지 문제에 끊임없이 직면했습니다. 바로 광고주들이 겉보기엔 합법적이지만 절대 실제 고객으로 전환되지 않는 클릭에 비용을 지불하고 있다는 점입니다. 전통적인 부정 필터는 이를 항상 잡아내지 못합니다. 그래서 저희는 ScroogeFrog AI Antifraud를 구축했습니다. 일반적인 봇 규칙과 블랙리스트에만 의존하는 대신, 실제 전환을 가져오는 신뢰할 수 있는 트래픽 소스를 사용해 맞춤형 AI 모델을 훈련합니다."
+    },
+    {
+     "author": "Amrita P",
+     "is_maker": false,
+     "text": "@kostfast can I connect multiple ad accounts under one dashboard??",
+     "kr": "@kostfast 하나의 대시보드 아래에 여러 광고 계정을 연결할 수 있나요??"
+    },
+    {
+     "author": "Maksym Melnychenko",
+     "is_maker": true,
+     "text": "@amrita\\_prajapati2 Yes, absolutely! 😊 You can manage all your ad accounts in one place, making it much easier to monitor traffic and keep everything under control. You can explore all the options in the Subscription plans section on our website! 🐸",
+     "kr": "@amrita_prajapati2 네, 물론입니다! 😊 모든 광고 계정을 한곳에서 관리할 수 있어 트래픽을 모니터링하고 모든 것을 통제하기가 훨씬 수월합니다. 저희 웹사이트의 요금제(Subscription plans) 섹션에서 모든 옵션을 확인해 보실 수 있습니다! 🐸"
+    },
+    {
+     "author": "RI-Chie Hong",
+     "is_maker": false,
+     "text": "Congrats for the launch! I just curious about does the fraud detection work for meta ads / tiktok ads or strictly google ads for now? ‘Cause Google isn’t the only place I’m active, IG and TikTok also take up a big chunk of my time too.",
+     "kr": "런칭 축하합니다! 부정 탐지 기능이 메타 광고나 틱톡 광고에서도 작동하는지, 아니면 현재는 구글 광고 전용인지 궁금합니다. 구글뿐만 아니라 인스타그램과 틱톡 광고 비중도 매우 크거든요."
+    },
+    {
+     "author": "Eugene Chernyak",
+     "is_maker": true,
+     "text": "@brattyaiguy Yes, ofc Meta, Tiktok, etc. It works with any source you want, and shows you which placements are better and which ones need to be shut down",
+     "kr": "@brattyaiguy 네, 당연히 메타, 틱톡 등도 지원합니다. 원하시는 모든 소스에서 작동하며, 어떤 게재위치가 더 우수하고 어떤 곳을 차단해야 하는지 보여줍니다."
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "Do you have any video to demonstrate how it works?",
+     "kr": "작동 방식을 시연하는 동영상이 있나요?"
+    },
+    {
+     "author": "Eugene Chernyak",
+     "is_maker": true,
+     "text": "@busmark\\_w\\_nika Nice to see you there and thanks for the coment, we actually decided that no video could show the true power of the platform as well as trying it yourself, so thats why we offer a free trial so you can get hands-on experience right away! Also to make it super easy, we have interactive product tours on the site that guide you step-by-step through the service. Plus, we do have a demo video specifically for our Google Ads Refund feature on our website if you want a quick preview o",
+     "kr": "@busmark_w_nika 방문해 주시고 댓글 남겨주셔서 감사합니다. 사실 직접 사용해 보는 것만큼 플랫폼의 진정한 성능을 잘 보여줄 수 있는 영상은 없다고 판단하여 즉시 체험해 보실 수 있도록 무료 평가판을 제공하고 있습니다! 또한 사이트 내 인터랙티브 제품 투어를 통해 서비스 이용을 단계별로 쉽게 안내해 드립니다. 아울러 빠른 미리보기를 원하시는 분들을 위해 웹사이트에 Google Ads 환불 기능 전용 데모 영상도 마련되어 있습니다."
+    },
+    {
+     "author": "Mi Lee",
+     "is_maker": false,
+     "text": "If this tool successfully blocks 100% of the bots, will my dashboard look terrifyingly empty and make me panic?",
+     "kr": "이 툴이 봇을 100% 성공적으로 차단하면 대시보드가 너무 텅 비어 보여서 패닉에 빠지게 되진 않을까요?"
+    },
+    {
+     "author": "Kostia Novofastovskyi",
+     "is_maker": true,
+     "text": "@mi\\_leeli Haha, your stats might look frighteningly quiet at first, but your bank account will probably thank you! 😅 But we actually dont autoblock anything, you stay in the driver's seat and make the final call on what to filter out!👌",
+     "kr": "@mi_leeli 하하, 처음에는 통계가 무서울 정도로 잠잠해 보일 수 있지만, 은행 잔고는 여러분께 감사해할 겁니다! 😅 하지만 저희는 실제로 아무것도 자동 차단하지 않으며, 사용자가 직접 주도권을 쥐고 필터링 대상을 최종 결정하게 됩니다!👌"
+    },
+    {
+     "author": "Roman Pronskiy",
+     "is_maker": false,
+     "text": "Nice! I wish I had such a tool before. Based on your experience what are the chances to get a refund from Google ads?",
+     "kr": "좋네요! 진작 이런 툴이 있었으면 좋았을 텐데요. 경험상 Google 광고에서 환불을 받을 수 있는 확률은 어느 정도인가요?"
+    },
+    {
+     "author": "Kostia Novofastovskyi",
+     "is_maker": true,
+     "text": "@pronskiy Thanks, Roman! From what we’ve seen so far, the approval chances grow directly with your ad spend. The magic behind our refund feature is that our devs figured out through many experiments exactly 11 parameters Google looks for, and designed the reports in the precise format they expect. So the success rate is genuinely high, and we already have successful refund cases under our belt! You can check it out on our website in a dedicated tab",
+     "kr": "@pronskiy 감사합니다, Roman! 지금까지 확인한 바에 따르면 광고 지출액이 클수록 승인 확률도 직접적으로 증가합니다. 환불 기능의 비결은 개발팀이 수많은 실험을 통해 Google이 요구하는 정확한 11가지 매개변수를 찾아내고 Google이 기대하는 정확한 형식으로 보고서를 설계했다는 점입니다. 따라서 성공률이 매우 높으며 이미 성공적인 환불 사례들을 확보하고 있습니다! 웹사이트 전용 탭에서 확인해 보실 수 있습니다."
+    },
+    {
+     "author": "Harini Mukesh",
+     "is_maker": false,
+     "text": "This is interesting - but some people use bots as their coworker these days so if it finds the ad and suggest it to people that will be useful right - how do your tool distinguish random spam bot vs the one people use as assistant",
+     "kr": "흥미롭네요. 그런데 요즘은 봇을 동료처럼 쓰는 사람들도 있어서 광고를 찾고 사람들에게 추천해 준다면 유용할 텐데요, 이 도구는 단순 스팸 봇과 사람들이 비서로 사용하는 봇을 어떻게 구별하나요?"
+    }
+   ],
+   "slug": "scroogefrog-ai-antifraud"
+  },
+  {
+   "name": "CALL-E",
+   "tagline_en": "The phone line for AI agents",
+   "tagline_kr": "AI 에이전트를 위한 전용 전화 회선",
+   "image": "https://ph-files.imgix.net/050d9b59-0ff0-4ca1-a6a9-e5086b98f6d0.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://www.heycall-e.com/",
+   "categories": [
+    "AI Voice Agents",
+    "AI Voice Agent Infrastructure"
+   ],
+   "upvotes": 188,
+   "comments_count": 28,
+   "maker": [
+    "Vadim Smirnov"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "CALL-E는 ChatGPT나 Claude 같은 AI 어시스턴트가 사용자를 대신해 직접 실제 전화를 걸 수 있도록 지원하는 인프라 솔루션입니다. 식당 예약, 견적 문의, 일정 변경, 재고 확인 등 전화 통화가 필요한 번거로운 업무를 자연어 프롬프트로 지시할 수 있습니다. 에이전트는 부족한 세부 정보를 먼저 확인하고 통화 계획을 보여준 뒤, 사용자의 최종 확인을 거쳐 실제 미국 및 캐나다 번호로 전화를 겁니다. 자동 응답 메뉴(ARS), 통화 대기음, 음성 사서함을 스스로 돌파하며 통화가 끝나면 녹취록과 구조화된 요약 결과를 전달합니다. 개발자는 단 한 줄의 프롬프트로 Claude Code, Cursor, Codex 등 다양한 코딩 환경에 간편하게 연동할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/call-e",
+   "comment_summary": "커뮤니티에서는 에이전트가 돌발 행동을 하지 않도록 통화 전 계획 승인 절차를 거치는 안전장치와 허브스팟(HubSpot) 연동 기능에 큰 관심을 나타냈습니다. 제작팀은 사용자의 승인 없이 절대 전화를 걸지 않으며, 사람과 자연스럽게 대화하면서도 AI 식별 여부를 사용자가 완전히 제어할 수 있다고 답했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Vadim Smirnov",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 I'm Vadim, and I work on CALL-E as a Developer Advocate. Your AI assistant can already search, plan and write. But some errands still end with \"you'll have to call them\": the restaurant that only takes bookings by phone, the quote, the appointment you need to move, the store you want to ask about stock. CALL-E gives your assistant a phone. CALL-E asks for anything that's missing, shows you the plan, and dials after you confirm. It gets through phone menus, hold and voicemail",
+     "kr": "📌 안녕하세요 Product Hunt 👋 저는 CALL-E의 개발자 옹호자(Developer Advocate)로 일하고 있는 Vadim입니다. 여러분의 AI 어시스턴트는 이미 검색, 계획, 글쓰기를 훌륭히 수행합니다. 하지만 어떤 심부름은 여전히 '직접 전화해보셔야 합니다'로 끝나곤 하죠. 전화로만 예약을 받는 식당, 견적 문의, 변경해야 할 예약, 재고를 묻고 싶은 매장 등이 그렇습니다. CALL-E는 어시스턴트에게 전화를 쥐여줍니다. 누락된 내용을 먼저 묻고, 계획을 보여주며, 확인을 거친 후에 전화를 겁니다. 메뉴 안내, 통화 대기, 음성 사서함도 알아서 뚫고 지나갑니다."
+    },
+    {
+     "author": "Micah Shackelford",
+     "is_maker": false,
+     "text": "Congrats on the launch! How have you approached adding guardrails to the agents that are dialing (eg. Keeping them from doing actions/making commitments that you don’t want)?",
+     "kr": "런칭 축하합니다! 전화를 거는 에이전트에게 어떤 방식으로 가드레일을 적용하셨나요? (예: 원치 않는 행동을 하거나 승인되지 않은 약속을 하지 않도록 방지하는 방법 등)"
+    },
+    {
+     "author": "Vadim Smirnov",
+     "is_maker": true,
+     "text": "@mdshack Thanks! The main guardrail is that nothing dials without a person signing off. CALL-E first plans the call, asks you for anything that’s missing (important details relevant to the call), shows you the plan, and dials only after you confirm. The plan sets the goal and what the call should cover, and a pre-check prevents things like making up information or making decisions without your approval. After every call, you get the transcript and a structured result, so you can see exactly what",
+     "kr": "@mdshack 감사합니다! 가장 핵심적인 가드레일은 사람의 승인 없이는 절대 전화를 걸지 않는다는 점입니다. CALL-E는 먼저 통화를 계획하고, 누락된 중요 세부사항을 질문하며, 계획을 보여주고 사용자가 승인한 후에만 다이얼을 누릅니다. 계획 단계에서 목표와 통화 범위를 설정하고, 사전 검사를 통해 정보 위조나 승인 없는 결정 등을 방지합니다. 통화 후에는 녹취록과 구조화된 결과를 받아 무엇이 진행되었는지 정확히 확인할 수 있습니다."
+    },
+    {
+     "author": "Roman Pronskiy",
+     "is_maker": false,
+     "text": "Cool website! I got a bit confused by the pricing page tho. It felt like you only support US&CA, but as I see from the docs many other countries are also supported, right? Maybe it would be nice to add price calculator or something. Anyway, congrats on the launch folks!",
+     "kr": "멋진 웹사이트네요! 다만 가격 페이지가 약간 혼란스러웠습니다. 미국과 캐나다만 지원하는 것처럼 보였는데, 문서를 보니 다른 많은 국가도 지원되는 것 같더라고요, 맞나요? 가격 계산기 같은 걸 추가하면 좋을 것 같습니다. 어쨌든 런칭 축하합니다!"
+    },
+    {
+     "author": "Vadim Smirnov",
+     "is_maker": true,
+     "text": "@pronskiy Thanks, glad you like the site! You're right that the docs list more countries. US and Canada get local numbers, which is why the pricing page focuses on them. The other countries in the docs use international numbers that are meant mainly for development and testing for now. A price calculator is a good idea, and I've passed it to the team!",
+     "kr": "@pronskiy 감사합니다, 사이트를 마음에 들어해 주셔서 기쁩니다! 문서에 더 많은 국가가 나열되어 있는 것이 맞습니다. 미국과 캐나다는 로컬 번호를 제공하기 때문에 가격 페이지가 여기에 집중되어 있습니다. 문서에 있는 다른 국가들은 현재 주로 개발 및 테스트 목적으로 사용되는 국제 번호를 이용합니다. 가격 계산기는 좋은 아이디어네요, 팀에 전달하겠습니다!"
+    },
+    {
+     "author": "Agshin Rajabov",
+     "is_maker": false,
+     "text": "congrats on the launch vadim. to your question, i would have it call to confirm demo bookings a day before. no shows hurt small sales teams a lot and nobody has time to call each one. can it write the answer back to hubspot so the deal updates by itself?",
+     "kr": "Vadim 님, 런칭 축하드립니다. 질문 주신 내용에 답하자면, 저는 데모 예약 전날 확인 전화를 걸게 하고 싶네요. 노쇼는 소규모 영업팀에 큰 타격을 주는데 일일이 전화할 시간이 없거든요. 답변 결과를 HubSpot에 다시 기록해서 딜이 자동으로 업데이트되게 할 수 있나요?"
+    },
+    {
+     "author": "Vadim Smirnov",
+     "is_maker": true,
+     "text": "@agshin\\_rajabov Thanks, and that’s a great use case. Confirming appointments is one of the things CALL-E is built for. For HubSpot there’s a CALL-E workflow action and a contact card, so a workflow can place the call a day before the demo. You set up the call once as a Goal with a result schema, for example confirmed yes/no, a new time if they want one, and notes, and every call comes back with those fields filled in plus the transcript. From there you map the fields onto the deal in your workf",
+     "kr": "@agshin_rajabov 감사합니다, 아주 훌륭한 활용 사례입니다. 예약 확인은 CALL-E가 만들어진 주요 목적 중 하나입니다. HubSpot용 CALL-E 워크플로우 액션과 연락처 카드가 제공되므로, 워크플로우를 통해 데모 전날 자동으로 전화를 걸 수 있습니다. 확인 여부(yes/no), 희망하는 새 일정, 메모 등의 결과 스키마를 포함한 목표(Goal)로 한 번 설정해 두면 모든 통화 결과가 녹취록과 함께 해당 필드에 채워져 반환되며, 이를 워크플로우 내 딜에 매핑할 수 있습니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The part that would get me to actually use it is showing me the plan before it dials — that's the bit I'd want to approve, especially what it's allowed to agree to and when it should just take a callback instead of improvising. The calls I'd hand over are the boring, scripted ones, not anything where the other side might negotiate.",
+     "kr": "제가 이 제품을 실제로 쓰게 만들 요소는 전화를 걸기 전에 계획을 보여준다는 점입니다. 무엇에 동의하도록 허용할지, 즉흥적으로 대응하는 대신 언제 콜백을 요청해야 할지 등을 직접 승인하고 싶거든요. 제가 맡기고 싶은 통화는 상대방과 협상해야 하는 복잡한 통화가 아니라 지루하고 정형화된 통화들입니다."
+    },
+    {
+     "author": "Vadim Smirnov",
+     "is_maker": true,
+     "text": "@jcbuilds And CALL-E does that really well. You control every call and every bit of information that the agent can or can’t use. We take call preparation very seriously, since background work is more important than the call itself.",
+     "kr": "@jcbuilds CALL-E는 바로 그 부분을 정말 훌륭하게 수행합니다. 모든 통화와 에이전트가 사용할 수 있거나 사용할 수 없는 모든 정보를 사용자가 제어합니다. 통화 자체보다 사전 준비 작업이 훨씬 더 중요하기 때문에 저희는 통화 준비를 매우 엄격하게 다룹니다."
+    },
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "do the places it calls know it's a bot? feels like a lot of restaurants would just hang up once they clock it",
+     "kr": "전화를 받는 곳에서 봇이라는 걸 알아채나요? 봇이라는 걸 알아채면 그냥 끊어버리는 식당들이 많을 것 같은데요."
+    },
+    {
+     "author": "Vadim Smirnov",
+     "is_maker": true,
+     "text": "@igorblink CALL-E sounds like a person having a normal conversation, so people don’t clock it straight away. Whether it says it’s an AI is up to you. If you want it to open with that, write it into the call instructions, something like “say you’re an AI assistant calling for Vadim”, and that’s how it starts the call. If someone asks partway through, it tells them it’s an AI. Either way, you get back what was said and what happened. If a restaurant hangs up, you know straight away.",
+     "kr": "@igorblink CALL-E는 평범한 대화를 나누는 사람처럼 들리기 때문에 상대방이 바로 알아채지 못합니다. AI임을 먼저 밝힐지 여부는 사용자 선택에 달려 있습니다. 도입부에 밝히길 원한다면 통화 지침에 'Vadim을 대신해 전화한 AI 비서라고 말할 것'처럼 작성하면 그대로 통화를 시작합니다. 통화 도중 상대방이 물어보면 AI라고 답합니다. 어떤 경우든 대화 내용과 결과가 기록되어 전달되며, 식당에서 전화를 끊더라도 즉시 파악할 수 있습니다."
+    },
+    {
+     "author": "Ninuna Ungiadze",
+     "is_maker": false,
+     "text": "Can i connect my Sip numbers? We have sips for couple different countries anyway",
+     "kr": "기존 SIP 번호를 연결할 수 있나요? 어차피 몇 개 다른 국가의 SIP 번호를 보유하고 있어서요."
+    }
+   ],
+   "slug": "call-e"
+  },
+  {
+   "name": "ElevenLabs",
+   "tagline_en": "Create natural AI voices instantly in any language",
+   "tagline_kr": "모든 언어로 자연스러운 AI 음성을 즉시 생성",
+   "image": "https://ph-files.imgix.net/0cd475d6-dc2a-444b-b382-f2d1b8c93440.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://try.elevenlabs.io/v97l1k3mkplm",
+   "categories": [
+    "AI Voice Agents",
+    "Text-to-Speech Software"
+   ],
+   "upvotes": 161,
+   "comments_count": 5,
+   "maker": [],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "ElevenLabs는 70개 이상의 언어를 아우르는 텍스트 음성 변환(TTS), 음성 인식(STT), 음성 복제 및 더빙 기술을 선도하는 음성 AI 전문 기업입니다. 이번 런칭에서는 5.5%의 낮은 단어 오류율(WER)을 기록하며 기존 모델 대비 압도적인 정확도를 자랑하는 최신 음성 인식 모델 'Scribe v3'를 집중 조명했습니다. Scribe v3는 스튜디오 품질의 오디오뿐만 아니라 잡음이 심한 통화 녹음에서도 최대 32명의 화자를 정밀하게 분리하고 감정 태그까지 포착합니다. 특히 사내 전문 용어나 고유 제품명을 최대 1,000개까지 핵심어로 사전 등록하여 인식률을 획기적으로 높일 수 있습니다. 개발자는 대시보드와 API를 통해 별도의 영업 상담 없이 즉시 모델을 테스트하고 서비스에 도입할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/elevenlabs",
+   "comment_summary": "이용자들은 최대 1,000개의 맞춤형 키워드 부스팅 기능과 32명 화자 분리 기술이 실제 업무 환경의 난해한 고유명사와 잡음을 처리하는 데 매우 유용할 것이라며 환호했습니다. 또한 규정 준수 검증을 위한 단어 단위 타임스탬프 지원 여부 등 세부적인 기술 사양에 대해서도 활발한 논의가 이루어졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Kate Ramakaieva",
+     "is_maker": false,
+     "text": "Hunter 📌 Hunting Scribe v3 today, the new speech-to-text model from ElevenLabs. A few numbers that stood out. On their benchmarks it lands at 5.5% WER vs 9.7% for GPT-Transcribe. Fieldy says user retention went up 50% after switching to Scribe. And it’s already running at Meta and Twilio. If you’re testing it, skip the clean studio audio. Use your messiest call recording, add your product names as keyterms, and turn on diarization. Works in the dashboard and via API, no sales call needed. Go tes",
+     "kr": "Hunter 📌 오늘 ElevenLabs의 새로운 음성 인식(STT) 모델인 Scribe v3를 헌팅했습니다. 눈에 띄는 몇 가지 수치가 있는데요. 자체 벤치마크에서 GPT-Transcribe의 9.7% 대비 5.5%의 단어 오류율(WER)을 기록했습니다. Fieldy에 따르면 Scribe로 전환한 후 사용자 유지율이 50% 증가했다고 합니다. 이미 Meta와 Twilio에서도 실행되고 있습니다. 테스트해보실 분들은 깨끗한 스튜디오 오디오는 건너뛰세요. 가장 잡음이 많은 통화 녹음을 사용하고, 제품명을 핵심어로 추가한 뒤 화자 분리(diarization)를 켜보세요. 대시보드와 API를 통해 바로 이용 가능하며 영업 상담도 필요 없습니다. 어서 테스트해보세요."
+    },
+    {
+     "author": "Andrea Nyoszoli",
+     "is_maker": false,
+     "text": "I made two custom voices with you, Oliver and Claire, for the AI presenters in our podcast and videos, and moved them into HeyGen too. I love how they sound and I'm really glad I found you. An idea for Scribe v3: our episodes are about regulation, where \"1.5 million\" and \"15 million\" are very different stories, so I'd like to run the finished audio back through Scribe and check it matches the approved script. Does v3 return word-level timestamps, so a mismatch can be found at the exact second?",
+     "kr": "저희 팟캐스트와 영상의 AI 진행자를 위해 여러분의 서비스로 Oliver와 Claire라는 두 개의 맞춤형 음성을 만들었고 HeyGen으로도 가져갔습니다. 음성이 정말 훌륭하고 이 서비스를 알게 되어 기쁩니다. Scribe v3에 대한 아이디어가 하나 있는데요, 저희 에피소드는 규제에 관한 내용이라 '150만'과 '1,500만'은 완전히 다른 이야기가 됩니다. 완성된 오디오를 Scribe로 다시 실행해 승인된 스크립트와 일치하는지 확인하고 싶은데, v3는 불일치하는 부분을 초 단위로 정확히 찾을 수 있도록 단어 수준의 타임스탬프를 반환하나요?"
+    },
+    {
+     "author": "Sheeta Verma👩🏽‍💻",
+     "is_maker": false,
+     "text": "What's the best way to tackle this when there are names that aren't comprehensive by the software?",
+     "kr": "소프트웨어가 잘 이해하지 못하는 이름들이 있을 때는 어떻게 해결하는 것이 가장 좋은 방법인가요?"
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The 1,000 custom keyterms is the detail that caught my eye — most transcripts I deal with fall apart on product names and internal jargon, not clean speech. Same with the 32-speaker diarization and the laughter, music, and emotion tags; those are the bits that usually get lost. Curious how well the keyterm boost holds up on messy, overlapping call audio versus the clean benchmarks.",
+     "kr": "1,000개의 맞춤형 핵심어 지원은 제 시선을 사로잡은 디테일입니다. 제가 다루는 대부분의 녹취록은 깨끗한 음성이 아니라 제품명과 사내 전문 용어에서 무너지거든요. 32명의 화자 분리와 웃음소리, 음악, 감정 태그도 마찬가지로 평소 유실되기 쉬운 부분들입니다. 깨끗한 벤치마크 환경 대비 말이 겹치고 복잡한 통화 오디오에서 핵심어 부스팅이 얼마나 잘 유지될지 궁금하네요."
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Likely AI Boosting a thousand of my own product names as keyterms is the fix for the thing that makes every transcript useless, since no general model has ever heard of the internal tool names we say in standups.",
+     "kr": "스탠드업 미팅에서 말하는 사내 툴 이름은 일반 모델이 들어본 적이 없기 때문에 녹취록을 쓸모없게 만드는 주원인이었는데, 1,000개의 자체 제품명을 핵심어로 부스팅할 수 있다는 점이 바로 그 해결책이 될 것 같습니다."
+    }
+   ],
+   "slug": "elevenlabs"
+  },
+  {
+   "name": "Skillbox",
+   "tagline_en": "One library for your AI skills, synced to every agent",
+   "tagline_kr": "모든 에이전트에 동기화되는 AI 스킬 통합 라이브러리",
+   "image": "https://ph-files.imgix.net/98ec0c8a-ec9a-4f6a-b784-7618207d029b.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://skillbox.so/",
+   "categories": [
+    "AI Coding Agents",
+    "Security software",
+    "LLM Developer Tools"
+   ],
+   "upvotes": 136,
+   "comments_count": 12,
+   "maker": [
+    "Adenekan Wonderful",
+    "Shedrack Akintayo"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Skillbox는 다양한 AI 코딩 에이전트에서 사용하는 스킬들을 단일 라이브러리로 통합 관리하고 동기화해 주는 개발자 도구입니다. GitHub 저장소, 프로젝트 폴더 등에 흩어져 있던 프롬프트와 스킬을 Claude Code, Cursor, Codex 등 여러 도구에 일관되게 배포합니다. 각 스킬 버전별로 diff를 확인하고 프롬프트 인젝션, 비밀 키 유출, 난독화 코드 등 보안 취약점을 사전에 클라우드에서 스캔하여 검증합니다. 또한 'Trim' 기능을 통해 지나치게 긴 명령어 터미널 출력을 효과적으로 축약함으로써 세션의 토큰 한도를 대폭 절약할 수 있습니다. 로컬에서 직접 작성한 맞춤형 스킬도 프로젝트별로 유연하게 범위를 지정하여 안전하게 동기화할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/skillbox-5",
+   "comment_summary": "사용자들은 여러 개발 환경에 흩어진 스킬 버전을 한곳에서 관리하고 보안 검사를 수행하는 기능에 높은 관심을 보였습니다. 제작팀은 실패한 명령어 출력의 로컬 백업 메커니즘과 로컬 스킬 지원, MCP 서버 설정과의 연동 방식에 대해 상세히 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Adenekan Wonderful",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt, I'm Adenekan Wonderful, the maker of Skillbox. I built this because my AI skills were everywhere. A few lived in GitHub repos, some sat inside project folders, and some were installed for Claude Code but missing from Cursor. A better version of one would turn up and I'd have no idea. Copying files was easy. Knowing what I had, where it came from, whether it had changed, and whether it was safe was the hard part. So Skillbox does four things: * One library, and a smaller active",
+     "kr": "📌 안녕하세요 Product Hunt, Skillbox를 만든 Adenekan Wonderful입니다. AI 스킬들이 온갖 곳에 흩어져 있어 이 제품을 개발하게 되었습니다. 몇몇은 GitHub 저장소에, 일부는 프로젝트 폴더 안에 있었고, 어떤 것은 Claude Code에는 설치되었지만 Cursor에는 빠져 있었습니다. 더 나은 버전이 나와도 전혀 알 수 없었죠. 파일을 복사하는 건 쉬웠지만 내가 무엇을 가지고 있는지, 어디서 왔는지, 변경되었는지, 안전한지 파악하는 것이 어려웠습니다. 그래서 Skillbox는 네 가지 역할을 수행합니다: * 하나의 라이브러리와 더 작은 활성 스킬 관리"
+    },
+    {
+     "author": "Artem Korchunov",
+     "is_maker": false,
+     "text": "We have one skill that only makes sense in one repo, it's about our deploy scripts. Can I keep it active there and nowhere else?",
+     "kr": "특정 저장소의 배포 스크립트에만 해당하는 스킬이 하나 있는데, 다른 곳에는 적용하지 않고 해당 저장소에서만 활성화해 둘 수 있나요?"
+    },
+    {
+     "author": "Shedrack Akintayo",
+     "is_maker": true,
+     "text": "@artemkorchunov Good question. Skillbox doesn't automatically toggle skills on/off based on which repo you have open, but you can assign that deploy skill to a specific project folder instead of syncing it globally across your tools, so it only lives in that repo's folder.",
+     "kr": "@artemkorchunov 좋은 질문입니다. Skillbox가 열려 있는 저장소에 따라 자동으로 스킬을 켜고 끄지는 않지만, 모든 도구에 전역으로 동기화하는 대신 특정 프로젝트 폴더에 해당 배포 스킬을 할당할 수 있어 해당 저장소 폴더에만 존재하도록 설정할 수 있습니다."
+    },
+    {
+     "author": "Leo Heo",
+     "is_maker": false,
+     "text": "Does Trim ever cut the one line of a failing test you needed?",
+     "kr": "Trim 기능이 꼭 확인해야 하는 실패한 테스트 내용까지 잘라버리는 경우는 없나요?"
+    },
+    {
+     "author": "Adenekan Wonderful",
+     "is_maker": true,
+     "text": "@leoheo Trim can drop lines, since that’s how it saves tokens but a failing command is the case we protect. When a command fails, the full original output is saved locally. A hint in the trimmed output points to it, and the agent can pull the complete output back with one command. Anything you don’t want trimmed can be switched off per command, and if a filter errors it falls back to the raw output instead of guessing.",
+     "kr": "@leoheo 토큰을 절약하기 위해 줄을 생략할 수는 있지만 실패한 명령어의 경우는 안전하게 보호됩니다. 명령어가 실패하면 원본 출력 전체가 로컬에 저장됩니다. 축약된 출력에 포함된 힌트가 해당 위치를 가리키며, 에이전트는 단 한 번의 명령어로 전체 출력을 다시 가져올 수 있습니다. 축약을 원치 않는 항목은 명령어별로 끌 수 있고, 필터에 오류가 발생하면 임의로 추측하는 대신 원시 출력으로 대체됩니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The scattered-skills problem is real for me — mine live across repos, project folders, and random local copies, and I never quite know which version Claude Code is actually using. What I like most is that Trust is checked per version, not just per skill, and updates follow the source on GitHub. That's the part that would get me to centralize. One thing I'm wondering about: most of my useful skills are ones I wrote myself locally, not ones I pulled from GitHub — do those go through the same libra",
+     "kr": "스킬이 파편화되는 문제는 저에게도 현실입니다. 제 스킬들도 여러 저장소, 프로젝트 폴더, 임의의 로컬 사본에 흩어져 있어서 Claude Code가 실제로 어떤 버전을 쓰고 있는지 알기 어렵거든요. 가장 마음에 드는 점은 스킬 단위뿐 아니라 버전별로 신뢰성을 검사하고 GitHub 소스를 따라 업데이트된다는 점입니다. 이 기능 때문에 중앙 관리를 도입하고 싶네요. 한 가지 궁금한 점은, 제가 유용하게 쓰는 대부분의 스킬은 GitHub에서 가져온 게 아니라 로컬에서 직접 작성한 것들인데 이것도 같은 라이브러리를 거치나요?"
+    },
+    {
+     "author": "Adenekan Wonderful",
+     "is_maker": true,
+     "text": "@jcbuilds Yes, local skills are first-class. Import them from disk (you accept or skip each one) or save them from a chat session. They sync to Cursor, Codex and Claude Code like anything else, and you can scope them per project. They show as “Yours”. Since they have no upstream, there’s nothing to follow on GitHub. Updates from the source only apply to skills you pulled in.",
+     "kr": "@jcbuilds 네, 로컬 스킬도 일등 시민으로 취급됩니다. 디스크에서 가져오거나(각 항목을 수락하거나 건너뛸 수 있음) 채팅 세션에서 저장할 수 있습니다. 다른 스킬과 마찬가지로 Cursor, Codex, Claude Code에 동기화되며 프로젝트별로 범위를 지정할 수 있습니다. 'Yours'로 표시됩니다. 업스트림이 없기 때문에 GitHub에서 추적할 것은 없습니다. 소스 업데이트는 외부에서 가져온 스킬에만 적용됩니다."
+    },
+    {
+     "author": "BHRUGU",
+     "is_maker": false,
+     "text": "Really nice one! Will definitely try it out. qq: Everything runs on user's computer or anything leaves computer?",
+     "kr": "정말 멋지네요! 꼭 사용해 보겠습니다. 간단한 질문인데요: 모든 것이 사용자의 컴퓨터에서 실행되나요, 아니면 컴퓨터 외부로 전송되는 데이터가 있나요?"
+    },
+    {
+     "author": "Adenekan Wonderful",
+     "is_maker": true,
+     "text": "@georgeturbo Great question. The scan runs in our cloud, not on your machine, on the exact version of each skill before it can reach your agents. It checks for prompt injection, exfiltration, secrets and obfuscated code, and it's one layer of evidence, not a guarantee. You do get approval control: every new version is scanned separately, and anything flagged is held back from syncing. Turn off auto-update on a skill and updates wait for your OK before they apply. What we don't have yet is pinnin",
+     "kr": "@georgeturbo 좋은 질문입니다. 보안 스캔은 사용자 컴퓨터가 아닌 저희 클라우드에서 실행되며, 각 스킬 버전이 사용자의 에이전트에 도달하기 전에 수행됩니다. 프롬프트 인젝션, 데이터 유출, 시크릿 키, 난독화된 코드를 검사하며 이는 하나의 검증 단계이지 완전한 보장은 아닙니다. 사용자에게 승인 통제권이 주어집니다. 모든 새 버전은 개별적으로 스캔되며 문제가 감지된 항목은 동기화가 보류됩니다. 스킬의 자동 업데이트를 끄면 사용자의 승인이 있을 때까지 업데이트가 대기합니다."
+    },
+    {
+     "author": "Adenekan Wonderful",
+     "is_maker": true,
+     "text": "Thanks for the comment, @philippstaudt not today. Skillbox syncs a skill’s files to each tool, but it doesn’t carry the skill’s MCP server entry across tools. The only MCP config Skillbox writes is its own control-plane server, “skillbox”. It writes that one in each tool’s own format: \"type\": \"http\" for Cursor and Claude Code, a \\[mcp\\_servers.skillbox\\] TOML table for Codex, and so on. It doesn’t read a server declaration from a skill and write it out for each tool. The docs also treat MCP inst",
+     "kr": "댓글 감사합니다, @philippstaudt 현재는 지원하지 않습니다. Skillbox는 스킬 파일을 각 도구에 동기화하지만, 도구 간에 스킬의 MCP 서버 항목을 전달하지는 않습니다. Skillbox가 작성하는 유일한 MCP 구성은 자체 컨트롤 플레인 서버인 'skillbox'입니다. Cursor 및 Claude Code의 경우 'type': 'http', Codex의 경우 [mcp_servers.skillbox] TOML 테이블 등 각 도구의 자체 형식으로 작성합니다. 스킬에서 서버 선언을 읽어 각 도구에 맞춰 작성해주지는 않습니다."
+    }
+   ],
+   "slug": "skillbox-5"
+  }
+ ]
+}
