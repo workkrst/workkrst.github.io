@@ -1,0 +1,815 @@
+{
+ "date": "2026-11-16",
+ "collected_at": "2026-11-16 13:47 KST",
+ "summary": "오늘 프로덕트 헌트 상위권은 로컬 실행형 AI 팀원, 노코드 멀티플레이어 협업 플랫폼, 백그라운드 PR 해결 에이전트 등 AI 워크플로 자동화 및 코딩 에이전트가 주류를 형성했습니다. 커뮤니티 댓글에서는 공통적으로 에이전트 구동에 필요한 API 키 및 시크릿의 격리 보안, 자체 모델(BYOM) 연동 지원, 그리고 토큰 예산과 권한 통제 방식이 주요 화두로 논의되었습니다.",
+ "notable": [
+  {
+   "slug": "rakazo",
+   "why": "8,400개 이상의 스타를 받은 오픈소스 에이전트로서 외부 클라우드에 종속되지 않고 로컬에서 안전하게 구동할 수 있다는 점에서 큰 지지를 받았습니다. 댓글에서는 사용자가 직접 보유한 모델(BYOM) 연동 가능 여부와 API 키 예산 관리 등 방화벽 내부 제어 기능에 대한 실질적인 질의가 활발히 이어졌습니다."
+  },
+  {
+   "slug": "talyn",
+   "why": "단순 코드 완성을 넘어 CI 빌드 실패나 머지 충돌 등 개발자의 손을 많이 타는 PR 후속 작업을 클라우드 샌드박스에서 알아서 해결해 준다는 접근으로 호응을 얻었습니다. 댓글에서는 샌드박스 외부로 시크릿을 프록시 처리하는 안전성과 실시간 토큰 예산 관리 등 실무 배포 시의 신뢰성에 높은 관심이 쏠렸습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Rakazo",
+   "tagline_en": "An open-source Grok Bot alternative",
+   "tagline_kr": "오픈소스 그록 봇(Grok Bot) 대안",
+   "image": "https://ph-files.imgix.net/71a75eb3-6787-427e-be5e-decc19ff47d5.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://rakazo.com/&utm_source=producthunt",
+   "categories": [
+    "OpenClaw"
+   ],
+   "upvotes": 337,
+   "comments_count": 44,
+   "maker": [
+    "Elie Steinbock"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Rakazo는 호스팅 기반 AI 에이전트를 대체할 수 있는 오픈소스 솔루션입니다. 사용자의 로컬 머신에서 직접 AI 팀원을 실행하고 필요한 도구와 연동하여 실제 업무를 맡길 수 있습니다. 자체 모델(BYOM)과 API 키를 가져와 사용할 수 있으며, 사람이 읽기 쉬운 루틴을 생성하고 승인 규칙을 설정할 수 있습니다. 모든 자격 증명, 작업 세션, 감사 로그가 방화벽 내부에서 안전하게 유지되어 보안성이 뛰어납니다. 무료 셀프 호스팅뿐만 아니라 월 15달러부터 시작하는 클라우드 플랫폼 옵션도 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/rakazo",
+   "comment_summary": "메이커는 8,400개 이상의 스타를 받은 오픈소스 에이전트의 강점과 도구 연동 기능을 소개하며 큰 호응을 얻었습니다. 사용자들은 자체 모델(BYOM) 및 로컬 모델(Ollama) 지원 여부, 승인 규칙과 감사 로그 등 보안 및 제어 기능에 큰 관심을 보였습니다. 메이커는 API 키 예산 관리와 장기 실행 작업의 진행 보고 방식, Claude 연동 세부 사항을 명확히 설명하며 적극 소통했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Elie Steinbock",
+     "is_maker": true,
+     "text": "📌 Hey Hunters 👋 I’m excited to launch Rakazo, the best open-source Grok Bot alternative with 8,400 GitHub stars. We let you bring any model or sandbox provider and it supports ChatGPT and Claude subscriptions. It's free to self-host, or you can use our cloud platform starting at $15/mo. 💻 Bots get their own computer 🧠 Memory that carries over between tasks ⏰ Routines on a schedule, from an email or a webhook 🔌 Gmail, Slack, GitHub, Notion, Linear and thousands more, plus any MCP server 👥 Group c",
+     "kr": "📌 헌터 여러분 안녕하세요 👋 8,400개의 깃허브 스타를 보유한 최고의 오픈소스 그록 봇 대안, Rakazo를 출시하게 되어 기쁩니다. 원하는 모든 모델이나 샌드박스 제공자를 연동할 수 있으며 ChatGPT와 Claude 구독도 지원합니다. 셀프 호스팅은 완전 무료이며, 월 15달러부터 시작하는 클라우드 플랫폼도 이용하실 수 있습니다. 💻 봇 전용 가상 컴퓨터 제공 🧠 작업 간 유지되는 메모리 ⏰ 이메일이나 웹훅 기반의 스케줄 루틴 🔌 Gmail, Slack, GitHub, Notion, Linear 등 수천 개의 앱 및 모든 MCP 서버 지원 👥 그룹 협업 지원"
+    },
+    {
+     "author": "Neta Dror",
+     "is_maker": false,
+     "text": "@elie222 amazing product!",
+     "kr": "@elie222 정말 멋진 제품이네요!"
+    },
+    {
+     "author": "Elie Steinbock",
+     "is_maker": true,
+     "text": "@netadrorbuilds thanks Neta!!",
+     "kr": "@netadrorbuilds 고마워요 Neta!!"
+    },
+    {
+     "author": "Elie Steinbock",
+     "is_maker": true,
+     "text": "@raghav\\_21 thanks! a hard daily budget makes sense. the hosted credit cap is per user rather than per bot, and doesn’t reset daily. with your own keys, I’d set the budget at the model provider",
+     "kr": "@raghav_21 감사합니다! 일일 엄격 한도(하드 버짓)를 설정하는 건 좋은 생각입니다. 호스팅 크레딧 한도는 봇별이 아니라 유저별로 적용되며 매일 리셋되지 않습니다. 자체 API 키를 쓰신다면 모델 제공자 측에서 예산 한도를 거는 것을 추천합니다."
+    },
+    {
+     "author": "Ron Cohen",
+     "is_maker": false,
+     "text": "@elie222 great product!!!",
+     "kr": "@elie222 훌륭한 제품입니다!!!"
+    },
+    {
+     "author": "Elie Steinbock",
+     "is_maker": true,
+     "text": "@ron\\_cohen thanks Ron, appreciate it!",
+     "kr": "@ron_cohen 고마워요 Ron, 감사드립니다!"
+    },
+    {
+     "author": "Mike Fusco, CIC, CAIC",
+     "is_maker": false,
+     "text": "@elie222 love the product!",
+     "kr": "@elie222 이 제품 마음에 드네요!"
+    },
+    {
+     "author": "Nathan 🔸 Tarbert",
+     "is_maker": false,
+     "text": "Hey Elie, congrats on the launch. You've done an excellent job! Am I able to bring my own models into Rakazo?",
+     "kr": "Elie 님, 출시를 축하합니다. 정말 훌륭한 결과물이네요! Rakazo에 제가 보유한 모델(BYOM)을 직접 가져와 사용할 수 있나요?"
+    },
+    {
+     "author": "Elie Steinbock",
+     "is_maker": true,
+     "text": "@nathan\\_tarbert thanks Nathan! yep, bring your own API keys or connect a local model through Ollama or LM Studio. each bot can use a different model too",
+     "kr": "@nathan_tarbert 고마워요 Nathan! 네, 자체 API 키를 가져오거나 Ollama 또는 LM Studio를 통해 로컬 모델을 연결할 수 있습니다. 각 봇마다 서로 다른 모델을 지정하는 것도 가능합니다."
+    },
+    {
+     "author": "Nathan 🔸 Tarbert",
+     "is_maker": false,
+     "text": "@elie222, very nice, thanks!",
+     "kr": "@elie222, 정말 좋네요, 감사합니다!"
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The approval rules plus the audit log are what sold me — I've had agents quietly do things I only discovered days later, so a teammate I can actually see and gate feels like a different proposition. BYO Claude subscription makes it an easy try too. Do routines check in while long-running work is going, or do they just run until an approval stops them?",
+     "kr": "승인 규칙과 감사 로그 기능이 특히 매력적이네요. 에이전트가 며칠 뒤에야 알게 될 행동들을 몰래 저지른 경험이 있어서, 직접 확인하고 통제할 수 있는 팀원이 있다는 건 완전히 다른 차원의 장점입니다. Claude 구독을 연동할 수 있다는 점도 부담 없이 시도하기 좋네요. 오래 걸리는 작업이 진행되는 동안 루틴이 중간 보고를 해주나요, 아니면 승인이 필요할 때까지 그냥 계속 실행되나요?"
+    },
+    {
+     "author": "Elie Steinbock",
+     "is_maker": true,
+     "text": "@jcbuilds thanks! are you looking for periodic progress messages during a run, or a separate check-in that flags stalled work? also, a clarification: the current Claude integration uses an Anthropic API key rather than Pro/Max subscription credit",
+     "kr": "@jcbuilds 감사합니다! 실행 중에 주기적인 진행 상황 알림을 원하시나요, 아니면 작업이 지연될 때 표시해 주는 별도 체크인을 원하시나요? 아울러 한 가지 정정하자면, 현재 Claude 연동은 Pro/Max 구독 크레딧이 아닌 Anthropic API 키를 사용합니다."
+    }
+   ],
+   "slug": "rakazo"
+  },
+  {
+   "name": "Frevana Multiplayer",
+   "tagline_en": "AI that grows your business alongside your team",
+   "tagline_kr": "팀과 함께 비즈니스를 성장시키는 AI",
+   "image": "https://ph-files.imgix.net/5ed1b04e-7a8b-4216-b7e4-d34044807ecc.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://www.frevana.com/&utm_source=producthunt",
+   "categories": [
+    "AI Workflow Automation",
+    "No-Code AI Agent Builder"
+   ],
+   "upvotes": 244,
+   "comments_count": 38,
+   "maker": [
+    "Amy"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Frevana는 고객 발굴, 콘텐츠 제작, 반복적인 잡무 자동화를 돕는 AI 에이전트 앱을 실행하는 플랫폼입니다. 이번 업데이트를 통해 링크 하나로 팀원을 초대하고 에이전트와 스킬을 공유할 수 있는 '멀티플레이어' 기능이 도입되었습니다. 한 사람이 개발한 최고의 워크플로를 팀 전체가 즉시 공유하고 함께 발전시킬 수 있습니다. 노코드 환경에서 마케팅, 영업, 리서치, 운영에 필요한 에이전트 앱을 손쉽게 구축할 수 있도록 지원합니다. 도구 연동 및 권한 관리를 중앙에서 통제하여 팀 단위 협업의 생산성을 극대화합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/frevana-2",
+   "comment_summary": "메이커는 1인 중심의 에이전트 활용을 팀 단위 협업으로 확장하는 멀티플레이어 기능을 공개했습니다. 사용자들은 에이전트 및 연동 도구의 공유 시 자격 증명 보안, GitHub 대비 장점, 스킬 버전 추적 기능에 대해 집중적으로 질문했습니다. 메이커는 접근 권한 분리와 올인원 UI의 편의성을 강조하며 세부 버전 추적을 로드맵에 반영하겠다고 답했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Amy",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 I'm Amy, co-founder of Frevana. Frevana is where you build and run AI agent apps that grow your business. Backed by a16z, Craft Ventures, and OpenAI, we help you get started with ready-to-use apps or build your own for marketing, sales, research, and operations. Today we're launching Frevana Multiplayer. Until now, working with AI agents has been a solo activity. One person prompts, pastes the result into Slack, collects feedback, and goes back to prompt again. The agent nev",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요 👋 Frevana의 공동 창업자 Amy입니다. Frevana는 비즈니스 성장을 위한 AI 에이전트 앱을 만들고 실행할 수 있는 공간입니다. a16z, Craft Ventures, OpenAI의 투자를 바탕으로, 즉시 사용 가능한 앱을 제공하거나 마케팅, 세일즈, 리서치, 운영을 위한 맞춤형 앱 제작을 지원합니다. 오늘 저희는 'Frevana Multiplayer'를 선보입니다. 지금까지 AI 에이전트 작업은 한 사람이 프롬프트를 입력하고 결과를 슬랙에 공유해 피드백을 받은 뒤 다시 수정하는 고립된 활동이었습니다. 에이전트는 결코 팀 전체의 지식을 온전히 활용하지 못했습니다."
+    },
+    {
+     "author": "Amy",
+     "is_maker": true,
+     "text": "@farzam\\_habibi That makes sense! I think this is manageable with clear version control and access management, so you can see who changed what and control who can make changes. Really useful feedback for us!",
+     "kr": "@farzam_habibi 일리 있는 말씀입니다! 누가 무엇을 변경했는지 확인하고 수정 권한을 제어할 수 있는 명확한 버전 관리 및 접근 권한 관리를 통해 해결할 수 있다고 봅니다. 정말 유용한 피드백 감사합니다!"
+    },
+    {
+     "author": "Tina Yao",
+     "is_maker": false,
+     "text": "The sharing part makes sense. The account access is what I'm less clear on. If I share an agent, am I also sharing access to the tools I've connected?",
+     "kr": "공유 기능은 이해가 잘 됩니다. 다만 계정 접근 권한 부분이 덜 명확한데요, 에이전트를 공유하면 제가 연동해 둔 도구들의 접근 권한도 함께 공유되는 건가요?"
+    },
+    {
+     "author": "Amy",
+     "is_maker": true,
+     "text": "@libin\\_yao Yes! You can share your tools, skills, and ready-made agents, and choose whether to share credentials with your team too.",
+     "kr": "@libin_yao 네 맞습니다! 도구, 스킬, 제작된 에이전트를 공유할 수 있으며, 자격 증명(인증 정보)을 팀원들과 공유할지 여부도 직접 선택할 수 있습니다."
+    },
+    {
+     "author": "Vijayanand Kailash",
+     "is_maker": false,
+     "text": "Been into No-Code/Low-Code for more than 15+ years from Zoho (Creator, Flow, Orchestly etc). For these platforms, integrations are more crucial. Do you guys support native integrations with other SaaS apps? Also, BYOK possible?",
+     "kr": "Zoho(Creator, Flow, Orchestly 등) 시절부터 15년 이상 노코드/로우코드를 다뤄왔습니다. 이런 플랫폼에서는 연동 기능이 가장 핵심적인데요. 다른 SaaS 앱들과의 네이티브 연동을 지원하나요? 또한 자체 API 키(BYOK) 등록도 가능한가요?"
+    },
+    {
+     "author": "Amy",
+     "is_maker": true,
+     "text": "@vijayanandkailash You definitely know this space well! BYOK is supported through importing local skills. We integrate with various data platforms and SaaS APIs, and also help enterprises connect their internal tools and deploy private AI models.",
+     "kr": "@vijayanandkailash 이 분야를 정말 잘 아시네요! BYOK는 로컬 스킬 불러오기를 통해 지원됩니다. 다양한 데이터 플랫폼 및 SaaS API와 연동되며, 기업 고객을 위한 사내 내부 도구 연결과 프라이빗 AI 모델 배포도 지원합니다."
+    },
+    {
+     "author": "Vijayanand Kailash",
+     "is_maker": false,
+     "text": "@amy\\_wenyan\\_hua Got it. Integration details are in in the footer: https://www.frevana.com/integrations/",
+     "kr": "@amy_wenyan_hua 확인했습니다. 연동 관련 상세 내용은 푸터 링크(https://www.frevana.com/integrations/)에 있군요."
+    },
+    {
+     "author": "Amelia Wampler",
+     "is_maker": false,
+     "text": "This is awesome! Right now i use claude agents, skills, and other platforms for our GTM but have been finding that for content especially its better for my workflow to draft in figma and typefully for social content and then have claude learn skills around this. How is frevana different than sharing these skills in a github repo with my team?",
+     "kr": "정말 멋지네요! 현재 GTM을 위해 Claude 에이전트와 스킬 등을 활용하고 있는데, 소셜 콘텐츠 초안 작성은 Figma와 Typefully에서 작업하고 Claude가 관련 스킬을 학습하도록 하는 게 제 워크플로에 더 맞더군요. 팀원들과 GitHub 레포지토리에 스킬을 공유하는 것과 비교해 Frevana는 어떤 차별점이 있나요?"
+    },
+    {
+     "author": "Amy",
+     "is_maker": true,
+     "text": "@amelia\\_wampler Thanks Amelia! Think of it as building your own Typefully, powered by your skills, that you can use together with your team. A GitHub repo lets you share the skills, but your teammates still need to set up the tools and workflow around them. With Agent Apps, you can bring the skills, a design or doc UI, and your review workflow into one place, so you can work together without switching between tools.",
+     "kr": "@amelia_wampler 고마워요 Amelia! 사용자의 스킬을 기반으로 작동하는 전용 Typefully를 만들어 팀과 함께 쓰는 것으로 생각하시면 됩니다. GitHub 저장소는 스킬 공유는 가능하지만 팀원들이 여전히 개별 도구와 워크플로를 직접 세팅해야 합니다. 에이전트 앱을 사용하면 스킬, 디자인/문서 UI, 검토 워크플로를 한곳으로 모아 도구를 오가지 않고 협업할 수 있습니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "I build solo, so the team side isn't my daily setup — but the shared skills part hits a problem I run into constantly. I reuse the same skills across my own projects, and when an agent does something odd I often can't tell which version of a skill it was running on. If a teammate publishes a new version of a shared skill, do agents that are already mid-run pick it up, or finish on the old one — and can you see afterwards which version produced a given output?",
+     "kr": "저는 1인 빌더라 팀 협업은 주된 환경이 아니지만, 공유 스킬 기능은 제가 늘 겪던 문제점을 잘 짚어주네요. 여러 프로젝트에서 동일한 스킬을 재사용하다 보면 에이전트가 이상하게 동작할 때 어떤 버전의 스킬로 실행되었는지 알기 어렵습니다. 팀원이 공유 스킬의 새 버전을 발행하면 실행 중이던 에이전트가 이를 바로 반영하나요, 아니면 이전 버전으로 완료되나요? 그리고 특정 결과물을 어떤 버전이 생성했는지 사후에 확인할 수 있나요?"
+    },
+    {
+     "author": "Amy",
+     "is_maker": true,
+     "text": "@jcbuilds Interesting use case! We keep a record of every agent run, but we don’t currently track exactly which skill version produced each output. I can see why this matters and happy to add that level of version tracking to our roadmap.",
+     "kr": "@jcbuilds 흥미로운 활용 사례네요! 모든 에이전트 실행 기록을 보관하고는 있지만, 현재는 각 결과물을 생성한 정확한 스킬 버전까지 추적하지는 않습니다. 왜 이 기능이 중요한지 충분히 공감하며, 해당 수준의 버전 추적 기능을 로드맵에 기쁜 마음으로 추가하겠습니다."
+    },
+    {
+     "author": "Olia Nemirovski",
+     "is_maker": false,
+     "text": "for us it breaks at handoff. my agents know our rules, a teammate's agents start from zero. if someone edits a shared skill, does the whole team get it?",
+     "kr": "저희는 업무 인계 과정에서 문제가 발생하곤 합니다. 제 에이전트는 규칙을 잘 알지만 팀원의 에이전트는 바닥부터 시작하거든요. 누군가 공유 스킬을 수정하면 팀 전체에 적용되나요?"
+    }
+   ],
+   "slug": "frevana-2"
+  },
+  {
+   "name": "Tulvo",
+   "tagline_en": "Smart & adaptive workspace to manage all your work",
+   "tagline_kr": "모든 업무를 관리하는 스마트하고 적응력 있는 워크스페이스",
+   "image": "https://ph-files.imgix.net/b58bf8a7-786d-4930-8124-6aa945abd4f7.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://www.tulvo.io/&utm_source=producthunt",
+   "categories": [
+    "Project management software",
+    "AI Workflow Automation",
+    "No-Code Website Builder"
+   ],
+   "upvotes": 190,
+   "comments_count": 22,
+   "maker": [
+    "Rubel Hasan",
+    "Shakhawat UIllah Badhon",
+    "Mohammad Mizanur Rahman"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Tulvo는 여러 앱으로 파편화된 소규모 비즈니스의 데이터와 워크플로를 하나로 통합하는 스마트 워크스페이스입니다. 문서, 작업, 고객 명단, 설문 폼, 웹사이트를 단 하나의 연결된 데이터 세트 위에서 유기적으로 운영할 수 있습니다. 비즈니스를 한 문장으로 설명하기만 하면 Tulvo AI가 관련 데이터베이스, 칸반 보드, 문서 및 보고서를 자동으로 구성해 줍니다. 폼 및 웹훅 데이터 연동, MCP를 통한 자체 AI 연결, 라이브 웹사이트 호스팅까지 광범위하게 지원합니다. Lovable이나 Claude로 제작한 웹 앱도 Tulvo 내에 호스팅하여 동일한 데이터와 즉시 연동할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/tulvo",
+   "comment_summary": "메이커는 노션과 로버블(Lovable)을 결합한 형태로 통합 데이터 위에서 워크스페이스와 웹 앱을 함께 운영할 수 있다는 점을 강조했습니다. 사용자들은 AI 바이브 코딩 도구와의 차별점, 회의록 기반 자동 작업 추출 및 담당자 지정 방식, 향후 데이터 엑스포트 용이성에 대해 질문했습니다. 개발팀은 데모 영상을 공유하며 코드 1클릭 다운로드 등 락인 없는 유연한 데이터 반출 정책을 안내했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Rubel Hasan",
+     "is_maker": true,
+     "text": "📌 Hi PH Community 👋🏻 I'm Rubel, the founder of Tulvo. I've been a full stack developer for over 15 years, and some of you may remember QueryInside and Textalyz from earlier launches here. Here's the problem we kept running into. A small business runs on 10 or more apps. Docs live in one, tasks in another, customers in a spreadsheet, and forms and the website somewhere else. None of it shares data, and every new need means one more subscription. Tulvo puts all of it on one set of connected data. ",
+     "kr": "📌 프로덕트 헌트 커뮤니티 여러분 안녕하세요 👋🏻 Tulvo 설립자 Rubel입니다. 저는 15년 이상의 풀스택 개발자이며, 이전 출시작인 QueryInside와 Textalyz를 기억하시는 분도 계실 것입니다. 소규모 비즈니스는 문서, 작업, 고객 명단, 웹사이트 등 10개 이상의 파편화된 앱을 사용하며 데이터가 공유되지 않아 매번 새로운 구독 비용이 발생하는 문제를 겪습니다. Tulvo는 이 모든 것을 하나의 연결된 데이터 세트에 통합합니다."
+    },
+    {
+     "author": "Daniil Poletaev",
+     "is_maker": false,
+     "text": "Congrats on the launch! Just curious how is it different from many different platforms, that vibe code web apps like replit, lovable? What's your selling point?",
+     "kr": "출시를 축하합니다! Replit이나 Lovable처럼 바이브 코딩(vibe code)으로 웹 앱을 만들어주는 수많은 플랫폼과 비교해 어떤 차별점이 있는지 궁금하네요. 주된 셀링 포인트는 무엇인가요?"
+    },
+    {
+     "author": "Rubel Hasan",
+     "is_maker": true,
+     "text": "@danshipit , great question. Replit and Lovable are very good at turning a prompt into an app. What you get is that one app. **Think of it as Notion and Lovable in one place**, with your website and workspace built around the same data. Your apps, websites, docs, boards, tasks, widgets, forms and reports **live in one place and read the same data**. Then comes the part people miss. Anything you build, including what you made in Lovable, ChatGPT or Claude, can be hosted in Tulvo and connected to ",
+     "kr": "@danshipit 좋은 질문입니다. Replit과 Lovable은 프롬프트를 앱으로 변환하는 데 매우 뛰어나지만 그 결과물은 단일 앱에 그칩니다. **Tulvo는 노션(Notion)과 Lovable이 한곳에 합쳐진 플랫폼**이라고 생각하시면 되며, 웹사이트와 업무 공간이 동일한 데이터 기반으로 구축됩니다. 앱, 웹사이트, 문서, 보드, 작업, 위젯, 폼, 리포트가 한곳에서 동일한 데이터를 읽습니다. 또한 Lovable, ChatGPT, Claude로 만든 어떤 앱이든 Tulvo에 호스팅하고 연동할 수 있습니다."
+    },
+    {
+     "author": "Mostafa Hosseini",
+     "is_maker": false,
+     "text": "paste meeting notes into tasks - you still pick owners yourself?",
+     "kr": "회의록을 붙여넣어 작업으로 변환할 때, 담당자는 여전히 직접 지정해야 하나요?"
+    },
+    {
+     "author": "@mostafahosseini",
+     "is_maker": false,
+     "text": "Not unless you want to. If your notes say who’s doing what, like “Sara to send the proposal by Friday”, the AI sets Sara as the owner and adds the due date when it creates the task. If a task has no name against it, it’s left unassigned so you can pick. We’d rather leave a gap than guess wrong and have something land on the wrong person. You can also just tell it afterwards, “give the design tasks to Tom”, and it updates them.",
+     "kr": "직접 지정하지 않으셔도 됩니다. 회의록에 “Sara가 금요일까지 제안서 발송”처럼 업무 담당자가 적혀 있다면 AI가 작업을 생성하면서 Sara를 담당자로 지정하고 마감일을 추가합니다. 이름이 지정되지 않은 작업은 잘못 추측해 엉뚱한 사람에게 할당되는 일을 방지하기 위해 미지정 상태로 남겨둡니다. 나중에 “디자인 작업은 Tom에게 배정해 줘”라고 말하면 바로 업데이트됩니다."
+    },
+    {
+     "author": "Shakhawat UIllah Badhon",
+     "is_maker": true,
+     "text": "I’m part of the @Tulvo team, and I’ve put a lot of work into helping bring this launch together. Seeing it here on Product Hunt means a lot. What I’m most excited about is how much you can build around the same connected data. A client pipeline, a subscription tracker or a booking page can sit alongside your docs and project boards, with information flowing between them. You describe how your business works in plain language, and Tulvo AI helps set up the databases, fields and boards. You can th",
+     "kr": "저는 Tulvo 팀의 일원이며 이번 출시를 준비하는 데 많은 노력을 기울였습니다. 프로덕트 헌트에서 선보이게 되어 뜻깊습니다. 제가 가장 기대하는 점은 하나의 연결된 데이터를 중심으로 다양한 기능을 구축할 수 있다는 것입니다. 고객 파이프라인, 구독 추적기, 예약 페이지가 문서나 프로젝트 보드와 함께 유기적으로 정보를 주고받습니다. 일상 언어로 비즈니스 방식을 설명하면 Tulvo AI가 데이터베이스, 필드, 보드를 자동으로 세팅해 줍니다."
+    },
+    {
+     "author": "Mohammad Mizanur Rahman",
+     "is_maker": true,
+     "text": "Hey everyone 👋 Mizan here, I lead engineering at Tulvo. We’ve been reading every comment today. A couple of questions kept coming up: how is this different from an AI app builder, and what happens when your business changes? So I recorded a quick demo instead of writing an essay: https://youtu.be/BCiHk4wjHKk Most AI builders get you something on day one. Tulvo is meant to be where you actually run the business, and it keeps working as things change. A real example: * Ask Tulvo AI for a client ma",
+     "kr": "여러분 안녕하세요 👋 Tulvo 엔지니어링 리드 Mizan입니다. 오늘 올라온 모든 댓글을 주의 깊게 읽어보았습니다. AI 앱 빌더와의 차이점 및 비즈니스 변화 시 대처 방안에 대한 질문이 많아 데모 영상(https://youtu.be/BCiHk4wjHKk)을 준비했습니다. 대부분의 AI 빌더는 첫날의 결과물만 만들어주지만, Tulvo는 비즈니스가 변화함에 따라 지속적으로 운영할 수 있도록 설계되었습니다."
+    },
+    {
+     "author": "Alicia Verrando",
+     "is_maker": false,
+     "text": "can I ask Tulvo to turn my meeting notes into tasks for team.?",
+     "kr": "Tulvo에 회의록을 팀을 위한 작업 목록으로 변환해 달라고 요청할 수 있나요?"
+    },
+    {
+     "author": "@alicia\\_verrando",
+     "is_maker": false,
+     "text": "Yes, you can. Paste your meeting notes in and ask Tulvo AI to turn them into items/tasks. It pulls out the action items and adds them to your board, so the team sees them right away. If the notes mention who’s doing what and by when, tell it to include that too. Then you can give it a quick look and adjust anything needed.",
+     "kr": "네, 가능합니다. 회의록을 붙여넣고 Tulvo AI에게 항목/작업으로 변환해 달라고 요청하시면 됩니다. 실행 과제들을 추출해 보드에 즉시 추가해주므로 팀원들이 바로 확인할 수 있습니다. 회의록에 담당자와 기한이 있다면 그것도 포함하도록 지시할 수 있으며, 가볍게 검토하고 필요한 부분을 수정하시면 됩니다."
+    },
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "how hard is it to get stuff back out if a team outgrows it later",
+     "kr": "나중에 팀 규모가 커져서 다른 플랫폼으로 이전해야 할 때 데이터를 내보내는 것은 얼마나 어렵나요?"
+    },
+    {
+     "author": "@igorblink",
+     "is_maker": false,
+     "text": "Fair question, and I’d rather give you the real picture. Your work isn’t locked in. You can download the code of anything you deployed in one click, and you can save your pages as PDFs. Your records are reachable too. Connect your AI tool to the workspace and ask it to pull your boards into a spreadsheet. What we don’t have is a one-click “move everything” button. Tulvo puts your project management and your apps in one place, and there isn’t really another tool that does both. So a move usually ",
+     "kr": "좋은 질문이며 솔직한 상황을 말씀드리겠습니다. 데이터 락인은 없습니다. 배포한 모든 것의 코드를 클릭 한 번으로 다운로드할 수 있고 페이지를 PDF로 저장할 수도 있습니다. 작업 기록도 보존됩니다. 워크스페이스에 AI 도구를 연결해 보드 데이터를 스프레드시트로 추출할 수도 있습니다. 다만 클릭 한 번으로 모든 것을 이전하는 버튼은 아직 없습니다. 프로젝트 관리와 앱 빌더를 한곳에 결합한 도구가 드물기 때문입니다."
+    }
+   ],
+   "slug": "tulvo"
+  },
+  {
+   "name": "HuntMonitor",
+   "tagline_en": "Watch today's hunt live: points, speed, rank moves",
+   "tagline_kr": "오늘의 헌트 실시간 모니터링: 점수, 속도, 순위 변동",
+   "image": "https://ph-files.imgix.net/mcp-draft-media/bb2ceb00-c95a-415f-b307-a734cea01f91.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://huntmonitor.netlify.app/&utm_source=producthunt",
+   "categories": [
+    "Product add-ons",
+    "Startup communities"
+   ],
+   "upvotes": 145,
+   "comments_count": 12,
+   "maker": [
+    "KP"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "HuntMonitor는 프로덕트 헌트의 일일 랭킹 경쟁을 실시간으로 추적할 수 있는 라이브 대시보드입니다. 점수, 댓글 수, 업보트 상승 속도, 헌터별로 제품들을 정렬하여 순위 변동 추이를 한눈에 파악할 수 있습니다. 탭을 하나 띄워두는 것만으로 특정 출시작이 상승세인지 하락세인지 즉시 확인할 수 있어 편리합니다. 각 제품 행을 클릭하면 하루 동안의 점수 변화 그래프를 상세하게 보여줍니다. 실시간 라이브 업데이트와 15분 단위의 스냅샷 데이터를 무료로 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/huntmonitor",
+   "comment_summary": "메이커는 런칭 당일 15분 단위 스냅샷과 속도 및 순위 변동을 한눈에 볼 수 있는 실시간 모니터링 도구를 선보였습니다. 피처드 런칭을 앞둔 메이커들은 지속적인 새로고침 수고를 덜어주는 점수 그래프와 속도 뷰에 큰 호평을 보냈습니다. 출시작 간 비교 분석 및 이전 데이터 히스토리 조회 등 추가 분석 기능에 대한 요청도 이어졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "KP",
+     "is_maker": true,
+     "text": "📌 Hey PH community 👋 Excited to launch HuntMonitor today. I'm a huge Product Hunt nerd, and I wanted to build a PH tool using Netlify’s latest features and PH API. HuntMonitor is a live dashboard for today's race: points, speed, and rank moves, so you can keep one tab open and see if a launch is climbing or slipping. I posted a short look at it on X here. **Points** is the default board. Featured launches sit in one column and the ranking updates as the points move, with snapshots every 15 minut",
+     "kr": "📌 프로덕트 헌트 커뮤니티 여러분 안녕하세요 👋 오늘 HuntMonitor를 출시하게 되어 정말 기쁩니다. 저는 열렬한 프로덕트 헌트 마니아로서 Netlify의 최신 기능과 PH API를 활용해 이 도구를 만들었습니다. HuntMonitor는 오늘의 랭킹 레이스를 실시간으로 보여주는 대시보드로, 점수, 속도, 순위 변동을 탭 하나로 모니터링할 수 있습니다. 기본적으로 점수 기준 정렬을 지원하며 15분마다 스냅샷을 갱신합니다."
+    },
+    {
+     "author": "Raghav",
+     "is_maker": false,
+     "text": "@thisiskp\\_ launching here this Saturday, so this is going in a pinned tab 😄 does it show votes per hour for a launch? I'd love to see when the US wakes up and whether my push is actually landing",
+     "kr": "@thisiskp_ 이번 주 토요일에 런칭 예정이라 고정 탭에 등록해 둬야겠네요 😄 시간당 득표수도 확인할 수 있나요? 미국 시간대로 사람들이 일어나는 시점에 홍보 효과가 실제로 나타나는지 확인하고 싶거든요."
+    },
+    {
+     "author": "Amah Ajavon",
+     "is_maker": false,
+     "text": "Good timing for me, I'm launching later this week for the first time. Honest question: for a first-time launcher, which number is worth watching during the day, and which ones just make you anxious? I can see myself refreshing this every five minutes.",
+     "kr": "저도 이번 주 후반에 처음으로 출시하는데 타이밍이 딱 맞네요. 솔직한 질문 하나 드립니다. 첫 출시자 입장에서 하루 동안 눈여겨볼 만한 지표는 무엇이고, 괜히 불안감만 주는 지표는 무엇인가요? 5분마다 새로고침하게 될 것 같네요."
+    },
+    {
+     "author": "Fabian Maume",
+     "is_maker": false,
+     "text": "Does it also cover products that are featured?",
+     "kr": "피처드(Featured)된 제품들도 포함되나요?"
+    },
+    {
+     "author": "KP",
+     "is_maker": true,
+     "text": "@fabian\\_maumeyes they are the main focus",
+     "kr": "@fabian_maume 네, 피처드 제품들이 주요 모니터링 대상입니다."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "Really liking the interface It’s clean simple and not complicated at all I checked today’s launch data and yesterday’s launch which I also hunted and the rankings look quite accurate",
+     "kr": "인터페이스가 정말 마음에 듭니다. 깔끔하고 단순해서 복잡하지 않네요. 오늘 런칭 데이터와 어제 제가 헌팅한 제품 데이터를 확인해 봤는데 순위가 매우 정확해 보입니다."
+    },
+    {
+     "author": "KP",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 appreciate it man Lmk if you have any feature ideas to add",
+     "kr": "@shivam_kushwaha16 감사합니다! 추가하고 싶은 기능 아이디어가 있다면 언제든 알려주세요."
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@thisiskp\\_ It would be great to have a side by side comparison of two or more launches to track their performance Also historical analytics showing previous launches points upvote patterns and ranking would be really useful for hunters and makers",
+     "kr": "@thisiskp_ 두 개 이상의 출시 제품을 나란히 놓고 성과를 비교할 수 있으면 좋겠습니다. 또한 이전 출시작들의 점수, 업보트 패턴, 순위 변동 이력을 보여주는 히스토리 분석 기능도 헌터와 메이커들에게 매우 유용할 것 같습니다."
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "That's sneaky. :D Finally, someone found a workaround to \"cheat\" the system with hidden upvotes :D",
+     "kr": "기발하네요. :D 마침내 숨겨진 업보트 시스템을 파악할 수 있는 우회 방법을 찾아낸 사람이 나왔군요 :D"
+    },
+    {
+     "author": "Jugal Mistry",
+     "is_maker": false,
+     "text": "You're just logging the ever changing data from PH right? Or do you have access to some insider intel? Regardless, I useful tool. Much better than trying to keep refreshing PH.",
+     "kr": "PH의 실시간 데이터 변동을 로깅하는 방식인가요, 아니면 내부 정보에 접근할 수 있는 건가요? 어찌 됐든 정말 유용한 도구입니다. PH 웹사이트를 계속 새로고침하는 것보다 훨씬 낫네요."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "As someone who launches here pretty often, the Speed view is the one I'd actually leave open on launch day — refreshing the homepage to check where I stand gets old fast. Being able to tap a row and see that launch's points chart through the day is the part I'd use most. Nice work shipping this on Netlify too.",
+     "kr": "프로덕트 헌트에 자주 제품을 출시하는 사람으로서, 런칭 당일 '속도(Speed)' 뷰를 띄워두고 보게 될 것 같네요. 내 순위를 확인하려고 메인 홈페이지를 계속 새로고침하는 건 금방 지치거든요. 행을 클릭해 하루 동안의 점수 그래프를 볼 수 있는 기능이 가장 유용해 보입니다. Netlify로 깔끔하게 배포하신 점도 멋집니다."
+    }
+   ],
+   "slug": "huntmonitor"
+  },
+  {
+   "name": "Talyn",
+   "tagline_en": "Merge more. Babysit less.",
+   "tagline_kr": "머지는 더 많이, 에이전트 수발은 더 적게.",
+   "image": "https://ph-files.imgix.net/5cdcde49-cb84-4ff0-bc0e-5c0428d3b6d9.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=368",
+   "website": "https://www.talyn.dev/&utm_source=producthunt",
+   "categories": [
+    "AI Coding Agents",
+    "Code Review Tools",
+    "Observability tools"
+   ],
+   "upvotes": 142,
+   "comments_count": 21,
+   "maker": [
+    "Tom Owers"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Talyn은 GitHub 풀 리퀘스트(PR)를 감시하고 병목을 유발하는 번거로운 작업들을 대신 처리해 주는 AI 팀원입니다. 실패한 CI 빌드 수정, 머지 충돌 해결, 코드 리뷰 코멘트 대응 등을 자동으로 수행하여 개발자의 컨텍스트 스위칭을 줄여줍니다. 단순히 프롬프트를 기다리는 일반적인 코딩 어시스턴트와 달리, 백그라운드에서 실제 PR 워크플로 문제를 능동적으로 해결합니다. 각 작업마다 독립된 브랜치와 터미널을 갖춘 클라우드 샌드박스를 제공하므로 개발자는 노트북을 덮어두고 다른 일에 집중할 수 있습니다. 토큰 예산 관리와 프록시 기반 시크릿 보호로 보안성과 신뢰성을 함께 확보했습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/talyn",
+   "comment_summary": "메이커는 클라우드 샌드박스를 통해 CI 실패와 머지 충돌을 백그라운드에서 자동 해결해 주는 AI 팀원 기능을 소개했습니다. 개발자들은 샌드박스 외부 시크릿 프록시 처리, 자동 푸시 옵션 제어, GitHub API 토큰 한도 관리 등 보안과 안정성에 깊은 관심을 보였습니다. 메이커는 웹훅 기반 최적화와 스레드 오케스트레이터를 통한 질문 자동 응답 지원을 설명하며 높은 호응을 얻었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Tom Owers",
+     "is_maker": true,
+     "text": "📌 Hey everyone, Tom here. I made Talyn. These days Claude writes most of my code, and my job had turned into babysitting it. Several Claude windows open, laptop lid up all day, and the minute I walked away a PR would fail CI and sit there red until I got back. So Talyn moves all of that to the cloud. Every task gets its own sandbox with its own branch, agent and terminal. You can start a bunch of them, shut the laptop, and come back to diffs. (A mobile app is coming soon too.) It runs Claude Cod",
+     "kr": "📌 여러분 안녕하세요, Talyn을 만든 Tom입니다. 요즘 제 코드 대부분은 Claude가 작성하고 있는데, 제 본업은 어느새 에이전트의 뒤치다꺼리를 하는 일이 되어버렸습니다. 화면에 Claude 창을 여러 개 띄워두고 노트북을 하루 종일 켜둬야 했고, 자리를 비우는 순간 CI 실패로 PR이 빨간불 상태로 멈춰 서 있곤 했습니다. Talyn은 이 모든 과정을 클라우드로 옮겼습니다. 각 작업마다 전용 브랜치, 에이전트, 터미널이 포함된 독립 샌드박스가 주어집니다. 여러 작업을 띄워두고 노트북을 덮었다가 나중에 코드 변경 사항(diff)만 확인하면 됩니다."
+    },
+    {
+     "author": "Raghav",
+     "is_maker": false,
+     "text": "@tom\\_owers \"close the laptop and come back to a green PR\" is the line that got me. I build my whole SaaS with Claude Code. how do you handle secrets in the sandbox, like a DB URL the tests need?",
+     "kr": "@tom_owers \"노트북을 닫고 돌아오면 초록색(통과된) PR을 볼 수 있다\"는 문구가 정말 와닿네요. 저도 SaaS 전체를 Claude Code로 구축하고 있습니다. 테스트 실행에 필요한 DB URL 같은 샌드박스 내부의 시크릿 정보는 어떻게 관리하시나요?"
+    },
+    {
+     "author": "Tom Owers",
+     "is_maker": true,
+     "text": "@raghav\\_21 All the secrets are handled outside of the sandbox, and we use a proxy to then append secrets/variables where it matters.",
+     "kr": "@raghav_21 모든 시크릿은 샌드박스 외부에서 안전하게 처리되며, 프록시를 통해 필요한 위치에만 시크릿 및 변수를 주입하는 방식을 사용합니다."
+    },
+    {
+     "author": "Farzam",
+     "is_maker": false,
+     "text": "@tom\\_owers red CI first, easy. it's the most boring part of the day and the agent doesn't get annoyed by it 😅 keeping keys outside the sandbox is a nice touch",
+     "kr": "@tom_owers CI 실패 수정부터 해결해 주는 건 정말 최고네요. 하루 중 가장 지루한 작업인데 에이전트는 짜증도 안 내니까요 😅 키를 샌드박스 외부에 보관하는 방식도 훌륭합니다."
+    },
+    {
+     "author": "Thami Benjelloun",
+     "is_maker": false,
+     "text": "tokens staying outside the sandbox and only added on the way out is the detail that makes me ok leaving it running overnigth when it fixes a failing check on its own, do i see the diff before it pushes??? or does it just push and let the next CI run decide???",
+     "kr": "토큰이 샌드박스 외부에 머물다가 나갈 때만 추가된다는 점 덕분에 밤새 안심하고 돌려둘 수 있겠네요. 실패한 체크를 스스로 수정할 때 푸시하기 전에 diff를 확인할 수 있나요, 아니면 그냥 바로 푸시하고 다음 CI 결과에 맡기나요?"
+    },
+    {
+     "author": "Tom Owers",
+     "is_maker": true,
+     "text": "@thamibenjelloun Hey, with auto fix enabled, it'll push and let the next CI run. This is an opt-in feature though, and so with it disabled it won't fix it push any changes for you.",
+     "kr": "@thamibenjelloun 안녕하세요, 자동 수정(auto fix)을 활성화하면 바로 푸시하고 다음 CI 실행 결과를 확인합니다. 다만 이는 선택형(opt-in) 기능이므로 비활성화해 두면 변경 사항을 임의로 푸시하지 않습니다."
+    },
+    {
+     "author": "Bruno Bueno",
+     "is_maker": false,
+     "text": "does it ever run out of github api budget? all of it rides on my user token now if i read the architecture doc right",
+     "kr": "GitHub API 할당량이 고갈되는 일은 없나요? 아키텍처 문서를 제대로 읽었다면 현재 사용자 토큰을 기반으로 돌아가는 것 같은데요."
+    },
+    {
+     "author": "Tom Owers",
+     "is_maker": true,
+     "text": "@bbueno Nope - we track the token budget and make sure to never go over. We also use github webhooks to recieve as much data as possible so we're not polling",
+     "kr": "@bbueno 아닙니다. 토큰 예산을 실시간으로 추적하여 초과하지 않도록 철저히 관리합니다. 또한 폴링 대신 가능한 한 GitHub 웹훅을 활용해 데이터를 수신합니다."
+    },
+    {
+     "author": "Leo Heo",
+     "is_maker": false,
+     "text": "where do i see it when claude stops to ask a question?",
+     "kr": "Claude가 작업을 멈추고 질문을 던질 때는 어디서 확인하나요?"
+    },
+    {
+     "author": "Tom Owers",
+     "is_maker": true,
+     "text": "@leoheo Claude will ask a question in-line - but, if you're using a Thread, then the orchestrator will take care of these questions for you",
+     "kr": "@leoheo Claude는 인라인으로 질문을 남깁니다. 하지만 스레드(Thread)를 사용 중이라면 오케스트레이터가 이러한 질문들을 자동으로 대신 처리해 줍니다."
+    },
+    {
+     "author": "Leo Heo",
+     "is_maker": false,
+     "text": "@tom\\_owers ok gonna try a thread then",
+     "kr": "@tom_owers 알겠습니다, 스레드를 한번 써봐야겠네요."
+    },
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "congrats!! what does it do when two of the parallel ones touch the same file, who wins",
+     "kr": "출시 축하드립니다!! 병렬로 실행되는 두 에이전트가 동일한 파일을 수정할 경우 어떻게 처리되나요, 어느 쪽이 우선권을 갖나요?"
+    }
+   ],
+   "slug": "talyn"
+  }
+ ],
+ "disquiet": [
+  {
+   "slug": "copy-top",
+   "name": "copy.top",
+   "tagline": "fomo, pumpfun 트레이더의 매매를 내 지갑에서 복사하는 논커스터디얼 카피 트레이딩 웹앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/copy-top",
+   "comment": "자산 위탁 없이 사용자의 개인 지갑에서 인기 트레이더의 거래를 직접 복제 실행할 수 있도록 지원하는 비수탁형 솔루션입니다."
+  },
+  {
+   "slug": "184be332-941f-456f-b0f4-f4623be5c1e5",
+   "name": "감메라",
+   "tagline": "인증샷 카메라",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/184be332-941f-456f-b0f4-f4623be5c1e5",
+   "comment": "특정 행동이나 일상을 사진으로 남기고 인증하는 과정을 직관적이고 간결하게 돕는 카메라 앱입니다."
+  },
+  {
+   "slug": "49ee70c6-0a99-482d-bca6-7bcc01dff5b2",
+   "name": "축구선수 키우기",
+   "tagline": "열일곱 살 유스 선수 한 명을 은퇴까지 키우는 모바일 축구 커리어 시뮬레이션",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/49ee70c6-0a99-482d-bca6-7bcc01dff5b2",
+   "comment": "어린 유망주의 훈련과 이적 등 전체 선수 생애 주기를 몰입감 있게 관리할 수 있는 육성 시뮬레이션 게임입니다."
+  },
+  {
+   "slug": "holt-news",
+   "name": "HOLT NEWS 홀트뉴스",
+   "tagline": "AI가 쓰고 발행하는 경제·금융 뉴스. 사람은 기준만 고칩니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/holt-news",
+   "comment": "편집 기준만 설정하면 경제·금융 기사의 취합과 작성을 인공지능이 전담하여 콘텐츠 제작 비용을 크게 줄여줍니다."
+  },
+  {
+   "slug": "text-rinse",
+   "name": "Text Rinse",
+   "tagline": "복사한 글의 숨은 문자·특수 공백·마크다운을 한 번에 정리하는 무료 텍스트 도구",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/text-rinse",
+   "comment": "웹이나 문서에서 복사한 텍스트의 불필요한 서식과 비표준 공백 문자를 단번에 정제해 복사 오류를 줄여줍니다."
+  },
+  {
+   "slug": "threadpick",
+   "name": "ThreadPick",
+   "tagline": "스레드 제휴 마케팅의 글감 발굴·상품 매칭·첫 댓글 링크·예약 발행을 20초대로 줄이는 자동화 SaaS. Meta 공식 Threads API 승인.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/threadpick",
+   "comment": "공식 API를 기반으로 스레드 내 상품 추천 게시글 생성부터 댓글 링크 삽입 및 예약까지 전 과정을 자동화해 수익화 효율을 높입니다."
+  },
+  {
+   "slug": "onesock",
+   "name": "원삭 (OneSock)",
+   "tagline": "영어 논문 PDF를 올리면 한국어 요약·번역·선행연구 정리표까지. 대학원생을 위한 논문 AI.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/onesock",
+   "comment": "영문 학술 논문 분석에 특화되어 선행연구 비교표와 핵심 요약을 제공하므로 연구자의 논문 탐색 시간을 단축합니다."
+  },
+  {
+   "slug": "1a39aa2a-3a47-4422-8449-8a73f0444c87",
+   "name": "별코드",
+   "tagline": "사주 × 점성술, 내 운의 코드를 날짜까지 읽어 주는 운세 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/1a39aa2a-3a47-4422-8449-8a73f0444c87",
+   "comment": "동양의 사주와 서양 점성술 데이터를 융합해 일자별 세부 운세 흐름을 분석해 주는 서비스입니다."
+  },
+  {
+   "slug": "1d9d824d-02a2-4280-b6f1-9b6344bd1c77",
+   "name": "에어하키",
+   "tagline": "AI 상대 12스테이지(보스 3명)에 도전하거나, 폰 하나로 둘이서 마주 앉아 하는 에어하키. 7점 먼저 내면 승리, 플레이 중엔 광고 없어요.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/1d9d824d-02a2-4280-b6f1-9b6344bd1c77",
+   "comment": "광고 방해 없이 싱글 스테이지 클리어와 단일 기기 2인 오프라인 대전을 깔끔하게 즐길 수 있는 미니게임입니다."
+  },
+  {
+   "slug": "deb1608b-c14e-4ca6-b817-01cd91c42fa6",
+   "name": "시차 - 미제 사건 협력 추리 게임",
+   "tagline": "과거와 미래 플레이어가 단서를 수집하고 공유해 사건의 전말을 밝힙니다",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/deb1608b-c14e-4ca6-b817-01cd91c42fa6",
+   "comment": "서로 다른 시간대에 배치된 두 플레이어가 각자의 단서를 실시간으로 맞춰가는 비대칭 협동 방식의 추리 게임입니다."
+  },
+  {
+   "slug": "90e1d51c-2ec0-4137-9da7-64a935aa7d1d",
+   "name": "인디해커온라인",
+   "tagline": "1인 창업자, 개발자들이 한 사무실에 모여 일하는 온라인 커뮤니티",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/90e1d51c-2ec0-4137-9da7-64a935aa7d1d",
+   "comment": "고립되기 쉬운 1인 개발자와 솔로프러너가 가상 오피스 공간에서 작업 현황을 나누고 상호 동기부여를 얻을 수 있습니다."
+  },
+  {
+   "slug": "waffle",
+   "name": "와플 (Waffle)",
+   "tagline": "설치 없이 바로 쓰는 한국형 웹앱 스토어 · 개발자 광고 수익 60% 공유 네트워크",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/waffle",
+   "comment": "별도 앱 설치 없는 웹앱 유통망과 60% 광고 수익 분배 모델을 통해 국내 인디 웹앱 개발자의 배포와 수익화를 돕습니다."
+  },
+  {
+   "slug": "football-krillion",
+   "name": "Football Krillion",
+   "tagline": "Daily rare-answer football trivia: name the deep cut",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/football-krillion",
+   "comment": "잘 알려지지 않은 독특한 축구 퀴즈를 매일 풀어보며 마니아층의 지식을 테스트할 수 있는 트리비아 서비스입니다."
+  },
+  {
+   "slug": "f5470f2f-4de5-4a2d-bec8-1848b085c74b",
+   "name": "알아서 짜주는 여행 코스 '쉼표'",
+   "tagline": "조건만 고르면 하루 여행 코스를 짜 주는 '쉼,표'를 만들었어요 (반려견·유모차·휠체어·뚜벅이)",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/f5470f2f-4de5-4a2d-bec8-1848b085c74b",
+   "comment": "반려동물 동반이나 보행 약자 등 이동 취약 요소를 반영해 맞춤형 하루 동선을 자동 생성해 줍니다."
+  },
+  {
+   "slug": "0d5b3fd0-ed74-4010-bd38-939917e3fa0e",
+   "name": "모여상점",
+   "tagline": "내 취향대로 3D 상점을 꾸미고, 쿠팡파트너스 등 제휴 링크로 수익화까지 할 수 있는 소셜 웹게임",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/0d5b3fd0-ed74-4010-bd38-939917e3fa0e",
+   "comment": "3D 가상 공간 꾸미기 인터페이스에 외부 커머스 제휴 링크를 결합하여 게이미피케이션 기반 판매를 가능하게 합니다."
+  },
+  {
+   "slug": "invetk",
+   "name": "INVETK",
+   "tagline": "코인 시세와 공개 지갑 변화를 한곳에서",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/invetk",
+   "comment": "암호화폐 실시간 가격 추이와 특정 온체인 지갑의 자산 이동 내역을 한 화면에서 모니터링할 수 있습니다."
+  },
+  {
+   "slug": "shottxt",
+   "name": "shottxt",
+   "tagline": "구글로그인으로 간편하게 잡담하는 sns",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/shottxt",
+   "comment": "복잡한 프로필 설정 없이 소셜 계정 연동만으로 짧은 단문 메시지를 자유롭게 나누는 미니멀 SNS입니다."
+  },
+  {
+   "slug": "sheetfern",
+   "name": "SheetFern",
+   "tagline": "은행 거래내역 PDF를 엑셀로, 업로드 없이 바로 변환",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/sheetfern",
+   "comment": "금융 데이터를 외부 서버에 전송하지 않고 브라우저 로컬에서 안전하게 스프레드시트로 파싱해 줍니다."
+  },
+  {
+   "slug": "7619f2a9-13c2-477f-b4b6-c4182b17085e",
+   "name": "대리지옥",
+   "tagline": "미룬 일 한 줄 적으면 내 대리(3D 직장인)가 나태지옥 맷돌 위에서 대신 벌받는 멀티플레이 웹게임",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/7619f2a9-13c2-477f-b4b6-c4182b17085e",
+   "comment": "미뤄둔 할 일을 시각적 패널티와 유머러스한 3D 캐릭터 벌칙으로 시각화해 행동 개시를 유도하는 위트 있는 생산성 게임입니다."
+  },
+  {
+   "slug": "3d-mindulle-3d-virtual-temple-9d566b54-cc54-4a16-89b1-80f273f00bb0",
+   "name": "민들레 안심당 | 3D 가상 사찰 (Mindulle 3D Virtual Temple)",
+   "tagline": "바쁜 일상 속, 잠시 머물다 가는 3D 힐링 공간 🏯 (오픈소스)",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/3d-mindulle-3d-virtual-temple-9d566b54-cc54-4a16-89b1-80f273f00bb0",
+   "comment": "오픈소스 기반 3D 웹 환경에서 사찰 풍경을 거닐며 마음을 차분히 가라앉힐 수 있는 휴식용 가상 공간입니다."
+  },
+  {
+   "slug": "7c007e93-5ef3-4aae-b214-aa82340c0117",
+   "name": "집감",
+   "tagline": "국토부 실거래가로 서울·대전·세종·청주 아파트 4,480곳을 카드 한 장으로 비교하고, 임장 코스와 현장 기록까지. 회원가입 없이 바로 쓰는 웹앱입니다.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/7c007e93-5ef3-4aae-b214-aa82340c0117",
+   "comment": "공공 실거래가 데이터와 현장 답사 메모 기능을 카드 뷰로 통합 제공하여 부동산 임장 준비 편의성을 높였습니다."
+  },
+  {
+   "slug": "2da3e810-3352-4561-b893-7018898a367a",
+   "name": "집냥",
+   "tagline": "계약일·잔금일·이사일부터 각각 세야 하는 집 계약 기한을 한곳에 모아 알려 주는 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/2da3e810-3352-4561-b893-7018898a367a",
+   "comment": "주택 계약 과정에서 놓치기 쉬운 다양한 정산 일정과 법적 기한을 타임라인으로 묶어 체계적으로 관리해 줍니다."
+  },
+  {
+   "slug": "c94027a5-f6e0-4793-8167-6f6b5bcedde4",
+   "name": "피싱랜드",
+   "tagline": "설치 없이 브라우저에서 바로 즐기는 무료 2D 온라인 RPG. 낚시와 필드 사냥, 실시간 거대 보스레이드까지.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/c94027a5-f6e0-4793-8167-6f6b5bcedde4",
+   "comment": "웹 브라우저만으로 다중 접속 사냥과 레이드, 생활 콘텐츠를 가볍게 플레이할 수 있는 2D 웹 RPG입니다."
+  },
+  {
+   "slug": "8d10a266-00bd-4d7a-a378-5387d1d3db69",
+   "name": "베타단",
+   "tagline": "AI로 만든 앱·웹·게임, 데카가 직접 써보고 첫 사용자까지 이어줘요",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/8d10a266-00bd-4d7a-a378-5387d1d3db69",
+   "comment": "초기 단계의 인공지능 기반 소프트웨어가 초기 테스터를 확보하고 실사용 피드백을 수집할 수 있도록 돕는 매칭 플랫폼입니다."
+  },
+  {
+   "slug": "monetizationkit",
+   "name": "MonetizationKit 유튜브 수익창출 확인",
+   "tagline": "다른 유튜브 채널이 수익창출 중인지 공개 신호로 추정하고, 판단 근거를 항목별로 보여 주는 무료 도구",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/monetizationkit",
+   "comment": "유튜브 채널의 공개 메타데이터와 페이지 신호를 대조하여 광고 수익 창출 통과 여부를 빠르게 판별해 줍니다."
+  },
+  {
+   "slug": "betaneon",
+   "name": "BetaNeon",
+   "tagline": "새로운 앱과 공개 베타를 누구보다 먼저 만나보세요",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/betaneon",
+   "comment": "출시 예정이거나 오픈 베타 단계에 진입한 최신 프로덕트를 한데 모아 얼리어답터와 연결해 주는 큐레이션 서비스입니다."
+  },
+  {
+   "slug": "9ebb02a5-6def-4e90-927b-a8508736a038",
+   "name": "노래선물",
+   "tagline": "이름과 하고 싶은 말만 고르면 가사와 노래를 만들어 주는 선물 서비스",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/9ebb02a5-6def-4e90-927b-a8508736a038",
+   "comment": "받는 사람과의 사연과 원하는 메시지를 입력하면 맞춤형 가사와 멜로디 음원을 자동으로 생성해 선물할 수 있습니다."
+  },
+  {
+   "slug": "dbceedbb-ed50-445e-a7c5-44440973379c",
+   "name": "단어 암기 끝판왕",
+   "tagline": "중고등·수능·토익 영단어 2,800개 무료, 내 단어장 만들기와 스펠링 시험까지",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/dbceedbb-ed50-445e-a7c5-44440973379c",
+   "comment": "주요 공인 시험 필수 영단어 학습과 맞춤형 단어장 생성, 철자 테스트를 무료로 지원하는 어휘 학습 도구입니다."
+  },
+  {
+   "slug": "71068015-faef-4c54-934b-4fa3ce56cc5a",
+   "name": "모모수학",
+   "tagline": "5세반부터 초등 2학년까지, 손으로 만지며 배우는 학기별 수학 놀이",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/71068015-faef-4c54-934b-4fa3ce56cc5a",
+   "comment": "유아 및 초등 저학년 아동이 직관적인 터치 인터랙션을 통해 수 개념과 기초 연산을 자연스럽게 체득하도록 구성했습니다."
+  },
+  {
+   "slug": "7958c3fc-6bf5-473f-97b0-c44d14306007",
+   "name": "코딩모아",
+   "tagline": "초등 1~4학년이 블록을 눌러 길을 만들며 배우는 첫 코딩 모험",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/7958c3fc-6bf5-473f-97b0-c44d14306007",
+   "comment": "텍스트 코딩 대신 길 찾기 블록 퍼즐 형태를 취해 어린이들의 기초 논리적 사고력과 알고리즘 이해를 유도합니다."
+  },
+  {
+   "slug": "96ec71e2-bcdc-4d6b-a326-45be42817ac0",
+   "name": "새싹섬 운동회",
+   "tagline": "카트 레이스·리듬·양궁 등 10가지 미니게임, 친구와 실시간 대전과 한 폰 2인 대결까지",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/96ec71e2-bcdc-4d6b-a326-45be42817ac0",
+   "comment": "다양한 장르의 캐주얼 미니게임을 단일 스마트폰 화면 분할 또는 네트워크 대전으로 손쉽게 즐길 수 있습니다."
+  },
+  {
+   "slug": "k-learn",
+   "name": "K-Learn",
+   "tagline": "외국인이 여행·K-드라마·TOPIK을 위해 한글과 한국어를 배우는 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/k-learn",
+   "comment": "한국 문화 콘텐츠에 관심 있는 해외 학습자를 위해 기초 자모음부터 시험 대비 실용 회화까지 단계별로 안내합니다."
+  },
+  {
+   "slug": "hsk",
+   "name": "하루 HSK",
+   "tagline": "신HSK 1~9급 중국어 단어 11,000개, 시험일에 맞춰 하루 분량을 정해 주는 단어장",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/hsk",
+   "comment": "목표 수험 일자에 따라 방대한 중국어 급수별 어휘 분량을 일일 단위로 자동 분할해 주는 계획형 암기 앱입니다."
+  },
+  {
+   "slug": "jlpt",
+   "name": "하루 JLPT",
+   "tagline": "JLPT N5~N1 단어·문법·청해를 하루 15분 코스로 이어 주는 일본어 공부 앱",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/jlpt",
+   "comment": "어휘, 문법, 리스닝 영역을 매일 15분 분량의 루틴으로 구성하여 꾸준한 일본어 능력시험 준비를 지원합니다."
+  },
+  {
+   "slug": "pitchside",
+   "name": "Pitchside",
+   "tagline": "한국 시간 기준 축구 경기 일정·실시간 스코어, 리그 순위, 선수 기록, 이적 소식, 해외 축구 뉴스를 한곳에. 응원팀 골 알림까지 앱 설치 없이 무료로.",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/pitchside",
+   "comment": "글로벌 축구 데이터와 실시간 득점 속보를 한국 표준시에 맞춰 설치 없이 웹에서 바로 확인할 수 있는 허브입니다."
+  },
+  {
+   "slug": "8f6e8de1-f309-4ed7-a24c-c8e972093110",
+   "name": "우리지갑",
+   "tagline": "기록하면 캐릭터가 반겨 주는 커플 가계부",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/8f6e8de1-f309-4ed7-a24c-c8e972093110",
+   "comment": "공동 지출을 기록할 때 인터랙티브 캐릭터 반응을 더해 커플 간 지출 공유와 예산 관리 습관 형성을 돕습니다."
+  },
+  {
+   "slug": "planit-aafe8fb0-68a2-4fed-9a55-52c718b39aad",
+   "name": "플랜잇 (Planit)",
+   "tagline": "지도 위에 직접 그리는 무료 여행 일정표",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/planit-aafe8fb0-68a2-4fed-9a55-52c718b39aad",
+   "comment": "방문할 장소들을 인터랙티브 지도 위에 시각적으로 표시하고 효율적인 이동 경로를 한눈에 계획할 수 있습니다."
+  },
+  {
+   "slug": "5574adfc-0ef1-4639-a6e5-dd46c49f48b0",
+   "name": "모아 셀렉트",
+   "tagline": "단골에게 사진과 글로 상품을 소개하고, 카카오톡 문의로 연결하는 밴드형 회원제 사이트",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/5574adfc-0ef1-4639-a6e5-dd46c49f48b0",
+   "comment": "폐쇄형 회원제 구조 속에서 상품 큐레이션 콘텐츠를 제공하고 메신저 1:1 상담으로 구매를 유도할 수 있는 솔루션입니다."
+  },
+  {
+   "slug": "hallasan-giwon",
+   "name": "한라산 기원 (Hallasan-Giwon)",
+   "tagline": "\"절대 봇 금지\" 현판 옆에 원격 MCP 뒷문을 열어둔 3D 바둑·체스 역튜링 대국장",
+   "upvotes": 0,
+   "url": "https://disquiet.io/products/hallasan-giwon",
+   "comment": "보드게임 환경에 인공지능 MCP 인터페이스를 접목하여 봇과 인간의 대결을 실험적으로 재해석한 3D 대국 플랫폼입니다."
+  },
+  {
+   "slug": "zerocal",
+   "name": "zerocal",
+   "tagline": "한 문장이면 일정 끝. 쓰거나 말하면 들어가는 아이폰 캘린더",
+   "upvotes": 1,
+   "url": "https://disquiet.io/products/zerocal",
+   "comment": "자연어 문장이나 음성 명령을 즉시 분석해 캘린더 일정 필드를 자동으로 채워 등록 절차를 간소화합니다."
+  }
+ ]
+}
