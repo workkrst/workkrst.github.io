@@ -1,0 +1,508 @@
+{
+ "date": "2026-11-17",
+ "collected_at": "2026-11-17 12:30 KST",
+ "summary": "오늘 프로덕트 헌트는 생산성과 AI 에이전트 및 인프라 도구가 상위권을 장악하며, 실제 기업 실무에 침투하는 자율 에이전트의 도입이 두드러졌습니다. 커뮤니티 댓글에서는 단순 자동화를 넘어 사내 데이터 보안, 프라이빗 배포, 작업 실행 전 관리자 승인 절차 등 엔터프라이즈 거버넌스가 핵심 화두로 논의되었습니다. 화상 회의나 이메일, IT 기기 관리 등 기존 업무 인프라와 매끄럽게 결합해 사람의 통제 아래 가치를 창출하는 방향으로 논의가 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "boost-space",
+   "why": "기업 환경에서 자율 AI 직원을 도입할 때 필수적인 프라이빗 배포와 실행 전 승인 워크플로우에 대해 커뮤니티의 구체적인 질의가 집중되었습니다. 제작자는 Docker 기반 온프레미스 런타임과 이메일 등 주요 액션의 사용자 사전 승인 기능을 명확히 제시하여 큰 신뢰를 얻었습니다."
+  },
+  {
+   "slug": "copilotkit",
+   "why": "조직 내 AI 에이전트의 접근 권한, 감사 로그, 비용 통제를 통합 관리하는 엔터프라이즈 거버넌스 워크스페이스로 개발자들의 호평을 받았습니다. 특히 별도 API 키 없이도 기존 Claude나 ChatGPT 유료 계정으로 즉시 연동해 로컬 및 상용 모델을 다룰 수 있다는 점이 댓글에서 실질적 장점으로 부각되었습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Zoom",
+   "tagline_en": "Video communication made simple and easy",
+   "tagline_kr": "쉽고 간편하게 구현하는 화상 커뮤니케이션",
+   "image": "https://ph-files.imgix.net/d5daef6c-74d9-4f4e-9b3e-40662c483fed.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://www.zoom.us/&utm_source=producthunt",
+   "categories": [
+    "Video conferencing",
+    "Video and Voice calling",
+    "Meeting software"
+   ],
+   "upvotes": 253,
+   "comments_count": 81,
+   "maker": [
+    "Jack Lee",
+    "Cellier Sheng"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "줌(Zoom)이 화상 회의 내용을 기반으로 프레젠테이션을 자동 생성하고 협업할 수 있는 새로운 기능 'Zoom Slides'를 선보였습니다. 회의 녹취록이나 회의 요약본을 즉시 레이아웃과 발표자 노트가 완비된 편집 가능한 슬라이드로 변환해 줍니다. 일반적인 텍스트 프롬프트나 기존 문서를 통해서도 슬라이드를 제작할 수 있으며, 팀원과의 실시간 공동 편집 및 파워포인트 내보내기를 완벽하게 지원합니다. 또한 발표자 노트를 AI 음성으로 변환해 비동기 공유가 가능한 Voice Presentation 기능을 제공하여 회의 이후의 공유 편의성을 극대화했습니다. 줌 미팅 내에서 직접 발표 제어권을 넘기거나 슬라이드를 수정할 수 있어 원격 및 하이브리드 근무 환경에서 매우 실용적인 업무 도구입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/zoom",
+   "comment_summary": "회의 녹취록을 즉각 프레젠테이션으로 전환해 주는 실용적인 기능에 대해 사용자들의 높은 관심과 긍정적인 반응이 이어졌습니다. 경쟁 AI 프레젠테이션 도구와의 차별점 및 슬라이드 버전 관리, 프로젝트 관리 툴 연동 등에 대한 질문이 제기되었으며, 제작자는 줌 플랫폼 내 실시간 협업과 회의 맥락 유지에 집중하고 있음을 상세히 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Justin Jincaid",
+     "is_maker": false,
+     "text": "Hunter 📌 Zoom now has its own AI presentation maker, and the meeting integration is what caught my attention. You can take a Zoom meeting transcript or summary and turn it directly into a presentation, complete with layouts and speaker notes. It also works with regular prompts and documents, and the slides stay editable. You can collaborate with teammates or export everything to PowerPoint. Pretty useful for anyone who spends half their week in meetings and the other half turning those meetings ",
+     "kr": "헌터 📌 Zoom에 자체 AI 프레젠테이션 제작 기능이 추가되었는데, 회의와의 통합 기능이 특히 눈길을 끕니다. Zoom 회의 녹취록이나 요약본을 가져와 레이아웃과 발표자 노트까지 갖춰진 프레젠테이션으로 즉시 변환할 수 있습니다. 일반 프롬프트나 문서로도 작업이 가능하며 슬라이드는 계속 편집할 수 있습니다. 팀원들과 협업하거나 모든 내용을 파워포인트로 내보낼 수도 있습니다. 한 주의 절반을 회의에 쓰고 나머지 절반을 그 회의 내용을 정리하는 데 쓰는 분들에게 아주 유용해 보입니다."
+    },
+    {
+     "author": "Jack Lee",
+     "is_maker": true,
+     "text": "Hey Product Hunt! I’m Jack, a product designer working on Zoom Slides 👋 Zoom is built for conversation to completion. For us, that means helping people carry what they discuss into something they can deliver—and presentations are a meaningful part of that journey. Conversations are full of nuance: a customer’s concern, a question that changes the direction, the reasoning behind a decision. When you sit down to make a presentation, that’s often the hardest part to carry forward. We built Zoom Sli",
+     "kr": "안녕하세요 프로덕트 헌트! 저는 Zoom Slides의 프로덕트 디자이너 Jack입니다 👋 Zoom은 대화에서 완료까지 이어지도록 설계되었습니다. 이는 사람들이 논의한 내용을 실제 전달 가능한 성과물로 이어가도록 돕는 것을 의미하며, 프레젠테이션은 그 여정의 중요한 일부입니다. 대화에는 고객의 우려, 방향을 바꾸는 질문, 결정의 배경 이유 등 수많은 뉘앙스가 담겨 있습니다. 막상 프레젠테이션을 만들려고 앉으면 바로 그 맥락을 담아내는 것이 가장 어렵죠. 저희는 이러한 배경에서 Zoom Slides를 만들었습니다."
+    },
+    {
+     "author": "Rivendell Chorro",
+     "is_maker": false,
+     "text": "Can i keep a slide, i like and try a few different versions of it?",
+     "kr": "마음에 드는 슬라이드를 그대로 두고 여러 가지 다른 버전으로 시도해 볼 수 있나요?"
+    },
+    {
+     "author": "Cellier Sheng",
+     "is_maker": true,
+     "text": "Yes, @rivendell\\_chorro You can duplicate the slide you want to keep, then experiment with the copies. Try different wording, visuals, or layouts, either manually or with AI. That way, you can explore a few options while keeping the original to come back to.",
+     "kr": "네, @rivendell_chorro 님. 유지하고 싶은 슬라이드를 복제한 뒤 사본으로 다양하게 테스트해보실 수 있습니다. 수동으로든 AI를 활용하든 문구, 시각 요소, 레이아웃을 다르게 시도해 보세요. 그렇게 하면 원본을 보존하면서도 여러 대안을 자유롭게 탐색할 수 있습니다."
+    },
+    {
+     "author": "Dominic Kennedy",
+     "is_maker": false,
+     "text": "Oh very cool - How do you differentiate from what Grok and Claude are doing?",
+     "kr": "오 정말 멋지네요. Grok이나 Claude가 하는 방식과는 어떻게 차별화되나요?"
+    },
+    {
+     "author": "Cellier Sheng",
+     "is_maker": true,
+     "text": "Great question, Dominic! Claude and Grok are doing impressive work with AI-powered presentations. Our focus is a bit different. We're building the entire presentation experience around the conversations already happening in Zoom. You can turn meeting context into fully editable slides, refine them with AI and your team, present and collaborate directly in Zoom Meetings, and share them afterward with AI narration through Voice Presentation. For us, it's not just about generating slides. It's abou",
+     "kr": "좋은 질문입니다, Dominic! Claude와 Grok도 AI 기반 프레젠테이션 분야에서 인상적인 성과를 내고 있습니다. 저희의 초점은 조금 다릅니다. 저희는 이미 Zoom에서 일어나고 있는 대화를 중심으로 전체 프레젠테이션 경험을 구축하고 있습니다. 회의 맥락을 완전히 편집 가능한 슬라이드로 전환하고, AI 및 팀과 함께 다듬으며, Zoom 회의에서 직접 발표 및 협업하고, 이후 Voice Presentation 기능을 통해 AI 내레이션과 함께 공유할 수 있습니다. 저희에게 이는 단순한 슬라이드 생성을 넘어선 영역입니다."
+    },
+    {
+     "author": "Angelo Bram",
+     "is_maker": false,
+     "text": "How does Zoom continue to improve the meeting experience for teams working remotely?",
+     "kr": "Zoom은 원격 근무 팀의 회의 경험을 어떻게 지속적으로 개선하고 있나요?"
+    },
+    {
+     "author": "Cellier Sheng",
+     "is_maker": true,
+     "text": "Thx @angelo\\_bram , With Zoom Slides, we are making it easier to collaborate both during & after meetings. You can co-edit slides in zoom meetings, and hand off control between speakers. Voice presentation can turns speaker notes into AI narration, so others can follow the presentation on their own schedule.",
+     "kr": "감사합니다 @angelo_bram 님. Zoom Slides를 통해 회의 중에는 물론 회의 후에도 협업을 더 쉽게 할 수 있도록 지원하고 있습니다. Zoom 회의 중에 슬라이드를 공동 편집하고 발표자 간 제어권을 넘겨줄 수 있습니다. 또한 Voice Presentation 기능을 통해 발표자 노트를 AI 내레이션으로 변환하여 다른 팀원들이 각자의 일정에 맞춰 발표를 확인할 수 있습니다."
+    },
+    {
+     "author": "Daniel Harris",
+     "is_maker": false,
+     "text": "Does Zoom offer seamless integration with popular project management tools?",
+     "kr": "Zoom은 널리 쓰이는 프로젝트 관리 도구들과의 매끄러운 연동을 지원하나요?"
+    },
+    {
+     "author": "Cellier Sheng",
+     "is_maker": true,
+     "text": "Hi@daniel\\_harris11 , Zoom offers integrations with tools like Jira and Asana through the zoom app marketplace. Which project management tool does your team use, and what workflow would you like to connect with zoom slides?",
+     "kr": "안녕하세요 @daniel_harris11 님, Zoom은 Zoom 앱 마켓플레이스를 통해 Jira, Asana 같은 도구와의 연동을 제공합니다. 팀에서 어떤 프로젝트 관리 도구를 사용 중이시며, Zoom Slides와 어떤 워크플로우를 연결하고 싶으신가요?"
+    },
+    {
+     "author": "James Carter",
+     "is_maker": false,
+     "text": "How easy is it for new users to get started with Zoom without needing technical knowledge? wishing you very best of luck",
+     "kr": "기술적인 지식이 없는 신규 사용자도 Zoom을 얼마나 쉽게 시작할 수 있나요? 응원하겠습니다!"
+    },
+    {
+     "author": "Cellier Sheng",
+     "is_maker": true,
+     "text": "Thanks, @james\\_carter35 For Zoom Slides, you can start with a template, import a PowerPoint deck, or ask AI for a draft using your own words. You can then edit the text and layout with familiar controls. Our goal is to make it approachable without a technical background.",
+     "kr": "감사합니다, @james_carter35 님. Zoom Slides의 경우 템플릿으로 시작하거나 파워포인트 자료를 불러올 수도 있고, 자연어로 AI에게 초안 작성을 요청할 수도 있습니다. 그런 다음 친숙한 컨트롤을 사용하여 텍스트와 레이아웃을 편집하면 됩니다. 기술적 배경지식 없이도 쉽게 다가갈 수 있도록 만드는 것이 저희의 목표입니다."
+    }
+   ],
+   "slug": "zoom"
+  },
+  {
+   "name": "Boost.space",
+   "tagline_en": "Specialized AI agents for real business roles",
+   "tagline_kr": "실제 비즈니스 직무를 수행하는 전문 AI 에이전트",
+   "image": "https://ph-files.imgix.net/34e3a3b5-b0b6-4d28-b05d-cce0efbe0b6e.gif?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://boost.space/&utm_source=producthunt",
+   "categories": [
+    "Productivity",
+    "Platforms",
+    "AI Agents"
+   ],
+   "upvotes": 242,
+   "comments_count": 58,
+   "maker": [
+    "Matous Kralik"
+   ],
+   "price_model": "Payment Required",
+   "price_detail": null,
+   "desc_kr": "Boost.space가 기업 내 실제 업무를 수행하는 AI 직원을 구축하고 운용할 수 있는 플랫폼 'AgentOS'를 공개했습니다. 단일 챗봇 수준을 넘어 기업의 보안 인프라 내에서 에이전트가 필요한 맥락, 기술, 도구를 갖추고 자율적으로 작동하도록 지원합니다. 1,400개 이상의 AI 모델과 기존에 사용 중인 1,500개 이상의 업무 도구를 손쉽게 연결할 수 있는 공통 기반을 제공합니다. 각 에이전트마다 맞춤형 지침, 도구 접근 권한, 데이터 범위를 독립적으로 설정할 수 있어 높은 통제력을 유지할 수 있습니다. 또한 기업 고객을 위해 사내 리눅스 서버와 Docker를 통한 프라이빗 에이전트 런타임 배포 옵션을 지원하여 데이터 보안을 강화했습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/boost-space",
+   "comment_summary": "비즈니스 데이터와 연동되는 자율 AI 에이전트의 실질적 효용성에 대해 커뮤니티의 큰 관심을 받았습니다. 엔터프라이즈 환경에서의 프라이빗 호스팅 지원 여부, 이메일 발송 등 주요 작업 전 승인 절차 지원, 외부 LLM 구독 연동 방식에 대한 구체적인 질의가 오갔으며 제작자가 긍정적 로드맵을 답변했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Liesbeth Bronsema",
+     "is_maker": false,
+     "text": "Hi Chris! thank you so much for such a detailed and honest review — we really appreciate you taking the time. We're glad Boost.space has become a true backbone for your operations, and that the Make engine is giving you the flexibility you were looking for. That's exactly the goal — one source of truth instead of juggling ten disconnected tools. We also hear you on the learning curve. You're right that the platform's power can feel overwhelming at first — we're actively working on adding more co",
+     "kr": "안녕하세요 Chris! 상세하고 솔직한 리뷰를 남겨주셔서 정말 감사합니다. 시간 내어 작성해 주신 점 진심으로 감사드립니다. Boost.space가 귀사 운영의 든든한 중추가 되고, Make 엔진이 원하시던 유연성을 제공하고 있다니 무척 기쁩니다. 단절된 10개의 도구를 오가는 대신 '단일 진실 공급원'을 구축하는 것이 바로 저희의 목표입니다. 학습 곡선에 대한 말씀도 귀담아듣고 있습니다. 플랫폼의 강력한 기능이 처음에는 다소 부담스럽게 느껴질 수 있다는 점에 공감하며, 더 많은 안내 자료를 추가하기 위해 적극 노력하고 있습니다."
+    },
+    {
+     "author": "Matous Kralik",
+     "is_maker": true,
+     "text": "📌 Hi everyone 👋 **Meet AgentOS — an operating system for your AI workforce.** Imagine AI employees researching competitors, improving your product catalog, and getting things done while you sleep. Give them roles, teach them how your business works, and stay in control. Years ago, we made a bet: **Data would be the key to making AI truly useful for businesses.** We spent years building that foundation at **Boost.space** — unifying and securing business data. Along the way, we ranked among **Capt",
+     "kr": "📌 여러분 안녕하세요 👋 **AI 인력을 위한 운영체제, AgentOS를 소개합니다.** 잠든 사이 경쟁사를 조사하고, 제품 카탈로그를 개선하며, 업무를 완수하는 AI 직원을 상상해보세요. 이들에게 역할을 부여하고 비즈니스 방식을 학습시키면서도 완벽한 통제권을 유지할 수 있습니다. 수년 전 저희는 **'데이터가 비즈니스에서 AI를 진정으로 유용하게 만드는 핵심 열쇠가 될 것'**이라는 데 베팅했습니다. Boost.space에서 비즈니스 데이터를 통합하고 보호하는 기반을 수년간 구축해 왔습니다."
+    },
+    {
+     "author": "Ristan Nakko",
+     "is_maker": false,
+     "text": "Kudos to the team! Are the agent roles customizable with definition of tools, instructions and decision-making boundaries?",
+     "kr": "팀원 분들 대단하네요! 도구 정의, 지침, 의사결정 범위 등을 지정하여 에이전트 역할을 맞춤 설정할 수 있나요?"
+    },
+    {
+     "author": "Matous Kralik",
+     "is_maker": true,
+     "text": "@ristan\\_nakko Thank you for the support! Yes - each agent has its own set of instructions, soul.md and such and so you can define each and every agent + you can provide connection to just the tools you want to each agent, same goes for skills and data layer - each agent is fully in your control, build by you, defined by you and ready for heavy-lifting tasks and long-term goals 🙏💪",
+     "kr": "@ristan_nakko 응원해 주셔서 감사합니다! 네, 각 에이전트는 고유한 지침 세트와 soul.md 등을 갖고 있어 에이전트 하나하나를 맞춤 정의할 수 있습니다. 또한 각 에이전트마다 원하는 도구만 연결해 줄 수 있으며, 스킬과 데이터 레이어도 마찬가지입니다. 모든 에이전트는 사용자가 직접 제작하고 정의하여 완벽히 통제할 수 있으며, 고난도 업무와 장기 목표를 수행할 준비가 되어 있습니다 🙏💪"
+    },
+    {
+     "author": "Anant Gupta",
+     "is_maker": false,
+     "text": "Just curious, from the enterprise perspective, does the product allow private deployment of agents for companies that are sensitive to giving their business data to external infrastructure? For example, if a company wants to self host.",
+     "kr": "궁금한 점이 있습니다. 엔터프라이즈 관점에서, 비즈니스 데이터를 외부 인프라에 제공하는 데 민감한 기업을 위해 에이전트의 프라이빗 배포를 지원하나요? 예를 들어 자체 호스팅을 원하는 경우 말이죠."
+    },
+    {
+     "author": "Matous Kralik",
+     "is_maker": true,
+     "text": "@iamanantgupta Yes, with one important distinction. Companies can run agents on their own Linux server with Docker and use their own OpenAI-compatible model, so agent execution stays inside their infrastructure. The AgentOS system and its separate database are still hosted by Boost.space in the EU, so this is a private agent runtime rather than a fully self-hosted AgentOS deployment. 🙏",
+     "kr": "@iamanantgupta 네, 한 가지 중요한 차이점이 있습니다. 기업은 Docker를 통해 자체 리눅스 서버에서 에이전트를 실행하고 자체 OpenAI 호환 모델을 사용할 수 있으므로 에이전트 실행 자체는 사내 인프라 내부에서 유지됩니다. 다만 AgentOS 시스템과 별도 데이터베이스는 Boost.space가 EU에서 호스팅하므로, 완전한 셀프 호스팅 AgentOS 배포라기보다는 '프라이빗 에이전트 런타임' 형태입니다. 🙏"
+    },
+    {
+     "author": "Raghav Mehra",
+     "is_maker": false,
+     "text": "Is there a way that we can review and approve agent's actions before it actually performs it? For example, sending a email or updating certain records or making changes to any external apps or systems. Similar to how in a @Claude Cowork Projects it can actually write email and save it as a draft, which we can review later and send it. Is such control of review and approval possible?",
+     "kr": "에이전트가 작업을 실제로 수행하기 전에 이를 검토하고 승인할 수 있는 방법이 있나요? 예를 들어 이메일을 보내거나 특정 레코드를 업데이트하거나 외부 앱 또는 시스템을 변경하는 작업 등이요. Claude Co-work 프로젝트에서 이메일을 작성해 임시저장해두면 나중에 사람이 검토하고 보낼 수 있는 것과 유사하게, 이러한 검토 및 승인 제어가 가능한가요?"
+    },
+    {
+     "author": "Matous Kralik",
+     "is_maker": true,
+     "text": "@ragsyme 100% - we got builti-in approval flow coming out any day now + agents natively ask for permissions anyway 🙏",
+     "kr": "@ragsyme 100% 가능합니다. 내장 승인 워크플로우가 며칠 내로 출시될 예정이며, 에이전트가 기본적으로 권한 승인을 먼저 요청하도록 되어 있습니다 🙏"
+    },
+    {
+     "author": "S.S. Rahman",
+     "is_maker": false,
+     "text": "Congrats on the Product Hunt and the AppSumo launch. What happens when the lifetime credits are exhausted? Do you offer a separate pro model then?",
+     "kr": "프로덕트 헌트와 앱수모 런칭을 축하합니다. 라이프타임 크레딧이 모두 소진되면 어떻게 되나요? 그때는 별도의 프로 요금제를 제공하시나요?"
+    },
+    {
+     "author": "Matous Kralik",
+     "is_maker": true,
+     "text": "@syed\\_shayanur\\_rahman Thank you! Each agent can be connected to your existing LLM subscription and thats the first step we actually recommend doing once you activate your system. AI Wallet is ment for more advanced tasks such as video generation, 3D rendering, external data.... hope that make sense! Feel free to use our MCP in Docs - it got all the answers! 🔥",
+     "kr": "@syed_shayanur_rahman 감사합니다! 각 에이전트는 기존 LLM 구독 계정에 연결할 수 있으며, 시스템을 활성화한 후 실제로 가장 먼저 권장하는 단계이기도 합니다. AI Wallet은 비디오 생성, 3D 렌더링, 외부 데이터 조회 등 더 고급 작업을 위해 마련된 것입니다. 이해가 되셨기를 바라며, 문서에 있는 MCP를 자유롭게 활용해 보세요. 모든 해답이 들어있습니다! 🔥"
+    },
+    {
+     "author": "Aleksandar Blazhev",
+     "is_maker": false,
+     "text": "Congrats on the launch, @rohanrecommends I have a question about the product. Is this product a shared workspace? Meaning, can I bring in GrokBot, Claude Code, Codex, and all my agents into one place where I can tag them and have them work together? Is it a shared workspace, or is something else?",
+     "kr": "출시를 축하드립니다, @rohanrecommends 제품에 대해 질문이 있습니다. 이 제품은 공유 워크스페이스 개념인가요? 즉, GrokBot, Claude Code, Codex 등 모든 에이전트를 한곳으로 가져와 태그를 지정하고 함께 일하게 만들 수 있나요? 공유 작업 공간인지, 아니면 다른 형태인지 궁금합니다."
+    },
+    {
+     "author": "Matous Kralik",
+     "is_maker": true,
+     "text": "@rohanrecommends @byalexai 100% - you can connect any LLM provider and plugging your existing agents is coming out very soon! 🔥🙏",
+     "kr": "@rohanrecommends @byalexai 100% 맞습니다. 어떤 LLM 제공업체든 연결할 수 있으며, 기존 에이전트를 플러그인 형태로 연결하는 기능도 곧 출시될 예정입니다! 🔥🙏"
+    }
+   ],
+   "slug": "boost-space"
+  },
+  {
+   "name": "CopilotKit",
+   "tagline_en": "Connect any agent to any user.",
+   "tagline_kr": "모든 AI 에이전트를 모든 사용자에게 연결하는 프론트엔드 플랫폼",
+   "image": "https://ph-files.imgix.net/b46409d4-3f2a-4026-a231-78189c5f9a8c.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://www.copilotkit.ai/&utm_source=producthunt",
+   "categories": [
+    "AI Infrastructure Tools",
+    "LLM Developer Tools"
+   ],
+   "upvotes": 221,
+   "comments_count": 72,
+   "maker": [
+    "Nathan 🔸 Tarbert",
+    "Eli Berman"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "CopilotKit이 기업용 에이전트 프론트엔드 스택 및 통합 워크스페이스인 'OpenBot'을 선보였습니다. 조직 내부 시스템에 AI 에이전트가 안전하게 접근할 수 있도록 권한 관리, SSO/SCIM 연동, 비용 통제 등 엔터프라이즈 거버넌스를 완벽히 내장했습니다. 자체 호스팅(Self-hostable)이 가능하며, 사용자 인터랙션이 누적될수록 학습하고 진화하는 에이전트 애플리케이션을 구축할 수 있습니다. 또한 데스크톱 앱을 통해 별도의 API 키 없이도 기존 Claude나 ChatGPT 구독 계정으로 바로 로그인하여 사용할 수 있는 뛰어난 접근성을 제공합니다. 로컬 모델부터 상용 LLM까지 유연하게 연결할 수 있으며, 포춘 500대 기업 다수가 이미 프로덕션 환경에서 채택하고 있는 검증된 아키텍처를 자랑합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/copilotkit",
+   "comment_summary": "엔터프라이즈 환경에 꼭 필요한 AI 거버넌스와 권한 관리 기능을 제공한다는 점에서 개발자들의 뜨거운 환영을 받았습니다. Claude 및 ChatGPT 유료 구독 계정으로 API 키 없이 바로 연동할 수 있다는 점과 로컬 LLM 지원에 대해 긍정적인 평가가 쏟아졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Nathan 🔸 Tarbert",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt, Nathan here from CopilotKit 👋 Before an AI agent can access company systems, someone has to be accountable for what it can read, change, send, and spend. That’s the focus of OpenBot: a workspace for AI agents with enterprise governance built into how they operate. **Your company decides who gets access and what agents are allowed to do.** • **Identity and permissions:** SSO and SCIM connect access to your company directory. Bots can act on a person’s behalf with scoped permis",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요, CopilotKit의 Nathan입니다 👋 AI 에이전트가 사내 시스템에 접근하기 전에, 해당 에이전트가 무엇을 읽고 변경하고 전송하고 지출할 수 있는지에 대해 누군가는 책임을 져야 합니다. 바로 그것이 OpenBot의 핵심입니다. 기업용 거버넌스가 운영 방식 자체에 내장된 AI 에이전트 전용 워크스페이스죠. **귀사가 누가 접근 권한을 얻고 에이전트가 무엇을 할 수 있는지를 직접 결정합니다.** • **신원 및 권한:** SSO 및 SCIM을 통해 사내 디렉터리에 접근을 연동합니다. 봇은 제한된 권한 범위 내에서 사람을 대신해 작업을 수행할 수 있습니다."
+    },
+    {
+     "author": "Eli Berman",
+     "is_maker": true,
+     "text": "@nathan\\_tarbert Awesome! The day has come 🎉 We were waiting so much for this.",
+     "kr": "@nathan_tarbert 멋집니다! 드디어 그날이 왔네요 🎉 이날을 정말 기다려왔습니다."
+    },
+    {
+     "author": "Nathan 🔸 Tarbert",
+     "is_maker": true,
+     "text": "@eli\\_berman2, I'm so excited to get OpenBot into the hands of users! 🚀",
+     "kr": "@eli_berman2 님, OpenBot을 사용자분들께 선보이게 되어 정말 기대됩니다! 🚀"
+    },
+    {
+     "author": "Craig Irwin",
+     "is_maker": false,
+     "text": "@nathan\\_tarbert exciting to see OpenBot offers an enterprise solution!",
+     "kr": "@nathan_tarbert OpenBot이 엔터프라이즈 솔루션을 제공한다는 소식이 정말 흥미진진하네요!"
+    },
+    {
+     "author": "Nathan 🔸 Tarbert",
+     "is_maker": true,
+     "text": "Thanks, @craig\\_irwin! Governance is a big part of why we’re building OpenBot for Business. Companies need control over what agents can access, which actions require approval, what they spend, and where their data lives—with an audit trail to back it up. We’re closing the gap by bringing those controls together in one self-hostable workspace, while letting teams keep the agents, models, and tools they choose.",
+     "kr": "감사합니다, @craig_irwin 님! 거버넌스는 저희가 OpenBot for Business를 구축하게 된 가장 큰 이유 중 하나입니다. 기업은 감사 로그를 바탕으로 에이전트의 접근 대상, 승인이 필요한 작업, 지출 비용, 데이터 저장 위치를 철저히 제어할 수 있어야 합니다. 저희는 이러한 제어 기능을 하나의 자체 호스팅 가능한 워크스페이스로 통합하는 동시에, 팀이 선택한 에이전트와 모델, 도구를 그대로 유지할 수 있도록 지원하여 그 간극을 메우고 있습니다."
+    },
+    {
+     "author": "Daniil Poletaev",
+     "is_maker": false,
+     "text": "Does it work on Claude/ChatGPT subscription?",
+     "kr": "Claude나 ChatGPT 구독으로도 동작하나요?"
+    },
+    {
+     "author": "Eli Berman",
+     "is_maker": true,
+     "text": "@danshipit **Yes!** OpenBot Desktop lets you sign in with your Claude or ChatGPT plan when you set it up, so you don't need an API key. You can also use an API key (OpenAI, Anthropic, Gemini), a Google or xAI account, or your own model endpoint. To switch later: Settings → General → AI model.",
+     "kr": "@danshipit **네, 지원합니다!** OpenBot 데스크톱 앱 설정 시 Claude나 ChatGPT 플랜으로 로그인할 수 있어 별도의 API 키가 필요하지 않습니다. 원하실 경우 OpenAI, Anthropic, Gemini 등의 API 키나 Google, xAI 계정, 혹은 자체 모델 엔드포인트를 사용할 수도 있습니다. 나중에 변경하려면: 설정 → 일반 → AI 모델에서 가능합니다."
+    },
+    {
+     "author": "Daniil Poletaev",
+     "is_maker": false,
+     "text": "@eli\\_berman2 That's great and super important!",
+     "kr": "@eli_berman2 정말 훌륭하고 매우 중요한 부분이네요!"
+    },
+    {
+     "author": "Anmol Baranwal",
+     "is_maker": false,
+     "text": "@danshipit yeah you can sign in with your Claude, ChatGPT or xAI (Grok) plan. Gemini and Unbiased AI work too. and you can run local models like DeepSeek, Kimi, Qwen and Mistral with Ollama & others",
+     "kr": "@danshipit 맞아요, Claude, ChatGPT, xAI(Grok) 플랜으로 로그인할 수 있습니다. Gemini와 Unbiased AI도 작동하고요. Ollama 등을 통해 DeepSeek, Kimi, Qwen, Mistral 같은 로컬 모델도 구동할 수 있습니다."
+    },
+    {
+     "author": "Nathan 🔸 Tarbert",
+     "is_maker": true,
+     "text": "@danshipit, we've tried to make it as easy as possible for you to go from zero to automating your tasks as quickly as possible. Connecting to your ChatGPT/Claude account during setup was an important step, and I would love your feedback after you try it. You can download the desktop app at https://open.bot/",
+     "kr": "@danshipit 님, 처음부터 업무 자동화까지 최대한 빠르고 쉽게 도달할 수 있도록 많은 노력을 기울였습니다. 초기 설정 시 ChatGPT/Claude 계정을 연결할 수 있게 한 것은 중요한 단계였으며, 사용해 보신 후 피드백을 꼭 듣고 싶습니다. 데스크톱 앱은 https://open.bot/ 에서 다운로드하실 수 있습니다."
+    },
+    {
+     "author": "Anmol Baranwal",
+     "is_maker": false,
+     "text": "I tried Grok Bot for a month but the recent outages made it pretty frustrating.. this one fixes most of what bugs me about coworker products from big companies. it all runs on my machine, the skills it learns are just files I own and I can bring my own agent as a developer and pick a cheap/local model per bot. I already pay for Claude Max so being able to sign in with it, letting bots hand work to each other and each bot having its own workspace & browser is insanely productive. great launch tea",
+     "kr": "한 달 동안 Grok Bot을 사용해봤지만 최근 잦은 장애로 꽤 답답했습니다.. 이 제품은 대기업 협업 제품들에서 불만이었던 점들을 대부분 해결해 줍니다. 모든 것이 내 컴퓨터에서 실행되고, 학습한 스킬은 내가 소유한 파일일 뿐이며, 개발자로서 자체 에이전트를 가져와 봇마다 저렴한 모델이나 로컬 모델을 지정할 수 있습니다. 이미 Claude Max 요금제를 결제 중이라 그대로 로그인해서 사용할 수 있고, 봇끼리 업무를 인수인계하며 각 봇이 독립된 워크스페이스와 브라우저를 갖는다는 점이 정말 생산적입니다. 훌륭한 출시네요."
+    },
+    {
+     "author": "Eli Berman",
+     "is_maker": true,
+     "text": "@anmol-baranwal Lets go! Since OpenBot is built on CopilotKit and AG-UI, it's architecture makes it actually enterprise-ready. For proof: majority of the Fortuna 500 already use both, in production. Many other open source products out there just have tons of slop code... We built this with real companies and businesses in mind",
+     "kr": "@anmol-baranwal 가보자고요! OpenBot은 CopilotKit과 AG-UI 기반으로 제작되었기 때문에 아키텍처 자체가 실제 엔터프라이즈 환경에 완벽히 부합합니다. 증거로 포춘 500대 기업 다수가 이미 두 솔루션을 프로덕션 환경에서 사용 중입니다. 시중의 많은 오픈소스 제품들은 조잡한 코드가 넘쳐나지만... 저희는 실제 기업과 비즈니스를 염두에 두고 구축했습니다."
+    }
+   ],
+   "slug": "copilotkit"
+  },
+  {
+   "name": "readywhen",
+   "tagline_en": "The senior personal assistant that works on your phone",
+   "tagline_kr": "스마트폰에서 직접 동작하는 시니어 AI 개인 비서",
+   "image": "https://ph-files.imgix.net/93202133-9124-4af2-8d5e-7f6339d3e115.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://app.readywhen.ai/signup?utm_source=producthunt&utm_medium=listing&utm_campaign=email_assistant",
+   "categories": [
+    "Productivity"
+   ],
+   "upvotes": 205,
+   "comments_count": 24,
+   "maker": [
+    "Sancar"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "readywhen은 사용자의 스마트폰에서 동작하며 일상의 업무를 보조하는 시니어 AI 개인 비서 서비스입니다. 고유한 전화번호와 전용 가상 컴퓨터, 그리고 프로젝트 진행 상황을 추적하는 보드를 갖추고 있어 전화, 문자, 음성 메모를 통해 실제 작업을 위임할 수 있습니다. 특히 이메일 수신함에서 결제 대기 청구서나 투자자 자료 요청 등 후속 조치가 필요한 사안들을 끝까지 추적하여 처리하도록 돕습니다. 새로운 대시보드를 배울 필요 없이 이메일 주소 하나로 연결되며, 모든 이메일 발송은 사용자의 최종 승인 하에 이루어집니다. 모든 데이터는 유럽 내 암호화 인프라에 안전하게 보관되고 ISO 27001 표준을 준수하여 엔터프라이즈급 데이터 보안을 보장합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/readywhen",
+   "comment_summary": "새로운 앱을 설치하거나 복잡한 대시보드를 익힐 필요 없이 이메일 기반으로 후속 업무를 자동 추적해 준다는 점에서 실용적이라는 호평을 받았습니다. 다중 이메일 계정 연동 지원 여부와 데이터 저장 보안 정책, 그리고 현재 무료인 베타 이후의 가격 책정 계획에 대한 질의응답이 오갔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Sancar",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt 👋 I’m Sançar, co-founder of **ready**_when_. If you run your week from your inbox, this one’s for you. Every week there’s someone you’re waiting on. A client with an invoice to pay. An investor who said “send me the deck”. A contract that’s “nearly signed”. You know one quick follow-up would sort it. By Friday it still hasn’t gone, and it’s still in your head at 11pm. None of us drop the ball on purpose. There’s just no one whose job it is to chase. So we made it someone’s job,",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요 👋 **ready**_when_의 공동 창업자 Sançar입니다. 수신함(인박스) 중심으로 일주일을 운영하신다면 이 제품이 제격입니다. 매주 누군가의 연락을 기다리는 일들이 발생합니다. 결제해야 할 인보이스가 있는 고객, \"피치덱을 보내달라\"던 투자자, \"거의 서명 단계\"인 계약서 등이죠. 간단한 후속 조치 한 번이면 해결될 것을 알면서도, 금요일 밤 11시까지 처리하지 못해 머릿속을 맴돌곤 합니다. 누구도 일부러 일을 놓치는 것은 아니며, 단지 끈질기게 챙기는 것이 전담 업무인 사람이 없을 뿐입니다. 그래서 저희가 이를 전담하는 존재를 만들었습니다."
+    },
+    {
+     "author": "Surya",
+     "is_maker": false,
+     "text": "tried it with one follow up i had been avoiding for a week lol. it wrote the email, i replied send and it went out from my own inbox. how does it decide when to nudge again if the other person never replies?",
+     "kr": "일주일 동안 미뤄두었던 후속 이메일 하나로 테스트해 봤습니다 ㅎㅎ 알아서 메일을 써주길래 '전송'이라고 답장했더니 제 수신함에서 바로 발송되더군요. 만약 상대방이 계속 답장을 안 하면 언제 다시 알림을 줄지 어떻게 결정하나요?"
+    },
+    {
+     "author": "Sancar",
+     "is_maker": true,
+     "text": "@trulysurya great that you tried it! Once it sends that email, it watches for the reply. That 'watcher' is context aware, meaning if it's clear from the context of the email that a reply is needed within 1 week, readywhen won't keep reminding you until that week us up. If on the other hand it's urgent, and a reply is needed sooner, readywhen will keep a closer eye.",
+     "kr": "@trulysurya 사용해 보셨다니 기쁩니다! 이메일이 발송되면 상대방의 답장을 주시합니다. 이 감시 기능은 '맥락 인식'을 기반으로 하므로, 이메일 내용상 1주일 이내에 답장이 필요하다고 판단되면 그 기간이 끝날 때까지 불필요한 재촉 알림을 보내지 않습니다. 반대로 긴급해서 빠른 회신이 필요한 건이라면 훨씬 더 면밀하게 지켜봅니다."
+    },
+    {
+     "author": "diz",
+     "is_maker": false,
+     "text": "i have many emails,like gmail, 163,outlook, how to deal mails form different channels?",
+     "kr": "Gmail, 163, Outlook 등 여러 이메일 계정을 사용 중인데, 여러 채널의 메일은 어떻게 처리하나요?"
+    },
+    {
+     "author": "Sancar",
+     "is_maker": true,
+     "text": "@dizzzzzz you can connect multiple accounts, including Gmail and Outlook. A lot of agencies use readywhen, and this is a must-have for them.",
+     "kr": "@dizzzzzz Gmail과 Outlook을 포함하여 여러 계정을 연동할 수 있습니다. 많은 에이전시들이 readywhen을 사용하고 있으며, 이는 그들에게 필수적인 기능입니다."
+    },
+    {
+     "author": "Pranav Pandey",
+     "is_maker": false,
+     "text": "Where does all the (context) data live?",
+     "kr": "모든 (맥락) 데이터는 어디에 저장되나요?"
+    },
+    {
+     "author": "Sancar",
+     "is_maker": true,
+     "text": "@pranav8494 Good question! Everything is stored in the EU on secure, encrypted infrastructure. Your tools connect with OAuth, so we never see your passwords, and you can disconnect any of them whenever you like. Your data is never used to train AI models, and it’s all covered by ISO 27001. You can also delete your account and data from your profile at any time.",
+     "kr": "@pranav8494 좋은 질문입니다! 모든 데이터는 EU 내의 안전하고 암호화된 인프라에 저장됩니다. 도구 연동은 OAuth를 통하므로 비밀번호는 절대 저장되지 않으며 원하실 때 언제든 연동을 해제할 수 있습니다. 고객 데이터는 AI 모델 학습에 일절 사용되지 않으며 ISO 27001 규격을 완벽히 준수합니다. 프로필에서 언제든 계정과 데이터를 삭제할 수도 있습니다."
+    },
+    {
+     "author": "Pranav Pandey",
+     "is_maker": false,
+     "text": "@meandering\\_sancar Thanks for clarifying, good to hear that. On another topic, I dont see any pricing yet on the product page. Is it decided or its free for now?",
+     "kr": "@meandering_sancar 명확한 설명 감사합니다, 안심이 되네요. 다른 주제로, 제품 페이지에서 아직 요금제 정보를 찾지 못했습니다. 요금이 정해졌나요, 아니면 현재는 무료인가요?"
+    },
+    {
+     "author": "Sancar",
+     "is_maker": true,
+     "text": "@pranav8494 we're still in beta, so it's free for now. We'll likely always have a completely free option but will start to introduce pricing for premium features shortly.",
+     "kr": "@pranav8494 현재 아직 베타 단계라 무료로 제공 중입니다. 완전 무료 옵션은 계속 유지될 가능성이 높지만, 곧 프리미엄 기능을 위한 유료 요금제가 도입될 예정입니다."
+    },
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "what happens if they reply from a different address or just text me instead, does it still know it's done",
+     "kr": "상대방이 다른 이메일 주소로 답장하거나 대신 문자를 보내오면 완료된 것으로 인식하나요?"
+    },
+    {
+     "author": "Sancar",
+     "is_maker": true,
+     "text": "@igorblink if they reply from a different address, it's most likely readywhen will pick it up as it's highly context-aware (i.e it's not simply watching an address, it's watching a topic). It's not current'y on SMS, so if you got an update there you can just let your readywhen know so it closes it out (just like you would a real persona assistant)",
+     "kr": "@igorblink 다른 주소로 답장하더라도 readywhen은 맥락을 깊이 파악하기 때문에(즉 단순히 주소만 보는 것이 아니라 주제를 추적함) 알아챌 가능성이 높습니다. 현재 SMS는 지원하지 않으므로 문자로 업데이트를 받으셨다면 readywhen에 알려주시면 업무를 완료 처리합니다(실제 개인 비서에게 하듯이요)."
+    },
+    {
+     "author": "KP",
+     "is_maker": false,
+     "text": "Hunter Hey PH community 👋 Excited to hunt readywhen today. What I like most is that there's no new app or dashboard to learn. Your assistant is just an email address, so you hand it work from the place you already spend all day, and it keeps chasing after you've moved on. I run a lot of launches and collabs out of my inbox, and the pile of people I'm waiting on is usually what slows everything down. Having something watch that pile, while I still approve every send, is exactly the kind of help I",
+     "kr": "헌터 PH 커뮤니티 여러분 안녕하세요 👋 오늘 readywhen을 소개하게 되어 기쁩니다. 제가 가장 마음에 드는 점은 새로 배울 앱이나 대시보드가 없다는 것입니다. 비서는 단지 하나의 이메일 주소일 뿐이므로 하루 종일 시간을 보내는 곳에서 바로 업무를 넘길 수 있고, 다른 일로 넘어가도 비서가 계속해서 후속 조치를 챙깁니다. 저는 수신함을 통해 수많은 런칭과 협업을 진행하는데, 누군가의 회신을 기다리는 일들이 늘 병목이 되곤 합니다. 사람이 모든 발송을 직접 승인하면서도 그 대기 목록을 누군가 대신 지켜봐 준다는 것은 제가 원하던 바로 그 도움이었습니다."
+    }
+   ],
+   "slug": "readywhen"
+  },
+  {
+   "name": "OpenFrame",
+   "tagline_en": "AI agents that run your IT. You approve every fix.",
+   "tagline_kr": "IT 인프라를 운영하는 AI 에이전트 — 모든 조치는 관리자 승인 기반",
+   "image": "https://ph-files.imgix.net/ab866a73-5f82-4e3e-a52b-9e1382b181b6.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://www.flamingo.run/openframe&utm_source=producthunt",
+   "categories": [
+    "Security software",
+    "Observability tools",
+    "AI Workflow Automation"
+   ],
+   "upvotes": 186,
+   "comments_count": 15,
+   "maker": [
+    "Vlad Marchenko",
+    "Michael Assraf",
+    "Aliaska Varieva"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "OpenFrame은 소규모 IT 운영팀의 반복적인 일상 업무를 자동화해 주는 두 가지 전문 AI 에이전트를 제공합니다. 에이전트 'Mingo'는 디바이스 패치, 문제 해결, 정기적인 기술 작업을 전담하며, 시스템 변경 사항은 관리자의 명시적 승인을 거쳐 실행됩니다. 또 다른 에이전트 'Fae'는 임직원의 일상적인 IT 지원 요청에 응대하여 운영팀이 상시 인터럽트 없이 핵심 업무에 집중할 수 있도록 돕습니다. 기기당 월 1달러의 합리적인 비용으로 엔드포인트 관리, AI 에이전트 자동화, IT 헬프데스크 기능을 통합 지원합니다. 주간 보고서를 통해 조직 리더십에 수행된 업무 내역을 명확히 제시하며, 기존의 복잡한 대시보드 대신 Claude Code 스타일의 직관적인 인터페이스를 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/openframe-3",
+   "comment_summary": "오프라인 상태인 기기의 패치 처리 정책과 여러 디바이스에 대한 일괄 승인 워크플로우에 관해 사용자들의 심도 있는 질문이 오갔습니다. 제작진은 관리자의 승인 피로도를 최소화하기 위해 이유가 명시된 4단계 판정 시스템과 일괄 승인 카드를 지원한다는 점을 상세히 안내하며 신뢰를 얻었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Vlad Marchenko",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt, I’m Vlad, Head of Marketing at Flamingo, the team behind OpenFrame 👋 **The problem** At most growing companies, IT is one or two people. They patch laptops, onboard new hires, chase security alerts and answer “quick questions” all day. When everything works, nobody notices. When something breaks, it’s on them. Most tools for this job fall into two camps: ❌ **Big IT suites** built for large IT departments, and priced and configured like it. ❌ **AI chatbots** that tell you what",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요, 저는 OpenFrame 개발팀 Flamingo의 마케팅 총괄 Vlad입니다 👋 **문제점** 대다수 성장하는 기업에서 IT 팀은 한두 명에 불과합니다. 이들은 종일 노트북 패치, 신규 입사자 온보딩, 보안 경고 추적, 그리고 \"간단한 질문\"에 답하는 일을 처리합니다. 모든 게 잘 돌아갈 땐 아무도 눈치채지 못하지만, 무언가 고장 나면 모두 그들의 탓이 됩니다. 이 업무를 위한 대부분의 도구는 두 가지로 나뉩니다: ❌ 대규모 IT 부서를 위해 설계되어 가격과 설정이 부담스러운 대형 IT 스위트. ❌ 무엇을 해야 하는지 말로만 알려주는 AI 챗봇."
+    },
+    {
+     "author": "Amirul",
+     "is_maker": false,
+     "text": "Can clients easily compare the latest version against previous feedback to see which changes have actually been implemented?",
+     "kr": "고객이 이전 피드백과 최신 버전을 손쉽게 비교하여 어떤 변경 사항이 실제로 반영되었는지 확인할 수 있나요?"
+    },
+    {
+     "author": "Michael Assraf",
+     "is_maker": true,
+     "text": "@1mirul Great question, and thanks for asking! 🙌 This version isn't a list of small fixes on the old screens. It's a shift in direction. Instead of building yet another IT/security dashboard, we moved OpenFrame toward a Claude Code–style experience for IT and security teams. It feels much closer to Claude Desktop than to a traditional console. So a lot of earlier feedback was answered by the new way you work with the product rather than as line-by-line changes. If you raised something specific b",
+     "kr": "@1mirul 좋은 질문 감사드립니다! 🙌 이번 버전은 기존 화면에 대한 자잘한 수정 목록이 아닙니다. 방향성 자체의 전환입니다. 또 하나의 IT/보안 대시보드를 만드는 대신, IT 및 보안 팀을 위한 Claude Code 스타일의 경험으로 OpenFrame을 발전시켰습니다. 기존의 관리 콘솔보다는 Claude Desktop에 훨씬 가깝게 느껴집니다. 따라서 이전 피드백의 상당 부분은 항목별 수정이 아닌, 제품을 다루는 완전히 새로운 업무 방식을 통해 해결되었습니다."
+    },
+    {
+     "author": "Marianna Tymchuk",
+     "is_maker": false,
+     "text": "Congrats on the launch! How does patching work for laptops that are offline? Curious whether the update waits for the next maintenance window when they come back online.",
+     "kr": "출시를 축하합니다! 오프라인 상태인 노트북의 패치는 어떻게 진행되나요? 온라인으로 돌아왔을 때 다음 정기 점검 시간까지 업데이트가 대기하는지 궁금합니다."
+    },
+    {
+     "author": "@marianna\\_tymchuk",
+     "is_maker": false,
+     "text": "Thanks so much! Great question. It doesn't wait for a separate maintenance window. If a laptop is offline when an update or a scheduled run fires, OpenFrame holds it and runs it as soon as the laptop comes back online, within a reconnect window the admin sets (7 days by default). What happens next depends on the policy the admin sets for apps that are in use: \\- Force Update: the app is closed 5 minutes later and updated. \\- Wait: the update holds until the user closes the app. You can add a dea",
+     "kr": "정말 감사합니다! 좋은 질문이네요. 별도의 정기 점검 창을 기다리지 않습니다. 업데이트나 예약 작업 실행 시 노트북이 오프라인 상태라면, OpenFrame은 작업을 보류해 두었다가 관리자가 설정한 재연결 기간(기본 7일) 내에 노트북이 온라인 상태가 되는 즉시 실행합니다. 실행 후의 처리는 사용 중인 앱에 대해 관리자가 설정한 정책에 따릅니다: \\- 강제 업데이트: 5분 후 앱이 종료되고 업데이트됩니다. \\- 대기: 사용자가 앱을 닫을 때까지 업데이트를 보류합니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "Congrats on the launch. The approval design is the part I'd actually judge this on — I run agents all day, and the review queue is where I lose trust fastest, so the four verdicts with the reason shown sounds like the right way to make approvals quick to scan. The per-activity line makes sense too. Curious how it holds up at scale in practice: when Mingo wants to patch the same thing across a fleet, does that come through as one batched review, or one review per device?",
+     "kr": "출시를 축하합니다. 승인 절차 설계야말로 제가 이 제품을 판단할 핵심 기준입니다. 저는 하루 종일 에이전트를 구동하는데, 검토 대기열에서 신뢰를 가장 빨리 잃게 되더군요. 그런 점에서 사유가 함께 표시되는 4단계 판정 방식은 승인 여부를 빠르게 훑어보기에 아주 적절해 보입니다. 활동별 구분도 일리가 있고요. 실제 규모가 커졌을 때 어떻게 작동하는지 궁금합니다. Mingo가 전체 기기 함대에 동일한 패치를 적용하고자 할 때, 한 번의 일괄 검토로 들어오나요, 아니면 기기별로 각각 검토해야 하나요?"
+    },
+    {
+     "author": "@jcbuilds",
+     "is_maker": false,
+     "text": "Thanks JC, totally agree, the review queue is where trust is won or lost. It comes through as one batched review. When Mingo proposes the same action across many devices, you get a single card listing every device it will touch, with the details for each one expandable, and one Approve or Reject for the whole batch. Once it runs, you see the result per device, including any that failed and why, so a few failures don't get buried in a fleet-wide success. The approval gate itself is fully configur",
+     "kr": "감사합니다 JC 님, 전적으로 동의합니다. 검토 대기열이야말로 신뢰를 얻거나 잃는 곳이죠. 해당 작업은 하나의 일괄 검토로 처리됩니다. Mingo가 여러 기기에 걸쳐 동일한 작업을 제안할 때, 대상 기기 전체가 나열된 단일 카드를 받게 되며 각 기기 세부 정보는 확장해 볼 수 있고 전체 일괄에 대해 한 번의 승인 또는 거부를 수행합니다. 실행 후에는 실패한 기기와 그 이유를 포함하여 기기별 결과가 표시되므로 소수의 실패가 전체 성공 속에 묻히지 않습니다. 승인 게이트 자체도 완전한 맞춤 설정이 가능합니다."
+    },
+    {
+     "author": "Nick Kalm",
+     "is_maker": false,
+     "text": "having an agent handle laptop updates and everyday IT requests could take a lot off a small team's plate. congrats on the launch!",
+     "kr": "노트북 업데이트와 일상적인 IT 요청을 에이전트가 대신 처리해 준다면 소규모 팀의 업무 부담을 크게 덜어줄 수 있겠네요. 출시를 축하합니다!"
+    },
+    {
+     "author": "@spotch\\_founder",
+     "is_maker": false,
+     "text": "Thanks Nick! That’s exactly why we built it. The IT person keeps every laptop, login and Wi-Fi network running, and the only time anyone notices is when something breaks. They’re the backbone of everything digital in a company, and they deserve better than drowning in updates and “quick questions.” OpenFrame gives them AI that does the grunt work while they stay in charge, and finally some credit for everything they do.",
+     "kr": "감사합니다 Nick! 바로 그 점 때문에 저희가 이 제품을 만들었습니다. IT 담당자는 모든 노트북, 로그인, 와이파이 네트워크를 정상 유지하지만, 누군가 알아채는 순간은 무언가 고장 났을 때뿐입니다. 그들은 회사의 모든 디지털 환경을 지탱하는 중추이며, 업데이트와 \"간단한 질문\"에 파묻히는 것보다 더 나은 대우를 받을 자격이 있습니다. OpenFrame은 관리자가 통제권을 유지하면서도 허드렛일은 AI가 대신하도록 해주고, 마침내 그들의 모든 노고가 인정받을 수 있게 해줍니다."
+    },
+    {
+     "author": "Aliaska Varieva",
+     "is_maker": true,
+     "text": "@spotch\\_founder Thanks so much! That’s exactly the idea: let Mingo handle the routine stuff so small teams can focus on the work that actually needs them.",
+     "kr": "@spotch_founder 정말 감사합니다! 맞습니다, 바로 그것이 핵심입니다. Mingo가 일상적인 업무를 처리하도록 하여 소규모 팀이 진정으로 자신들의 손길이 필요한 일에 집중할 수 있도록 하는 것이죠."
+    },
+    {
+     "author": "@tsubasatakeuhi",
+     "is_maker": false,
+     "text": "Thanks Tsubasa, approval fatigue is exactly what we designed around. Every command Mingo wants to run on a device goes through a review first. It identifies what the command actually does (killing a process, deleting files, uploading data off the device and so on) and checks it against the admin's guardrail policy. The result is one of four verdicts: run it, ask the end user, ask the technician, or deny it. Each verdict shows the reason, so you can see exactly which rule or policy made the call.",
+     "kr": "감사합니다 Tsubasa 님, 승인 피로도야말로 저희가 제품 설계 시 가장 신경 쓴 부분입니다. Mingo가 기기에서 실행하고자 하는 모든 명령어는 먼저 검토를 거칩니다. 해당 명령어가 실제로 수행하는 작업(프로세스 강제 종료, 파일 삭제, 기기 외부로 데이터 업로드 등)을 식별하고 관리자의 안전 가드레일 정책과 대조합니다. 그 결과 '실행', '최종 사용자에게 확인', '엔지니어에게 확인', '거부'라는 네 가지 판정 중 하나가 내려집니다. 각 판정에는 사유가 표시되므로 어떤 규칙이나 정책에 의해 결정되었는지 명확히 확인할 수 있습니다."
+    },
+    {
+     "author": "Tsubasa Takeuchi",
+     "is_maker": false,
+     "text": "@michaelassraf the four verdicts with the reason shown is a nice touch, makes it way easier to trust. thanks for the detailed answer!",
+     "kr": "@michaelassraf 사유가 함께 표시되는 4단계 판정 방식은 정말 훌륭한 기능이네요, 훨씬 더 신뢰가 갑니다. 상세한 답변 감사합니다!"
+    }
+   ],
+   "slug": "openframe-3"
+  }
+ ]
+}
