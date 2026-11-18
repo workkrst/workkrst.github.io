@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-11-18</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-11-18 · Top 5 · 수집 댓글 48개 · 수집 2026-11-18 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-11-18",
+ "collected_at": "2026-11-18 12:30 KST",
+ "summary": "오늘 론칭은 AI 에이전트의 실행력과 워크플로 통합을 강화하는 SEO, 광고, 개발 관측성 도구와 스타트업의 실질적 트랙션을 검증하는 플랫폼이 주를 이뤘습니다. 커뮤니티에서는 단순 생성 기능을 넘어 MCP 및 프로덕션 환경과의 실질적 연동 방식, 그리고 공유되는 데이터의 신뢰성과 보안에 대한 논의가 활발히 이어졌습니다.",
+ "notable": [
+  {
+   "slug": "appxiom",
+   "why": "AI 코딩 에이전트가 프로덕션 런타임 오류를 보지 못하는 한계를 MCP 연동 컨텍스트 레이어로 해결하여 개발자들의 큰 관심을 받았습니다. 댓글에서는 코드베이스와 프로덕션 환경의 간극을 좁히는 시도에 호응하며, 소스 레벨 PII 마스킹을 통한 데이터 보안 및 개인정보 보호 방식을 긍정적으로 평가했습니다."
+  },
+  {
+   "slug": "thebold",
+   "why": "IR 덱 중심의 전통적 펀드레이징에서 벗어나 스타트업의 실제 제품 릴리즈와 성장 지표를 검증해 투자자와 매칭하는 접근이 주목받았습니다. 댓글에서는 초기 투자 시장 경색 속에 변경 로그와 실제 성과를 구분하는 기준 및 투자자에게 요약 전달되는 데이터 범위에 대한 실질적인 질의가 이어졌습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "RankSpot",
+   "tagline_en": "Pay-as-you-go SEO data, memory and execution layer for agent",
+   "tagline_kr": "에이전트를 위한 종량제 SEO 데이터, 메모리 및 실행 레이어",
+   "image": "https://ph-files.imgix.net/7debbc6a-20c7-4604-b33a-2da89b48ba2f.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://www.rankspot.ai/&utm_source=producthunt",
+   "categories": [
+    "SEO tools",
+    "AI Workflow Automation"
+   ],
+   "upvotes": 360,
+   "comments_count": 95,
+   "maker": [
+    "Daniil Poletaev",
+    "Simon Scrapes"
+   ],
+   "price_model": "Payment Required",
+   "price_detail": null,
+   "desc_kr": "RankSpot은 AI 에이전트를 위한 SEO 및 AI 검색 실행 레이어입니다. Claude나 ChatGPT에 MCP를 단 2분 만에 연결하면 에이전트가 구글 상위 노출 콘텐츠를 분석하여 100개 이상의 언어로 글을 작성하고 직접 발행까지 완료합니다. 또한 백링크 확보를 위해 사용자의 메일함에서 상위 랭킹 사이트들에 직접 피칭을 진행할 수도 있습니다. 하나의 채팅 창에서 여러 고객사나 비즈니스의 SEO 작업을 손쉽게 관리할 수 있습니다. 월 구독료 없이 기사당 3달러, 프롬프트 점검당 0.004달러의 종량제 요금제로 운영되며 데이터 조회는 무료로 제공됩니다.",
+   "launch_url_used": "https://www.producthunt.com/products/rankspot",
+   "comment_summary": "공동 창업자인 Daniil Poletaev와 Simon Scrapes가 두 번째 론칭을 알리며 단순 콘텐츠 생성을 넘어 구글 상위 분석부터 발행 및 백링크 피칭까지 자동 실행하는 기능을 소개했습니다. 커뮤니티에서는 재론칭에 대한 축하와 함께 자사 웹사이트 외에 미디엄이나 링크드인 등 외부 플랫폼 연동 지원 여부에 대한 질문이 이어졌으며, 메이커는 로드맵에 반영하겠다고 답했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Simon Scrapes",
+     "is_maker": false,
+     "text": "Thank you for the kind review Harini! Appreciate you taking the time to offer improvement feedback too - we're looking at ways to add more than just a personalized tone of voice to your content customization :) watch this space!",
+     "kr": "친절한 리뷰 감사합니다, Harini 님! 개선을 위한 피드백을 남겨주신 점도 진심으로 감사드리며, 콘텐츠 맞춤 설정에 맞춤형 어조 이상의 요소를 추가할 수 있는 방법을 찾고 있으니 계속 지켜봐 주세요! :)"
+    },
+    {
+     "author": "Daniil Poletaev",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 Dan here, co-founder of RankSpot. Last time we launched, RankSpot only generated content on autopilot. Since then we've onboarded 1,000+ customers, and their feedback shaped our improved product. So we set out to build something no other SEO tool could do, and focused on these things: 1️⃣ **Execution → Most SEO tools stop at the data**. RankSpot reads Google's top 5 for your keyword and writes the page that beats them, in 100+ languages, then publishes and indexes it. It als",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요 👋 RankSpot의 공동 창업자 Dan입니다. 지난번 론칭 당시 RankSpot은 콘텐츠를 자동 생성하기만 했습니다. 이후 1,000명 이상의 고객을 유치했고 그들의 피드백을 바탕으로 제품을 개선했습니다. 그래서 다른 어떤 SEO 툴도 하지 못했던 것을 구축하고자 다음 사항들에 집중했습니다: 1️⃣ **실행력 → 대부분의 SEO 툴은 데이터 제공에 그칩니다**. RankSpot은 타깃 키워드의 구글 상위 5개 결과를 분석하여 이를 능가하는 페이지를 100개 이상의 언어로 작성하고, 직접 발행 및 색인 작업까지 진행합니다."
+    },
+    {
+     "author": "Maria Anosova 🔥",
+     "is_maker": false,
+     "text": "@danshipit This is your second launch on Product Hunt, congratulations! And best of luck🍀",
+     "kr": "@danshipit 프로덕트 헌트에서의 두 번째 론칭을 축하드립니다! 행운을 빕니다🍀"
+    },
+    {
+     "author": "Daniil Poletaev",
+     "is_maker": true,
+     "text": "@maria\\_anosova Thank you! ❤️",
+     "kr": "@maria\\_anosova 감사합니다! ❤️"
+    },
+    {
+     "author": "Simon Scrapes",
+     "is_maker": true,
+     "text": "@danshipit @maria\\_anosova thanks Maria 🚀",
+     "kr": "@danshipit @maria\\_anosova 감사합니다 Maria 님 🚀"
+    },
+    {
+     "author": "Chris Goodbaudy",
+     "is_maker": false,
+     "text": "@danshipit Congrats on the launch! I look forward to trying this out!",
+     "kr": "@danshipit 론칭 축하드립니다! 어서 사용해보고 싶네요!"
+    },
+    {
+     "author": "Daniil Poletaev",
+     "is_maker": true,
+     "text": "@chris\\_goodbaudy Thank you, Chris! Would really appreciate any feedback after you'll try it!",
+     "kr": "@chris\\_goodbaudy 감사합니다, Chris 님! 사용해 보신 후 어떤 피드백이든 주시면 정말 감사하겠습니다!"
+    },
+    {
+     "author": "Simon Scrapes",
+     "is_maker": true,
+     "text": "@danshipit @chris\\_goodbaudy what tool are you using today for your SEO out of interest?",
+     "kr": "@danshipit @chris\\_goodbaudy 궁금해서 여쭤보는데, 현재 SEO 작업에는 어떤 툴을 사용하고 계신가요?"
+    },
+    {
+     "author": "Nastassia",
+     "is_maker": false,
+     "text": "@danshipit hey Daniil, congrats on the launch. does your tool post articles only on the company website or Medium and other platforms can also be connected? sounds interesting actually, going to try",
+     "kr": "@danshipit 안녕하세요 Daniil 님, 론칭 축하드립니다. 이 툴은 회사 웹사이트에만 글을 게시하나요, 아니면 미디엄이나 다른 플랫폼도 연동할 수 있나요? 흥미로워 보여서 써보려고 합니다."
+    },
+    {
+     "author": "Daniil Poletaev",
+     "is_maker": true,
+     "text": "@nastassia\\_k It can post to company website or you can create any other integrations using Webhook. Regarding Medium - good point, I was also thinking about adding that",
+     "kr": "@nastassia\\_k 회사 웹사이트에 게시할 수 있으며, 웹훅을 활용해 다른 어떤 플랫폼과도 연동할 수 있습니다. 미디엄 연동에 대해서는 좋은 의견이며, 저도 추가를 고려하고 있었습니다."
+    },
+    {
+     "author": "Simon Scrapes",
+     "is_maker": true,
+     "text": "@nastassia\\_k @danshipit Medium and LinkedIn articles? 😍",
+     "kr": "@nastassia\\_k @danshipit 미디엄과 링크드인 아티클까지요? 😍"
+    },
+    {
+     "author": "Daniil Poletaev",
+     "is_maker": true,
+     "text": "@nastassia\\_k @simonscrapes Added to the roadmap 😉",
+     "kr": "@nastassia\\_k @simonscrapes 로드맵에 추가했습니다 😉"
+    }
+   ],
+   "slug": "rankspot"
+  },
+  {
+   "name": "TheBold",
+   "tagline_en": "Turn execution into meetings with investors",
+   "tagline_kr": "스타트업의 실행력을 투자자와의 미팅으로 전환하세요",
+   "image": "https://ph-files.imgix.net/980611e0-917c-453e-9a6e-71b23a769ff7.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://thebold.vc/&utm_source=producthunt",
+   "categories": [
+    "Professional networking platforms",
+    "Startup communities",
+    "Fundraising resources"
+   ],
+   "upvotes": 338,
+   "comments_count": 67,
+   "maker": [
+    "Julia Yu"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "TheBold는 스타트업의 실제 실행력을 투자자와의 직접적인 만남으로 연결해 주는 플랫폼입니다. 단 한 번의 AI 투자 유치 준비도 인터뷰를 통과하면 스타트업과 적합한 투자자의 딜 플로우에 등록되어 미팅 기회를 열 수 있습니다. 창업자가 투자 기준을 명확히 이해하고 실행력과 트랙션을 추적 및 검증할 수 있도록 지원합니다. 또한 투자자 맞춤형 AI 시뮬레이션을 통해 피칭을 연습하고 자격을 갖추면 직접 미팅을 예약할 수 있습니다. 단순한 IR 덱 공유를 넘어 실제 제품 릴리즈와 성장 지표를 입증하여 성공적인 투자 유치를 돕습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/thebold",
+   "comment_summary": "사전 시드 단계에서 단순 IR 덱보다 실제 실행 지표가 중요해진 시장 상황 속에서 투자자에게 어떤 데이터가 공유되는지에 대한 심도 있는 질문들이 오갔습니다. 메이커인 Julia Yu는 액셀러레이터 합격이나 고객 피드백 등 강점 신호 위주로 요약되어 투자자에게 전달되며, 주간 목표 수립 및 회고용으로 단독 사용하는 것도 가능하다고 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Vlad Shipilov",
+     "is_maker": false,
+     "text": "Good timing with this. Pre-seed SaaS money has pretty much dried up, most VCs won't take a call without revenue now. Showing what you actually shipped beats sending another deck. How do you tell real execution from a busy changelog though? Do investors see the raw data or your summary of it?",
+     "kr": "적절한 타이밍에 나왔네요. 프리시드 SaaS 투자가 사실상 마르고 이제 대부분의 VC는 매출 없이는 콜조차 잡지 않습니다. 또 다른 IR 덱을 보내는 것보다 실제로 출시한 성과를 보여주는 것이 훨씬 낫죠. 그런데 단순한 변경 로그와 실제 실행 성과를 어떻게 구분하나요? 투자자들은 원시 데이터를 보나요, 아니면 요약본을 보나요?"
+    },
+    {
+     "author": "Julia Yu",
+     "is_maker": true,
+     "text": "@vlad\\_shipilov I agree the bar has moved. I’m less convinced the money has dried up. PitchBook counted an estimated 8,625 first-time U.S. venture financings through Q3 2026, already above the full-year 2021 record. That’s across sectors, so it doesn’t tell us how pre-seed SaaS is doing specifically. But with AI making MVPs faster and cheaper to build, having shipped one tells investors less than it used to. On the changelog question, investors start with a structured summary of what the founder",
+     "kr": "@vlad\\_shipilov 기준이 높아졌다는 점에는 동의합니다. 하지만 자금이 완전히 말랐다는 것에는 덜 동의합니다. PitchBook에 따르면 2026년 3분기까지 미국 초기 벤처 투자가 약 8,625건으로 집계되어 이미 2021년 연간 기록을 넘어섰습니다. 전 산업 기준이라 프리시드 SaaS를 특정할 수는 없지만요. 다만 AI로 인해 MVP 개발이 더 빠르고 저렴해지면서 무언가를 출시했다는 사실 자체만으로는 예전만큼 투자자에게 어필하지 못합니다. 변경 로그 질문에 대해서는, 투자자들이 창업자가 작성한 구조화된 요약본부터 보게 됩니다."
+    },
+    {
+     "author": "Julia Yu",
+     "is_maker": true,
+     "text": "@vlad\\_shipilov One more detail on what investors actually see. TheBold surfaces your strongest signals, like getting into an accelerator, taking investor calls, or learning something from customers that shaped a decision. Failed experiments stay private. Investors also see a simple chart showing how many commitments you completed and how many decisions you made over time. Here is a demo link so you can see exactly what that looks like from the investor side. https://app.thebold.vc/demo/investor",
+     "kr": "@vlad\\_shipilov 투자자가 실제로 보는 것에 대해 조금 더 덧붙이자면, TheBold는 액셀러레이터 합격, 투자자 미팅 진행, 의사결정에 영향을 준 고객 피드백 등 가장 강력한 신호들을 부각합니다. 실패한 실험은 비공개로 유지됩니다. 투자자는 시간에 따른 목표 달성 수와 의사결정 추이를 보여주는 간단한 차트도 볼 수 있습니다. 투자자 관점에서 어떻게 보이는지 직접 확인하실 수 있는 데모 링크를 공유합니다. https://app.thebold.vc/demo/investor"
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Having a person check the traction numbers before the first call makes sense. What do founders share for that check, read access to Stripe or just exported reports?",
+     "kr": "첫 미팅 전에 담당자가 트랙션 수치를 직접 검증하는 것은 타당해 보입니다. 해당 검증을 위해 창업자들은 무엇을 공유하나요? Stripe 읽기 권한인가요, 아니면 내보낸 리포트인가요?"
+    },
+    {
+     "author": "Jason Howie",
+     "is_maker": false,
+     "text": "AMAZING timing, thank you for shipping this.",
+     "kr": "놀라운 타이밍이네요, 이런 제품을 출시해 주셔서 감사합니다."
+    },
+    {
+     "author": "Anastasiya Kauzovich",
+     "is_maker": false,
+     "text": "Congrats on shipping this solo, @juliayugo ! 🙌 Come back in a few months is the worst black box in fundraising. What kind of startups or stages are getting the best matches on TheBold right now?",
+     "kr": "1인 개발로 출시하신 것 축하드려요, @juliayugo 님! 🙌 '몇 달 뒤에 다시 오세요'라는 말은 펀드레이징에서 최악의 블랙박스죠. 현재 TheBold에서 가장 좋은 매칭을 얻고 있는 스타트업 유형이나 단계는 무엇인가요?"
+    },
+    {
+     "author": "Julia Yu",
+     "is_maker": true,
+     "text": "@kauzovich\\_anastasiya Thank you, Anastasiya! 🙌 There’s no single startup type or stage that gets the “best” matches. It comes down to what each investor is looking for. One might want to see a couple of signed pilots, while another might be looking for recurring revenue. TheBold shows you which investors your startup fits today and what you’d need to show to qualify for others.",
+     "kr": "@kauzovich\\_anastasiya 감사합니다, Anastasiya 님! 🙌 '가장 좋은' 매칭을 받는 단 하나의 스타트업 유형이나 단계는 없습니다. 각 투자자가 무엇을 찾고 있는지에 달려 있습니다. 어떤 투자자는 체결된 파일럿 계약을 보고 싶어 하고, 어떤 투자자는 반복 매출(ARR)을 원할 수 있습니다. TheBold는 현재 귀사의 스타트업이 어떤 투자자와 맞는지, 다른 투자자 요건을 충족하려면 무엇을 보여주어야 하는지 알려줍니다."
+    },
+    {
+     "author": "Alexander Grossman",
+     "is_maker": false,
+     "text": "Can I use the product for a few months without turning on the fundraising side? The planning and reflection loop sounds useful even when the answer to 'should I raise?' is currently no.",
+     "kr": "펀드레이징 기능을 활성화하지 않고 몇 달 동안 제품만 사용할 수도 있나요? 지금 당장 투자 유치를 하지 않더라도 계획과 회고 루프 기능은 유용해 보입니다."
+    },
+    {
+     "author": "Julia Yu",
+     "is_maker": true,
+     "text": "@xanderiang Sure! Set a goal and check-in weekly. If you decide to raise later, you’ll already have a record of how your startup progressed. 🙌",
+     "kr": "@xanderiang 물론입니다! 목표를 설정하고 매주 체크인해 보세요. 나중에 투자를 받기로 결정했을 때 스타트업이 어떻게 성장해 왔는지 기록이 이미 마련되어 있을 것입니다. 🙌"
+    },
+    {
+     "author": "Iuliia Gorshkova",
+     "is_maker": false,
+     "text": "congrats on the launch! 🎉 the regular syncs part got me tbh. most tools just score your deck once and thats it, youre on your own after. how long does one sync take?",
+     "kr": "론칭 축하드립니다! 🎉 정기 싱크 기능이 솔직히 눈에 띄네요. 대부분의 툴은 IR 덱 점수만 한 번 매겨주고 끝인데 그 후엔 알아서 해야 하잖아요. 한 번 싱크하는 데 시간이 얼마나 걸리나요?"
+    },
+    {
+     "author": "Julia Yu",
+     "is_maker": true,
+     "text": "@yugoru Thanks, Iuliia! I’d set aside about 20-30 minutes for the first sync. That’s where you give the AI some context on what you’re building (for setting the first goal) and decide what to focus on next. In later syncs, you pick up where you left off and talk through what you tried, what you learned, and what you want to do next.",
+     "kr": "@yugoru 감사합니다, Iuliia 님! 첫 싱크에는 약 20~30분 정도 소요됩니다. 이때 AI에게 무엇을 만들고 있는지 맥락을 제공하고(첫 목표 설정을 위해) 다음에 집중할 것을 결정합니다. 이후 싱크에서는 이전 내용을 이어받아 시도한 점, 배운 점, 다음에 할 일을 점검합니다."
+    },
+    {
+     "author": "Sergey Sigitov",
+     "is_maker": false,
+     "text": "Congratulations on the launch! I guess this isn’t the first time this question has come up: do any actual deals or commitments ever result from calls with investors?",
+     "kr": "론칭 축하드립니다! 이번 질문이 처음은 아닐 것 같은데요, 투자자와의 미팅을 통해 실제로 성사된 투자 계약이나 확약이 나온 적이 있나요?"
+    }
+   ],
+   "slug": "thebold"
+  },
+  {
+   "name": "Creatify",
+   "tagline_en": "The AI Ad Agent",
+   "tagline_kr": "인공지능 광고 에이전트",
+   "image": "https://ph-files.imgix.net/f9452cac-f193-46bb-847a-91f1fd650628.vnd.microsoft.icon?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://creatify.ai/&utm_source=producthunt",
+   "categories": [
+    "Video editing",
+    "Advertising tools",
+    "AI Agents"
+   ],
+   "upvotes": 337,
+   "comments_count": 123,
+   "maker": [
+    "Yinan (Steven) Na",
+    "Carrie Zhou"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Creatify는 자체 비디오 모델을 기반으로 기업이 비디오 광고를 제작, 집행 및 개선할 수 있도록 지원하는 AI 광고 플랫폼입니다. 이번에 출시된 대규모 업데이트 'Creatify Max'는 단순 광고 생성을 넘어 시장 조사부터 캠페인 론칭 및 성과 최적화까지 엔드투엔드로 자동화합니다. 앱 스크린샷만으로도 시연, 내레이션, 모션 그래픽이 포함된 완성도 높은 비디오 광고를 손쉽게 제작할 수 있습니다. 대본 작성, 영상 편집, 브리프 기반의 자체 검수까지 수행하여 광고 제작에 드는 반복적인 소통 비용을 획기적으로 줄여줍니다. 유료 미디어 팀이 대시보드 확인과 캠페인 설정에 들이는 시간을 대폭 절감하고 크리에이티브 성과를 극대화할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/creatify",
+   "comment_summary": "CEO Yinan Na가 마케터들의 반복 업무를 덜어주는 올인원 광고 에이전트 Creatify Max 출시를 발표하며 큰 주목을 받았습니다. 기존 도구인 HeyGen과의 차별점과 UGC 광고의 1회 시도 완성도에 대한 질문이 이어졌으며, 팀은 앱 스크린샷 기반 제작 지원과 브리프 자체 검수 기능을 통한 편의성을 강조했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Yinan (Steven) Na",
+     "is_maker": true,
+     "text": "📌 Hello, Product Hunters! 👋 I’m Yinan, CEO of Creatify. Some of you may remember us from our URL to video ads launch. Thanks to this community, we became the #1 Product of the Day. Today, we’re launching the biggest product we’ve built so far: **Creatify Max**. Creating an ad is only one part of the job. Paid media teams still spend hours checking dashboards, moving data between tools, repeating campaign setup, and trying to understand why one creative performs better than another. I know this p",
+     "kr": "📌 프로덕트 헌터 여러분 안녕하세요! 👋 Creatify 대표 Yinan입니다. URL 기반 동영상 광고 론칭으로 저희를 기억하시는 분들도 계실 텐데요, 커뮤니티의 성원 덕분에 일간 1위 제품으로 선정되기도 했습니다. 오늘 저희는 역대 최대 규모의 신제품인 **Creatify Max**를 선보입니다. 광고 제작은 업무의 한 부분일 뿐이며, 여전히 유료 미디어 팀은 대시보드 확인, 툴 간 데이터 이동, 반복적인 캠페인 설정, 성과 분석 등에 많은 시간을 씁니다."
+    },
+    {
+     "author": "Chris Goodbaudy",
+     "is_maker": false,
+     "text": "@nyn531 Congrats on the launch!",
+     "kr": "@nyn531 론칭을 축하드립니다!"
+    },
+    {
+     "author": "Jaycee Simbulan",
+     "is_maker": false,
+     "text": "Another interesting AI tool to explore. It's definitely worth exploring if you want a simpler way to create video ads.👍",
+     "kr": "살펴볼 만한 또 다른 흥미로운 AI 툴이네요. 비디오 광고를 더 간단하게 제작하고 싶다면 사용해 볼 가치가 충분합니다.👍"
+    },
+    {
+     "author": "Ronamy Rosario-Ablog",
+     "is_maker": false,
+     "text": "Congratulations! Max is taking ad creation to a whole new level; not just creating ads but making the entire advertising workflow smarter, faster, and easier.",
+     "kr": "축하드립니다! Max는 광고 제작을 완전히 새로운 차원으로 끌어올렸네요. 단순한 광고 제작을 넘어 광고 워크플로 전체를 더 스마트하고 빠르고 쉽게 만들어 줍니다."
+    },
+    {
+     "author": "Paul Vincent Florendo",
+     "is_maker": false,
+     "text": "Congratulations! I've been exploring Creatify Max lately, and it's really impressive how it can easily turns your ideas into video ads. Such a great way to streamline the creative process!",
+     "kr": "축하합니다! 최근 Creatify Max를 사용해 보고 있는데, 아이디어를 손쉽게 동영상 광고로 전환하는 능력이 정말 인상적이었습니다. 크리에이티브 프로세스를 간소화하는 훌륭한 방법입니다!"
+    },
+    {
+     "author": "Jerald Rioflorido",
+     "is_maker": false,
+     "text": "Congrats to the Creatify team on Max! 👏 Looking forward to seeing how it changes the way teams run their ads. Wishing you a great launch day!",
+     "kr": "Creatify 팀의 Max 출시를 축하합니다! 👏 팀들의 광고 운영 방식을 어떻게 바꿀지 기대됩니다. 멋진 론칭 데이가 되길 바랍니다!"
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Good luck today. Does Max choose which video model to use for each ad, or do you pick from the catalogue yourself?",
+     "kr": "오늘 행운을 빕니다. Max가 각 광고에 사용할 비디오 모델을 알아서 선택하나요, 아니면 카탈로그에서 직접 고르는 방식인가요?"
+    },
+    {
+     "author": "Emma Pugsley",
+     "is_maker": false,
+     "text": "Congrats on the launch 🙌🏻 I've been testing HeyGen recently (a video-making tool). How do you differentiate yourselves from existing platforms? An issue I've had is generating videos for digital products; is this something provide?",
+     "kr": "론칭 축하드려요 🙌🏻 최근 영상 제작 툴인 HeyGen을 테스트하고 있는데요. 기존 플랫폼들과 어떤 차별점이 있나요? 디지털 제품에 대한 비디오를 제작할 때 어려움이 있었는데, 이런 기능도 지원되나요?"
+    },
+    {
+     "author": "Carrie Zhou",
+     "is_maker": true,
+     "text": "@you\\_x\\_you\\_i Thanks for your kind words! 🙌 Our product focus is different from HeyGen’s: Max focuses on advertising and product marketing, with an end-to-end workflow. It researches your market, creates ads, and can launch and optimize campaigns with your approval. —for example, if your digital product is an app, max can turn app screenshots into video ads with demos, voiceovers, and motion graphics. We’d love for you to give it a try! We’ll be here to listen and follow up.",
+     "kr": "@you\\_x\\_you\\_i 따뜻한 말씀 감사합니다! 🙌 저희 제품의 초점은 HeyGen과 다릅니다. Max는 광고 및 제품 마케팅에 중점을 둔 엔드투엔드 워크플로를 제공합니다. 시장을 조사하고 광고를 제작하며 승인 하에 캠페인 집행과 최적화까지 수행합니다. 예를 들어 디지털 제품이 앱이라면 스크린샷을 데모, 음성 해설, 모션 그래픽이 포함된 동영상 광고로 전환할 수 있습니다. 꼭 사용해 보시길 바라며 의견도 언제든 환영합니다."
+    },
+    {
+     "author": "Emma Pugsley",
+     "is_maker": false,
+     "text": "@carrie\\_zhouzhou I'm creating video content regularly at the moment, so I'd love to give it a try. I'll check back in with feedback as soon as I do.",
+     "kr": "@carrie\\_zhouzhou 현재 동영상 콘텐츠를 정기적으로 만들고 있어서 꼭 한번 써보고 싶네요. 사용해 보고 피드백 남기겠습니다."
+    },
+    {
+     "author": "Adnan",
+     "is_maker": false,
+     "text": "Looks very interesting - I think most important part, especially for video ads, is whether you can successfully one shot UGC ads. They're often hardest to get right and require lots of regeneration / review time. Will have to play around.",
+     "kr": "매우 흥미롭네요. 특히 동영상 광고의 경우 UGC 스타일 광고를 단 한 번에 제대로 뽑아낼 수 있는지가 가장 중요하다고 봅니다. 보통 제대로 맞추기가 가장 어렵고 수많은 재생성과 검토 시간이 들거든요. 직접 한번 사용해 봐야겠습니다."
+    },
+    {
+     "author": "Carrie Zhou",
+     "is_maker": true,
+     "text": "Hihi@adnan\\_flourish, that’s exactly the challenge we’re working on! Max handles scripting, generation, editing, and reviewing its own output against your brief to reduce the back-and-forth. We can’t promise a perfect first take every time, but we’d love to hear how it works for you!",
+     "kr": "안녕하세요 @adnan\\_flourish 님, 그것이 바로 저희가 해결하고자 하는 과제입니다! Max는 스크립트 작성, 생성, 편집뿐 아니라 브리프에 맞게 자체 검토까지 수행하여 피드백 왕복을 줄입니다. 매번 완벽한 원 테이크를 보장할 수는 없지만 실제 경험이 어떠실지 꼭 들어보고 싶습니다!"
+    }
+   ],
+   "slug": "creatify"
+  },
+  {
+   "name": "Appxiom",
+   "tagline_en": "Context layer for AI coding agents to detect & fix bugs",
+   "tagline_kr": "AI 코딩 에이전트의 버그 탐지 및 수정을 위한 컨텍스트 레이어",
+   "image": "https://ph-files.imgix.net/6efa402a-4a89-4ee3-b028-f4fac8cf17ad.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://www.appxiom.com/producthunt?utm_source=producthunt&utm_medium=listing&utm_campaign=ph-launch-2026-11",
+   "categories": [
+    "AI Coding Agents",
+    "Observability tools",
+    "Vibe Coding Tools"
+   ],
+   "upvotes": 235,
+   "comments_count": 30,
+   "maker": [
+    "Robin Alex Panicker"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Appxiom은 AI 코딩 에이전트가 프로덕션 환경에서 겪는 컨텍스트 부족 문제를 해결해 줍니다. 모바일 및 웹 애플리케이션에서 발생하는 충돌, 화면 멈춤, 메모리 누수, 네트워크 오류, 끊긴 사용자 여정 등의 프로덕션 데이터를 수집하여 MCP 커넥터와 스킬을 통해 에이전트에 전달합니다. 독자적인 목표 마찰 영향도(GFI) 기능을 통해 단순 오류 발생 횟수가 아닌 비즈니스 목표에 미치는 영향을 기준으로 버그의 우선순위를 정합니다. 안드로이드, iOS, 플러터, 코틀린 멀티플랫폼 및 React를 비롯한 웹 프레임워크 전반을 폭넓게 지원합니다. 모든 개인정보(PII)는 클라이언트 소스 단계에서 마스킹되어 보안을 유지하며 기업용 온프레미스 배포 옵션도 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/appxiom",
+   "comment_summary": "프로덕션 환경과 코드베이스를 잇는 컨텍스트 레이어이자 MCP 지원 도구로서 개발자들의 큰 호응을 얻었습니다. 사용자 여정 추적 시 개인정보 보호(PII 마스킹) 및 데이터 보관 방식에 대한 질문이 제기되었으며, 메이커는 데이터가 소스 레벨에서 즉시 마스킹되고 모델 학습에는 사용되지 않는다고 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Robin Alex Panicker",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt, I’m Robin, co-founder of Appxiom. Your coding agents can read the whole repo, but they cannot see what breaks in production. So they guess, or they fix whatever a human points them at. Appxiom is built to close that gap. It detects crashes, freezes, memory leaks, failed network calls and broken user journeys in mobile and web apps, and hands that context to your coding agent through an MCP connector and Skills. We started with Goal Friction Impact (GFI). You mark a goal, like ",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요, Appxiom의 공동 창업자 Robin입니다. 코딩 에이전트는 전체 코드 저장소를 읽을 수 있지만, 실제 프로덕션 환경에서 무엇이 고장 났는지는 볼 수 없습니다. 그래서 짐작으로 작업하거나 사람이 직접 지적해 준 것만 수정하곤 합니다. Appxiom은 바로 그 간극을 메우기 위해 개발되었습니다. 모바일 및 웹 앱의 크래시, 프리징, 메모리 누수, 네트워크 호출 실패, 끊긴 사용자 여정을 감지하여 MCP 커넥터와 스킬을 통해 코딩 에이전트에 해당 컨텍스트를 제공합니다."
+    },
+    {
+     "author": "Porush Puri",
+     "is_maker": false,
+     "text": "@robin\\_a\\_p looks good, congrats on the launch!",
+     "kr": "@robin\\_a\\_p 좋아 보이네요, 론칭 축하드립니다!"
+    },
+    {
+     "author": "Robin Alex Panicker",
+     "is_maker": true,
+     "text": "@porush\\_puri Thank you so much. Your support means a lot.",
+     "kr": "@porush\\_puri 대단히 감사합니다. 보내주신 응원이 큰 힘이 됩니다."
+    },
+    {
+     "author": "Evgeniy",
+     "is_maker": false,
+     "text": "@robin\\_a\\_p congrats on the launch! Nice to see the product comes with set of skills and MCP to work with agents.",
+     "kr": "@robin\\_a\\_p 론칭 축하드립니다! 에이전트와 연동할 수 있는 일련의 스킬과 MCP가 함께 제공되는 점이 보기 좋네요."
+    },
+    {
+     "author": "Robin Alex Panicker",
+     "is_maker": true,
+     "text": "@elv1s42 Thank you. Deep integration with agentic workflow is our key philosophy.",
+     "kr": "@elv1s42 감사합니다. 에이전트 워크플로와의 긴밀한 통합이 저희의 핵심 철학입니다."
+    },
+    {
+     "author": "Anoop Thomas Mathew",
+     "is_maker": false,
+     "text": "@robin\\_a\\_p have been on the look out for a bridge between production and code bases. Very interesting product",
+     "kr": "@robin\\_a\\_p 프로덕션 환경과 코드베이스를 잇는 다리를 찾고 있었는데, 매우 흥미로운 제품이네요."
+    },
+    {
+     "author": "Robin Alex Panicker",
+     "is_maker": true,
+     "text": "@atmb4u thank you. That’s a good validation of our thesis.",
+     "kr": "@atmb4u 감사합니다. 저희의 가설이 검증된 것 같아 기쁩니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Nice one, Robin. When Shopify support arrives, will checkout show up as a goal automatically, or will you still mark it yourself?",
+     "kr": "멋지네요 Robin. 쇼피파이 지원이 추가되면 결제 단계가 자동으로 목표로 잡히나요, 아니면 직접 지정해야 하나요?"
+    },
+    {
+     "author": "Robin Alex Panicker",
+     "is_maker": true,
+     "text": "@relli7 now the goals are defined by the developer / coding agent. For Shopify it will make perfect sense to have pre-defined goal. Thank you for that thought.",
+     "kr": "@relli7 현재는 개발자나 코딩 에이전트가 직접 목표를 정의합니다. 쇼피파이의 경우 미리 정의된 목표를 두는 것이 매우 합리적이겠네요. 좋은 아이디어 감사드립니다."
+    },
+    {
+     "author": "Pranav Pandey",
+     "is_maker": false,
+     "text": "@robin\\_a\\_p congrats on the launch! When the agent pulls raw user journey data over MCP, is any PII masked before it reaches the agent? My guess is a lot of teams wont want user emails or IDs going into an LLM context. Also where does the context data live, in short where is it deployed and what data is used for model training?",
+     "kr": "@robin\\_a\\_p 론칭 축하드립니다! 에이전트가 MCP를 통해 원시 사용자 여정 데이터를 가져올 때, 에이전트에 도달하기 전에 PII(개인식별정보)가 마스킹 처리되나요? 많은 팀들이 사용자 이메일이나 ID가 LLM 컨텍스트로 들어가는 것을 원치 않을 것 같아서요. 그리고 컨텍스트 데이터는 어디에 저장/배포되며 모델 학습에는 어떤 데이터가 사용되나요?"
+    },
+    {
+     "author": "Robin Alex Panicker",
+     "is_maker": true,
+     "text": "@pranav8494 Thank you Pranav. The PII data will not reach our servers, and hence won't go to the coding agent. All such info are masked out at the source itself. In SaaS, the context info lives in our servers. We also have an enterprise offering where Appxiom can be deployed within the client's infrastructure. We are not training the models. We stay as the context layer for the coding agents developers use. Does that answer your question?",
+     "kr": "@pranav8494 질문 감사합니다 Pranav 님. PII 데이터는 저희 서버에 도달하지 않으므로 코딩 에이전트에도 전달되지 않습니다. 모든 관련 정보는 소스 단에서 마스킹 처리됩니다. SaaS 버전에서는 컨텍스트 정보가 저희 서버에 저장되며, 고객사 인프라 내에 배포할 수 있는 엔터프라이즈 플랜도 제공합니다. 저희는 모델을 학습시키지 않으며, 개발자가 사용하는 코딩 에이전트의 컨텍스트 레이어 역할만 수행합니다. 답변이 되었을까요?"
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "This is the missing piece for me — my coding agent can read the whole repo but knows nothing about what actually breaks in production, so it ends up guessing from a stack trace alone. What I'd want it to see first is the exact steps a user took right before the crash — the taps and screens that led there — because that's usually what decides whether a fix is even reproducible. And I like that GFI ranks by the goal a bug blocks rather than raw crash count; as a solo dev I can't chase every crash,",
+     "kr": "이것이 바로 제게 필요했던 핵심 조각입니다. 코딩 에이전트가 전체 저장소는 읽어도 프로덕션에서 실제 무슨 문제가 터지는지는 몰라서 스택 트레이스만 보고 추측하곤 했거든요. 크래시 직전에 사용자가 취한 구체적인 동작들(탭이나 이동한 화면)을 에이전트가 먼저 볼 수 있으면 좋겠습니다. 보통 그것이 버그 재현 가능 여부를 결정하니까요. 또한 단순 크래시 횟수가 아니라 버그가 가로막는 목표 기준으로 우선순위를 매기는 GFI 방식도 마음에 듭니다."
+    }
+   ],
+   "slug": "appxiom"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
