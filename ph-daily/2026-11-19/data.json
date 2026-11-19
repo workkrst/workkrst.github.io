@@ -1,0 +1,347 @@
+{
+ "date": "2026-11-19",
+ "collected_at": "2026-11-19 12:30 KST",
+ "summary": "오늘 프로덕트 헌트 상위권은 AI 통화 및 회의 기록(Bluedot), 워크플로우 자동화 에이전트(Toone), 사내 데이터 파이프라인 구축(Dippr) 등 실무 생산성과 AI 에이전트 통합 도구에 집중되었습니다. 댓글 커뮤니티에서는 단순 생성 기능을 넘어 실제 비즈니스 통화 시의 녹음 동의 알림, 워크플로우 내 사람의 검토 단계(Human-in-the-loop), 에이전트 접근 권한 및 데이터 마스킹(RBAC) 등 실무 보안과 제어 가능성에 대한 심도 있는 논의가 주를 이뤘습니다.",
+ "notable": [
+  {
+   "slug": "bluedot-2",
+   "why": "별도 봇 없이 회의뿐 아니라 실제 비즈니스 전화 통화까지 안전하게 전사·요약해 영업 및 상담 공백을 메웠다는 점에서 주목받았습니다. 댓글에서는 통화 상대방의 녹음 동의 알림 절차와 향후 인바운드 수신 통화 지원 계획에 대한 실무자들의 문의가 집중되었습니다."
+  },
+  {
+   "slug": "dippr",
+   "why": "단 한 번의 프롬프트로 허브스팟과 데이터 웨어하우스 등을 연동한 대시보드와 자동화 액션을 즉시 구축할 수 있어 에이전트 도입 조직의 큰 관심을 모았습니다. 특히 에이전트 전용 RBAC와 PII 컬럼 마스킹 등 실질적인 데이터 보안 가드레일을 제공한다는 점이 댓글에서 큰 호평을 받았습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "S.Space",
+   "tagline_en": null,
+   "tagline_kr": null,
+   "image": null,
+   "website": null,
+   "categories": [],
+   "upvotes": 326,
+   "comments_count": 102,
+   "maker": [],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "S.Space는 Product Hunt 일간 순위 1위를 기록한 제품입니다. 그러나 압축 manifest에서 s-space.md 파일로 참조되었음에도 불구하고 원본 소스 파일이 제공되지 않았습니다. 이에 따라 제품의 세부 설명, 스크린샷 이미지 및 카테고리 분류 정보를 정상적으로 파싱할 수 없었습니다. 총 326개의 업보트와 102개의 댓글이 등록되었으나 상세 본문이 누락되어 기본 랭킹 정보만 제공됩니다. 추후 원본 마크다운 데이터가 확보되면 상세 분석 내용이 업데이트될 예정입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/s-space",
+   "comment_summary": "S.Space 제품에 대해 총 102개의 댓글이 기록되었으나 원본 데이터 파일 부재로 세부 댓글 내용을 불러오지 못했습니다. 이에 따라 사용자 피드백의 흐름과 메이커의 질의응답 내용을 요약할 수 없는 상태입니다. 원본 댓글 데이터가 확인되는 대로 피드백 흐름을 반영할 예정입니다.",
+   "warnings": "압축 실패 slug(s-space.md)로 지정되었으나 원본 파일이 누락되어 상세 정보(이미지, 카테고리, 댓글 등)를 불러올 수 없습니다.",
+   "comments": [],
+   "slug": "s-space"
+  },
+  {
+   "name": "Bluedot",
+   "tagline_en": "Invisible, privacy-first AI note taker",
+   "tagline_kr": "눈에 띄지 않는 개인정보 보호 중심의 AI 회의 노트 작성기",
+   "image": "https://ph-files.imgix.net/cc1c935b-f3e3-49be-a1b0-1814e5e0227c.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://www.bluedothq.com/&utm_source=producthunt",
+   "categories": [
+    "Meeting software",
+    "AI notetakers"
+   ],
+   "upvotes": 278,
+   "comments_count": 46,
+   "maker": [
+    "Dima Eremin",
+    "Russ Halilov"
+   ],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Bluedot은 통화나 회의에 별도의 봇을 참여시키지 않고도 온라인 및 대면 회의를 녹음, 전사, 요약해 주는 안전한 개인정보 보호 중심의 AI 노트 작성기입니다. 사용자의 기기에서 오디오를 직접 캡처하며 크롬 브라우저, macOS, Windows, iOS, Android, Apple Watch 등 다양한 플랫폼에서 오디오 및 비디오 녹음을 지원합니다. 이번 업데이트를 통해 온라인 회의뿐만 아니라 실제 업무가 많이 이루어지는 일반 전화 통화 녹음 및 정리 기능까지 새롭게 추가되었습니다. Bluedot은 GDPR을 준수하고 SOC 2 Type II 인증을 획득했으며 고객 데이터를 AI 모델 학습에 절대 사용하지 않습니다. 통화 메모와 회의 노트가 단일 작업 공간에 통합되어 한 인물과의 모든 대화 이력을 쉽게 검색하고 확인할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/bluedot-2",
+   "comment_summary": "사용자들은 기존 회의 노트에 이어 일반 전화 통화까지 지원하게 된 점을 매우 긍정적으로 평가하며, 인바운드 수신 전화 지원 여부와 녹음 시 상대방 동의 알림 방식 등에 대해 문의했습니다. 메이커는 설정 시 상대방에게 녹음 동의 안내 메시지를 송출할 수 있으며 향후 인바운드 통화 지원도 적극 검토 중이라고 상세히 답변했습니다. 전반적으로 개인정보 보호를 지키면서 통화와 회의 이력을 한곳에서 검색할 수 있는 통합 워크스페이스에 대한 만족도가 높게 형성되어 있습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Russ Halilov",
+     "is_maker": false,
+     "text": "no dude, you didn't stop after me being nice. you kept being pushy and asking for a free access to our platform after running over the free trial. now you write this negative review because you couldn't get a product for free. so yes, PLEASE STOP.",
+     "kr": "아닙니다, 제가 친절하게 대했는데도 멈추지 않으셨잖아요. 무료 체험 기간이 끝난 후에도 계속해서 플랫폼 무료 이용 권한을 달라고 집요하게 요구하셨습니다. 이제 제품을 무료로 쓰지 못하게 되자 이런 부정적인 리뷰를 남기신 거네요. 그러니 제발 그만해 주세요."
+    },
+    {
+     "author": "Dima Eremin",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! Dima here, co-founder of Bluedot. Bluedot started as a note taker for online meetings that records without a bot joining the call. Then we added in-person meetings. That left one obvious gap: phone calls. A lot of real work still happens there (a follow-up with a client, a candidate screen, a quick check-in with a supplier), and those are the conversations nobody writes down. So we built phone call recording into Bluedot: * Verify your number once, then call from Bluedot on w",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요! Bluedot의 공동 창업자 Dima입니다. Bluedot은 봇이 통화에 참여하지 않고도 녹음되는 온라인 회의용 노트 테이커로 시작했습니다. 이후 대면 회의 기능을 추가했고, 여전히 명백한 빈틈으로 남아 있던 것이 바로 전화 통화였습니다. 고객과의 후속 통화, 지원자 사전 인터뷰, 공급업체와의 빠른 확인 등 실제 많은 업무가 전화로 이루어지지만 아무도 기록하지 않는 대화들이죠. 그래서 저희는 Bluedot에 전화 통화 녹음 기능을 구축했습니다. 전화번호를 한 번 인증한 후 Bluedot에서 바로 통화할 수 있습니다."
+    },
+    {
+     "author": "Umar Saleem",
+     "is_maker": false,
+     "text": "Do you need to open bluedot before evey call, or can it work from the normal phone dialer too?",
+     "kr": "매번 통화 전에 Bluedot 앱을 열어야 하나요, 아니면 일반 전화 다이얼러에서도 작동하나요?"
+    },
+    {
+     "author": "Russ Halilov",
+     "is_maker": true,
+     "text": "@umar\\_saleem Right now, you start the call from Bluedot so we can handle the recording, transcript and notes properly. We’re definitely looking at ways to make the flow feel closer to using your normal dialer though.",
+     "kr": "@umar_saleem 현재로서는 녹음, 전사, 메모가 제대로 처리될 수 있도록 Bluedot에서 통화를 시작해야 합니다. 하지만 일반 다이얼러를 사용하는 것과 더 유사한 경험을 제공할 수 있는 방법도 적극적으로 모색하고 있습니다."
+    },
+    {
+     "author": "Anastasia Chaikovska",
+     "is_maker": false,
+     "text": "Great product, guys! Good luck with the launch 🔥 My question - How do you know if someone is recording your call with Bluedot?",
+     "kr": "멋진 제품이네요, 여러분! 런칭 축하드립니다 🔥 질문이 하나 있는데요, 누군가 Bluedot으로 내 통화를 녹음하고 있는지 어떻게 알 수 있나요?"
+    },
+    {
+     "author": "Russ Halilov",
+     "is_maker": true,
+     "text": "@anastasia\\_chaikovska the user needs to turn on notification in the settings.",
+     "kr": "@anastasia_chaikovska 사용자가 설정에서 알림 기능을 켜두어야 합니다."
+    },
+    {
+     "author": "Andriana Oprysko",
+     "is_maker": false,
+     "text": "Phone calls were the missing piece, nice move! If a client calls me back from their own phone, the call won't go through Bluedot. Is inbound something you're planning soon? In sales that's often the most important call of all",
+     "kr": "전화 통화야말로 빠져 있던 핵심 조각이었는데 정말 좋은 방향이네요! 만약 고객이 본인 전화로 저에게 다시 전화를 걸어오면 그 통화는 Bluedot을 거치지 않게 되잖아요. 인바운드 수신 통화도 조만간 지원할 계획이 있으신가요? 영업에서는 그게 가장 중요한 통화일 때가 많거든요."
+    },
+    {
+     "author": "Russ Halilov",
+     "is_maker": true,
+     "text": "@andriana\\_oprysko Yes, inbound is definitely something we’re considering. You’re right, callbacks can be some of the most important conversations in sales.",
+     "kr": "@andriana_oprysko 네, 인바운드 수신 통화는 저희가 분명히 고려하고 있는 부분입니다. 말씀하신 대로 콜백 전화가 영업에서 가장 중요한 대화 중 하나가 될 수 있죠."
+    },
+    {
+     "author": "Neeraj Nathany",
+     "is_maker": false,
+     "text": "do call notes sit in the same search as meeting notes, so I can look up one person and see both the call and the meeting?",
+     "kr": "통화 메모도 회의 노트와 같은 검색 공간에 표시되나요? 한 사람을 검색했을 때 통화와 회의 기록을 둘 다 볼 수 있는지 궁금합니다."
+    },
+    {
+     "author": "Russ Halilov",
+     "is_maker": true,
+     "text": "@neerajnathany Yes, they live in the same workspace so you can search across both phone calls and meeting notes. Makes it much easier to pull up the full history with one person.",
+     "kr": "@neerajnathany 네, 동일한 워크스페이스에 저장되므로 전화 통화와 회의 노트를 모두 함께 검색할 수 있습니다. 특정 인물과의 전체 히스토리를 불러오기가 훨씬 수월해집니다."
+    },
+    {
+     "author": "Alex O.",
+     "is_maker": false,
+     "text": "Look interesting. Does your app show specific contest to user that join a call? So user can give a direct contest for recording before joining or during the call? Thanks",
+     "kr": "흥미로워 보이네요. 통화에 참여하는 상대방에게 구체적인 동의 안내를 보여주나요? 통화 참여 전이나 통화 중에 녹음에 대한 직접적인 동의를 할 수 있는지 궁금합니다. 감사합니다."
+    },
+    {
+     "author": "Russ Halilov",
+     "is_maker": true,
+     "text": "@spiri7 yes, if the user turned on this feature the other side will hear a consent message.",
+     "kr": "@spiri7 네, 사용자가 해당 기능을 활성화해 두면 상대방에게 동의 안내 메시지가 음성으로 전달됩니다."
+    }
+   ],
+   "slug": "bluedot-2"
+  },
+  {
+   "name": "Toone",
+   "tagline_en": "The AI workspace for your agentic workflows on macOS",
+   "tagline_kr": "macOS에서 에이전틱 워크플로우를 구축하고 실행하는 AI 워크스페이스",
+   "image": "https://ph-files.imgix.net/9c9497b6-9b27-477e-90a1-1f1c9377fea7.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://trytoone.com/?utm_source=producthunt&utm_medium=listing",
+   "categories": [
+    "Automation tools",
+    "AI Agents"
+   ],
+   "upvotes": 239,
+   "comments_count": 43,
+   "maker": [],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Toone은 사용자의 제어 하에 전문 에이전트가 다양한 워크플로우와 루틴을 실행해 주는 macOS 전용 AI 워크스페이스 앱입니다. 사용자가 반복되는 업무를 자연어로 설명하기만 하면 Toone이 이를 에이전트가 반복 실행할 수 있는 자동화 루틴으로 손쉽게 변환해 줍니다. 홍보, SNS 관리, SEO, 콘텐츠 제작, 이메일 캠페인 등 소규모 팀이 감당하기 벅찬 다양한 업무들을 에이전트를 통해 효과적으로 자동화할 수 있습니다. 특히 특정 작업 단계에서 사람의 확인을 받도록 일시 정지하는 휴먼 인 더 루프 기능을 제공하여 에이전트 작업의 신뢰성을 높였습니다. macOS 환경에 최적화되어 직관적이고 안정적으로 여러 에이전트의 작업을 모니터링하고 제어할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/toone",
+   "comment_summary": "커뮤니티는 에이전트 루틴 실행 중 인간의 검토 단계(휴먼 인 더 루프)를 설정할 수 있는 기능에 대해 높은 관심을 보이며 실제 업무 적용 시의 신뢰성을 호평했습니다. 또한 영국 등 글로벌 지역의 평생 할인 플랜 확대 계획과 모바일 앱 출시 현황에 대한 문의가 이어졌습니다. 제작진은 단계별 승인 절차를 지원하며 현재 모바일 앱은 준비를 마치고 앱스토어 심사 대응 중이라고 소통했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Matheus Paranhos",
+     "is_maker": false,
+     "text": "Hunter 📌 Hi Product Hunt! Matt here 🙋‍♂️ Shipping a product used to be the hard part. Today it's only the beginning. You'll also need **outreach**, **social media**, **SEO**, **content**, **email campaigns**, **design**, **customer support**, **analytics**, **DevOps** and **maintenance**. And the list goes on. AI helped with all of that. It also **raised the bar**: everyone has the same tools now, so everyone is expected to do more, and to do it well. For a small team, some of those tasks can si",
+     "kr": "Hunter 📌 안녕하세요 프로덕트 헌트! Matt입니다 🙋‍♂️ 예전에는 제품을 출시하는 것이 가장 어려운 일이었지만, 오늘날에는 그저 시작에 불과합니다. 이제는 아웃리치, 소셜 미디어, SEO, 콘텐츠, 이메일 캠페인, 디자인, 고객 지원, 애널리틱스, DevOps, 유지보수까지 챙겨야 하며 할 일은 끝이 없습니다. AI가 이 모든 것을 도왔지만, 동시에 눈높이도 높아졌습니다. 모두가 동일한 도구를 갖추게 되면서 더 많은 일을 더 잘 해내기를 기대받게 되었죠. 소규모 팀에게는 이러한 작업 중 일부만으로도 큰 부담이 될 수 있습니다."
+    },
+    {
+     "author": "Brent Vardy",
+     "is_maker": false,
+     "text": "@matheus\\_paranhos1 I'm in the UK, and was unable to sign-up for the Lifetime option, when will you be opening up to the UK and will the **Toone Pro Lifetime is 80% off** be available?",
+     "kr": "@matheus_paranhos1 저는 영국에 거주 중인데 라이프타임 옵션에 가입할 수가 없었습니다. 언제 영국 사용자에게 오픈될 예정이며, 80% 할인되는 Toone Pro 라이프타임 플랜도 이용할 수 있을까요?"
+    },
+    {
+     "author": "Matheus Paranhos",
+     "is_maker": false,
+     "text": "Hunter @codeandsea Hi Brent! Thanks a lot for the sign up! I will try to make it available for UK! Damn Brexit 😁 Cheers man",
+     "kr": "Hunter @codeandsea 안녕하세요 Brent! 가입해 주셔서 정말 감사합니다! 영국에서도 이용하실 수 있도록 조치해 보겠습니다! 브렉시트 탓이네요 😁 감사합니다!"
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Nice one, Matheus. Can I start a routine from the iPhone app, or is it just for checking on runs?",
+     "kr": "멋지네요 Matheus. 아이폰 앱에서 루틴을 직접 시작할 수도 있나요, 아니면 단순히 실행 현황만 확인하는 용도인가요?"
+    },
+    {
+     "author": "Matheus Paranhos",
+     "is_maker": false,
+     "text": "Hunter @relli7 Yes... don't mention about it, mobile app is ready already but Apple is... having its issues 😪",
+     "kr": "Hunter @relli7 네... 그 얘기는 말도 마세요, 모바일 앱은 이미 준비 완료되었는데 애플 측에서... 심사 문제가 좀 있네요 😪"
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "@matheus\\_paranhos1 ah yep I know that feeling. All the best with it 🙌",
+     "kr": "@matheus_paranhos1 아 네 그 기분 잘 압니다. 잘 해결되길 응원할게요 🙌"
+    },
+    {
+     "author": "Matheus Paranhos",
+     "is_maker": false,
+     "text": "Hunter @relli7 Thanks a lot Davit! 🙌",
+     "kr": "Hunter @relli7 정말 감사합니다 Davit! 🙌"
+    },
+    {
+     "author": "James Boone",
+     "is_maker": false,
+     "text": "@relli7 @matheus\\_paranhos1 oh man, I feel you on this one. Android, no issue. Apple, sit back and listen to the silence.",
+     "kr": "@relli7 @matheus_paranhos1 아 저도 그 상황 너무 공감됩니다. 안드로이드는 아무 문제 없는데 애플은 그냥 가만히 앉아서 기약 없는 침묵만 지켜봐야 하죠."
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "Can the user be a part of the confirmation process? (E.g., if the Figma designs aren't ideal, can he reject them?)",
+     "kr": "사용자가 확인 승인 프로세스에 참여할 수 있나요? (예를 들어 피그마 디자인이 이상할 경우 거절할 수 있는지 등)"
+    },
+    {
+     "author": "Matheus Paranhos",
+     "is_maker": false,
+     "text": "Hunter @busmark\\_w\\_nika Hi Nika! Yes! It's actually how I handle a lot of things, make a routine ask for me when a certain step comes in. But better I'd say is to polish well enough to not even need that 🤭 Thanks for the comment",
+     "kr": "Hunter @busmark_w_nika 안녕하세요 Nika! 네, 맞습니다! 실제로 저도 많은 작업을 그렇게 처리하고 있는데, 특정 단계에 도달하면 루틴이 저에게 직접 물어보도록 설정합니다. 하지만 그런 확인조차 필요 없을 정도로 프롬프트를 잘 다듬는 게 더 좋긴 하겠죠 🤭 댓글 감사합니다."
+    },
+    {
+     "author": "Simon Moxon",
+     "is_maker": false,
+     "text": "A step that falls short pausing on its own until you've had a look is good. With agents I've been caught out by jobs that say they ran and didn't really do anything. Being asked beats finding out later I think.",
+     "kr": "미흡한 단계에서 사용자가 확인할 때까지 스스로 일시 중지하는 기능은 참 좋네요. 에이전트를 쓸 때 실행됐다고 해놓고 실제로는 아무것도 안 해놓은 작업들 때문에 곤란했던 적이 많거든요. 나중에 알아채는 것보다 중간에 확인을 요청받는 게 훨씬 낫다고 봅니다."
+    },
+    {
+     "author": "Matheus Paranhos",
+     "is_maker": false,
+     "text": "Hunter @simon\\_moxon Indeed, it's one of the most important things when starting to run AI in scale is to keep track of the various jobs, also know when to polish them. Toone is excellent at that! Thanks for the comment Simon",
+     "kr": "Hunter @simon_moxon 맞습니다, 대규모로 AI를 운용하기 시작할 때 가장 중요한 것 중 하나가 다양한 작업들을 추적하고 언제 개선해야 할지 파악하는 것이죠. Toone은 그 부분에 탁월합니다! Simon님 댓글 감사합니다."
+    }
+   ],
+   "slug": "toone"
+  },
+  {
+   "name": "Waldo by Wherobots",
+   "tagline_en": null,
+   "tagline_kr": null,
+   "image": null,
+   "website": null,
+   "categories": [],
+   "upvotes": 210,
+   "comments_count": 36,
+   "maker": [],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Waldo by Wherobots는 Product Hunt 일간 순위 4위를 기록한 공간 데이터 분석 관련 제품입니다. 해당 제품은 압축 실패 슬러그(waldo-by-wherobots.md)로 지정되었으나 저장소 내에 원본 파일이 존재하지 않았습니다. 이로 인해 제품의 상세 기능 설명, 서비스 카테고리 및 대표 이미지를 불러올 수 없는 상태입니다. top5 집계 데이터에 따르면 총 210개의 업보트와 36개의 댓글 반응을 얻은 것으로 확인됩니다. 추후 원본 소스 파일이 제공되는 시점에 세부 제품 분석 내용이 갱신될 예정입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/waldo-by-wherobots",
+   "comment_summary": "Waldo by Wherobots 제품은 36개의 댓글을 기록했으나 원본 파일 부재로 구체적인 댓글 본문을 확인할 수 없습니다. 따라서 커뮤니티 사용자의 주요 반응 흐름이나 질의응답 요약을 제공하기 어려운 상황입니다. 원본 데이터가 추가로 확보되면 댓글 요약 내용이 보완될 예정입니다.",
+   "warnings": "압축 실패 slug(waldo-by-wherobots.md)로 지정되었으나 원본 파일이 누락되어 상세 정보(이미지, 카테고리, 댓글 등)를 불러올 수 없습니다.",
+   "comments": [],
+   "slug": "waldo-by-wherobots"
+  },
+  {
+   "name": "Dippr",
+   "tagline_en": "A data platform served to your agents, with one prompt",
+   "tagline_kr": "단 한 번의 프롬프트로 에이전트에게 공급되는 전용 데이터 플랫폼",
+   "image": "https://ph-files.imgix.net/mcp-draft-media/443befc3-4726-4fd6-b0cf-431584e4bd4c.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://dippr.ai/&utm_source=producthunt",
+   "categories": [
+    "AI Databases",
+    "Analytics Databases"
+   ],
+   "upvotes": 190,
+   "comments_count": 37,
+   "maker": [
+    "Hoshang Mehta",
+    "Pradnesh Patil",
+    "Atharva Shah"
+   ],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Dippr는 회사의 AI 에이전트가 내부 데이터 소스에 안전하게 접근하여 기업 맞춤형 소프트웨어, 도구 및 앱을 직접 구축하고 실행할 수 있도록 지원하는 데이터 플랫폼입니다. 에이전트에게 데이터의 맥락을 이해시키고 안전하게 활용할 수 있는 가드레일과 역할 기반 접근 제어(RBAC) 규칙을 제공합니다. 마케팅, 영업, 고객 지원 등 여러 부서에서 구글 시트, 허브스팟, 데이터 웨어하우스 등에 흩어진 복잡한 데이터 지표를 손쉽게 통합 앱으로 전환할 수 있습니다. 단 한 번의 프롬프트 입력만으로 실시간 분석 대시보드와 자동화 액션을 손쉽게 생성할 수 있어 반복적인 수동 데이터 요청 업무를 획기적으로 줄여줍니다. 또한 컬럼 마스킹을 통해 개인식별정보(PII)를 안전하게 보호하면서 팀과 에이전트의 접근 권한을 정밀하게 제어할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/dippr",
+   "comment_summary": "사용자들은 프롬프트 하나로 Google Analytics 및 HubSpot 등의 데이터를 통합한 대시보드를 손쉽게 구축할 수 있다는 점에 놀라움을 표하며 데이터 소스 연동 범위와 Snowflake 키-값 인증 지원 시점을 문의했습니다. 메이커는 현재 HubSpot 등 다양한 파이프라인 연동이 가능하며 Snowflake 키-페어 인증도 곧 출시될 예정이라고 답변했습니다. 아울러 Agent RBAC 및 컬럼 마스킹을 통한 PII 데이터 접근 제한 등 엔터프라이즈급 데이터 보안 제어 기능이 큰 호평을 받았습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Hoshang Mehta",
+     "is_maker": true,
+     "text": "📌 Hey Hunters, Hoshang here, one of the makers of Dippr. About a year ago, we gave every team in our company coding agents. Within a month, a new ticket showed up in our queue: \"can my agent access company data?\" Sales, CS, marketing, almost everyone was building their own tools and automations. The agents could build almost anything, but they couldn't reach the data safely. Someone on support needed numbers from our warehouse they didn't have access to, and we wanted to say yes without handing ",
+     "kr": "📌 헌터 여러분 안녕하세요, Dippr의 메이커 중 한 명인 Hoshang입니다. 약 1년 전, 저희는 사내 모든 팀에 코딩 에이전트를 도입했습니다. 그런데 한 달도 채 되지 않아 큐에 새로운 요청 티켓이 올라오기 시작했습니다. 바로 \"내 에이전트가 회사 데이터에 접근해도 되나요?\"라는 질문이었습니다. 영업, CS, 마케팅 등 거의 모든 팀이 자체적인 도구와 자동화를 구축하고 있었습니다. 에이전트는 거의 모든 것을 만들 수 있었지만, 데이터에 안전하게 접근할 방법이 없었던 것입니다. 지원팀의 누군가는 권한이 없는 데이터 웨어하우스 수치가 필요했고, 저희는 무작정 원시 권한을 넘겨주지 않으면서도 이를 지원해 주고 싶었습니다."
+    },
+    {
+     "author": "Harish Kumar",
+     "is_maker": false,
+     "text": "Thanks @hoshang\\_m, I created a small application with couple of prompts. Looks cool with graph and tables. Is there any option to connect snowflake account with key-value pair if I don't have account password or MFA? Please can you explain how exactly automations work? Is there any gaudrail there?",
+     "kr": "@hoshang_m 감사합니다, 몇 가지 프롬프트로 작은 애플리케이션을 하나 만들어 보았습니다. 그래프와 표가 아주 멋지네요. 계정 비밀번호나 MFA가 없는 경우 키-값 쌍으로 Snowflake 계정을 연결할 수 있는 옵션이 있나요? 그리고 자동화가 정확히 어떻게 작동하는지 설명해 주실 수 있나요? 안전을 위한 가드레일이 마련되어 있는지 궁금합니다."
+    },
+    {
+     "author": "Hoshang Mehta",
+     "is_maker": true,
+     "text": "@harish\\_kumar99 That app looks really cool. Curious how are you planning to use these insights? The snowflake account connection with key-value pair is coming soon! So automations is a really useful if you'd like to action on some of your insights for example, i use automations to send personalized outreach campaigns to users who got stalled during onboarding. These automations can be scheduled to run as well. And yes, if you go to our Agent RBAC screen you can add guardrails for what automatio",
+     "kr": "@harish_kumar99 앱이 정말 멋져 보이네요. 이 인사이트를 어떻게 활용하실 계획인지 궁금합니다! 키-값 쌍을 통한 Snowflake 계정 연결은 곧 지원될 예정입니다! 자동화는 인사이트를 바탕으로 실제 조치를 취하고자 할 때 매우 유용합니다. 예를 들어 저는 온보딩 중 이탈한 사용자에게 개인화된 아웃리치 캠페인을 발송하는 데 자동화를 활용합니다. 이러한 자동화는 예약 실행도 가능합니다. 그리고 맞습니다, 저희 Agent RBAC 화면으로 이동하시면 자동화에 대한 가드레일을 직접 추가하실 수 있습니다."
+    },
+    {
+     "author": "Anand Gupta",
+     "is_maker": false,
+     "text": "@harish\\_kumar99 Great to see an app up! Snowflake auth with key-pair will be shipped soon.",
+     "kr": "@harish_kumar99 앱이 잘 동작하는 모습을 보니 기쁘네요! 키-페어를 통한 Snowflake 인증도 곧 출시될 예정입니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Is HubSpot on the way as a source? The docs list databases, Sheets and Jira but I couldn't find it.",
+     "kr": "데이터 소스로 HubSpot도 지원될 예정인가요? 문서에는 데이터베이스, 시트, Jira가 나열되어 있는데 HubSpot은 찾을 수가 없었습니다."
+    },
+    {
+     "author": "Pradnesh Patil",
+     "is_maker": true,
+     "text": "@relli7, you can totally connect HubSpot today, and a bunch of other sources, as dippr will build pipelines behind the scenes to the source that you want to pull data from",
+     "kr": "@relli7 지금 바로 HubSpot을 완벽하게 연결하실 수 있으며, 다른 수많은 소스도 마찬가지입니다. Dippr가 데이터를 가져오고자 하는 소스에 맞춰 백그라운드에서 파이프라인을 직접 구축해 주기 때문입니다."
+    },
+    {
+     "author": "Syed Aqueel Haider",
+     "is_maker": false,
+     "text": "💎 Pixel perfection What a beautiful landing page! I had been lurking on the beta channel updates but it caught me by surprise. Loved the \"Reveal your prompt\" functionality on the landing page. I wanted to build an analytics dashboard and analyse visitors to my product across Google Analytics and Hubspot and it built a whole fricking application with just the right levers I needed, just from the generated prompt. Two questions: 1\\. Can I share this dashboard or specific read only reports on it wi",
+     "kr": "💎 픽셀 단위의 완벽함이네요. 랜딩 페이지가 정말 아름답습니다! 베타 채널 업데이트를 눈여겨보고 있었는데 기대 이상이라 깜짝 놀랐습니다. 랜딩 페이지의 \"프롬프트 공개\" 기능이 특히 마음에 들었습니다. Google Analytics와 HubSpot 전반에 걸친 제품 방문자를 분석하는 대시보드를 구축하고 싶었는데, 생성된 프롬프트만으로 제가 딱 원하던 제어 기능을 갖춘 애플리케이션 전체를 뚝딱 만들어 주더군요. 두 가지 질문이 있습니다. 1. 이 대시보드나 특정 읽기 전용 보고서를 다른 사람과 공유할 수 있나요?"
+    },
+    {
+     "author": "Hoshang Mehta",
+     "is_maker": true,
+     "text": "@sahrizv Thanks for giving Dippr a try! Yes! If you go to our Agent RBAC page on the app, you should be able to set permissions for your team and even agents so your team can only see what they're allowed to. And Yes, on the same screen if you click on 'Column Masks' you should be able to restrict access to PII records. Feel free to hit me up if you have any questions!",
+     "kr": "@sahrizv Dippr를 사용해 주셔서 감사합니다! 네, 가능합니다! 앱 내 Agent RBAC 페이지로 이동하시면 팀원과 심지어 에이전트의 권한까지 설정하여 팀원이 허용된 정보만 볼 수 있도록 제어할 수 있습니다. 또한 동일한 화면에서 '컬럼 마스크(Column Masks)'를 클릭하시면 개인식별정보(PII) 레코드에 대한 접근을 제한할 수 있습니다. 궁금한 점이 있으시면 언제든 편하게 연락해 주세요!"
+    },
+    {
+     "author": "Syed Aqueel Haider",
+     "is_maker": false,
+     "text": "@hoshang\\_m Thanks, I'm trying out your suggestions, will let you know how it goes.",
+     "kr": "@hoshang_m 감사합니다, 제안해 주신 방법대로 사용해 보고 어떻게 되는지 알려드리겠습니다."
+    },
+    {
+     "author": "Hoshang Mehta",
+     "is_maker": true,
+     "text": "@sahrizv Sure looking forward to it!",
+     "kr": "@sahrizv 네, 소식 기대하고 있겠습니다!"
+    },
+    {
+     "author": "Anand Gupta",
+     "is_maker": false,
+     "text": "@sahrizv Thanks for trying it out. We will be reaching out soon.",
+     "kr": "@sahrizv 사용해 주셔서 감사합니다. 조만간 연락드리겠습니다."
+    },
+    {
+     "author": "Atharva Shah",
+     "is_maker": true,
+     "text": "**Dippr.ai** killed the most boring job in my week: answering “can you send me the latest numbers?” I run marketing, GTM and DevRel. All our numbers lived in one Google Sheet. It held web traffic, SEO, LinkedIn, email, YouTube and content, 9 months of it. Everyone opened it and nobody could read it. So I became the human dashboard. So I built the “Web traffic & SEO” app on Dippr. Here is how: 1. I loaded the sheet tabs into a Dippr workspace database with one dip db load command. It takes CSV, E",
+     "kr": "**Dippr.ai** 덕분에 매주 가장 지루했던 일, 즉 \"최신 지표 좀 보내줄 수 있어?\"라는 질문에 답하는 업무를 없앨 수 있었습니다. 저는 마케팅, GTM, DevRel을 총괄하고 있습니다. 저희의 모든 데이터는 구글 시트 하나에 보관되어 있었는데, 9개월 분량의 웹 트래픽, SEO, 링크드인, 이메일, 유튜브, 콘텐츠 데이터가 들어 있었습니다. 누구나 열어볼 수 있었지만 아무도 제대로 읽어내지 못했죠. 결국 제가 인간 대시보드가 되어야 했습니다. 그래서 Dippr에서 \"웹 트래픽 & SEO\" 앱을 직접 구축했습니다. 방법은 이렇습니다: 1. 단 한 줄의 dip db load 명령어로 시트 탭을 Dippr 워크스페이스 데이터베이스에 불러왔습니다. CSV나 엑셀 파일도 지원합니다."
+    }
+   ],
+   "slug": "dippr"
+  }
+ ]
+}
