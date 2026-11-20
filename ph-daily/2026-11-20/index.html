@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-11-20</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-11-20 · Top 5 · 수집 댓글 54개 · 수집 2026-11-20 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-11-20",
+ "collected_at": "2026-11-20 12:30 KST",
+ "summary": "오늘 런칭은 개발·인프라 자동화(AI 테스팅, 풀스택 서버, 웹 3D 엔진)와 마케팅 최적화(인터랙티브 이메일, 자율 광고 에이전트) 도구들이 양축을 이루었습니다. 커뮤니티 댓글에서는 AI 에이전트가 만든 프로덕트의 품질 검증과 서버리스 타임아웃 극복 등 개발 현장의 실질적 병목 해결에 높은 호응을 보였습니다. 특히 자율 에이전트 시스템에 대한 강제 예산 한도 설정이나 테스트 환경 데이터 격리 등 안전장치와 제어권에 관한 구체적 질문이 공통적으로 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "testsprite",
+   "why": "코딩 에이전트 도입 확산으로 발생하기 쉬운 UX 결함과 기능 누락을 해결하는 AI QA 솔루션으로 주목받았습니다. 댓글에서는 Lovable·Bolt 등 AI 빌더로 제작된 앱과의 호환성과 다중 에이전트 동시 테스트 시의 데이터 격리 방안에 대해 실무진의 심도 있는 질문이 이어졌습니다."
+  },
+  {
+   "slug": "netlify",
+   "why": "기존 서버리스 인프라의 주요 병목이었던 람다 타임아웃 제약을 극복하고 장시간 실시간 프로세스를 지원하는 Netlify Server를 공개해 큰 반향을 일으켰습니다. 커뮤니티 댓글에서는 인프라 관리 부담 없는 상시 서버의 유연성을 반기며 실시간 게임 룸의 스케일 다운 시 메모리 상태 유지 여부에 대한 기술적 논의가 활발했습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "TestSprite",
+   "tagline_en": "Agentic testing for the AI-native team",
+   "tagline_kr": "AI 네이티브 팀을 위한 에이전트 기반 테스팅",
+   "image": "https://ph-files.imgix.net/9279be6d-64f3-4c05-b0a9-6c9ac0f5f814.gif?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "http://testsprite.com/&utm_source=producthunt",
+   "categories": [
+    "No-code Platforms",
+    "Automation tools",
+    "Testing and QA software",
+    "AI Code Testing"
+   ],
+   "rank": 1,
+   "upvotes": 289,
+   "comments_count": 40,
+   "maker": [
+    "Yunhao Jiao",
+    "Shawnie Shan"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "TestSprite는 프론트엔드와 백엔드 소프트웨어 테스팅을 포괄적으로 자동화하는 AI 테스팅 에이전트입니다. 테스트 계획 수립부터 테스트 코드 생성, 실행 및 디버깅에 이르는 전체 테스팅 워크플로우를 자연어 상호작용으로 처리합니다. 기존 테스팅 비용을 최대 90%까지 절감할 수 있도록 지원하여 개발자가 고품질 소프트웨어를 신속하게 배포할 수 있게 합니다. 특히 이번 버전은 코딩 에이전트 도입 이후 누적되기 쉬운 실질적인 사용자 경험 및 동작 결함을 사전에 탐지하는 데 집중했습니다. Lovable, Bolt 등 최신 AI 개발 도구로 구축된 애플리케이션의 테스트 자동화에도 유용하게 활용할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/testsprite",
+   "comment_summary": "메이커는 AI 코딩 에이전트가 만든 앱에서 놓치기 쉬운 사용자 경험 결함과 기능 누락을 해결하기 위해 4.0 버전을 선보였다고 설명했습니다. 커뮤니티에서는 Lovable 등 노코드·AI 빌더 생성 앱과의 호환성, 모바일 지원 여부, 테스트 계정의 보안 보관 방식에 대해 구체적인 질문을 던지며 실질적인 관심을 나타냈습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Yunhao Jiao",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 I'm Yunhao, co-founder and CEO of TestSprite. More than 150,000 developers have built with TestSprite over the past three years. Your coding agent fixes one thing and breaks another. This year we met team after team that shipped with a coding agent and an AI reviewer while nobody really clicked through the product, and the bugs piled up until they went off together. So we built **TestSprite 4.0, a brand-new testing agent that remembers what your app should do and checks all ",
+     "kr": "📌 안녕하세요 프로덕트 헌트 커뮤니티 여러분 👋 저는 TestSprite의 공동 창업자이자 CEO인 윤하오(Yunhao)입니다. 지난 3년 동안 15만 명 이상의 개발자가 TestSprite를 사용해 제품을 구축해 왔습니다. 코딩 에이전트는 한 가지 문제를 고치면 다른 문제를 깨뜨리곤 합니다. 올해 저희가 만난 많은 팀들이 코딩 에이전트와 AI 리뷰어로 코드를 배포했지만, 정작 실제로 앱을 꼼꼼하게 클릭해보는 사람은 아무도 없어 버그가 누적되다 한꺼번에 터지는 상황을 겪었습니다. 그래서 저희는 앱이 원래 무엇을 해야 하는지 기억하고 모든 흐름을 점검하는 완전히 새로운 테스팅 에이전트 **TestSprite 4.0**을 개발했습니다."
+    },
+    {
+     "author": "Shawnie Shan",
+     "is_maker": true,
+     "text": "@jiao\\_yunhao Congrats on 4.0! 🚀",
+     "kr": "@jiao\\_yunhao 4.0 출시를 축하합니다! 🚀"
+    },
+    {
+     "author": "Stelly Lin",
+     "is_maker": false,
+     "text": "Does it work on apps built with Lovable, Bolt or Replit? A lot of people shipping those have never written a test.",
+     "kr": "Lovable, Bolt, Replit으로 만든 앱에서도 잘 동작하나요? 이런 도구로 배포하는 많은 분들은 테스트 코드를 한 번도 작성해 본 적이 없거든요."
+    },
+    {
+     "author": "Anthony Fontana",
+     "is_maker": false,
+     "text": "Congratulations on such a great product! Apologies if this is already answered somewhere, but does this test native iOS (SwiftUI) apps, or only on the web? I have had so many flaky tests and bugs that I have wasted hours on, something like this would be very useful. I wonder how it also can tell a deliberate behavior change from a regression? Nice stuff!",
+     "kr": "훌륭한 제품 출시를 축하드립니다! 이미 어딘가에 답변이 나와 있다면 죄송하지만, 이 도구가 네이티브 iOS(SwiftUI) 앱도 테스트할 수 있나요, 아니면 웹 전용인가요? 그동안 불안정한 테스트와 버그 때문에 수많은 시간을 낭비했는데, 이런 도구가 있다면 정말 유용할 것 같습니다. 의도적인 동작 변경과 기능 퇴행(회귀)을 어떻게 구분하는지도 궁금하네요. 멋진 제품입니다!"
+    },
+    {
+     "author": "Shawnie Shan",
+     "is_maker": true,
+     "text": "Hey I’m Shawnie, maker of this launch! So happy to finally share 4.0 with you! **“Are we actually ready to ship?” can be a surprisingly hard question to answer.** The code has been reviewed, the latest fix is in, and the demo looks good. But does signup still work for a new user? Does a setting actually save? What happens when someone takes a different path through the app? Those are the details that shape someone’s experience with your product. They’re also easy to miss when a small team is mov",
+     "kr": "안녕하세요, 이번 출시의 메이커인 쇼니(Shawnie)입니다! 드디어 여러분과 4.0을 공유하게 되어 정말 기쁩니다! **\"우리가 정말 배포할 준비가 되었는가?\"라는 질문은 생각보다 답하기 어렵습니다.** 코드 리뷰가 끝났고, 최신 수정 사항이 반영되었으며, 데모도 문제없어 보입니다. 하지만 신규 사용자의 회원가입이 여전히 제대로 작동할까요? 설정이 실제로 잘 저장될까요? 누군가 앱에서 다른 경로를 탐색하면 어떻게 될까요? 이런 세부 사항들이야말로 제품에 대한 사용자 경험을 결정짓는 핵심입니다. 소규모 팀이 빠르게 움직일 때 쉽게 놓치기 쉬운 부분이기도 합니다."
+    },
+    {
+     "author": "HugLemon",
+     "is_maker": false,
+     "text": "Where are test account credentials stored, and who on the team can see them?",
+     "kr": "테스트 계정 자격 증명(로그인 정보)은 어디에 저장되며, 팀 내에서 누가 이를 열람할 수 있나요?"
+    },
+    {
+     "author": "Deepak 🏆",
+     "is_maker": false,
+     "text": "If dozens of agents are clicking through the same app at once, how do you keep them from stepping on each other's test data? @jiao\\_yunhao",
+     "kr": "수십 개의 에이전트가 동시에 동일한 앱을 클릭하며 테스트할 때, 에이전트들이 서로의 테스트 데이터를 침범하거나 꼬이게 만들지 않도록 어떻게 방지하나요? @jiao\\_yunhao"
+    },
+    {
+     "author": "Yinn1014",
+     "is_maker": false,
+     "text": "What kinds of buds does it catch most often in practice?",
+     "kr": "실제 환경에서 어떤 종류의 버그를 가장 자주 잡아내나요?"
+    }
+   ],
+   "slug": "testsprite"
+  },
+  {
+   "name": "Netlify",
+   "tagline_en": "Where apps come to life.",
+   "tagline_kr": "애플리케이션이 생동감 있게 살아나는 곳.",
+   "image": "https://ph-files.imgix.net/bf391ec5-9490-4c9b-9ad1-452a43fd1fa8.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://www.netlify.com/&utm_source=producthunt",
+   "categories": [
+    "Web hosting services",
+    "AI Coding Agents",
+    "Cloud Computing Platforms"
+   ],
+   "rank": 2,
+   "upvotes": 255,
+   "comments_count": 19,
+   "maker": [
+    "Elad Rosenheim",
+    "KP"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Netlify는 프론트엔드부터 풀스택 애플리케이션까지 신속하게 구축, 프리뷰, 배포할 수 있는 통합 웹 개발 플랫폼입니다. 새로 공개된 Netlify Server는 실시간 통신, 다중 동시 요청, 장시간 실행이 필요한 프로세스를 안정적으로 처리합니다. 기존 서버리스 환경의 타임아웃 제약을 극복하면서도 인프라 관리 부담 없이 상시 가동 서버와 동일한 유연성을 제공합니다. 트래픽이 없을 때는 리소스를 자동으로 0으로 축소하는 스케일 투 제로 아키텍처를 지원하여 비용을 최적화합니다. AI 코딩 에이전트나 멀티플레이어 서비스 등 고성능 백엔드가 필요한 최신 웹 애플리케이션에 최적화된 환경을 선사합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/netlify",
+   "comment_summary": "메이커는 장시간 실행 프로세스와 실시간 통신을 지원하는 Netlify Server를 통해 진정한 풀스택 애플리케이션 호스팅이 가능해졌음을 소개했습니다. 사용자들은 서버리스 인프라의 타임아웃 문제를 해결한 점을 크게 반기며, 실제 실시간 프로젝트 적용 사례와 함께 스케일 투 제로 전환 시의 메모리 상태 유지 방식에 대해 문의했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Elad Rosenheim",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! I'm Elad, Principal Product Manager at Netlify. Over the last couple of years, millions of new builders have shown up on Netlify, driven by AI. I know it sounds like a cliche! but honestly, we’ve had a front row seat to this renaissance. And we saw an ever growing number of those wanting to ship use-case like multiplayer apps or live chat, collaborative spaces,rich data dashboards, and AI agents - some of which need to run long agentic loops with tools for minutes to hours. T",
+     "kr": "📌 안녕하세요 프로덕트 헌트! 저는 Netlify의 수석 프로덕트 매니저인 엘라드(Elad)입니다. 지난 몇 년 동안 AI의 급격한 성장에 힘입어 수백만 명의 새로운 개발자들이 Netlify로 유입되었습니다. 상투적인 표현처럼 들리겠지만, 솔직히 저희는 이러한 르네상스를 가장 가까운 맨 앞자리에서 지켜보았습니다. 그러면서 멀티플레이어 앱, 라이브 채팅, 협업 공간, 고도화된 데이터 대시보드, 그리고 도구를 활용해 몇 분에서 몇 시간씩 긴 에이전트 루프를 실행해야 하는 AI 에이전트와 같은 활용 사례를 배포하고자 하는 사용자가 계속 늘어나는 것을 보았습니다."
+    },
+    {
+     "author": "Eduardo Bouças",
+     "is_maker": false,
+     "text": "Hi! I'm Eduardo, part of the engineering team behind Netlify Server. I loved building on Netlify before I joined the company and started building Netlify itself. As someone who enjoys building all sorts of applications, there were always things I felt were missing from Netlify when it came to building truly full-stack applications. Real-time capabilities, request concurrency, and long-running executions are great examples. With Server, Netlify is now a great home for the kinds of applications I ",
+     "kr": "안녕하세요! 저는 Netlify Server 개발 엔지니어링 팀의 에두아르도(Eduardo)입니다. 저는 Netlify에 입사해 Netlify 자체를 개발하기 전부터 이 플랫폼에서 다양한 프로젝트를 만드는 것을 정말 좋아했습니다. 온갖 종류의 애플리케이션을 만드는 사람으로서, 진정한 풀스택 앱을 구축할 때 Netlify에 항상 아쉬웠던 부분들이 있었습니다. 실시간 기능, 요청 동시성, 장시간 실행 프로세스 등이 대표적입니다. Server가 출시되면서 이제 Netlify는 제가 항상 만들고 싶었던 모든 형태의 애플리케이션을 품을 수 있는 훌륭한 보금자리가 되었습니다."
+    },
+    {
+     "author": "Wade Wegner",
+     "is_maker": false,
+     "text": "Hi, I’m Wade and I run product here at Netlify. Given the team has shared so many great details about Netlify Server, I thought I’d share three cool things at my pre-launch testing party for Netlify Server. 1/ Quiver Hollow, a multiplayer archery game, where the server keeps both human and AI archers in sync, with everyone dodging arrows. 2/ An OpenClaw agent I could chat with on Telegram where the server gives the agent time to work through a task before replying. 3/ A holiday wish wall where y",
+     "kr": "안녕하세요, 저는 Netlify에서 프로덕트를 총괄하고 있는 웨이드(Wade)입니다. 팀원들이 Netlify Server에 대한 훌륭한 정보들을 많이 공유해 주었으니, 저는 Netlify Server 출시 전 테스트 파티에서 직접 확인했던 세 가지 멋진 프로젝트를 공유해 드리고자 합니다. 1/ 모든 플레이어가 화살을 피하는 동안 서버가 인간과 AI 궁수들을 실시간으로 완벽히 동기화해 주는 멀티플레이어 양궁 게임 'Quiver Hollow', 2/ 텔레그램에서 대화할 수 있는 OpenClaw 에이전트로 에이전트가 응답하기 전 작업을 충분히 처리할 수 있는 시간을 서버가 보장해 주는 봇, 3/ 연말 소원 벽 등이 있었습니다."
+    },
+    {
+     "author": "KP",
+     "is_maker": true,
+     "text": "@wwegner thx for stopping by Wade. It’s been so fun to watch all the creative use cases emerge since the launch of Server!",
+     "kr": "@wwegner 들러주셔서 감사합니다 웨이드. Server 출시 이후 이렇게 다양하고 창의적인 활용 사례들이 쏟아져 나오는 것을 지켜보는 것은 정말 즐겁습니다!"
+    },
+    {
+     "author": "Ash",
+     "is_maker": false,
+     "text": "Netlify has been one of my most used platforms this year due to just how easy it is to go from idea to fully working app in literally minutes. It's so good in fact that it stood up to my stress testing building and launching a new app, every day, for 30 days - TWICE! It's so easy to build and integrates seamlessly with the tools I already use. Plus it has an amazing community team and Netlify Server is just one more thing that makes it my go-to platform for everything from developing, hosting, a",
+     "kr": "아이디어 구상부터 완전히 작동하는 앱 배포까지 단 몇 분 만에 끝낼 수 있다는 점 때문에 Netlify는 올해 제가 가장 많이 사용한 플랫폼 중 하나였습니다. 실제로 매일 새로운 앱을 만들어 30일 동안 연속으로 출시하는 스트레스 테스트를 두 번이나 완벽하게 견뎌낼 만큼 뛰어났습니다! 빌드가 너무 간편하고 기존에 사용하던 도구들과도 매끄럽게 연동됩니다. 게다가 멋진 커뮤니티 팀이 있고, Netlify Server까지 더해지면서 개발과 호스팅 등 모든 것을 해결할 수 있는 대체 불가능한 플랫폼이 되었습니다."
+    },
+    {
+     "author": "Sean Roberts",
+     "is_maker": false,
+     "text": "I don’t think it can go undersold here but the ability to do whatever you need for as long as you need and not worrying about lambda timeouts and such silliness is amazing. Even more incredible is that it feels like the maintenance overhead (none) of lambda with the capabilities of an always on server. This is a legendary ship 👊👊",
+     "kr": "람다(Lambda) 타임아웃 같은 어처구니없는 제약에 신경 쓸 필요 없이 원하는 작업을 원하는 시간만큼 자유롭게 실행할 수 있다는 점은 아무리 칭찬해도 지나치지 않습니다. 더 놀라운 것은 람다처럼 인프라 유지보수 부담이 전혀 없으면서도 상시 가동되는 전용 서버의 성능을 온전히 누릴 수 있다는 점입니다. 정말 전설적인 출시입니다 👊👊"
+    },
+    {
+     "author": "KP",
+     "is_maker": true,
+     "text": "@developsean well said! oh btw, waiting for you to build a game for your kids using Server :)",
+     "kr": "@developsean 멋진 말씀 감사합니다! 그나저나 Server를 활용해서 아이들을 위한 게임을 만들어 주시길 기대하고 있을게요 :)"
+    },
+    {
+     "author": "Anmol Dhingra",
+     "is_maker": false,
+     "text": "Congrats on shipping this. We run live game rooms where up to 300 phones answer the same question at once, so this is close to home. Two questions: when a server scales down to zero, what happens to a room that's mid-game and holding its state in memory? And is every phone in one room guaranteed to reach the same instance?",
+     "kr": "출시를 축하드립니다. 저희는 최대 300대의 스마트폰이 동시에 같은 퀴즈에 응답하는 라이브 게임 룸을 운영하고 있어서 이번 소식이 매우 직접적으로 와닿네요. 두 가지 질문이 있습니다: 서버 리소스가 0으로 축소(스케일 다운)될 때, 메모리에 게임 상태를 유지하며 진행 중이던 방은 어떻게 되나요? 그리고 같은 방에 참여한 모든 기기가 동일한 서버 인스턴스로 연결되는 것이 보장되나요?"
+    },
+    {
+     "author": "Zeng",
+     "is_maker": false,
+     "text": "Love this. 💜 Built a quick real-time help board with Netlify Server earlier and it was surprisingly smooth. The fact that it scales to zero and deploys like the rest of the project makes it really practical. Nice work. And I love the new logo, new color and new website! Congratulations to team Netlify!",
+     "kr": "정말 마음에 듭니다. 💜 아까 Netlify Server를 사용해 간단한 실시간 도움말 게시판을 만들어 보았는데 놀라울 정도로 매끄럽게 작동했습니다. 트래픽에 맞춰 0으로 스케일링되고 기존 프로젝트와 동일하게 손쉽게 배포된다는 점이 정말 실용적입니다. 멋진 작업 감사드리며, 새로운 로고와 컬러, 웹사이트 디자인도 아주 멋지네요! Netlify 팀 축하합니다!"
+    },
+    {
+     "author": "KP",
+     "is_maker": true,
+     "text": "@zeng Appreciate you for your support always! Loved your build that you shared today -> https://gotchu-help-board.netlify.app/",
+     "kr": "@zeng 늘 응원해 주셔서 감사합니다! 오늘 공유해 주신 프로젝트(https://gotchu-help-board.netlify.app/)도 정말 훌륭했습니다!"
+    },
+    {
+     "author": "KP",
+     "is_maker": false,
+     "text": "used Netlify to build HuntMonitor •16 reviews Used Netlify Blobs to save history data, Netlify Server to hold live connections and Netlify AI Gateway for the Comment pulse summaries Helpful 24 views5d ago",
+     "kr": "HuntMonitor 구축에 Netlify를 활용했습니다 • 히스토리 데이터 저장을 위해 Netlify Blobs를, 실시간 연결 유지를 위해 Netlify Server를, 댓글 반응 요약 분석을 위해 Netlify AI Gateway를 사용했습니다. 도움이 됨 · 조회수 24회 · 5일 전"
+    }
+   ],
+   "slug": "netlify"
+  },
+  {
+   "name": "Verse Engine by Ctruh",
+   "tagline_en": "Blender, Unity or Unreal to a live 3D link in one click",
+   "tagline_kr": "블렌더, 유니티, 언리얼을 클릭 한 번으로 라이브 3D 링크로 변환",
+   "image": "https://ph-files.imgix.net/76a21323-877f-47f2-a86e-312e4ae1dfc1.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://verse.ctruh.com/&utm_source=producthunt",
+   "categories": [
+    "Design & Creative",
+    "3D & Animation",
+    "Engineering & Development"
+   ],
+   "rank": 3,
+   "upvotes": 252,
+   "comments_count": 56,
+   "maker": [
+    "Sharun Kanan"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Verse Engine by Ctruh는 복잡한 3D 및 XR 그래픽을 웹 링크 하나로 손쉽게 공유할 수 있는 브라우저 네이티브 엔진입니다. Blender, Unity, Unreal 등 주요 3D 툴에서 작업한 결과물을 별도의 앱 설치나 다운로드 없이 모든 웹 브라우저에서 바로 열 수 있습니다. 시야에 보이는 영역만 실시간 스트리밍하는 방식을 적용하여 수십억 개의 폴리곤을 가진 거대한 도시 씬도 노트북에서 매끄럽게 로딩됩니다. 3D 디자이너나 건축가, 게임 스튜디오가 클라이언트에게 무거운 영상 대신 상호작용 가능한 실제 3D 모델을 즉시 전달할 수 있게 돕습니다. 손쉬운 웹 임베드 기능과 함께 개발자를 위한 API 및 SDK를 기본 제공하여 확장성을 높였습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/verse-engine-by-ctruh",
+   "comment_summary": "메이커는 무거운 3D 결과물을 고객에게 간편하게 공유할 수 있도록 브라우저에서 즉시 열리는 원클릭 링크 솔루션을 출시했다고 밝혔습니다. 사용자들은 대규모 3D 씬이 브라우저에서 매끄럽게 구동되는 성능에 찬사를 보내는 한편, MCP를 통한 씬 편집 가능 여부와 서비스 이용 조건에 대해 질문했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Sharun Kanan",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! I'm Sharun. I lead go-to-market at Ctruh and I'm one of the makers of Verse Engine. Vinay will cover the engine. I'll cover the buyer's side. I spend my days in demos with brands, real estate developers and carmakers. One pattern repeats. A team spends weeks on a 3D model. Then they send the client a video or a screenshot of it, because the file is too heavy to open on a phone. **Verse Engine by Ctruh** fixes the last step. You send a link. Your buyer taps it in WhatsApp and ",
+     "kr": "📌 안녕하세요 프로덕트 헌트! 저는 Ctruh에서 GTM(시장 진출 전략)을 총괄하고 있는 Verse Engine의 메이커 샤룬(Sharun)입니다. 엔진 기술은 비나이(Vinay)가 설명하고, 저는 구매 고객 관점에서 말씀드리겠습니다. 저는 평소 브랜드, 부동산 개발사, 완성차 기업들과 데모 미팅을 진행하며 매일 같은 패턴을 목격합니다. 팀이 3D 모델을 만드는 데 몇 주를 쏟아붓고도, 정작 파일이 너무 무거워 스마트폰에서 열리지 않는다는 이유로 클라이언트에게 영상이나 스크린샷만 보낸다는 점입니다. **Verse Engine by Ctruh**는 바로 이 마지막 단계를 혁신합니다. 링크 하나만 보내면 고객이 왓츠앱 등에서 바로 탭하여 확인할 수 있습니다."
+    },
+    {
+     "author": "Porush Puri",
+     "is_maker": false,
+     "text": "@sharun\\_kanan This is so cool! Love it, congrats on the launch and kudos to the team.",
+     "kr": "@sharun\\_kanan 정말 멋집니다! 출시 축하드리며 팀원 여러분의 노고에 박수를 보냅니다."
+    },
+    {
+     "author": "Sharun Kanan",
+     "is_maker": true,
+     "text": "@porush\\_puri Thank you!",
+     "kr": "@porush\\_puri 감사합니다!"
+    },
+    {
+     "author": "Gabe Moronta",
+     "is_maker": false,
+     "text": "@sharun\\_kanan Congrats on the launch! really cool",
+     "kr": "@sharun\\_kanan 출시를 축하드립니다! 정말 멋지네요."
+    },
+    {
+     "author": "Sharun Kanan",
+     "is_maker": true,
+     "text": "@mogabr Thank you!",
+     "kr": "@mogabr 감사합니다!"
+    },
+    {
+     "author": "Jayant Siktia",
+     "is_maker": false,
+     "text": "@sharun\\_kanan so true. I've lost count of how many times I've seen a client get a video of a 3D model instead of the real thing. Tried the Lyon city demo on my MacBook this morning. Whole city, in Chrome, from a link. Still a bit mind blown tbh. @chrismessina would love to know what you think!",
+     "kr": "@sharun\\_kanan 정말 공감합니다. 클라이언트가 실제 3D 모델 대신 렌더링 동영상을 받아보는 경우를 셀 수도 없이 많이 봤습니다. 오늘 아침 맥북에서 리옹 도시 데모를 실행해 봤는데, 링크 하나로 크롬 브라우저에서 도시 전체가 완벽하게 돌아가더군요. 솔직히 아직도 충격적일 정도로 놀랍습니다. @chrismessina 님의 의견도 정말 궁금하네요!"
+    },
+    {
+     "author": "Kartik Rawat",
+     "is_maker": false,
+     "text": "Can the MCP integration also modify existing 3D scenes through Claude Code or any coding agent, or is it limited to just publishing them?",
+     "kr": "Claude Code나 코딩 에이전트를 통한 MCP 연동으로 기존 3D 씬을 수정하는 것도 가능한가요, 아니면 단순히 퍼블리싱하는 것으로만 제한되어 있나요?"
+    },
+    {
+     "author": "@kartikrawatt",
+     "is_maker": false,
+     "text": "Good question. Right now it's publish and manage, not edit. Editing is about two weeks out. What an agent can do today through the MCP: publish a scene from a file or URL (GLB, FBX, USD, IFC, splats, most things), check the build, list your scenes, make or revoke private share links, grab embed code, and set the camera tour. So file to live link to embed works end to end with no human in the middle. What it can't do yet is change a scene that's already published. No swapping a material or hiding",
+     "kr": "좋은 질문입니다. 현재로서는 편집이 아닌 퍼블리싱 및 관리 기능만 지원하고 있습니다. 직접 편집 기능은 약 2주 뒤에 출시될 예정입니다. 오늘날 에이전트가 MCP를 통해 수행할 수 있는 작업은 다음과 같습니다: 파일이나 URL(GLB, FBX, USD, IFC, 가우시안 스플래팅 등 대부분 지원)로부터 씬 게시, 빌드 확인, 씬 목록 조회, 비공개 공유 링크 생성 및 취소, 임베드 코드 추출, 카메라 투어 경로 설정 등입니다. 즉 사람이 개입하지 않고도 파일 업로드부터 라이브 링크 생성, 임베드까지 전 과정이 자동으로 이루어집니다. 다만 이미 게시된 씬의 재질을 교체하거나 숨기는 등의 수정 작업은 아직 지원하지 않습니다."
+    },
+    {
+     "author": "Sajal Rai",
+     "is_maker": false,
+     "text": "Having worked primarily in 2D animation and design for most of my life, and sharing my work online has always been pretty straightforward. But now that I'm exploring 3D, I've run into quite a few challenges when it comes to showcasing my work on the web. This looks promising and could make it much easier for creators like me to share our 3D work openly on the internet.",
+     "kr": "평생 대부분을 2D 애니메이션과 디자인 분야에서 일해오며 온라인에 작업을 공유하는 것은 늘 간단했습니다. 하지만 최근 3D를 탐구하기 시작하면서 웹상에서 작업물을 선보이는 데 상당한 어려움을 겪고 있었습니다. 이 도구는 매우 유망해 보이며, 저 같은 크리에이터들이 인터넷상에 3D 작업물을 공개적으로 공유하는 데 큰 도움이 될 것 같습니다."
+    },
+    {
+     "author": "Sharun Kanan",
+     "is_maker": true,
+     "text": "@sajal\\_rai You should really try the platform out. Make sure you share your work with us as well!",
+     "kr": "@sajal\\_rai 꼭 플랫폼을 직접 체험해 보세요. 만드신 작업물도 저희에게 꼭 공유해 주시길 바랍니다!"
+    },
+    {
+     "author": "NateGu",
+     "is_maker": false,
+     "text": "Do you have a minimum daily ad spend on Meta or TikTok to use this?",
+     "kr": "이 플랫폼을 이용하려면 메타(Meta)나 틱톡(TikTok)에서 지출해야 하는 일일 최소 광고비 기준이 있나요?"
+    },
+    {
+     "author": "Sharun Kanan",
+     "is_maker": true,
+     "text": "@nate007 No minimum ad spend. Verse isn't tied to your ad accounts. You upload a 3D file and get a link. Use it on your site, on WhatsApp or in an ad. The Free plan costs nothing. What are you looking to show in 3D?",
+     "kr": "@nate007 최소 광고 지출액 요건은 없습니다. Verse는 광고 계정과 직접 연동되어 있지 않습니다. 3D 파일을 업로드하면 링크를 받을 수 있으며, 이를 웹사이트나 왓츠앱, 또는 광고에 자유롭게 활용하시면 됩니다. 무료 플랜은 비용이 들지 않습니다. 어떤 3D 콘텐츠를 선보이고 싶으신가요?"
+    }
+   ],
+   "slug": "verse-engine-by-ctruh"
+  },
+  {
+   "name": "Stripo.email",
+   "tagline_en": "An online drag-n-drop and HTML email editor",
+   "tagline_kr": "드래그 앤 드롭 및 HTML 기반 온라인 이메일 에디터",
+   "image": "https://ph-files.imgix.net/15d70099-307f-4004-9561-a7ff6ee13a92.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "http://stripo.email/&utm_source=producthunt",
+   "categories": [
+    "No-code Platforms",
+    "Email marketing",
+    "Marketing automation platforms"
+   ],
+   "rank": 4,
+   "upvotes": 226,
+   "comments_count": 137,
+   "maker": [
+    "Dmitry Kudrenko",
+    "Volodymyr Kreshchenko",
+    "Oleksandra Khlystova"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Stripo는 드래그 앤 드롭 에디터와 전문 HTML/CSS 코드 에디터를 결합하여 이메일 제작 속도를 대폭 단축하는 템플릿 제작 도구입니다. 1,650개 이상의 전문 템플릿과 모듈형 블록을 기반으로 대규모 제품 카드 및 뉴스레터를 효율적으로 제작할 수 있습니다. 이번에 추가된 위젯 기능은 복잡한 코딩 없이 스크래치 복권, 룰렛, 설문조사 등 20여 종의 대화형 요소를 메일에 즉시 삽입할 수 있게 돕습니다. 클라이언트 환경에 맞춰 AMP, 대화형 HTML, 그리고 아웃룩용 정적 폴백까지 자동으로 구성하여 호환성을 보장합니다. 제작된 이메일은 90개 이상의 이메일 서비스 제공업체(ESP)로 원클릭 내보내기가 가능해 마케팅 워크플로우를 크게 단순화합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/stripo-email",
+   "comment_summary": "메이커는 복잡한 개발 작업 없이도 스크래처나 투표 등 20여 종의 대화형 요소를 즉시 삽입할 수 있는 완성형 이메일 위젯을 발표했습니다. 사용자들은 기발한 인터랙티브 기능에 긍정적인 반응을 보이며, 다양한 이메일 클라이언트에서의 폴백 지원 여부, Google AMP 화이트리스트 등록 절차, 향후 AI 에이전트 도입 일정 등을 집중적으로 질문했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Dmitry Kudrenko",
+     "is_maker": true,
+     "text": "📌 Hi everyone, I’m Dmytro, founder and CEO of Stripo, an email template builder. Interactive emails get great engagement, but building one usually means a developer, AMP or kinetic CSS, and a separate fallback for Outlook. Most marketers never get there. Today we’re launching **Widgets**: ready-made email components with the design, interaction and fallback already built in. There are 20+ of them: games like Scratcher and Wheel of Fortune, surveys like Poll and NPS, surprises like Flip Card and ",
+     "kr": "📌 여러분 안녕하세요, 이메일 템플릿 빌더 Stripo의 설립자이자 CEO 드미트로(Dmytro)입니다. 대화형(인터랙티브) 이메일은 참여도를 극대화하지만, 이를 구축하려면 개발자가 필요하고 AMP나 키네틱 CSS를 다뤄야 하며 Outlook용 별도 폴백까지 구현해야 합니다. 대다수 마케터는 이러한 장벽을 넘지 못합니다. 그래서 오늘 저희는 디자인, 인터랙션, 폴백이 이미 완벽히 내장된 기성 이메일 컴포넌트인 **Widgets**을 출시합니다. 스크래처나 룰렛 같은 미니게임, 투표나 NPS 설문조사, 플립 카드 같은 서프라이즈 기능 등 20여 종이 준비되어 있습니다."
+    },
+    {
+     "author": "Mohsin Ali",
+     "is_maker": false,
+     "text": "Likely AI @dmitry\\_spuntik saw Gmail only shows AMP to registered sender. how it compares to Mailmodo for handling the Google sender registration and domain whitelisting part? does Stripo generate the live amp preview link needed for Google's approval process?",
+     "kr": "@dmitry\\_spuntik 님, Gmail은 등록된 발신자에게만 AMP를 노출하는 것으로 알고 있습니다. Google 발신자 등록 및 도메인 화이트리스트 처리 부분에서 Mailmodo와 비교하면 어떤가요? Stripo는 Google 승인 절차에 필요한 실시간 AMP 미리보기 링크를 생성해 주나요?"
+    },
+    {
+     "author": "Dmitry Kudrenko",
+     "is_maker": true,
+     "text": "@mohsinproduct Good question. Google doesn’t actually ask for a preview link. It wants a real production email sent from your own sending infrastructure, with the AMP part inside, to ampforemail.whitelisting@gmail.com. Then you fill in their form. That’s the main difference with Mailmodo. Mailmodo is an ESP, so it sends the email and helps you with the form from its side. Stripo builds the email, and you send it through your own ESP. We export the AMP version to any ESP that supports it or to HT",
+     "kr": "@mohsinproduct 좋은 질문입니다. 실제로 Google은 미리보기 링크를 요구하지 않습니다. 자체 발신 인프라에서 AMP 파트가 포함된 실제 프로덕션 이메일을 ampforemail.whitelisting@gmail.com으로 전송한 뒤 신청 양식을 작성해야 합니다. 이것이 바로 Mailmodo와의 주요 차이점입니다. Mailmodo는 ESP(이메일 서비스 제공업체)이므로 자체 시스템에서 메일을 발송하고 등록 양식 작성을 지원합니다. 반면 Stripo는 이메일을 제작하는 도구이며, 실제 발송은 고객 본인의 ESP를 통해 진행됩니다. 저희는 AMP를 지원하는 모든 ESP 또는 HTML 형태로 AMP 버전을 내보낼 수 있도록 지원합니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Eighth launch, nice work. The scratch card is fun.",
+     "kr": "벌써 8번째 출시네요, 멋진 작업입니다. 스크래치 카드 기능이 정말 재밌습니다."
+    },
+    {
+     "author": "Dmitry Kudrenko",
+     "is_maker": true,
+     "text": "@relli7 Thanks, David! It's definitely fun. Glad you like it.",
+     "kr": "@relli7 데이비드 님 감사합니다! 정말 재미있는 요소죠. 마음에 들어 하셔서 기쁩니다."
+    },
+    {
+     "author": "Oleksii Petukhov",
+     "is_maker": false,
+     "text": "Congrats Stripo! I wish AI could create the whole email with an actually quality results :) But while we wait AI to evolve, having these complex elements be build in a second without touching a code is a big win. Saves a lot of time and stress for sure. Btw, will I be able to tweak the generated widget with the editor controls, or just via the chat?",
+     "kr": "Stripo의 출시를 축하합니다! AI가 이메일 전체를 수준 높은 퀄리티로 완성해 주면 정말 좋겠습니다 :) 하지만 AI가 더 발전하기를 기다리는 동안, 코드를 건드리지 않고도 이런 복잡한 요소들을 1초 만에 구현할 수 있다는 것은 대단한 성과입니다. 시간과 스트레스를 확실히 줄여주네요. 그런데 생성된 위젯을 에디터 컨트롤러로 직접 미세 조정할 수도 있나요, 아니면 채팅을 통해서만 수정해야 하나요?"
+    },
+    {
+     "author": "Dmitry Kudrenko",
+     "is_maker": true,
+     "text": "@a\\_petukhov Thanks! 🙂 Good news: you won’t have to wait long for the whole email. Tomorrow (we expect another big release) we’re adding an AI agent right inside Stripo that builds the full email. And it works not only with one email but with your whole company profile, so brand, tone and products stay the same from email to email. If you can’t wait until tomorrow, you can already do it today through our MCP server. Connect it to Claude or ChatGPT and ask for the whole email. About the widgets: ",
+     "kr": "@a\\_petukhov 감사합니다! 🙂 좋은 소식이 있습니다: 전체 이메일 생성을 위해 오래 기다리지 않으셔도 됩니다. 내일 예정된 대규모 릴리스를 통해 Stripo 내부에 전체 이메일을 완성해 주는 AI 에이전트가 바로 추가될 예정입니다. 단일 이메일뿐만 아니라 기업 프로필 전체와 연동되므로 브랜드, 톤앤매너, 제품 정보가 이메일마다 일관되게 유지됩니다. 내일까지 기다리기 힘드시다면 오늘이라도 MCP 서버를 통해 사용해 보실 수 있습니다. Claude나 ChatGPT에 연결하여 전체 이메일 제작을 요청하시면 됩니다. 위젯 편집에 대해 말씀드리자면:"
+    },
+    {
+     "author": "Volodymyr Kreshchenko",
+     "is_maker": true,
+     "text": "@a\\_petukhov Thanks for your support! It will, soon. Stay tuned 😜",
+     "kr": "@a\\_petukhov 응원해 주셔서 감사합니다! 곧 지원될 예정이니 기대해 주세요 😜"
+    },
+    {
+     "author": "Oleksandra Khlystova",
+     "is_maker": true,
+     "text": "@a\\_petukhov Thanks for the support, Oleksii!",
+     "kr": "@a\\_petukhov 응원해 주셔서 감사합니다, 올렉시(Oleksii) 님!"
+    },
+    {
+     "author": "Alex O.",
+     "is_maker": false,
+     "text": "Interesting project. Congrats on launch! Will try it in our newsletter. What about mobile email reader? Would this polls, quiz, etc. work correctly? And what about GDPR and contest for user, etc. How handle you this cases?",
+     "kr": "흥미로운 프로젝트네요. 출시를 축하합니다! 저희 뉴스레터에도 한번 적용해 보겠습니다. 모바일 이메일 뷰어 환경은 어떤가요? 투표나 퀴즈 같은 기능들이 모바일에서도 정상 동작하나요? 그리고 GDPR 준수나 사용자 이벤트/콘테스트 관련 사항은 어떻게 처리하시나요?"
+    },
+    {
+     "author": "Dmitry Kudrenko",
+     "is_maker": true,
+     "text": "@spiri7 Thanks, and great to hear it’s going into your newsletter! Appreciate a lot. Let me know if you need more information, we will provide it. Mobile: yes. Gmail and Yahoo apps get the AMP version, so polls and quizzes work right in the app. Apple Mail on iPhone and Samsung Email get the interactive HTML version. Everything else, including Outlook mobile, gets a static block that still looks finished. Important: for AMP your sender have to support AMP, there are big list of such ESP now (inc",
+     "kr": "@spiri7 감사드리며, 뉴스레터에 적용해 보신다니 정말 반갑습니다! 추가 정보가 필요하시면 언제든 알려주세요. 모바일 지원 여부에 대해 답변드리자면: 네, 잘 지원됩니다. Gmail 및 Yahoo 앱에서는 AMP 버전이 제공되어 앱 내에서 바로 투표와 퀴즈가 실행됩니다. 아이폰의 Apple Mail과 삼성 이메일에서는 인터랙티브 HTML 버전이 동작합니다. Outlook 모바일을 포함한 그 외 모든 환경에서는 완성도 높은 깔끔한 정적 블록 형태로 대체(폴백)됩니다. 중요 사항: AMP를 사용하려면 발신 인프라에서 AMP를 지원해야 하며, 현재 이를 지원하는 주요 ESP 목록이 다양하게 마련되어 있습니다."
+    },
+    {
+     "author": "Volodymyr Kreshchenko",
+     "is_maker": true,
+     "text": "@spiri7 Thanks for your support and congratulations! Please let us know what your newsletter looks like with the widgets and if there’s anything you’d like to add or change to improve it. Also, it would be great if you could test it out and share the results with us",
+     "kr": "@spiri7 응원과 축하 말씀 감사합니다! 위젯을 적용한 뉴스레터가 어떤 모습인지 꼭 알려주시고, 추가하거나 개선하고 싶은 점이 있다면 언제든 말씀해 주세요. 또한 직접 테스트해 보시고 그 결과도 함께 공유해 주시면 감사하겠습니다."
+    }
+   ],
+   "slug": "stripo-email"
+  },
+  {
+   "name": "Adside",
+   "tagline_en": "A team of specialized AI agents that manage paid ads for you",
+   "tagline_kr": "유료 광고를 대신 관리해 주는 전문 AI 에이전트 팀",
+   "image": "https://ph-files.imgix.net/c32aa6b4-139b-4a45-bc87-0f836378d3ad.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://www.adside.ai/&utm_source=producthunt",
+   "categories": [
+    "Marketing & Sales",
+    "Advertising tools",
+    "AI Agents"
+   ],
+   "rank": 5,
+   "upvotes": 203,
+   "comments_count": 48,
+   "maker": [
+    "Robin Choy"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Adside는 구글, 메타, 링크드인, 레딧, X 등 다양한 채널의 유료 광고를 자동으로 운영 및 최적화하는 전문 AI 에이전트 시스템입니다. 단순한 광고 카피 생성을 넘어 크리에이티브 로테이션, 타깃 오디언스 세분화, 입찰가 최적화, A/B 테스팅까지 전 과정을 포괄적으로 관리합니다. 복잡한 컨텍스트를 종합 분석하여 기존 일반 광고 생성 도구에 비해 훨씬 정교하고 타깃 친화적인 광고 성과를 도출합니다. 마케팅 대행사를 위한 화이트라벨 승인 링크 생성 기능을 갖추어 광고 집행 전 고객사 검토 절차를 원활하게 지원합니다. 소규모 비즈니스와 스타트업이 막대한 광고 대행 비용 없이도 고도화된 멀티채널 퍼포먼스 마케팅을 전개할 수 있도록 돕습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/adside",
+   "comment_summary": "메이커는 단순 소재 제작을 넘어 구글과 메타 등 주요 채널의 유료 광고 전 과정을 자율적으로 운영하는 AI 에이전트 시스템을 소개했습니다. 사용자들은 멀티채널 자동화 역량을 높이 평가하며, 지출 한도 설정 기능, 마케팅 에이전시를 위한 광고 소재 사전 승인 워크플로우, 그리고 타 AI 도구와의 차별성에 대해 활발한 질문을 이어갔습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Robin Choy",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 I'm Robin, co-founder of Adside with Guillaume. Today we're launching Adside, a swarm of agents that finds the most profitable paid strategies for you and runs them across Meta, Google, LinkedIn, Reddit and X. This isn't yet another Higgsfield killer or AI ad generator. Adside agents manage the entire creative loop across every channel: they generate, import and rotate creatives, fine-tune audiences, optimize bidding and keyword targeting, and run A/B tests. Like a world-cla",
+     "kr": "📌 안녕하세요 프로덕트 헌트 커뮤니티 여러분 👋 저는 기욤(Guillaume)과 함께 Adside를 공동 창업한 로빈(Robin)입니다. 오늘 저희는 가장 수익성 높은 유료 광고 전략을 발굴하여 메타, 구글, 링크드인, 레딧, X 등 전 채널에서 실행해 주는 에이전트 스웜, Adside를 공식 출시합니다. 이것은 단순한 또 하나의 광고 생성 도구가 아닙니다. Adside 에이전트는 크리에이티브 생성 및 가져오기, 로테이션, 오디언스 미세 타겟팅, 입찰가 및 키워드 최적화, A/B 테스트에 이르기까지 모든 채널의 크리에이티브 루프 전체를 전문적으로 관리합니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Good luck today, Robin. Is there a way to set a hard spend cap the agents can't go past?",
+     "kr": "오늘 출시 행운을 빕니다, 로빈. 에이전트가 절대 초과 지출할 수 없도록 강제 지출 상한선(hard spend cap)을 설정하는 기능이 있나요?"
+    },
+    {
+     "author": "Matthieu Vaxelaire",
+     "is_maker": false,
+     "text": "This is game changer ! We are using it for all Hexa companies !!!",
+     "kr": "이것은 게임 체인저입니다! 저희는 모든 Hexa 계열사에서 이 도구를 사용하고 있습니다!!!"
+    },
+    {
+     "author": "Robin Choy",
+     "is_maker": true,
+     "text": "Thanks for your support @mvaxelaire and great working with you on this!",
+     "kr": "응원해 주셔서 감사합니다 @mvaxelaire 님, 함께 협업할 수 있어 정말 즐겁습니다!"
+    },
+    {
+     "author": "Bengeekly",
+     "is_maker": false,
+     "text": "Are you planing to add smaller platforms reddit, snapchat...? there is nice opportunities there",
+     "kr": "레딧이나 스냅챗 같은 상대적으로 작은 플랫폼도 지원 대상에 추가할 계획이 있으신가요? 그곳에도 좋은 기회가 많아서요."
+    },
+    {
+     "author": "Robin Choy",
+     "is_maker": true,
+     "text": "@bengeekly we already work with Reddit, and totally for the rest! Also ChatGPT etc.",
+     "kr": "@bengeekly 저희는 이미 레딧을 지원하고 있으며, 나머지 플랫폼들도 전적으로 추가할 계획입니다! ChatGPT 등도 포함됩니다."
+    },
+    {
+     "author": "Joe Hewett",
+     "is_maker": false,
+     "text": "Nice! Is it hard to make it come up with good ads?",
+     "kr": "멋지네요! 에이전트가 퀄리티 높은 광고를 뽑아내게 만드는 작업이 까다롭지는 않나요?"
+    },
+    {
+     "author": "Robin Choy",
+     "is_maker": true,
+     "text": "@joe\\_hewett shouldn't be, that's the entire point - since it has so much context the ads are way more on point than others ad generators",
+     "kr": "@joe\\_hewett 전혀 어렵지 않아야 정상이며, 그것이 바로 핵심입니다. 방대한 맥락 데이터를 종합적으로 파악하고 있기 때문에 기존 광고 생성기에 비해 훨씬 정확하고 핵심을 찌르는 광고를 만들어 냅니다."
+    },
+    {
+     "author": "Andrei Breaz",
+     "is_maker": false,
+     "text": "How do you handle a client who wants to approve every creative before it goes live?",
+     "kr": "광고가 라이브되기 전에 모든 크리에이티브를 직접 검토하고 승인하기를 원하는 클라이언트는 어떻게 대응하나요?"
+    },
+    {
+     "author": "Robin Choy",
+     "is_maker": true,
+     "text": "@andreibreaz if you're an agency and want to use adside as white label, you can create shareable links with approval on creatives. If it's for your own use, you can review/approve/comment all creatives before they go live",
+     "kr": "@andreibreaz 대행사로서 Adside를 화이트라벨 형태로 사용하고자 하신다면 크리에이티브 승인용 공유 링크를 생성하실 수 있습니다. 자체 사용 목적이시라면 모든 광고 소재가 라이브되기 전에 직접 검토, 승인, 코멘트를 남기실 수 있습니다."
+    },
+    {
+     "author": "Vyas Raina",
+     "is_maker": false,
+     "text": "Nice stuff, you guys are really going after one of the most time consuming challenges for small businesses! A question: do you consider claude code with an mcp to ad platforms (e.g. meta ads) a competitor? for example at my company, we no longer manage our meta ads directly ourselves but allow claude to handle it... (and it seems to be fairly effective!)",
+     "kr": "멋진 작업물이네요, 소규모 기업들이 겪는 가장 시간 소모적인 문제 중 하나를 제대로 해결하고 계십니다! 한 가지 질문이 있는데요: Claude Code에 메타 광고 등 광고 플랫폼 MCP를 연동한 형태를 경쟁자로 보시나요? 예를 들어 저희 회사의 경우 더 이상 메타 광고를 직접 관리하지 않고 클로드에게 전담시키고 있는데, 꽤나 효과적인 것 같거든요!"
+    }
+   ],
+   "slug": "adside"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
