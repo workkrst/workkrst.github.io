@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-11-22</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-11-22 · Top 5 · 수집 댓글 53개 · 수집 2026-11-22 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-11-22",
+ "collected_at": "2026-11-22 12:30 KST",
+ "summary": "오늘 프로덕트 헌트는 온디바이스 AI, 셀프 호스팅 CI 러너, 크로스 LLM 메모리 등 인프라 비용 절감과 데이터 주권을 강조한 생산성 도구들이 상위권을 차지했습니다. 커뮤니티에서는 에이전트 간 잘못된 메모리 전파 차단, 셀프 호스팅 환경의 샌드박스 오염 방지, 계정별 보안 경계 설정 등 실무 도입 시의 데이터 무결성과 안전성에 대한 논의가 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "ai-context-flow",
+   "why": "다양한 LLM과 코딩 에이전트 간 컨텍스트를 MCP로 통합 관리하여 작업 단절을 해소한다는 점에서 호평을 받았습니다. 댓글에서는 한 에이전트의 오류가 전체로 오염되는 것을 막기 위한 버전 롤백 및 변경 추적 대책이 큰 주목을 받았습니다."
+  },
+  {
+   "slug": "glassmail",
+   "why": "외부 서버 전송이 없는 온디바이스 AI 처리와 구독료 없는 1회성 영구 구매 모델로 프라이버시를 중시하는 사용자들의 강한 지지를 얻었습니다. 댓글에서는 계정별 말투 학습 분리와 외부 에이전트의 메일 접근을 엄격히 차단하는 보안 제어 기능이 호평을 받았습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "AlterContacts",
+   "tagline_en": "AI client relationship assistant that thinks and does ahead",
+   "tagline_kr": "먼저 생각하고 미리 실행하는 AI 고객 관계 어시스턴트",
+   "image": "https://ph-files.imgix.net/72b0236c-d52d-4cf1-8265-44a19196099c.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://altercontacts.ai/&utm_source=producthunt",
+   "categories": [
+    "CRM software",
+    "AI notetakers",
+    "AI Chief Of Staff"
+   ],
+   "upvotes": 272,
+   "comments_count": 56,
+   "maker": [
+    "Jonas Tan",
+    "Ben Xu",
+    "FourierWang"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "AlterContacts는 모든 고객을 기억하고 중요한 후속 조치를 놓치지 않도록 돕는 음성 우선(Voice-first) AI 어시스턴트입니다. 미팅 후 대화하듯 말하기만 하면 AI가 세부 내용을 정리하고 고객 프로필을 업데이트하며 약속한 사항을 자동으로 기억합니다. 다가오는 계약 갱신, 고객의 개인적 기념일, 관리가 필요한 관계를 선제적으로 파악하여 검토용 메시지 초안까지 미리 작성해 줍니다. 복잡한 CRM 데이터 입력에 시간을 쏟기보다 고객과의 신뢰 구축에 집중하고자 하는 금융 자문가, 브로커, 컨설턴트를 위해 설계되었습니다. 연락처, 이메일, 음성 메모, 웹 정보 등을 종합해 고객 프로필을 자동으로 구축하므로 빈 화면에서 시작할 필요가 없습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/alter-contacts-ai-client-relationships",
+   "comment_summary": "기존 Mac용 AI 앱인 'Alter'와의 제품명 중복 이슈에 대해 메이커가 직접 독립적인 제품임을 해명하며 소통을 제안했습니다. 유저들은 왓츠앱 연동 가능 여부와 캘린더 연동, 소규모 고객 관리 적용성 등을 질문했고, 메이커는 챗 스크린샷 정리 기능 및 1명의 고객부터 유효하게 작동하는 구조를 설명하며 긍정적인 반응을 얻었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Jonas Tan",
+     "is_maker": true,
+     "text": "📌 **Hey Product Hunt 👋 ** I'm Jonas, co-founder of AlterContacts. I'm based in Singapore, and before we built anything, I sat down with 26 financial advisors to learn how they keep track of their clients (including my mom, my dad and my brother) > One of them, nine years in the business, told me: \"I do a bi-weekly scroll of my WhatsApp to see anything I missed out on. And I still miss out stuff. At my level.\" I heard a version of that from almost everyone. * A client mentions her daughter starts",
+     "kr": "📌 안녕하세요 Product Hunt 👋 AlterContacts 공동 창업자 조나스(Jonas)입니다. 싱가포르에 거주 중이며, 제품을 개발하기 전 어머니, 아버지, 형제를 포함해 26명의 금융 자문가들을 직접 만나 고객 관리 방식을 들었습니다. 업계 9년 차 베테랑 중 한 분은 \"격주마다 놓친 게 없는지 왓츠앱을 일일이 스크롤해 보는데도 여전히 놓치는 것들이 생깁니다\"라고 털어놓으셨고, 거의 모든 분들에게서 비슷한 이야기를 들었습니다. 고객이 딸의 입학을 언급하는 등의 세부사항들 말이죠."
+    },
+    {
+     "author": "Samuel Roy",
+     "is_maker": false,
+     "text": "Hey @makewithjonas , congrats on your launch and best wishes on your journey. That said, some of my users pinged me about the name of your product, which might confuse people as we have some overlap: https://www.producthunt.com/products/alter/reviews 1. Alter is a full‑fledged AI assistant for Mac. 2. Alter records meetings automatically without a bot joining your call. It’s unlimited and remembers the voices of the participants for your future meetings to get perfect transcripts. 3. Alter comes",
+     "kr": "안녕하세요 @makewithjonas 님, 출시를 축하드리며 앞으로의 여정을 응원합니다. 다만 일부 유저들이 저희 제품과 기능상 중복되는 부분이 있어 혼란을 줄 수 있다고 제보해 주셨습니다. 1. Alter는 Mac용 완성형 AI 어시스턴트입니다. 2. 봇이 통화에 참여하지 않고도 회의를 자동 녹음하며, 무제한으로 참가자의 목소리를 기억해 향후 완벽한 회의록을 생성합니다. 3. Alter는..."
+    },
+    {
+     "author": "Ben Xu",
+     "is_maker": true,
+     "text": "@samuelroy\\_ Thanks for raising this, Samuel. We appreciate the work you and your team are doing with Alter, and understand your concern about the similarity in names. AlterContacts is an independent product focused on helping advisors manage client relationships. We want people to be clear about which product they’re using, and we’re happy to connect directly to better understand your concerns.",
+     "kr": "@samuelroy\\_ 문제 제기해 주셔서 감사합니다, Samuel 님. Alter 팀의 노고에 경의를 표하며 이름 유사성에 대한 우려도 충분히 이해합니다. AlterContacts는 자문가들의 고객 관계 관리에 특화된 독립 제품입니다. 유저들이 두 제품을 명확히 구분할 수 있기를 바라며, 우려하시는 부분을 더 자세히 듣기 위해 직접 소통하고 싶습니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Looks great. Does the Microsoft connection pull in the Outlook calendar too?",
+     "kr": "멋져 보이네요. 마이크로소프트 연동 시 아웃룩 캘린더도 함께 불러오나요?"
+    },
+    {
+     "author": "FourierWang",
+     "is_maker": true,
+     "text": "@relli7 Yes！if you choose the Microsoft workspace",
+     "kr": "@relli7 네! 마이크로소프트 워크스페이스를 선택하시면 연동됩니다."
+    },
+    {
+     "author": "Eldar Miensutov",
+     "is_maker": false,
+     "text": "my monday morning is scrolling whatsapp to see which client i forgot to answer 🙈 can alter pull from whatsapp chats directly",
+     "kr": "제 월요일 아침은 답장을 깜빡한 고객이 없는지 왓츠앱을 스크롤하는 걸로 시작합니다 🙈 Alter가 왓츠앱 채팅에서 직접 데이터를 가져올 수도 있나요?"
+    },
+    {
+     "author": "Jonas Tan",
+     "is_maker": true,
+     "text": "@eldarmiensutov Yes, the all-too-familiar Monday scroll came up again and again in our advisor interviews! Alter doesn't read your WhatsApp directly at the moment but we're looking into this for the roadmap. Right now, you can send it screenshots of a chat and it files them under the right client. From there it flags the follow-ups you'd otherwise lose in the scroll, with a reply drafted for you to copy and send in WhatsApp.",
+     "kr": "@eldarmiensutov 네, 자문가 인터뷰 때마다 빠짐없이 나왔던 바로 그 월요일 아침 스크롤 이야기군요! 현재는 왓츠앱을 직접 읽어오지는 못하지만 로드맵에 반영해 검토 중입니다. 지금은 대화 스크린샷을 보내면 해당 고객 프로필에 정리되며, 스크롤 중에 놓칠 뻔한 후속 조치를 표시하고 왓츠앱으로 바로 복사해 보낼 수 있는 답장 초안까지 작성해 줍니다."
+    },
+    {
+     "author": "Jonas Tan",
+     "is_maker": true,
+     "text": "@ankit\\_pandit\\_dev Thanks! And the client link is the part that sticks: once a screenshot's filed, everything after it builds on that same profile",
+     "kr": "@ankit\\_pandit\\_dev 감사합니다! 고객 프로필 연동이 핵심입니다. 스크린샷이 한번 정리되면 이후의 모든 정보가 해당 프로필 위에 계속해서 축적됩니다."
+    },
+    {
+     "author": "Anne Jiao",
+     "is_maker": false,
+     "text": "Love this and congrats on the launch Alter Contacts team! The UI is super clean and the idea is almost like a CRM for relationship driven businesses. What are some ways that Alter Contacts can help auto-build a client profile and what are the things that usually matter to remember about that client that is special about this particular user?",
+     "kr": "제품이 정말 마음에 들며 Alter Contacts 팀의 출시를 축하합니다! UI가 매우 깔끔하고 관계 기반 비즈니스를 위한 CRM이라는 아이디어가 좋습니다. Alter Contacts가 고객 프로필을 자동으로 구축하는 방식과 특정 유저에게 특별히 기억해야 할 중요 사항들에는 어떤 것들이 있나요?"
+    },
+    {
+     "author": "Jonas Tan",
+     "is_maker": true,
+     "text": "@annerjiao Thanks Anne! And love those questions. Ok so, even before you add a client profile, AlterContacts will help find those clients either through your contacts book or through your email workspace. Afterwards, for every client, it does a client enrichment where it searches up your email, voice notes, files, and even the web for details like the client's job etc. so you never start with a blank profile. Subsequently, any context given to Alter will be filed to the right profile (even those",
+     "kr": "@annerjiao Anne 님 감사합니다! 좋은 질문이네요. 고객 프로필을 직접 등록하기 전이라도 AlterContacts가 연락처나 이메일 워크스페이스를 통해 고객을 찾아줍니다. 이후 각 고객마다 이메일, 음성 메모, 파일, 웹 검색 등을 통해 직업 등의 세부 정보를 보강(enrichment)하므로 빈 프로필에서 시작할 일이 없습니다. 그 뒤 Alter에 제공되는 모든 맥락은 적절한 프로필에 차곡차곡 정리됩니다."
+    },
+    {
+     "author": "Stelly Lin",
+     "is_maker": false,
+     "text": "Does it work if I only have a handful of clients, or is it built for big books?",
+     "kr": "관리하는 고객이 소수여도 잘 작동하나요, 아니면 대규모 고객군을 위해 만들어진 건가요?"
+    },
+    {
+     "author": "Jonas Tan",
+     "is_maker": true,
+     "text": "@stellylin I would humbly say that it is built for every kind of book and every size of book! Alter works from your very first client. Each profile fills in from the first voice note, so a small book gets the same briefs and follow-ups as a big one.",
+     "kr": "@stellylin 어떤 규모, 어떤 종류의 고객 포트폴리오에도 모두 적합하다고 자신 있게 말씀드립니다! Alter는 첫 번째 고객부터 바로 효과를 발휘합니다. 첫 음성 메모부터 각 프로필이 채워지므로 고객 수가 적더라도 대규모 포트폴리오와 동일한 브리핑과 후속 조치 지원을 받을 수 있습니다."
+    }
+   ],
+   "slug": "alter-contacts-ai-client-relationships"
+  },
+  {
+   "name": "AI Context Flow",
+   "tagline_en": "One context & memory that works across all your AIs.",
+   "tagline_kr": "모든 AI 도구에서 함께 작동하는 단 하나의 컨텍스트 및 메모리",
+   "image": "https://ph-files.imgix.net/4a36951e-d17a-4da4-9569-c87e9b3c7c8f.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://plurality.network/ai-context-flow&utm_source=producthunt",
+   "categories": [
+    "Content Management Systems",
+    "Chrome Extensions",
+    "Prompt Engineering Tools",
+    "LLM Memory"
+   ],
+   "upvotes": 220,
+   "comments_count": 40,
+   "maker": [
+    "hira siddiqui"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "AI Context Flow는 다양한 AI 도구를 사용할 때마다 매번 동일한 배경 맥락을 반복해서 설명해야 하는 불편함을 해결해 주는 솔루션입니다. 사용자는 자신의 프로젝트 정보나 업무 맥락을 한 번만 저장해 두면 ChatGPT, Claude, Gemini 및 MCP 호환 도구 전반에서 즉시 재사용할 수 있습니다. AI 컨텍스트가 정리되지 않은 잡동사니 서랍이나 불투명한 블랙박스가 되지 않도록 체계적인 버전 관리와 롤백 기능을 지원합니다. 자율 에이전트 간에 잘못된 정보가 전파되어 증폭되는 문제를 방지하고 누가 변경했는지 추적할 수 있어 안전합니다. 플랫폼 사일로에 갇히지 않고 독립적으로 동작하여 훨씬 스마트하고 반복 없는 AI 대화 환경을 만들어 줍니다.",
+   "launch_url_used": "https://www.producthunt.com/products/ai-context-flow",
+   "comment_summary": "사용자들은 여러 LLM과 코딩 에이전트 간의 컨텍스트 공유 및 MCP 지원에 큰 호응을 보냈습니다. 한 에이전트의 잘못된 메모리가 전체 도구로 오염되는 것을 방지하는 방안에 대해 질문이 나왔고, 메이커는 즉각적인 버전 롤백 및 변경자 추적 기능, 향후 충돌 감지 알림 도입 계획을 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Yuze",
+     "is_maker": false,
+     "text": "Thank you for trying the product, Gomi! Welcome to also try our reusable memory when you use different ai chatbots!",
+     "kr": "제품을 사용해 주셔서 감사합니다, Gomi 님! 다양한 AI 챗봇을 사용하실 때 재사용 가능한 메모리 기능도 꼭 사용해 보세요!"
+    },
+    {
+     "author": "hira siddiqui",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 Last year, new AI assistants were popping up every week, and we were tired of copy-pasting context between them. Out of this frustration, AI Context Flow was born. It hit #1 Product of the Day, which told us we weren’t the only ones frustrated. Thank you to everyone who backed us then 🙏 We kept building with one rule: **your AI context should never be a junk drawer or a black box. It should be organized, shared on your terms, and always reversible.** Since then, more than 5,",
+     "kr": "📌 안녕하세요 Product Hunt 👋 작년에는 매주 새로운 AI 어시스턴트가 쏟아져 나왔고, 이들 사이에 매번 컨텍스트를 복사해 붙여넣는 일에 지쳐 있었습니다. 이런 답답함 속에서 AI Context Flow가 탄생했습니다. 당시 오늘의 제품 1위를 차지하며 저희만의 고민이 아니었음을 확인했습니다. 당시 지지해 주신 모든 분께 감사드립니다 🙏 저희는 한 가지 원칙을 지키며 개발해 왔습니다: **AI 컨텍스트는 결코 잡동사니 서랍이나 블랙박스가 되어서는 안 되며, 사용자의 조건에 따라 정리되고 공유되며 언제든 되돌릴 수 있어야 한다.** 그 이후 5천 명 이상의..."
+    },
+    {
+     "author": "Vipul Kumar",
+     "is_maker": false,
+     "text": "@hira\\_siddiqui1 How do you prevent one AI agent's incorrect memory from affecting every other tool connected to the same bucket????",
+     "kr": "@hira\\_siddiqui1 하나의 AI 에이전트가 잘못 기억한 내용이 동일한 버킷에 연결된 다른 모든 도구에 악영향을 미치는 것을 어떻게 방지하나요????"
+    },
+    {
+     "author": "hira siddiqui",
+     "is_maker": true,
+     "text": "@vipul\\_kumar1280 so a couple of things can be done in this case: \\- rollback to the previous version as soon as inconsistency is found \\- see who made the change so you can fix the root cause (maybe one of the agents is running faulty) \\- internally we are working on a better interface to notify you when your memories are conflicting with each other e.g. one says the launch is on 21 other says launch is on 25.",
+     "kr": "@vipul\\_kumar1280 그런 경우에는 몇 가지 조치를 취할 수 있습니다: \\- 불일치가 발견되는 즉시 이전 버전으로 롤백 \\- 어떤 주체가 변경했는지 확인하여 근본 원인 해결(특정 에이전트 오작동 여부 파악) \\- 내부적으로 메모리 간 충돌(예: 한쪽은 21일 출시, 다른 쪽은 25일 출시라고 저장한 경우) 발생 시 알림을 보내는 향상된 인터페이스를 준비 중입니다."
+    },
+    {
+     "author": "Mohsin Ali",
+     "is_maker": false,
+     "text": "Likely AI @hira\\_siddiqui1 the CTRL + I + MCP combo is smart since gpt claude projects still trap your context inside their own silos",
+     "kr": "Likely AI @hira\\_siddiqui1 GPT나 Claude 프로젝트 기능은 여전히 각자의 사일로 안에 컨텍스트를 가둬두기 때문에 CTRL + I + MCP 조합은 정말 똑똑한 접근입니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Is a Firefox version on the way?",
+     "kr": "파이어폭스(Firefox) 버전도 출시될 예정인가요?"
+    },
+    {
+     "author": "hira siddiqui",
+     "is_maker": true,
+     "text": "@relli7 currently we are now more focused on MCP improvements. If there is more user demand from firefox we will prioritize it.",
+     "kr": "@relli7 현재는 MCP 개선에 더 집중하고 있습니다. 파이어폭스에 대한 사용자 수요가 늘어나면 우선순위를 높여 검토하겠습니다."
+    },
+    {
+     "author": "Zac Zuo",
+     "is_maker": false,
+     "text": "Hunter Context is king! 👑 One shared memory across ChatGPT, Claude, and coding agents makes a lot of sense. Love that you can also see what agents have saved and roll things back if they get something wrong.",
+     "kr": "Hunter 컨텍스트가 핵심입니다! 👑 ChatGPT, Claude, 코딩 에이전트 전반에 걸친 단일 공유 메모리는 매우 합리적입니다. 에이전트가 저장한 내용을 직접 확인하고 잘못되었을 때 롤백할 수 있다는 점이 정말 마음에 듭니다."
+    },
+    {
+     "author": "hira siddiqui",
+     "is_maker": true,
+     "text": "@zaczuo version control becomes super important once you start creating workflows that work autonomously. Because a single context mistake can propagate across various agents. Mistakes get amplified. Rolling back is one step solution instead of fixing dozens of agents individually. Moreover, you can also see which agent/teammate changed the context so you have an idea where the context bug was introduced.",
+     "kr": "@zaczuo 자율 워크플로우를 구축하기 시작하면 버전 관리가 매우 중요해집니다. 단 하나의 컨텍스트 오류가 여러 에이전트로 전파되어 오류가 증폭될 수 있기 때문입니다. 수십 개의 에이전트를 일일이 수정하는 대신 롤백을 통해 한 번에 해결할 수 있습니다. 또한 어떤 에이전트나 팀원이 컨텍스트를 변경했는지 확인할 수 있어 버그가 발생한 지점을 파악할 수 있습니다."
+    },
+    {
+     "author": "Nika",
+     "is_maker": false,
+     "text": "This is cool. So another tool can \"remember/recall\" the chat from another LLM?",
+     "kr": "멋지네요. 그러니까 다른 도구가 다른 LLM의 대화 내용을 \"기억/호출\"할 수 있다는 뜻인가요?"
+    },
+    {
+     "author": "hira siddiqui",
+     "is_maker": true,
+     "text": "@busmark\\_w\\_nika yes, but chats is just one small part of it. Imagine being able to have organized context for your different side projects, your clients, or your different workflows you might have built. You can open chat agent, and just plug in the right context. So, if you are working for your side project (the linkedin app you are building), you just ask Claude to pull in that context, and it will ignore all the rest. A bit like chatgpt or claude projects, but easily plug and play into any ",
+     "kr": "@busmark\\_w\\_nika 네, 하지만 단순 대화 기록은 일부에 불과합니다. 다양한 사이드 프로젝트, 고객, 구축한 워크플로우에 맞게 정리된 컨텍스트를 갖고 있다고 상상해 보세요. 챗 에이전트를 열고 필요한 컨텍스트를 바로 꽂아 넣기만 하면 됩니다. 예를 들어 링크드인 앱 사이드 프로젝트 작업을 할 때 Claude에게 해당 컨텍스트만 불러오도록 요청하면 나머지는 무시됩니다. ChatGPT나 Claude 프로젝트와 비슷하지만 어떤 환경에도 쉽게 연결해 쓸 수 있습니다."
+    }
+   ],
+   "slug": "ai-context-flow"
+  },
+  {
+   "name": "Codemany",
+   "tagline_en": "Run GitHub Actions 3x faster",
+   "tagline_kr": "GitHub Actions를 3배 더 빠르게 실행",
+   "image": "https://ph-files.imgix.net/mcp-draft-media/1cab2c86-fc49-4e7b-bfc9-15f11f0899a9.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://codemany.com/&utm_source=producthunt",
+   "categories": [
+    "Automation tools",
+    "Testing and QA software",
+    "Command line tools"
+   ],
+   "upvotes": 180,
+   "comments_count": 14,
+   "maker": [
+    "Arpit Agarwal"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Codemany는 자체 인프라에서 GitHub Actions를 최대 3배 빠르게 실행할 수 있도록 지원하는 러너 오케스트레이션 도구입니다. 각 작업마다 새로운 가상 머신(VM) 및 격리된 샌드박스를 제공하여 보안 위험과 환경 오염을 완벽히 방지합니다. 사용자가 보유한 Mac이나 Linux 장비를 활용하므로 분당 부과되는 과도한 클라우드 CI 비용을 획기적으로 절감할 수 있습니다. 설치 후 GitHub 로그인 및 runs-on 라벨 한 줄 수정만으로 즉시 적용 가능한 간단한 3단계 설정을 제공합니다. Mac의 절전 모드 방지와 전원 및 네트워크 불안정 시 자동 재시도 및 페일오버 기능을 갖추어 안정적인 CI 환경을 보장합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/codemany",
+   "comment_summary": "실제 CI 비용을 대폭 줄였다는 수치에 많은 개발자들이 큰 관심을 보였으며, 샌드박스 격리 및 공유 캐시 오염 방지 대책에 대한 기술적 질의가 이어졌습니다. 메이커는 작업마다 완전히 삭제되는 샌드박스 구조와 함께 Mac 절전 방지 및 네트워크 끊김 시 3회 재시도 보호 장치를 설명하며 신뢰를 얻었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Arpit Agarwal",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt, I'm Arpit back again! 👋 October: My GitHub Actions bill hit $582. A Mac and a spare Linux box sat in my cupboard, sleeping. So I built Codemany, to run GitHub Actions on my own infra. Codemany orchestrates the runners: a fresh one for every job, its own VM on Linux. It updates and cleans up by itself. **Setup is 3 steps:** * Install on your Mac or Linux box * Sign in with GitHub * Change one line: runs-on: \\[self-hosted, codemany\\] **The proof:** * Our CI: $215 in October, $4 ",
+     "kr": "📌 안녕하세요 Product Hunt, 다시 인사드리는 Arpit입니다! 👋 지난 10월 제 GitHub Actions 청구 금액이 582달러에 달했습니다. 찬장에는 사용하지 않는 Mac과 Linux 장비가 잠들어 있었죠. 그래서 자체 인프라에서 GitHub Actions를 실행할 수 있는 Codemany를 개발했습니다. Codemany는 매 작업마다 새로운 러너를 오케스트레이션하며, Linux에서는 자체 VM을 띄우고 스스로 업데이트와 정리를 수행합니다. **설치는 3단계입니다:** * Mac이나 Linux에 설치 * GitHub 로그인 * 한 줄 수정: runs-on: \\[self-hosted, codemany\\] **실제 증거:** * 저희 CI 비용: 10월 215달러에서 11월 현재 4달러로 감소"
+    },
+    {
+     "author": "Arpit Agarwal",
+     "is_maker": true,
+     "text": "Big thanks to @fmerian for hunting Codemany 🙏 Happy to answer anything about running GitHub Actions on your own Mac or Linux box. What does your CI bill look like?",
+     "kr": "Codemany를 헌팅해 주신 @fmerian 님께 큰 감사드립니다 🙏 개인 소유의 Mac이나 Linux 장비에서 GitHub Actions를 실행하는 것에 대해 무엇이든 답변해 드리겠습니다. 여러분의 CI 청구 비용은 얼마나 나오시나요?"
+    },
+    {
+     "author": "Shivam Kushwaha",
+     "is_maker": false,
+     "text": "@arpwal Can it automatically choose the best runner for each workflow to keep costs low?",
+     "kr": "@arpwal 비용 절감을 위해 각 워크플로우에 가장 적합한 러너를 자동으로 선택해 줄 수 있나요?"
+    },
+    {
+     "author": "Arpit Agarwal",
+     "is_maker": true,
+     "text": "@shivam\\_kushwaha16 great question! Since you own all the machines, the costs are always the same. You could have machines with different capabilities and can choose them via labels, like a 4GB runner, a 32gb runner, etc.",
+     "kr": "@shivam\\_kushwaha16 좋은 질문입니다! 모든 머신을 직접 소유하고 계시기 때문에 비용은 항상 동일합니다. 성능이 다른 머신들을 라벨(예: 4GB 러너, 32GB 러너 등)을 통해 지정하여 선택하실 수 있습니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "nice one, any plans for Windows machines?",
+     "kr": "멋지네요, 윈도우 머신도 지원할 계획이 있으신가요?"
+    },
+    {
+     "author": "Arpit Agarwal",
+     "is_maker": true,
+     "text": "@relli7 thanks! Not yet. Today it's macOS on Apple silicon, and Linux with systemd. Windows is on my list, and hearing who needs it helps me pick what's next. What would you run on it: .NET builds, games, or something else?",
+     "kr": "@relli7 감사합니다! 아직은 없습니다. 현재는 Apple Silicon 기반 macOS와 systemd 기반 Linux를 지원합니다. 윈도우도 후보 목록에 있으며 필요로 하시는 분들의 의견을 듣고 결정하려 합니다. 어떤 작업(.NET 빌드, 게임 빌드 등)을 돌리실 계획인가요?"
+    },
+    {
+     "author": "Bruno Bueno",
+     "is_maker": false,
+     "text": "can a job in one repo overwrite stuff in ~/.codemany/toolcache, so the next repo's setup-node picks up a tampered node?",
+     "kr": "한 리포지토리의 작업이 ~/.codemany/toolcache 내용을 덮어써서 다음 리포지토리의 setup-node가 위변조된 노드를 가져오게 될 위험은 없나요?"
+    },
+    {
+     "author": "Arpit Agarwal",
+     "is_maker": true,
+     "text": "@bbueno that's a great question, and a real problem with self-hosted runners! As of today's release, every job runs in its own sandbox by default, on both Mac and Linux. The sandbox can't write to the shared tool cache, so one repo can't leave a tampered Node for the next one. And the sandbox gets wiped after every job. If you set up Codemany before today, you can turn the sandbox on with one setting. Would you ever turn it off to get a bit more speed?",
+     "kr": "@bbueno 정말 날카로운 질문이며 셀프 호스팅 러너에서 실제로 발생하는 문제입니다! 오늘 출시 버전부터 Mac과 Linux 모두 기본적으로 모든 작업이 전용 샌드박스에서 실행됩니다. 샌드박스는 공유 툴 캐시에 쓸 수 없으므로 특정 리포지토리가 변조된 Node를 남길 수 없습니다. 또한 매 작업 후 샌드박스는 완전히 삭제됩니다. 기존 사용자라면 설정 하나로 샌드박스를 활성화할 수 있습니다."
+    },
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "what happens if my mac goes to sleep or the wifi drops halfway through a job",
+     "kr": "작업 도중에 Mac이 잠자기 모드로 들어가거나 Wi-Fi 연결이 끊어지면 어떻게 되나요?"
+    },
+    {
+     "author": "Arpit Agarwal",
+     "is_maker": true,
+     "text": "@igorblink that's a great question! I've added a few layers of protection for that to the product: * A Mac, by default, would not go to sleep if it is handling jobs. That comes baked into the product, and it'll keep on silently taking jobs. * Let's say it crashes because there is no power supply. At that time, Codemany directs the job to the runner that does have a power supply. If Wi-Fi drops halfway, it'll be retried up to three times. Would you like it if it had some kind of cloud durability?",
+     "kr": "@igorblink 좋은 질문입니다! 제품에 몇 가지 다중 보호 장치를 추가했습니다: * Mac은 작업을 처리 중일 때 기본적으로 잠자기에 들어가지 않도록 내장되어 있어 조용히 작업을 계속 수행합니다. * 전원 공급 문제 등으로 충돌이 발생하면 전원이 정상인 다른 러너로 작업을 우회시킵니다. 작업 중 Wi-Fi가 끊기면 최대 3회까지 자동 재시도합니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The $215 to $4 drop is what stopped me scrolling — that's a wild difference for the same CI. I like the fresh VM per job idea for isolation, especially when a run touches secrets or untrusted dependencies. With the $20 plan covering 2 machines, what happens when a few jobs land at once — do they queue on those machines, or is there a way to spill over temporarily? Curious where the practical limit is for a small team.",
+     "kr": "215달러에서 4달러로 줄었다는 대목에서 스크롤을 멈췄습니다. 동일한 CI 환경에서 엄청난 차이네요. 시크릿이나 신뢰할 수 없는 의존성을 다룰 때 격리를 위해 작업당 새 VM을 띄우는 방식이 마음에 듭니다. 2대 머신을 지원하는 20달러 플랜에서 여러 작업이 한꺼번에 몰릴 경우 머신에 대기열로 쌓이나요, 아니면 임시 오버플로우 기능이 있나요? 소규모 팀에서의 실질적인 한계가 궁금합니다."
+    }
+   ],
+   "slug": "codemany"
+  },
+  {
+   "name": "Glassmail",
+   "tagline_en": "A fast Mac email app with AI that never leaves your Mac",
+   "tagline_kr": "기기를 절대 벗어나지 않는 온디바이스 AI를 탑재한 빠른 Mac 이메일 앱",
+   "image": "https://ph-files.imgix.net/mcp-draft-media/31cd39ef-d24c-41c0-a7dc-b052447043ff.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://glassmail.app/&utm_source=producthunt",
+   "categories": [
+    "Email clients"
+   ],
+   "upvotes": 143,
+   "comments_count": 13,
+   "maker": [
+    "Junaid Shaukat"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Glassmail은 사용자의 소중한 이메일 데이터를 외부 서버로 전송하지 않고 모든 AI 처리를 Mac 로컬에서 직접 수행하는 네이티브 이메일 클라이언트입니다. Gmail, iCloud, Outlook, Yahoo 및 일반 IMAP 계정을 단일 창에서 통합 관리할 수 있습니다. 오늘 내가 처리해야 할 일과 같은 자연어 질문에 즉각 답해주며, 짧은 키워드 입력만으로 사용자의 고유한 어조를 반영한 답장을 자동 생성해 줍니다. 월 구독료를 강요하는 기존 최신 이메일 앱들과 달리 단 1회 구매로 영구 소유할 수 있는 합리적인 가격 모델을 제시합니다. Claude나 Cursor 같은 외부 AI 에이전트 연동 시에도 검색 권한만 허용하고 발송 및 삭제를 차단하는 엄격한 보안 경계를 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/glassmail",
+   "comment_summary": "온디바이스 AI 기반의 이메일 처리와 일회성 영구 구매 모델에 대해 사용자들의 큰 지지와 호평이 이어졌습니다. 계정별 말투 학습 분리 방식과 외부 에이전트의 개인 메일 접근 제한 설정, 긴 스레드 요약 처리 방식 등에 대한 활발한 문답이 이루어졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Junaid Shaukat",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 I'm Junaid, and I made Glassmail. Email apps on the Mac have split into two camps: free ones that feel stuck in 2012, and modern ones that charge $10–30 a month and send your mail to their servers so their AI can read it. I wanted a third option: **a beautiful native Mac app, with AI that never leaves my Mac, that I pay for once.** So I built it. **What you get** \\- 📬 **Every inbox, one window.** Gmail, iCloud, Outlook, Yahoo, Fastmail and any IMAP account. \\- ✨ **Ask your i",
+     "kr": "📌 안녕하세요 Product Hunt 👋 Glassmail을 만든 Junaid입니다. Mac용 이메일 앱은 2012년에 멈춰 있는 듯한 무료 앱과, 매달 10~30달러를 청구하며 AI 분석을 위해 메일을 자체 서버로 전송하는 최신 앱이라는 두 진영으로 나뉘어 있었습니다. 저는 세 번째 선택지를 원했습니다: **AI가 Mac 외부로 절대 유출되지 않으며, 한 번만 결제하면 되는 아름다운 네이티브 Mac 앱.** 그래서 직접 만들었습니다. **주요 기능:** \\- 📬 **모든 메일함을 하나의 창에서.** Gmail, iCloud, Outlook, Yahoo, Fastmail 및 모든 IMAP 계정 지원 \\- ✨ **메일함에 직접 질문하기...**"
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Nice work Junaid. Will the iPhone app be covered by the same licence?",
+     "kr": "멋진 작품이네요 Junaid. 아이폰 앱도 동일한 라이선스로 이용할 수 있나요?"
+    },
+    {
+     "author": "Junaid Shaukat",
+     "is_maker": true,
+     "text": "Yes. For the first 100 buyers, the iPhone app is included in the same licence when it ships. But I'm flexible on it. I'm still building it, so I don't have a date yet.",
+     "kr": "네. 초기 구매자 100분께는 아이폰 앱 출시 시 동일 라이선스에 포함됩니다. 다만 유연하게 적용할 생각이며 아직 개발 중이라 정확한 출시일은 미정입니다."
+    },
+    {
+     "author": "David Bacelj",
+     "is_maker": false,
+     "text": "the type yes but next week and get a reply thing is nice. does it learn my voice per account tho? i write totally different in swedish to clients than in english to friends, would be weird if it mixed them",
+     "kr": "'yes but next week'이라고 치면 답장이 생성되는 기능이 좋네요. 계정별로 말투를 따로 학습하나요? 저는 클라이언트에게 보내는 스웨덴어와 친구들에게 쓰는 영어 말투가 완전히 다른데, 둘이 섞이면 곤란해서요."
+    },
+    {
+     "author": "Junaid Shaukat",
+     "is_maker": true,
+     "text": "@bacelj It learns per account, not from everything you've sent. A reply from your client account only looks at mail you sent from that account, so Swedish to clients and English to friends stay apart when those are different accounts. On one account it uses your three most recent sent emails, and a reply follows the language of the conversation you're answering. It doesn't keep a separate voice for each person.",
+     "kr": "@bacelj 전체 발송 메일이 아닌 계정별로 학습합니다. 클라이언트 계정 답장은 해당 계정에서 발송된 메일만 참조하므로 계정이 분리되어 있다면 스웨덴어와 영어 말투가 섞이지 않습니다. 하나의 계정에서는 가장 최근에 보낸 이메일 3통을 기반으로 하며 답장은 현재 대화의 언어를 따릅니다. 수신자 개개인마다 별도의 말투를 유지하지는 않습니다."
+    },
+    {
+     "author": "Vijay Navaluri",
+     "is_maker": false,
+     "text": "Can a connected AI app be limited to one workspace, so a work request can’t search personal mail?",
+     "kr": "연결된 AI 앱이 특정 워크스페이스에만 접근하도록 제한할 수 있나요? 업무 요청 시 개인 메일까지 검색하면 안 되어서요."
+    },
+    {
+     "author": "Junaid Shaukat",
+     "is_maker": true,
+     "text": "@vijay\\_navaluri Not per app, and not from the workspace you have open. Every connected app sees the same mail. You can hide accounts from all of them: Settings › Agents › Hide from agents. A hidden account never shows up in a search, a thread, or a count. Hide your personal accounts and a work request can't read them. That setting applies to Claude, Cursor and the rest together.",
+     "kr": "@vijay\\_navaluri 앱별 또는 열려 있는 워크스페이스별로 제한되지는 않으며, 연결된 모든 앱은 동일한 메일을 봅니다. 대신 특정 계정을 에이전트로부터 숨길 수 있습니다: 설정 › 에이전트 › 에이전트로부터 숨기기. 숨겨진 계정은 검색, 스레드, 개수 집계에 전혀 나타나지 않습니다. 개인 계정을 숨기면 업무 에이전트가 이를 읽을 수 없으며, 이 설정은 Claude, Cursor 등 모든 도구에 일괄 적용됩니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "This is the approach I keep coming back to for anything touching personal data — if the AI can run on the device, it should. The agent permissions stood out to me too: letting Claude or Cursor search mail but never send or delete, with an allow or deny each time, is the right boundary. Curious how the on-device summaries hold up on long threads with a lot of back-and-forth — that's where most local models I've tried start losing the thread.",
+     "kr": "개인 데이터를 다루는 제품이라면 AI가 기기 내부에서 동작할 수 있을 때 반드시 그래야 한다고 생각합니다. 에이전트 권한 설정도 돋보이는데, Claude나 Cursor가 메일을 검색할 수는 있어도 발송이나 삭제는 못 하도록 매번 승인/거부 경계를 둔 점이 훌륭합니다. 주고받은 내용이 많은 긴 스레드에서 온디바이스 요약 성능이 어떻게 유지되는지 궁금하네요. 제가 써본 로컬 모델들은 대개 거기서 맥락을 잃더군요."
+    },
+    {
+     "author": "Junaid Shaukat",
+     "is_maker": true,
+     "text": "@jcbuilds Thanks. On a long thread the summary keeps the recent messages, not the whole history. Quoted replies are left out, each message is shortened, and it stops at about 7,000 characters, newest first, so it fits the model. You get two to four bullets: what it's about, and what you're asked to do. The start of a very long thread can be left out. That's the trade for staying on the Mac.",
+     "kr": "@jcbuilds 감사합니다. 긴 스레드의 경우 전체 내역 대신 최신 메시지 위주로 요약합니다. 인용된 답장은 제외하고 각 메시지를 축약하며 최신순으로 약 7,000자에서 끊어 모델 컨텍스트에 맞춥니다. 핵심 내용과 요청받은 조치 사항을 2~4개 불릿 포인트로 제공합니다. 매우 긴 스레드의 도입부는 생략될 수 있지만, 온디바이스 처리를 위한 합리적인 절충안입니다."
+    },
+    {
+     "author": "Gal Dayan",
+     "is_maker": false,
+     "text": "Likely AI Local-only AI is a real selling point for email. How big is the on-device model, and how does search hold up on a mailbox with 100k+ messages? Curious about the RAM hit on an 8GB Mac.",
+     "kr": "Likely AI 로컬 전용 AI는 이메일 앱에서 확실한 차별화 요소입니다. 온디바이스 모델의 크기는 얼마이며, 10만 건 이상의 메일함에서 검색 성능은 어떻게 유지되나요? 8GB Mac에서의 RAM 점유율도 궁금합니다."
+    },
+    {
+     "author": "Junaid Shaukat",
+     "is_maker": true,
+     "text": "@galdayan Glassmail checks the Mac and suggests the model. On an 8 GB Mac with Apple Intelligence, that's the pick and there's nothing to download. Otherwise it suggests Qwen 3.5 2B, about 1.2 GB. The 2.6 GB model is for 16 GB Macs. It only loads when you ask something. Search uses an index, not the model. The model then reads a short list, about a couple of dozen conversations, so it never sees all 100,000.",
+     "kr": "@galdayan Glassmail은 Mac 사양을 확인해 모델을 제안합니다. Apple Intelligence가 지원되는 8GB Mac에서는 이를 바로 사용하여 별도 다운로드가 필요 없습니다. 그 외의 경우 약 1.2GB 크기의 Qwen 3.5 2B를 제안하며, 2.6GB 모델은 16GB Mac용입니다. 질문할 때만 메모리에 로드됩니다. 검색은 모델이 아닌 인덱스를 사용하며, 모델은 검색된 수십 개의 대화 목록만 읽기 때문에 10만 건 전체를 직접 처리하지 않습니다."
+    }
+   ],
+   "slug": "glassmail"
+  },
+  {
+   "name": "exa.ai",
+   "tagline_en": "Search API for AI applications",
+   "tagline_kr": "AI 애플리케이션을 위한 검색 API",
+   "image": "https://ph-files.imgix.net/9576857e-ea98-4549-9da2-a99a9318033a.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=419",
+   "website": "https://exa.ai/&utm_source=producthunt",
+   "categories": [
+    "Search"
+   ],
+   "upvotes": 125,
+   "comments_count": 6,
+   "maker": [],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "Exa Websets V2는 웹 상의 방대한 실시간 데이터로부터 원하는 리드, 인재 목록 또는 맞춤형 데이터셋을 구축할 수 있도록 지원하는 AI 검색 도구입니다. 복잡한 쿼리 대신 일상적인 자연어로 원하는 조건을 설명하면 AI 에이전트가 결과를 수집하고 이메일, 태그 등의 정보로 보강해 줍니다. 이전 버전에 비해 4배 빠른 속도와 2배 저렴한 비용을 제공하며 정확도와 재현율도 20% 향상되었습니다. 추출된 데이터의 각 행마다 출처와 일치 판단 근거가 함께 제공되므로 사용자가 결과를 신뢰하고 검증하기 쉽습니다. 별도의 월 구독료 없이 기존 Exa 크레딧에서 차감되는 유연한 요금 방식을 적용했습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/exa-ai",
+   "comment_summary": "실시간 웹 데이터를 기반으로 각 행마다 출처와 매칭 사유를 함께 제공한다는 점에 사용자들의 큰 관심이 집중되었습니다. 수동 검증 시간을 크게 줄여줄 수 있다는 점이 호평을 받았으며, 데이터 내보내기 시 추론 근거 유지 여부 및 최신성 범위에 대한 질의가 이어졌습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Rohan Chaubey",
+     "is_maker": false,
+     "text": "Hunter 📌 Exa just released **Websets v2**, a major update to its tool for building custom datasets from live web data. You describe what you want in plain language, and it returns a list where each row comes with sources and reasoning for why it matches. **What changed from v1:** * It finds about 20% more matches, with 20% better accuracy and recall * It runs 4x faster * It costs about 2x less * The monthly subscription is gone, and usage now draws from your existing Exa credits * Websets API ac",
+     "kr": "Hunter 📌 Exa가 실시간 웹 데이터로 맞춤형 데이터셋을 구축하는 도구의 주요 업데이트인 **Websets v2**를 출시했습니다. 일상적인 언어로 원하는 바를 설명하면 각 행마다 출처와 매칭 이유가 포함된 목록을 반환합니다. **v1 대비 변경점:** * 매칭 항목 약 20% 증가, 정확도 및 재현율 20% 향상 * 실행 속도 4배 향상 * 비용 약 2배 절감 * 월 구독제가 폐지되고 기존 Exa 크레딧에서 차감 * Websets API..."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Congrats on launch number four, nice work.",
+     "kr": "네 번째 출시를 축하드립니다, 훌륭하네요."
+    },
+    {
+     "author": "Eldar Miensutov",
+     "is_maker": false,
+     "text": "how fresh can a webset get, like could i ask for people who posted about needing a mobile dev in the last week",
+     "kr": "Webset의 데이터 최신성은 어느 정도인가요? 예를 들어 지난주에 모바일 개발자가 필요하다고 올린 사람들을 찾아달라고 요청할 수도 있나요?"
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The part that caught my eye is every row arriving with its sources and the reason it matched. I spend a lot of my time checking agent output by hand, so a dataset I can actually audit without re-running the search is the difference between using it and not. Curious how the reasoning holds up on the messier queries — the ones where two companies look nearly identical on paper.",
+     "kr": "제 눈길을 끈 부분은 모든 행에 출처와 매칭 사유가 함께 제공된다는 점입니다. 저는 에이전트의 출력물을 수작업으로 검토하는 데 많은 시간을 쓰기 때문에, 검색을 다시 돌리지 않고도 직접 감사할 수 있는 데이터셋인지는 도입 여부를 결정짓는 결정적 차이입니다. 서류상 거의 동일해 보이는 두 회사처럼 모호하고 복잡한 쿼리에서 추론이 얼마나 잘 유지되는지 궁금합니다."
+    },
+    {
+     "author": "Kareem Ben",
+     "is_maker": false,
+     "text": "Likely AI Each row arriving with its sources and a reason it matched is what would let me hand a dataset to someone else without a second round of checking every row by hand. Does the reasoning stay attached when I export, or is it only visible inside the tool?",
+     "kr": "Likely AI 각 행마다 출처와 매칭 사유가 붙어 나온다면 일일이 수작업으로 재검토하지 않고도 다른 사람에게 데이터셋을 넘겨줄 수 있겠네요. 데이터를 내보낼 때도 이 추론 사유가 함께 유지되나요, 아니면 툴 내부에서만 볼 수 있나요?"
+    },
+    {
+     "author": "Zain Pirani",
+     "is_maker": false,
+     "text": "used exa.ai to build Brief •7 reviews Exa.ai is a search API that gives our AI real web content and images fast. It uses smart search and fast crawling to find links, summaries, and pictures. This helps our AI write better articles with accurate and fresh info. Helpful 157 views1yr ago",
+     "kr": "Brief 개발에 exa.ai 활용 •리뷰 7개 Exa.ai는 저희 AI에게 실제 웹 콘텐츠와 이미지를 빠르게 제공해 주는 검색 API입니다. 스마트 검색과 빠른 크롤링으로 링크, 요약, 이미지를 찾아주어 AI가 정확하고 최신 정보를 담은 더 나은 글을 작성하도록 돕습니다. 도움됨 157회 조회1년 전"
+    },
+    {
+     "author": "Shalin Shah",
+     "is_maker": false,
+     "text": "used exa.ai to build Hyper •6 reviews We use Exa to give Hyper's AI agent the ability to search the web mid-conversation. When a user asks something beyond their own meeting history, Exa handles the retrieval. We looked at Tavily and Brave Search API but Exa's results felt more semantically relevant out of the box, which matters when an agent is trying to answer a nuanced question in real time. Google Search API was too expensive for us. It felt dead simple to integrate too. Helpful 72 views8mo ",
+     "kr": "Hyper 개발에 exa.ai 활용 •리뷰 6개 저희는 Hyper의 AI 에이전트가 대화 도중 웹을 검색할 수 있도록 Exa를 사용합니다. 사용자가 자신의 회의 기록을 벗어난 질문을 할 때 Exa가 검색을 처리합니다. Tavily와 Brave Search API도 검토했으나 실시간으로 미묘한 뉘앙스의 질문에 답해야 하는 에이전트 특성상 Exa의 기본 검색 결과가 의미론적으로 훨씬 적절했습니다. 구글 검색 API는 저희에게 너무 비쌌습니다. 연동도 매우 간단했습니다. 도움됨 72회 조회8개월 전"
+    },
+    {
+     "author": "Ivan Semenov",
+     "is_maker": false,
+     "text": "used exa.ai to build Causo •4 reviews We’ve tried pretty much every product in the category, and Exa stands out for both its tooling and its support. The team has been incredibly helpful, and we’re extremely grateful for their ongoing support. Helpful 58 views1mo ago",
+     "kr": "Causo 개발에 exa.ai 활용 •리뷰 4개 이 카테고리의 거의 모든 제품을 사용해 보았는데, Exa는 툴링과 기술 지원 모두에서 단연 돋보입니다. 팀이 믿을 수 없을 정도로 친절하게 도와주었으며 지속적인 지원에 진심으로 감사하고 있습니다. 도움됨 58회 조회1개월 전"
+    }
+   ],
+   "slug": "exa-ai"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
