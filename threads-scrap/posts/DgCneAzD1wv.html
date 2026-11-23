@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>@gogi_jangsa - Threads 아카이브</title>
+    <style>
+        :root {
+            --bg-color: #0c0d0e;
+            --card-bg: #18191b;
+            --border-color: #2a2b2e;
+            --text-color: #f3f5f7;
+            --subtext-color: #9ba1a6;
+            --accent-color: #0095f6;
+            --hover-bg: #222427;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .author-main {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+        .display-name { font-weight: 700; font-size: 17px; }
+        .username {
+            color: var(--subtext-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .username:hover { text-decoration: underline; }
+        .verified-badge {
+            color: #0095f6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .post-date {
+            color: var(--subtext-color);
+            font-size: 13px;
+        }
+        .post-text {
+            font-size: 16px;
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 20px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .media-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+        .post-stats {
+            display: flex;
+            gap: 16px;
+        }
+        .orig-link {
+            color: var(--subtext-color);
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .orig-link:hover { color: var(--text-color); text-decoration: underline; }
+        .author-comments-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .author-comments-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-badge {
+            background: rgba(0, 149, 246, 0.15);
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 149, 246, 0.3);
+        }
+        .author-comment-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .author-comment-item:last-child {
+            border-bottom: none;
+        }
+        .replies-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .replies-section h3 {
+            font-size: 17px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .reply-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #232528;
+        }
+        .reply-item:last-child { border-bottom: none; }
+        .reply-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .reply-author { font-weight: 600; color: var(--text-color); }
+        .reply-date, .reply-likes { color: var(--subtext-color); }
+        .reply-text {
+            font-size: 14px;
+            color: #e1e3e6;
+            word-break: break-word;
+        }
+        .nested-replies {
+            margin-top: 8px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+        .empty-replies {
+            color: var(--subtext-color);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← 목록으로 돌아가기</a>
+        <div class="post-card">
+            <div class="author-box">
+                <div class="author-main">
+                    <span class="display-name">TaeHo</span>
+                    
+                    <a href="https://www.threads.net/@gogi_jangsa" target="_blank" rel="noopener" class="username">@gogi_jangsa</a>
+                </div>
+                <span class="post-date">2026-11-22 19:42</span>
+            </div>
+            <div class="post-text">와이프가<br>카드뉴스 자동 발행기나 만들라고 불뿜어서<br>만들어봤다<br><br>와.. 이거 만드는데 1시간도 안걸림<br>AI도랏다 ㄷㄷㄷ</div>
+            <div class="media-grid"><div class="media-item"><img src="https://scontent-nrt1-2.cdninstagram.com/v/t51.82787-15/922245585_17957600784337644_9035153646974368625_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=105&amp;_nc_map=urlgen_bucketless&amp;ig_cache_key=NDAzNTk2MTMxMzQ4OTE5NzQ2MQ%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNTk4LnNkci5yZWd1bGFyX3Bob3RvLkMzIn0%3D&amp;_nc_ohc=tvea3FREkN8Q7kNvwEqA19j&amp;_nc_oc=Adp0V-8GbmPqC-eFq9NvzkUpRHMGMSWASaY6NrspUIsaNOWZc-tnHat9P2sbTHa1qEKSx_rfZ1SopUURFJF-b1TV&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt1-2.cdninstagram.com&amp;_nc_gid=Eq0Z5uYZ5gP8sQEaSOKPoA&amp;_nc_ss=7e289&amp;_nc_ct=RQosPBUIFQIlBAAAAA&amp;oh=00_AQSYLEuorOxcdhlr3jrvKOsFyq2zbVf7BehfiVj0-n5-8w&amp;oe=6B098DC1" alt="Post media" loading="lazy"></div><div class="media-item"><img src="https://scontent-nrt6-1.cdninstagram.com/v/t51.82787-15/920315186_17957600781337644_2766173402166889178_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;_nc_map=urlgen_bucketless&amp;ig_cache_key=NDAzNTk2MTMxMzUyMjY0MTc2Mw%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNjAzLnNkci5yZWd1bGFyX3Bob3RvLkMzIn0%3D&amp;_nc_ohc=zdM9D798-WQQ7kNvwGNiLkr&amp;_nc_oc=AdpqDK6AFgsrCYAX4pO7_Gz2Hm5dsA6BFU89b9IKlU4v9EORVoQtS9t4pOLchmrV3hcr2FUVp9DCJ3815kSvqnbf&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt6-1.cdninstagram.com&amp;_nc_gid=Eq0Z5uYZ5gP8sQEaSOKPoA&amp;_nc_ss=7e289&amp;_nc_ct=RQosPBUIFQIlBAAAAA&amp;oh=00_AQThMLvSySlBDS45glQZuUcHGVjgnlkqQnX9GDGtxdS_2g&amp;oe=6B098748" alt="Post media" loading="lazy"></div><div class="media-item"><img src="https://scontent-nrt6-1.cdninstagram.com/v/t51.82787-15/920137185_17957600766337644_4432267859569674468_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=104&amp;_nc_map=urlgen_bucketless&amp;ig_cache_key=NDAzNTk2MTMxMzI4Nzk3MjQ5Ng%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNTk2LnNkci5yZWd1bGFyX3Bob3RvLkMzIn0%3D&amp;_nc_ohc=n_3zmt5HO1wQ7kNvwH5mD_M&amp;_nc_oc=AdpZvlpaNHgeM_G0li5kV8ZtpEHbHt3qt2G1R4dEu0Gb2h-bt-XfJ5n2FPT2xOzlMeTDuyML7VUsSeov_5-ZKRmh&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt6-1.cdninstagram.com&amp;_nc_gid=Eq0Z5uYZ5gP8sQEaSOKPoA&amp;_nc_ss=7e289&amp;_nc_ct=RQosPBUIFQIlBAAAAA&amp;oh=00_AQSUyIj3-8FLna21S_lsy1WZmREfPfovOuamarPatEh4rQ&amp;oe=6B096269" alt="Post media" loading="lazy"></div><div class="media-item"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.82787-15/920525068_17957600793337644_3346519464008036125_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=109&amp;_nc_map=urlgen_bucketless&amp;ig_cache_key=NDAzNTk2MTMxMzM3MTc5NTQ2MA%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNTk4LnNkci5yZWd1bGFyX3Bob3RvLkMzIn0%3D&amp;_nc_ohc=XPZGVB1FWo4Q7kNvwECR03s&amp;_nc_oc=AdoEM6coDT6F8GUTv4nGEgstYFy2t8S0CzFXnllpx6mPDt6tQ2STFtf-hJdYQfXBy5hiswmn8VIhnCQXR4CrTsSR&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;_nc_gid=Eq0Z5uYZ5gP8sQEaSOKPoA&amp;_nc_ss=7e289&amp;_nc_ct=RQosPBUIFQIlBAAAAA&amp;oh=00_AQROkk3uhIqQmvGSbcujmc8I1JbXubqgGR1J6iDENdmnqg&amp;oe=6B097BEE" alt="Post media" loading="lazy"></div><div class="media-item"><img src="https://scontent-nrt1-1.cdninstagram.com/v/t51.82787-15/919803116_17957600817337644_7366007786652206578_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=105&amp;_nc_map=urlgen_bucketless&amp;ig_cache_key=NDAzNTk2MTMxNTY4NjkzODk5Mw%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNTkwLnNkci5yZWd1bGFyX3Bob3RvLkMzIn0%3D&amp;_nc_ohc=OObFjr-9kUAQ7kNvwFvRzpo&amp;_nc_oc=Adpguam5R1ivK0L99VYL_H0A0i8alnuhnNpXRPJ2C2vmHHgRl3guZY2IwnD9JxEkopAF-y8tYH3VVoNO4Gb73_Ny&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt1-1.cdninstagram.com&amp;_nc_gid=Eq0Z5uYZ5gP8sQEaSOKPoA&amp;_nc_ss=7e289&amp;_nc_ct=RQosPBUIFQIlBAAAAA&amp;oh=00_AQS_wqNxWKHzH-481aNyEqyJB0wh_bmgkFAR9KB1QXiRWQ&amp;oe=6B098A90" alt="Post media" loading="lazy"></div><div class="media-item"><img src="https://scontent-nrt6-1.cdninstagram.com/v/t51.82787-15/923918398_17957600805337644_7828165850013989688_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=100&amp;_nc_map=urlgen_bucketless&amp;ig_cache_key=NDAzNTk2MTMxMzQ0NzE3MjU2Mw%3D%3D.3-ccb7-5&amp;ccb=7-5&amp;_nc_sid=58cdad&amp;efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNTk0LnNkci5yZWd1bGFyX3Bob3RvLkMzIn0%3D&amp;_nc_ohc=fmGIYhwJ4qsQ7kNvwFE5Vta&amp;_nc_oc=Adr9cdMH6n1kPiNARdV__BbNZyWTuudUKol1cu7295BsduWb9JX9J3Oc-lkeb5sc0pw4ZAlnfPVl5dk_wngwf1bA&amp;_nc_zt=23&amp;_nc_ht=scontent-nrt6-1.cdninstagram.com&amp;_nc_gid=Eq0Z5uYZ5gP8sQEaSOKPoA&amp;_nc_ss=7e289&amp;_nc_ct=RQosPBUIFQIlBAAAAA&amp;oh=00_AQRqYoa6VSCkipAk8e1JNg0CXeZryt6H6HDTLwCI-rnnXQ&amp;oe=6B09712B" alt="Post media" loading="lazy"></div></div>
+            <div class="post-footer">
+                <div class="post-stats">
+                    <span>❤️ 173</span>
+                    <span>💬 34</span>
+                    <span class="source-tag">출처: direct</span>
+                </div>
+                <a href="https://www.threads.net/@gogi_jangsa/post/DgCneAzD1wv" target="_blank" rel="noopener" class="orig-link">Threads에서 보기 ↗</a>
+            </div>
+        </div>
+        
+        <div class="author-comments-section">
+            <h3>작성자의 추가 댓글 (1개) <span class="author-badge">스레드 이어보기</span></h3>
+            <div class="author-comments-list">
+            <div class="reply-item author-comment-item">
+                <div class="reply-meta">
+                    <span class="reply-author">@gogi_jangsa</span>
+                    <span class="author-badge">작성자</span>
+                    <span class="reply-date">2026-11-22 23:26</span>
+                    <span class="reply-likes">❤️ 4</span>
+                </div>
+                <div class="reply-text">관심이 많으시네요 ㄷㄷ<br>테스트좀 해보고<br>추후에 알려드릴께요</div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <div class="replies-section">
+            <h3>댓글 (34개)</h3>
+            <div class="replies-list">
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hyeongjun4964</span>
+            <span class="reply-date">2026-11-22 20:39</span>
+            
+        </div>
+        <div class="reply-text">공유 될까요? ㅎㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gogi_jangsa</span>
+            <span class="reply-date">2026-11-22 20:42</span>
+            <span class="reply-likes">❤️ 3</span>
+        </div>
+        <div class="reply-text">물론 ㅋ<br>내가 너무 쓸데없이 프로그램 만드는거 같아서<br>서버구동은 아직 셋팅안함<br>좀만 다듬고 공유해줄께</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ustar__2</span>
+            <span class="reply-date">2026-11-22 20:21</span>
+            
+        </div>
+        <div class="reply-text">그래서 크리스마스 대박 이벤트는 뭔가요?!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gogi_jangsa</span>
+            <span class="reply-date">2026-11-22 20:23</span>
+            
+        </div>
+        <div class="reply-text">썰매를 끌어드릴까? ㅋ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ustar__2</span>
+            <span class="reply-date">2026-11-22 20:37</span>
+            
+        </div>
+        <div class="reply-text">우왕 무조건 갈게요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ggsgg0806</span>
+            <span class="reply-date">2026-11-22 22:24</span>
+            
+        </div>
+        <div class="reply-text">어머 대표님..! 공유 가능할까요..!🫶🫶</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gogi_jangsa</span>
+            <span class="reply-date">2026-11-22 23:28</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">좀더 다듬고요 ㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@surak25_official</span>
+            <span class="reply-date">2026-11-22 21:30</span>
+            
+        </div>
+        <div class="reply-text">대표님 저도 공유 좀....♡</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gogi_jangsa</span>
+            <span class="reply-date">2026-11-22 21:34</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">넵~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@surak25_official</span>
+            <span class="reply-date">2026-11-22 22:07</span>
+            
+        </div>
+        <div class="reply-text">감사합니다ㅠ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@yoontteu</span>
+            <span class="reply-date">2026-11-22 23:05</span>
+            
+        </div>
+        <div class="reply-text">오우! 저희 이모가 쓸수있게 저도 공유해주세용....😆</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gogi_jangsa</span>
+            <span class="reply-date">2026-11-22 23:28</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">일반인도 편하게 쓸수있을까 궁금하긴 하네요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@ok_woori_mirae</span>
+            <span class="reply-date">2026-11-22 21:47</span>
+            
+        </div>
+        <div class="reply-text">어떻게 만드셨는지 궁금합니다!!<br>대단하시네요👍👍</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@gogi_jangsa</span>
+            <span class="reply-date">2026-11-22 21:51</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">기획도 ai<br>코딩도 ai<br>사람이 생각하면 더 구려요 ㅋ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kimsy6162</span>
+            <span class="reply-date">2026-11-22 22:43</span>
+            <span class="reply-likes">❤️ 1</span>
+        </div>
+        <div class="reply-text">ㅋㅋ 맨날 상냥한 사모님을 불뿜는대</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@tiger_melg</span>
+            <span class="reply-date">2026-11-23 06:50</span>
+            
+        </div>
+        <div class="reply-text">와 대박</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@popopo7979.69</span>
+            <span class="reply-date">2026-11-22 21:45</span>
+            
+        </div>
+        <div class="reply-text">나두나두~~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@toming8210</span>
+            <span class="reply-date">2026-11-23 02:14</span>
+            
+        </div>
+        <div class="reply-text">저도 귱금해요 ㅎ</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@s.h.s_912</span>
+            <span class="reply-date">2026-11-22 23:02</span>
+            
+        </div>
+        <div class="reply-text">저도요 .. 대박인데요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@hyeoklee4242</span>
+            <span class="reply-date">2026-11-22 23:33</span>
+            
+        </div>
+        <div class="reply-text">공유 부탁드립니다 ai선배님</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@manddue3666</span>
+            <span class="reply-date">2026-11-22 22:47</span>
+            
+        </div>
+        <div class="reply-text">저두 궁금합니당 🫡</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@psy811222</span>
+            <span class="reply-date">2026-11-22 23:02</span>
+            
+        </div>
+        <div class="reply-text">우와~저도</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@pangpang_topper.studio</span>
+            <span class="reply-date">2026-11-22 22:09</span>
+            
+        </div>
+        <div class="reply-text">와..저도 공유 좀요~^^</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@billable.nye</span>
+            <span class="reply-date">2026-11-23 02:32</span>
+            
+        </div>
+        <div class="reply-text">저도 공유해주세여!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@_paris_ze</span>
+            <span class="reply-date">2026-11-23 10:08</span>
+            
+        </div>
+        <div class="reply-text">우와 대박이에요</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@_re_min_</span>
+            <span class="reply-date">2026-11-23 01:51</span>
+            
+        </div>
+        <div class="reply-text">엄청난 능력자시네여...</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@jayudaeyeonmaeng</span>
+            <span class="reply-date">2026-11-22 22:57</span>
+            
+        </div>
+        <div class="reply-text">저도 공유좀 부탁드립니다!!^^</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@kk005623</span>
+            <span class="reply-date">2026-11-23 09:38</span>
+            
+        </div>
+        <div class="reply-text">저도요!!</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@dkdz__</span>
+            <span class="reply-date">2026-11-23 01:12</span>
+            
+        </div>
+        <div class="reply-text">저두 공유부탁드려요~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@junyu1528</span>
+            <span class="reply-date">2026-11-23 01:15</span>
+            
+        </div>
+        <div class="reply-text">기다리고 있을께~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@on.chae_studio</span>
+            <span class="reply-date">2026-11-23 10:38</span>
+            
+        </div>
+        <div class="reply-text">우아 궁금합니다🙌🏻</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@e_unsun302</span>
+            <span class="reply-date">2026-11-23 09:57</span>
+            
+        </div>
+        <div class="reply-text">저도 공유해주세요 ~~</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@moodish0309</span>
+            <span class="reply-date">2026-11-23 10:38</span>
+            
+        </div>
+        <div class="reply-text">저도 공유좀..</div>
+        
+    </div>
+    
+    <div class="reply-item" style="">
+        <div class="reply-meta">
+            <span class="reply-author">@nada121573</span>
+            <span class="reply-date">2026-11-23 01:11</span>
+            
+        </div>
+        <div class="reply-text">나두해주라</div>
+        
+    </div>
+    </div>
+        </div>
+        
+    </div>
+</body>
+</html>
