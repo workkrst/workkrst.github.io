@@ -1,30 +1,38 @@
 {
-  "updated": "2026-10-06",
-  "repo": "workkrst/workkrst.github.io",
-  "reports": [
-    {
-      "id": "ig-benchmark",
-      "title": "인스타 벤치마킹 리포트",
-      "date": "2026-09-14",
-      "path": "ig-benchmark/",
-      "url": "https://workkrst.github.io/ig-benchmark/",
-      "desc": "@home.it_insta(22.8만)·@tem_salon(6.1만)·@remio.pick(12.5만) — 최근 1개월 인기 게시물 Top 10 씩 + 터진 원리 7가지 + 벤치마킹 액션플랜"
-    },
-    {
-      "id": "ph-daily",
-      "title": "Product Hunt 데일리",
-      "date": "2026-09-16",
-      "path": "ph-daily/",
-      "url": "https://workkrst.github.io/ph-daily/",
-      "desc": "매일 12:30 PH 오늘의 Top 5 + 댓글 번역 브리핑 (자동 수집·날짜별 누적, 관리모드에서 삭제 요청)"
-    },
-    {
-      "id": "youtube_summary",
-      "title": "YouTube 요약 아카이브",
-      "date": "2026-10-06",
-      "path": "youtube_summary/",
-      "url": "https://workkrst.github.io/youtube_summary/",
-      "desc": "유튜브 영상을 지정 프롬프트로 분석해 카드 형식으로 누적 — 클릭 시 요약 본문, 원본 영상 버튼 제공 (비공개 아카이브, noindex)"
-    }
-  ]
+ "updated": "2026-11-24",
+ "repo": "workkrst/workkrst.github.io",
+ "reports": [
+  {
+   "id": "ig-benchmark",
+   "title": "인스타 벤치마킹 리포트",
+   "date": "2026-09-14",
+   "path": "ig-benchmark/",
+   "url": "https://workkrst.github.io/ig-benchmark/",
+   "desc": "@home.it_insta(22.8만)·@tem_salon(6.1만)·@remio.pick(12.5만) — 최근 1개월 인기 게시물 Top 10 씩 + 터진 원리 7가지 + 벤치마킹 액션플랜"
+  },
+  {
+   "id": "ph-daily",
+   "title": "Product Hunt 데일리",
+   "date": "2026-09-16",
+   "path": "ph-daily/",
+   "url": "https://workkrst.github.io/ph-daily/",
+   "desc": "매일 12:30 PH 오늘의 Top 5 + 댓글 번역 브리핑 (자동 수집·날짜별 누적, 관리모드에서 삭제 요청)"
+  },
+  {
+   "id": "youtube_summary",
+   "title": "YouTube 요약 아카이브",
+   "date": "2026-10-06",
+   "path": "youtube_summary/",
+   "url": "https://workkrst.github.io/youtube_summary/",
+   "desc": "유튜브 영상을 지정 프롬프트로 분석해 카드 형식으로 누적 — 클릭 시 요약 본문, 원본 영상 버튼 제공 (비공개 아카이브, noindex)"
+  },
+  {
+   "id": "ig-scrap",
+   "title": "인스타 아카이브",
+   "date": "2026-11-24",
+   "path": "ig-scrap/",
+   "url": "https://workkrst.github.io/ig-scrap/",
+   "desc": "인스타 게시물 소장용 — 주소 보내면 저장, 임베드로 바로 보고 클릭 시 원본 이동 (비공개 아카이브, noindex)"
+  }
+ ]
 }
