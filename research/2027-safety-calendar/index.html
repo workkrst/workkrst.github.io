@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2027년 안전보건 연간 업무 캘린더 (Safety & Health Compliance Calendar 2027)</title>
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-light: #3b82f6;
+    --primary-bg: #eff6ff;
+    --legal: #b91c1c;
+    --legal-bg: #fef2f2;
+    --legal-border: #fecaca;
+    --task: #047857;
+    --task-bg: #ecfdf5;
+    --task-border: #a7f3d0;
+    --season: #b45309;
+    --season-bg: #fffbeb;
+    --season-border: #fde68a;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    color: var(--gray-800);
+    background-color: var(--gray-50);
+    padding: 16px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+  }
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 36px 28px 28px;
+    border-bottom: 4px solid var(--primary-light);
+  }
+  .badge-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    color: #93c5fd;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+  .header p {
+    font-size: 14.5px;
+    color: #cbd5e1;
+    margin-bottom: 16px;
+  }
+  .notice-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid #f59e0b;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 12.5px;
+    color: #fde68a;
+    line-height: 1.5;
+  }
+  /* Intro Summary Table */
+  .section-intro {
+    padding: 24px 28px 12px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 2px;
+  }
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 14px;
+  }
+  table.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: left;
+  }
+  table.summary-table th {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    font-weight: 700;
+    padding: 10px 12px;
+    border-bottom: 2px solid var(--gray-200);
+    white-space: nowrap;
+  }
+  table.summary-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-800);
+  }
+  table.summary-table tr:hover {
+    background: #f8fafc;
+  }
+  .cond-note {
+    font-size: 11.5px;
+    color: var(--gray-600);
+    display: block;
+    margin-top: 2px;
+  }
+  /* Calendar Cards */
+  .calendar-content {
+    padding: 24px 28px;
+  }
+  .month-card {
+    background: #ffffff;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .month-card:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  }
+  .month-header {
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 14px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .month-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--primary);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .month-info {
+    font-size: 12.5px;
+    color: var(--gray-600);
+    font-weight: 500;
+  }
+  .month-keyword {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  .card-body {
+    padding: 18px 20px;
+  }
+  /* Category Block */
+  .cat-block {
+    margin-bottom: 16px;
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .cat-block:last-child {
+    margin-bottom: 0;
+  }
+  .cat-block.legal {
+    background: var(--legal-bg);
+    border-left: 4px solid var(--legal);
+  }
+  .cat-block.task {
+    background: var(--task-bg);
+    border-left: 4px solid var(--task);
+  }
+  .cat-block.season {
+    background: var(--season-bg);
+    border-left: 4px solid var(--season);
+  }
+  .cat-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .cat-block.legal .cat-title { color: var(--legal); }
+  .cat-block.task .cat-title { color: var(--task); }
+  .cat-block.season .cat-title { color: var(--season); }
+  
+  ul.item-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  ul.item-list li {
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 14px;
+  }
+  ul.item-list li:last-child {
+    margin-bottom: 0;
+  }
+  ul.item-list li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    font-weight: bold;
+  }
+  .cat-block.legal ul.item-list li::before { color: var(--legal); }
+  .cat-block.task ul.item-list li::before { color: var(--task); }
+  .cat-block.season ul.item-list li::before { color: var(--season); }
+
+  .law-tag {
+    display: inline-block;
+    background: #fee2e2;
+    color: #991b1b;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+  }
+  .cond-tag {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #334155;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+  }
+  .item-desc {
+    display: block;
+    color: var(--gray-700);
+    margin-top: 2px;
+  }
+  /* Footer */
+  .footer {
+    background: var(--gray-100);
+    border-top: 1px solid var(--gray-200);
+    padding: 24px 28px;
+    font-size: 12.5px;
+    color: var(--gray-600);
+  }
+  .footer-links {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-links span {
+    font-weight: 600;
+    color: var(--gray-700);
+  }
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+    .header { padding: 24px 18px 20px; }
+    .header h1 { font-size: 21px; }
+    .section-intro, .calendar-content, .footer { padding: 16px 16px; }
+    .month-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="badge-tag">2027 EHS Lead Magnet Resource</div>
+    <h1>2027년 안전보건 연간 업무 캘린더</h1>
+    <p>중소·중견기업 및 안전보건 실무자(15년차 실무 검수)를 위한 월별 법정 의무·실천 가이드</p>
+    <div class="notice-box">
+      <strong>⚠️ 법령 적용 기준 안내:</strong> 본 캘린더의 법정 주기 및 기준은 2026년 11월 기준 관련 법령(「산업안전보건법」, 「중대재해처벌법」 및 고용노동부 고시)을 바탕으로 작성되었습니다. 사업장 적용 전 및 발행 시점의 최신 법령 개정 여부를 반드시 확인하시기 바랍니다. (업종·규모·공정 유해요인에 따른 조건부 적용사항 필히 점검)
+    </div>
+  </header>
+
+  <!-- Summary Table Section -->
+  <section class="section-intro">
+    <h2 class="section-title">핵심 법정 의무 주기 총괄 가이드</h2>
+    <div class="table-responsive">
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>의무 항목</th>
+            <th>법적 주기 및 기준</th>
+            <th>관련 법조문</th>
+            <th>조건 및 비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="3" style="font-weight: 700; background: #fafafa;">안전보건<br>교육</td>
+            <td>근로자 정기교육</td>
+            <td>사무직·판매직: 매분기 3시간 / 비사무직(생산): 매분기 6시간</td>
+            <td>산안법 제29조, 시행규칙 제26조 [별표 4]</td>
+            <td><span class="cond-note">상시 50인 미만 도매·숙박·음식업 등은 기준시간의 1/2 감면</span></td>
+          </tr>
+          <tr>
+            <td>관리감독자 정기교육</td>
+            <td>연간 16시간 이상 (전년도 무재해 시 8시간 감면 가능)</td>
+            <td>시행규칙 제26조 [별표 4]</td>
+            <td><span class="cond-note">상반기/하반기 분할 실시 권장 (우편/원격통신 연계 가능)</span></td>
+          </tr>
+          <tr>
+            <td>특별안전보건교육</td>
+            <td>16시간 이상 (최초 작업 전 4시간 이상, 나머지 12시간 분할)</td>
+            <td>시행규칙 제26조 [별표 4, 5]</td>
+            <td><span class="cond-note">단기간(2개월 이내) 또는 간헐적(연 60일 이하) 작업은 2시간 이상</span></td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="font-weight: 700; background: #fafafa;">작업환경<br>측정</td>
+            <td>정기 측정</td>
+            <td>반기 1회 이상 (상반기 1회, 하반기 1회)</td>
+            <td>산안법 제125조, 시행규칙 제190조</td>
+            <td><span class="cond-note">측정 후 30일 이내 지방고용노동관서 보고 및 근로자 설명회</span></td>
+          </tr>
+          <tr>
+            <td>주기 단축/연장</td>
+            <td>단축(3개월 1회) / 연장(1년 1회)</td>
+            <td>시행규칙 제190조 제2항, 제3항</td>
+            <td><span class="cond-note">발암성물질 초과시 3개월 / 소음 2회 연속 85dB 미만 등 요건시 1년</span></td>
+          </tr>
+          <tr>
+            <td rowspan="2" style="font-weight: 700; background: #fafafa;">건강진단</td>
+            <td>일반건강진단</td>
+            <td>비사무직 연 1회 / 사무직 2년에 1회</td>
+            <td>산안법 제129조, 시행규칙 제197조</td>
+            <td><span class="cond-note">국민건강보험공단 건강검진과 연계 갈음 가능</span></td>
+          </tr>
+          <tr>
+            <td>특수건강진단</td>
+            <td>유해요인별 주기 (벤젠 2개월, 기타 유기화합물 6개월, 분진·소음 12~24개월)</td>
+            <td>산안법 제130조, 시행규칙 [별표 23]</td>
+            <td><span class="cond-note">신규 배치 시 반드시 '배치전 건강진단' 선행 필수</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #fafafa;">위험성평가</td>
+            <td>정기 위험성평가</td>
+            <td>매년 1회 이상 (최초평가 후 1년 주기)</td>
+            <td>산안법 제36조, 고용노동부고시</td>
+            <td><span class="cond-note">기존 평가결과 적정성 재검토 방식으로 갈음 가능, 근로자 참여 필수</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #fafafa;">위원회</td>
+            <td>산업안전보건위원회</td>
+            <td>매 분기 1회 이상 정기회의 개최</td>
+            <td>산안법 제24조, 시행령 제37조</td>
+            <td><span class="cond-note">제조업 등 상시 50인 이상(기타 업종 100~300인 이상), 회의록 3년 보존</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #fafafa;">안전검사</td>
+            <td>유해·위험기계 검사</td>
+            <td>설치 3년 이내 최초, 이후 2년마다 (크레인, 프레스, 압력용기 등)</td>
+            <td>산안법 제93조, 시행규칙 제126조</td>
+            <td><span class="cond-note">만료일 30일 전 신청 필수 (건설현장은 6개월, PSM 우수는 4년)</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; background: #fafafa;">중처법 점검</td>
+            <td>안전보건체계 이행점검</td>
+            <td>반기 1회 이상 (상반기 1회, 하반기 1회)</td>
+            <td>중대재해처벌법 시행령 제4조, 제5조</td>
+            <td><span class="cond-note">경영책임자 보고 및 필요 조치(예산/인력/위험개선) 이행 증빙 보관</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Monthly Calendar Section -->
+  <main class="calendar-content">
+
+    <!-- 1월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>01월</span>
+          <span class="month-keyword">방침선포 · 정부지원사업 · 한랭질환</span>
+        </div>
+        <div class="month-info">2027.1.1(금) 신정 | 총 31일 | 범정부 한파 대책기간</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>1분기 근로자 정기안전보건교육 개시</strong> <span class="law-tag">산안법 제29조</span> <span class="cond-tag">전 직원 대상</span>
+              <span class="item-desc">사무직 분기 3시간 이상, 비사무직(현장 생산직) 분기 6시간 이상 교육 계획 수립 및 1회차 교육 실시.</span>
+            </li>
+            <li>
+              <strong>중대재해처벌법 2026 하반기 점검결과 보고 및 2027 이행계획 수립</strong> <span class="law-tag">중처법 시행령 제4조·제5조</span>
+              <span class="item-desc">경영책임자 대상 전년도 하반기 안전보건관리체계 이행결과 보고 및 2027년 이행 목표·예산 집행계획 최종 확정.</span>
+            </li>
+            <li>
+              <strong>차년도 안전보건계획 이사회 보고·승인</strong> <span class="law-tag">산안법 제14조</span> <span class="cond-tag">상시 500인 이상 / 시공능력 상위 1,000위</span>
+              <span class="item-desc">해당 기업은 매년 1월 중 안전보건 경영방침, 조직·예산, 전년도 재해현황 등을 이사회에 보고하고 승인받아야 함.</span>
+            </li>
+            <li>
+              <strong>화학물질 취급 목록 전수점검 및 MSDS 게시 상태 확인</strong> <span class="law-tag">산안법 제114조·제115조</span>
+              <span class="item-desc">신규 물질 도입 현황 파악, 물질안전보건자료 비치 여부 및 소분용기 경고표지 훼손 상태 점검.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>안전보건공단 정부 재정지원사업 조기 신청 (1월 2일 접수 시작):</strong> 클린사업장 조성지원(스마트안전장비, 유해위험요인 시설개선 보조금)은 1~2월 중 예산이 조기 소진되므로 연초 즉시 신청.</li>
+            <li><strong>연간 지정 전문기관(작업환경측정·특수건강진단·안전관리전문기관) 계약 체결:</strong> 연초 조기 계약을 완료해야 희망 시기(상반기 4~5월, 하반기 9~10월)에 차질 없이 수검 가능.</li>
+            <li><strong>동절기 보랭·방한 보호구(방한화, 방한모, 핫팩 등) 재고조사 및 추가 지급.</strong></li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">❄️ 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>고용노동부 한파(한랭질환) 집중 대책기간 (11.15 ~ 3.15):</strong> '따뜻한 옷, 따뜻한 물, 따뜻한 쉼터' 3대 기본수칙 이행, 한파특보 발령 시 옥외작업 시간대 조정.</li>
+            <li><strong>동절기 화재·폭발 위험:</strong> 난방기구 과열, 가설 전열기구 사용 급증에 따른 분전함 누전 점검 및 소화기 점검.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>02월</span>
+          <span class="month-keyword">설 연휴 안전 · 해빙기 사전점검 · 관리감독자</span>
+        </div>
+        <div class="month-info">2027.2.6~2.8 설날 연휴, 2.9(화) 대체공휴일 | 총 28일</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>2027년 위험성평가 정기실시 계획 수립</strong> <span class="law-tag">산안법 제36조</span> <span class="law-tag">고용부고시</span>
+              <span class="item-desc">최초평가 후 1년 주기 정기평가 추진 일정(평가단 구성, 근로자 참여 계획, 일정표) 수립. (상시평가 도입 사업장은 월별 운영계획 확정)</span>
+            </li>
+            <li>
+              <strong>관리감독자 정기안전보건교육 실시 (1차)</strong> <span class="law-tag">시행규칙 제26조 [별표 4]</span>
+              <span class="item-desc">관리감독자 연간 16시간 중 상반기분(8시간) 교육 일정 편성 및 자체교육/전문기관 위탁 진행.</span>
+            </li>
+            <li>
+              <strong>산업재해 발생 시 1개월 이내 보고</strong> <span class="law-tag">시행규칙 제73조</span>
+              <span class="item-desc">3일 이상 휴업 재해 발생 시 발생일로부터 1개월 이내 관할 지방고용노동관서에 산업재해조사표 제출 필수. (근로자대표 날인 필수)</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>설 연휴 전후 가동중지·재가동 안전점검:</strong> 연휴 전(2.5 금) 위험설비 전원·밸브 잠금(LOTO) 확인, 연휴 직후(2.10 수) 공압·가스 배관 누출 점검 후 순차 재가동.</li>
+            <li><strong>작업 전 10분 안전미팅(TBM) 일상화 점검:</strong> 반장·조장 등 관리감독자 TBM 활동일지 작성 및 위험요인 피드백 프로세스 점검.</li>
+            <li><strong>2월 안전순회점검 실시:</strong> 사업장 전 공정 순회점검 및 즉시 시정조치 요구 (산안법 시행령 제18조).</li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">🌱 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>해빙기(2월 중순~3월) 지반 약화 대비:</strong> 결빙되었던 토사가 녹으면서 발생하는 옹벽·석축 균열, 옥외 크레인 주행레일 지반 침하, 지하 매설 배관 크랙 사전 전수점검.</li>
+            <li><strong>한파 지속기 옥외작업자 동상·저체온증 예방:</strong> 기온 급강하 시 교대근무 주기 단축(1시간 작업 후 15분 이상 휴식).</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>03월</span>
+          <span class="month-keyword">1분기 마감 · 산업안전보건위원회 · 해빙기</span>
+        </div>
+        <div class="month-info">2027.3.1(월) 삼일절 | 총 31일 | 1분기 종료의 달</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>1분기 산업안전보건위원회 정기회의 개최</strong> <span class="law-tag">산안법 제24조</span> <span class="law-tag">시행령 제37조</span> <span class="cond-tag">상시 50~300인 이상</span>
+              <span class="item-desc">분기 1회 이상 정기회의 개최 필수. 근로자위원·사용자위원 동수 구성, 의결 안건 심의, 회의록 작성 및 3년간 보존. (50인 미만은 노사안전협의체 운영 권장)</span>
+            </li>
+            <li>
+              <strong>1분기 근로자 정기안전보건교육 완료</strong> <span class="law-tag">산안법 제29조</span>
+              <span class="item-desc">3월 31일까지 1분기 기준 교육시간(사무직 3시간, 생산직 6시간) 이수 완료 및 교육일지·서명부 편철.</span>
+            </li>
+            <li>
+              <strong>상반기 작업환경측정 예비조사 및 사전일정 확정</strong> <span class="law-tag">산안법 제125조</span>
+              <span class="item-desc">유해인자 노출공정 및 취급 화학물질 변동내역 확인, 측정기관 방문 일정 조율.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>1분기 아차사고(Near Miss) 제안 포상:</strong> 현장 근로자가 발굴한 위험요인 개선 건수 집계 및 우수 제안자 포상으로 자율 안전참여 분위기 고취.</li>
+            <li><strong>해빙기 노사 합동 안전점검:</strong> 관리감독자 및 근로자대표 합동으로 사업장 외곽 사면, 굴착구역, 가설 비계 전도위험 집중 점검.</li>
+            <li><strong>1분기 안전보건관리비 집행내역 결산:</strong> 개인보호구 구매, 안전시설 개선비용 집행 현황 확인 및 예산 진도율 체크.</li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">🔥 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>봄철 건조기 대형 산불 및 공장 외곽 화재:</strong> 공장 인근 임야 화재 확산 방지, 옥외 흡연구역 통제 및 가연물 방치 금지.</li>
+            <li><strong>환절기 춘곤증으로 인한 집중력 저하:</strong> 중장비(지게차 등) 운행 및 회전체 취급 작업 전 스트레칭 및 TBM 시 안전의식 환기.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>04월</span>
+          <span class="month-keyword">작업환경측정 · 특수건강진단 · 밀폐공간</span>
+        </div>
+        <div class="month-info">2027.4.1(목) | 총 30일 | 상반기 보건관리 집중월</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>상반기 작업환경측정 실시</strong> <span class="law-tag">산안법 제125조</span> <span class="law-tag">시행규칙 제190조</span> <span class="cond-tag">반기 1회</span>
+              <span class="item-desc">소음, 분진, 유기화합물 등 유해인자 노출 작업장 측정 실시. (측정 완료일로부터 30일 이내 고용노동부 보고 및 근로자 설명회 개최 의무)</span>
+            </li>
+            <li>
+              <strong>상반기 특수건강진단 실시 착수</strong> <span class="law-tag">산안법 제130조</span> <span class="law-tag">시행규칙 [별표 23]</span>
+              <span class="item-desc">유해요인별 정기 주기(벤젠 6개월, 소음·분진 12~24개월, 기타 유기화합물 12개월) 도래자 검진 실시. (신규자는 배치 전 건강진단 필수)</span>
+            </li>
+            <li>
+              <strong>안전검사 도래 기계·설비 신청</strong> <span class="law-tag">산안법 제93조</span> <span class="cond-tag">주기 만료 30일 전</span>
+              <span class="item-desc">크레인, 프레스, 압력용기, 사출성형기 등 2년 주기(최초 3년) 만료일 30일 전 검사기관(안전보건공단 등)에 신청서 제출.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>밀폐공간(집수정, 정화조, 저장탱크, 환기닥트) 보유 실태 전수점검:</strong> 출입금지 표지 부착, 산소·유해가스 농도측정기 교정(Calibration), 송기마스크 점검.</li>
+            <li><strong>국소배기장치 자체검사 및 풍속 점검:</strong> 후드 제어풍속 기준 충족 여부 측정 및 닥트 내 퇴적 분진 청소.</li>
+            <li><strong>도급사업 안전보건협의체 4월 회의 개최:</strong> 사내 수급업체 대표자 참석 정기협의 및 작업공정 간 간섭 위험(동시작업) 조율 (산안법 제64조).</li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">💨 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>기온 상승에 따른 밀폐공간 질식사고 위험 급증:</strong> 미생물 증식으로 인한 산소결핍 및 황화수소 중독 위험 발생. (작업 전 가스농도 측정, 환기팬 가동 철저)</li>
+            <li><strong>봄철 황사 및 고농도 초미세먼지 경보:</strong> 옥외작업자 KF94/방진마스크 지급 및 옥외작업 단축 기준 검토.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>05월</span>
+          <span class="month-keyword">폭염대책 수립 · 위험성평가 실시 · 비상대응</span>
+        </div>
+        <div class="month-info">2027.5.5(수) 어린이날, 5.13(목) 부처님오신날 | 총 31일</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>2027년도 정기 위험성평가 현장 유해위험요인 전수조사</strong> <span class="law-tag">산안법 제36조</span> <span class="cond-tag">근로자 참여 필수</span>
+              <span class="item-desc">관리감독자 및 현장 작업자가 직접 참여하여 아차사고, 기계·기구 위험성, 화학물질 위험성 도출 및 평가표 작성.</span>
+            </li>
+            <li>
+              <strong>신규 도입 화학물질 MSDS 교육 및 특별교육</strong> <span class="law-tag">시행규칙 제169조</span>
+              <span class="item-desc">공정 변경이나 세척제·도료 등 신규 도입 물질 취급 근로자 대상 유해성·비상조치 교육 실시.</span>
+            </li>
+            <li>
+              <strong>특수건강진단 1차 유소견자(C1, C2, D1, D2) 사후관리 조치</strong> <span class="law-tag">시행규칙 제208조</span>
+              <span class="item-desc">의사 소견에 따른 작업전환, 보호구 추가 지급, 추적검사 일정 수립 및 개인별 면담 기록 유지.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>하절기 폭염·온열질환 예방 장비·물품 조기 확보 (5월 중순 전 완료):</strong> 제빙기, 냉음료대 점검, 그늘막 쉼터 설치, 쿨토시·식염포도당 사전 대량 구매. (7월 품귀 대비)</li>
+            <li><strong>중대재해 대비 비상대응 훈련 실시 (연 1회 이상 필수):</strong> 화재 대피훈련 및 밀폐공간 재해자 구출 시나리오 모의훈련 (중처법 시행령 제4조 제8호).</li>
+            <li><strong>위험성평가 개선대책 이행 일정표 작성:</strong> 도출된 위험요인 중 고위험(상) 항목에 대한 즉시 개선 예산 배정.</li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">☀️ 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>고용노동부 폭염(온열질환) 대책기간 개시 (5월 15일 ~ 9월 30일):</strong> '물, 그늘(바람), 휴식' 폭염안전 5대 수칙 현장 포스터 부착 및 안내방송 실시.</li>
+            <li><strong>때이른 이상고온 현상:</strong> 5월 하순 낮 최고기온 30℃ 육박 시 옥외 작업자 수분 섭취 및 적정 휴식 부여.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>06월</span>
+          <span class="month-keyword">2분기 마감 · 중처법 상반기 점검 · 풍수해 대비</span>
+        </div>
+        <div class="month-info">2027.6.6(일) 현충일, 6.7(월) 대체공휴일 | 총 30일 | 상반기 결산의 달</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>2분기 산업안전보건위원회 정기회의 개최</strong> <span class="law-tag">산안법 제24조</span> <span class="law-tag">시행령 제37조</span> <span class="cond-tag">분기 1회</span>
+              <span class="item-desc">위험성평가 결과 심의, 하절기 안전보건 대책 의결, 상반기 산재 발생 현황 및 개선대책 검토.</span>
+            </li>
+            <li>
+              <strong>2분기 근로자 정기안전보건교육 완료</strong> <span class="law-tag">산안법 제29조</span>
+              <span class="item-desc">6월 30일까지 2분기 교육(사무직 3시간, 생산직 6시간) 이수 완료. 상반기 누적 시간 미달자 보충교육 실시.</span>
+            </li>
+            <li>
+              <strong>중대재해처벌법 상반기 의무이행 자체 점검 실시</strong> <span class="law-tag">중처법 시행령 제4조·제5조</span> <span class="cond-tag">반기 1회 필수</span>
+              <span class="item-desc">안전보건예산 집행률, 관계법령 이행실태, 관리감독자 업무평가, 종사자 의견수렴 등 체크리스트 전수점검.</span>
+            </li>
+            <li>
+              <strong>상반기 작업환경측정 완료 및 결과보고</strong> <span class="law-tag">산안법 제125조</span>
+              <span class="item-desc">상반기 측정 최종 완료 및 측정결과표 사업장 게시, 해당 근로자 통보.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>장마철·풍수해 대비 종합 안전점검:</strong> 배수로 준설, 양수기 시운전, 비상 발전기 점검, 공장 옥상 방수 상태 확인.</li>
+            <li><strong>습윤 작업장 감전사고 예방 집중점검:</strong> 이동형 전동공구 누전차단기(정격감도 15mA) 부착, 전선 피복 손상 전수교체, 접지 저항 측정.</li>
+            <li><strong>상반기 안전활동 우수 제안 및 무재해 부서 포상.</strong></li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">🌧️ 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>장마철 집중호우 및 침수:</strong> 지하 기계실, 전기실 침수 방지용 차수판 점검 및 빗물 유입 모니터링 체계 가동.</li>
+            <li><strong>감전 사망사고 급증기:</strong> 습기로 인한 인체 저항 감소(1/25 수준)로 감전 위험 극대화. 젖은 손 조작 절대 금지 교육.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>07월</span>
+          <span class="month-keyword">산업안전보건의 달 · KISS 2027 · 혹서기 폭염</span>
+        </div>
+        <div class="month-info">2027.7.5(월)~7.8(목) 국제안전보건전시회(킨텍스) | 총 31일</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>3분기 근로자 정기안전보건교육 개시</strong> <span class="law-tag">산안법 제29조</span>
+              <span class="item-desc">3분기 교육계획 수립 (하절기 온열질환 예방, 태풍·감전 재해 예방 특화과목 편성).</span>
+            </li>
+            <li>
+              <strong>중대재해처벌법 상반기 점검결과 경영책임자 보고</strong> <span class="law-tag">중처법 시행령 제4조</span>
+              <span class="item-desc">6월 실시한 상반기 점검결과를 대표이사에게 서면 보고하고 발견된 미흡사항에 대한 추가 예산·인력 개선지시 수령.</span>
+            </li>
+            <li>
+              <strong>체감온도 33℃/35℃ 이상 시 휴식 부여 의무 이행</strong> <span class="law-tag">산안규칙 제566조·제567조</span>
+              <span class="item-desc">폭염경보 발령 시 매시간 10~15분 휴식 부여, 무더위 시간대(14~17시) 옥외작업 중지 권고 준수.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>2027 국제안전보건전시회(KISS 2027, 7.5~8 킨텍스 제2전시장) 참관:</strong> 스마트 안전장비, AI 영상관제, 신형 보호구 실물 확인 및 공급업체 네트워킹.</li>
+            <li><strong>사내 '안전강조주간' 캠페인 전개:</strong> 고용부 산업안전보건의 달과 연계하여 안전슬로건 공모전, 우수 작업자 격려 행사 진행.</li>
+            <li><strong>하계휴가 대비 특별 안전관리 계획 수립:</strong> 주요 공정 셧다운(Shut-down) 기간 정비보수 작업 위험성평가 및 외부 정비업체 안전관리.</li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">🔥 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>혹서기 열사병 중대재해 집중 발생기:</strong> 고용노동부 온열질환 예방 특별감독 가동. 식염정·음용수 비치 및 쿨링조끼 착용 관리.</li>
+            <li><strong>하계휴가 전후 긴장 완화로 인한 재해:</strong> 휴가 전 들뜬 분위기, 휴가 복귀 후 생체리듬 부적응으로 인한 기계 끼임·추락 주의.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 8월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>08월</span>
+          <span class="month-keyword">폭염 절정 · 태풍 내습 · 하반기 검진 준비</span>
+        </div>
+        <div class="month-info">2027.8.15(일) 광복절, 8.16(월) 대체공휴일 | 총 31일</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>지게차 등 이동식 차량계 하역운반기계 안전장치 점검</strong> <span class="law-tag">산안규칙 제179조~제183조</span>
+              <span class="item-desc">후방카메라, 후진경보기, 안전벨트, 대형 룸미러 정상 작동 상태 및 면허 소지자 운전 여부 불시 점검.</span>
+            </li>
+            <li>
+              <strong>유해·위험작업 특별안전보건교육 이수 확인</strong> <span class="law-tag">시행규칙 제26조 [별표 5]</span>
+              <span class="item-desc">하계 셧다운 보수공사(용접, 고소작업, 밀폐공간 등) 투입 작업자 대상 16시간(일용 2시간) 특별교육 누락 점검.</span>
+            </li>
+            <li>
+              <strong>일반·특수건강진단 미수검자 1차 독려</strong> <span class="law-tag">산안법 제129조·제130조</span>
+              <span class="item-desc">연말 수검자 몰림 현상 방지를 위해 대상 근로자 개인별 검진 일정 확인 및 예약 독려 공문 발송.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>태풍 내습 대비 야외 적재물 결속 및 배수로 재점검:</strong> 강풍 대비 가설 펜스 보강, 옥외 크레인 스톱퍼 고정(윈드록 체결).</li>
+            <li><strong>현장 휴게실 냉방 환경 및 위생 점검:</strong> 냉방온도 적정 유지(26~28℃), 음용수 위생 상태 및 제빙기 세균 번식 방지 소독.</li>
+            <li><strong>하반기 작업환경측정 대상 라인 공정 변동조사 착수.</strong></li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">🌀 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>연중 최고 체감온도 기록 기간:</strong> 옥외 건설·플랜트·조선·물류 현장 온열질환 발생 초비상. 작업중지권 적극 보장.</li>
+            <li><strong>가을 태풍 동반 폭우:</strong> 강풍으로 인한 구조물 낙하·비래 위험 및 절개지 토사 붕괴 위험 감시.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 9월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>09월</span>
+          <span class="month-keyword">추석 연휴 안전 · 3분기 마감 · 산안위</span>
+        </div>
+        <div class="month-info">2027.9.14(화)~9.16(목) 추석 연휴 | 총 30일 | 폭염 대책기간 종료(9.30)</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>3분기 산업안전보건위원회 정기회의 개최</strong> <span class="law-tag">산안법 제24조</span> <span class="law-tag">시행령 제37조</span> <span class="cond-tag">분기 1회</span>
+              <span class="item-desc">하반기 안전보건 추진과제 검토, 3분기 위험성평가 개선 이행현황 보고, 추석 연휴 안전관리 대책 의결.</span>
+            </li>
+            <li>
+              <strong>3분기 근로자 정기안전보건교육 완료</strong> <span class="law-tag">산안법 제29조</span>
+              <span class="item-desc">9월 30일까지 3분기 교육(사무직 3시간, 생산직 6시간) 이수 완료 및 증빙 편철.</span>
+            </li>
+            <li>
+              <strong>하반기 작업환경측정 실시 착수</strong> <span class="law-tag">산안법 제125조</span>
+              <span class="item-desc">하반기 측정 대상 부서 일정 확정 및 9~10월 중 시료 채취 진행.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>추석 연휴 전후 가동중지·재가동 안전점검:</strong> 연휴 전(9.13 월) 설비 전원·유류·가스 밸브 차단 확인, 연휴 직후(9.17 금) 화재·누출 이상 유무 점검 후 가동.</li>
+            <li><strong>연휴 기간 비상연락망 최신화:</strong> 지자체, 관할 소방서, 병원, 지정 안전관리전문기관, 사내 비상대기조 연락체계 정비.</li>
+            <li><strong>사업장 5S(정리·정돈·청소·청결·습관화) 대청소의 날 운영.</strong></li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">🍂 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>추석 연휴 전 조급증에 따른 안전사고:</strong> 생산 납기 준수를 위한 무리한 돌관작업 및 안전장치 해제 행위 엄격 차단.</li>
+            <li><strong>환절기 큰 일교차:</strong> 9월 하순 아침저녁 쌀쌀해지며 혈관 수축으로 인한 뇌심혈관계 질환 발생 위험 증가.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>10월</span>
+          <span class="month-keyword">하반기 측정·검진 마감 · 지게차 안전 · 소방점검</span>
+        </div>
+        <div class="month-info">2027.10.3 개천절(10.4 대체), 10.9 한글날(10.11 대체) | 총 31일</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>4분기 근로자 정기안전보건교육 개시</strong> <span class="law-tag">산안법 제29조</span>
+              <span class="item-desc">동절기 한파 및 화재 예방을 주제로 4분기 교육계획 수립 및 실시.</span>
+            </li>
+            <li>
+              <strong>하반기 특수건강진단 및 일반건강진단 수검 집중 독려</strong> <span class="law-tag">산안법 제129조·제130조</span>
+              <span class="item-desc">11~12월 검진기관 예약 포화 상태에 대비하여 10월 말까지 전 직원 수검률 90% 달성 목표 추진.</span>
+            </li>
+            <li>
+              <strong>하반기 작업환경측정 완료 및 보고서 수령</strong> <span class="law-tag">산안법 제125조</span>
+              <span class="item-desc">측정기관으로부터 결과표 수령 후 노출기준 초과 공정에 대한 즉시 시설개선 계획 수립 및 노동부 보고.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>소방시설(소화전, 스프링클러, 감지기) 합동 정기점검:</strong> 전문 소방시설관리업체와 동절기 대비 소화배관 보온상태 및 밸브 작동 시험.</li>
+            <li><strong>안전검사 대상 기계·기구 연간 이력카드 갱신:</strong> 크레인, 리프트, 압력용기 등 합격증명서 부착 여부 및 안전장비(방호장치) 작동 점검.</li>
+            <li><strong>2028년 안전보건 예산안 사전 수요조사:</strong> 현장 부서별 안전장비, 방호울 설치, 환기시설 개선 소요 예산 취합.</li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">🌾 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>건조기 화재 발생 위험:</strong> 사내 야외 가연물 적재장 화재 취약구역 소화기 증설 및 불티 비산방지포 관리.</li>
+            <li><strong>야외 수확기 쯔쯔가무시·진드기 매개 감염병:</strong> 외곽 녹지대 예초작업 근로자 기피제 지급 및 긴소매 보호복 착용 의무화.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 11월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>11월</span>
+          <span class="month-keyword">한랭질환 대책 가동 · 불조심 강조의 달 · 차년도 예산</span>
+        </div>
+        <div class="month-info">2027.11.1(월) | 총 30일 | 범정부 한파 대책기간 개시(11.15)</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>2027년 위험성평가 결과 최종 검토 및 개선 이행 확인</strong> <span class="law-tag">산안법 제36조</span>
+              <span class="item-desc">연간 도출된 위험요인 감소대책의 실제 현장 완료 여부 전수 확인 및 차년도 이월 과제 분류.</span>
+            </li>
+            <li>
+              <strong>화학물질 MSDS 제조·수입 변경사항 점검</strong> <span class="law-tag">시행규칙 제159조</span>
+              <span class="item-desc">구성성분, 함유량 또는 유해성 정보가 변경된 물질에 대해 공단 물질안전보건자료시스템에 지체 없이 변경 제출.</span>
+            </li>
+            <li>
+              <strong>차년도 안전보건관리계획서(안) 초안 작성 착수</strong> <span class="law-tag">산안법 제14조</span> <span class="law-tag">중처법</span>
+              <span class="item-desc">경영방침, 2028년 안전보건목표(재해율, 교육이수율 등), 세부 실행과제 편성.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>동절기 한파 대비 시설 전수 보온 조치:</strong> 옥외 소방배관 및 용수 배관 열선 시공 상태, 동파 방지 밸브 작동 점검, 현장 휴게실 난방기 사전 점검.</li>
+            <li><strong>동절기 보랭·방한용품(방한복, 방한화, 핫팩) 현장 배부 완료.</strong></li>
+            <li><strong>불조심 강조의 달(11월) 소화훈련 및 소화기 교체:</strong> 노후 소화기(내구연한 10년 경과분) 교체 및 소화전 방수 훈련 실시.</li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">❄️ 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>고용노동부 한파(한랭질환) 대책기간 가동 (11월 15일 ~ 다음 해 3월 15일):</strong> 옥외 근로자 건강보호 및 따뜻한 쉼터 설치 점검.</li>
+            <li><strong>난방기구 과열 및 무단 전열기 사용 화재:</strong> 공장 내 비인가 전열기구(코일형 히터 등) 일제 수거 및 문어발식 콘센트 정비.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 12월 -->
+    <article class="month-card">
+      <div class="month-header">
+        <div class="month-title">
+          <span>12월</span>
+          <span class="month-keyword">연간 총결산 · 4분기 산안위 · 중처법 하반기 점검</span>
+        </div>
+        <div class="month-info">2027.12.25(토) 성탄절, 12.27(월) 대체공휴일 | 총 31일 | 연간 결산의 달</div>
+      </div>
+      <div class="card-body">
+        <div class="cat-block legal">
+          <div class="cat-title">⚖️ 법정 의무 일정</div>
+          <ul class="item-list">
+            <li>
+              <strong>4분기 산업안전보건위원회 정기회의 개최</strong> <span class="law-tag">산안법 제24조</span> <span class="law-tag">시행령 제37조</span> <span class="cond-tag">분기 1회</span>
+              <span class="item-desc">2027년 안전보건 연간 실적 심의 및 2028년 안전보건계획(안) 노사 합의 의결.</span>
+            </li>
+            <li>
+              <strong>4분기 근로자 정기교육 및 관리감독자 연간 16시간 이수 마감</strong> <span class="law-tag">산안법 제29조</span>
+              <span class="item-desc">12월 31일까지 전 직원 4분기 교육 및 관리감독자 연간 16시간 미이수자 발생 시 과태료 처분 대상이 되므로 전수 마감.</span>
+            </li>
+            <li>
+              <strong>일반건강진단 및 특수건강진단 100% 수검 완료</strong> <span class="law-tag">산안법 제129조·제130조</span>
+              <span class="item-desc">미수검자에 대한 최후 경고 및 수검 증빙 취합. (사업주 귀책 미실시 과태료 방지)</span>
+            </li>
+            <li>
+              <strong>중대재해처벌법 하반기 의무이행 자체점검 실시</strong> <span class="law-tag">중처법 시행령 제4조·제5조</span> <span class="cond-tag">반기 1회</span>
+              <span class="item-desc">하반기 안전예산 집행 실적, 안전보건관리책임자 평가, 수급인 이행실적 종합 평가.</span>
+            </li>
+            <li>
+              <strong>2028년 안전보건계획 최종 확정 및 이사회 승인</strong> <span class="law-tag">산안법 제14조</span>
+              <span class="item-desc">500인 이상 기업 이사회 보고 및 전사 안전경영방침 공표.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="cat-block task">
+          <div class="cat-title">📋 권장 실무 일정 (15년차 노하우)</div>
+          <ul class="item-list">
+            <li><strong>2027년 안전보건 연간 실적 총결산 리포트 작성:</strong> 재해율(도수율·강도율), 무재해 달성일수, 교육 이수율, 법정 점검 완료율 집계.</li>
+            <li><strong>법정 안전서류 보존 상태 일제 점검 (3~5년 보존):</strong> 회의록, 작업환경측정 결과표, 건강진단 결과표, 교육일지, 안전검사 합격증 등 편철.</li>
+            <li><strong>연말연시 안전기강 확립 및 음주작업 근절 불시 점검:</strong> 송년회 시즌 숙취작업 예방 TBM 및 위험작업(고소·화기) 관리감독 강화.</li>
+          </ul>
+        </div>
+        <div class="cat-block season">
+          <div class="cat-title">⛄ 시즌 이슈 & 계절 리스크</div>
+          <ul class="item-list">
+            <li><strong>혹한기 동결·빙판길 미끄러짐(전도) 사고 급증:</strong> 사업장 통로 및 계단 염화칼슘 살포, 미끄럼방지 테이프 점검.</li>
+            <li><strong>갈탄·방풍막 밀폐공간 일산화탄소 질식 위험:</strong> 콘크리트 양생 현장 갈탄 사용 엄격 제한(열풍기 전환 권장) 및 유해가스 농도 측정.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><strong>본 캘린더 자료 활용 및 법령 확인 안내</strong></p>
+    <p style="margin-top: 6px;">
+      본 안전보건 연간 업무 캘린더는 실무자의 법적 리스크 예방과 체계적 안전보건관리를 돕기 위해 제작되었습니다. 업종, 사업장 규모(상시 근로자 수), 공정 내 유해요인 유무에 따라 세부 법적 적용 기준이 상이할 수 있으므로, 구체적인 법적 적용은 공식 정부 기관 누리집의 최신 고시 및 법령 원문을 확인하시기 바랍니다.
+    </p>
+    <div class="footer-links">
+      <span>공식 법령 및 유관기관:</span>
+      <span>국가법령정보센터 (law.go.kr)</span> |
+      <span>고용노동부 (moel.go.kr)</span> |
+      <span>한국산업안전보건공단 (kosha.or.kr)</span> |
+      <span>국제안전보건전시회 (safetyshow.co.kr)</span>
+    </div>
+    <p style="margin-top: 14px; font-size: 11.5px; color: #94a3b8;">
+      © 2027 Safety & Health Compliance Management Guide. All Rights Reserved. (기준시점: 2026년 11월)
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>
