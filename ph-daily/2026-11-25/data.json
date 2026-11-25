@@ -1,0 +1,465 @@
+{
+ "date": "2026-11-25",
+ "collected_at": "2026-11-25 12:30 KST",
+ "summary": "오늘 랭킹은 개발자 광고 네트워크, 시각적 AI 워크스페이스, 이메일 권한 제어 보안 레이어, 업무 자동화 AI 직원 등 AI 에이전트와 개발자 실무 도구가 주류를 이루었습니다. 커뮤니티에서는 단순한 기능 확장을 넘어 비개발자의 대규모 코드베이스 제어, 이메일 마스터키에 대한 엄격한 권한 통제, 실제 가입 전환 추적 등 프로덕션 환경에서의 안전성과 실질적 실행력을 핵심 논점으로 다루었습니다.",
+ "notable": [
+  {
+   "slug": "granular-build",
+   "why": "비개발자 창업자가 Git과 코드베이스를 직관적으로 다룰 수 있도록 구축한 캔버스 기반 AI 워크스페이스로, 실사용자가 45만 줄 코드베이스에서도 뛰어난 맥락 유지 성능을 발휘했다고 호평했습니다. Anthropic 모범 사례 기반의 프로젝트 브레인과 에이전트 간 파일 충돌을 방지하는 워크트리 분리 아키텍처가 실무 개발자들의 큰 관심을 모았습니다."
+  },
+  {
+   "slug": "clam-ai",
+   "why": "민감한 이메일 수신함에 AI 에이전트가 안전하게 접근할 수 있도록 일상 언어 규칙과 결정론적 Cedar 보안 정책을 결합한 점이 주목받았습니다. 댓글에서는 무인 에이전트 도입 시 기능 추가보다 강제 가능한 권한 경계 설정이 핵심이라는 공감대와 함께 Composio MCP 연동 지원에 호평이 이어졌습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "distribution.dev",
+   "tagline_en": "Advertise to developers on many sites with one campaign",
+   "tagline_kr": "단 한 번의 캠페인으로 여러 사이트의 개발자들에게 광고하세요",
+   "image": "https://ph-files.imgix.net/mcp-draft-media/73fa730e-741c-401e-aefe-ff40573ac71c.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://distribution.dev/&utm_source=producthunt",
+   "categories": [
+    "Advertising tools"
+   ],
+   "upvotes": 249,
+   "comments_count": 26,
+   "maker": [
+    "Nimrod Kramer",
+    "fmerian",
+    "Swift"
+   ],
+   "price_model": "Payment Required",
+   "price_detail": null,
+   "desc_kr": "이제 누구나 제품을 만들 수 있는 시대가 되면서, 사람들의 주목을 끄는 유통과 배포가 가장 큰 경쟁력이 되었습니다. distribution.dev는 세계 최대 규모의 개발자 콘텐츠 플랫폼인 daily.dev와 DEV(dev.to)가 협력하여 구축한 개발자 전문 광고 네트워크입니다. 광고주는 단 한 번의 캠페인 설정만으로 여러 독립 개발자 사이트와 커뮤니티에 동시에 광고를 게재할 수 있습니다. 각 플랫폼의 UI와 콘텐츠에 자연스럽게 어우러지는 네이티브 형식의 맞춤형 광고를 제공하여 개발자의 거부감을 줄입니다. 사이트 전용 픽셀 설치를 통해 클릭뿐만 아니라 실제 가입 전환까지 추적할 수 있어 개발자 도구의 효율적인 성장을 돕습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/distribution-dev",
+   "comment_summary": "창업자들은 코딩 비용이 낮아진 환경에서 배포와 유통이 핵심 경쟁력임을 강조하며 daily.dev와 dev.to의 결합을 통한 네트워크 효과를 소개했습니다. 커뮤니티에서는 개발자 대상 광고 시 단순 클릭보다 랜딩 후 실제 전환 추적이 중요하다고 지적했으며, 사이트 선택 기준에 대한 질문이 이어졌습니다. 제작진은 픽셀 설치를 통한 정밀 전환 추적 기능과 광고주가 특정 사이트를 직접 지정하거나 예산을 자동 최적화 분배할 수 있는 옵션을 제공한다고 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Nimrod Kramer",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 Nimrod here, co-founder of daily.dev. Anyone can build almost anything now, so the hard part is getting people to notice it. Distribution has become the moat. With developers it's even harder: they ignore most ads, and they're spread across hundreds of independent sites and communities. We're one of those publishers, so we teamed up with DEV (dev.to) and built distribution.dev. You set up one campaign and it runs on many developer sites at once, with ads made to fit in on ea",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요 👋 daily.dev의 공동 창업자 Nimrod입니다. 이제 누구나 무엇이든 만들 수 있게 되었기에 사람들의 주목을 받는 것이 가장 어려운 과제가 되었습니다. 유통(Distribution)이 진정한 해자가 되었습니다. 개발자의 경우는 더욱 어렵습니다. 개발자들은 대부분의 광고를 무시하며, 수백 개의 독립 사이트와 커뮤니티에 흩어져 있습니다. 저희도 그러한 퍼블리셔 중 하나이기에, DEV (dev.to)와 협력하여 distribution.dev를 구축했습니다. 한 번의 캠페인 설정으로 각 사이트에 자연스럽게 어우러지는 광고를 여러 개발자 사이트에 동시에 집행할 수 있습니다."
+    },
+    {
+     "author": "fmerian",
+     "is_maker": true,
+     "text": "@tessak22 @nunomaduro @smooke 👀",
+     "kr": "@tessak22 @nunomaduro @smooke 👀"
+    },
+    {
+     "author": "fmerian",
+     "is_maker": true,
+     "text": "> Anyone can build now. Distribution is the moat. I've contributed to launching 500+ developer-first products here. So, when @nimrodkramer pitched me @distribution.dev, it instantly clicked. When 2 of the largest dev content platforms in the world, @daily.dev and dev.to, join forces to build an ad network, it makes it the best place for dev tools to grow. If you want to crack the code of dev marketing, this is the formula. Launch on Product Hunt, run ads with distribution.dev.",
+     "kr": "> 이제 누구나 만들 수 있습니다. 유통이 곧 해자입니다. 저는 이곳에서 500개 이상의 개발자 우선 제품 런칭에 기여해 왔습니다. 그렇기에 @nimrodkramer가 @distribution.dev를 제안했을 때 즉각 깊이 공감했습니다. 세계 최대 규모의 개발자 콘텐츠 플랫폼인 @daily.dev와 dev.to가 힘을 합쳐 광고 네트워크를 구축했다면, 개발자 도구가 성장하기에 가장 이상적인 공간이 됩니다. 개발자 마케팅의 해법을 찾고 싶다면 이것이 공식입니다. 프로덕트 헌트에서 런칭하고, distribution.dev로 광고를 집행하세요."
+    },
+    {
+     "author": "Agshin Rajabov",
+     "is_maker": false,
+     "text": "congrats on the launch nimrod. for me the hardest part was never the click, devs do click. its what happens after, they land on a page written for managers and leave in 10 seconds. so i would want to see per site who actually signed up, not only clicks",
+     "kr": "런칭 축하합니다 Nimrod. 제 경험상 가장 어려웠던 부분은 클릭 자체가 아니었습니다. 개발자들은 클릭은 잘 하니까요. 문제는 그 이후인데, 관리자용으로 작성된 페이지에 도달하면 10초 만에 이탈해 버립니다. 그래서 단순 클릭뿐만 아니라 사이트별로 실제로 누가 가입했는지를 확인하고 싶네요."
+    },
+    {
+     "author": "fmerian",
+     "is_maker": true,
+     "text": "spot on! @adamd would say 'developer marketing doesn't exist.' or... does it?",
+     "kr": "정확한 지적입니다! @adamd는 '개발자 마케팅이란 존재하지 않는다'고 말하곤 했죠. 과연 정말 그럴까요?"
+    },
+    {
+     "author": "Nimrod Kramer",
+     "is_maker": true,
+     "text": "@agshin\\_rajabov definitely, we have the option too for anyone who installs our pixel on their site. I’ll double down and say that some times direct attribution never happens (eg someone clicking an ad and then converts). It could also be the case where someone saw and ad and then went to look for that company/product on google or other cases they didn’t click an ad but asked Claude about it and afterwards typed the url directly. Attribution is tricky but we have some tools to help solve it",
+     "kr": "@agshin_rajabov 맞습니다. 웹사이트에 저희 픽셀을 설치하시는 분들을 위한 추적 옵션도 제공하고 있습니다. 덧붙이자면 때로는 직접적인 기여(예: 광고를 클릭하고 바로 전환되는 경우)가 발생하지 않을 수도 있습니다. 광고를 본 뒤 구글에서 해당 회사나 제품을 직접 검색하거나, 광고를 클릭하지 않고 Claude에게 물어본 뒤 URL을 직접 입력하는 경우도 있으니까요. 기여 추적은 까다롭지만 이를 해결하는 데 도움이 되는 도구들을 갖추고 있습니다."
+    },
+    {
+     "author": "Abdul Rehman",
+     "is_maker": false,
+     "text": "Congrats @nimrodkramer How do you decide which sites a campaign runs on and can i choose them myself?",
+     "kr": "축하드립니다 @nimrodkramer. 캠페인이 게재될 사이트는 어떻게 결정되며, 제가 직접 사이트를 선택할 수도 있나요?"
+    },
+    {
+     "author": "Nimrod Kramer",
+     "is_maker": true,
+     "text": "@abod\\_rehman you can either choose specific sites or let us decide how to distribute the budget. We optimize for long term customer happiness",
+     "kr": "@abod_rehman 특정 사이트를 직접 선택하시거나, 저희에게 예산 배분을 맡기실 수도 있습니다. 저희는 장기적인 고객 만족을 위해 최적화합니다."
+    },
+    {
+     "author": "fmerian",
+     "is_maker": true,
+     "text": "learn more: distribution.dev/advertisers",
+     "kr": "자세히 알아보기: distribution.dev/advertisers"
+    },
+    {
+     "author": "Swift",
+     "is_maker": true,
+     "text": "Swift from MLH here too! 👋 Very excited to launch this with @nimrodkramer and the daily.dev team 🚀 When the cost of code goes to zero, the things that mater are: ideas, taste, and distribution. Knowing what to build and what good looks like are skills you can only master by doing at hackathons or with other hands-on learning. Distribution is the challenge we think we can to help with next. We've spent years watching great developer tools struggle to reach users. Not because the products were bad",
+     "kr": "MLH의 Swift도 인사드립니다! 👋 @nimrodkramer 및 daily.dev 팀과 함께 이를 런칭하게 되어 매우 기쁩니다 🚀 코드 작성 비용이 제로에 수렴할 때 중요한 것은 아이디어, 안목, 그리고 유통입니다. 무엇을 만들지, 그리고 훌륭한 결과물이 무엇인지를 아는 능력은 해커톤이나 직접적인 실습을 통해서만 체득할 수 있습니다. 유통이야말로 저희가 다음으로 도울 수 있는 도전 과제라고 생각합니다. 저희는 수년간 훌륭한 개발자 도구들이 제품이 나빠서가 아니라 사용자를 확보하지 못해 고군분투하는 모습을 지켜보았습니다."
+    },
+    {
+     "author": "Ben Halpern",
+     "is_maker": false,
+     "text": "@nimrodkramer @swiftalphaone Woohoo. I think we've been doing this all very thoughtfully and I'm proud of it.",
+     "kr": "@nimrodkramer @swiftalphaone 정말 멋지네요. 우리 모두가 매우 사려 깊게 이 프로젝트를 진행해 왔다고 생각하며, 참으로 자랑스럽습니다."
+    },
+    {
+     "author": "fmerian",
+     "is_maker": true,
+     "text": "@nimrodkramer @swiftalphaone @bendhalpern 🐐",
+     "kr": "@nimrodkramer @swiftalphaone @bendhalpern 🐐"
+    }
+   ],
+   "slug": "distribution-dev"
+  },
+  {
+   "name": "Granular.Build",
+   "tagline_en": "Put your AI agents to work in a visual workspace",
+   "tagline_kr": "시각적 워크스페이스에서 AI 에이전트를 효율적으로 실행하세요",
+   "image": "https://ph-files.imgix.net/774b76ae-52c5-4269-a7f8-e8edbb973577.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://granular.build/&utm_source=producthunt",
+   "categories": [
+    "Terminals",
+    "AI Code Editors",
+    "AI Agents"
+   ],
+   "upvotes": 195,
+   "comments_count": 26,
+   "maker": [
+    "Omar Farook"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "Granular는 복잡한 AI 도구나 코딩 지식 없이도 아이디어를 실현할 수 있도록 지원하는 시각적 AI 워크스페이스입니다. 다양한 AI 모델, 자율 에이전트, 프로젝트 파일 및 맥락 정보를 캔버스 기반의 단일 작업 공간에 통합합니다. 총괄(Boss) 에이전트에게 목표를 전달하면 전문 에이전트들을 병렬로 조율하여 실시간 미리보기와 함께 앱, 디자인, 비디오를 구축합니다. 자체 AI 모델(BYO AI) 연동을 지원하고 내장 터미널과 플러그인을 제공하여 프로젝트 메모리와 자산을 한곳에서 체계적으로 관리합니다. 기획 단계의 첫 구상부터 실제 완성 및 배포까지의 모든 워크플로우를 원스톱으로 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/granular-build",
+   "comment_summary": "디자이너 출신 창업자 Omar Farook은 비개발자도 코드베이스와 Git을 직관적으로 다룰 수 있도록 Granular 자체를 이 플랫폼으로 구축했다고 밝혔습니다. 사용자들은 단일 워크스페이스 기반의 맥락 관리와 대규모 기존 프로젝트 적용성에 주목했으며, 45만 줄 코드베이스에서도 유용하게 작동한다는 실사용 검증이 공유되었습니다. 제작진은 Anthropic 모범 사례에 기반한 옵시디언 스타일의 프로젝트 브레인과 워크트리(worktree) 분리를 통해 여러 에이전트의 파일 충돌 방지 및 장기 맥락 유지를 구현했다고 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Omar Farook",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt, I'm Omar, founder of Granular! 👋 I'm a designer and founder. I founded the design tool **Glorify**, which was acquired by Leadpages, and co-founded the productivity app **Blitzit**. These days I ship everything with AI inside Granular. In fact, like my other products, Granular is being built in Granular itself. I built the website and created the product gallery images above in Granular. I even made the promo video in Granular using Opus 5.5 / GPT-Astra models and a built in ",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요, Granular의 창업자 Omar입니다! 👋 저는 디자이너이자 창업가입니다. Leadpages에 인수된 디자인 도구 **Glorify**를 창업했고, 생산성 앱 **Blitzit**을 공동 창업했습니다. 요즘 저는 Granular 내에서 AI를 활용해 모든 것을 배포하고 있습니다. 실제로 저의 다른 제품들과 마찬가지로 Granular 자체도 Granular 안에서 만들어지고 있습니다. 웹사이트를 구축하고 상단의 제품 갤러리 이미지를 만든 것도 Granular였으며, 내장 도구와 Opus 5.5 / GPT-Astra 모델을 사용해 프로모션 영상까지 Granular에서 제작했습니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Nice work, Omar. Will the mobile app let me check on the agents while they're running?",
+     "kr": "멋진 결과물이네요, Omar. 모바일 앱에서도 에이전트들이 실행되는 동안 상태를 확인할 수 있나요?"
+    },
+    {
+     "author": "Aaron Connolly",
+     "is_maker": false,
+     "text": "As a designer - I resonate the need for a more flexible visible building tool. Can you point out the main benefits for someone like me over using Claude design and figma? Best wishes!",
+     "kr": "디자이너로서 보다 유연하고 시각적인 제작 도구의 필요성에 깊이 공감합니다. 저 같은 디자이너가 Claude 디자인이나 Figma를 사용하는 것에 비해 얻을 수 있는 주요 장점을 짚어주실 수 있나요? 응원합니다!"
+    },
+    {
+     "author": "Omar Farook",
+     "is_maker": true,
+     "text": "@aaronconnollyflourishHey Aaron, designer to designer, this is exactly why I built Granular. I don’t know how to code, so I wanted Git, codebases and local servers to feel approachable for anyone building with AI. I wanted a better way to give agents context, too. In Granular, Markdown docs become visual brain maps and Kanban roadmaps. You can spread your tabs across a canvas and point an agent at the exact thing you want changed. We used to push pixels. Now we need to point at them. I can bring",
+     "kr": "@aaronconnollyflourish 안녕하세요 Aaron, 디자이너 대 디자이너로서 말씀드리자면 그것이 바로 제가 Granular를 만든 이유입니다. 저는 코딩을 할 줄 모르기 때문에, AI로 제품을 만드는 모든 사람에게 Git, 코드베이스, 로컬 서버가 친근하게 다가오기를 바랐습니다. 또한 에이전트에게 맥락을 제공하는 더 나은 방법도 필요했습니다. Granular에서는 마크다운 문서가 시각적인 브레인 맵과 칸반 로드맵이 됩니다. 캔버스 전체에 탭을 펼쳐놓고 변경하려는 정확한 대상을 에이전트에게 지정해줄 수 있습니다. 과거에는 픽셀을 직접 밀고 당겼다면, 이제는 가리키기만 하면 됩니다."
+    },
+    {
+     "author": "Abdul Rehman",
+     "is_maker": false,
+     "text": "Can i point it at an old project that's already halfway done or does it work best when you start fresh?",
+     "kr": "이미 절반쯤 진행된 기존 프로젝트에 연결해서 사용할 수도 있나요, 아니면 처음부터 새로 시작할 때 가장 잘 작동하나요?"
+    },
+    {
+     "author": "Omar Farook",
+     "is_maker": true,
+     "text": "@abod\\_rehman 100%. That's one of the main use cases. I had so many projects in flight but I was fed up of managing it without clear context visibility inside Claude Code or Codex. As soon as I built my own environment, suddenly I had a brain injected into the codebase, branching out to every area of the business, from marketing to ops and beyond. It just so happens that many people feel the same frustration. That's why I believe our Discord keeps growing!",
+     "kr": "@abod_rehman 100% 가능합니다. 그것이 주요 활용 사례 중 하나입니다. 저 역시 진행 중인 프로젝트가 정말 많았지만 Claude Code나 Codex 내에서 명확한 맥락 가시성 없이 관리하는 데 지쳐 있었습니다. 저만의 환경을 구축하자마자 코드베이스에 두뇌가 주입되어 마케팅부터 운영 및 그 이상까지 비즈니스의 모든 영역으로 뻗어나가는 것을 경험했습니다. 마침 많은 분들이 동일한 답답함을 느끼고 계셨기에 저희 디스코드 커뮤니티가 계속 성장하고 있다고 생각합니다!"
+    },
+    {
+     "author": "Allen Pooley",
+     "is_maker": false,
+     "text": "@abod\\_rehman @buildwithomar I can verify that this works very well. I pointed it at a 450k line-of-code project and it's been amazingly useful.",
+     "kr": "@abod_rehman @buildwithomar 실제로 매우 잘 작동한다는 것을 제가 보증할 수 있습니다. 45만 줄에 달하는 코드베이스 프로젝트에 적용해 보았는데 놀라울 정도로 유용했습니다."
+    },
+    {
+     "author": "Miles Avery",
+     "is_maker": false,
+     "text": "@buildwithomar How does Granular handle long projects where requirements change over time? Does the workspace update it's context automatically?",
+     "kr": "@buildwithomar 시간이 지나면서 요구사항이 변하는 장기 프로젝트는 어떻게 처리하나요? 워크스페이스가 맥락을 자동으로 업데이트하나요?"
+    },
+    {
+     "author": "Omar Farook",
+     "is_maker": true,
+     "text": "@miles\\_avery Hi Miles. That’s exactly what I wanted Granular to get right, and it’s been a focus throughout. It starts with the project brain. We're using best practices recommended by Anthropic themselves. We've translated ADRs and logs into something that non-technical folks can appreciate and understand better. It's basically an Obsidian-style brain that is built into Granular, giving agents a front door to find exactly what they're looking for and the information they need to work on a task",
+     "kr": "@miles_avery 안녕하세요 Miles. 그것이 바로 Granular에서 확실하게 해결하고자 했던 핵심이자 계속 집중해 온 부분입니다. 프로젝트 브레인에서 시작되는데요, Anthropic이 직접 권장하는 모범 사례를 따르고 있습니다. 비전문가도 더 쉽게 이해하고 파악할 수 있도록 아키텍처 결정 기록(ADR)과 로그를 재구성했습니다. 기본적으로 Granular에 내장된 옵시디언 스타일의 두뇌로서, 에이전트가 작업에 필요한 정보와 찾고자 하는 내용을 정확히 탐색할 수 있는 입구를 제공합니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "This is the part I keep running into as a solo dev — I have a few agents going, but the context lives in separate chats and terminals, so I lose track of what each one actually changed. Keeping the files, project memory, and live preview in one visual workspace makes a lot of sense. Curious how the boss agent handles it when two specialists touch the same files at once — does it queue them, or can they work in parallel on different parts?",
+     "kr": "1인 개발자로서 늘 겪던 문제입니다. 몇 개의 에이전트를 돌리다 보면 맥락이 각기 다른 채팅과 터미널에 흩어져 있어 각 에이전트가 실제로 무엇을 바꿨는지 놓치게 됩니다. 파일과 프로젝트 메모리, 실시간 미리보기를 하나의 시각적 작업 공간에 유지하는 것은 매우 합리적입니다. 두 명의 전문 에이전트가 동시에 같은 파일을 건드릴 때 총괄 에이전트가 어떻게 처리하는지 궁금합니다. 대기열에 넣어 순차 처리하나요, 아니면 서로 다른 부분을 병렬로 작업할 수 있나요?"
+    },
+    {
+     "author": "Omar Farook",
+     "is_maker": true,
+     "text": "@jcbuilds Right now the boss agents automatically separates worker agents who are likely to touch the same file into a copy of the project in a worktree. Very soon I'm going to start to create a system that detects agents working on the same file so that they don't clobber each other's work and queues edits and changes one after the other.",
+     "kr": "@jcbuilds 현재는 동일한 파일을 다룰 가능성이 있는 작업 에이전트들을 총괄 에이전트가 워크트리(worktree) 상의 프로젝트 복사본으로 자동 분리합니다. 머지않아 동일한 파일에서 작업 중인 에이전트를 감지하여 서로의 작업을 덮어쓰지 않도록 수정 사항을 순차적으로 대기열에 배치하는 시스템을 개발할 예정입니다."
+    },
+    {
+     "author": "Umar Lateef",
+     "is_maker": false,
+     "text": "@buildwithomar congrats with the launch bro. I have been using Glorify for years now and thou I still have not had the opportunity to test Granular, I am sure it will be just as good and as a non technical like me, this should be a really useful tool",
+     "kr": "@buildwithomar 런칭 축하해 친구. 몇 년 동안 Glorify를 아주 잘 써왔는데, 아직 Granular를 테스트해볼 기회는 없었지만 분명 Glorify만큼 훌륭할 거라 확신해. 나 같은 비개발자에게 정말 유용한 도구가 될 것 같아."
+    }
+   ],
+   "slug": "granular-build"
+  },
+  {
+   "name": "Clam AI",
+   "tagline_en": "Your inbox, safely shared with AI agents",
+   "tagline_kr": "AI 에이전트와 안전하게 공유하는 이메일 수신함",
+   "image": "https://ph-files.imgix.net/04adf431-7497-4918-b694-386ba5e23cd5.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://useclam.ai/&utm_source=producthunt",
+   "categories": [
+    "Security software",
+    "AI Agents"
+   ],
+   "upvotes": 163,
+   "comments_count": 8,
+   "maker": [
+    "Stratos Pavlakis",
+    "Giannis Katakis",
+    "Sokratis Vidros"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "비밀번호 재설정과 은행 알림 등 민감한 정보가 오가는 이메일 수신함은 디지털 환경의 마스터키와 같습니다. Clam AI는 에이전트에게 마스터키 전체를 넘겨주지 않고도 이메일 내에서 안전하게 작업을 수행할 수 있도록 지원합니다. 사용자는 '여행 관련 이메일만 읽고 답장 초안을 작성하되 절대 전송하지 말 것'과 같이 일상 언어로 간단히 권한 규칙을 설정할 수 있습니다. 각 에이전트는 규칙이 허용한 범위의 데이터만 조회 및 실행할 수 있으며, 사용자는 에이전트의 모든 활동을 투명하게 모니터링할 수 있습니다. Gmail 연동을 시작으로 데이터의 의미와 요청 맥락을 깊이 이해하는 MCP(Model Context Protocol) 전용 권한 제어 레이어를 구축하고 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/clam-ai",
+   "comment_summary": "창업자들은 자율형 AI 에이전트 도입에 있어 기능의 확장보다 안전하게 통제할 수 있는 권한과 신뢰 구축이 핵심임을 강조했습니다. 사용자들은 Composio MCP 연동 지원 여부와 모호한 이메일 유입 시 정책 판정 기준, 승인 절차에 대한 질문을 제기했습니다. 제작진은 Composio 커스텀 MCP 연동이 가능하며 이메일 속성과 라벨에 결정론적인 Cedar 정책을 적용하여 완벽히 일치하거나 배제되는 방식으로 보안을 유지한다고 답변했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Stratos Pavlakis",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt, I'm Stratos. I'm building Clam together with Sokratis and Giannis, and we're excited to finally open it up. Moving from interactive, one-session-at-a-time AI workflows to autonomous, unattended agents… well, requires a huge leap of faith. Both for Muse and Instinct users as well as Claude’s enterprise customers. What agents can do is no longer the problem. The problem is how much access and freedom we're willing to give them. **We believe trust shouldn't be something you place",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요, Stratos입니다. 저는 Sokratis, Giannis와 함께 Clam을 개발하고 있으며, 드디어 공개하게 되어 매우 기쁩니다. 한 번에 한 세션씩 상호작용하는 AI 워크플로우에서 자율적으로 동작하는 무인 에이전트로 전환하는 것은 커다란 믿음을 필요로 합니다. 이는 개인 사용자뿐만 아니라 Claude의 엔터프라이즈 고객에게도 마찬가지입니다. 이제 에이전트가 무엇을 할 수 있는가는 더 이상 문제가 아닙니다. 진짜 문제는 우리가 에이전트에게 얼마나 많은 접근 권한과 자율성을 부여할 수 있는가입니다. **저희는 신뢰란 맹목적으로 맡기는 것이 아니어야 한다고 믿습니다.**"
+    },
+    {
+     "author": "Brock Wilcox",
+     "is_maker": false,
+     "text": "Can I still use it through composio?",
+     "kr": "Composio를 통해서도 여전히 사용할 수 있나요?"
+    },
+    {
+     "author": "Giannis Katakis",
+     "is_maker": true,
+     "text": "@awwaiid Yes, you can connect Clam through Composio's custom MCP option.",
+     "kr": "@awwaiid 네, Composio의 커스텀 MCP 옵션을 통해 Clam을 연결하여 사용하실 수 있습니다."
+    },
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "what does it do with an email that only kinda matches one of my rules",
+     "kr": "규칙 중 하나에 애매하게 일치하는 이메일의 경우 어떻게 처리되나요?"
+    },
+    {
+     "author": "Sokratis Vidros",
+     "is_maker": true,
+     "text": "@igorblink Clam uses Cedar policies on all email attributes semantic gmail labels. Policy checks are deterministic, meaning a policy either matches completely or not at all.",
+     "kr": "@igorblink Clam은 모든 이메일 속성과 의미론적 Gmail 라벨에 Cedar 정책을 적용합니다. 정책 검사는 결정론적(deterministic)으로 이루어지므로, 정책에 완전히 일치하거나 아예 일치하지 않는 것으로만 판정됩니다."
+    },
+    {
+     "author": "Bruno Bueno",
+     "is_maker": false,
+     "text": "can a sender just write a mail that looks like a flight confirmation to get it labeled travel and in front of the travel agent?",
+     "kr": "발신자가 항공권 예약 확인서처럼 보이는 이메일을 작성하여 '여행' 라벨을 얻고 여행 담당 에이전트에게 노출되게 만들 수도 있나요?"
+    },
+    {
+     "author": "Mohit Vishwakarma",
+     "is_maker": false,
+     "text": "gmail rules in plain english like read travel email, never send. smart. congrats Stratos",
+     "kr": "여행 이메일만 읽고 절대 전송하지 말라는 식의 자연어 Gmail 규칙이라니 정말 스마트하네요. Stratos 축하합니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "This is the part of the agent stack I've been waiting for — not more capability, but enforceable limits. I build on-device AI stuff, so the 'doesn't store your emails' plus deterministic Cedar policies combo is what would actually make me trust it with an inbox. Curious how the 'ask me first' approvals work when an agent is running unattended — does it pause just that action, or the whole run until you approve?",
+     "kr": "제가 에이전트 스택에서 줄곧 기다려온 기능입니다. 단순한 기능 확장이 아니라 강제 가능한 한계를 설정하는 것이죠. 온디바이스 AI 관련 작업을 하는 사람으로서 '이메일을 저장하지 않는다'는 점과 결정론적인 Cedar 정책의 결합이야말로 제 수신함을 믿고 맡길 수 있게 만드는 요소입니다. 무인으로 실행 중일 때 '사전 승인 요청'이 어떻게 작동하는지 궁금합니다. 해당 작업만 일시 정지되나요, 아니면 승인할 때까지 전체 실행이 멈추나요?"
+    }
+   ],
+   "slug": "clam-ai"
+  },
+  {
+   "name": "viktor.com",
+   "tagline_en": "The AI employee that does the work, in Slack & Teams",
+   "tagline_kr": "Slack과 Teams에서 직접 실무를 처리하는 AI 직원",
+   "image": "https://ph-files.imgix.net/launch-image-uploads/2bfe1778-633c-4765-8e09-bc023871dfcf/10e27f21dc4ab6544dd2d740e5d26c3839ff4e199af371fdc23a098beeaca07d.gif?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://ref.viktor.com/ph_product_page&utm_source=producthunt",
+   "categories": [
+    "Slack apps",
+    "AI Workflow Automation",
+    "AI Agents"
+   ],
+   "upvotes": 161,
+   "comments_count": 17,
+   "maker": [
+    "Matt Swulinski"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "단순한 질의응답을 넘어 Slack과 Microsoft Teams 내에서 실제로 업무를 완수하는 자율형 AI 직원 서비스입니다. 사내 기술 스택 전반의 3,200개 이상 도구와 연동되어 팀의 작업 방식을 모니터링하고 능동적으로 문제를 감지합니다. 회사의 실제 비즈니스 프로세스에 맞춘 자동화를 제안하며 캠페인 관리, 보고서 작성, 앱 개발 및 코드 작성까지 직접 수행합니다. 몇 주 동안 맥락을 잃지 않고 지속적으로 학습하여 회사와 비즈니스에 대한 이해도를 매일 심화시킵니다. 단순한 챗봇이 아니라 비즈니스 목표를 세부 작업과 PR로 분해하여 사람의 검토 하에 자율 실행하는 실질적인 팀원 역할을 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/viktor",
+   "comment_summary": "창업자 Matt Swulinski는 Viktor가 단순 코드 저장소뿐만 아니라 회사의 지표와 의사결정 맥락을 종합적으로 이해하여 비즈니스 목표를 실행 가능한 코드와 PR로 전환한다고 강조했습니다. 사용자들은 고객 지원 티켓 기반 버그 수정과 내부 앱 제작 등 실무에서의 생산성 향상 경험을 공유하며 큰 호응을 보였습니다. 앱 비즈니스를 위한 최적의 활용 시나리오에 대한 문의와 함께 홈페이지 내 가격 정책 표시가 누락되어 있다는 피드백도 제시되었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Matt Swulinski",
+     "is_maker": true,
+     "text": "📌 Hi everyone 👋 Coding agents know your repo. Viktor knows your company: your customers, your metrics and the decisions behind the work. Today he writes the code too. Give him a business outcome and he splits it up. The migration and the pricing page. The pull request and the note to customers. Anything that needs your call comes back to you. How it works 1\\. Connect your repo: GitHub, GitLab or Bitbucket 2\\. Connect Slack, Teams or Discord, plus support, analytics and billing (what he can't see",
+     "kr": "📌 여러분 안녕하세요 👋 코딩 에이전트는 코드 저장소만 알지만, Viktor는 고객, 비즈니스 지표, 작업 이면의 결정 등 회사 전체를 이해합니다. 이제 Viktor는 직접 코딩까지 수행합니다. 비즈니스 목표를 부여하면 마이그레이션과 요금제 페이지, PR 생성 및 고객 공지 작성 등으로 세분화하여 처리합니다. 사람의 최종 판단이 필요한 부분은 확인을 요청합니다. 작동 방식: 1. GitHub, GitLab, Bitbucket 저장소 연동 2. Slack, Teams, Discord 및 고객지원, 분석, 결제 툴 연동"
+    },
+    {
+     "author": "Kacper Zambrzycki",
+     "is_maker": false,
+     "text": "@mswulinski massive, congrats!",
+     "kr": "@mswulinski 대단하네요, 축하합니다!"
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Fifth launch, well done.",
+     "kr": "벌써 다섯 번째 런칭이군요, 수고하셨습니다."
+    },
+    {
+     "author": "Taras",
+     "is_maker": false,
+     "text": "Hello, great concept and product. Could you please define 3-5 solutions that you do best and can be applied to an app business? Thanks",
+     "kr": "안녕하세요, 훌륭한 콘셉트의 제품입니다. 앱 비즈니스에 적용할 수 있는 가장 뛰어난 해결책 3~5가지를 설명해 주실 수 있나요? 감사합니다."
+    },
+    {
+     "author": "Matt Swulinski",
+     "is_maker": true,
+     "text": "@che\\_taras Thanks! For an app business, this is where Viktor Code does best: 1. Give him an outcome instead of a ticket. \"Add annual plans\" turns into the billing change, the paywall screen and the note to existing users, with PRs on your repo for you to review 2. Bug reports to fixes. He reads the support tickets, finds the bug people keep hitting and opens the fix 3. Big jobs that take hours or days, like a migration. One of our engineers got 228 PRs merged over two days from 2h10m of coding ",
+     "kr": "@che_taras 감사합니다! 앱 비즈니스에서 Viktor Code가 가장 잘하는 영역은 다음과 같습니다: 1. 단순 티켓 대신 결과 목표 부여하기. '연간 요금제 추가'를 요청하면 결제 로직 변경, 페이월 화면 구성, 기존 사용자 공지 작성까지 처리하고 검토용 PR을 생성합니다. 2. 버그 리포트에서 수정까지. 지원 티켓을 분석해 반복되는 버그를 찾고 수정 PR을 올립니다. 3. 마이그레이션처럼 며칠씩 걸리는 대규모 작업 처리. 저희 엔지니어 중 한 명은 2시간 10분의 코딩만으로 이틀 동안 228개의 PR을 머지했습니다."
+    },
+    {
+     "author": "Patryk Lasek",
+     "is_maker": false,
+     "text": "Had a chance to play around with it. Very impressive! Much simpler than other coding agents I’ve tried. It’s built two apps for me in just one hour: 1. **Grammar checker** (A macOS widget that helps me write smoother, more natural English) 2. **Mail & Daily Planner** (A keyboard first app that brings email, calendar, and to-dos into one place)",
+     "kr": "직접 사용해 볼 기회가 있었는데 매우 인상적이었습니다! 기존에 써본 다른 코딩 에이전트보다 훨씬 간단합니다. 단 한 시간 만에 두 개의 앱을 만들어 주었습니다: 1. **문법 검사기** (더 자연스러운 영어를 작성하도록 돕는 macOS 위젯) 2. **메일 & 데일리 플래너** (이메일, 캘린더, 할 일을 한곳에 모아주는 키보드 중심의 앱)"
+    },
+    {
+     "author": "Ryan Anderson",
+     "is_maker": false,
+     "text": "I cant code, but I’ve built and internal positioning/messaging hub with Viktor that’s connected to our ad system, gong, and product data and takes signal that affirm or challenge our positioning and flags them for review. Ensures our messaging stays current with what we’re hearing in the field resonate (or not!).",
+     "kr": "저는 코딩을 할 줄 모르지만, Viktor를 사용해 광고 시스템, Gong, 제품 데이터와 연동되는 내부 포지셔닝/메시징 허브를 구축했습니다. 이를 통해 포지셔닝에 부합하거나 위배되는 신호를 수집하여 검토하도록 알려주며, 현장에서 호응을 얻는 메시지를 유지할 수 있도록 돕습니다."
+    },
+    {
+     "author": "Yauhen Ivashkevich",
+     "is_maker": false,
+     "text": "At Viktor I'm focused right now on integrations, automatic fixes and performance, and Viktor does most of the engineering for me - builds new integrations end to end, reads the vendor's docs, writes the code, tests it on a real account, opens the PRs. When something breaks in production, he finds it in the logs, ships the fix and checks it an hour and a day later. Feels like magic.",
+     "kr": "현재 Viktor에서 연동 기능, 자동 수정 및 성능 최적화 업무를 담당하고 있는데, 엔지니어링 작업의 대부분을 Viktor가 대신 해주고 있습니다. 벤더 문서를 읽고 코드를 작성하며 실제 계정에서 테스트 후 PR을 여는 엔드투엔드 연동을 직접 수행합니다. 프로덕션 환경에서 장애가 발생하면 로그에서 문제를 찾아 수정 사항을 배포하고 한 시간 뒤와 하루 뒤에 상태를 재확인합니다. 마법처럼 느껴집니다."
+    },
+    {
+     "author": "David Belligoi",
+     "is_maker": false,
+     "text": "pricing missing on homepage?!",
+     "kr": "홈페이지에 요금제 안내가 빠져 있는 건가요?!"
+    }
+   ],
+   "slug": "viktor"
+  },
+  {
+   "name": "SparrowDesk",
+   "tagline_en": "The AI-First Help Desk. Resolve More. Search Less.",
+   "tagline_kr": "AI 우선 헬프데스크: 검색은 줄이고 해결은 더 빠르게",
+   "image": "https://ph-files.imgix.net/9bfcfac9-f6d3-4076-bd32-06b4f15d6659.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://www.sparrowdesk.com/&utm_source=producthunt",
+   "categories": [
+    "Customer support tools"
+   ],
+   "upvotes": 142,
+   "comments_count": 18,
+   "maker": [
+    "Justin George",
+    "Baladharun K"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "SparrowDesk는 대규모 고객 지원을 위해 설계된 AI 우선 헬프데스크 솔루션입니다. 이메일, 채팅, WhatsApp뿐만 아니라 음성 통화까지 단일 작업 공간에 통합하여 번거로운 탭 전환 문제를 해결합니다. 자체 AI인 Zoona AI를 통해 인입 문의의 60% 이상을 자동으로 해결하여 상담원의 반복적인 수동 업무를 크게 줄입니다. 녹음된 전화 통화는 텍스트로 자동 변환되어 기존 고객 문의 내역과 같은 스레드에 보관되므로 고객에게 재설명을 요구할 필요가 없습니다. 지능형 IVR 음성 흐름과 시스템 연동을 통해 통화 중 고객 예약 조회 및 주문 상태 업데이트까지 실시간으로 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/sparrowdesk",
+   "comment_summary": "창업자 Justin George는 기존 이메일과 채팅에 이어 음성 통화까지 단일 인박스로 통합하여 상담 채널 간 단절을 해결했다고 밝혔습니다. 사용자들은 통화 녹음 및 전사 데이터가 동일 고객 스레드에 실시간 기록되는 기능에 긍정적인 반응을 보이며 지원 국가와 AI 메모리 기능에 대해 문의했습니다. 제작진은 호주를 포함한 51개국의 로컬 및 수신자 부담 번호를 지원하며, AI 에이전트가 통화 연결 전 고객의 과거 티켓 이력을 메모리에서 참조해 처리한다고 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Justin George",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! 👋 Back again after launching Zoona AI in June, this time bringing phone calls into SparrowDesk. Support teams that take calls almost always run them on a separate phone system. * Calls live in one tool, tickets in another, and the history gets lost somewhere in between. * Agents switch tabs all day, and nobody has the full picture. So we brought voice into SparrowDesk. **Calls now land in the same inbox as email, chat and WhatsApp.** One place for every conversation, no matte",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요! 👋 지난 6월 Zoona AI 런칭에 이어, 이번에는 SparrowDesk에 전화 통화 기능을 도입하여 다시 찾아왔습니다. 전화를 받는 고객지원 팀은 거의 항상 별도의 전화 시스템을 사용합니다. * 통화는 한 툴에, 티켓은 다른 툴에 저장되어 그사이에서 이력이 유실됩니다. * 상담원들은 하루 종일 탭을 전환하느라 전체 맥락을 파악하지 못합니다. 그래서 저희는 음성을 SparrowDesk 안으로 가져왔습니다. **이제 전화 통화도 이메일, 채팅, WhatsApp과 동일한 인박스로 들어옵니다.** 대화 채널에 관계없이 모든 상담을 한곳에서 처리할 수 있습니다."
+    },
+    {
+     "author": "@georgejustin22",
+     "is_maker": false,
+     "text": "Couldn't agree more, Justin. Fewer tools to worry about is exactly the feeling we were chasing with this one. From the engineering side, the goal was never just to bolt a phone line onto a help desk. We wanted a call to behave like every other conversation. Once it is recorded and transcribed, it sits in the same thread as that customer's emails, chats and WhatsApp messages, so the next agent who picks up already knows the whole story. No more asking a customer to explain it all over again. The ",
+     "kr": "전적으로 동의합니다 Justin. 신경 써야 할 도구를 줄이는 것이야말로 이번 개발에서 저희가 추구했던 느낌입니다. 엔지니어링 관점에서 목표는 단순히 헬프데스크에 전화선을 연결하는 것이 아니었습니다. 통화가 다른 모든 대화와 똑같이 작동하기를 원했습니다. 녹음 및 텍스트 변환이 완료되면 해당 고객의 이메일, 채팅, WhatsApp 메시지와 동일한 스레드에 보관되므로, 전화를 이어받는 다음 상담원도 이미 전체 맥락을 알게 됩니다. 고객에게 처음부터 다시 설명해 달라고 요청할 필요가 더 이상 없습니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Is Australia one of the 51 countries for local numbers?",
+     "kr": "현지 번호가 지원되는 51개국에 호주도 포함되어 있나요?"
+    },
+    {
+     "author": "Justin George",
+     "is_maker": true,
+     "text": "@relli7 Yes David. Local and toll free numbers are covered for Australia",
+     "kr": "@relli7 네 David. 호주 현지 번호와 수신자 부담(toll free) 번호 모두 지원됩니다."
+    },
+    {
+     "author": "Baladharun K",
+     "is_maker": true,
+     "text": "Glad to be part of the team who built this! For me the most interesting part was making the AI agent take actions, not just speak. It can check things like customer's booking or order status in your systems and update the caller accordingly. Supervisors can also pass instructions to the AI during a live call rather than just listening on the AI conversations Also the IVR flow goes beyond the traditional \"press 1 for sales..\" method. it can listen what the caller says and branch accordingly, offe",
+     "kr": "이 기능을 개발한 팀의 일원이 되어 기쁩니다! 제게 가장 흥미로웠던 부분은 AI 에이전트가 단순히 말만 하는 것이 아니라 실제 조치를 취하도록 만든 점이었습니다. 시스템에서 고객의 예약이나 주문 상태를 확인하고 발신자에게 적절히 안내할 수 있습니다. 관리자는 실시간 통화 중에 단순히 듣기만 하는 대신 AI에게 직접 지시를 전달할 수도 있습니다. 또한 IVR 흐름도 기존의 '영업 문의는 1번' 방식을 넘어 발신자의 말을 듣고 자연스럽게 분기할 수 있습니다."
+    },
+    {
+     "author": "Justin George",
+     "is_maker": true,
+     "text": "@baladharun\\_\\_k you killed it. lfg",
+     "kr": "@baladharun__k 정말 훌륭하게 해냈어요. 가보자고!"
+    },
+    {
+     "author": "Agshin Rajabov",
+     "is_maker": false,
+     "text": "congrats on the launch justin. most teams i worked with take calls on someones personal phone and then write a short note in slack, if they remember. so whoever picks the ticket next knows nothing about the call. transcript in the same thread as the email is the part i like most )",
+     "kr": "런칭 축하합니다 Justin. 제가 일했던 대부분의 팀에서는 누군가의 개인 휴대폰으로 전화를 받고 기억이 나면 Slack에 짧은 메모를 남기곤 했습니다. 그래서 다음으로 티켓을 맡는 사람은 통화 내용을 전혀 알지 못했죠. 이메일과 동일한 스레드에 통화 녹취록이 남는다는 점이 가장 마음에 듭니다 :)"
+    },
+    {
+     "author": "Justin George",
+     "is_maker": true,
+     "text": "@agshin\\_rajabov yea. Mo tools mo problems :D",
+     "kr": "@agshin_rajabov 맞습니다. 도구가 많아질수록 문제도 많아지죠 :D"
+    },
+    {
+     "author": "Scott Davidson Jr.",
+     "is_maker": false,
+     "text": "Congratulations on the launch! What sort of business use cases have you seen benefit most with SparrowDesk?",
+     "kr": "런칭을 축하드립니다! SparrowDesk를 통해 가장 큰 혜택을 본 비즈니스 활용 사례로는 어떤 것들이 있나요?"
+    },
+    {
+     "author": "Abdul Rehman",
+     "is_maker": false,
+     "text": "Congrats @georgejustin22 Quick Question: Does the AI agent see a caller's past tickets before it picks up or only the human after the transfer?",
+     "kr": "축하드립니다 @georgejustin22. 짧은 질문이 있습니다: AI 에이전트가 전화를 받기 전에 발신자의 과거 티켓을 확인할 수 있나요, 아니면 상담원에게 연결된 후에 사람 상담원만 볼 수 있나요?"
+    },
+    {
+     "author": "Justin George",
+     "is_maker": true,
+     "text": "@abod\\_rehman yup. We have the concept of Memory where past data can be looked into as well",
+     "kr": "@abod_rehman 네 가능합니다. 과거 데이터를 함께 조회할 수 있는 메모리(Memory) 개념이 내장되어 있습니다."
+    },
+    {
+     "author": "Justin George",
+     "is_maker": true,
+     "text": "@abod\\_rehman yup. its all there - all the context you need before picking up any call",
+     "kr": "@abod_rehman 맞습니다. 모든 것이 준비되어 있어서 어떤 전화를 받기 전에도 필요한 모든 맥락을 파악할 수 있습니다."
+    }
+   ],
+   "slug": "sparrowdesk"
+  }
+ ]
+}
