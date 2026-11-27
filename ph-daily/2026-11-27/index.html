@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 데일리 2026-11-27</title>
+<style>
+:root{--bg:#f6f7f9;--card:#ffffff;--ink:#1a1d23;--sub:#5c6470;--line:#e6e9ee;--acc:#da552f;--chip:#eef1f5;--badge:#fdeee8;}
+@media (prefers-color-scheme: dark){:root{--bg:#14161a;--card:#1d2026;--ink:#e8eaee;--sub:#9aa3af;--line:#2a2f38;--acc:#ff6b3d;--chip:#262b33;--badge:#3a2a22;}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:60px}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px}
+.topbtn{position:fixed;top:14px;right:14px;z-index:50;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbtn:hover{border-color:var(--acc);color:var(--acc)}
+header h1{font-size:24px;font-weight:800;letter-spacing:-.3px}
+header .meta{color:var(--sub);font-size:14px;margin-top:4px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;font-size:15px}
+.summary b{color:var(--acc)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+.chip{background:var(--chip);border:none;color:var(--ink);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;font-weight:600}
+.chip.on{background:var(--acc);color:#fff}
+.spacer{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.card:hover{border-color:var(--acc);transform:translateY(-2px)}
+.card .head{display:flex;gap:12px;align-items:center}
+.card img{width:52px;height:52px;border-radius:12px;object-fit:cover;background:var(--chip)}
+.card .name{font-size:17px;font-weight:800}
+.card .tag{font-size:13px;color:var(--sub)}
+.up{color:var(--acc);font-weight:800;font-size:14px;white-space:nowrap}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+.badge{background:var(--chip);color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.badge.price{background:var(--badge);color:var(--acc)}
+.desc{font-size:13.5px;color:var(--sub)}
+.foot{font-size:12px;color:var(--sub);margin-top:auto}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:14px}
+.note h3{font-size:16px;margin-bottom:8px}
+.note p{font-size:14px;color:var(--sub)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:4vh 12px}
+.modal-bg.open{display:flex}
+.modal{background:var(--card);border-radius:16px;max-width:720px;width:100%;max-height:88vh;overflow-y:auto;padding:24px}
+.modal h2{font-size:20px;display:flex;align-items:center;gap:12px}
+.modal .m-head{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:12px}
+.modal .m-head img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--chip)}
+.close{position:sticky;top:0;float:right;background:var(--chip);border:none;color:var(--ink);border-radius:999px;width:32px;height:32px;font-size:16px;cursor:pointer}
+.sect{margin-top:18px}
+.sect h4{font-size:15px;margin-bottom:8px;color:var(--acc)}
+.warn{background:var(--badge);color:var(--acc);border-radius:10px;padding:10px 14px;font-size:13px;margin-top:10px}
+.cmt{border-top:1px solid var(--line);padding:12px 0}
+.cmt .who{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.cmt .mk{background:var(--acc);color:#fff;font-size:11px;border-radius:4px;padding:1px 6px;font-weight:700}
+.cmt .orig-btn{background:var(--chip);border:none;color:var(--sub);font-size:11px;border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+.cmt .kr{font-size:14px;margin-top:4px}
+.cmt .en{display:none;font-size:13px;color:var(--sub);margin-top:6px;white-space:pre-wrap}
+.cmt.show-en .en{display:block}
+.orig-all{background:var(--chip);border:none;color:var(--ink);font-size:12px;border-radius:8px;padding:6px 12px;cursor:pointer;font-weight:600}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:var(--bg);padding:10px 20px;border-radius:999px;font-size:13px;transition:.25s;opacity:0;z-index:99}
+.toast.show{transform:translateX(-50%);opacity:1}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:30px}
+a{color:var(--acc)}
+.visit{background:var(--acc);color:#fff;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;margin-left:8px}
+.visit.ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.visit:hover{filter:brightness(1.08)}
+.foot .lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;margin-left:6px;white-space:nowrap}
+.foot .lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+.dq-divider{border:none;border-top:1px solid var(--line);margin:36px 0 24px 0}
+.dq-header{margin-bottom:14px}
+.dq-header h2{font-size:20px;font-weight:800;letter-spacing:-.2px}
+.dq-header .dq-sub{color:var(--sub);font-size:13px;margin-top:4px}
+.dq-card .dq-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dq-card .dq-name{font-size:16px;font-weight:800;line-height:1.3}
+.dq-card .dq-tag{font-size:13px;color:var(--sub);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.dq-card .dq-cmt{background:var(--chip);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13px;line-height:1.45;color:var(--ink)}
+.dq-card .dq-foot{font-size:12px;color:var(--sub);margin-top:auto}
+.dq-lnk{display:inline-block;background:var(--chip);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:var(--acc);text-decoration:none;white-space:nowrap}
+.dq-lnk:hover{border:1px solid var(--acc);padding:2px 11px}
+</style>
+</head>
+<body>
+<a class="topbtn" href="../">☰ 목록</a>
+<div class="wrap">
+<header>
+<h1>🚀 Product Hunt 데일리</h1>
+<div class="meta">2026-11-27 · Top 5 · 수집 댓글 53개 · 수집 2026-11-27 12:30 KST</div>
+</header>
+<div class="summary" id="summary"></div>
+<div class="toolbar" id="toolbar"></div>
+<div class="grid" id="grid"></div>
+<div id="notables"></div>
+<div id="dqsec"></div>
+<footer>workkrst.github.io/ph-daily · 데이터 출처: Product Hunt · Disquiet · 자동 수집</footer>
+</div>
+<div class="modal-bg" id="mbg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {
+ "date": "2026-11-27",
+ "collected_at": "2026-11-27 12:30 KST",
+ "summary": "오늘의 Top 5 제품은 AI 코딩 에이전트 오케스트레이션, 에이전트용 인프라 프로비저닝, 자율 QA 및 에이전트 대상 웹 진단 도구 등 AI 에이전트 워크플로 전반을 지원하는 개발자 및 인프라 도구가 집중적으로 선정되었습니다. 댓글에서는 다중 에이전트 운용 시 모델별 비용 최적화와 백그라운드 구동 안정성, 코딩 에이전트의 테스트 코드 임의 왜곡 방지 등 실무 도입 시의 격리 및 비용 효율성에 관한 질문이 공통적으로 집중되었습니다.",
+ "notable": [
+  {
+   "slug": "hub-20",
+   "why": "수십 개의 Claude Code 및 Codex 세션을 중앙에서 분배하는 실용적인 코디네이터 구조로 가장 많은 업보트를 기록했습니다. 댓글에서는 작업 위험도에 따라 모델을 분기해 토큰 비용을 최적화하고 VPS 백그라운드 구동을 지원하는 현실적인 운영 방안이 주목받았습니다."
+  },
+  {
+   "slug": "qa-tech",
+   "why": "코딩 에이전트가 버그 해결 대신 테스트 코드를 왜곡 수정하는 고질적 문제를 검증 에이전트 격리로 해결하여 주목을 받았습니다. 댓글에서는 단순 CLI 브라우저 스킬을 넘어 앱의 지식 그래프를 유지하고 독립된 사용자 목표 기반으로 검증하는 아키텍처가 호평을 이끌어냈습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Hub",
+   "tagline_en": "Run 100 Claude Code or Codex sessions like 5",
+   "tagline_kr": "100개의 Claude Code나 Codex 세션을 5개처럼 손쉽게 운영하세요",
+   "image": "https://ph-files.imgix.net/0b05d1fe-f50f-4b15-b681-c4f9e09c947b.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://usehub.dev/&utm_source=producthunt",
+   "categories": [
+    "AI Coding Agents",
+    "LLM Developer Tools",
+    "AI Workflow Automation"
+   ],
+   "upvotes": 365,
+   "comments_count": 169,
+   "maker": [
+    "Ivan Braun",
+    "Paul Malaj",
+    "Ilnur Kalimullin"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Hub는 Claude Code 및 Codex 세션을 효율적으로 관리할 수 있는 오픈소스 디스패처입니다. 브라우저나 텔레그램을 통해 목표를 입력하면 코디네이터가 여러 하위 에이전트에게 작업을 분배하며, 최종 사용자에게는 핵심 결정 사항만 전달됩니다. 사용자의 자체 Claude 또는 ChatGPT 구독을 활용하는 셀프 호스팅 방식이며 Apache-2.0 라이선스로 제공됩니다. 한 줄의 명령어로 손쉽게 설치할 수 있으며 소형 VPS 환경에서도 원활하게 구동할 수 있습니다. 실험적 기능으로 에이전트가 권한 확인 프롬프트 없이 자율적으로 실행되도록 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/hub-20",
+   "comment_summary": "모델 비용 최적화, 노트북 종료 시 세션 유지 여부, 소규모 작업 대비 토큰 효율성 등에 대한 활발한 질의응답이 진행되었습니다. 제작진은 작업 위험도에 따라 에이전트별로 경량 모델과 대형 모델을 분기할 수 있으며 서버 모드를 통한 백그라운드 구동이 가능하다고 설명했습니다. 사용자들은 대규모 병렬 에이전트 관리의 번거로움을 해결해 주는 실용적인 코디네이터 구조에 긍정적인 반응을 보였습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Ivan Braun",
+     "is_maker": true,
+     "text": "📌 Hi again Product Hunt. We built Hub for our own AI agents. Why? One Claude Code or Codex session is a chat. Ten are a _mess_: which one is stuck, which one waits for you. We were doing a CTO's job by hand, for a team of robots. So we built a **coordinator**: you write to it in plain words, in the browser or in Telegram, and it brings you only the decisions. **What it did for us:** • 546 merged MRs since 20 September, rewriting our legacy backend • Pinamar, Argentina: patients book at the publi",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요. 저희는 자체 AI 에이전트 운영을 위해 Hub를 개발했습니다. 하나의 Claude Code나 Codex 세션은 단순한 대화지만, 10개가 되면 어떤 세션이 멈췄는지, 어떤 세션이 응답을 기다리는지 파악하기 어려운 난장판이 됩니다. 마치 로봇 팀을 위해 수작업으로 CTO 역할을 하던 셈이었습니다. 그래서 저희는 자연어로 브라우저나 텔레그램에 지시를 내리면 핵심 결정 사항만 가져다주는 **코디네이터**를 구축했습니다. **저희가 거둔 성과:** • 9월 20일 이후 레거시 백엔드를 재작성하며 546개의 병합된 MR 달성 • 아르헨티나 피나마르: 공공 병원 예약 자동화 적용"
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Nice work on the relaunch, hope today goes well.",
+     "kr": "재출시 축하드립니다. 오늘 론칭도 순조롭게 잘 진행되기를 바랍니다."
+    },
+    {
+     "author": "Paul Malaj",
+     "is_maker": true,
+     "text": "@relli7 thanks David! so far so good, lots of great questions today)",
+     "kr": "@relli7 David 님 감사합니다! 지금까지 순조롭고 유익한 질문도 많이 들어오고 있네요 :)"
+    },
+    {
+     "author": "uksla",
+     "is_maker": false,
+     "text": "Every agent on the biggest model adds up fast. Is it possible to give the simple ones a cheaper model and leave the big one for the main agent?",
+     "kr": "모든 에이전트에 최고 사양 모델을 쓰면 비용이 금방 불어나는데요. 단순 작업에는 더 저렴한 모델을 배정하고 메인 에이전트에만 대형 모델을 남겨둘 수 있나요?"
+    },
+    {
+     "author": "Ilnur Kalimullin",
+     "is_maker": true,
+     "text": "@al\\_sku yeah, it does that. Every agent can run on its own model. We keep the main coordinator on the big one (but you can change it too) and move the routine agents to a cheaper, faster one. It's one setting per agent",
+     "kr": "@al_sku 네, 지원합니다. 각 에이전트마다 개별 모델을 지정할 수 있습니다. 저희도 메인 코디네이터에는 대형 모델을 유지하면서(변경도 가능) 일상적인 반복 작업 에이전트는 더 저렴하고 빠른 모델로 전환해 둡니다. 에이전트당 설정 하나로 제어할 수 있습니다."
+    },
+    {
+     "author": "Paul Malaj",
+     "is_maker": true,
+     "text": "@al\\_sku yes, that's built in ) The coordinator marks every task it hands out as normal or risky: normal goes to a cheaper model, risky gets the big one with more thinking. And if you need, you can set it individually for every agent right from the page, both the model and how hard it thinks, e.g. Sonnet for the routine ones and Opus for the lead",
+     "kr": "@al_sku 네, 기본 내장된 기능입니다 :) 코디네이터가 분배하는 모든 작업을 일반(normal) 또는 위험(risky)으로 표시하여 일반 작업은 더 저렴한 모델로, 위험 작업은 더 깊이 추론하는 대형 모델로 전달합니다. 필요하다면 웹 페이지에서 에이전트별로 모델과 추론 수준을 개별 설정할 수 있으며, 예를 들어 일상 작업에는 Sonnet을, 총괄 에이전트에는 Opus를 할당할 수 있습니다."
+    },
+    {
+     "author": "Dima Bergelson",
+     "is_maker": false,
+     "text": "does a task keep running if I close the laptop lid? self-hosted makes me wonder if it's meant to live on a small VPS instead",
+     "kr": "노트북 덮개를 닫아도 작업이 계속 실행되나요? 셀프 호스팅 방식이라 소형 VPS에 올려두고 쓰는 형태인지 궁금합니다."
+    },
+    {
+     "author": "Ilnur Kalimullin",
+     "is_maker": true,
+     "text": "@dmitry\\_bergelson on a laptop it pauses while the lid is closed and picks up where it left off when you open it. For overnight work we run it on a small server: the installer has a --server mode, and you still answer cards from the phone 🙂",
+     "kr": "@dmitry_bergelson 노트북에서는 덮개를 닫으면 일시 정지되었다가 다시 열었을 때 중단된 지점부터 재개됩니다. 밤샘 작업의 경우 저희는 소형 서버에서 구동하며, 설치 프로그램에 --server 모드가 있어 모바일에서도 카드 형태로 응답할 수 있습니다 🙂"
+    },
+    {
+     "author": "Paul Malaj",
+     "is_maker": true,
+     "text": "@dmitry\\_bergelson on a laptop the work pauses while it sleeps and picks up when you open the lid. That's why mine lives on a small server: the one-line install works on any Linux box, 4 GB of RAM is enough to start, and you reach the page from your phone and Telegram",
+     "kr": "@dmitry_bergelson 노트북이 절전 모드로 들어가면 작업이 멈췄다가 덮개를 열면 재개됩니다. 그래서 저도 소형 서버에서 운영 중인데, 리눅스 환경이라면 한 줄의 명령어로 설치되고 RAM 4GB만 있어도 충분하며 휴대폰과 텔레그램으로도 접속할 수 있습니다."
+    },
+    {
+     "author": "Ivan Kachur",
+     "is_maker": false,
+     "text": "Congrats on launch! Seems to be a great solution. But I am curious how tokens and time efficient it is, can I use it for small tasks as well or just big pieces of work? When i tried something like this on my own it took 2x more time and tokens to do the same work because the orchestrator was not doing well.",
+     "kr": "출시 축하드립니다! 훌륭한 솔루션 같네요. 다만 토큰과 시간 효율성이 얼마나 좋은지 궁금합니다. 작은 작업에도 쓸 수 있나요, 아니면 규모가 큰 작업 전용인가요? 제가 비슷한 걸 직접 시도했을 때는 오케스트레이터의 미숙한 조율 때문에 동일한 작업에 시간과 토큰이 2배나 더 들었습니다."
+    },
+    {
+     "author": "Paul Malaj",
+     "is_maker": true,
+     "text": "@ivankachur fair point, an orchestrator isn't free ) For a small task you just write to the session that owns that repo and it does it itself, no hand-off. The lead only splits work that's big enough to be worth it, and an executor gets a short brief, not the lead's whole history. So for one quick fix it costs about the same as plain Claude Code; it pays off on parallel work and on you not babysitting",
+     "kr": "@ivankachur 타당한 지적입니다. 오케스트레이터 도입에도 비용이 드니까요 :) 작은 작업의 경우 해당 리포지토리를 담당하는 세션에 직접 전달하면 위임 없이 스스로 처리합니다. 리더 에이전트는 분할할 가치가 있을 만큼 큰 작업만 분리하며, 실행자는 리더의 전체 히스토리가 아닌 요약된 지침만 받습니다. 따라서 빠른 단일 수정 작업은 일반 Claude Code와 비슷한 비용이 들며, 병렬 작업과 일일이 감독하지 않아도 되는 부분에서 진가를 발휘합니다."
+    },
+    {
+     "author": "Ivan Braun",
+     "is_maker": true,
+     "text": "@ivankachur classic. It's the same as giving simple tasks to senior experts. You pay more for the same performance. Hub is no exception, but it shines on complex tasks. For example, Hub is in charge for my home. For my smart home, buying stuff online, configuring, writing widgets, and giving me IKEA-style instructions to plug in and connect stuff. Any frontier harness will get stuck at opening Amazon or similar minor obstacle.",
+     "kr": "@ivankachur 흔히 겪는 현상입니다. 단순한 작업을 수석 전문가에게 맡기면 같은 결과에도 더 많은 비용을 내는 것과 같죠. Hub도 예외는 아니지만 복잡한 작업에서 큰 힘을 발휘합니다. 일례로 Hub는 제 스마트 홈 구축, 온라인 물품 구매, 환경 설정, 위젯 작성, 이케아 스타일의 조립 지침 제공까지 스마트 홈 전반을 도맡고 있습니다. 기존의 프런티어 하네스는 아마존을 여는 수준의 사소한 장애물에도 막히기 십상입니다."
+    }
+   ],
+   "slug": "hub-20"
+  },
+  {
+   "name": "QA.tech",
+   "tagline_en": "Ship faster with AI agents that create and run your QA tests",
+   "tagline_kr": "QA 테스트를 생성하고 실행하는 AI 에이전트로 더 빠르게 배포하세요",
+   "image": "https://ph-files.imgix.net/5497c34b-ef45-4ee2-8576-3a1b105771b3.gif?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://qa.tech/product/pr-testing&utm_source=producthunt",
+   "categories": [
+    "Testing and QA software",
+    "AI Code Testing"
+   ],
+   "upvotes": 193,
+   "comments_count": 24,
+   "maker": [
+    "Daniel Mauno Pettersson",
+    "Chris Stryjewski"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "QA.tech는 제품을 릴리스할 때마다 품질을 자동으로 검증해 주는 AI 기반 테스팅 도구입니다. 전용 QA 에이전트가 실제 사용자처럼 시스템과 상호작용하며 끊어진 경로를 탐지하고 고객 경험을 보호합니다. 개발 워크플로 내에서 자율적으로 실행되므로 수동 테스트와 깨지기 쉬운 스크립트 유지보수 부담을 완전히 제거합니다. 이번 론칭은 에이전트가 브라우저 탐색 및 테스트 실행 결과를 IDE로 직접 보고해 주는 MCP(Model Context Protocol) 지원을 포함합니다. 개발 속도에 맞춰 테스트 규모를 유연하게 확장하면서도 QA 비용을 대폭 절감할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/qa-tech",
+   "comment_summary": "기존 CLI 도구의 브라우저 스킬과의 차이점, 코딩 에이전트가 버그 대신 테스트 코드를 왜곡 수정하는 문제의 방지책 등에 관한 질문이 이어졌습니다. 제작진은 앱의 지식 그래프를 유지하며 코드 작성 에이전트와 별개로 순수 사용자 목표 관점에서 테스트를 진행한다고 답변했습니다. 오랜 사용자들의 신뢰를 바탕으로 로컬 개발 서버와 PR 자동화 환경에서의 실용적인 활용 기대감이 나타났습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Daniel Mauno Pettersson",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt, Daniel here, co-founder and CEO of QA.tech. What sucks is when your coding agent says \"done\", you open the app and the signup form doesn't even submit. So you end up clicking through everything yourself anyway, which none of us devs really enjoy. We built QA.tech MCP so your agent can hand that part to us. We explore your app, write the tests and run them in a real browser, and your agent gets back what broke and why, so it can fix it and rerun without you leaving your IDE. Se",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요, QA.tech의 공동 창업자이자 CEO Daniel입니다. 코딩 에이전트가 '완료'했다고 보고해서 앱을 열어봤더니 가입 폼조차 제출되지 않을 때만큼 답답한 순간도 없습니다. 결국 개발자가 직접 하나하나 클릭하며 확인해야 하는데, 이는 누구도 즐기지 않는 일이죠. 그래서 코딩 에이전트가 해당 검증을 우리에게 위임할 수 있도록 QA.tech MCP를 구축했습니다. 저희가 앱을 탐색하고 테스트를 작성해 실제 브라우저에서 실행한 뒤, 무엇이 왜 깨졌는지를 에이전트에 전달하여 개발자가 IDE를 벗어나지 않고도 버그를 수정하고 재실행할 수 있도록 돕습니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Congrats on the MCP launch, Daniel.",
+     "kr": "Daniel, MCP 출시를 축하합니다."
+    },
+    {
+     "author": "Daniel Mauno Pettersson",
+     "is_maker": true,
+     "text": "@relli7 Thank you for your support David!",
+     "kr": "@relli7 응원해 주셔서 감사합니다 David 님!"
+    },
+    {
+     "author": "Lakshay Mudgal",
+     "is_maker": false,
+     "text": "Congrats, sounds like a great idea. Just one query: aren't the CLI models doing these same things via skills? What is the difference between QA Tech & normal cli models",
+     "kr": "출시 축하드립니다, 좋은 아이디어 같네요. 질문이 하나 있는데요, CLI 모델들도 스킬을 통해 동일한 작업을 수행하고 있지 않나요? QA.tech와 일반 CLI 모델의 차이점이 무엇인가요?"
+    },
+    {
+     "author": "Chris Stryjewski",
+     "is_maker": true,
+     "text": "@lakshay\\_mudgalFair question. You can get a CLI agent to click through your app with a browser skill, and for a quick one-off check that works fine. The gap shows up when you try to run it as your actual QA. QA.tech keeps a map of your app (knowledge graph, screen attached) between runs, runs on every PR in cloud browsers without anyone kicking it off, keeps the test suite current as the product changes, and hands you a report with repro steps and screenshots. A CLI agent starts from zero each ",
+     "kr": "@lakshay_mudgal 좋은 질문입니다. CLI 에이전트가 브라우저 스킬을 이용해 앱을 클릭하게 할 수 있으며, 일회성 빠른 확인에는 잘 작동합니다. 하지만 실제 QA 프로세스로 운영하려고 하면 격차가 드러납니다. QA.tech는 실행 간 앱의 지도(화면이 첨부된 지식 그래프)를 유지하고, 별도 트리거 없이도 모든 PR마다 클라우드 브라우저에서 실행되며, 제품 변경에 맞춰 테스트 스위트를 최신 상태로 유지하고 재현 단계 및 스크린샷이 담긴 보고서를 제공합니다. 반면 CLI 에이전트는 매번 0부터 시작합니다."
+    },
+    {
+     "author": "George Alexiou",
+     "is_maker": false,
+     "text": "congrats! how do you stop the agent fixing the test instead of the bug? claude code does that to me all the time lol",
+     "kr": "축하합니다! 에이전트가 버그를 고치는 대신 테스트를 수정해 버리는 상황은 어떻게 방지하나요? Claude Code를 쓰다 보면 맨날 그러더군요 ㅎㅎ"
+    },
+    {
+     "author": "Chris Stryjewski",
+     "is_maker": true,
+     "text": "@georgealexiou Ha, classic! We keep the agent writing the code separate from the one checking it. Tests live outside your repo as plain user goals, so there's nothing for Claude Code to \"fix\" except the actual bug. Coding agents are OK-ish at finding/fixing bugs to some level. Same with Playwright + MCP builds. But both breaks at scale and generates flakes/false positives instead of reporting actual bugs at some point.",
+     "kr": "@georgealexiou 하하, 전형적인 문제죠! 저희는 코드를 작성하는 에이전트와 이를 검증하는 에이전트를 철저히 분리합니다. 테스트는 일반 사용자 목표 형태로 리포지토리 외부에 보관되므로 Claude Code가 실제 버그 외에는 '수정'할 대상이 없습니다. 코딩 에이전트나 Playwright + MCP 조합도 어느 정도까지는 버그를 찾고 고치지만, 규모가 커지면 결국 깨지면서 실제 버그 대신 불안정한 실패(flaky test)나 위양성을 유발합니다."
+    },
+    {
+     "author": "Abdul Rehman",
+     "is_maker": false,
+     "text": "💡 Bright idea Congrats @whtmnk when the UI changes, do the agents adjust the tests on their own, or do you still have to go in and fix things?",
+     "kr": "💡 기발한 아이디어네요. @whtmnk 출시 축하합니다. UI가 바뀌면 에이전트가 테스트를 스스로 조정하나요, 아니면 사람이 직접 수정해야 하나요?"
+    },
+    {
+     "author": "Chris Stryjewski",
+     "is_maker": true,
+     "text": "@abod\\_rehman Thanks! QA.tech agent works toward the goal of the test (like \"complete checkout\"), not fixed selectors, so a moved button or renamed label doesn't break it. When a change looks like an actual bug and not just a redesign, it flags it for you to review. Same goes for bigger changes. If you rebuild the whole onboarding of a task management app and run it as an A/B test, an agent whose goal is \"create a ticket and assign it to a teammate\" will complete both variants, as long as a real",
+     "kr": "@abod_rehman 감사합니다! QA.tech 에이전트는 고정된 셀렉터가 아니라 '결제 완료'와 같은 테스트의 목표를 바탕으로 동작하므로 버튼 위치가 바뀌거나 라벨 이름이 변경되어도 깨지지 않습니다. 변경 사항이 단순한 디자인 개편이 아니라 실제 버그로 의심될 때는 검토할 수 있도록 플래그를 띄웁니다. 더 큰 변경도 마찬가지입니다. 작업 관리 앱의 온보딩 전체를 개편해 A/B 테스트를 진행하더라도, '티켓을 생성하고 팀원에게 할당하기'라는 목표를 가진 에이전트는 정상적인 경로가 있는 한 두 버전 모두 완료할 수 있습니다."
+    },
+    {
+     "author": "Kristian Luoma",
+     "is_maker": false,
+     "text": "💎 Pixel perfection @QA.tech have been using QA.tech for long-time, and it is one of the few things that works. Congrats on the launch!",
+     "kr": "💎 완성도가 뛰어납니다. @QA.tech 오랫동안 QA.tech를 사용해 왔는데, 실제로 제대로 작동하는 몇 안 되는 도구 중 하나입니다. 출시 축하합니다!"
+    },
+    {
+     "author": "Chris Stryjewski",
+     "is_maker": true,
+     "text": "Thanks @kristian\\_luoma Kristian, that means a lot coming from a long-time user! 🫶",
+     "kr": "@kristian_luoma Kristian 님 감사합니다, 오랜 사용자분의 말씀이라 더욱 뜻깊네요! 🫶"
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "This is the part of my loop I've been missing — my coding agent says done, and I end up clicking through everything myself to find what it broke. Having an external QA agent actually exercise the app in a real browser and hand the failures back in a form the coding agent can fix sounds like the right shape. Curious how it handles a local dev server versus a deployed preview URL — most of my stuff is still localhost while I'm iterating.",
+     "kr": "이것이 바로 제 개발 루프에서 빠져 있던 부분이었습니다. 코딩 에이전트가 완료했다고 하면 무엇이 망가졌는지 찾기 위해 제가 직접 일일이 클릭해 봐야 했거든요. 외부 QA 에이전트가 실제 브라우저에서 앱을 테스트하고 코딩 에이전트가 수정할 수 있는 형태로 실패 내역을 반환해 주는 구조가 이상적입니다. 배포된 프리뷰 URL 대비 로컬 개발 서버를 어떻게 처리하는지 궁금합니다. 반복 개발 중에는 대부분 로컬호스트 환경이니까요."
+    }
+   ],
+   "slug": "qa-tech"
+  },
+  {
+   "name": "ExtraOrbital",
+   "tagline_en": "✦ Open bar databases, storage buckets & AI keys for agents",
+   "tagline_kr": "✦ 에이전트를 위한 데이터베이스, 스토리지 버킷 및 AI 키 무제한 프로비저닝",
+   "image": "https://ph-files.imgix.net/7c283f3b-889e-4e01-9ffb-0c4465ef976b.gif?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=293",
+   "website": "https://extraorbital.dev/&utm_source=producthunt",
+   "categories": [
+    "Command line tools",
+    "Unified API",
+    "Cloud Computing Platforms"
+   ],
+   "upvotes": 172,
+   "comments_count": 22,
+   "maker": [
+    "Severin Marcombes"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "ExtraOrbital은 AI 코딩 에이전트가 애플리케이션 개발에 필요한 데이터베이스, 스토리지, 캐싱, AI 키를 명령 한 줄로 즉시 프로비저닝할 수 있도록 돕는 CLI 도구입니다. 에이전트에게 계정이나 자격 증명을 일일이 발급해 줄 필요 없이 .env.example 파일을 읽어 필요한 인프라 리소스를 자동으로 생성해 줍니다. 복잡한 다중 클라우드 계정과 API 키 관리 부담을 덜고 중앙 대시보드에서 모든 리소스를 제어할 수 있습니다. 7일 후 자동 삭제되는 임시 리소스 생성 기능과 안전한 키 순환 명령어를 지원하여 보안성을 높였습니다. 에이전트 중심의 개발 환경에서 인프라 구성의 번거로움을 완전히 해결해 줍니다.",
+   "launch_url_used": "https://www.producthunt.com/products/extraorbital-deleted-1365752",
+   "comment_summary": "별도 계정 없이 실행되는 프로비저닝의 편리함, 임시 리소스 삭제 및 API 키 순환 기능, Supabase와의 비용 및 보안 비교 등에 대한 질의가 오갔습니다. 제작진은 Neon 기반의 PostgreSQL 지원 및 일회성 자원 관리로 완전 종량제 과금을 실현했다고 설명했습니다. 코딩 에이전트가 사람의 개입 없이도 풀스택 인프라를 다룰 수 있게 해준다는 점에서 높은 관심을 받았습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Severin Marcombes",
+     "is_maker": true,
+     "text": "📌 🚀 Hey Product Hunt! I'm Severin, founder of ExtraOrbital.dev. ExtraOrbital is a tool that lets AI coding agents provision everything they need to build real applications: databases, storage, AI models, authentication, and more. All with a single command, without any setup. Over the past year, I've been building more and more with AI coding agents like Claude Code and Codex. And while they're getting incredibly good at writing code, I kept running into the same problem: **they still need a huma",
+     "kr": "📌 🚀 프로덕트 헌트 여러분 안녕하세요! ExtraOrbital.dev 창업자 Severin입니다. ExtraOrbital은 AI 코딩 에이전트가 실제 애플리케이션 구축에 필요한 데이터베이스, 스토리지, AI 모델, 인증 등 모든 리소스를 별도 설정 없이 단 한 번의 명령어로 프로비저닝할 수 있도록 지원하는 도구입니다. 지난 1년 동안 Claude Code나 Codex 같은 에이전트로 개발하는 비중이 늘면서 코드 작성 능력은 놀랍도록 발전했지만, 여전히 인간의 설정 개입을 필요로 한다는 동일한 한계에 부딪혔습니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Nice one. When are the Git repos due? The pricing page still has them as coming soon.",
+     "kr": "멋지네요. Git 리포지토리 지원은 언제 예정되어 있나요? 가격 페이지에는 아직 출시 예정으로 표시되어 있습니다."
+    },
+    {
+     "author": "Severin Marcombes",
+     "is_maker": true,
+     "text": "@relli7 Pricing is coming soon. The git repos are available. Would love to learn about your use case!",
+     "kr": "@relli7 가격 정책은 곧 공개될 예정입니다. Git 리포지토리는 현재 이용 가능합니다. 어떤 사용 사례를 염두에 두고 계신지 들어보고 싶네요!"
+    },
+    {
+     "author": "alban",
+     "is_maker": false,
+     "text": "Hunter Congrats for the launch @severin\\_\\_ !",
+     "kr": "헌터로서 @severin__ 출시를 축하드립니다!"
+    },
+    {
+     "author": "Severin Marcombes",
+     "is_maker": true,
+     "text": "Thanks @albn !",
+     "kr": "@albn 감사합니다!"
+    },
+    {
+     "author": "Severin Marcombes",
+     "is_maker": true,
+     "text": "@albn Thanks!",
+     "kr": "@albn 고맙습니다!"
+    },
+    {
+     "author": "Gene Dai",
+     "is_maker": false,
+     "text": "npx provision with no account is handy. After a weekend prototype, is teardown one command too?",
+     "kr": "계정 없이 npx로 프로비저닝하는 건 매우 편리하네요. 주말 동안 프로토타입을 만든 뒤 정리(teardown)하는 것도 한 줄 명령어로 가능한가요?"
+    },
+    {
+     "author": "Severin Marcombes",
+     "is_maker": true,
+     "text": "@genedai Yes it is! Or you can create your ressources as ephemeral, and they get deleted after 7 days",
+     "kr": "@genedai 네, 가능합니다! 혹은 리소스를 임시(ephemeral)로 생성하면 7일 후에 자동으로 삭제되도록 할 수도 있습니다."
+    },
+    {
+     "author": "Abdul Rehman",
+     "is_maker": false,
+     "text": "Congrats@severin\\_\\_ Do you handle key rotation too or is that still on me when something leaks?",
+     "kr": "@severin__ 출시 축하합니다. 키 순환(rotation)도 처리해 주나요, 아니면 유출 시 여전히 제가 직접 처리해야 하나요?"
+    },
+    {
+     "author": "Severin Marcombes",
+     "is_maker": true,
+     "text": "@abod\\_rehman Yes we do! npx extraorbital rotate, and you're safe again.",
+     "kr": "@abod_rehman 네, 지원합니다! npx extraorbital rotate 명령만 실행하면 다시 안전해집니다."
+    },
+    {
+     "author": "Umberto",
+     "is_maker": false,
+     "text": "I love the concept, the website and the fact it's open source. How does it compare in terms of security with solutions like Supabase?",
+     "kr": "콘셉트와 웹사이트, 그리고 오픈소스라는 점이 마음에 듭니다. Supabase 같은 솔루션과 비교했을 때 보안 측면에서는 어떤가요?"
+    },
+    {
+     "author": "Severin Marcombes",
+     "is_maker": true,
+     "text": "@umberto\\_abbatantuono Good question. We do not support Supabase yet as they have a $10/month/project minimum rate that was not compliant with our fully pay-as-you-go approach. We provide Postgre via Neon, which supports RLS too and is compatible with BetterAuth. Additionally, we provide env var security: \\- No need for an env var if you deploy your app on an OIDC-compatible provider (like Vercel, or Extraorbital itself) \\- One env var per machine if you need an env var + easy rotation/revocatio",
+     "kr": "@umberto_abbatantuono 좋은 질문입니다. Supabase는 프로젝트당 월 10달러 최소 비용이 있어 당사의 완전 종량제 과금 방식과 맞지 않아 아직 지원하지 않습니다. 대신 RLS를 지원하고 BetterAuth와 호환되는 Neon 기반 PostgreSQL을 제공합니다. 또한 환경 변수 보안도 제공하는데, Vercel이나 Extraorbital 자체와 같은 OIDC 호환 공급자에 배포할 경우 환경 변수가 전혀 필요하지 않으며, 필요한 경우에도 머신당 하나의 환경 변수만 사용하고 손쉬운 순환/폐기 기능을 지원합니다."
+    }
+   ],
+   "slug": "extraorbital-deleted-1365752"
+  },
+  {
+   "name": "Bifura",
+   "tagline_en": "See your website the way AI agents do",
+   "tagline_kr": "AI 에이전트의 시선으로 웹사이트를 분석하고 개선하세요",
+   "image": "https://ph-files.imgix.net/ed414020-021d-4ffe-a8c1-4f05ddf13145.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://bifura.ai/?utm_source=producthunt&utm_medium=launch&utm_campaign=launch2026",
+   "categories": [
+    "SEO tools",
+    "GEO Tools"
+   ],
+   "upvotes": 150,
+   "comments_count": 20,
+   "maker": [
+    "Konrad Pacula"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Bifura는 AI 크롤러와 어시스턴트의 관점에서 웹사이트를 스캔하고 분석해 주는 진단 도구입니다. AI 에이전트가 페이지에서 올바르게 읽어낸 정보와 누락하거나 잘못 해석한 내용을 정확하게 시각화해 줍니다. 배포 전 샌드박스 환경에서 수정 사항을 미리 테스트해 볼 수 있어 인용 누락을 사전에 방지할 수 있습니다. 별도 회원가입 없이 1분 이내에 무료로 에이전트 준비도 점수(Agent readiness score)를 측정할 수 있습니다. AI 기반 검색 및 추천 환경에 맞춘 새로운 SEO 및 GEO 최적화 솔루션을 제공합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/bifura",
+   "comment_summary": "서버 사이드 렌더링 사이트에서의 자바스크립트 가독성 문제, 비공개 스테이징 사이트 스캔 지원 여부, AI 인용률 증대 가능성 등이 논의되었습니다. 제작진은 리디자인 후 콘텐츠 누락 방지 및 정형 데이터 검증 등 머신 관점의 QA 도구로서의 활용 방안을 소개했습니다. AI 에이전트의 추천을 사전에 시뮬레이션하고 대비할 수 있다는 점에서 사용자들의 큰 호응을 얻었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Konrad Pacula",
+     "is_maker": true,
+     "text": "📌 Hi Product Hunt, We ran our homepage through the Bifura engine... Section **_Who it is for_** of the report said: \"not found\"... Granted, the website went through many iterations (as did the scoring engine...) but the core thesis remained the same - we wanted to give visibility and tools to anyone who wants to improve how AI agents perceive their website. Initially we meant individuals, but, Agency/API functionality have also been added... aaand we applied to be a Treg vendor so I guess we've ",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요, 저희 홈페이지를 직접 Bifura 엔진에 돌려보았더니... 보고서의 **_대상 사용자_** 섹션에 '찾을 수 없음'이라고 나오더군요... 웹사이트와 스코어링 엔진 모두 수많은 수정을 거쳤지만, 핵심 전제는 언제나 같았습니다. AI 에이전트가 웹사이트를 인식하는 방식을 개선하고자 하는 모든 이에게 가시성과 도구를 제공하는 것입니다. 처음에는 개인을 대상으로 시작했으나 에이전시/API 기능도 추가되었고, Treg 벤더 신청도 진행했습니다."
+    },
+    {
+     "author": "@konrad\\_ainow",
+     "is_maker": false,
+     "text": "Ran my homepage through it: 71, all 10 AI crawlers allowed, and it picked up the organisation data. The surprise was that only 47% of the text is readable without JavaScript. I'd have guessed much higher for a mostly server-rendered site, so that's a useful catch. One thing I expected and didn't see in the free view: a check that the sameAs links in the structured data match the profiles and store listings they point to. Is that part of the full report?",
+     "kr": "내 홈페이지를 돌려봤더니 점수는 71점이었고 10개 AI 크롤러가 모두 허용되었으며 조직 데이터도 잘 수집되었습니다. 놀라웠던 점은 자바스크립트 없이 읽을 수 있는 텍스트가 47%에 불과했다는 점입니다. 대부분 서버 렌더링된 사이트라 훨씬 높을 줄 알았는데 유용한 지적이었습니다. 무료 뷰에서 기대했다가 보지 못한 한 가지는 구조화된 데이터의 sameAs 링크가 프로필 및 스토어 목록과 일치하는지 확인하는 기능인데, 전체 보고서에는 포함되어 있나요?"
+    },
+    {
+     "author": "Konrad Pacula",
+     "is_maker": true,
+     "text": "@andre\\_touhey Great catch, hugely appreciate it! Honest answer: no, the full report doesn't check sameAs today. What it does check is the structured data itself, and on multi-page audits whether your Organization name and URL agree across pages. Checking sameAs properly is a great idea and fits what we're building. I have added it to our roadmap, don't want to commit... but it'll be in this side of Christmas",
+     "kr": "@andre_touhey 훌륭한 지적 감사드립니다! 솔직히 말씀드리면 현재 전체 보고서에서도 sameAs를 확인하지는 않습니다. 현재는 구조화된 데이터 자체를 검증하고 여러 페이지 감사 시 페이지 간 조직 이름과 URL 일치 여부를 확인합니다. sameAs를 제대로 검사하는 것은 훌륭한 아이디어이며 저희 로드맵에 추가했습니다. 확언할 수는 없지만 크리스마스 전까지는 반영될 것입니다."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "Can it scan a staging site that's behind a password?",
+     "kr": "비밀번호로 보호된 스테이징 사이트도 스캔할 수 있나요?"
+    },
+    {
+     "author": "Jess Phoa",
+     "is_maker": false,
+     "text": "What are some other use cases one might use Bifura for, if any? Based on the \"See your website the way AI agents do\" tagline, I actually thought this was going to be more of a product-oriented QA tools > sales before I clicked in",
+     "kr": "Bifura를 활용할 수 있는 또 다른 사례가 있나요? 'AI 에이전트의 시선으로 웹사이트를 보라'는 슬로건을 보고 클릭하기 전에는 영업보다는 제품 중심의 QA 도구에 더 가깝다고 생각했거든요."
+    },
+    {
+     "author": "Konrad Pacula",
+     "is_maker": true,
+     "text": "@jphosho Hey Jess, you're not far off. Bifura is QA, just for a different user: it tests what a machine gets from your page rather than whether the page works for a person. Some ways people use it beyond \"will ChatGPT recommend us\": * **Release and redesign checks.** Rescan after a site migration, new theme or JavaScript framework change. A common regression is content that moves behind JavaScript, so AI crawlers suddenly get a near-empty page. Monitoring alerts you when the Agent readiness scor",
+     "kr": "@jphosho 안녕하세요 Jess, 크게 빗나가지 않으셨습니다. Bifura는 대상 사용자가 다른 QA 도구입니다. 사람이 사이트를 이용할 수 있는지가 아니라 기계가 페이지에서 무엇을 얻어가는지를 테스트하니까요. 'ChatGPT가 우리를 추천해 줄까' 외에도 다음과 같이 활용됩니다: * **배포 및 리디자인 점검:** 사이트 이전, 새 테마나 JS 프레임워크 변경 후 재스캔합니다. 흔한 퇴행 오류는 콘텐츠가 JS 뒤로 숨어 AI 크롤러가 거의 빈 페이지를 받게 되는 현상이며, 모니터링을 통해 준비도 점수가 떨어지면 알림을 줍니다."
+    },
+    {
+     "author": "Brent Vardy",
+     "is_maker": false,
+     "text": "💡 Bright idea Hey @Bifura looks great, And I like that you have a pay-as-you-go option. I hate subscriptions so prefer to pay as I go. However getting only one report for the same price as 10 reports on the monthly subscription buts me off. I would be more tempted to purchase at $5 per report.",
+     "kr": "💡 좋은 아이디어네요. @Bifura 멋져 보이고 종량제 옵션이 있어 마음에 듭니다. 구독을 싫어해서 종량제를 선호하는데요. 하지만 월 구독 10개 보고서와 동일한 가격에 단 1개의 보고서만 제공되는 점은 좀 망설여집니다. 보고서당 5달러 정도라면 더 구매하고 싶을 것 같네요."
+    },
+    {
+     "author": "Konrad Pacula",
+     "is_maker": true,
+     "text": "@codeandsea thank you for the feedback, will think about this and see what can be done",
+     "kr": "@codeandsea 피드백 감사드립니다. 고민해 보고 개선할 수 있는 방안을 찾아보겠습니다."
+    },
+    {
+     "author": "Pradeep Rao",
+     "is_maker": false,
+     "text": "Congratulations on launch!! Will this also help us to increase our AI citations? AI searches seeing vs using for citations are two different things. Its like impressions vs CTR in Google search. If it can, this will be really useful",
+     "kr": "출시를 축하합니다!! 이 도구가 AI 인용 빈도를 높이는 데도 도움이 될까요? AI 검색이 웹을 보는 것과 실제 인용에 사용하는 것은 구글 검색의 노출 수와 클릭률(CTR)처럼 서로 다른 문제인데, 도움이 된다면 정말 유용할 것 같습니다."
+    },
+    {
+     "author": "Germán Merlo",
+     "is_maker": false,
+     "text": "Congrats on the launch Konrad!",
+     "kr": "Konrad, 출시를 축하합니다!"
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "I launch small apps and I've started noticing people ask an AI assistant about them before they ever reach my site, so seeing my pages the way a crawler does really clicks for me. The sandbox test-before-you-ship part is what I'd use first — I tweak copy a lot and I'd want to know the fix actually lands before I ship it. Curious whether the report covers subpages too, not just the homepage — my pricing and details live deeper in the site, and that's usually where the wrong answers come from.",
+     "kr": "소규모 앱을 출시하곤 하는데, 사용자들이 사이트에 도달하기도 전에 AI 어시스턴트에게 먼저 물어보는 현상을 체감하고 있어 크롤러의 시선으로 페이지를 본다는 콘셉트가 와닿았습니다. 특히 배포 전 샌드박스 테스트 기능을 가장 먼저 써보고 싶네요. 문구를 자주 수정하는데 배포 전에 제대로 반영되는지 확인하고 싶거든요. 홈페이지 외에 하위 페이지도 보고서에 포함되는지 궁금합니다. 가격이나 세부 정보는 사이트 깊숙이 있어 보통 거기서 잘못된 답변이 나오니까요."
+    }
+   ],
+   "slug": "bifura"
+  },
+  {
+   "name": "Pax by Pydantic",
+   "tagline_en": "A coding agent where even coding is a plugin",
+   "tagline_kr": "코딩 기능 자체도 플러그인으로 분리된 모듈형 코딩 에이전트",
+   "image": "https://ph-files.imgix.net/6df06b23-004d-4c7d-bd12-a272d3ec0ddf.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=299",
+   "website": "https://pydantic.dev/articles/pax-harness-beta&utm_source=producthunt",
+   "categories": [
+    "AI Coding Agents",
+    "Command line tools"
+   ],
+   "upvotes": 125,
+   "comments_count": 6,
+   "maker": [],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "Pax는 Pydantic 공식 팀에서 개발한 터미널 기반 AI 코딩 에이전트입니다. 모든 구성 요소가 플러그인 형태로 설계되어 있어 필요에 따라 기능을 손쉽게 교체하거나 비활성화할 수 있습니다. 특정 모델에 구애받지 않고 다양한 LLM을 유연하게 연결하여 실행할 수 있습니다. --agent 옵션을 통해 개발자가 Pydantic AI로 직접 구축한 에이전트를 터미널 환경에서 그대로 구동할 수 있습니다. 터미널에서 검증한 동일한 에이전트 객체를 실제 프로덕션 서비스에 즉시 재사용할 수 있어 개발 생산성을 극대화합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/pydantic",
+   "comment_summary": "플러그인 아키텍처의 유연성과 터미널에서 커스텀 Pydantic AI 에이전트를 즉시 실행하는 기능에 대한 호평이 이어졌습니다. 윈도우 환경에서의 AGENTS.md 지원 시점과 플러그인 레지스트리 제공 계획 등에 대한 질문이 있었습니다. 코딩뿐만 아니라 다양한 도메인의 AI 에이전트를 테스트하고 배포하는 플랫폼으로서의 확장성에 기대감을 보였습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Zac Zuo",
+     "is_maker": false,
+     "text": "Hunter 📌 Hi everyone! Run **/plugins disable coder** in Pax and it becomes a plain chat client. Even the coding agent itself is a plugin. If you've already built an agent with Pydantic AI, **pax --agent my\\_agents:reviewer** runs it as-is in your terminal, with its own tools and instructions and none of Pax's default plugins. You can then use that exact same Agent object in your service. I'd probably also use Pax for testing agents that have nothing to do with coding :) You can give it a try wit",
+     "kr": "헌터 📌 여러분 안녕하세요! Pax에서 **/plugins disable coder**를 실행하면 단순한 대화형 클라이언트로 전환됩니다. 코딩 에이전트 기능 자체마저도 플러그인이기 때문입니다. 이미 Pydantic AI로 에이전트를 구축해 두셨다면, **pax --agent my_agents:reviewer** 명령을 통해 Pax 기본 플러그인 없이 자체 도구와 지침만을 갖춘 에이전트를 터미널에서 그대로 실행할 수 있습니다. 그리고 그 동일한 Agent 객체를 서비스에서 바로 활용할 수 있죠. 코딩과 무관한 에이전트를 테스트할 때도 Pax를 적극 활용할 것 같습니다 :) 지금 바로 사용해 보세요."
+    },
+    {
+     "author": "David",
+     "is_maker": false,
+     "text": "I'm on Windows. Any timing on AGENTS.md support there?",
+     "kr": "저는 윈도우 환경을 사용하고 있습니다. 윈도우에서 AGENTS.md를 지원할 일정은 어떻게 되나요?"
+    },
+    {
+     "author": "Andrei Breaz",
+     "is_maker": false,
+     "text": "Is there a plugin registry yet, or are people sharing plugins as plain Python packages for now? Making the coding piece itself swappable opens it up to non-coding agents too.",
+     "kr": "플러그인 레지스트리가 이미 마련되어 있나요, 아니면 현재는 일반 파이썬 패키지 형태로 공유되고 있나요? 코딩 컴포넌트 자체를 교체 가능하게 만든 덕분에 코딩 외의 에이전트로도 확장 가능성이 열렸네요."
+    },
+    {
+     "author": "Zain Sheikh",
+     "is_maker": false,
+     "text": "Pax by Pydantic looks interesting, congrats on going live. Will take a closer look.",
+     "kr": "Pax by Pydantic 흥미로워 보이네요, 출시를 축하합니다. 자세히 살펴보겠습니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "The plugin-everything architecture is what caught my eye — even the coding agent itself being a plugin you can switch off is a really clean way to think about it. The --agent flag is the part I'd reach for first, running my own Pydantic AI agent as-is in the terminal. Model-agnostic, and one uvx command to try it, makes it easy to actually kick the tires.",
+     "kr": "모든 것을 플러그인화한 아키텍처가 눈길을 사로잡았습니다. 코딩 에이전트 자체도 끌 수 있는 플러그인이라는 점은 매우 깔끔한 발상입니다. 저는 특히 터미널에서 제가 만든 Pydantic AI 에이전트를 그대로 구동할 수 있는 --agent 플래그를 가장 먼저 써보고 싶네요. 모델에 종속되지 않고 단 한 줄의 uvx 명령어로 체험해 볼 수 있어 직접 시도해 보기에 아주 좋습니다."
+    },
+    {
+     "author": "Oleksii Sekundant",
+     "is_maker": false,
+     "text": "Likely AI Being able to run the same agent in the terminal and in your service is a nice detail. It gives you somewhere to try a change to the tools before you put it in front of users.",
+     "kr": "터미널과 실제 서비스에서 동일한 에이전트를 실행할 수 있다는 점이 돋보입니다. 사용자에게 선보이기 전에 도구 변경 사항을 미리 검증해 볼 수 있는 테스트베드를 제공해 주니까요."
+    }
+   ],
+   "slug": "pydantic"
+  }
+ ]
+};
+const $=s=>document.querySelector(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#summary').innerHTML='<b>오늘의 요약</b> — '+DATA.summary;
+const cats=[...new Set(DATA.products.flatMap(p=>p.categories||[]))];
+let state={cat:localStorage.getItem('phd_cat_'+DATA.date)||'전체',sort:localStorage.getItem('phd_sort_'+DATA.date)||'up'};
+function renderToolbar(){
+ const tb=$('#toolbar');tb.innerHTML='';
+ cats.forEach(c=>{const b=document.createElement('button');b.className='chip'+(state.cat===c?' on':'');b.textContent=c;b.onclick=()=>{state.cat=c;localStorage.setItem('phd_cat_'+DATA.date,c);renderToolbar();renderGrid()};tb.appendChild(b)});
+ const all=document.createElement('button');all.className='chip'+(state.cat==='전체'?' on':'');all.textContent='전체';all.onclick=()=>{state.cat='전체';localStorage.setItem('phd_cat_'+DATA.date,'전체');renderToolbar();renderGrid()};tb.prepend(all);
+ const sp=document.createElement('div');sp.className='spacer';tb.appendChild(sp);
+ const su=document.createElement('button');su.className='chip'+(state.sort==='up'?' on':'');su.textContent='업보트순';
+ const sn=document.createElement('button');sn.className='chip'+(state.sort==='name'?' on':'');sn.textContent='이름순';
+ su.onclick=()=>{state.sort='up';localStorage.setItem('phd_sort_'+DATA.date,'up');renderToolbar();renderGrid()};
+ sn.onclick=()=>{state.sort='name';localStorage.setItem('phd_sort_'+DATA.date,'name');renderToolbar();renderGrid()};
+ tb.appendChild(su);tb.appendChild(sn);
+ const oa=document.createElement('button');oa.className='chip';oa.id='origall';oa.textContent='원문 모두 보기';oa.onclick=()=>{const on=!document.body.classList.contains('en-all');document.body.classList.toggle('en-all',on);document.querySelectorAll('.cmt').forEach(c=>c.classList.toggle('show-en',on));oa.textContent=on?'번역만 보기':'원문 모두 보기'};tb.appendChild(oa);
+}
+function priceBadge(p){return p.price_model&&p.price_model!=='확인불가'?`<span class="badge price">${p.price_model}${p.price_detail?' · '+p.price_detail:''}</span>`:`<span class="badge price">가격 확인불가</span>`}
+function renderGrid(){
+ const g=$('#grid');g.innerHTML='';
+ let ps=DATA.products.filter(p=>state.cat==='전체'||(p.categories||[]).includes(state.cat));
+ ps.sort((a,b)=>state.sort==='up'?(b.upvotes-a.upvotes):a.name.localeCompare(b.name));
+ ps.forEach(p=>{
+  const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div style="flex:1"><div class="name">${p.name}</div><div class="tag">${p.tagline_kr||''}</div></div><div class="up">▲ ${p.upvotes}</div></div>
+  <div class="row">${(p.categories||[]).slice(0,3).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+  <div class="desc">${p.desc_kr||''}</div>
+  <div class="foot">💬 댓글 ${p.comments?p.comments.length:0}개${p.maker?' · 메이커 '+p.maker:''}${p.website?`<a class="lnk" href="${p.website}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="lnk" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener" onclick="event.stopPropagation()">💬 PH에서 보기</a>`:''}</div>`;
+  c.onclick=()=>openModal(p);g.appendChild(c);
+ });
+}
+function openModal(p){
+ const m=$('#modal');const tot=(p.comments||[]).length;
+ m.innerHTML=`<button class="close" onclick="document.getElementById('mbg').classList.remove('open')">✕</button>
+ <div class="m-head">${p.image?`<img src="${p.image}" onerror="this.style.visibility='hidden'">`:''}<div><h2>${p.name} <span class="up">▲ ${p.upvotes}</span></h2><div class="tag">${p.tagline_kr||''}${p.tagline_en?' — <span style="opacity:.7">'+p.tagline_en+'</span>':''}</div></div>${p.website?`<a class="visit" href="${p.website}" target="_blank" rel="nofollow noopener">🌐 웹사이트</a>`:''}${p.launch_url_used?`<a class="visit ghost" href="${p.launch_url_used}" target="_blank" rel="nofollow noopener">💬 PH에서 보기</a>`:''}</div>
+ <div class="row">${(p.categories||[]).map(x=>`<span class="badge">${x}</span>`).join('')}${priceBadge(p)}</div>
+ <div class="sect"><h4>제품 소개</h4><p style="font-size:14px">${p.desc_kr||''}</p>
+ <p style="font-size:13px;color:var(--sub);margin-top:6px">메이커: ${p.maker||'확인 불가'} · 가격: ${p.price_model||'확인 불가'}${p.price_detail?' ('+p.price_detail+')':''}</p></div>
+ ${(p.comment_summary)?`<div class="sect"><h4>댓글 흐름 한눈에</h4><p style="font-size:14px;color:var(--sub)">${p.comment_summary}</p></div>`:''}
+ ${(p.warnings&&p.warnings.length)?`<div class="warn">⚠ ${p.warnings.join('<br>⚠ ')}</div>`:''}
+ <div class="sect"><h4>댓글 전문 (${tot}개)</h4><div id="cmts">${(p.comments||[]).map((c,i)=>`<div class="cmt" id="c${i}"><div class="who">${c.author}${c.is_maker?'<span class="mk">메이커</span>':''}<button class="orig-btn" onclick="document.getElementById('c${i}').classList.toggle('show-en')">원문</button></div><div class="kr">${c.kr||''}</div><div class="en">${c.text||''}</div></div>`).join('')||'<p style="color:var(--sub);font-size:13px">수집된 댓글 없음</p>'}</div></div>
+ ${p.launch_url_used?`<p style="font-size:11px;color:var(--sub);margin-top:10px">출처: <a href="${p.launch_url_used}" rel="nofollow">${p.launch_url_used}</a></p>`:''}`;
+ $('#mbg').classList.add('open');
+}
+$('#mbg').addEventListener('click',e=>{if(e.target===$('#mbg'))$('#mbg').classList.remove('open')});
+(function(){const n=DATA.notable||[];if(!n.length)return;const by=Object.fromEntries(DATA.products.map(p=>[p.slug||p.name,p]));const box=document.createElement('div');box.className='note';box.innerHTML='<h3>⭐ 주목할 만한 제품</h3>'+n.map(nt=>{const p=by[nt.slug]||{};return `<p style="margin-top:8px"><b style="color:var(--ink)">${p.name||nt.slug}</b> — ${nt.why}</p>`}).join('');$('#notables').appendChild(box)})();
+(function(){
+ const dq=DATA.disquiet;
+ if(!dq||!dq.length)return;
+ const sec=$('#dqsec');
+ const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ const hr=document.createElement('hr');
+ hr.className='dq-divider';
+ sec.appendChild(hr);
+ const head=document.createElement('div');
+ head.className='dq-header';
+ head.innerHTML=`<h2>🇰🇷 디스콰이엇 신규 프로덕트 ${dq.length}건</h2><div class="dq-sub">disquiet.io 신규 등록 · 한줄 코멘트는 AI 요약</div>`;
+ sec.appendChild(head);
+ const g=document.createElement('div');
+ g.className='grid';
+ dq.forEach(p=>{
+  const c=document.createElement('div');
+  c.className='card dq-card';
+  const cmtHtml=p.comment?`<div class="dq-cmt">💡 ${esc(p.comment)}</div>`:'';
+  c.innerHTML=`<div class="dq-head"><div class="dq-name">${esc(p.name)}</div><div class="up">▲ ${p.upvotes!=null?p.upvotes:0}</div></div>`+
+   `<div class="dq-tag">${esc(p.tagline)}</div>`+
+   cmtHtml+
+   `<div class="dq-foot"><a class="lnk dq-lnk" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">💬 디스콰이엇에서 보기</a></div>`;
+  c.onclick=()=>{if(p.url)window.open(p.url,'_blank','noopener,noreferrer')};
+  g.appendChild(c);
+ });
+ sec.appendChild(g);
+})();
+renderToolbar();renderGrid();
+</script>
+</body>
+</html>
