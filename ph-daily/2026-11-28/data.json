@@ -1,0 +1,420 @@
+{
+ "date": "2026-11-28",
+ "collected_at": "2026-11-28 12:30 KST",
+ "summary": "오늘 상위권 프로덕트는 디지털 아바타 영상, 링크드인 마케팅, 코딩 지원 등 4개 제품이 실무 보조 AI 에이전트 영역에 집중되었으며, 미니멀 안드로이드 런처가 함께 순위에 올랐습니다. 댓글에서는 AI 에이전트 도입 시 발생하는 비용 최적화와 함께, 코드 생성 시의 개발 역량 유지, 작업 승인 대기 병목 해결 등 실제 업무 환경에서의 안전성과 통제권 확보가 핵심 논점으로 다루어졌습니다. 특히 메이커들이 사용자들의 세부 기능 질의와 국가별 지원 요청에 실시간으로 대응하며 즉각적인 제품 개선을 약속하는 모습이 두드러졌습니다.",
+ "notable": [
+  {
+   "slug": "contral",
+   "why": "AI 코딩 에이전트 도입에 따른 개발자 역량 퇴화 우려를 짚으며, 코드 변경 이유와 대안을 카드 형태로 설명해 주는 티칭 모드가 커뮤니티의 큰 공감을 얻었습니다. 특히 여러 파일에 걸친 변경 사항을 클릭 한 번으로 안전하게 되돌리는 전체 턴 롤백 기능과 결정론적 유효성 검증 방식이 실용적인 안전장치로 호평받았습니다."
+  },
+  {
+   "slug": "pushary",
+   "why": "AI 에이전트가 고위험 명령어 승인을 대기하느라 작업이 중단되는 병목을 해결하기 위해 개발자에게 즉시 전화를 걸어주는 실용적 접근법으로 큰 주목을 받았습니다. 통화 미응답 시의 재시도 정책과 위험도 분류에 대한 질문이 활발히 이어진 가운데, 메이커가 프랑스 번호 지원을 당일 신속히 반영하며 사용자들의 호평을 받았습니다."
+  }
+ ],
+ "products": [
+  {
+   "name": "Wizstar",
+   "tagline_en": "Digital avatars that move and act like professional actors.",
+   "tagline_kr": "전문 배우처럼 움직이고 연기하는 디지털 아바타",
+   "image": "https://ph-files.imgix.net/48fcdfd0-2d2b-40de-a964-f8e406bd9753.svg?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://wizstar.com/&utm_source=producthunt",
+   "categories": [
+    "Product demo",
+    "AI Characters"
+   ],
+   "upvotes": 264,
+   "comments_count": 20,
+   "maker": [
+    "starry li"
+   ],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "위즈스타(Wizstar)는 창업가와 크리에이터가 자신과 똑같이 생기고 자연스럽게 움직이는 정교한 디지털 앰버서더를 제작할 수 있도록 지원하는 AI 비디오 생성 도구입니다. 고개를 돌리거나 얼굴 앞을 물체가 가려도 정확한 립싱크를 유지하며, 자연스러운 제스처와 물체와의 상호작용을 지원합니다. 카메라 앞에 직접 서지 않고도 제품 데모, 교육 영상, 다국어 현지화 영상, 브랜딩 콘텐츠 등을 손쉽게 제작할 수 있습니다. 특히 자체적인 희소 어텐션(sparse attention) 기술과 시스템 최적화를 통해 초당 0.06달러라는 합리적인 비용으로 고품질 비디오를 대규모로 생성할 수 있는 것이 큰 장점입니다. 이를 통해 글로벌 시장과 다양한 언어 채널 전반에서 일관된 디지털 존재감을 손쉽게 확장하고 지속적으로 콘텐츠를 생산할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/wizstar",
+   "comment_summary": "사용자들은 초당 0.06달러라는 파격적인 가격과 무제한 생성 옵션이 제품 론칭 비디오 제작 비용을 크게 낮출 수 있다며 긍정적인 반응을 보였습니다. 참조 이미지를 통한 일관된 앱 UI 유지 여부와 시장별 제스처 로드맵, 개발자용 API 지원 계획에 대한 문의가 활발히 이어졌습니다. 메이커는 품질 유지와 비용 절감을 위한 최적화 기술을 설명하며, 현재는 웹 앱에서 이용 가능하고 API는 추후 제공할 예정이라고 답변했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "starry li",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 I'm part of the marketing team at Wizstar. We're building AI-powered video creation tools to help creators, marketing teams, and businesses produce high-quality video content more efficiently. Creators, marketing teams, and businesses all need to produce videos continuously and at scale. But high generation costs make it expensive to test creative ideas, produce multiple variations, and scale video production. That's why we built Wizstar R1 — a cost-efficient reference-to-vi",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요 👋 저는 위즈스타의 마케팅 팀 소속입니다. 저희는 크리에이터, 마케팅 팀, 기업이 고품질 비디오 콘텐츠를 보다 효율적으로 제작할 수 있도록 돕는 AI 기반 비디오 제작 도구를 구축하고 있습니다. 크리에이터와 마케팅 팀, 기업 모두 비디오를 지속적이고 대규모로 제작해야 합니다. 하지만 높은 생성 비용 때문에 창의적인 아이디어를 테스트하고 여러 베리에이션을 제작하며 비디오 생산을 확장하는 데 많은 비용이 듭니다. 이것이 바로 저희가 비용 효율적인 레퍼런스 기반 비디오 모델인 Wizstar R1을 만든 이유입니다."
+    },
+    {
+     "author": "JC",
+     "is_maker": false,
+     "text": "I ship a new app every few weeks, so launch videos are a constant cost for me — usually the bottleneck is how many variations I can afford to try before one lands. At $0.06/sec the math changes in a real way. The thing I'd want to test first is whether those nine reference images can keep an actual app UI identical across shots, not just a character — that's where most video models fall apart for product videos.",
+     "kr": "저는 몇 주마다 새 앱을 출시하기 때문에 론칭 영상이 늘 고정 비용으로 들어갑니다. 보통 성공적인 영상이 나올 때까지 시도해 볼 수 있는 베리에이션 수가 병목이 되곤 합니다. 초당 0.06달러라면 계산이 완전히 달라지네요. 제가 가장 먼저 테스트해 보고 싶은 부분은 9장의 레퍼런스 이미지로 캐릭터뿐만 아니라 실제 앱 UI까지 장면마다 동일하게 유지할 수 있는지 여부입니다. 제품 비디오에서 대부분의 비디오 모델이 무너지는 지점이 바로 거기거든요."
+    },
+    {
+     "author": "Henry Habib",
+     "is_maker": false,
+     "text": "$0.06 per second is pretty interesting and the unlimited generations is probably my favourite part.",
+     "kr": "초당 0.06달러라는 점이 꽤 흥미롭고, 무제한 생성 기능이 아마도 제가 가장 마음에 드는 부분인 것 같습니다."
+    },
+    {
+     "author": "starry li",
+     "is_maker": true,
+     "text": "@henry\\_habib Thanks! We're glad you like the pricing and unlimited generations. Hope you enjoy creating with Wizstar!",
+     "kr": "@henry_habib 감사합니다! 가격 정책과 무제한 생성을 마음에 들어 해주셔서 기쁩니다. 위즈스타와 함께 즐거운 창작 경험이 되시길 바랍니다!"
+    },
+    {
+     "author": "Abdul Rehman",
+     "is_maker": false,
+     "text": "Congrats @starry\\_li what if gestures changed for each market, not just the language? is that on the roadmap?",
+     "kr": "@starry_li 축하드립니다! 언어뿐만 아니라 시장별로 제스처까지 맞춤형으로 바뀔 수 있다면 어떨까요? 그런 기능도 로드맵에 포함되어 있나요?"
+    },
+    {
+     "author": "Louis Lecat",
+     "is_maker": false,
+     "text": "looks cool!",
+     "kr": "멋져 보이네요!"
+    },
+    {
+     "author": "starry li",
+     "is_maker": true,
+     "text": "@museum17704 Thanks for raising this! We use sparse attention and system-level optimizations to reduce generation costs while maintaining video quality and natural movement.",
+     "kr": "@museum17704 좋은 지적 감사합니다! 저희는 비디오 품질과 자연스러운 움직임을 유지하면서도 생성 비용을 낮추기 위해 희소 어텐션(sparse attention)과 시스템 레벨의 최적화를 활용하고 있습니다."
+    },
+    {
+     "author": "Taha Zemmouri",
+     "is_maker": false,
+     "text": "Likely AI $0.06 per second is aggressive pricing for something in Seedance 2.0 territory. Is R1 available through an API, or only in the Wizstar app for now? At Eden AI we give developers access to several video generation models behind one API, and a cheaper option for high-volume product videos is exactly what our users ask for. Would love to benchmark R1 if there's an endpoint!",
+     "kr": "초당 0.06달러는 Seedance 2.0 수준의 모델로서는 상당히 공격적인 가격이네요. R1은 현재 API로 이용 가능한가요, 아니면 지금은 위즈스타 앱에서만 사용할 수 있나요? Eden AI에서는 단일 API 뒤에서 여러 비디오 생성 모델에 접근할 수 있도록 개발자에게 제공하고 있는데, 대량의 제품 비디오를 위한 더 저렴한 옵션은 저희 사용자들이 늘 요청하는 부분입니다. 엔드포인트가 있다면 R1을 벤치마킹해보고 싶습니다!"
+    },
+    {
+     "author": "starry li",
+     "is_maker": true,
+     "text": "@tezzed Thanks for your interest! R1 is currently available on Wizstar. We'll share updates on API access as they become available.",
+     "kr": "@tezzed 관심 가져주셔서 감사합니다! R1은 현재 위즈스타 웹에서 이용 가능합니다. API 접근 권한이 준비되는 대로 업데이트 소식을 공유해 드리겠습니다."
+    },
+    {
+     "author": "Taha Zemmouri",
+     "is_maker": false,
+     "text": "@starry\\_li Thanks! Please ping me when the API opens, happy to be an early tester. Product video at that price point is a use case our customers keep asking about.",
+     "kr": "@starry_li 감사합니다! API가 열리면 꼭 알려주세요, 기꺼이 초기 테스터가 되겠습니다. 이 가격대의 제품 비디오는 저희 고객들이 계속 문의하는 유스케이스입니다."
+    }
+   ],
+   "slug": "wizstar"
+  },
+  {
+   "name": "Depost AI",
+   "tagline_en": "The LinkedIn AI agent that learns what works for your brand",
+   "tagline_kr": "내 브랜드에 통하는 방식을 학습하는 링크드인 AI 에이전트",
+   "image": "https://ph-files.imgix.net/6242c64c-8045-439a-83e5-f3159693b94b.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=391",
+   "website": "https://depost.ai/&utm_source=producthunt",
+   "categories": [
+    "Social media management tools",
+    "Social media scheduling tools",
+    "AI Agents"
+   ],
+   "upvotes": 201,
+   "comments_count": 36,
+   "maker": [
+    "Atta 🐬",
+    "YASIR ABBAS"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "디포스트 AI(Depost AI)는 사용자가 발행한 모든 링크드인 게시물을 계정 자체 평균과 비교 채점하여 어떤 콘텐츠가 가장 효과적인지 분석하는 맞춤형 AI 에이전트입니다. 타깃 분야에서 성과가 좋은 주제를 발굴한 뒤 한 달 치 발행 계획을 수립하고, 사용자의 고유한 어조를 반영한 본문 작성과 그래픽 디자인까지 자동으로 처리합니다. 사용자가 최종 승인한 게시물은 링크드인 공식 API를 통해 안전하게 자동 예약 및 발행됩니다. 또한 참여할 만한 가치가 있는 대화에 댓글 초안을 작성하여 단순한 게시물 도달을 실제 리드로 전환할 수 있도록 지원합니다. 웹 앱 환경뿐만 아니라 MCP(Model Context Protocol)를 통해 Claude나 ChatGPT 내부에서도 바로 연동하여 사용할 수 있는 것이 큰 특징입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/depost-ai",
+   "comment_summary": "메이커는 기존 프롬프트 방식과 달리 사용자의 실제 게시물 데이터를 기반으로 최적의 포맷과 주제를 분석해 준다는 차별점을 강조했습니다. 콘텐츠 작성자와 디자이너가 일자리를 잃는 것이 아니라 여러 고객사를 효율적으로 관리하는 도구로 확장할 수 있다는 점과 클로드 MCP 연동의 편의성이 호평을 받았습니다. 단순 일회성 데이터 분석을 넘어 지속적인 계정 동기화와 브랜드 보이스 유지, 자동 발행까지 원스톱으로 지원한다는 점이 주목받았습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Atta 🐬",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt 👋 I'm Atta. Yasir and I built **Depost AI**, and this is our first launch here. Most LinkedIn AI tools start from a blank prompt. Depost AI starts from your own numbers. Connect LinkedIn, and it scores every post you've published against your own average, then shows you which formats and topics work for you. On Yasir's account, behind-the-scenes posts ran at 1.28x his average and teaching posts at 0.75x. He had written 17 teaching posts and 3 behind-the-scenes ones. From there",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요 👋 저는 Atta입니다. Yasir와 제가 **Depost AI**를 개발했으며, 이번이 첫 번째 론칭입니다. 대부분의 링크드인 AI 도구는 빈 프롬프트에서 시작하지만, Depost AI는 여러분의 실제 수치 데이터에서 시작합니다. 링크드인을 연결하면 발행했던 모든 게시물을 본인의 평균치와 비교해 점수를 매기고, 어떤 형식과 주제가 잘 맞는지 보여줍니다. Yasir의 계정의 경우 비하인드 스토리 게시물이 평균의 1.28배 성과를 냈고, 교육형 게시물은 0.75배에 그쳤습니다. 그는 교육형 게시물을 17개, 비하인드 스토리를 3개 작성했었죠. 여기서부터 시작했습니다."
+    },
+    {
+     "author": "Evgenii Plugarev",
+     "is_maker": false,
+     "text": "Likely AI @attacomsian Scoring each post against my own average instead of a global benchmark makes a lot of sense. Small accounts get very different numbers. To your question: I'd want it to tell me if timing matters for my account. Same format on a Tuesday morning and a Friday evening, is the difference real or just noise at a few posts a month? That's the part I never know how to read.",
+     "kr": "@attacomsian 글로벌 벤치마크 대신 제 자체 평균과 비교해 각 게시물을 채점하는 방식은 매우 타당해 보입니다. 소규모 계정은 완전히 다른 수치를 보이니까요. 질문에 답변하자면, 제 계정에서 발행 타이밍이 중요한지 여부를 알려주면 좋겠습니다. 동일한 포맷을 화요일 아침과 금요일 저녁에 올렸을 때, 한 달에 몇 개 안 올리는 상태에서 그 차이가 유의미한지 단순한 노이즈인지 판단하기가 늘 어려웠거든요."
+    },
+    {
+     "author": "Atta 🐬",
+     "is_maker": true,
+     "text": "@evgeniiplugarev Thanks! That's why we compare against your own average. Depost AI does pick your best days and times from your history. But with only a few posts a month, Tuesday vs Friday is mostly noise. Format and topic show up much sooner, so I would trust those numbers first. After a couple of months of posts in each time slot, the timing starts to mean something.",
+     "kr": "@evgeniiplugarev 감사합니다! 그것이 바로 자체 평균과 비교하는 이유입니다. Depost AI는 히스토리에서 가장 좋은 요일과 시간을 도출해 줍니다. 하지만 한 달에 게시물이 몇 개 없다면 화요일과 금요일의 차이는 대부분 노이즈에 불과합니다. 형식과 주제가 훨씬 빠르게 패턴을 드러내므로 먼저 그 수치를 신뢰하는 것이 좋습니다. 각 시간대별로 몇 달간 포스팅이 쌓이고 나면 타이밍도 의미를 갖기 시작합니다."
+    },
+    {
+     "author": "Artyom Shimanski",
+     "is_maker": false,
+     "text": "@attacomsian Congrats on the launch, Atta & Yasir! 🎉",
+     "kr": "@attacomsian 출시를 축하드립니다, Atta & Yasir! 🎉"
+    },
+    {
+     "author": "YASIR ABBAS",
+     "is_maker": true,
+     "text": "@attacomsian @ashimanski Thank you sir",
+     "kr": "@attacomsian @ashimanski 감사합니다!"
+    },
+    {
+     "author": "Atta 🐬",
+     "is_maker": true,
+     "text": "@ashimanski thank you, Artyom 🙌 Appreciate it.",
+     "kr": "@ashimanski 감사합니다, Artyom 🙌 고마워요."
+    },
+    {
+     "author": "Rajat Gupta",
+     "is_maker": false,
+     "text": "What are the content writers and graphic designers do now haha",
+     "kr": "이제 콘텐츠 작가들과 그래픽 디자이너들은 뭘 해야 하나요 하하"
+    },
+    {
+     "author": "YASIR ABBAS",
+     "is_maker": true,
+     "text": "@rajat\\_gupta51 They can use depost.ai , to manage 100 clients at a time, without wasting time on each client's brand, voice, and context 🥳",
+     "kr": "@rajat_gupta51 각 클라이언트의 브랜드, 톤앤매너, 맥락을 파악하느라 시간을 낭비하지 않고 depost.ai를 활용해 한 번에 100명의 클라이언트를 관리할 수 있습니다 🥳"
+    },
+    {
+     "author": "Atta 🐬",
+     "is_maker": true,
+     "text": "@rajat\\_gupta51 Haha, they should use Depost AI and take on more clients. A writer or designer who used to handle three brands can now run ten. Depost AI does the first draft and the graphic, they add their own touch and make the final call.",
+     "kr": "@rajat_gupta51 하하, Depost AI를 활용해서 더 많은 클라이언트를 맡으시면 됩니다. 이전에는 3개 브랜드를 관리하던 작가나 디자이너가 이제는 10개 브랜드를 운영할 수 있죠. Depost AI가 초안과 그래픽을 제작하고, 전문가가 자신만의 터치를 더해 최종 결정을 내리면 됩니다."
+    },
+    {
+     "author": "Thomas Bee",
+     "is_maker": false,
+     "text": "Why this over Claude reading my LinkedIn export?",
+     "kr": "클로드에게 제 링크드인 내보내기 데이터를 읽히는 것보다 이게 더 나은 이유가 무엇인가요?"
+    },
+    {
+     "author": "Atta 🐬",
+     "is_maker": true,
+     "text": "@thomas\\_wazza If you mean downloading your LinkedIn data and asking Claude to analyse it, yes, you can, and it's a good start. But an export is a one-time snapshot, and Claude forgets it in the next chat. Depost AI keeps your posts and numbers synced, and remembers your voice and what worked. Then it does the work: plans your month, designs the graphics, and schedules posts once you approve. It also works inside Claude over MCP, so you don't have to choose. Did I get your question right?",
+     "kr": "@thomas_wazza 링크드인 데이터를 다운로드해서 클로드에게 분석해달라고 요청하는 방식이라면 맞습니다, 그렇게 할 수 있고 좋은 시작입니다. 하지만 내보내기 파일은 일회성 스냅샷에 불과하며 클로드는 다음 대화에서 이를 잊어버립니다. Depost AI는 게시물과 지표를 지속적으로 동기화하고, 당신의 목소리와 효과적이었던 요소를 기억합니다. 그리고 실제로 작업을 수행하죠. 한 달 계획을 세우고, 그래픽을 디자인하고, 승인 시 게시물을 예약합니다. 또한 MCP를 통해 클로드 내부에서도 작동하므로 둘 중 하나를 양자택일할 필요가 없습니다. 질문의 의도에 맞게 답변이 되었을까요?"
+    },
+    {
+     "author": "Taha Zemmouri",
+     "is_maker": false,
+     "text": "to answer your question: I comment on other people's posts way more than I post myself. I'd love to see which of my comments actually brought profile visits or DMs, and on which kind of posts. that's the part no tool measures today",
+     "kr": "질문에 답변드리자면, 저는 직접 포스팅하는 것보다 다른 사람의 게시물에 댓글을 훨씬 더 많이 남깁니다. 제 댓글 중 어떤 것이 실제로 프로필 방문이나 DM으로 이어졌는지, 그리고 어떤 종류의 게시물에서 그랬는지 볼 수 있다면 좋겠습니다. 그 부분은 현재 어떤 도구도 측정해 주지 못하거든요."
+    }
+   ],
+   "slug": "depost-ai"
+  },
+  {
+   "name": "Contral",
+   "tagline_en": "The agent which teaches while you build.",
+   "tagline_kr": "개발을 진행하는 동안 학습을 돕는 에이전트",
+   "image": "https://ph-files.imgix.net/launch-image-uploads/0b641793-5cc4-47f1-882e-410707c12ce9/d540f0b18265279afd0ae243aaf2a47794fb09ed769b70b292a6a25f769493cc.gif?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://contral.ai/&utm_source=producthunt",
+   "categories": [
+    "AI Coding Agents",
+    "AI Code Editors",
+    "LLM Developer Tools"
+   ],
+   "upvotes": 176,
+   "comments_count": 37,
+   "maker": [
+    "Devansh Ranjan"
+   ],
+   "price_model": "Free",
+   "price_detail": null,
+   "desc_kr": "콘트랄(Contral)은 개발자가 실제 코드를 작성하는 과정에서 실시간으로 학습할 수 있도록 돕는 AI 코딩 에이전트입니다. 실제 업무 코드와 동떨어진 일반 튜토리얼 대신 사용자의 기존 개발 환경 내에서 작동하며 맞춤형 학습 경험을 제공합니다. 빌드 모드(Build Mode)에서는 인간의 사고를 대체하는 대신 지원하는 문맥 인식형 코딩 지원을 제공하고, 러닝 모드(Learn Mode)에서는 에디터와 연동된 실시간 설명으로 실제 작업을 안내합니다. Claude Code, Codex, Cursor, Gemini CLI 등 선호하는 AI 에이전트를 자유롭게 연결하여 활용할 수 있습니다. 에이전트가 변경한 코드의 변경 이유와 대안을 카드 형태로 설명해 주며, 결정론적 코드 검증을 기반으로 한 턴 전체를 클릭 한 번으로 안전하게 되돌리는 기능을 지원합니다.",
+   "launch_url_used": "https://www.producthunt.com/products/contral",
+   "comment_summary": "AI가 작성한 코드로 인해 개발 역량이 퇴화할 수 있다는 우려 속에서, 변경 이유와 대안을 설명해 주는 교육 모드가 큰 호평을 받았습니다. 여러 파일을 한 번에 수정하는 AI의 작업을 한 번의 클릭으로 안전하게 롤백할 수 있는 전체 턴 실행 취소 기능이 주목받았습니다. 메이커는 설명 모델이 실제 변경 사항(diff)에 기반하며, 유효성 검증은 LLM이 아닌 결정론적 코드로 수행되어 환각 없이 안전하다고 설명했습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Vishesh Yadav",
+     "is_maker": false,
+     "text": "used Contral to build oioi •1 review W Helpful (2) 122 views7mo ago What do you think? … Login to comment",
+     "kr": "oioi를 구축하는 데 Contral을 사용했습니다 • 리뷰 1개 유용함(2) 조회수 122회 7개월 전 어떻게 생각하시나요? … 댓글을 달려면 로그인하세요"
+    },
+    {
+     "author": "Devansh Ranjan",
+     "is_maker": true,
+     "text": "📌 Hey Product Hunt! I'm Devansh, co-founder of Contral. Contral is out of beta today: Contral IDE 1.1 and the extension 1.0. The problem we kept hitting: AI agents write code faster than anyone can read it, they say \"Done!\" when they aren't, and you end up shipping code you can't explain. **What's new:** * **Bring your own agent.** Use Claude Code, OpenAI Codex, Cursor, OpenCode, Gemini CLI or GitHub Copilot CLI inside Contral, on your own account. Pick the model and effort, approve commands inl",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요! 저는 Contral의 공동 창업자인 Devansh입니다. 오늘 Contral이 베타를 마치고 정식 출시되었습니다: Contral IDE 1.1 및 익스텐션 1.0 버전입니다. 저희가 계속 마주했던 문제는 AI 에이전트가 사람이 읽을 수 있는 것보다 빠르게 코드를 작성하고, 실제로는 끝나지 않았는데도 \"완료!\"라고 말하며, 결국 자신이 설명할 수 없는 코드를 배포하게 된다는 점이었습니다. **새로운 기능:** * **자체 에이전트 가져오기(BYOA).** 본인의 계정으로 Contral 내에서 Claude Code, OpenAI Codex, Cursor, OpenCode, Gemini CLI 또는 GitHub Copilot CLI를 사용하세요. 모델과 투입 리소스를 선택하고 인라인으로 명령을 승인할 수 있습니다."
+    },
+    {
+     "author": "Anders Olsson",
+     "is_maker": false,
+     "text": "Teaching mode is actually a really good idea. I suspect a lot of skills will begin to atrophy, or not be created in the first place, when the AI writes all the code. Not to mention that the frontier models often use higher-level concepts than the typical user would. So this could be an opportunity to step up your own understanding of algorithms and techniques.",
+     "kr": "티칭 모드는 정말 좋은 아이디어입니다. AI가 모든 코드를 작성하게 되면 많은 기술이 퇴화하거나 애초에 습득되지도 못할 것 같습니다. 게다가 최신 프론티어 모델들은 일반 사용자가 사용하는 것보다 더 높은 수준의 개념을 사용하는 경우가 많습니다. 따라서 알고리즘과 기법에 대한 본인의 이해도를 한 단계 높일 수 있는 기회가 될 수 있겠습니다."
+    },
+    {
+     "author": "Devansh Ranjan",
+     "is_maker": true,
+     "text": "@anders\\_olsson this is exactly the worry that started contral. and you're right about frontier models reaching for concepts most people haven't met yet, that's the best moment to learn them because the code is right there in your own project. every teaching card covers what changed and why, and concept chips link to the matching lesson, so a pattern you've never seen turns into something you can look up in context. which kind of concept do you see agents reach for most that you'd want explained",
+     "kr": "@anders_olsson 바로 그 우려가 Contral을 시작하게 된 계기입니다. 프론티어 모델이 대부분의 사람들이 아직 접해보지 못한 개념을 도입한다는 말씀도 맞습니다. 본인의 프로젝트 코드에 바로 구현되어 있기 때문에 그런 개념을 배우기에 가장 좋은 타이밍이죠. 모든 티칭 카드는 무엇이 왜 바뀌었는지를 다루고, 개념 칩은 관련 강의로 연결되어 한 번도 보지 못한 패턴도 맥락 속에서 찾아볼 수 있게 해줍니다. 주로 어떤 개념에 대해 에이전트의 설명을 가장 듣고 싶으신가요?"
+    },
+    {
+     "author": "Devansh Ranjan",
+     "is_maker": true,
+     "text": "@anders\\_olsson @conradovidal that's such a good way to put it, the \"why this approach and what it costs me later\" part is where most people get lost, not the syntax. every teaching card has a \"why this way\" section plus alternatives, so you see what the agent could have done instead, and there's a deep dive button when you want the longer version. if you try it, tell me if the trade-off part is clear enough for someone coming from a less technical background, that's exactly who i want it to wor",
+     "kr": "@anders_olsson @conradovidal 정말 핵심을 잘 짚어주셨습니다. 대부분의 사람들이 길을 잃는 지점은 문법이 아니라 \"왜 이 접근 방식을 택했는지, 나중에 어떤 비용을 치러야 하는지\"입니다. 모든 티칭 카드에는 \"왜 이런 방식인가\" 섹션과 대안이 함께 제공되어 에이전트가 대신 무엇을 할 수 있었는지 확인할 수 있고, 더 긴 설명이 필요할 때는 딥 다이브 버튼도 있습니다. 사용해 보시고 비기술적 배경을 가진 분들에게도 상충 관계(trade-off) 부분이 충분히 명확한지 알려주세요, 바로 그런 분들을 위한 도구니까요."
+    },
+    {
+     "author": "Oleksii Sekundant",
+     "is_maker": false,
+     "text": "Undoing a whole turn is the feature I noticed. When one request changes several files, it gives you room to read the diff and back out the whole experiment if you need to.",
+     "kr": "전체 턴을 실행 취소하는 기능이 눈에 띄네요. 단 한 번의 요청으로 여러 파일이 수정될 때, 차이점(diff)을 살펴보고 필요한 경우 전체 실험을 되돌릴 수 있는 여유를 줍니다."
+    },
+    {
+     "author": "Devansh Ranjan",
+     "is_maker": true,
+     "text": "@oleksii\\_sekundant yeah that's exactly the case it's for. agents love touching 6 files for a 1 file ask, and reverting by hand is where stuff gets missed. undo puts back everything from that turn, including files the agent created or deleted without mentioning them, and removes empty folders it made. it also tells the agent next time you message it, so it doesn't keep building on changes that aren't there anymore.",
+     "kr": "@oleksii_sekundant 맞습니다, 바로 그런 상황을 위해 만들어졌습니다. 에이전트는 파일 1개를 요청해도 6개 파일을 건드리는 것을 좋아하는데, 수동으로 되돌리다 보면 놓치는 부분이 생기기 마련입니다. 실행 취소는 에이전트가 언급 없이 생성하거나 삭제한 파일을 포함하여 해당 턴의 모든 것을 원상태로 되돌리고 생성된 빈 폴더까지 정리합니다. 또한 다음 메시지를 보낼 때 에이전트에게 이를 알려주어 더 이상 존재하지 않는 변경 사항을 바탕으로 계속 작업하지 않도록 합니다."
+    },
+    {
+     "author": "Igor Martynyuk",
+     "is_maker": false,
+     "text": "how often does the explainer get it wrong about what the code actually does",
+     "kr": "설명 모델이 코드가 실제로 수행하는 작업에 대해 잘못 설명하는 경우가 얼마나 자주 발생하나요?"
+    },
+    {
+     "author": "Devansh Ranjan",
+     "is_maker": true,
+     "text": "@igorblink honest answer: i don't have a measured error rate yet and i'm not going to make one up. it's a model, so it can be wrong. what we do to keep it grounded: it explains the actual diff, not a guess at the whole file, and it knows what you asked the agent, so it explains the change against your intent. defense mode questions are built from the real diff too. if you catch a card that's wrong, send it my way, those are the most useful bug reports we get",
+     "kr": "@igorblink 솔직히 말씀드리면, 아직 측정된 오류율이 없으며 지어내지는 않겠습니다. 모델이기 때문에 틀릴 수 있습니다. 현실성을 유지하기 위해 저희가 취한 방식은 파일 전체를 추측하는 것이 아니라 실제 diff를 설명하도록 하는 것입니다. 또한 사용자가 에이전트에 요청한 내용을 알고 있으므로 의도에 맞추어 변경 사항을 설명합니다. 방어 모드 질문들도 실제 diff를 기반으로 생성됩니다. 혹시 틀린 카드를 발견하시면 제게 제보해 주세요, 가장 유용한 버그 리포트가 됩니다."
+    },
+    {
+     "author": "Andrei Breaz",
+     "is_maker": false,
+     "text": "Having a second model check each turn, with a one click undo for the whole thing, takes a lot of the fear out of letting an agent run. Do most people keep the Learn mode on, or mostly use it early on?",
+     "kr": "전체 작업을 한 번에 되돌릴 수 있는 원클릭 실행 취소와 함께 두 번째 모델이 매 턴을 검사해 주니 에이전트를 실행하는 것에 대한 두려움이 많이 줄어드네요. 대부분의 사용자들이 러닝 모드를 계속 켜두나요, 아니면 주로 초기에만 사용하나요?"
+    },
+    {
+     "author": "Devansh Ranjan",
+     "is_maker": true,
+     "text": "@andreibreaz small correction that i actually think is the cool part: the check isn't a second model. it's plain deterministic code, no llm call, it reads what you asked for and diffs what actually changed, so it can't hallucinate a pass. on learn mode: 1.1 is a day old so i don't have real numbers yet. the teaching cards in build mode are what most people live with day to day (you can set them to quick/standard/deep), and learn mode is the structured lessons side. i'll share what we see once th",
+     "kr": "@andreibreaz 제가 정말 멋진 부분이라고 생각하는 사소한 정정 사항이 있습니다. 검사는 두 번째 모델이 아닙니다. LLM 호출이 없는 단순한 결정론적 코드이며, 요청한 내용을 읽고 실제 변경된 사항을 비교하므로 합격 여부를 환각할 수 없습니다. 러닝 모드에 대해 말씀드리자면, 1.1 버전이 나온 지 하루밖에 되지 않아 아직 실질적인 통계는 없습니다. 대부분의 사용자가 일상적으로 접하는 것은 빌드 모드의 티칭 카드(빠름/표준/심층 설정 가능)이며, 러닝 모드는 체계화된 강의 측면입니다. 데이터가 쌓이면 확인된 내용을 공유해 드리겠습니다."
+    },
+    {
+     "author": "Abdul Rehman",
+     "is_maker": false,
+     "text": "Congrats @devanshranjan quick question: what if learn mode went from explanations to hints to quizzes as i improve?",
+     "kr": "@devanshranjan 축하드립니다! 간단한 질문인데요, 실력이 향상됨에 따라 러닝 모드가 단순 설명에서 힌트, 그리고 퀴즈 형태로 발전한다면 어떨까요?"
+    }
+   ],
+   "slug": "contral"
+  },
+  {
+   "name": "Indistractable",
+   "tagline_en": "Your Path to Productivity",
+   "tagline_kr": "생산성으로 향하는 당신의 길",
+   "image": "https://ph-files.imgix.net/e8d68d3b-a20a-4890-9159-894423005c35.jpeg?auto=compress,format&codec=mozjpeg&cs=strip&fit=max&frame=1&h=220&w=124",
+   "website": "https://play.google.com/store/apps/details?id=com.indistractablelauncher.android&utm_source=producthunt",
+   "categories": [
+    "Productivity",
+    "Apps for kids",
+    "Design resources"
+   ],
+   "upvotes": 157,
+   "comments_count": 17,
+   "maker": [],
+   "price_model": null,
+   "price_detail": null,
+   "desc_kr": "인디스트랙터블(Indistractable)은 불필요한 방해 요소를 제거하고 집중력을 극대화하도록 설계된 미니멀리즘 안드로이드 런처 앱입니다. 깔끔하고 단순한 홈 화면 디자인을 통해 사용자가 스마트폰의 산만한 알림과 유혹에서 벗어나 딥 워크(Deep Work)에 몰입할 수 있도록 돕습니다. 복잡한 부가 기능 대신 주의 분산을 차단하는 본질적인 기능에 집중하여 직관적이고 효과적인 사용성을 제공합니다. 스마트폰 중독을 줄이고 일상 업무 및 학습 생산성을 높이고자 하는 사용자들로부터 높은 평가를 받고 있습니다. 단순하지만 강력한 방해 차단 환경을 조성하여 하루 동안의 집중력 유지와 디지털 디톡스를 실현하는 데 매우 유용한 도구입니다.",
+   "launch_url_used": "https://www.producthunt.com/products/periscope-4",
+   "comment_summary": "이번 론칭 페이지에는 등록된 댓글이 없어 직접적인 사용자 질의응답은 이루어지지 않았습니다. 다만 리뷰를 통해 스마트폰의 시각적 방해 요소를 없애고 딥 워크 환경을 조성해 주는 미니멀한 런처 디자인이 긍정적인 평가를 받고 있습니다.",
+   "warnings": null,
+   "comments": [],
+   "slug": "periscope-4"
+  },
+  {
+   "name": "Pushary",
+   "tagline_en": "See who said yes to your team’s AI agents",
+   "tagline_kr": "팀의 AI 에이전트에 누가 승인했는지 확인하세요",
+   "image": "https://ph-files.imgix.net/93ca09eb-0ef0-4da7-80fd-cdc290e30ede.png?auto=compress,format&codec=mozjpeg&cs=strip&fit=crop&frame=1&h=56&w=56",
+   "website": "https://pushary.com/&utm_source=producthunt",
+   "categories": [
+    "Productivity",
+    "AI Coding Agents",
+    "Vibe Coding Tools"
+   ],
+   "upvotes": 134,
+   "comments_count": 26,
+   "maker": [
+    "Aadil Ghani"
+   ],
+   "price_model": "Free Options",
+   "price_detail": null,
+   "desc_kr": "푸샤리(Pushary)는 AI 코딩 에이전트가 실행 승인을 요청할 때 담당자의 스마트폰이나 Mac으로 즉시 알림 및 전화를 보내주는 서비스입니다. 개발자가 자리를 비우거나 점심을 먹으러 나갔을 때 승인 대기로 인해 에이전트 작업이 중단되는 병목 현상을 방지합니다. Claude Code, Codex, Cursor, Gemini CLI, Hermes 등 다양한 에이전트 도구를 지원하며, 팀 내에서 누가 명령을 승인했는지에 대한 기록을 투명하게 남깁니다. rm 명령어나 git force push와 같은 고위험 작업은 위험도 점수를 매겨 전화상으로 위험성을 경고하고 승인 또는 거부를 선택할 수 있도록 안내합니다. 전화 미응답 시 재시도 간격과 타임아웃을 자유롭게 설정할 수 있어 개인 개발자부터 대규모 엔지니어링 팀까지 유연하게 도입할 수 있습니다.",
+   "launch_url_used": "https://www.producthunt.com/products/pushary",
+   "comment_summary": "개발자가 자리를 비운 사이 AI 에이전트가 권한 승인을 기다리며 멈춰 있는 문제를 전화를 통해 즉각 해결할 수 있다는 점이 큰 관심을 모았습니다. 전화 미응답 시의 재시도 로직 및 타임아웃 설정과 파괴적인 명령어에 대한 위험 분류(Risk Classification) 기능에 대해 메이커가 상세히 설명했습니다. 사용자들의 프랑스 전화번호 지원 요청에 대해 메이커가 당일 신속하게 업데이트를 배포하고 전용 테스트 번호를 안내하여 좋은 반응을 얻었습니다.",
+   "warnings": null,
+   "comments": [
+    {
+     "author": "Aadil Ghani",
+     "is_maker": false,
+     "text": "Love that your agents are getting faster with Pushary. Feature request prioritized, we will add a notification sound setup for the customizable nudges. much love.",
+     "kr": "Pushary를 통해 에이전트의 작업 속도가 빨라지고 있다니 기쁩니다. 요청하신 기능 요청을 우선적으로 검토하여 맞춤 설정 가능한 넛지에 대한 알림음 설정을 추가하겠습니다. 많은 성원 감사드립니다."
+    },
+    {
+     "author": "Aadil Ghani",
+     "is_maker": true,
+     "text": "📌 Hey PH 👋 Aadil here. Go to lunch. Your AI agent keeps working. That's the whole launch. You know the scene. You step out for lunch, Claude Code asks to push to main, and the ping sinks under three group chats. You come back to \"waiting for your permission\" instead of \"done\". My own agent once waited 47 minutes for one yes. I was pissed off, so I taught it to call me. **How it works:** * Pushary sends your agent's question to your phone. Miss it, and your phone rings after 1, 2 or 3 minutes. Yo",
+     "kr": "📌 프로덕트 헌트 여러분 안녕하세요 👋 Aadil입니다. 점심 먹으러 가세요. AI 에이전트는 계속 일할 테니까요. 그것이 이번 론칭의 핵심입니다. 다들 겪어보셨을 겁니다. 점심을 먹으러 나갔는데 Claude Code가 main 브랜치에 푸시할지 묻는 알림이 오고, 그 알림은 3개의 단체 채팅방 밑으로 묻혀버립니다. 돌아와 보면 \"완료\" 대신 \"승인 대기 중\"을 보게 되죠. 제 에이전트도 한 번의 'yes'를 위해 47분을 기다린 적이 있었습니다. 너무 답답해서 저에게 전화를 걸도록 가르쳤습니다. **작동 방식:** * Pushary는 에이전트의 질문을 스마트폰으로 전송합니다. 알림을 놓치면 1분, 2분 또는 3분 후에 전화가 울립니다."
+    },
+    {
+     "author": "Dipanshu Kushwaha",
+     "is_maker": false,
+     "text": "@aadilghani How does it handle situations where the person receiving the call doesn’t respond ?",
+     "kr": "@aadilghani 전화를 받는 사람이 응답하지 않는 상황은 어떻게 처리하나요?"
+    },
+    {
+     "author": "Aadil Ghani",
+     "is_maker": true,
+     "text": "@dipanshu\\_kushwaha5 it retries two times per default in a minutes gap, if you still don't pick up - per default the request on your agent times out and waits. both the amount of retries and the wait can be configured on the dashboard. looking forward to getting your input on the inside 🚀",
+     "kr": "@dipanshu_kushwaha5 기본적으로 1분 간격으로 2회 재시도하며, 그래도 전화를 받지 않으면 기본 설정상 에이전트의 요청이 타임아웃되어 대기 상태로 전환됩니다. 재시도 횟수와 대기 시간은 모두 대시보드에서 설정할 수 있습니다. 사용해 보시고 많은 의견 부탁드립니다 🚀"
+    },
+    {
+     "author": "Taha Zemmouri",
+     "is_maker": false,
+     "text": "💡 Bright idea the call speaks French but can't ring French numbers yet? any plan for France? we'd try it on our team in Lyon, our agents wait on us way more than 47 min some days",
+     "kr": "💡 좋은 아이디어네요. 통화는 프랑스어로 나오는데 아직 프랑스 번호로는 전화를 걸 수 없나요? 프랑스 지원 계획이 있나요? 리옹에 있는 저희 팀에서 테스트해보고 싶습니다. 어떤 날에는 저희 에이전트가 47분보다 훨씬 더 오래 저희를 기다리거든요."
+    },
+    {
+     "author": "Aadil Ghani",
+     "is_maker": true,
+     "text": "@tezzed we will work it out, could you share an email here or in LinkedIn so we can notify you when rollout happens? Ideally in a week we should be ready. Which agents do you and the team use? Claude code and codex or any custom harnesses?",
+     "kr": "@tezzed 해결해 드리겠습니다. 출시될 때 알려드릴 수 있도록 여기에 이메일을 남겨주시거나 링크드인으로 공유해 주시겠어요? 이상적으로는 일주일 내에 준비될 것입니다. 팀에서 어떤 에이전트를 사용하시나요? Claude Code와 Codex인가요, 아니면 자체 하네스를 사용하시나요?"
+    },
+    {
+     "author": "Aadil Ghani",
+     "is_maker": true,
+     "text": "@tezzed France is live as of today. Calls now ring French mobile numbers, from our German number +49 30 5444 8238. Set your number on the phone calls page, run the test call, and your team in Lyon is good to go. Tell me how the first call goes, looking forward to it!",
+     "kr": "@tezzed 오늘부터 프랑스가 지원됩니다. 이제 저희 독일 번호(+49 30 5444 8238)를 통해 프랑스 모바일 번호로 전화가 연결됩니다. 전화 통화 페이지에서 번호를 설정하고 테스트 전화를 실행하시면 리옹의 팀에서도 바로 사용하실 수 있습니다. 첫 통화가 어땠는지 알려주세요, 기대하고 있겠습니다!"
+    },
+    {
+     "author": "Thomas Bee",
+     "is_maker": false,
+     "text": "💡 Bright idea France isn't on the call list yet. Any date?",
+     "kr": "💡 좋은 아이디어네요. 프랑스가 아직 통화 목록에 없습니다. 대략적인 일정이 있나요?"
+    },
+    {
+     "author": "Aadil Ghani",
+     "is_maker": true,
+     "text": "@thomas\\_wazza this is the second time France was asked, gonna fast forward this for next week, shoot an email or reach out via x for early access to France. aadil@pushary.com",
+     "kr": "@thomas_wazza 프랑스 지원 문의가 벌써 두 번째네요, 다음 주를 목표로 일정을 앞당기겠습니다. 프랑스 얼리 액세스를 원하시면 이메일(aadil@pushary.com)을 보내주시거나 X를 통해 연락주세요."
+    },
+    {
+     "author": "Aadil Ghani",
+     "is_maker": true,
+     "text": "@thomas\\_wazza shipped it earlier than promised 🚀 France is on the list today, for French mobile numbers. Give it a shot - available across all plans with 3 day free trial.",
+     "kr": "@thomas_wazza 약속보다 일찍 출시했습니다 🚀 오늘부터 프랑스 모바일 번호가 목록에 추가되었습니다. 사용해 보세요. 3일 무료 체험과 함께 모든 요금제에서 이용 가능합니다."
+    },
+    {
+     "author": "Rajat Gupta",
+     "is_maker": false,
+     "text": "How does Pushary identify important messages that needs to be sent to the phone, since all the messages shouldn't be sent over a call?",
+     "kr": "모든 메시지를 전화로 보낼 수는 없을 텐데, Pushary는 전화로 보내야 하는 중요한 메시지를 어떻게 식별하나요?"
+    },
+    {
+     "author": "Aadil Ghani",
+     "is_maker": true,
+     "text": "@rajat\\_gupta51 we have a risk classification score on hook, when it is for example rm bash commands or force pushing items, these are high risk items. The agent tells you on the phone that this is risky and its side effects before you deny approve or steer it in your preference. what items would you call risky in your agentic flows?",
+     "kr": "@rajat_gupta51 저희는 훅에 위험도 분류 점수를 두고 있습니다. 예를 들어 rm bash 명령어 실행이나 강제 푸시(force push) 같은 항목은 고위험 항목에 해당합니다. 사용자가 거부, 승인 또는 원하는 방향으로 지시를 내리기 전에, 에이전트가 통화상으로 이것이 위험하다는 점과 발생 가능한 부작용을 설명해 줍니다. 여러분의 에이전트 워크플로에서는 어떤 항목이 위험하다고 생각하시나요?"
+    }
+   ],
+   "slug": "pushary"
+  }
+ ]
+}
